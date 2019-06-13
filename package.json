@@ -28,14 +28,30 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier-standard 'src/**/*.js'",
+    "test": "standard"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.0",
+    "prettier-standard": "^9.1.1",
+    "standard": "^12.0.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/christopherbiscardi/gatsby-starter-mdx-basic"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
   }
 }
