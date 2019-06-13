@@ -1,34 +1,30 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { Flex, Text } from 'rebass'
+
+const HeaderContainer = props => (
+  <Flex bg='primary' mb={4} p={3} justifyContent='center' {...props} />
+)
+
+const HeaderTitle = props => (
+  <Text
+    as={Link}
+    forwardedAs='h1'
+    color='white'
+    fontFamily='heading'
+    fontSize={[3, 4, 5]}
+    css={{
+      textDecoration: 'none'
+    }}
+    {...props}
+  />
+)
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to='/'
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <HeaderContainer>
+    <HeaderTitle to='/'>{siteTitle}</HeaderTitle>
+  </HeaderContainer>
 )
 
 Header.propTypes = {
