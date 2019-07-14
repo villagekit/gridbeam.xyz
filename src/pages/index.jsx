@@ -37,7 +37,6 @@ function Landing () {
 function Hero () {
   return (
     <header>
-      <h1>heyo</h1>
       <GridBeamViewer model={model} />
     </header>
   )

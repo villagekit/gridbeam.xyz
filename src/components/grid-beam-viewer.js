@@ -1,40 +1,53 @@
 import React, { useMemo } from 'react'
 import Regl, { Draw } from 'react-regl'
 import csgToMesh from 'csg-to-mesh'
-import { CSG } from '@jscad/csg'
+import csg, { CSG } from '@jscad/csg'
 import mat4 from 'gl-mat4'
-// import normals from 'normals'
+import meshNormals from 'angle-normals'
 
-function GridBeamViewer ({ model }) {
+console.log('csg', csg)
+
+const BEAM_WIDTH = 1
+
+function GridBeamViewer ({ size, model }) {
+  const { beams } = model
+  if (size == null) {
+    size = [window.innerWidth, window.innerHeight]
+  }
   return (
-    <Regl>
-      <GridBeamModel model={model} />
+    <Regl width={size[0]} height={size[1]} forceRedrawOnTick>
+      <Beams beams={beams} />
     </Regl>
   )
 }
 
-function GridBeamModel ({ model }) {
-  const mesh = useMemo(() => gridBeamModelToMesh(model), [model])
+function Beams ({ beams }) {
+  const mesh = useMemo(() => beamsToMesh(beams), [beams])
+  const normal = useMemo(() => meshNormals(mesh.cells, mesh.positions), [mesh])
 
   return (
     <Draw
       vert={`
         precision mediump float;
-        attribute vec3 position;
-        uniform mat4 model, view, projection;
-        void main() {
-          gl_Position = projection * view * model * vec4(position, 1);
+        uniform mat4 model, projection, view;
+        attribute vec3 position, normal;
+        varying vec3 vnormal;
+        void main () {
+          vnormal = normal;
+          gl_Position = projection * view * model * vec4(position, 1.0);
         }
       `}
       frag={`
         precision mediump float;
+        varying vec3 vnormal;
         void main() {
-          gl_FragColor = vec4(1, 1, 1, 1);
+          gl_FragColor = vec4(abs(vnormal), 1.0);
         }
       `}
       elements={mesh.cells}
       attributes={{
-        position: mesh.positions
+        position: mesh.positions,
+        normal
       }}
       uniforms={{
         model: mat4.identity([]),
@@ -63,11 +76,36 @@ function GridBeamModel ({ model }) {
 
 export default GridBeamViewer
 
-function gridBeamModelToCsg () {
-  return CSG.cube({ r: 10, fn: 20 })
+function beamToCsg (beam) {
+  const { direction, origin, length } = beam
+
+  var radius = [BEAM_WIDTH, BEAM_WIDTH, BEAM_WIDTH]
+  radius[directionToIndex(direction)] = BEAM_WIDTH * length
+
+  return CSG.roundedCube({
+    radius
+  }).translate(origin)
 }
 
-function gridBeamModelToMesh (model) {
-  const csg = gridBeamModelToCsg(model)
+function beamsToMesh (beams) {
+  var csg
+  beams.forEach(beam => {
+    var nextCsg = beamToCsg(beam)
+    if (csg === undefined) csg = nextCsg
+    else csg = csg.union(nextCsg)
+  })
   return csgToMesh(csg)
+}
+
+function directionToIndex (direction) {
+  switch (direction) {
+    case 'x':
+      return 0
+    case 'y':
+      return 1
+    case 'z':
+      return 2
+    default:
+      throw new Error(`unexpected direction: ${direction}`)
+  }
 }
