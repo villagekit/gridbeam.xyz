@@ -16,13 +16,15 @@ function GridBeamViewer ({ size, model }) {
   }
   return (
     <Regl width={size[0]} height={size[1]} forceRedrawOnTick>
-      <Beams beams={beams} />
+      {beams.map(beam => (
+        <Beam beam={beam} />
+      ))}
     </Regl>
   )
 }
 
-function Beams ({ beams }) {
-  const mesh = useMemo(() => beamsToMesh(beams), [beams])
+function Beam ({ beam }) {
+  const mesh = useMemo(() => beamToMesh(beam), [beam])
   const normal = useMemo(() => meshNormals(mesh.cells, mesh.positions), [mesh])
 
   return (
@@ -79,21 +81,29 @@ export default GridBeamViewer
 function beamToCsg (beam) {
   const { direction, origin, length } = beam
 
-  var radius = [BEAM_WIDTH, BEAM_WIDTH, BEAM_WIDTH]
-  radius[directionToIndex(direction)] = BEAM_WIDTH * length
+  var radius = [BEAM_WIDTH, BEAM_WIDTH, BEAM_WIDTH * length]
 
-  return CSG.roundedCube({
+  var csg = CSG.roundedCube({
     radius
-  }).translate(origin)
+  })
+
+  if (direction === 'x') {
+    csg = csg.rotateY(90).translate([0, 0, BEAM_WIDTH])
+  } else if (direction === 'y') {
+    csg = csg.rotateX(-90).translate([0, 0, BEAM_WIDTH])
+  }
+
+  const translation = [
+    origin[0] * BEAM_WIDTH,
+    origin[1] * BEAM_WIDTH,
+    origin[2] * BEAM_WIDTH
+  ]
+  translation[directionToIndex(direction)] += BEAM_WIDTH * length
+  return csg.translate(translation)
 }
 
-function beamsToMesh (beams) {
-  var csg
-  beams.forEach(beam => {
-    var nextCsg = beamToCsg(beam)
-    if (csg === undefined) csg = nextCsg
-    else csg = csg.union(nextCsg)
-  })
+function beamToMesh (beam) {
+  const csg = beamToCsg(beam)
   return csgToMesh(csg)
 }
 

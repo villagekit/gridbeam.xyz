@@ -7,6 +7,16 @@ import GridBeamViewer from '../components/grid-beam-viewer'
 const model = {
   beams: [
     {
+      direction: 'x',
+      origin: [0, 0, 0],
+      length: 2
+    },
+    {
+      direction: 'y',
+      origin: [0, 0, 0],
+      length: 5
+    },
+    {
       direction: 'z',
       origin: [0, 0, 0],
       length: 10
