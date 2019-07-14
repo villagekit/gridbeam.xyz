@@ -23,6 +23,7 @@
     "rebass": "^3.1.1",
     "styled-components": "^4.3.1",
     "styled-reset": "^2.0.15",
+    "three": "^0.106.2",
     "typeface-ibm-plex-sans": "0.0.61",
     "typeface-ibm-plex-serif": "0.0.61"
   },

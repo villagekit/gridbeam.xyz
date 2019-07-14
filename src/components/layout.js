@@ -45,3 +45,13 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+export function withLayout (PageComponent) {
+  return function PageWithLayout (props) {
+    return (
+      <Layout>
+        <PageComponent {...props} />
+      </Layout>
+    )
+  }
+}

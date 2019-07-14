@@ -2,9 +2,10 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: "@ahdinosaur' Gatsby starter",
-    description: 'Cheers to your next Gatsby project',
-    author: '@ahdinosaur'
+    title: 'Grid Beam - New Zealand',
+    description:
+      'Erector sets for adults: reconfigurable furniture from durable materials made locally',
+    author: 'Mikey Williams'
   },
   plugins: [
     {
@@ -34,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-default-mdx-basic',
-        short_name: 'starter',
+        name: 'grid-beam-new-zealand',
+        short_name: 'gridbeam-nz',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
