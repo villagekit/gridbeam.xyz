@@ -14,8 +14,8 @@ var fonts = {
   sans: 'IBM Plex Sans',
   serif: 'IBM Plex Serif'
 }
-fonts.heading = fonts.serif
-fonts.normal = fonts.sans
+fonts.heading = fonts.sans
+fonts.body = fonts.serif
 
 // http://tachyons.io/docs/typography/scale/
 var fontSizes = [
