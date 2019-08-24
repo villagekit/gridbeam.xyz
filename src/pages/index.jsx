@@ -13,7 +13,6 @@ function Landing () {
   return (
     <>
       <SEO
-        title='Home'
         keywords={[
           'grid',
           'beam',

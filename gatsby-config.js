@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Grid Beam - New Zealand',
     description:
-      'Erector sets for adults: reconfigurable furniture from durable materials made locally',
+      'Lego for adults: reconfigurable furniture from sustainable materials',
     author: 'Mikey Williams'
   },
   plugins: [
