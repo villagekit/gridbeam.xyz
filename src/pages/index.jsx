@@ -211,7 +211,7 @@ function Spec () {
       query={graphql`
         query {
           gridBeamTriJoint: file(
-            relativePath: { eq: "grid-beam-tri-joint.webp" }
+            relativePath: { eq: "grid-beam-tri-joint.jpg" }
           ) {
             childImageSharp {
               fluid(maxWidth: 1024) {
