@@ -67,7 +67,7 @@ function Footer () {
       <Link
         p={1}
         target='_window'
-        href='https://github.com/ahdinosaur/gribeam.nz'
+        href='https://github.com/ahdinosaur/gridbeam.nz'
         color='primary'
         sx={{
           textDecoration: 'none',
