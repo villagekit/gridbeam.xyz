@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 import { Box, Link } from 'rebass/styled-components'
 import reset from 'styled-reset'
+import shader from 'shader'
 
 import 'typeface-bungee'
 import 'typeface-ibm-plex-sans'
@@ -17,21 +18,35 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ header, children }) => (
-  <>
+  <Main>
     <GlobalStyle />
     {header}
-    <Container>
-      {children}
-      <Footer />
-    </Container>
-  </>
+    <Body>{children}</Body>
+    <Footer />
+  </Main>
 )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-function Container (props) {
+function Main (props) {
+  return (
+    <Box
+      as='main'
+      {...props}
+      sx={{
+        display: 'grid',
+        gridTemplateRows: 'auto 1fr auto'
+      }}
+      css={`
+        background-color: ${({ theme }) => shader('#ff', 0.95)};
+      `}
+    />
+  )
+}
+
+function Body (props) {
   return (
     <Box
       {...props}
@@ -48,8 +63,20 @@ function Container (props) {
 
 function Footer () {
   return (
-    <Box as='footer' fontSize={1} fontFamily='body' textAlign='center'>
-      Made with
+    <Box as='footer' p={3} fontSize={1} fontFamily='body' textAlign='center'>
+      <Link
+        p={1}
+        target='_window'
+        href='https://github.com/ahdinosaur/gribeam.nz'
+        color='primary'
+        sx={{
+          textDecoration: 'none',
+          ':hover': { textDecoration: 'underline' }
+        }}
+      >
+        gridbeam.nz
+      </Link>
+      made with
       <span role='img' aria-label='heart' css={{ padding: '0.25rem' }}>
         ❤️
       </span>

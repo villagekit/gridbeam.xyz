@@ -21,6 +21,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "rebass": "^4.0.2",
+    "shader": "^1.0.0",
     "styled-components": "^4.3.1",
     "styled-reset": "^2.0.15",
     "typeface-bungee": "0.0.72",

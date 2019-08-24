@@ -1,9 +1,6 @@
 var colors = {
-  primary: ['#8C7AAE', '#665091', '#462E74', '#2C1657', '#18063A'],
-  secondary: [
-    ['#C7E99B', '#98C261', '#6E9B34', '#4A7413', '#2C4E00'],
-    ['#FFD6AA', '#D4A26A', '#AA7439', '#804D15', '#552C00']
-  ],
+  primary: '#462E74',
+  secondary: ['#6E9B34', '#AA7439'],
   // prev:
   // - http://paletton.com/#uid=54m0X0kllllaFw0g0qFqFg0w0aF
   /*

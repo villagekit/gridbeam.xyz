@@ -1,6 +1,9 @@
 import React from 'react'
-import { Box, Flex, Text, Link, Image } from 'rebass/styled-components'
+import { Box, Flex, Text, Link, Image, Button } from 'rebass/styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import useTypingEffect from 'use-typing-effect'
+import shader from 'shader'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -25,6 +28,7 @@ function Landing () {
         <Values />
         <Spec />
         <Examples />
+        <Action />
       </Layout>
     </>
   )
@@ -94,7 +98,7 @@ function Hero () {
         background-color: 'white';
         background-image: ${({ theme }) =>
       backgroundImage({
-        fill: theme.colors.secondary[0][3],
+        fill: theme.colors.secondary[0],
         opacity: 0.15
       })};
         background-attachment: fixed;
@@ -102,7 +106,7 @@ function Hero () {
       `}
       sx={{
         height: '100vh',
-        borderBottomWidth: 4,
+        borderBottomWidth: 8,
         borderBottomStyle: 'solid',
         borderBottomColor: 'dark'
       }}
@@ -112,7 +116,7 @@ function Hero () {
       </Text>
       <Text as='p' p={3} fontSize={4} fontFamily='headline'>
         build a &nbsp;
-        <Text as='span' color='primary.2'>
+        <Text as='span' color='primary'>
           {useCase}
         </Text>
       </Text>
@@ -126,6 +130,7 @@ function Hero () {
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
       />
+      <ActionButton />
     </Flex>
   )
 }
@@ -134,27 +139,27 @@ const values = [
   {
     name: 're-use',
     icon: images.recycle,
-    description: 're-use same parts again and again'
+    description: 'build again and again'
   },
   {
     name: 'adapt',
     icon: images.flexible,
-    description: 'build for any situation'
+    description: 'evolve for any situation'
   },
   {
     name: 'share',
     icon: images.share,
-    description: 'collaborate on designs and share your favorites'
-  },
-  {
-    name: 'sustain',
-    icon: images.tree,
-    description: 'live planet friendly'
+    description: 'explore with peers'
   },
   {
     name: 'live',
     icon: images.life,
-    description: 'live with things that survive you'
+    description: 'live long and prosper'
+  },
+  {
+    name: 'sustain',
+    icon: images.tree,
+    description: 'help the planet be happy'
   },
   {
     name: 'play',
@@ -165,7 +170,12 @@ const values = [
 
 function Values () {
   return (
-    <Section title='Why?'>
+    <Section
+      css={`
+        background-color: ${({ theme }) => shader(theme.colors.primary, 0.85)};
+      `}
+      title='Why?'
+    >
       <Flex flexWrap='wrap'>
         {values.map((value, index) => (
           <Value key={index} {...value} />
@@ -198,11 +208,92 @@ function Value (props) {
 
 function Spec () {
   return (
-    <Section title='How?'>
-      <Text fontSize={2} fontFamily='body'>
-        GridBeam: square poles with holes
-      </Text>
-    </Section>
+    <StaticQuery
+      query={graphql`
+        query {
+          gridBeamTriJoint: file(
+            relativePath: { eq: "grid-beam-tri-joint.webp" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+
+          gridBeamBed: file(relativePath: { eq: "grid-beam-bed.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+
+          gridBeamBicycle: file(relativePath: { eq: "grid-beam-bicycle.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Section
+          title='How?'
+          css={`
+            background-color: ${({ theme }) =>
+          shader(theme.colors.secondary[1], 0.85)};
+          `}
+          fontSize={2}
+          fontFamily='body'
+        >
+          <Text p={3}>
+            Grid Beam is a modular construction system using primarily beams and
+            bolts.
+          </Text>
+          <Text p={3}>
+            Each beam has a repeating hole pattern where
+            <Box as='em' p={4} fontSize={4} css={{ display: 'block' }}>
+              the distance between each hole is equal to the width of the beam.
+            </Box>
+            <Image src={images.gridBeam} />
+          </Text>
+          <Text p={3}>
+            When 3 beams join together with 3 bolts, they form a strong bond.
+          </Text>
+          <Image as={Img} fluid={data.gridBeamTriJoint.childImageSharp.fluid} />
+          <Text p={3}>Make a few and you have something.</Text>
+          <Image as={Img} fluid={data.gridBeamBed.childImageSharp.fluid} />
+          <Text p={3}>
+            In the Grid Beam system, there are 5 types of parts:
+            <Box
+              as='ul'
+              px={4}
+              pt={4}
+              pb={2}
+              sx={{
+                listStyleType: 'decimal',
+                display: 'grid',
+                gridTemplateRows: 'auto 1fr auto',
+                gridGap: 4
+              }}
+            >
+              <li>beams (wood, aluminum, or steel)</li>
+              <li>nuts and bolts</li>
+              <li>skins (plywood, sheet metal, or fabric)</li>
+              <li>accessories (wheels, lights, sinks, drawers, etc)</li>
+              <li>
+                adapters, which let you bolt odd-size accessories into the
+                system
+              </li>
+            </Box>
+          </Text>
+          <Text p={3}>Anything is possible!</Text>
+          <Image as={Img} fluid={data.gridBeamBicycle.childImageSharp.fluid} />
+        </Section>
+      )}
+    />
   )
 }
 
@@ -210,35 +301,43 @@ function Spec () {
 const examples = [
   {
     name: 'Desk',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: images.gridBeamDesk0,
     editUrl: '#'
   },
   {
     name: 'Chair',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: images.gridBeamChair,
     editUrl: '#'
   },
   {
-    name: 'Shelves',
-    imageUrl: 'https://via.placeholder.com/150',
+    name: 'Drawer',
+    imageUrl: images.gridBeamDrawer,
     editUrl: '#'
   },
   {
-    name: 'Bedframe',
-    imageUrl: 'https://via.placeholder.com/150',
+    name: 'Desk',
+    imageUrl: images.gridBeamDesk1,
     editUrl: '#'
   },
   {
     name: 'Cube',
-    imageUrl: 'https://via.placeholder.com/150',
+    imageUrl: images.gridBeamCube,
     editUrl: '#'
   }
 ]
 
 function Examples () {
   return (
-    <Section title='What?'>
+    <Section
+      title='What?'
+      css={`
+        background-color: ${({ theme }) =>
+      shader(theme.colors.secondary[0], 0.85)};
+      `}
+    >
       <Box
+        p={3}
+        textAlign='center'
         sx={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -276,18 +375,48 @@ function Example (props) {
   )
 }
 
+function ActionButton (props) {
+  return (
+    <Button
+      as={Link}
+      href='http://www.gridbeam.com/woodproducts.html'
+      fontSize={3}
+      fontFamily='heading'
+      {...props}
+    >
+      Buy a kit
+    </Button>
+  )
+}
+
+function Action () {
+  return (
+    <Section
+      title='Start'
+      css={`
+        background-color: ${({ theme }) => shader(theme.colors.primary, 0.85)};
+      `}
+    >
+      <Flex p={4} flexDirection='column' alignItems='center'>
+        <Image src={images.gridBeamKit} />
+        <ActionButton m={4} />
+      </Flex>
+    </Section>
+  )
+}
+
 function SectionTitle ({ title }) {
   return (
-    <Text as='h2' p={2} fontSize={5} fontFamily='heading'>
+    <Text as='h2' p={[3, 3, 4]} fontSize={5} fontFamily='heading'>
       {title}
     </Text>
   )
 }
 
-function Section ({ title, children }) {
+function Section ({ title, children, ...props }) {
   return (
     <>
-      <Box as='section'>
+      <Box as='section' {...props}>
         <SectionTitle title={title} />
         {children}
       </Box>
