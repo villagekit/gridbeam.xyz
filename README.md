@@ -1,33 +1,10 @@
-# @ahdinosaur's Gatsby starter
+# gridbeam.nz
 
-_work in progress, maybe to help next scuttlebutt.nz website_
+a landing page for [GridBeam](http://gridbeam.com)
 
-TODO: view this starter [live on Netlify](https://gatsby-starter-mdx-basic.netlify.com/)
-
-## Stack
-
-- Content
-  - [`.mdx`](https://mdxjs.com/)
-- Component libraries
-  - [`rebass`](https://rebassjs.org)
-- Component styles
-  - [`styled-components`](https://www.styled-components.com/)
-  - [`styled-system`](https://styled-system.com)
-- Code style
-  - linter: [`standard`](https://standardjs.com/)
-  - formatter: [`prettier-standard`](https://github.com/sheerun/prettier-standard)
-
-## How to run locally
-
-```shell
-git clone git@github.com:ahdinosaur/gatsby-starter
-cd gatsby-starter
-npm install
-npm start
-```
+_work in progress_
 
 ## Attributions
-
 
 - [Share by Aneeque Ahmed from the Noun Project](https://thenounproject.com/search/?q=share&i=836290)
 - [Recycle By Vincent Lynch from the Noun Project](https://thenounproject.com/search/?q=re-usable&i=3863#)
