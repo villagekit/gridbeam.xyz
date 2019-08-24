@@ -1,16 +1,13 @@
 {
-  "name": "gatsby-starter-mdx-basic",
-  "description": "Gatsby starter MDX basic",
+  "name": "gridbeam.nz",
+  "description": "A landing page for GridBeam",
   "version": "1.0.0",
-  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "private": true,
+  "author": "Michael Williams <michael.williams@enspiral.com>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.0.10",
-    "@mdx-js/react": "^1.0.6",
     "gatsby": "^2.3.24",
     "gatsby-image": "^2.0.39",
-    "gatsby-mdx": "^0.6.2",
     "gatsby-plugin-manifest": "^2.0.29",
-    "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-styled-components": "^3.0.7",
@@ -29,10 +26,7 @@
     "typeface-ibm-plex-serif": "0.0.61",
     "use-typing-effect": "^1.1.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -48,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/christopherbiscardi/gatsby-starter-mdx-basic"
+    "url": "https://github.com/ahdinosaur/gridbeam.nz"
   },
   "husky": {
     "hooks": {
