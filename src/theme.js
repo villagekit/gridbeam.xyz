@@ -1,5 +1,19 @@
 var colors = {
-  primary: 'rebeccapurple',
+  primary: ['#8C7AAE', '#665091', '#462E74', '#2C1657', '#18063A'],
+  secondary: [
+    ['#C7E99B', '#98C261', '#6E9B34', '#4A7413', '#2C4E00'],
+    ['#FFD6AA', '#D4A26A', '#AA7439', '#804D15', '#552C00']
+  ],
+  // prev:
+  // - http://paletton.com/#uid=54m0X0kllllaFw0g0qFqFg0w0aF
+  /*
+  primary: ['#8C7AAE', '#665091', '#462E74', '#2C1657', '#18063A'],
+  secondary: [
+    ['#D991AF', '#B55B81', '#913059', '#6D1238', '#48001E'],
+    ['#6D92A0', '#457485', '#27586B', '#103E50', '#022735']
+  ],
+  */
+  // - http://paletton.com/#uid=34t0X0kllllaFw0g0qFqFg0w0aF
   success: '#28a745',
   info: '#17a2b8',
   warning: '#ffc107',
@@ -11,6 +25,7 @@ var colors = {
 }
 
 var fonts = {
+  headline: 'Bungee',
   sans: 'IBM Plex Sans',
   serif: 'IBM Plex Serif'
 }
@@ -47,5 +62,6 @@ export default {
   colors,
   fonts,
   fontSizes,
-  space
+  space,
+  sizes: space
 }

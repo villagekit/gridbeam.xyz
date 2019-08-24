@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 import { Box, Link } from 'rebass/styled-components'
 import reset from 'styled-reset'
 
+import 'typeface-bungee'
 import 'typeface-ibm-plex-sans'
 import 'typeface-ibm-plex-serif'
 
@@ -15,12 +16,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => (
-  <Container>
+const Layout = ({ header, children }) => (
+  <>
     <GlobalStyle />
-    {children}
-    <Footer />
-  </Container>
+    {header}
+    <Container>
+      {children}
+      <Footer />
+    </Container>
+  </>
 )
 
 Layout.propTypes = {

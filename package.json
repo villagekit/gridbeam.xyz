@@ -23,8 +23,10 @@
     "rebass": "^4.0.2",
     "styled-components": "^4.3.1",
     "styled-reset": "^2.0.15",
+    "typeface-bungee": "0.0.72",
     "typeface-ibm-plex-sans": "0.0.61",
-    "typeface-ibm-plex-serif": "0.0.61"
+    "typeface-ibm-plex-serif": "0.0.61",
+    "use-typing-effect": "^1.1.0"
   },
   "keywords": [
     "gatsby"
