@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'Grid Beam - New Zealand',
+    title: 'Grid Beam',
     description:
       'Lego for adults: reconfigurable furniture from sustainable materials',
     author: 'Mikey Williams'
