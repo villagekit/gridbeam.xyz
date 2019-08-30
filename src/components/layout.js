@@ -67,14 +67,14 @@ function Footer () {
       <Link
         p={1}
         target='_window'
-        href='https://github.com/ahdinosaur/gridbeam.nz'
+        href='https://github.com/ahdinosaur/gridbeam.xyz'
         color='primary'
         sx={{
           textDecoration: 'none',
           ':hover': { textDecoration: 'underline' }
         }}
       >
-        gridbeam.nz
+        gridbeam.xyz
       </Link>
       made with
       <span role='img' aria-label='heart' css={{ padding: '0.25rem' }}>

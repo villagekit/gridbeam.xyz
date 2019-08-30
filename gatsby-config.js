@@ -29,8 +29,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'grid-beam-new-zealand',
-        short_name: 'gridbeam-nz',
+        name: 'grid-beam-landing',
+        short_name: 'gridbeam.xyz',
         start_url: '/',
         background_color: '#4B2D73',
         theme_color: '#4B2D73',

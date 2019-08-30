@@ -1,4 +1,4 @@
-# gridbeam.nz
+# gridbeam.xyz
 
 a landing page for [GridBeam](http://gridbeam.com)
 
