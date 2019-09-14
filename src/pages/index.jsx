@@ -268,7 +268,8 @@ function ActionButton (props) {
   return (
     <Button
       as={Link}
-      href='http://www.gridbeam.com/woodproducts.html'
+      forwardedAs={GatsbyLink}
+      to='/buy'
       p={3}
       fontSize={5}
       fontFamily='link'

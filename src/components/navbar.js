@@ -12,6 +12,10 @@ const menuItems = [
     to: '/'
   },
   {
+    label: 'Buy',
+    to: '/buy'
+  },
+  {
     label: 'Examples',
     to: '/examples'
   },
