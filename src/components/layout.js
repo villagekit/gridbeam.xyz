@@ -5,6 +5,8 @@ import { Box, Link } from 'rebass/styled-components'
 import reset from 'styled-reset'
 import shader from 'shader'
 
+import SEO from './seo'
+
 import 'typeface-bungee'
 import 'typeface-ibm-plex-sans'
 import 'typeface-ibm-plex-serif'
@@ -19,6 +21,17 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ header, children }) => (
   <Main>
+    <SEO
+      keywords={[
+        'grid',
+        'beam',
+        'modular',
+        'open',
+        'hardware',
+        'construction',
+        'furniture'
+      ]}
+    />
     <GlobalStyle />
     {header}
     <Body>{children}</Body>

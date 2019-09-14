@@ -28,6 +28,7 @@ var fonts = {
 }
 fonts.heading = fonts.sans
 fonts.body = fonts.serif
+fonts.link = fonts.sans
 
 // http://tachyons.io/docs/typography/scale/
 var fontSizes = [
