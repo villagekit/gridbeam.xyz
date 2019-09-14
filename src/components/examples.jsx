@@ -42,6 +42,8 @@ function Examples (props) {
             const exampleImageFile = data.allFile.nodes.find(
               node => node.base === example.image
             )
+            const exampleImageFileSrc =
+              exampleImageFile.childImageSharp.fluid.src
 
             const exampleImage =
               exampleImageFile == null ? (
@@ -56,7 +58,14 @@ function Examples (props) {
                   }}
                 />
               )
-            return <Example key={index} {...example} image={exampleImage} />
+            return (
+              <Example
+                key={index}
+                url={exampleImageFileSrc}
+                {...example}
+                image={exampleImage}
+              />
+            )
           })}
         </Box>
       )}
