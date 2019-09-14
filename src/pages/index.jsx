@@ -273,6 +273,7 @@ function ActionButton (props) {
       p={3}
       fontSize={5}
       fontFamily='link'
+      fontWeight='bold'
       margin={2}
       sx={{
         backgroundColor: 'primary',
