@@ -245,7 +245,7 @@ function ContributeSection () {
     <Section
       title='Contribute'
       sx={{
-        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+        backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
       }}
     >
       <Text p={4} fontFamily='body'>
