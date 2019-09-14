@@ -46,6 +46,7 @@ function BuyPage () {
     <Layout header={<BuyHeader />}>
       <Navbar />
       <Suppliers suppliers={suppliers} />
+      <ContributeSection />
     </Layout>
   )
 }
@@ -236,5 +237,20 @@ function Products (props) {
         )
       })}
     </Box>
+  )
+}
+
+function ContributeSection () {
+  return (
+    <Section
+      title='Contribute'
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+      }}
+    >
+      <Text p={4} fontFamily='body'>
+        Want to add a supplier? Send me a message!
+      </Text>
+    </Section>
   )
 }

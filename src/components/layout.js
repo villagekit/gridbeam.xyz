@@ -48,10 +48,6 @@ function Main (props) {
     <Box
       as='main'
       {...props}
-      sx={{
-        display: 'grid',
-        gridTemplateRows: 'auto 1fr auto'
-      }}
       css={`
         background-color: ${({ theme }) => shader('#ff', 0.95)};
       `}

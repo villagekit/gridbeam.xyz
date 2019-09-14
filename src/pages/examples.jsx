@@ -7,15 +7,15 @@ import shader from 'shader'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
-import Example from '../components/example'
+import Examples from '../components/examples'
 import background from '../helpers/background'
-import examples from '../data/examples'
 
 function ExamplesPage () {
   return (
     <Layout header={<ExamplesHeader />}>
       <Navbar />
-      <Examples />
+      <ExamplesSection />
+      <ContributeSection />
     </Layout>
   )
 }
@@ -46,28 +46,30 @@ function ExamplesHeader (props) {
   )
 }
 
-function Examples () {
+function ExamplesSection () {
   return (
     <Section
       title='Examples'
-      css={`
-        background-color: ${({ theme }) =>
-      shader(theme.colors.secondary[0], 0.85)};
-      `}
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
+      }}
     >
-      <Box
-        p={3}
-        textAlign='center'
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridGap: 3
-        }}
-      >
-        {examples.map((example, index) => (
-          <Example key={index} {...example} />
-        ))}
-      </Box>
+      <Examples />
+    </Section>
+  )
+}
+
+function ContributeSection () {
+  return (
+    <Section
+      title='Contribute'
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+      }}
+    >
+      <Text p={4} fontFamily='body'>
+        Want to add an example? Send me a message!
+      </Text>
     </Section>
   )
 }

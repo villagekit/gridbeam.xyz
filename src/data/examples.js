@@ -1,31 +1,84 @@
-import * as images from '../images'
-
 // TODO descriptions for a11y
 const examples = [
   {
-    name: 'Desk',
-    imageUrl: images.gridBeamDesk0,
-    editUrl: '#'
+    name: 'Bed',
+    image: 'bed.jpg',
+    playUrl: '#'
   },
   {
     name: 'Chair',
-    imageUrl: images.gridBeamChair,
-    editUrl: '#'
+    image: 'chair-0.jpg',
+    playUrl: '#'
   },
   {
-    name: 'Drawer',
-    imageUrl: images.gridBeamDrawer,
-    editUrl: '#'
+    name: 'Chair',
+    image: 'chair-1.jpg',
+    playUrl: '#'
   },
   {
-    name: 'Desk',
-    imageUrl: images.gridBeamDesk1,
-    editUrl: '#'
+    name: 'Chair',
+    image: 'chair-2.jpg',
+    playUrl: '#'
   },
   {
-    name: 'Cube',
-    imageUrl: images.gridBeamCube,
-    editUrl: '#'
+    name: 'Chair',
+    image: 'chair-3.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Desk 0',
+    image: 'desk-0.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Desk 1',
+    image: 'desk-1.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Desk 2',
+    image: 'desk-2.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Drawers',
+    image: 'drawers.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Hanger',
+    image: 'hanger.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Tricycle',
+    image: 'tricycle-0.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Tricycle',
+    image: 'tricycle-1.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Wall',
+    image: 'wall.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Wardrobe',
+    image: 'wardrobe.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Workbench',
+    image: 'workbench.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'X-Wing',
+    image: 'x-wing.jpg',
+    playUrl: '#'
   }
 ]
 

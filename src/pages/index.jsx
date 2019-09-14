@@ -10,16 +10,17 @@ import * as images from '../images'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
-import Example from '../components/example'
+import Examples from '../components/examples'
 import examples from '../data/examples'
+import Spec from '../components/spec'
 
 function LandingPage () {
   return (
     <Layout header={<Hero />}>
       <Navbar />
       <Values />
-      <Examples />
-      <Spec />
+      <ExamplesSection />
+      <Spec limit />
       <Action />
     </Layout>
   )
@@ -130,10 +131,10 @@ const values = [
 function Values () {
   return (
     <Section
-      css={`
-        background-color: ${({ theme }) => shader(theme.colors.primary, 0.85)};
-      `}
       title='Why?'
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+      }}
     >
       <Flex flexWrap='wrap'>
         {values.map((value, index) => (
@@ -165,28 +166,15 @@ function Value (props) {
   )
 }
 
-function Examples () {
+function ExamplesSection () {
   return (
     <Section
       title='Examples'
-      css={`
-        background-color: ${({ theme }) =>
-      shader(theme.colors.secondary[0], 0.85)};
-      `}
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
+      }}
     >
-      <Box
-        p={3}
-        textAlign='center'
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gridGap: 3
-        }}
-      >
-        {examples.map((example, index) => (
-          <Example key={index} {...example} />
-        ))}
-      </Box>
+      <Examples limit={9} />
       <Flex justifyContent='center'>
         <Button
           as={Link}
@@ -201,66 +189,6 @@ function Examples () {
         </Button>
       </Flex>
     </Section>
-  )
-}
-
-function Spec () {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          gridBeamTriJoint: file(
-            relativePath: { eq: "grid-beam-tri-joint.jpg" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 1024) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <Section
-          title='How?'
-          css={`
-            background-color: ${({ theme }) =>
-          shader(theme.colors.secondary[1], 0.85)};
-          `}
-          fontSize={2}
-          fontFamily='body'
-        >
-          <Text p={3}>
-            Grid Beam is a modular construction system using primarily beams and
-            bolts.
-          </Text>
-          <Text p={3}>
-            Each beam has a repeating hole pattern where
-            <Box as='em' p={4} fontSize={4} css={{ display: 'block' }}>
-              the distance between each hole is equal to the width of the beam.
-            </Box>
-            <Image src={images.gridBeam} />
-          </Text>
-          <Text p={3}>
-            When 3 beams join together with 3 bolts, they form a strong bond.
-          </Text>
-          <Image as={Img} fluid={data.gridBeamTriJoint.childImageSharp.fluid} />
-          <Flex justifyContent='center'>
-            <Button
-              as={Link}
-              forwardedAs={GatsbyLink}
-              to='/spec'
-              m={4}
-              bg='secondary.1'
-              fontSize={4}
-              fontFamily='link'
-            >
-              Learn more
-            </Button>
-          </Flex>
-        </Section>
-      )}
-    />
   )
 }
 
@@ -301,16 +229,36 @@ function ActionButton (props) {
 
 function Action () {
   return (
-    <Section
-      title='Get Started'
-      css={`
-        background-color: ${({ theme }) => shader(theme.colors.primary, 0.85)};
+    <StaticQuery
+      query={graphql`
+        query {
+          gridBeamKit: file(relativePath: { eq: "grid-beam-kit.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       `}
-    >
-      <Flex p={4} flexDirection='column' alignItems='center'>
-        <Image src={images.gridBeamKit} />
-        <ActionButton m={4} />
-      </Flex>
-    </Section>
+      render={data => (
+        <Section
+          title='Get Started'
+          css={`
+            background-color: ${({ theme }) =>
+          shader(theme.colors.primary, 0.85)};
+          `}
+        >
+          <Flex p={4} flexDirection='column' alignItems='center'>
+            <Image
+              as={Img}
+              width='32rem'
+              fluid={data.gridBeamKit.childImageSharp.fluid}
+            />
+            <ActionButton m={4} />
+          </Flex>
+        </Section>
+      )}
+    />
   )
 }
