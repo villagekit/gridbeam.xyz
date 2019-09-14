@@ -37,7 +37,7 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/icon.png'
       }
-    },
+    }
     // 'gatsby-plugin-offline',
   ]
 }

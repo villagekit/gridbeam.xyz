@@ -32,8 +32,10 @@ function Navbar (props) {
       <Flex
         as={Toolbar}
         {...toolbar}
-        justifyContent='center'
-        alignItems='center'
+        css={{
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
         aria-label='Navigation'
         bg='muted'
       >
@@ -59,7 +61,7 @@ function NavbarItem (props) {
 
 const NavbarItemButton = forwardRef((props, ref) => {
   const { to, children } = props
-  return <ReaButton as={NavbarLink} to={to} children={children} />
+  return <ReaButton ref={ref} as={NavbarLink} to={to} children={children} />
 })
 
 const onlyIfNotActive = ({ isCurrent }) => {
