@@ -38,8 +38,8 @@ function SpecHeader (props) {
         borderBottomColor: 'dark'
       }}
     >
-      <Text as='h1' p={3} fontSize={7} fontFamily='headline'>
-        Grid Beam Specification
+      <Text as='h1' p={3} fontSize={[5, 6, 7]} fontFamily='headline'>
+        Grid Beam Spec
       </Text>
     </Flex>
   )
@@ -129,6 +129,7 @@ function SpecContent (props) {
           </Text>
           <Text p={3}>Anything is possible!</Text>
           <Image as={Img} fluid={data.gridBeamBicycle.childImageSharp.fluid} />
+          <Text p={3}>Blah blah blah!</Text>
         </Section>
       )}
     />

@@ -69,7 +69,7 @@ function BuyHeader (props) {
         borderBottomColor: 'dark'
       }}
     >
-      <Text as='h1' p={3} fontSize={7} fontFamily='headline'>
+      <Text as='h1' p={3} fontSize={[5, 6, 7]} fontFamily='headline'>
         Buy Grid Beam
       </Text>
     </Flex>
@@ -92,9 +92,6 @@ function Suppliers (props) {
             <Breakline
               color={({ colors }) => shader(colors.primary, 0.7)}
               width='10%'
-              css={{
-                margin: '0 auto'
-              }}
             />
             <Supplier {...supplier} />
           </>
@@ -115,7 +112,7 @@ function Supplier (props) {
   } = props
 
   return (
-    <Box as='li' m={4}>
+    <Box as='li' my={[3, 3, 4]} mx={[2, 3, 4]}>
       <Link
         href={href}
         target='_window'
@@ -130,22 +127,27 @@ function Supplier (props) {
       </Link>
       <Box
         as='dl'
-        m={3}
+        my={3}
+        mx={[1, 2, 3]}
         sx={{
           dt: {
+            fontSize: 1,
             marginBottom: 2
+          },
+          dd: {
+            fontSize: 1
           }
         }}
         css={{
           dt: {
             display: 'inline-block',
-            width: '30%',
+            width: '50%',
             fontFamily: 'heading',
             fontWeight: 'bold'
           },
           'dd:not(:nth-child(8))': {
             display: 'inline-block',
-            width: '70%'
+            width: '50%'
           }
         }}
       >
@@ -174,14 +176,21 @@ function Products (props) {
     <Box
       as='table'
       sx={{
-        th: {
-          fontFamily: 'heading',
-          fontWeight: 'bold',
-          fontSize: 2
-        },
         tr: {
           paddingTop: 3,
           paddingBottom: 3
+        },
+        th: {
+          fontFamily: 'heading',
+          fontWeight: 'bold'
+        },
+        'td, th': {
+          fontSize: 0,
+          paddingLeft: 1,
+          paddingRight: 1
+        },
+        'td:first-child': {
+          paddingLeft: 0
         }
       }}
       css={{

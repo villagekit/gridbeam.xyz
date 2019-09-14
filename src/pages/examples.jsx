@@ -39,7 +39,7 @@ function ExamplesHeader (props) {
         borderBottomColor: 'dark'
       }}
     >
-      <Text as='h1' p={3} fontSize={7} fontFamily='headline'>
+      <Text as='h1' p={3} fontSize={[5, 6, 7]} fontFamily='headline'>
         Grid Beam Examples
       </Text>
     </Flex>
