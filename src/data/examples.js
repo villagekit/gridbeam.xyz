@@ -7,47 +7,7 @@ const examples = [
   },
   {
     name: 'Chair',
-    image: 'chair-0.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Chair',
-    image: 'chair-1.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Chair',
     image: 'chair-2.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Chair',
-    image: 'chair-3.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Desk 0',
-    image: 'desk-0.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Desk 1',
-    image: 'desk-1.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Desk 2',
-    image: 'desk-2.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Drawers',
-    image: 'drawers.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Hanger',
-    image: 'hanger.jpg',
     playUrl: '#'
   },
   {
@@ -56,13 +16,8 @@ const examples = [
     playUrl: '#'
   },
   {
-    name: 'Tricycle',
-    image: 'tricycle-1.jpg',
-    playUrl: '#'
-  },
-  {
-    name: 'Wall',
-    image: 'wall.jpg',
+    name: 'Desk 0',
+    image: 'desk-0.jpg',
     playUrl: '#'
   },
   {
@@ -76,8 +31,53 @@ const examples = [
     playUrl: '#'
   },
   {
+    name: 'Wall',
+    image: 'wall.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Drawers',
+    image: 'drawers.jpg',
+    playUrl: '#'
+  },
+  {
     name: 'X-Wing',
     image: 'x-wing.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Desk 2',
+    image: 'desk-2.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Hanger',
+    image: 'hanger.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Chair',
+    image: 'chair-0.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Desk 1',
+    image: 'desk-1.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Chair',
+    image: 'chair-1.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Tricycle',
+    image: 'tricycle-1.jpg',
+    playUrl: '#'
+  },
+  {
+    name: 'Chair',
+    image: 'chair-3.jpg',
     playUrl: '#'
   }
 ]
