@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
 import * as images from '../images'
-import createBackgroundImage from '../helpers/background'
+import background from '../helpers/background'
 
 function SpecPage () {
   return (
@@ -30,15 +30,7 @@ function SpecHeader (props) {
       alignItems='center'
       textAlign='center'
       css={`
-        // https://www.heropatterns.com/
-        background-color: 'white';
-        background-image: ${({ theme }) =>
-      createBackgroundImage({
-        fill: theme.colors.secondary[0],
-        opacity: 0.15
-      })};
-        background-attachment: fixed;
-        background-position: center;
+        ${background}
       `}
       sx={{
         borderBottomWidth: 8,
@@ -86,8 +78,7 @@ function SpecContent (props) {
         }
       `}
       render={data => (
-        <Box
-          as='section'
+        <Section
           css={`
             background-color: ${({ theme }) =>
           shader(theme.colors.secondary[1], 0.85)};
@@ -138,7 +129,7 @@ function SpecContent (props) {
           </Text>
           <Text p={3}>Anything is possible!</Text>
           <Image as={Img} fluid={data.gridBeamBicycle.childImageSharp.fluid} />
-        </Box>
+        </Section>
       )}
     />
   )

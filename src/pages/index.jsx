@@ -5,11 +5,13 @@ import Img from 'gatsby-image'
 import useTypingEffect from 'use-typing-effect'
 import shader from 'shader'
 
+import background from '../helpers/background'
+import * as images from '../images'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
-import * as images from '../images'
-import createBackgroundImage from '../helpers/background'
+import Example from '../components/example'
+import examples from '../data/examples'
 
 function LandingPage () {
   return (
@@ -59,15 +61,7 @@ function Hero () {
       alignItems='center'
       textAlign='center'
       css={`
-        // https://www.heropatterns.com/
-        background-color: 'white';
-        background-image: ${({ theme }) =>
-      createBackgroundImage({
-        fill: theme.colors.secondary[0],
-        opacity: 0.15
-      })};
-        background-attachment: fixed;
-        background-position: center;
+        ${background}
       `}
       sx={{
         height: '100vh',
@@ -171,35 +165,6 @@ function Value (props) {
   )
 }
 
-// TODO descriptions for a11y
-const examples = [
-  {
-    name: 'Desk',
-    imageUrl: images.gridBeamDesk0,
-    editUrl: '#'
-  },
-  {
-    name: 'Chair',
-    imageUrl: images.gridBeamChair,
-    editUrl: '#'
-  },
-  {
-    name: 'Drawer',
-    imageUrl: images.gridBeamDrawer,
-    editUrl: '#'
-  },
-  {
-    name: 'Desk',
-    imageUrl: images.gridBeamDesk1,
-    editUrl: '#'
-  },
-  {
-    name: 'Cube',
-    imageUrl: images.gridBeamCube,
-    editUrl: '#'
-  }
-]
-
 function Examples () {
   return (
     <Section
@@ -222,30 +187,20 @@ function Examples () {
           <Example key={index} {...example} />
         ))}
       </Box>
+      <Flex justifyContent='center'>
+        <Button
+          as={Link}
+          forwardedAs={GatsbyLink}
+          to='/examples'
+          m={4}
+          bg='secondary.0'
+          fontSize={4}
+          fontFamily='link'
+        >
+          See more
+        </Button>
+      </Flex>
     </Section>
-  )
-}
-
-function Example (props) {
-  const { name, imageUrl, editUrl } = props
-
-  return (
-    <Flex flexDirection='column' alignItems='center' m={2} p={2}>
-      <Link
-        href={editUrl}
-        target='_window'
-        color='primary'
-        sx={{
-          textDecoration: 'none',
-          ':hover': { textDecoration: 'underline' }
-        }}
-      >
-        <Text as='h3' fontSize={2} fontFamily='heading' textAlign='center'>
-          {name}
-        </Text>
-        <Image src={imageUrl} />
-      </Link>
-    </Flex>
   )
 }
 

@@ -1,3 +1,5 @@
+import { css } from 'styled-components'
+
 const createBackgroundImage = ({ fill, opacity }) =>
   'url("data:image/svg+xml,' +
   encodeURIComponent(
@@ -9,4 +11,16 @@ const createBackgroundImage = ({ fill, opacity }) =>
   ) +
   '")'
 
-module.exports = createBackgroundImage
+const background = css`
+  // https://www.heropatterns.com/
+  background-color: 'white';
+  background-image: ${({ theme }) =>
+    createBackgroundImage({
+      fill: theme.colors.secondary[0],
+      opacity: 0.15
+    })};
+  background-attachment: fixed;
+  background-position: center;
+`
+
+export default background
