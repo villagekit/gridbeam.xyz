@@ -42,7 +42,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '1',
-        matomoUrl: 'https://analytics.mikey.nz/',
+        matomoUrl: 'https://analytics.mikey.nz',
         siteUrl: 'https://gridbeam.xyz'
       }
     }
