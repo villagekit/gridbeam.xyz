@@ -1,5 +1,7 @@
 import React from 'react'
-import { Flex, Text } from 'rebass/styled-components'
+import { Flex, Text, Link, Image, Button } from 'rebass/styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import shader from 'shader'
 
 import Layout from '../components/layout'
@@ -13,6 +15,7 @@ function SpecPage () {
     <Layout header={<SpecHeader />}>
       <Navbar />
       <Spec />
+      <BookSection />
       <ContributeSection />
     </Layout>
   )
@@ -41,6 +44,64 @@ function SpecHeader (props) {
         Grid Beam Spec
       </Text>
     </Flex>
+  )
+}
+
+function BookSection () {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          book: file(
+            relativePath: { eq: "how-to-build-with-grid-beam-book.jpg" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Section
+          title='Read the book'
+          sx={{
+            backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
+          }}
+        >
+          <Text p={4} fontFamily='body'>
+            "How to Build With Grid Beam" by Phil Jergenson, Richard Jergenson &
+            Wilma Keppel
+          </Text>
+          <Flex flexDirection='row' justifyContent='center'>
+            <Image
+              as={Img}
+              width='16rem'
+              fluid={data.book.childImageSharp.fluid}
+            />
+          </Flex>
+          <Flex p={4} flexDirection='row' justifyContent='center'>
+            <Button
+              as={Link}
+              mx={2}
+              fontSize={4}
+              href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-PDF'
+            >
+              PDF
+            </Button>
+            <Button
+              as={Link}
+              mx={2}
+              fontSize={4}
+              href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-EPUB'
+            >
+              EPUB
+            </Button>
+          </Flex>
+        </Section>
+      )}
+    />
   )
 }
 
