@@ -37,6 +37,14 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/icon.png'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '1',
+        matomoUrl: 'https://analytics.mikey.nz/',
+        siteUrl: 'https://gridbeam.xyz'
+      }
     }
     // 'gatsby-plugin-offline',
   ]
