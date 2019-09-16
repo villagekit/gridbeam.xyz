@@ -8,22 +8,22 @@ import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
 import background from '../helpers/background'
-import Spec from '../components/spec'
+import Guide from '../components/guide'
 
-function SpecPage () {
+function GuidePage () {
   return (
-    <Layout header={<SpecHeader />}>
+    <Layout header={<GuideHeader />}>
       <Navbar />
-      <Spec />
+      <Guide />
       <BookSection />
       <ContributeSection />
     </Layout>
   )
 }
 
-export default SpecPage
+export default GuidePage
 
-function SpecHeader (props) {
+function GuideHeader (props) {
   return (
     <Flex
       as='header'
@@ -41,7 +41,7 @@ function SpecHeader (props) {
       }}
     >
       <Text as='h1' p={3} fontSize={[5, 6, 7]} fontFamily='headline'>
-        Grid Beam Spec
+        Grid Beam Guide
       </Text>
     </Flex>
   )

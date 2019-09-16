@@ -1,10 +1,8 @@
-const path = require('path')
-
 module.exports = {
   siteMetadata: {
     title: 'Grid Beam',
     description:
-      'Lego for adults: reconfigurable furniture from sustainable materials',
+      'Build what you imagine: Grid Beam is a clean, re-usable construction system to build anything from furniture to small vehicles and house structures.',
     author: 'Mikey Williams'
   },
   plugins: [

@@ -20,8 +20,8 @@ const menuItems = [
     to: '/examples'
   },
   {
-    label: 'Spec',
-    to: '/spec'
+    label: 'Guide',
+    to: '/guide'
   }
 ]
 

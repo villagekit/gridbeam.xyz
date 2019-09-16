@@ -11,8 +11,7 @@ import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Section from '../components/section'
 import Examples from '../components/examples'
-import examples from '../data/examples'
-import Spec from '../components/spec'
+import Guide from '../components/guide'
 
 function LandingPage () {
   return (
@@ -20,7 +19,7 @@ function LandingPage () {
       <Navbar />
       <Values />
       <ExamplesSection />
-      <Spec limit />
+      <Guide limit />
       <Action />
     </Layout>
   )
