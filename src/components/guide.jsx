@@ -112,6 +112,15 @@ function Guide (props) {
             }
           }
 
+          compatibleLengths: file(
+            relativePath: { eq: "guide/compatible-lengths.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           sizes: file(relativePath: { eq: "guide/sizes.png" }) {
             childImageSharp {
               fluid(maxWidth: 1024) {
@@ -298,6 +307,13 @@ function Guide (props) {
                 </GuideTable>
               </GuideText>
               <GuideText>
+                Different beam lengths are still compatible:
+                <GuideImage
+                  as={Img}
+                  fluid={data.compatibleLengths.childImageSharp.fluid}
+                />
+              </GuideText>
+              <GuideText>
                 Common beam and panel lengths: TODO
                 <GuideImage as={Img} fluid={data.sizes.childImageSharp.fluid} />
               </GuideText>
@@ -382,7 +398,7 @@ function GuideText (props) {
 
 function GuideImage (props) {
   return (
-    <Flex justifyContent='center' alignItems='center'>
+    <Flex p={3} justifyContent='center' alignItems='center'>
       <Image width={[1 / 2]} {...props} />
     </Flex>
   )
