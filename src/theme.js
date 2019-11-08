@@ -1,4 +1,4 @@
-var colors = {
+export const colors = {
   primary: '#462E74',
   secondary: ['#6E9B34', '#AA7439'],
   // prev:
@@ -21,7 +21,7 @@ var colors = {
   dark: '#343a40'
 }
 
-var fonts = {
+export var fonts = {
   headline: 'Bungee',
   sans: 'IBM Plex Sans',
   serif: 'IBM Plex Serif'
@@ -31,7 +31,7 @@ fonts.body = fonts.serif
 fonts.link = fonts.sans
 
 // http://tachyons.io/docs/typography/scale/
-var fontSizes = [
+export const fontSizes = [
   '0.875rem', // 0
   '1rem', // 1
   '1.25rem', // 2
@@ -43,7 +43,7 @@ var fontSizes = [
 ]
 
 // http://tachyons.io/docs/layout/spacing/
-const space = [
+export const space = [
   '0rem', // 0
   '0.25rem', // 1
   '0.5rem', // 2

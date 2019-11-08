@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import { keyBy, range } from 'lodash'
 import { Box, Flex, Text, Link, Image, Button } from 'rebass/styled-components'
 import { StaticQuery, graphql, Link as GatsbyLink } from 'gatsby'
 import Img from 'gatsby-image'
 import shader from 'shader'
 
 import Section from '../components/section'
+import systems from '../data/systems'
+import { colors } from '../theme'
 
 function Guide (props) {
   const { limit = false } = props
@@ -244,79 +247,7 @@ function Guide (props) {
             </SubSection>
             <SubSection title='Sizes'>
               <GuideText>Grid Beam thrives with standard sizes.</GuideText>
-              <GuideText>
-                Common beam widths:
-                <GuideTable>
-                  <tr>
-                    <th>imperial</th>
-                    <th>metric</th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <sup>3</sup>&frasl;<sub>4</sub> inch
-                    </td>
-                    <td>20mm</td>
-                  </tr>
-                  <tr>
-                    <td>1 inch</td>
-                    <td>25 mm</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      1 <sup>1</sup>&frasl;<sub>2</sub> inch
-                    </td>
-                    <td>40 mm</td>
-                  </tr>
-                  <tr>
-                    <td>2 inches</td>
-                    <td>50 mm</td>
-                  </tr>
-                </GuideTable>
-              </GuideText>
-              <GuideText>
-                Common bolt diameters: (for wood beams)
-                <GuideTable>
-                  <tr>
-                    <th>imperial</th>
-                    <th>metric</th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <sup>1</sup>&frasl;<sub>4</sub> inch
-                    </td>
-                    <td>6 mm</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <sup>5</sup>&frasl;<sub>16</sub> inch
-                    </td>
-                    <td>8 mm</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <sup>3</sup>&frasl;<sub>8</sub> inch
-                    </td>
-                    <td>9.5 mm</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <sup>7</sup>&frasl;<sub>16</sub> inch
-                    </td>
-                    <td>11 mm</td>
-                  </tr>
-                </GuideTable>
-              </GuideText>
-              <GuideText>
-                Different beam lengths are still compatible:
-                <GuideImage
-                  as={Img}
-                  fluid={data.compatibleLengths.childImageSharp.fluid}
-                />
-              </GuideText>
-              <GuideText>
-                Common beam and panel lengths: TODO
-                <GuideImage as={Img} fluid={data.sizes.childImageSharp.fluid} />
-              </GuideText>
+              <GridBeamSizesHelper systems={systems} />
             </SubSection>
             <SubSection title='Accessories and Adapters'>
               <GuideText>TODO</GuideText>
@@ -392,14 +323,19 @@ function SubSection ({ title, children }) {
   )
 }
 
+function GuideBox (props) {
+  return <Box p={3} {...props} />
+}
+
 function GuideText (props) {
   return <Text p={3} {...props} />
 }
 
 function GuideImage (props) {
+  const { children } = props
   return (
     <Flex p={3} justifyContent='center' alignItems='center'>
-      <Image width={[1 / 2]} {...props} />
+      {children || <Image width={[1 / 2]} {...props} />}
     </Flex>
   )
 }
@@ -419,5 +355,157 @@ function GuideTable (props) {
       }}
       {...props}
     />
+  )
+}
+
+/*
+function CompatibleLengthsGraphic (props) {
+  const totalWidth = 20 + 25 + 40 + 50 + 4 * 10
+  const totalHeight = 400
+  return (
+    <svg width={totalWidth} height={totalHeight}>
+      // 20 mm
+      <rect x='0' width={40} height={totalHeight} rx={5} />
+      {range(0, totalHeight / 40).map(index => (
+        <circle cx={20} cy={40 * (index + 0.5)} r={9.5} fill='white' />
+      ))}
+      // 40 mm
+      <rect x='0' width={40} height={totalHeight} rx={5} />
+      {range(0, totalHeight / 40).map(index => (
+        <circle cx={20} cy={40 * (index + 0.5)} r={9.5} fill='white' />
+      ))}
+    </svg>
+  )
+}
+*/
+
+const INCH_TO_MM = 25.4
+
+function GridBeamSizesHelper (props) {
+  const { systems } = props
+
+  const [currentSystemId, setCurrentSystemId] = useState(systems[0].id)
+
+  const systemsById = useMemo(() => keyBy(systems, 'id'), [systems])
+  const currentSystem = systemsById[currentSystemId]
+  const {
+    label,
+    systemOfMeasurement,
+    sizes,
+    defaultSizeId,
+    materials,
+    defaultMaterialId
+  } = currentSystem
+
+  const [currentSizeId, setCurrentSizeId] = useState(defaultSizeId)
+  const [currentMaterialId, setCurrentMaterialId] = useState(defaultMaterialId)
+  useEffect(() => {
+    setCurrentSizeId(defaultSizeId)
+    setCurrentMaterialId(defaultMaterialId)
+  }, [currentSystemId])
+
+  const materialsById = useMemo(() => keyBy(materials, 'id'), [materials])
+  const sizesById = useMemo(() => keyBy(sizes, 'id'), [sizes])
+  const size = sizesById[currentSizeId]
+  const material = materialsById[currentMaterialId]
+
+  return <GridBeamSystemsList systems={systems} />
+}
+
+function GridBeamSystemsList (props) {
+  const { systems } = props
+
+  return (
+    <Box as='ul'>
+      {systems.map((system, index) => (
+        <Box as='li'>
+          <GridBeamSystemInfo
+            system={system}
+            bg={
+              index % 2 == 0
+                ? shader(colors.secondary[1], 0.7)
+                : shader(colors.secondary[1], 0.9)
+            }
+          />
+        </Box>
+      ))}
+    </Box>
+  )
+}
+
+function GridBeamSystemInfo (props) {
+  const { system, ...restProps } = props
+  const { label, systemOfMeasurement, sizes, materials } = system
+
+  const sizesById = useMemo(() => keyBy(sizes, 'id'), [sizes])
+
+  return (
+    <GuideBox
+      {...restProps}
+      sx={{
+        dl: {
+          display: 'flex',
+          flexFlow: 'row',
+          flexWrap: 'wrap',
+          width: '600px',
+          overflow: 'visible',
+          marginLeft: 3
+        },
+        dt: {
+          marginTop: 3,
+          flex: '0 0 50%',
+          fontWeight: 'bold'
+        },
+        dd: {
+          marginTop: 3,
+          flex: '0 0 50%',
+          marginLeft: 'auto'
+        }
+      }}
+    >
+      <dl>
+        <dt>Name</dt>
+        <dd>{label}</dd>
+        <dt>System of measurement</dt>
+        <dd>{systemOfMeasurement}</dd>
+      </dl>
+      <GuideTable>
+        <thead>
+          <tr>
+            <th>material</th>
+            <th>beam width</th>
+            <th>hole diameter</th>
+            <th>bolt diameter</th>
+          </tr>
+        </thead>
+        <tbody>
+          {materials.map(currentMaterial => {
+            const {
+              id: materialId,
+              label: materialLabel,
+              sizes: materialSizes
+            } = currentMaterial
+            const currentSizes = materialSizes.map(materialSize => {
+              return Object.assign({}, materialSize, sizesById[materialSize.id])
+            })
+            return currentSizes.map(currentSize => {
+              const {
+                beamWidthLabel,
+                holeDiameterLabel,
+                boltDiameterLabel
+              } = currentSize
+              return (
+                <tr>
+                  <td>{materialLabel}</td>
+                  <td>{beamWidthLabel}</td>
+                  <td>{holeDiameterLabel}</td>
+                  <td>{boltDiameterLabel}</td>
+                </tr>
+              )
+            })
+          })}
+        </tbody>
+      </GuideTable>
+    </GuideBox>
   )
 }
