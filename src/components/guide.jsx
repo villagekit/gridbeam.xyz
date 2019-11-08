@@ -444,22 +444,18 @@ function GridBeamSystemInfo (props) {
       {...restProps}
       sx={{
         dl: {
-          display: 'flex',
-          flexFlow: 'row',
-          flexWrap: 'wrap',
-          width: '600px',
-          overflow: 'visible',
-          marginLeft: 3
+          fontSize: 3
         },
         dt: {
-          marginTop: 3,
-          flex: '0 0 50%',
+          display: 'inline-block',
+          width: '50%',
+          marginY: 2,
+          fontFamily: 'heading',
           fontWeight: 'bold'
         },
-        dd: {
-          marginTop: 3,
-          flex: '0 0 50%',
-          marginLeft: 'auto'
+        'dd:not(:nth-child(3))': {
+          display: 'inline-block',
+          width: '50%'
         }
       }}
     >

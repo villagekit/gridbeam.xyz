@@ -157,8 +157,88 @@ const GRID_BEAM_SYSTEMS = [
     ]
   },
   {
-    id: 'metric-proto-40',
-    label: 'metric prototype 40mm (WIP)',
+    id: 'open-source-ecology-wiki',
+    label: 'https://wiki.opensourceecology.org/wiki/Gridbeam',
+    systemOfMeasurement: 'metric',
+    defaultSizeId: '40mm',
+    sizes: [
+      {
+        id: '25mm',
+        beamWidth: 25,
+        beamWidthLabel: '25 mm'
+      },
+      {
+        id: '40mm',
+        beamWidth: 40,
+        beamWidthLabel: '40 mm'
+      },
+      {
+        id: '50mm',
+        beamWidth: 50,
+        beamWidthLabel: '50 mm'
+      }
+    ],
+    defaultMaterialId: 'wood',
+    materials: [
+      {
+        id: 'wood',
+        label: 'wood',
+        sizes: [
+          {
+            id: '25mm',
+            holeDiameter: 8,
+            holeDiameterLabel: '8 mm',
+            boltDiameter: 6,
+            boltDiameterLabel: '6 mm'
+          },
+          {
+            id: '40mm',
+            holeDiameter: 11,
+            holeDiameterLabel: '11 mm',
+            boltDiameter: 9,
+            boltDiameterLabel: '9 mm'
+          },
+          {
+            id: '50mm',
+            holeDiameter: 14,
+            holeDiameterLabel: '14 mm',
+            boltDiameter: 12,
+            boltDiameterLabel: '12 mm'
+          }
+        ]
+      },
+      {
+        id: 'metal',
+        label: 'metal',
+        sizes: [
+          {
+            id: '25mm',
+            holeDiameter: 7,
+            holeDiameterLabel: '7 mm',
+            boltDiameter: 6,
+            boltDiameterLabel: '6 mm'
+          },
+          {
+            id: '40mm',
+            holeDiameter: 10,
+            holeDiameterLabel: '10 mm',
+            boltDiameter: 9,
+            boltDiameterLabel: '9 mm'
+          },
+          {
+            id: '50mm',
+            holeDiameter: 13,
+            holeDiameterLabel: '13 mm',
+            boltDiameter: 12,
+            boltDiameterLabel: '12 mm'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'grid-beam-xyz',
+    label: 'gridbeam.xyz prototype (WIP)',
     systemOfMeasurement: 'metric',
     defaultSizeId: '40mm',
     sizes: [
