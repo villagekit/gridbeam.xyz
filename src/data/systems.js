@@ -8,17 +8,51 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: '1.5in',
         beamWidth: 1.5,
-        beamWidthLabel: '1 1/2 inch'
+        beamWidthLabel: '1 1/2 inch',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 5 / 16,
+            holeDiameterLabel: '5/16 inch',
+            boltDiameter: 1 / 4,
+            boltDiameterLabel: '1/4 inch'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 13 / 32,
+            holeDiameterLabel: '13/32 inch',
+            boltDiameter: 3 / 8,
+            boltDiameterLabel: '3/8 inch'
+          }
+        ]
       },
       {
         id: '2in',
         beamWidth: 2,
-        beamWidthLabel: '2 inch'
+        beamWidthLabel: '2 inch',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 7 / 16,
+            holeDiameterLabel: '7/16 inch',
+            boltDiameter: 3 / 8,
+            boltDiameterLabel: '3/8 inch'
+          }
+        ]
       },
       {
         id: '3in',
         beamWidth: 3,
-        beamWidthLabel: '3 inch'
+        beamWidthLabel: '3 inch',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 3 / 4,
+            holeDiameterLabel: '3/4 inch',
+            boltDiameter: 1 / 2,
+            boltDiameterLabel: '1/2 inch'
+          }
+        ]
       }
     ],
     defaultMaterialId: 'wood',
@@ -26,55 +60,20 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: 'wood',
         label: 'wood',
-        sizes: [
-          {
-            id: '1.5in',
-            holeDiameter: 5 / 16,
-            holeDiameterLabel: '5/16 inch',
-            boltDiameter: 1 / 4,
-            boltDiameterLabel: '1/4 inch'
-          }
-        ]
+        sizeIds: ['1.5in'],
+        holeId: 'wood'
       },
       {
         id: 'aluminum',
         label: 'aluminum',
-        sizes: [
-          {
-            id: '1.5in',
-            holeDiameter: 13 / 32,
-            holeDiameterLabel: '13/32 inch',
-            boltDiameter: 3 / 8,
-            boltDiameterLabel: '3/8 inch'
-          },
-          {
-            id: '2in',
-            holeDiameter: 7 / 16,
-            holeDiameterLabel: '7/16 inch',
-            boltDiameter: 3 / 8,
-            boltDiameterLabel: '3/8 inch'
-          },
-          {
-            id: '3in',
-            holeDiameter: 3 / 4,
-            holeDiameterLabel: '3/4 inch',
-            boltDiameter: 1 / 2,
-            boltDiameterLabel: '1/2 inch'
-          }
-        ]
+        sizeIds: ['1.5in', '2in', '3in'],
+        holeId: 'metal'
       },
       {
         id: 'steel',
         label: 'steel',
-        sizes: [
-          {
-            id: '2in',
-            holeDiameter: 7 / 16,
-            holeDiameterLabel: '7/16 inch',
-            boltDiameter: 3 / 8,
-            boltDiameterLabel: '3/8 inch'
-          }
-        ]
+        sizeIds: ['2in'],
+        holeId: 'metal'
       }
     ]
   },
@@ -87,22 +86,65 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: '0.75in',
         beamWidth: 0.75,
-        beamWidthLabel: '3/4 inch'
+        beamWidthLabel: '3/4 inch',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 9 / 32,
+            holeDiameterLabel: '9/32 inch',
+            boltDiameter: 1 / 4,
+            boltDiameterLabel: '1/4 inch'
+          }
+        ]
       },
       {
         id: '1in',
         beamWidth: 1,
-        beamWidthLabel: '1 inch'
+        beamWidthLabel: '1 inch',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 11 / 32,
+            holeDiameterLabel: '11/32 inch',
+            boltDiameter: 5 / 16,
+            boltDiameterLabel: '5/16 inch'
+          }
+        ]
       },
       {
         id: '1.5in',
         beamWidth: 1.5,
-        beamWidthLabel: '1 1/2 inch'
+        beamWidthLabel: '1 1/2 inch',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 5 / 16,
+            holeDiameterLabel: '5/16 inch',
+            boltDiameter: 1 / 4,
+            boltDiameterLabel: '1/4 inch'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 21 / 64,
+            holeDiameterLabel: '21/64 inch',
+            boltDiameter: 5 / 16,
+            boltDiameterLabel: '5/16 inch'
+          }
+        ]
       },
       {
         id: '2in',
         beamWidth: 2,
-        beamWidthLabel: '2 inch'
+        beamWidthLabel: '2 inch',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 7 / 16,
+            holeDiameterLabel: '7/16 inch',
+            boltDiameter: 3 / 8,
+            boltDiameterLabel: '3/8 inch'
+          }
+        ]
       }
     ],
     defaultMaterialId: 'wood',
@@ -110,49 +152,14 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: 'wood',
         label: 'wood',
-        sizes: [
-          {
-            id: '1.5in',
-            holeDiameter: 5 / 16,
-            holeDiameterLabel: '5/16 inch',
-            boltDiameter: 1 / 4,
-            boltDiameterLabel: '1/4 inch'
-          }
-        ]
+        sizeIds: ['1.5in'],
+        holeId: 'wood'
       },
       {
         id: 'metal',
         label: 'metal',
-        sizes: [
-          {
-            id: '0.75in',
-            holeDiameter: 9 / 32,
-            holeDiameterLabel: '9/32 inch',
-            boltDiameter: 1 / 4,
-            boltDiameterLabel: '1/4 inch'
-          },
-          {
-            id: '1in',
-            holeDiameter: 11 / 32,
-            holeDiameterLabel: '11/32 inch',
-            boltDiameter: 5 / 16,
-            boltDiameterLabel: '5/16 inch'
-          },
-          {
-            id: '1.5in',
-            holeDiameter: 21 / 64,
-            holeDiameterLabel: '21/64 inch',
-            boltDiameter: 5 / 16,
-            boltDiameterLabel: '5/16 inch'
-          },
-          {
-            id: '2in',
-            holeDiameter: 7 / 16,
-            holeDiameterLabel: '7/16 inch',
-            boltDiameter: 3 / 8,
-            boltDiameterLabel: '3/8 inch'
-          }
-        ]
+        sizeIds: ['0.75in', '1in', '1.5in', '2in'],
+        holeId: 'metal'
       }
     ]
   },
@@ -165,17 +172,65 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: '25mm',
         beamWidth: 25,
-        beamWidthLabel: '25 mm'
+        beamWidthLabel: '25 mm',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 8,
+            holeDiameterLabel: '8 mm',
+            boltDiameter: 6,
+            boltDiameterLabel: '6 mm'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 7,
+            holeDiameterLabel: '7 mm',
+            boltDiameter: 6,
+            boltDiameterLabel: '6 mm'
+          }
+        ]
       },
       {
         id: '40mm',
         beamWidth: 40,
-        beamWidthLabel: '40 mm'
+        beamWidthLabel: '40 mm',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 11,
+            holeDiameterLabel: '11 mm',
+            boltDiameter: 9,
+            boltDiameterLabel: '9 mm'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 10,
+            holeDiameterLabel: '10 mm',
+            boltDiameter: 9,
+            boltDiameterLabel: '9 mm'
+          }
+        ]
       },
       {
         id: '50mm',
         beamWidth: 50,
-        beamWidthLabel: '50 mm'
+        beamWidthLabel: '50 mm',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 14,
+            holeDiameterLabel: '14 mm',
+            boltDiameter: 12,
+            boltDiameterLabel: '12 mm'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 13,
+            holeDiameterLabel: '13 mm',
+            boltDiameter: 12,
+            boltDiameterLabel: '12 mm'
+          }
+        ]
       }
     ],
     defaultMaterialId: 'wood',
@@ -183,56 +238,14 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: 'wood',
         label: 'wood',
-        sizes: [
-          {
-            id: '25mm',
-            holeDiameter: 8,
-            holeDiameterLabel: '8 mm',
-            boltDiameter: 6,
-            boltDiameterLabel: '6 mm'
-          },
-          {
-            id: '40mm',
-            holeDiameter: 11,
-            holeDiameterLabel: '11 mm',
-            boltDiameter: 9,
-            boltDiameterLabel: '9 mm'
-          },
-          {
-            id: '50mm',
-            holeDiameter: 14,
-            holeDiameterLabel: '14 mm',
-            boltDiameter: 12,
-            boltDiameterLabel: '12 mm'
-          }
-        ]
+        sizeIds: ['25mm', '40mm', '50mm'],
+        holeId: 'wood'
       },
       {
         id: 'metal',
         label: 'metal',
-        sizes: [
-          {
-            id: '25mm',
-            holeDiameter: 7,
-            holeDiameterLabel: '7 mm',
-            boltDiameter: 6,
-            boltDiameterLabel: '6 mm'
-          },
-          {
-            id: '40mm',
-            holeDiameter: 10,
-            holeDiameterLabel: '10 mm',
-            boltDiameter: 9,
-            boltDiameterLabel: '9 mm'
-          },
-          {
-            id: '50mm',
-            holeDiameter: 13,
-            holeDiameterLabel: '13 mm',
-            boltDiameter: 12,
-            boltDiameterLabel: '12 mm'
-          }
-        ]
+        sizeIds: ['25mm', '40mm', '50mm'],
+        holeId: 'metal'
       }
     ]
   },
@@ -245,27 +258,79 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: '10mm',
         beamWidth: 10,
-        beamWidthLabel: '10 mm'
+        beamWidthLabel: '10 mm',
+        holes: [
+          {
+            id: 'plastic',
+            holeDiameter: 5,
+            holeDiameterLabel: '5 mm',
+            boltDiameter: 4,
+            boltDiameterLabel: '4 mm'
+          }
+        ]
       },
       {
         id: '20mm',
         beamWidth: 20,
-        beamWidthLabel: '20 mm'
+        beamWidthLabel: '20 mm',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 6,
+            holeDiameterLabel: '6 mm ?',
+            boltDiameter: 5,
+            boltDiameterLabel: '5 mm ?'
+          }
+        ]
       },
       {
         id: '40mm',
         beamWidth: 40,
-        beamWidthLabel: '40 mm'
+        beamWidthLabel: '40 mm',
+        holes: [
+          {
+            id: 'wood',
+            holeDiameter: 8,
+            holeDiameterLabel: '8 mm ?',
+            boltDiameter: 6,
+            boltDiameterLabel: '6 mm ?'
+          },
+          {
+            id: 'metal',
+            holeDiameter: 9,
+            holeDiameterLabel: '9 mm ?',
+            boltDiameter: 8,
+            boltDiameterLabel: '8 mm ?'
+          }
+        ]
       },
       {
         id: '60mm',
         beamWidth: 60,
-        beamWidthLabel: '60 mm'
+        beamWidthLabel: '60 mm',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 13,
+            holeDiameterLabel: '13 mm ?',
+            boltDiameter: 12,
+            boltDiameterLabel: '12 mm ?'
+          }
+        ]
       },
       {
         id: '100mm',
         beamWidth: 10,
-        beamWidthLabel: '100 mm'
+        beamWidthLabel: '100 mm',
+        holes: [
+          {
+            id: 'metal',
+            holeDiameter: 21,
+            holeDiameterLabel: '21 mm ?',
+            boltDiameter: 20,
+            boltDiameterLabel: '20 mm ?'
+          }
+        ]
       }
     ],
     defaultMaterialId: 'wood',
@@ -273,62 +338,26 @@ const GRID_BEAM_SYSTEMS = [
       {
         id: 'wood',
         label: 'wood',
-        sizes: [
-          {
-            id: '40mm',
-            holeDiameter: 8,
-            holeDiameterLabel: '8 mm ?',
-            boltDiameter: 6,
-            boltDiameterLabel: '6 mm ?'
-          }
-        ]
+        sizeIds: ['40mm'],
+        holeId: 'wood'
       },
       {
-        id: 'metal',
-        label: 'metal',
-        sizes: [
-          {
-            id: '20mm',
-            holeDiameter: 6,
-            holeDiameterLabel: '6 mm ?',
-            boltDiameter: 5,
-            boltDiameterLabel: '5 mm ?'
-          },
-          {
-            id: '40mm',
-            holeDiameter: 9,
-            holeDiameterLabel: '9 mm ?',
-            boltDiameter: 8,
-            boltDiameterLabel: '8 mm ?'
-          },
-          {
-            id: '60mm',
-            holeDiameter: 13,
-            holeDiameterLabel: '13 mm ?',
-            boltDiameter: 12,
-            boltDiameterLabel: '12 mm ?'
-          },
-          {
-            id: '100mm',
-            holeDiameter: 21,
-            holeDiameterLabel: '21 mm ?',
-            boltDiameter: 20,
-            boltDiameterLabel: '20 mm ?'
-          }
-        ]
+        id: 'aluminum',
+        label: 'aluminum',
+        sizeIds: ['20mm', '40mm', '60mm'],
+        holeId: 'metal'
+      },
+      {
+        id: 'steel',
+        label: 'steel',
+        sizeIds: ['20mm', '40mm', '100mm'],
+        holeId: 'metal'
       },
       {
         id: 'plastic',
         label: 'plastic',
-        sizes: [
-          {
-            id: '10mm',
-            holeDiameter: 5,
-            holeDiameterLabel: '5 mm',
-            boltDiameter: 4,
-            boltDiameterLabel: '4 mm'
-          }
-        ]
+        sizeIds: ['10mm'],
+        holeId: 'plastic'
       }
     ]
   }

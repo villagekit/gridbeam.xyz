@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { keyBy, range } from 'lodash'
+import { add, keyBy, map, multiply, range } from 'lodash'
 import { Box, Flex, Text, Link, Image, Button } from 'rebass/styled-components'
 import { StaticQuery, graphql, Link as GatsbyLink } from 'gatsby'
 import Img from 'gatsby-image'
@@ -358,10 +358,11 @@ function GuideTable (props) {
   )
 }
 
-/*
 function CompatibleLengthsGraphic (props) {
-  const totalWidth = 20 + 25 + 40 + 50 + 4 * 10
-  const totalHeight = 400
+  const { system, ...restProps } = props
+  const { systemOfMeasurement, sizes, materials } = system
+  const totalHeight = sizes.map(size => size.beamWidth).reduce(multiply, 1)
+  const totalWidth = sizes.map(size => size.beamWidth).reduce(add, 0)
   return (
     <svg width={totalWidth} height={totalHeight}>
       // 20 mm
@@ -377,13 +378,13 @@ function CompatibleLengthsGraphic (props) {
     </svg>
   )
 }
-*/
 
 const INCH_TO_MM = 25.4
 
 function GridBeamSizesHelper (props) {
   const { systems } = props
 
+  /*
   const [currentSystemId, setCurrentSystemId] = useState(systems[0].id)
 
   const systemsById = useMemo(() => keyBy(systems, 'id'), [systems])
@@ -408,6 +409,7 @@ function GridBeamSizesHelper (props) {
   const sizesById = useMemo(() => keyBy(sizes, 'id'), [sizes])
   const size = sizesById[currentSizeId]
   const material = materialsById[currentMaterialId]
+  */
 
   return <GridBeamSystemsList systems={systems} />
 }
@@ -438,6 +440,17 @@ function GridBeamSystemInfo (props) {
   const { label, systemOfMeasurement, sizes, materials } = system
 
   const sizesById = useMemo(() => keyBy(sizes, 'id'), [sizes])
+  const materialsBySizeIdAndHoleId = useMemo(() => {
+    return materials.reduce((sofar, material) => {
+      const { sizeIds, holeId } = material
+      sizeIds.forEach(sizeId => {
+        sofar[sizeId] = sofar[sizeId] || {}
+        sofar[sizeId][holeId] = sofar[sizeId][holeId] || []
+        sofar[sizeId][holeId].push(material)
+      })
+      return sofar
+    }, {})
+  }, [materials])
 
   return (
     <GuideBox
@@ -468,32 +481,23 @@ function GridBeamSystemInfo (props) {
       <GuideTable>
         <thead>
           <tr>
-            <th>material</th>
             <th>beam width</th>
+            <th>materials</th>
             <th>hole diameter</th>
             <th>bolt diameter</th>
           </tr>
         </thead>
         <tbody>
-          {materials.map(currentMaterial => {
-            const {
-              id: materialId,
-              label: materialLabel,
-              sizes: materialSizes
-            } = currentMaterial
-            const currentSizes = materialSizes.map(materialSize => {
-              return Object.assign({}, materialSize, sizesById[materialSize.id])
-            })
-            return currentSizes.map(currentSize => {
-              const {
-                beamWidthLabel,
-                holeDiameterLabel,
-                boltDiameterLabel
-              } = currentSize
+          {sizes.map(size => {
+            const { id: sizeId, beamWidthLabel, holes } = size
+            const materialsByHoleId = materialsBySizeIdAndHoleId[sizeId]
+            return holes.map(hole => {
+              const { id: holeId, holeDiameterLabel, boltDiameterLabel } = hole
+              const materials = materialsByHoleId[holeId]
               return (
                 <tr>
-                  <td>{materialLabel}</td>
                   <td>{beamWidthLabel}</td>
+                  <td>{map(materials, 'label').join(', ')}</td>
                   <td>{holeDiameterLabel}</td>
                   <td>{boltDiameterLabel}</td>
                 </tr>
