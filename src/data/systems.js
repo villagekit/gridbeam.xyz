@@ -261,6 +261,11 @@ const GRID_BEAM_SYSTEMS = [
         id: '60mm',
         beamWidth: 60,
         beamWidthLabel: '60 mm'
+      },
+      {
+        id: '100mm',
+        beamWidth: 10,
+        beamWidthLabel: '100 mm'
       }
     ],
     defaultMaterialId: 'wood',
@@ -302,6 +307,13 @@ const GRID_BEAM_SYSTEMS = [
             holeDiameterLabel: '13 mm ?',
             boltDiameter: 12,
             boltDiameterLabel: '12 mm ?'
+          },
+          {
+            id: '100mm',
+            holeDiameter: 21,
+            holeDiameterLabel: '21 mm ?',
+            boltDiameter: 20,
+            boltDiameterLabel: '20 mm ?'
           }
         ]
       },
