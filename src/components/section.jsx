@@ -1,13 +1,13 @@
 import React from 'react'
-import { Box, Text } from 'rebass/styled-components'
+import { Box, Link, Text } from 'rebass/styled-components'
 
 import Breakline from './breakline'
 
-function Section ({ title, children, ...props }) {
+function Section ({ id, title, children, ...props }) {
   return (
     <>
       <Box as='section' {...props}>
-        {title && <SectionTitle title={title} />}
+        {title && <SectionTitle id={id} title={title} />}
         {children}
       </Box>
       <Breakline />
@@ -17,10 +17,14 @@ function Section ({ title, children, ...props }) {
 
 export default Section
 
-function SectionTitle ({ title }) {
+function SectionTitle ({ id, title }) {
   return (
-    <Text as='h2' p={[3, 3, 4]} fontSize={5} fontFamily='heading'>
-      {title}
-    </Text>
+    <Box as='section' id={id}>
+      <Link href={`#${id}`} css={{ textDecoration: 'none', color: 'inherit' }}>
+        <Text as='h2' p={[3, 3, 4]} fontSize={5} fontFamily='heading'>
+          {title}
+        </Text>
+      </Link>
+    </Box>
   )
 }

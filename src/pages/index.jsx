@@ -130,6 +130,7 @@ const values = [
 function Values () {
   return (
     <Section
+      id='why'
       title='Why?'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
@@ -168,6 +169,7 @@ function Value (props) {
 function ExamplesSection () {
   return (
     <Section
+      id='examples'
       title='Examples'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
@@ -242,6 +244,7 @@ function Action () {
       `}
       render={data => (
         <Section
+          id='get-started'
           title='Get Started'
           css={`
             background-color: ${({ theme }) =>

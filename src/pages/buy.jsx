@@ -81,6 +81,7 @@ function Suppliers (props) {
   const { suppliers } = props
   return (
     <Section
+      id="suppliers"
       title='Suppliers'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
@@ -243,6 +244,7 @@ function Products (props) {
 function ContributeSection () {
   return (
     <Section
+      id="contribute"
       title='Contribute'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)

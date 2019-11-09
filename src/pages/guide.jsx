@@ -65,6 +65,7 @@ function BookSection () {
       `}
       render={data => (
         <Section
+          id="book"
           title='Read the book'
           sx={{
             backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
@@ -108,6 +109,7 @@ function BookSection () {
 function ContributeSection () {
   return (
     <Section
+      id="contribute"
       title='Contribute'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.primary, 0.85)

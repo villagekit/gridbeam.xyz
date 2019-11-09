@@ -166,7 +166,7 @@ function Guide (props) {
           </Flex>
         ) : (
           <>
-            <SubSection title='Quickstart'>
+            <SubSection id='quickstart' title='Quickstart'>
               <GuideText>
                 The key to Grid Beam's quick assembly and strong integrity is
                 the tri-joint:
@@ -204,7 +204,7 @@ function Guide (props) {
                 fluid={data.quickstart4.childImageSharp.fluid}
               />
             </SubSection>
-            <SubSection title='Beams'>
+            <SubSection id='beams' title='Beams'>
               <GuideText>
                 Beams are square sticks, where the width is the same on both
                 sides.
@@ -228,7 +228,7 @@ function Guide (props) {
               />
               <GuideImage as={Img} fluid={data.steel.childImageSharp.fluid} />
             </SubSection>
-            <SubSection title='Nuts and Bolts'>
+            <SubSection id='nuts-and-bolts' title='Nuts and Bolts'>
               <GuideText>
                 The nuts and bolts are the fasteners that connect the beams
                 together in the strong tri-joints.
@@ -238,25 +238,28 @@ function Guide (props) {
                 fluid={data.nutsAndBoltsHardware.childImageSharp.fluid}
               />
             </SubSection>
-            <SubSection title='Skins'>
+            <SubSection id='skins' title='Skins'>
               <GuideText>
                 Skins are the flat planels that go over the beams.
               </GuideText>
               <GuideImage as={Img} fluid={data.skin0.childImageSharp.fluid} />
               <GuideImage as={Img} fluid={data.skin1.childImageSharp.fluid} />
             </SubSection>
-            <SubSection title='Sizes'>
+            <SubSection id='sizes' title='Sizes'>
               <GuideText>Grid Beam thrives with standard sizes.</GuideText>
               <GridBeamSizesHelper systems={systems} />
             </SubSection>
-            <SubSection title='Accessories and Adapters'>
+            <SubSection
+              id='accessories-and-adapters'
+              title='Accessories and Adapters'
+            >
               <GuideText>TODO</GuideText>
               <GuideImage
                 as={Img}
                 fluid={data.accessories.childImageSharp.fluid}
               />
             </SubSection>
-            <SubSection title='Future'>
+            <SubSection id='future' title='Future'>
               <GuideText>Have fun building the future!</GuideText>
               <GuideImage as={Img} fluid={data.future.childImageSharp.fluid} />
             </SubSection>
@@ -265,6 +268,7 @@ function Guide (props) {
 
         return (
           <Section
+            id='guide'
             title='Guide'
             css={`
               background-color: ${({ theme }) =>
@@ -312,12 +316,14 @@ function Guide (props) {
 
 export default Guide
 
-function SubSection ({ title, children }) {
+function SubSection ({ id, title, children }) {
   return (
-    <Box as='section'>
-      <Text as='h3' p={[3, 3, 4]} fontSize={5} fontFamily='heading'>
-        {title}
-      </Text>
+    <Box as='section' id={id}>
+      <GuideLink href={`#${id}`}>
+        <Text as='h3' p={[3, 3, 4]} fontSize={5} fontFamily='heading'>
+          {title}
+        </Text>
+      </GuideLink>
       {children}
     </Box>
   )
@@ -356,6 +362,10 @@ function GuideTable (props) {
       {...props}
     />
   )
+}
+
+function GuideLink (props) {
+  return <Link css={{ textDecoration: 'none', color: 'inherit' }} {...props} />
 }
 
 function CompatibleLengthsGraphic (props) {

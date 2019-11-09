@@ -49,6 +49,7 @@ function ExamplesHeader (props) {
 function ExamplesSection () {
   return (
     <Section
+      id="examples"
       title='Examples'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
@@ -62,6 +63,7 @@ function ExamplesSection () {
 function ContributeSection () {
   return (
     <Section
+      id="contribute"
       title='Contribute'
       sx={{
         backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
