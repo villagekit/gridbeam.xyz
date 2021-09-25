@@ -85,15 +85,16 @@ function Footer () {
       >
         gridbeam.xyz
       </Link>
-      made with
-      <span role='img' aria-label='heart' css={{ padding: '0.25rem' }}>
+      made with{' '}
+      <span role='img' aria-label='heart'>
         ❤️
-      </span>
+      </span>{' '}
       by
       <Link
         p={1}
         href='https://dinosaur.is'
         target='_window'
+        rel='noopener'
         color='primary'
         sx={{
           textDecoration: 'none',
@@ -101,7 +102,22 @@ function Footer () {
         }}
       >
         Mikey
+      </Link>{' '}
+      (
+      <Link
+        p={1}
+        href='https://villagekit.com'
+        target='_window'
+        rel='noopener'
+        color='primary'
+        sx={{
+          textDecoration: 'none',
+          ':hover': { textDecoration: 'underline' }
+        }}
+      >
+        Village Kit
       </Link>
+      )
     </Box>
   )
 }
