@@ -11,8 +11,9 @@ import background from '../helpers/background'
 const suppliers = [
   {
     name: 'GridBeam.com',
-    href: 'http://gridbeam.com',
-    location: 'California',
+    href: 'https://web.archive.org/web/20200226012424/http://www.gridbeam.com/',
+    isDead: true,
+    location: 'California, USA',
     currency: 'USD',
     systemOfMeasurement: 'imperial',
     products: [
@@ -21,21 +22,21 @@ const suppliers = [
         holeDiameter: '5/16 inch',
         material: 'wood',
         price: '$3.00 - $3.50 per foot',
-        href: 'http://www.gridbeam.com/woodproducts.html'
+        href: 'https://web.archive.org/web/20200226012733/http://www.gridbeam.com/woodproducts.html'
       },
       {
         width: '1.5, 2, or 3 inches',
         holeDiameter: '13/32, 7/16, or 3/4 inch',
         material: 'aluminum',
         price: '$7.00, $9.00, or $10.00 per foot',
-        href: 'http://www.gridbeam.com/metalproducts.html'
+        href: 'https://web.archive.org/web/20200226012726/http://www.gridbeam.com/metalproducts.html'
       },
       {
         width: '2 inches',
         holeDiameter: '7/16 inch',
         material: 'steel',
         price: '$5.00 per foot',
-        href: 'http://www.gridbeam.com/metalproducts.html'
+        href: 'https://web.archive.org/web/20200226012726/http://www.gridbeam.com/metalproducts.html'
       }
     ]
   }
@@ -107,6 +108,7 @@ function Supplier (props) {
   const {
     name,
     href,
+    isDead,
     location,
     currency,
     systemOfMeasurement,
@@ -124,7 +126,18 @@ function Supplier (props) {
         }}
       >
         <Text as='h3' fontSize={4} fontFamily='heading'>
-          {name}
+          <Box
+            css={{
+              display: 'inline',
+              textDecoration: isDead ? 'line-through' : 'default'
+            }}
+          >
+            {name}
+          </Box>
+          {isDead && <>
+            {' '}
+            <span aria-label='dead' role='img'>💀</span>
+          </>}
         </Text>
       </Link>
       <Box
