@@ -39,6 +39,22 @@ const suppliers = [
         href: 'https://web.archive.org/web/20200226012726/http://www.gridbeam.com/metalproducts.html'
       }
     ]
+  },
+  {
+    name: 'GridKit.nz',
+    href: 'https://gridkit.nz',
+    location: 'New Zealand',
+    currency: 'NZD',
+    systemOfMeasurement: 'metric',
+    products: [
+      {
+        width: '40 mm',
+        holeDiameter: '8 mm',
+        material: 'wood',
+        price: '$12 - $15 per meter',
+        href: 'https://gridkit.nz/order'
+      }
+    ]
   }
 ]
 
