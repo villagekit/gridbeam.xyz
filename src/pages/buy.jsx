@@ -255,7 +255,7 @@ function Products (props) {
         return (
           <tr>
             <td>
-              <Button as={Link} href={href} target='_blank' my={2}>
+              <Button as={Link} href={href} target='_blank' rel='noopener' my={2}>
                 Buy
               </Button>
             </td>
