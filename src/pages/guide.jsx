@@ -15,7 +15,34 @@ function GuidePage () {
     <Layout header={<GuideHeader />}>
       <Navbar />
       <Guide />
-      <BookSection />
+      <StaticQuery
+        query={graphql`
+          query {
+            book: file(
+              relativePath: { eq: "how-to-build-with-grid-beam-book.jpg" }
+            ) {
+              childImageSharp {
+                fluid(maxWidth: 1024) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            playground: file(
+              relativePath: { eq: "gridcraft-sandbox.jpg" }
+            ) {
+              childImageSharp {
+                fluid(maxWidth: 1024) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        `}
+        render={data => <>
+          <BookSection book={data.book} />
+          <PlaygroundSection playground={data.playground} />
+        </>}
+      />
       <ContributeSection />
     </Layout>
   )
@@ -47,62 +74,85 @@ function GuideHeader (props) {
   )
 }
 
-function BookSection () {
+function BookSection (props) {
+  const { book } = props
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          book: file(
-            relativePath: { eq: "how-to-build-with-grid-beam-book.jpg" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 1024) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <Section
-          id="book"
-          title='Read the book'
+    <Section
+      id="book"
+      title='Read the book'
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
+      }}
+    >
+      <Text p={4} fontFamily='body'>
+        "How to Build With Grid Beam" by Phil Jergenson, Richard Jergenson &
+        Wilma Keppel
+      </Text>
+      <Flex flexDirection='row' justifyContent='center'>
+        <Image
+          as={Img}
+          width='16rem'
+          fluid={book.childImageSharp.fluid}
+        />
+      </Flex>
+      <Flex p={4} flexDirection='row' justifyContent='center'>
+        <Button
+          as={Link}
+          mx={2}
+          fontSize={4}
+          href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-PDF'
+        >
+          PDF
+        </Button>
+        <Button
+          as={Link}
+          mx={2}
+          fontSize={4}
+          href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-EPUB'
+        >
+          EPUB
+        </Button>
+      </Flex>
+    </Section>
+  )
+}
+
+function PlaygroundSection (props) {
+  const { playground } = props
+  return (
+    <Section
+      id="playground"
+      title='Playground'
+      sx={{
+        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+      }}
+    >
+      <Text p={4} fontFamily='body'>
+        Have a play with a prototype
+        {' '}
+        <Link
+          href='https://play.gridbeam.xyz' target='_blank' rel='noopener'
+          color='primary'
           sx={{
-            backgroundColor: ({ colors }) => shader(colors.secondary[0], 0.85)
+            textDecoration: 'none',
+            ':hover': { textDecoration: 'underline' }
           }}
         >
-          <Text p={4} fontFamily='body'>
-            "How to Build With Grid Beam" by Phil Jergenson, Richard Jergenson &
-            Wilma Keppel
-          </Text>
-          <Flex flexDirection='row' justifyContent='center'>
-            <Image
-              as={Img}
-              width='16rem'
-              fluid={data.book.childImageSharp.fluid}
-            />
-          </Flex>
-          <Flex p={4} flexDirection='row' justifyContent='center'>
-            <Button
-              as={Link}
-              mx={2}
-              fontSize={4}
-              href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-PDF'
-            >
-              PDF
-            </Button>
-            <Button
-              as={Link}
-              mx={2}
-              fontSize={4}
-              href='https://www.newsociety.com/Books/H/How-to-Build-With-Grid-Beam-EPUB'
-            >
-              EPUB
-            </Button>
-          </Flex>
-        </Section>
-      )}
-    />
+          Grid Beam sandbox
+        </Link>
+        !
+      </Text>
+
+      <Flex mt={2} mb={4} flexDirection='row' justifyContent='center' alignItems='center'>
+        <Link width={[1 / 2]} href='https://play.gridbeam.xyz/#1bc_BCoAwDAPQUIaMIRJ66kGGn-Bx__9lc3N4qL0-EpoWzdAtg2JquHCjsbx2EsZp0vKyysMwLbWyTIIcHvM5BN0a5sTEbQH3n419yd2VwEb3-43o' target='_blank' rel='noopener'>
+          <Image
+            as={Img}
+            width='100%'
+            fluid={playground.childImageSharp.fluid}
+          />
+        </Link>
+      </Flex>
+    </Section>
   )
 }
 
@@ -112,7 +162,7 @@ function ContributeSection () {
       id="contribute"
       title='Contribute'
       sx={{
-        backgroundColor: ({ colors }) => shader(colors.primary, 0.85)
+        backgroundColor: ({ colors }) => shader(colors.secondary[1], 0.85)
       }}
     >
       <Text p={4} fontFamily='body'>
