@@ -48,6 +48,9 @@
     "type": "git",
     "url": "https://github.com/ahdinosaur/gridbeam.nz"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
