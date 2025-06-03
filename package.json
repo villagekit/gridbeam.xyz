@@ -1,67 +1,14 @@
 {
   "name": "gridbeam.xyz",
-  "description": "A landing page for GridBeam",
   "version": "1.0.0",
   "private": true,
-  "author": "Michael Williams <michael.williams@enspiral.com>",
-  "dependencies": {
-    "gatsby": "^4.25.6",
-    "gatsby-image": "^2.0.39",
-    "gatsby-plugin-manifest": "^4.25.0",
-    "gatsby-plugin-matomo": "^0.15.2",
-    "gatsby-plugin-offline": "^5.25.0",
-    "gatsby-plugin-react-helmet": "^5.25.0",
-    "gatsby-plugin-sharp": "^4.25.1",
-    "gatsby-plugin-styled-components": "^5.25.0",
-    "gatsby-source-filesystem": "^4.25.0",
-    "gatsby-transformer-sharp": "^4.25.0",
-    "gridbeam-systems": "^2.0.0",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-helmet": "^6.1.0",
-    "reakit": "^1.3.11",
-    "rebass": "^4.0.7",
-    "shader": "^1.0.0",
-    "styled-components": "^5.3.10",
-    "styled-reset": "^4.4.6",
-    "typeface-bungee": "1.1.13",
-    "typeface-ibm-plex-sans": "1.1.13",
-    "typeface-ibm-plex-serif": "1.1.13",
-    "use-typing-effect": "^1.1.0"
-  },
-  "license": "AGPL-3.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier-standard '*.js' 'src/**/*.js'",
-    "test": "standard"
+    "css:build": "tailwindcss -i ./css/main.css -o ./static/css/generated.css --minify",
+    "css:watch": "tailwindcss -i ./css/main.css -o ./static/css/generated.css --watch",
+    "server": "zola serve"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "prettier-standard": "^16.4.1",
-    "standard": "^17.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ahdinosaur/gridbeam.nz"
-  },
-  "engines": {
-    "node": "18.x"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
+    "@tailwindcss/cli": "4",
+    "tailwindcss": "4"
   }
 }
