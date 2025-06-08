@@ -14,3 +14,34 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+[extra.footer]
+links = [
+    { url = "about", label = "About" },
+    { url = "sitemap.xml", label = "Sitemap" },
+]
+notice = '<a href="https://github.com/villagekit/gridbeam.xyz">gridbeam.xyz</a> made with ❤️ by <a href="https://mikey.nz">Mikey</a> (<a href="https://villagekit.com">Village Kit</a>)'
+
+[extra.navbar]
+links = [
+    { url = "stories", label = "Stories" },
+    { url = "tags", label = "Tags" },
+    { url = "movies", label = "Movies" },
+]
+
+[extra.social]
+codeberg = ""
+github = "https://github.com/villagekit/gridbeam.xyz"
+gitlab = ""
+stackoverflow = ""
+mastodon = ""
+linkedin = ""
+instagram = ""
+youtube = ""
+signal = ""
+telegram = ""
+email = ""
+phone = ""
+
+[extra.favicon]
+svg = "favicon.svg"

@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "css:build": "tailwindcss -i ./css/main.css -o ./static/css/generated.css --minify",
-    "css:watch": "tailwindcss -i ./css/main.css -o ./static/css/generated.css --watch",
+    "css:build": "tailwindcss -i ./css/main.css -o ./static/css/main.css --minify",
+    "css:watch": "tailwindcss -i ./css/main.css -o ./static/css/main.css --watch",
     "server": "zola serve"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "4",
-    "tailwindcss": "4"
+    "@tailwindcss/cli": "^4.1.8",
+    "daisyui": "^5.0.43",
+    "tailwindcss": "^4.1.8"
   }
 }
