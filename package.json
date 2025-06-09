@@ -1,15 +1,22 @@
 {
   "name": "gridbeam.xyz",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "css:build": "tailwindcss -i ./css/main.css -o ./static/css/main.css --minify",
-    "css:watch": "tailwindcss -i ./css/main.css -o ./static/css/main.css --watch",
-    "server": "zola serve"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.8",
-    "daisyui": "^5.0.43",
-    "tailwindcss": "^4.1.8"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
   }
 }
