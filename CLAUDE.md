@@ -23,6 +23,62 @@ This top-level repo IS the website. It consumes two open-source submodules (`./u
 - **Biome** for lint/format
 - **pnpm** + **turbo** in the monorepo submodules
 
+## Principles
+
+- Premature optimization is the root of all evil.
+- Don't second-guess or make assumptions. When in doubt, verify or ask.
+- Prefer robustness over performance.
+- Achieve performance with simple fit-for-purpose abstractions, not clever hacks.
+
+### Complexity check
+
+Before adding significant amounts of code, verify:
+
+1. The approach is solid — not just the first thing that came to mind.
+2. No simpler alternative achieves the same goal.
+3. Compare to industry-standard patterns where relevant (Next.js conventions, Chakra recipes, react-three-fiber idioms).
+4. Check if a good library already handles the task — npm is large; the right answer is often "use this".
+
+Complexity is fine when warranted. The point is to be deliberate.
+
+## Conventions
+
+- **TypeScript** everywhere, `strict: true`.
+- **Biome** for lint + format. No ESLint, no Prettier.
+- **ESM-only** modules.
+- **Imports** grouped, in order: built-ins → external packages → workspace packages (`@villagekit/*`) → relative paths (`./`, `../`). Blank line between groups.
+- **Errors:** typed errors via `zod` or discriminated unions. Don't swallow errors silently. Use `result`-style returns at boundaries; throw inside trusted internal code.
+- **Comments:** only when the *why* is non-obvious — a hidden constraint, a workaround, a counter-intuitive choice. Names carry the *what*. No multi-paragraph docstrings.
+- **Module exports:** think of a file like the intimacy gradient of a home. Public exports near the top (the entryway); private helpers further down (the bedrooms).
+- **Documentation discipline:** when code changes, update affected `README.md` / CLAUDE.md / task files in the same commit.
+- **License posture:** EUPL-1.2 across the board. Library deps may be MIT/BSD/Apache-2.0/MPL/EUPL/LGPL. Avoid GPL deps unless intentional and justified (EUPL is GPL-compatible but inheriting GPL into our distribution carries weight).
+
+## Reviews
+
+- Think about long-term maintenance.
+- Check correctness of any algorithms (cutting planner bin-packing, rendering math, parameter validation) against specifications or first principles where possible.
+- Look for simpler expressions of the same idea.
+- Imagine alternative abstractions; compare against the current one.
+- For observations that don't lead to a change now: leave a `// Note(cc): xxx` comment for future readers, or `// TODO(cc): xxx` if a future change is intended.
+- Update affected `README.md` / CLAUDE.md as part of the change.
+
+## Testing
+
+- Don't assume the current code is correct. Before "fixing" a failing test, verify the test isn't already correctly catching a real bug.
+- Before adding tests, identify the specific edge cases worth covering. Don't add tests for coverage's sake.
+- If a test is redundant, remove it.
+- The cutting planner, designs catalog logic, and engine math are the highest-value test targets in this codebase. Layout / styling components rarely need unit tests — Storybook + visual review is enough.
+
+## Logging
+
+This site will be live for years. Logs are a first-class concern, even though the surface is small.
+
+- Use levels deliberately: `console.error` for breakage, `console.warn` for degraded-but-recoverable, `console.info` for lifecycle events, `console.debug` for operational detail.
+- Prefer structured fields (`console.info({ designId, parts: 12 }, 'design rendered')`) over interpolated strings.
+- Write log messages as if you'll read them at 3 AM debugging a production issue two years from now.
+- Never log sensitive data (Buttondown API keys, full email addresses in production).
+- Server-side logs go to whatever the deployment provider (likely Vercel) captures. Client-side `console.*` lands in the browser console; don't ship debug-level chatter to production.
+
 ## Glossary
 
 - **Grid beam** — a 40 mm extruded modular beam with regularly-spaced holes for fasteners. The basic building block.
@@ -66,6 +122,21 @@ The legacy `node-modules/packages/ui-{page,nav,media,mdx}` packages are being me
 ## In scope but worth flagging
 
 - **Hosted email newsletter** via Buttondown or similar (~$10/mo). The /subscribe page is a real form, not just an RSS link. Requires the API key in env vars and someone (the user) writing actual newsletters.
+
+## Development workflow
+
+When working on tasks in this repo, follow this loop:
+
+1. **Read CLAUDE.md** for current state, principles, and decisions.
+2. **Find the next actionable task** in `./todo/`. Walk the stream READMEs; pick the topmost `Status: TODO` task whose dependencies are met.
+3. **Research the details** beyond what the task file describes. Things may have changed since `./todo` was written — trust the current state of the code over the task's notes when they conflict.
+4. **Ask the user for decisions or advice** if anything is genuinely unclear or has multiple reasonable paths. Don't guess on load-bearing choices.
+5. **Complete the task.** Set `Status: DOING` in the task file when starting.
+6. **Update relevant documentation** (CLAUDE.md, READMEs, related task files) as part of the same change.
+7. **Review with fresh sub-agents** via the Agent tool. Iterate until no critical feedback remains. Each review starts fresh — give the reviewer the context it needs.
+8. **Update the task board.** Set `Status: DONE`, check off the step boxes, add any follow-ups discovered during the work as new tasks.
+9. **Commit** with a clear, concise message. Less is more. Don't mention Claude, Anthropic, AI assistance, or co-authorship.
+10. **Continue with the next actionable task.**
 
 ## Working in this repo
 
