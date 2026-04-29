@@ -1,8 +1,9 @@
-import { Box, Container, Heading, Text } from '@villagekit/ui'
+import { Box, Container, Heading, SkipNavContent, Text } from '@villagekit/ui'
 
 export default function HomePage() {
   return (
     <Box as="main" py="16">
+      <SkipNavContent />
       <Container maxW="2xl">
         <Heading as="h1" size="2xl" mb="4">
           gridbeam.xyz

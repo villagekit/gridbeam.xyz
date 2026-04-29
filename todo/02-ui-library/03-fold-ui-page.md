@@ -1,29 +1,39 @@
 # 03 — Fold in `ui-page` (layout primitives)
 
-**Status:** TODO
+**Status:** DONE (storybook stories deferred — see follow-ups)
 
 ## Why
 The legacy `node-modules/packages/ui-page/` exports the page layout system (MainLayout, ContentLayout, CardsLayout, Section, Row, Column, Heading, Title, Description, TableOfContents, Footer, plus hooks `useActiveHeading`, `usePageHeadingsTree`, `useAssertChildIndexes`). The new website needs all of this. The current `./ui` doesn't have layout primitives at all.
 
 ## What
-The layout components and hooks land in `./ui/src/components/` (or a `src/layouts/` sub-folder), exported from `src/index.ts`, with stories in `stories/`. Cleaned up where they were tied to startup specifics.
+The layout components and hooks now live in `./ui/src/components/layouts/`, exported via `./ui/src/index.ts`. Ported to Chakra v3 + React 19. Heavily decoupled from startup specifics.
 
 ## Steps
-- [ ] Copy the components from `node-modules/packages/ui-page/src/` into `./ui/src/components/layouts/` (decide naming).
-- [ ] Update imports: `@villagekit-private/ui-media` → folded in via task 05; `@villagekit-private/ui-nav` → task 04; `next-seo` → drop or keep (decide; v1 of `@villagekit/ui` could omit SEO and let consumers handle it).
-- [ ] Rewrite for Chakra v3 — use the migrated tokens/recipes from task 02.
-- [ ] Replace any startup-specific defaults: e.g. if `Footer` had a Village Kit logo by default, parameterise.
-- [ ] Add stories: `MainLayout.stories.tsx`, `ContentLayout.stories.tsx`, `CardsLayout.stories.tsx`, `Section.stories.tsx`.
-- [ ] Add to `src/index.ts` exports.
-- [ ] Verify storybook renders.
+- [x] Copied components to `./ui/src/components/layouts/`. Hooks live in `./ui/src/components/layouts/hooks/`. Util in `./ui/src/components/layouts/util/sortNodes.ts`.
+- [x] Dropped `next-seo` entirely — `CardsLayout` no longer renders `<NextSeo>`. Consumers use Next.js's metadata API directly. Drops a dep from the library.
+- [x] Replaced `lodash-es`'s `map`/`uniqueId` with stdlib (`Array.prototype.map`, simple counter).
+- [x] Replaced `useTheme().colors[colorScheme][shade]` index-into-theme with Chakra v3 `colorPalette` prop + `colorPalette.50` token references. Theme-aware without runtime lookup.
+- [x] Replaced `useMergeRefs` (v2) with `mergeRefs` (v3).
+- [x] Replaced `sx` prop with `css` prop throughout.
+- [x] Renamed the v2 `Heading` (with anchor support) to `AnchorHeading` to avoid name conflict with the base `Heading` already in the lib. Original `Heading` from base lib is unchanged. `getHeadingId` helper exported.
+- [x] `Footer` parameterised — accepts arbitrary `FooterSection[]` (no length constraint anymore — v2 was hardcoded to 3) and an optional `children` slot for logos/etc. Background colour still uses `accentB.50` semantic token; can be overridden via `css`.
+- [x] `MainLayout` accepts an optional `Banner` (was required in v2).
+- [x] All hooks ported with strict-typed array access. No `any` casts.
+- [x] Added `'use client'` directives to every component file (all of them use hooks or context).
+- [x] Exports added to `./ui/src/index.ts` via `export * from './components/layouts'`.
+- [x] `tsc --noEmit` clean from the website root.
+- [x] `biome check .` clean inside `./ui`.
+- [ ] Storybook stories deferred — see follow-ups.
 
 ## Notes
-- `ui-page` depends on `next-seo ^5.9.0`. Decide:
-  - Drop SEO from the layout — let the consuming site use Next's metadata API directly.
-  - Keep it but make it optional (peer dep).
-  - Recommend dropping; the new gridbeam.xyz site uses Next's app-router metadata API anyway.
-- Footer behaviour: parameterise — accept slots for logo, columns, copyright text. Don't hardcode anything.
-- The hooks `useActiveHeading`, `usePageHeadingsTree`, `useAssertChildIndexes` have no startup coupling — copy directly.
+- **Naming change:** the legacy `Heading` from `ui-page` shadowed the base `Heading` from `@villagekit/ui`. Renamed to `AnchorHeading`. Consumers who want anchor behaviour use `<AnchorHeading hasAnchor>...</AnchorHeading>`; everyone else uses the plain `Heading`.
+- **`colorScheme` → `colorPalette`** throughout (Chakra v3 idiom). `Section.colorPalette` accepts any palette key (`'accentB'`, `'gray'`, `'primary'`, etc.).
+- **`spacing` → `gap`** on all `Stack`/`HStack`/`VStack` instances.
+- The legacy `useAssertChildIndexes` used `console.error` for layout-validation warnings. Switched to `console.warn` since these are dev-only sanity hints, not errors.
+
+## Follow-ups
+- **Storybook stories** for `MainLayout`, `ContentLayout`, `CardsLayout`, `Section`, `Row`, `Column`, `BlockSection`, `Title`, `Description`, `TableOfContents`, `Footer`. Deferred — the website's own pages will be the practical test surface in the short term, and Storybook stories require the full lockfile install and visual review.
+- **`'use client'` audit on existing component wrappers** (Stream 02 task 02 follow-up, still open). New layout/nav files all carry the directive; the older `Accordion`/`Badge`/`Checkbox`/`FormLabel`/`Select`/`Slider`/`Switch`/`Table` wrappers still need it.
 
 ## Depends on
 - [./02-chakra-v3-migration.md](./02-chakra-v3-migration.md)
