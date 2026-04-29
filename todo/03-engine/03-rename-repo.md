@@ -9,13 +9,13 @@ The submodule's URL is `git@github.com:villagekit/gridkit-legacy`. The "-legacy"
 A renamed GitHub repo, the submodule URL updated in this repo's `.gitmodules`, and any references inside the engine repo updated.
 
 ## Steps
-- [ ] Decide the new name. Check what's available under `villagekit/`:
+- [x] Decide the new name. Check what's available under `villagekit/`:
   - `villagekit/gridkit` — clean, but check if the existing `villagekit/villagekit` repo (referenced in current README) is conflicting.
   - `villagekit/engine` — generic.
   - `villagekit/gridkit-engine` — explicit.
   - Recommend `villagekit/gridkit` if available (matches the npm package vibe and the local directory name).
-- [ ] Verify the destination name is free or owned. If `villagekit/villagekit` is the conflicting one and isn't actually used, archive it first.
-- [ ] Rename via GitHub UI: Settings → Rename repository. GitHub auto-redirects old URLs.
+- [x] Verify the destination name is free or owned. If `villagekit/villagekit` is the conflicting one and isn't actually used, archive it first.
+- [x] Rename via GitHub UI: Settings → Rename repository. GitHub auto-redirects old URLs.
 - [ ] Update this repo's `.gitmodules`:
   ```diff
   - url = git@github.com:villagekit/gridkit-legacy

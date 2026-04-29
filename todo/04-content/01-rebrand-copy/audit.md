@@ -119,13 +119,28 @@ Destination: the new top-level Next.js site at this repo's root.
 
 ## Things flagged for Mikey
 
+Edit: See decisions below.
+
 1. **Testimonials.** The Rhona, Mix, Alexander quotes were given about a specific bought kit. Are they comfortable being re-quoted in an educational/community context? If not, drop them.
+  - Yes re-quote in the new context for now, we can always change later.
 2. **Active social accounts — partly answered.** `madewithgridkit.com` is DNS-dead and `sunrise.social/gridkit` (Mastodon) returns 404. Other 8 accounts under `@madewithgridkit` (Bluesky, Instagram, X, Facebook, Threads, YouTube, TikTok, GitHub) unverified. Default plan strengthens to "drop all" unless Mikey confirms specific ones are actively posted to. See `./url-status.md`.
+  - Point to @villagekit social media for now
+  - Mastodon: https://sunrise.social/villagekit
+  - https://instagram.com/village_kit
+  - https://x.com/villagekit
+  - https://facebook.com/villagekit
+  - https://www.youtube.com/@villagekit
+  - https://www.github.com/villagekit
 3. **Community forum — TLS cert expired.** `discuss.villagekit.com` server is up but its TLS cert has lapsed (browsers will warn). Cheapest fix: renew via Let's Encrypt. Alternatively, point gridbeam.xyz copy at GitHub Discussions for `villagekit/gridkit-products`. Decision: renew or migrate? See `./url-status.md`.
+  - I fixed this.
 4. **Banner.** Should the new site launch with a "Welcome / new home for gridbeam.xyz" banner, or just go quiet?
+  - Quiet, remove the banner code altogether.
 5. **Logo + wordmark.** Two questions: (a) Reuse the existing Grid Kit logo, or commission a new mark? (b) Show a wordmark only, logo only, or both? Resolve together.
+  - Re-use the existing Grid Kit logo.
 6. **Hero CTA.** Default proposal is "Browse designs" → `/designs`. Alternative: "Find a supplier" → `/suppliers`. Which sets the right first impression?
+  - Browse designs
 7. **`gridkit.nz` ownership.** The domain currently serves a v0.app-generated Next.js page (not the legacy Vercel site). Either Mikey is experimenting elsewhere or the DNS got repointed. Worth confirming before any cross-linking. See `./url-status.md`.
+  - gridkit.nz is now run by my ex business partner, not me. the split was amicable, so they can be referred to as a supplier.
 
 ## Things to verify (no Mikey input needed)
 

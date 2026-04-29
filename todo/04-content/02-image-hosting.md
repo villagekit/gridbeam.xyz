@@ -9,11 +9,13 @@ Every image on the legacy site lives at `https://res.cloudinary.com/villagekit/v
 A clear hosting strategy and updated image references throughout the codebase.
 
 ## Steps
-- [ ] Decide hosting:
+- [x] Decide hosting:
   - **A**: Keep using Cloudinary, new path: `https://res.cloudinary.com/villagekit/v2/gridbeam.xyz/...`. Easiest. Cost: existing Cloudinary plan.
   - **B**: Self-host in `public/images/` of the website. Simplest, no third-party. Cost: Vercel storage / build size.
   - **C**: Different CDN (Imgix, Cloudflare Images, etc). New setup, different mental model.
   - Recommend **A** for v1 — keeps the responsive image hooks from `ui-media` working, just changes the cloud base path. If Cloudinary is going away (no longer paid), pivot to **B**.
+  - Mikey's **D**: Create a new `media.gridbeam.xyz` with all the media, to be hosted on Cloudinary via idempotent scripts that update Cloudinary based on the contents in the repo.
+  - Decision: **D**
 - [ ] Audit which images are actually still relevant:
   - Hero photos of furniture made with grid beam → keep
   - Branded "Grid Kit" packaging photos → drop or replace
