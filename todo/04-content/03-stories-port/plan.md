@@ -67,7 +67,7 @@ If the audit's KEEP-as-historical decision is reversed: the rewrite is straightf
 |------|---------|-----|
 | 428 | `For further tips, advice, and inspiration, visit the Grid Kit [discussion board](https://discuss.villagekit.com/).` | `For further tips, advice, and inspiration, visit the [community forum](https://discuss.villagekit.com/).` |
 
-If `discuss.villagekit.com` is dead at port time (HEAD-check first), point at GitHub Discussions for `villagekit/gridkit-products` instead.
+**Forum link caveat (verified 2026-04-30):** `discuss.villagekit.com` is up but its TLS cert is expired — browsers will warn. Either Mikey renews the cert before this story ships, or the link points to GitHub Discussions for `villagekit/gridkit-products` instead. See `../01-rebrand-copy/url-status.md`.
 
 No other changes. Metadata keeps `publishedAt: 2024/11/29`; this is recent and evergreen.
 
@@ -86,7 +86,7 @@ No other changes. Metadata keeps `publishedAt: 2024/11/29`; this is recent and e
 | 119 | `ariaLabel="Grid of common Grid Kit connections"` | `ariaLabel="Grid of common grid-beam connections"` |
 | 386 | `For further tips, advice, and inspiration, visit the Grid Kit [discussion board](https://discuss.villagekit.com).` | `For further tips, advice, and inspiration, visit the [community forum](https://discuss.villagekit.com).` |
 
-Same forum-link caveat as story 3. No metadata changes.
+Same forum-link caveat as story 3 (TLS cert expired on `discuss.villagekit.com`). No metadata changes.
 
 ---
 

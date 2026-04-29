@@ -120,11 +120,12 @@ Destination: the new top-level Next.js site at this repo's root.
 ## Things flagged for Mikey
 
 1. **Testimonials.** The Rhona, Mix, Alexander quotes were given about a specific bought kit. Are they comfortable being re-quoted in an educational/community context? If not, drop them.
-2. **Active social accounts.** Of the 9 social accounts in the footer, which (if any) is still being maintained? Default plan is to keep only the ones we'll actually post to.
-3. **Community forum.** Is `discuss.villagekit.com` going to keep running? If yes, keep linking. If not, link to GitHub Discussions instead. *(HEAD-checkable before escalating — only ask Mikey if the forum responds but its future is unclear.)*
+2. **Active social accounts — partly answered.** `madewithgridkit.com` is DNS-dead and `sunrise.social/gridkit` (Mastodon) returns 404. Other 8 accounts under `@madewithgridkit` (Bluesky, Instagram, X, Facebook, Threads, YouTube, TikTok, GitHub) unverified. Default plan strengthens to "drop all" unless Mikey confirms specific ones are actively posted to. See `./url-status.md`.
+3. **Community forum — TLS cert expired.** `discuss.villagekit.com` server is up but its TLS cert has lapsed (browsers will warn). Cheapest fix: renew via Let's Encrypt. Alternatively, point gridbeam.xyz copy at GitHub Discussions for `villagekit/gridkit-products`. Decision: renew or migrate? See `./url-status.md`.
 4. **Banner.** Should the new site launch with a "Welcome / new home for gridbeam.xyz" banner, or just go quiet?
 5. **Logo + wordmark.** Two questions: (a) Reuse the existing Grid Kit logo, or commission a new mark? (b) Show a wordmark only, logo only, or both? Resolve together.
 6. **Hero CTA.** Default proposal is "Browse designs" → `/designs`. Alternative: "Find a supplier" → `/suppliers`. Which sets the right first impression?
+7. **`gridkit.nz` ownership.** The domain currently serves a v0.app-generated Next.js page (not the legacy Vercel site). Either Mikey is experimenting elsewhere or the DNS got repointed. Worth confirming before any cross-linking. See `./url-status.md`.
 
 ## Things to verify (no Mikey input needed)
 
