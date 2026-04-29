@@ -10,8 +10,8 @@ A polished, public, npm-published `@villagekit/ui` on **Chakra v3 + React 19**, 
 
 | # | Task | Status |
 |---|------|--------|
-| 01 | [Resolve React + Chakra version mismatch](./01-version-alignment.md) | TODO |
-| 02 | [Migrate to Chakra v3 (theme + multipart components + hooks)](./02-chakra-v3-migration.md) | TODO |
+| 01 | [Resolve React + Chakra version mismatch](./01-version-alignment.md) | DONE |
+| 02 | [Migrate to Chakra v3 (theme + multipart components + hooks)](./02-chakra-v3-migration.md) | DONE (storybook smoke deferred) |
 | 03 | [Fold in `ui-page` (layout primitives)](./03-fold-ui-page.md) | TODO |
 | 04 | [Fold in `ui-nav` (header, side nav, mobile menu)](./04-fold-ui-nav.md) | TODO |
 | 05 | [Fold in `ui-media` (Image, Video, hooks)](./05-fold-ui-media.md) | TODO |
