@@ -10,7 +10,7 @@ This top-level repo IS the website. It consumes three open-source submodules (`.
 |------|------|---------|
 | `/` (this repo) | The gridbeam.xyz Next.js site | Public — EUPL-1.2 |
 | `./ui` | `@villagekit/ui` — open-source React component library on Chakra UI | Public — `villagekit/ui` |
-| `./gridkit` | The grid-kit engine — code-as-CAD, parts library, sandbox renderer | Public — currently `villagekit/gridkit-legacy`, being renamed |
+| `./gridkit` | The grid-kit engine — code-as-CAD, parts library, sandbox renderer | Public — `villagekit/gridkit` |
 | `./gridkit-products` | The set of products (designs) authored with the `./gridkit` engine. Powered the original gridkit.nz catalog; powers the new gridbeam.xyz catalog too. Stays a separate repo (not folded into gridkit). | Public — `villagekit/gridkit-products` |
 | `./node-modules` | Legacy private monorepo. Source material for extraction. **Retired by stream 05.** | Private — `villagekit/node-modules` |
 
@@ -111,7 +111,7 @@ The legacy `node-modules/packages/ui-{page,nav,media,mdx}` packages are being me
 - **Top-level repo IS the site** — no nested `apps/` directory. Do **not** start from the existing abandoned stub at `node-modules/apps/gridbeam/`; it didn't get far.
 - **EUPL-1.2** for everything — both the open-source submodules and the top-level website. The website repo will be public.
 - **No e-commerce.** The old store is replaced by a "Suppliers" page that links out to any suppliers selling compatible hardware. Same browse mechanic as the old store, no cart / Stripe / checkout.
-- **Engine repo** stays at the `./gridkit` submodule path; `villagekit/gridkit-legacy` will be renamed and the "superseded" framing dropped from the README. Note that a separate `villagekit/villagekit` repo exists as a newer/better engine effort — not in scope here; `./gridkit` is reclaimed specifically to power gridbeam.xyz.
+- **Engine repo** stays at the `./gridkit` submodule path; renamed from `villagekit/gridkit-legacy` to `villagekit/gridkit` and the "superseded" framing dropped from the README. Note that a separate `villagekit/villagekit` repo exists as a newer/better engine effort — not in scope here; `./gridkit` is reclaimed specifically to power gridbeam.xyz.
 - **`./gridkit/core/ui` is being removed.** It overlaps with the standalone `./ui` library. Engine consumers will depend on `@villagekit/ui` directly. This resolves the otherwise-conflicting `@villagekit/ui` package name.
 - **`@villagekit` npm scope** retained.
 

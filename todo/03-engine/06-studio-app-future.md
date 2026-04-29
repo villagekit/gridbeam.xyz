@@ -21,13 +21,13 @@ A one-paragraph decision logged into CLAUDE.md (and back into the engine's READM
 - [x] Decision options + recommendation:
   - **Decision: Maintain studio as a separate downloadable desktop app.** Don't embed in gridbeam.xyz initially. Link to releases from gridbeam.xyz. Matches what serious CAD tools (FreeCAD, OnShape clients) do, and avoids a big web-port effort that would block other streams.
 - [x] Document the decision in the engine's README (a "Studio app" section) and in this repo's CLAUDE.md. *(README updated. CLAUDE.md already covered this under "Out of scope": "the engine itself ships, but the desktop editor stays a separate downloadable app".)*
-- [ ] If keeping: ensure GitHub releases pipeline is set up for Tauri builds (Mac/Windows/Linux). Currently the README points at a `villagekit/villagekit` releases page — that needs updating to `villagekit/gridkit/releases` (post-rename). *(Follow-up: spin out into its own task — covered as part of Stream 03 task 03 (rename) + a new "studio releases CI" follow-up. See Notes.)*
+- [ ] If keeping: ensure GitHub releases pipeline is set up for Tauri builds (Mac/Windows/Linux). README releases link is now `villagekit/gridkit/releases` (post-rename, task 03). *(Follow-up: "studio releases CI" task — see Notes.)*
 - [ ] If deprecating: archive cleanly (note in README, lock the directory, don't delete). *(N/A — decision is to keep, not deprecate.)*
 
 ## Notes
 - Tauri 2 builds are non-trivial to set up CI for (notarisation on Mac, signing on Windows). Worth knowing the cost before committing.
 - The `apps/storybook/` is a separate concern — it's a developer tool for engine contributors, not an end-user app. Keep it as-is.
-- **Follow-up task:** "Set up Tauri release CI for the studio app." Lives under Stream 03 once the repo rename (task 03) lands and we have a stable URL. The README already links at `gridkit-legacy/releases`; update with the rename.
+- **Follow-up task:** "Set up Tauri release CI for the studio app." Lives under Stream 03; the README now links at `gridkit/releases` (post-rename).
 
 ## Depends on
 None — pure decision task.

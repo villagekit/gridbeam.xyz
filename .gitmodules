@@ -1,6 +1,6 @@
 [submodule "gridkit"]
 	path = gridkit
-	url = git@github.com:villagekit/gridkit-legacy
+	url = git@github.com:villagekit/gridkit
 [submodule "node-modules"]
 	path = node-modules
 	url = git@github.com:villagekit/node-modules

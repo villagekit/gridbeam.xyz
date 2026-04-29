@@ -14,7 +14,7 @@ Cleanly publish the engine as open-source under EUPL-1.2, with consistent licens
 |---|------|--------|
 | 01 | [Add EUPL-1.2 LICENSE file + fix `UNLICENSED` in every package.json](./01-license-cleanup.md) | TODO |
 | 02 | [Rewrite README — drop "superseded" framing](./02-readme-and-positioning.md) | TODO |
-| 03 | [Rename GitHub repo from `gridkit-legacy`](./03-rename-repo.md) | TODO |
+| 03 | [Rename GitHub repo from `gridkit-legacy`](./03-rename-repo.md) | DONE |
 | 04 | [Audit dependencies + build pipeline for any upgrades needed](./04-deps-and-build-audit.md) | TODO |
 | 08 | [Migrate engine to Chakra v3 + remove `core/ui`](./08-migrate-engine-to-chakra-v3.md) | TODO |
 | 05 | [Publish runtime packages to npm](./05-publish-npm.md) | TODO |

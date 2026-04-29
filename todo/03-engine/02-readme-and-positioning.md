@@ -21,14 +21,14 @@ A rewritten `./gridkit/README.md` that introduces this codebase as a real, maint
 - [x] Add a "Packages" section listing every public package with a one-line description. (Don't list `core/ui` — it's being removed in task 08.)
 - [x] Add a "Status" section: "active development for gridbeam.xyz", or whatever is honest.
 - [x] Add a "Contributing" pointer (`DEV.md` already has the dev setup).
-- [ ] Verify all links work after the GitHub repo rename (Stream 03 task 03). *(Deferred — link still points at `gridkit-legacy`; task 03 will update the clone URL when it does the rename.)*
+- [x] Verify all links work after the GitHub repo rename (Stream 03 task 03). *(Done — task 03 updated the clone URL and releases link to `villagekit/gridkit`.)*
 
 ## Notes
 - The README touch is meaningful — it tells everyone arriving at the repo that this is a real, maintained project. Don't undersell it.
 - The "See also" footnote about `villagekit/villagekit` is courteous and accurate. Don't bury it; don't lead with it.
 - Keep the EUPL-1.2 license callout at the bottom.
 - Also added a "Commands" section to the package list for `@villagekit/screenshot` (publicly licensed CLI). `core/ui` excluded as planned for task 08.
-- Deferred: clone URL in the README still references `villagekit/gridkit-legacy`; task 03 will rename the GitHub repo and update the URL in the same change.
+- Clone URL and releases link in the README updated to `villagekit/gridkit` as part of task 03.
 
 ## Depends on
 - [./01-license-cleanup.md](./01-license-cleanup.md) — for the license section to point at a real LICENSE file

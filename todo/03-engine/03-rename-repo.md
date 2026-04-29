@@ -1,6 +1,6 @@
 # 03 — Rename GitHub repo from `gridkit-legacy`
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 The submodule's URL is `git@github.com:villagekit/gridkit-legacy`. The "-legacy" suffix locks in a self-deprecating framing that no longer matches reality. Renaming to a clean name ("gridkit", "engine", or similar) signals this is the real engine.
@@ -16,20 +16,23 @@ A renamed GitHub repo, the submodule URL updated in this repo's `.gitmodules`, a
   - Recommend `villagekit/gridkit` if available (matches the npm package vibe and the local directory name).
 - [x] Verify the destination name is free or owned. If `villagekit/villagekit` is the conflicting one and isn't actually used, archive it first.
 - [x] Rename via GitHub UI: Settings → Rename repository. GitHub auto-redirects old URLs.
-- [ ] Update this repo's `.gitmodules`:
+- [x] Update this repo's `.gitmodules`:
   ```diff
   - url = git@github.com:villagekit/gridkit-legacy
   + url = git@github.com:villagekit/gridkit
   ```
-- [ ] Run `git submodule sync` and verify.
-- [ ] Inside `./gridkit`, update any internal references:
-  - README links, CHANGELOG (if any), CI workflows.
-  - `package.json` `repository.url` fields across all public packages.
-- [ ] Update CLAUDE.md in this repo to reflect the new URL.
+- [x] Run `git submodule sync` and verify.
+- [x] Inside `./gridkit`, update any internal references:
+  - README links (clone + releases), DEV.md clone snippet.
+  - `package.json` `repository.url`, `bugs.url`, `homepage` fields across all 14 packages — updated from `villagekit/villagekit` (which had been incorrect — those packages live in this repo, not the separate `villagekit/villagekit` engine repo) to `villagekit/gridkit`.
+  - No CI workflow changes needed; nothing referenced the old URL.
+- [x] Update CLAUDE.md in this repo to reflect the new URL.
 
 ## Notes
 - GitHub's redirect from old → new URLs is automatic for `git clone`. But explicit references in package.json should be updated for cleanliness.
 - After the rename, the old "gridkit-legacy" URL still works for years (GitHub redirects), so this is not destructive.
+- The package.json `repository.url`/`bugs.url`/`homepage` fields had been pointing at `villagekit/villagekit` — that was a stale paste from the newer engine repo, fixed to point at this codebase's actual home `villagekit/gridkit`.
+- The remaining `villagekit/villagekit` reference in `gridkit/README.md` (the "See also" footnote) is intentional — that's the separate engine repo, not this one.
 
 ## Depends on
 - [./02-readme-and-positioning.md](./02-readme-and-positioning.md) — rename + README update should ship together to avoid mid-state weirdness
