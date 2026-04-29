@@ -70,7 +70,8 @@ Documented here so the engine migration (Stream 03 task 08) and website work (St
 
 ## Follow-ups (split out of this task)
 
-- **`tsup` not installed** — `package.json` references `tsup src` but the binary is missing from the lockfile. Either add `tsup` to devDependencies, or switch to `tsc -p .` for the package build. Filed on Stream 02 task 01 as a wash-up.
+- **`tsup` not installed** — `package.json` references `tsup src` but the binary is missing from the lockfile. Either add `tsup` to devDependencies, or switch to `tsc -p .` for the package build. Workspace consumers (gridbeam.xyz site) now resolve `@villagekit/ui` to `./src/index.ts` directly via the `exports` field, with a `publishConfig.exports` override pointing at `./dist/*` — so npm publishes still need a built `dist/` before they'll work. Filed on Stream 02 task 01 as a wash-up.
+- **`'use client'` audit on component wrappers** — several files in `src/components/` (`Accordion`, `Badge`, `Checkbox`, `FormLabel`, `Select`, `Slider`, `Switch`, `Table`) re-export Chakra v3 components alongside theme recipe objects in the same file. Without `'use client'`, real Next.js App Router consumption will trip RSC errors when those components are actually used (the home-page placeholder doesn't hit this yet). Fix is to split recipes into separate `*.recipe.ts` files (so the recipes stay server-evaluable for `theme/index.ts`) and add `'use client'` to the component wrappers. Hook files were already fixed during the gridbeam.xyz bootstrap (Stream 01 task 01).
 - **Brand colour values** — Chakra v3's built-in `pink`/`cyan`/`yellow` palettes are slightly different shades from v2. Brand-perfect colours can be re-locked once the website lands and we eyeball it; for now, primary remains pink-flavoured.
 - **Visual storybook regression test** — needs `pnpm run dev` in an environment with the full lockfile installed. Track separately.
 

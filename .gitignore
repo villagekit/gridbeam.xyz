@@ -53,10 +53,17 @@ typings/
 
 # dotenv environment variables file
 .env
+.env*.local
 
-# gatsby files
-.cache/
-public
+# Next.js
+.next/
+out/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Vercel
+.vercel
 
 # Mac files
 .DS_Store
