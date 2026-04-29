@@ -14,7 +14,7 @@ The website at the top level can import `@villagekit/sandbox`, `@villagekit/para
   - **Published package** in production: `"@villagekit/sandbox": "^0.9.0"`. Clean, but requires a publish for every change.
   - Recommend **workspace path during dev, published in production** — same pattern Next.js workspaces use.
 - [ ] Update top-level `pnpm-workspace.yaml` to include `gridkit/core/*`, `gridkit/parts/*`, `gridkit/products/*`, `gridkit/util/*` if going the workspace route.
-- [ ] Decide where designs live (also a decision in Stream 01 task 06): inside `./gridkit/products/kit/designs/` or a sibling.
+- [ ] Designs themselves live in `./gridkit-products` (`@villagekit/products`) — separate submodule. The engine just renders; the catalog is fed in.
 - [ ] Build a `<DesignPage>` component that:
   1. Imports the design definition (server component)
   2. Imports `@villagekit/parameters` for the parameter UI (client component)

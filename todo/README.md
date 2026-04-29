@@ -80,3 +80,5 @@ A few decisions are deferred until the relevant task picks them up:
 - New image-hosting destination (keep Cloudinary on a new path? Vercel-hosted? Self-hosted?) — see `04-content/02-image-hosting.md`.
 - Whether to keep the studio Tauri app or sunset it — see `03-engine/06-studio-app-future.md`.
 - Hosting target for the website (Vercel assumed, but could be other) — see `01-website/11-deployment-and-seo.md`.
+
+(Settled since first draft: ~~designs catalog data source~~ → `./gridkit-products` submodule.)

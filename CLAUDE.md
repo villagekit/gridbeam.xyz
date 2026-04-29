@@ -2,7 +2,7 @@
 
 Reviving the dead [gridkit.nz](https://gridkit.nz) startup as **[gridbeam.xyz](https://gridbeam.xyz)** — a non-commercial, open-source educational site about **grid beam**, a modular construction system based on a 40 mm grid of identical aluminium beams with regularly-spaced holes.
 
-This top-level repo IS the website. It consumes two open-source submodules (`./ui`, `./gridkit`) and temporarily depends on a private legacy submodule (`./node-modules`) as source material for extraction.
+This top-level repo IS the website. It consumes three open-source submodules (`./ui`, `./gridkit`, `./gridkit-products`) and temporarily depends on a private legacy submodule (`./node-modules`) as source material for extraction.
 
 ## Repo shape
 
@@ -11,6 +11,7 @@ This top-level repo IS the website. It consumes two open-source submodules (`./u
 | `/` (this repo) | The gridbeam.xyz Next.js site | Public — EUPL-1.2 |
 | `./ui` | `@villagekit/ui` — open-source React component library on Chakra UI | Public — `villagekit/ui` |
 | `./gridkit` | The grid-kit engine — code-as-CAD, parts library, sandbox renderer | Public — currently `villagekit/gridkit-legacy`, being renamed |
+| `./gridkit-products` | The set of products (designs) authored with the `./gridkit` engine. Powered the original gridkit.nz catalog; powers the new gridbeam.xyz catalog too. Stays a separate repo (not folded into gridkit). | Public — `villagekit/gridkit-products` |
 | `./node-modules` | Legacy private monorepo. Source material for extraction. **Retired by stream 05.** | Private — `villagekit/node-modules` |
 
 ## Tech stack (target)
@@ -51,6 +52,7 @@ Complexity is fine when warranted. The point is to be deliberate.
 - **Comments:** only when the *why* is non-obvious — a hidden constraint, a workaround, a counter-intuitive choice. Names carry the *what*. No multi-paragraph docstrings.
 - **Module exports:** think of a file like the intimacy gradient of a home. Public exports near the top (the entryway); private helpers further down (the bedrooms).
 - **Documentation discipline:** when code changes, update affected `README.md` / CLAUDE.md / task files in the same commit.
+- **Citing copied code:** when porting code from `./node-modules` (or any other source repo), reference the source GitHub URL — pinned to a specific commit SHA, not a branch — in the commit message and/or as a comment at the top of the new file. Example: `// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/pages/faq.tsx`. Branch URLs rot; commit SHAs don't.
 - **License posture:** EUPL-1.2 across the board. Library deps may be MIT/BSD/Apache-2.0/MPL/EUPL/LGPL. Avoid GPL deps unless intentional and justified (EUPL is GPL-compatible but inheriting GPL into our distribution carries weight).
 
 ## Reviews

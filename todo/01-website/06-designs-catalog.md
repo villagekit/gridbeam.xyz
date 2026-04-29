@@ -10,10 +10,7 @@ The legacy site has a strong designs catalog — browse by category (bedroom, de
 - `app/designs/[id]/page.tsx` — individual design page with parameters UI, 3D preview, parts list, build instructions
 
 ## Steps
-- [ ] Decide where design data lives:
-  - **Option A**: Keep using `@villagekit-private/designs` from `node-modules/packages/designs/`. Easy to start, but Stream 05 wants to retire `node-modules`.
-  - **Option B**: Move designs into `./gridkit/products/kit/designs/` (or a sibling) so they live with the engine. Cleaner long-term.
-  - Recommend Option B — folded into the engine's open-source repo.
+- [ ] Wire up the design data source. Designs live in the `./gridkit-products` submodule (`@villagekit/products` on npm), 37 products at the time of writing. Add it as a dependency of the website (workspace path during dev, published version for prod).
 - [ ] Build the listing page: server component reads design index, renders grid of cards. Filter by category (client component over the index).
 - [ ] Build the detail page:
   - Server component for static design data (title, description, parts list)
