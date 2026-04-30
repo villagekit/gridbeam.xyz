@@ -5,7 +5,7 @@ export const navItems: NavItemDescriptors = [
   { href: '/designs', label: 'Designs', location: 'top' },
   { href: '/stories', label: 'Stories', location: 'top' },
   { href: '/suppliers', label: 'Suppliers', location: 'top' },
-  { href: '/tools', label: 'Tools', location: 'top' },
+  { href: '/tools-and-resources', label: 'Tools', location: 'top' },
   { href: '/contact', label: 'Contact', location: 'top' },
 ]
 

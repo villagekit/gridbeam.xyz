@@ -13,7 +13,7 @@ A clean, content-focused Next.js (latest, app router) + Chakra v3 site that expl
 | 01 | [Bootstrap Next.js + Chakra v3 + tooling](./01-bootstrap-nextjs.md) | DONE |
 | 02 | [Root layout, header, footer, mobile nav](./02-layout-and-nav.md) | DONE |
 | 03 | [Home page](./03-home-page.md) | DONE |
-| 04 | [Educational pages: about, FAQ, tools-and-resources](./04-educational-pages.md) | TODO |
+| 04 | [Educational pages: about, FAQ, tools-and-resources](./04-educational-pages.md) | DONE |
 | 05 | [MDX stories / guides](./05-stories.md) | TODO |
 | 06 | [Designs catalog browser](./06-designs-catalog.md) | TODO |
 | 07 | [Cutting planner tool](./07-cutting-planner.md) | TODO |
