@@ -13,6 +13,8 @@ import {
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
 
+import { ObfuscatedEmailLink } from '../_components/ObfuscatedEmail'
+
 const title = 'Legal'
 const description = 'Privacy policy and licensing information for gridbeam.xyz.'
 
@@ -67,10 +69,7 @@ export default function LegalPage() {
             </Heading>
             <Text>
               Anything unclear? Email{' '}
-              <Link variant="paragraph" href="mailto:hello@mikey.nz">
-                hello@mikey.nz
-              </Link>{' '}
-              or open an issue at{' '}
+              <ObfuscatedEmailLink user="hello+gridbeam" domain="mikey.nz" /> or open an issue at{' '}
               <Link
                 variant="paragraph"
                 href="https://github.com/villagekit/gridbeam.xyz/issues"

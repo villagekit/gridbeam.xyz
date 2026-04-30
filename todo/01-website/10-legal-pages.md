@@ -37,9 +37,10 @@ Even a simple non-commercial site benefits from a clear privacy policy. If the s
   - Footer Legal column shows "Privacy policy" + "Site licence" (no cookie-policy reference anywhere).
 
 ## Follow-ups
-- **When task 09 (contact + subscribe) ships:** update privacy policy in the same commit — drop "in future" hedges in the Newsletter signups + Contact form paragraphs, and name the form/newsletter providers in the Third parties paragraph. Bump `lastUpdated`.
+- **When task 09 v1 shipped (2026-04-30):** privacy policy + /legal index switched their plain `mailto:hello@mikey.nz` calls to `<ObfuscatedEmailLink user="hello+gridbeam" domain="mikey.nz" />` (3× in privacy-policy, 1× in /legal index). The "in future" hedges in the Newsletter signups + Contact form paragraphs were intentionally kept, because task 09 v1 is static (mailto + informational page) — no real form was wired up. The hedges + the "No newsletter / contact form is currently active" callouts remain accurate. The Third parties paragraph also stays unchanged.
+- **When the real contact / subscribe forms ship (post-task-09 follow-up):** update privacy policy in the same commit — drop the "in future" hedges in the Newsletter signups + Contact form paragraphs, and name the form/newsletter providers (Buttondown for newsletter; Resend or similar for contact form) in the Third parties paragraph. Bump `lastUpdated`.
 - **When task 11 (deployment) ships:** update privacy policy in the same commit — name the hosting provider in the Server access logs paragraph and link to their privacy policy. Bump `lastUpdated`.
-- **Project email address.** The privacy policy currently routes data-rights requests through `hello@mikey.nz`. Once `hello@gridbeam.xyz` (or similar gridbeam.xyz alias) is set up, swap the policy across.
+- **Project email address.** The privacy policy now routes data-rights requests through obfuscated `hello+gridbeam@mikey.nz`. Once `hello@gridbeam.xyz` (or similar gridbeam.xyz alias) is set up, swap the policy across — three `<ObfuscatedEmailLink>` call-sites in privacy-policy + one in /legal index, plus the matching call on /contact.
 - **Real-browser visual QA at base/md/lg widths** — currently SSR-only, same as tasks 02–04.
 
 ## Depends on

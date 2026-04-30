@@ -12,6 +12,8 @@ import {
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
 
+import { ObfuscatedEmailLink } from '../../_components/ObfuscatedEmail'
+
 const title = 'Privacy policy'
 const description =
   'gridbeam.xyz collects almost nothing. No cookies, no analytics, no third-party trackers. Here is the full picture.'
@@ -115,10 +117,7 @@ export default function PrivacyPolicyPage() {
             <Text>
               You can ask us what data we hold about you and request correction or deletion. The
               quickest way is to email{' '}
-              <Link variant="paragraph" href="mailto:hello@mikey.nz">
-                hello@mikey.nz
-              </Link>{' '}
-              or open an issue at{' '}
+              <ObfuscatedEmailLink user="hello+gridbeam" domain="mikey.nz" /> or open an issue at{' '}
               <Link
                 variant="paragraph"
                 href="https://github.com/villagekit/gridbeam.xyz/issues"
@@ -127,7 +126,7 @@ export default function PrivacyPolicyPage() {
               >
                 github.com/villagekit/gridbeam.xyz/issues
               </Link>
-              . The contact page (when it ships) will offer the same channel.
+              . The same channels are linked from the contact page.
             </Text>
             <Text>
               If you live in the European Union, the United Kingdom, or another jurisdiction with
@@ -149,10 +148,7 @@ export default function PrivacyPolicyPage() {
             </Heading>
             <Text>
               Questions about this policy? Email{' '}
-              <Link variant="paragraph" href="mailto:hello@mikey.nz">
-                hello@mikey.nz
-              </Link>
-              .
+              <ObfuscatedEmailLink user="hello+gridbeam" domain="mikey.nz" />.
             </Text>
           </VStack>
         </Container>
