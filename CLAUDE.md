@@ -98,7 +98,7 @@ This site will be live for years. Logs are a first-class concern, even though th
 The legacy site at `node-modules/apps/gridkit/` (Next.js 14 + Chakra 2) is the source of:
 
 - Page structure: about, faq, stories, designs, tools, contact, subscribe, legal
-- Five MDX stories under `pages/stories/*.mdx`
+- Six MDX stories under `pages/stories/*.mdx` (4 guides + 2 newsletters)
 - The cutting planner applet (`@villagekit-private/applet-cutting-planner`)
 - The designs catalog logic
 - A stub already exists at `node-modules/apps/gridbeam/` — useful reference, not a starting point

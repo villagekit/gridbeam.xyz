@@ -16,12 +16,14 @@ A polished, public, npm-published `@villagekit/ui` on **Chakra v3 + React 19**, 
 | 04 | [Fold in `ui-nav` (header, side nav, mobile menu)](./04-fold-ui-nav.md) | DONE (storybook stories deferred) |
 | 05 | [Fold in `ui-media` (Image, Video, hooks)](./05-fold-ui-media.md) | TODO |
 | 06 | [Fold in `ui-mdx` (MDX component overrides)](./06-fold-ui-mdx.md) | TODO |
+| 09 | [`'use client'` audit on component wrappers](./09-use-client-audit.md) | TODO |
+| 10 | [`tsup` install + `dist/` build](./10-build-pkg-setup.md) | TODO |
 | 07 | [Storybook upgrade + Chakra integration](./07-storybook-and-ci.md) | TODO |
 | 08 | [Publish to npm with proper CI/CD](./08-publish-npm.md) | TODO |
 
 ## Order of attack
 
-01 → 02 are blocking. Once Chakra v3 is in, 03-06 can run in parallel (each is a straightforward port of one ui-* package). 07-08 close out the stream.
+01 → 02 are blocking. Once Chakra v3 is in, 03-06 can run in parallel (each is a straightforward port of one ui-* package). Tasks 09 (`'use client'` audit) and 10 (`tsup` install + `dist/` build) are housekeeping that surfaced from work on 01-04 — both block 07 (storybook CI needs `build:pkg` to be green) and 08 (npm publish needs both). 07 → 08 close out the stream.
 
 ## Decisions made
 

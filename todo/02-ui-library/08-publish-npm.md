@@ -32,4 +32,6 @@
 
 ## Depends on
 - [./07-storybook-and-ci.md](./07-storybook-and-ci.md) (CI in place)
+- [./09-use-client-audit.md](./09-use-client-audit.md) — RSC-safe components before third parties consume them
+- [./10-build-pkg-setup.md](./10-build-pkg-setup.md) — `dist/` must exist for `pnpm publish` to produce a usable package
 - [../03-engine/01-license-cleanup.md](../03-engine/01-license-cleanup.md) — license consistency across `@villagekit/*` is nice

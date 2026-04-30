@@ -1,6 +1,6 @@
 # Stream 04 — Content migration
 
-The legacy gridkit.nz site has solid content — the educational About page, the FAQ, the five MDX stories — but it's framed as a startup selling kits. Every "buy now" needs to become "find a supplier" or "build your own". Every "Grid Kit" reference needs to be evaluated: is it talking about the company (rename) or the product/design system (often keep, sometimes rename to "grid beam")?
+The legacy gridkit.nz site has solid content — the educational About page, the FAQ, the six MDX stories (4 guides + 2 newsletters) — but it's framed as a startup selling kits. Every "buy now" needs to become "find a supplier" or "build your own". Every "Grid Kit" reference needs to be evaluated: is it talking about the company (rename) or the product/design system (often keep, sometimes rename to "grid beam")?
 
 ## Goal
 
@@ -15,11 +15,11 @@ A complete content audit + rewrite pass that produces:
 
 | # | Task | Status |
 |---|------|--------|
-| 01 | [Rebrand copy audit (gridkit.nz → gridbeam.xyz)](./01-rebrand-copy.md) | TODO |
+| 01 | [Rebrand copy audit (gridkit.nz → gridbeam.xyz)](./01-rebrand-copy.md) | DONE |
 | 02 | [Image hosting decision + migration](./02-image-hosting.md) | TODO |
-| 03 | [Port + update MDX stories](./03-stories-port.md) | TODO |
-| 04 | [Rewrite the About / grid-beam explainer page](./04-grid-beam-explainer.md) | TODO |
-| 05 | [Suppliers content + initial data](./05-suppliers-content.md) | TODO |
+| 03 | [Port + update MDX stories](./03-stories-port.md) | DONE (port plan ready; placement deferred to Stream 01 task 05) |
+| 04 | [Rewrite the About / grid-beam explainer page](./04-grid-beam-explainer.md) | DONE |
+| 05 | [Suppliers content + initial data](./05-suppliers-content.md) | DONE (pending supplier list from Mikey) |
 
 ## Order of attack
 

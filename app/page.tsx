@@ -102,7 +102,7 @@ export default function HomePage() {
             </Text>
             <Text fontSize="lg">
               The idea has been around for decades, in many sizes. The original Phelps grid beam
-              used 1.5″ holes on a four-bolt cycle. This site focuses on the 40&nbsp;mm flavour —
+              used a 1½″ profile on a four-bolt cycle. This site focuses on the 40&nbsp;mm flavour —
               that's what the design catalogue, the cutting planner, and the listed suppliers are
               sized for.
             </Text>

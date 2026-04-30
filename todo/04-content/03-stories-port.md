@@ -3,7 +3,7 @@
 **Status:** DONE (port plan ready; placement deferred to Stream 01 task 05)
 
 ## Why
-The legacy site has 5 MDX stories. They're well-written but need rebrand passes — every "Grid Kit" should be evaluated as either "the company" (rare) or "grid beam, the system" (most uses).
+The legacy site has 6 MDX stories (4 guides + 2 newsletters). They're well-written but need rebrand passes — every "Grid Kit" should be evaluated as either "the company" (rare) or "grid beam, the system" (most uses).
 
 ## What
 Five updated `.mdx` files in the new site's `content/stories/` directory, with corrected framing and pointing at the new image paths.

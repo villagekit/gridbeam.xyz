@@ -68,4 +68,5 @@ Doing both together avoids migrating `core/ui` to v3 only to delete it later.
 ## Depends on
 - [./01-license-cleanup.md](./01-license-cleanup.md)
 - [../02-ui-library/02-chakra-v3-migration.md](../02-ui-library/02-chakra-v3-migration.md) — the standalone `@villagekit/ui` must be on v3 first
+- [../02-ui-library/09-use-client-audit.md](../02-ui-library/09-use-client-audit.md) — engine consumers will hit the same RSC boundary issues otherwise
 - [../02-ui-library/08-publish-npm.md](../02-ui-library/08-publish-npm.md) — preferable to consume from npm than wrestle with workspace cross-linking, but workable either way

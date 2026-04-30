@@ -13,10 +13,13 @@ Once the new website is live, cut ties with the legacy bits we no longer need. P
 | 01 | [Retire `./node-modules` submodule](./01-retire-node-modules.md) | TODO |
 | 02 | [Archive old gridkit.nz deploy + redirect](./02-archive-old-site.md) | TODO |
 | 03 | [DNS / domain — point gridbeam.xyz at new deployment](./03-dns-and-domain.md) | TODO |
+| 04 | [Pre-launch real-browser QA pass](./04-pre-launch-qa.md) | TODO |
 
 ## Order of attack
 
-03 (DNS) can happen any time after the new site is reachable on its preview URL.
+04 (pre-launch QA) runs against a Vercel preview as soon as Stream 01 task 11 ships a deploy URL — fixes from this audit feed back into Stream 01 page tasks before launch.
+
+03 (DNS) can happen any time after the new site is reachable on its preview URL and 04 (QA) is clean enough to ship.
 
 01 (retire node-modules) only after every dependency on `node-modules/packages/*` and `node-modules/apps/*` has been removed from the website. That's only true once Streams 01, 02, 03, 04 are functionally done.
 
