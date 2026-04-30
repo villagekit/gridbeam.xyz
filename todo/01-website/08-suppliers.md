@@ -24,14 +24,16 @@ The legacy site sold parts directly via Stripe. The new site doesn't sell anythi
 
 ## Notes
 - The legacy store pages use `@villagekit-private/store` and `@villagekit-private/db` — both go away. We're not pulling Stripe or postgres into the new site.
-- **Initial supplier list is empty** in v1. Memory flags gridkit.nz as run by an ex-business-partner who could be listed as a supplier — deferred to the user's call (entry not added without their explicit OK).
-- Stream 04 task 05 produces the actual content (which suppliers, what they sell).
+- **Initial supplier list (per Mikey, 2026-04-30):**
+  - `gridkit.nz` — 40 mm grid-beam hardware, Aotearoa New Zealand. Run independently by Mikey's ex-business-partner.
+  - `gridbeamsupply.com` — Imperial profile (the OG Phelps grid beam, Ken Isaacs / Phil Jergenson lineage), United States. Different geometry from this site's 40 mm focus; parts don't mix with 40 mm hardware. Page intro acknowledges this and each card flags its profile.
+- Stream 04 task 05 produces additional content (more suppliers as they appear).
 - `logoUrl` was dropped from the schema as dead code (no current logos). Add back as a one-line schema change when the first supplier provides one.
 
 ## Follow-ups
 - When supplier count ≥ 5, add region + offering filters per draft spec.
 - When first supplier provides a logo, restore `logoUrl?: string` on `Supplier` and render it on the card.
-- Confirm with Mikey whether to list gridkit.nz as a v1 supplier now.
+- Confirm gridbeam-compatible profile for `gridbeamsupply.com` cards — Mikey treats them as compatible-in-spirit; their site doesn't publish exact dimensions on product pages. Strong inference (Imperial-foot lengths + Phelps lineage) is 1½″ × 1″ hole spacing.
 
 ## Depends on
 - [./02-layout-and-nav.md](./02-layout-and-nav.md)

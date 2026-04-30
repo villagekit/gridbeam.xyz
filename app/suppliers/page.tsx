@@ -53,17 +53,18 @@ export default function SuppliersPage() {
       <SkipNavContent />
 
       <Section index={0} maxW="6xl">
-        <Title description="Places that sell grid-beam-compatible hardware: beams, panels, fasteners, and sometimes full kits.">
+        <Title description="Places that sell grid-beam hardware: beams, panels, fasteners, and sometimes full kits.">
           Suppliers
         </Title>
         <Container maxW="3xl">
           <Text fontSize="lg" textAlign="center">
-            Every supplier listed here makes parts that fit the{' '}
+            This site catalogues the{' '}
             <Link variant="paragraph" href="/about">
-              40&nbsp;mm grid spec
+              40&nbsp;mm flavour
             </Link>{' '}
-            — so anything from one supplier mixes with parts from another. We don't sell parts; we
-            link to those who do.
+            of grid beam, and most listed suppliers ship 40&nbsp;mm hardware. We also list the
+            original Imperial flavour for completeness — each card flags its profile so you know
+            what mixes with what. We don't sell parts; we link to those who do.
           </Text>
         </Container>
       </Section>

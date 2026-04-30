@@ -17,4 +17,30 @@ export interface Supplier {
   status: SupplierStatus
 }
 
-export const suppliers: Array<Supplier> = []
+export const suppliers: Array<Supplier> = [
+  {
+    id: 'gridkit-nz',
+    name: 'Grid Kit',
+    region: 'NZ',
+    country: 'Aotearoa New Zealand',
+    website: 'https://gridkit.nz',
+    offerings: ['beams'],
+    compatibility: "40 mm grid — matches this site's catalogue.",
+    blurb:
+      'Aotearoa New Zealand–based supplier of 40 mm grid-beam hardware. Operates independently of the gridbeam.xyz project.',
+    status: 'active',
+  },
+  {
+    id: 'gridbeam-supply',
+    name: 'Gridbeam Supply',
+    region: 'US',
+    country: 'United States',
+    website: 'https://gridbeamsupply.com',
+    offerings: ['beams', 'fasteners', 'kits'],
+    compatibility:
+      "Imperial profile — the original Phelps grid beam, traced back to Ken Isaacs' Living Structures. Different geometry from this site's 40 mm focus; parts don't mix with 40 mm hardware.",
+    blurb:
+      "The OG grid-beam supplier. Sells tan-oak gridbeam box sets in 2'–8' lengths, furniture bolts, button shelves, and Phil Jergenson's 'How to Build with Gridbeam' book.",
+    status: 'active',
+  },
+]
