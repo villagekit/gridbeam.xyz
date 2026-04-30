@@ -42,7 +42,7 @@ export const footerSections: FooterSections = [
     heading: 'Legal',
     links: [
       { href: '/legal/privacy-policy', label: 'Privacy policy' },
-      { href: '/legal/cookie-policy', label: 'Cookie policy' },
+      { href: '/legal', label: 'Site licence' },
     ],
   },
 ]

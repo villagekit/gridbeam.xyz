@@ -19,7 +19,7 @@ A clean, content-focused Next.js (latest, app router) + Chakra v3 site that expl
 | 07 | [Cutting planner tool](./07-cutting-planner.md) | TODO |
 | 08 | [Suppliers page (replaces store)](./08-suppliers.md) | TODO |
 | 09 | [Contact + subscribe pages](./09-contact-and-subscribe.md) | TODO |
-| 10 | [Legal pages (privacy, cookies, etc)](./10-legal-pages.md) | TODO |
+| 10 | [Legal pages (privacy, cookies, etc)](./10-legal-pages.md) | DONE |
 | 11 | [Deployment, SEO, sitemaps, robots](./11-deployment-and-seo.md) | TODO |
 
 ## Order of attack
