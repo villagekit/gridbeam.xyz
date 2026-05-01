@@ -1,7 +1,15 @@
-// Inline Cloudinary URL builder until Stream 02 task 05 folds `ui-media`
-// into `@villagekit/ui`. Mirrors the legacy implementation at
-// node-modules/packages/ui-media/src/image.tsx so the eventual extraction
-// is a copy-paste.
+// Site-side Cloudinary URL helpers.
+//
+// Image URLs delegate to `@villagekit/ui`'s `getCloudinaryImageUrl`. The
+// video URL builder stays local because the legacy ui-media `Video`
+// component generates a different URL shape (per-format `<source>` with
+// shared transformations) than the site's `StoryVideo`, which uses
+// per-format full URLs without transformations. Stream 04 task 02 will
+// replace the hardcoded cloud name with an env var.
+
+import { getCloudinaryImageUrl } from '@villagekit/ui'
+
+const CLOUDINARY_NAME = 'villagekit'
 
 interface GetCloudinaryUrlOptions {
   src: string
@@ -10,14 +18,7 @@ interface GetCloudinaryUrlOptions {
 }
 
 export function getCloudinaryUrl(options: GetCloudinaryUrlOptions): string {
-  const { src, width, quality = 75 } = options
-
-  const baseUrl = 'https://res.cloudinary.com/villagekit'
-  const resourceType = 'image'
-  const deliveryType = 'upload'
-  const transformations = `c_limit,dpr_auto,f_auto,fl_alpha,fl_lossy,w_${width},q_${quality}`
-
-  return `${baseUrl}/${resourceType}/${deliveryType}/${transformations}/${src}`
+  return getCloudinaryImageUrl({ cloudinaryName: CLOUDINARY_NAME, ...options })
 }
 
 interface GetCloudinaryVideoUrlOptions {
@@ -27,10 +28,5 @@ interface GetCloudinaryVideoUrlOptions {
 
 export function getCloudinaryVideoUrl(options: GetCloudinaryVideoUrlOptions): string {
   const { src, format = 'mp4' } = options
-
-  const baseUrl = 'https://res.cloudinary.com/villagekit'
-  const resourceType = 'video'
-  const deliveryType = 'upload'
-
-  return `${baseUrl}/${resourceType}/${deliveryType}/${src}.${format}`
+  return `https://res.cloudinary.com/${CLOUDINARY_NAME}/video/upload/${src}.${format}`
 }
