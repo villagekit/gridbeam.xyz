@@ -1,0 +1,211 @@
+import { Link } from '@villagekit/ui'
+
+import {
+  StoryColumn,
+  StoryEditorialNote,
+  StoryImage,
+  StoryImageGrid,
+  StoryRow,
+  StorySection,
+  StoryVideo,
+} from '@/app/_components/story'
+
+export const metadata = {
+  title: '2021 Winter Newsletter',
+  description:
+    'Hello and welcome to our first newsletter, thanks for tuning in! This update covers some of what we’ve been doing the past 18 months and what we’re working on now. Check out our progress below 🌱',
+  shortDescription: 'The very first Village Kit newsletter.',
+  category: 'newsletter',
+  slug: '2021-winter-newsletter',
+  image: {
+    src: 'v1/gridkit.nz/stories/2021-winter-newsletter/the-team_gy2f0k',
+    alt: 'The Village Kit team',
+    width: 3000,
+    height: 2000,
+  },
+  publishedAt: '2021-09-15',
+  updatedAt: '2021-09-15',
+  originallyPublishedOn: 'gridkit.nz',
+}
+
+<StoryEditorialNote>
+Originally published in winter 2021 on gridkit.nz by the Village Kit team. Republished here as a historical record. Where this post says "Grid Kit", the same idea applies to grid beam more generally — the system is what it always was; only the brand has moved.
+</StoryEditorialNote>
+
+<StorySection index={0}>
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      # Overview
+
+      A quick refresh on the bigger picture: we’re extending the public domain modular construction system called [Grid Beam](https://gridbeam.xyz) and calling it Grid Kit - as we believe it’s much more than beams.
+
+      The open source Grid Kit system is metric and includes beams, panels, fasteners and a library of compatible add-on components (hinges, wheels etc). We’ve chosen a base unit size of 40mm which is compatible with existing [t-slot framing](https://en.wikipedia.org/wiki/T-slot_structural_framing) and standard panel sizes. The Grid Kit website will offer 3D design software to help create, share and discover Grid Kit designs, while also letting you purchase components from a local supplier.
+
+      Our long term goal is for Grid Kit to become a platform that makes modular construction easy, fun and most importantly, affordable.
+
+      <Link href="https://youtu.be/PIMESt9iLYg" isExternal>
+        <StoryImage src='v1/gridkit.nz/stories/2021-winter-newsletter/grid-beam-video-thumbnail-with-play-button_no80fj' alt="Grid Beam video" priority aspectRatio="wide" width={1280} height={720} />
+      </Link>
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
+
+<StorySection index={1}>
+  # What we've been working on
+
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      ### Prototyping online
+
+      In 2019 and 2020, we worked on a virtual playground to make and share Grid Kit designs. We wanted to make Grid Kit fun and understandable for anyone, even before you have any physical beams. The prototype at [play.gridbeam.xyz](https://play.gridbeam.xyz) works, but we learnt building a 3D interface is difficult. Rather than designing a full CAD (computed-aided design) application we decided to start with a catalogue of designs and let the user adjust parameters (height, width, etc.)
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <Link href="https://play.gridbeam.xyz/#1bc_BCoAwDAPQUIaMIRJ66kGGn-Bx__9lc3N4qL0-EpoWzdAtg2JquHCjsbx2EsZp0vKyysMwLbWyTIIcHvM5BN0a5sTEbQH3n419yd2VwEb3-43o" isExternal>
+        <StoryVideo src="gridkit.nz/stories/2021-winter-newsletter/gridcraft-playground_kepuvr" title="GridCraft Playground" />
+      </Link>
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={1}>
+    <StoryColumn index={0}>
+      ### Prototyping offline
+
+      We used our robot arm with a consumer drill attached to make 200 prototype beams. We did this to learn how to drill to our tolerance of 0.5mm and to have some actual beams to experiment with fasteners and aesthetics. Although the robot does look cool, it is way too slow for production with only one drill bit.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryVideo src="gridkit.nz/stories/2021-winter-newsletter/robot-drilling-holes_sfmsyn" title="Robot drilling holes" />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={2}>
+    <StoryColumn index={0}>
+      ### Grid beam out in the world
+
+      In January 2021 we took some beams to Kiwiburn. They were used to create a camp kitchen, composting toilet shelter, and a tiltable solar panel mount. We got lots of positive feedback with some people asking where they could buy grid beams. It took less than 2 hours to dismantle the structures which can be reused next year in another form. We learned that hole placement needs to be super precise so that putting things together is painless.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 2 }}
+        ariaLabel="Grid beam out in the world"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/dish-rack_nhiv8n',
+            alt: 'Grid beam dish rack',
+            width: 6000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/temporary-kitchen_f3qch4',
+            alt: 'Camp kitchen assembled with grid beam',
+            width: 3872,
+            height: 2160,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/compost-toilet_gnbeiz',
+            alt: 'Composting toilet within a grid beam structure',
+            width: 4000,
+            height: 6000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/lazy-tortoise_h7ggve',
+            alt: 'Solar punk trailer framed with grid beam',
+            width: 6000,
+            height: 4000,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={3}>
+    <StoryColumn index={0}>
+      ### Trialling furniture designs
+
+      In July we spent a week designing and building furniture including a dining table, sun bed, shoe rack, storage shelf, and pantry shelf. We started documenting the Grid Kit assembly process in detail, which we will soon publish to the website in a series of articles. We had some friends' kids visit and they had a lot of fun with offcuts. It was good to see how young children can understand how to build with grid beams without any instruction.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 3 }}
+        ariaLabel="Grid beam furniture designs"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/sun-bed_hqvwhm',
+            alt: 'Grid beam sun bed',
+            width: 6000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/shoe-rack_fb5cnf',
+            alt: 'Grid beam shoe rack',
+            width: 6000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2021-winter-newsletter/dining-table_qvjfy3',
+            alt: 'Grid beam dining table',
+            width: 5250,
+            height: 3500,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={4}>
+    <StoryColumn index={0}>
+      ### Making more beams
+
+      We are working with a mechanical engineer who is helping us design and build a new machine with greater speed and precision than the robot arm. Our goal is to design the machine such that it can produce beams efficiently, at scale, and ideally, unattended.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2021-winter-newsletter/automated-factory-machine-sketch_ow6rzh' alt="Automated factory machine sketch" width={4096} height={2304} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={5}>
+    <StoryColumn index={0}>
+      ### Online updates
+
+      Work progresses in a number of areas on our website including: a full refresh of the design, new privacy & cookie policies, and the first version of our design catalogue with basic preset & parameter controls for customisation. Make sure to check all of these out at [www.gridkit.nz](https://gridkit.nz)!
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryVideo src="gridkit.nz/stories/2021-winter-newsletter/creation-parameter-controls_pcramv" aspectRatio="wide" title="Design parameter controls" isInColumn />
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
+
+<StorySection index={2}>
+  # Next steps...
+
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      ### Building a factory
+
+      The beam-making machine in development needs to convert dimensioned timber into grid beams in a way that is economically sustainable, precise and reliable. This is our current focus. We want our next problem to be “how do we get rid of all these beams?”
+
+      ### Sharing our knowledge
+
+      We are publishing a series of articles known as “Stories” on our website. Each story will hone in on a given topic, guide, or case-study regarding Grid Kit. Some of the first stories we are looking to publish will be “Grid Kit Basics”, an introduction to the fundamental Grid Kit concepts, and “Building with Grid Kit”, a step-by-step guide to constructing custom furniture with Grid Kit.
+
+      ### Open up Grid Kit for orders!
+
+      At the moment, when someone asks “so I love Grid Kit, how do I buy it?”, we unfortunately have to say “Sorry, we don’t have any!”. Our aim is to sell Grid Kits by the end of this year. We will continue to work on our factory and website to become production ready as soon as possible.
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
+
+<StorySection index={3}>
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      That’s a wrap, thanks for reading! Follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates ☀️
+
+      <StoryImage src='v1/gridkit.nz/stories/2021-winter-newsletter/the-team_gy2f0k' alt="The Village Kit team (Rongomai, Mikey, and Jack)" width={3000} height={2000} />
+    </StoryColumn>
+  </StoryRow>
+</StorySection>

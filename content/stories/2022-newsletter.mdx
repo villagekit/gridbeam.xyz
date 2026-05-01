@@ -1,0 +1,546 @@
+import {
+  StoryColumn,
+  StoryEditorialNote,
+  StoryImage,
+  StoryImageGrid,
+  StoryRow,
+  StorySection,
+  StoryVideo,
+} from '@/app/_components/story'
+
+export const metadata = {
+  title: '2022 Newsletter',
+  description:
+    'It’s been a slow and steady year for us at Village Kit. While we are sad to report that we have yet to meet our goal of making and selling beams, we are still very happy to share our accomplishments, learnings, and plans for the upcoming year 🌱',
+  shortDescription: 'The slow and steady progress of Village Kit in 2022.',
+  category: 'newsletter',
+  slug: '2022-newsletter',
+  showImageInStory: true,
+  image: {
+    src: 'v1/gridkit.nz/stories/2022-newsletter/xmas-tree_hvcswn',
+    alt: 'Grid Kit Christmas Tree',
+    width: 1279,
+    height: 1600,
+  },
+  publishedAt: '2022-12-13',
+  updatedAt: '2022-12-13',
+  originallyPublishedOn: 'gridkit.nz',
+}
+
+<StoryEditorialNote>
+Originally published December 2022 on gridkit.nz by the Village Kit team. Republished here as a historical record. Where this post says "Grid Kit", the same idea applies to grid beam more generally — the system is what it always was; only the brand has moved.
+</StoryEditorialNote>
+
+<StorySection index={0}>
+  ## What we've been up to…
+
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      ### Team trip to the farm
+
+      Early in 2022 the team got together at a farm in the Coromandel to collaborate on the “GridBot Hex” machine. We shared meals and hung out with the local animals. Since then we’ve made progress on multiple fronts including: developing our mass-production machines, lots of website updates, launching a new discussion forum, and exploring Grid Kit designs and components.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 2 }}
+        ariaLabel="Team trip to the farm"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/team-lunch_uk3hrn',
+            alt: 'The team making lunch',
+            width: 3072,
+            height: 4096,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/farm-ducks_n3nzoe',
+            alt: 'Ducks at the farm',
+            width: 4096,
+            height: 3072,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={1}>
+    <StoryColumn index={0}>
+      ### “GridBot Hex”
+
+      Our 6-drill prototype machine known as “GridBot Hex” can drill one beam in about 7 minutes to an accuracy of 100 microns. Developing a production-ready machine was more work than anticipated - parts took months to arrive, our initial control system needed to be completely replaced, and we had to make some parts ourselves as they were unavailable for purchase. Eventually we discovered flaws in our design that meant it would never be reliable or fast enough for mass production, and so we went back to the drawing board.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 3 }}
+        ariaLabel="GridBot Hex"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-1_mlepqm',
+            alt: 'GridBot Hex',
+            width: 4864,
+            height: 3648,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-2_zchbcq',
+            alt: 'GridBot Hex',
+            width: 4864,
+            height: 3648,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-3_mvjvrj',
+            alt: 'GridBot Hex',
+            width: 3000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-4_qzogmf',
+            alt: 'GridBot Hex',
+            width: 3000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-5_ztdbop',
+            alt: 'GridBot Hex',
+            width: 3264,
+            height: 2448,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-6_e3uttl',
+            alt: 'GridBot Hex',
+            width: 3000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-7_ijcrn0',
+            alt: 'GridBot Hex',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-8_b15nzr',
+            alt: 'GridBot Hex',
+            width: 3000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/new-gridbot_mnq1zo',
+            alt: 'GridBot Hex next iteration',
+            width: 1113,
+            height: 615,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={2}>
+    <StoryColumn index={0}>
+      Our next iteration of the machine will use custom engineered parts and be able to drill 60 holes in one movement. This reduction in motion complexity should save us a lot of future headaches. If it works, our next projects will include panel drilling, automated clamping, and loading.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryVideo src="gridkit.nz/stories/2022-newsletter/updates/gridbot-hex-test-drilling_zgcnu3" aspectRatio="wide" title="GridBot Hex test drilling" isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={3}>
+    <StoryColumn index={0}>
+      ### “GridBot Tahi”
+
+      As beam production continues to be a roadblock for us, we are now building a smaller grid beam machine in parallel to GridBot Hex. Called “GridBot Tahi”, this new machine has a simpler design with one spindle on two cartesian axes and is intended for DIY users who would like to make their own beams.
+
+      With GridBot Tahi we intend to follow best practices from open source CNC machines including: 2020 / 2040 / 2080 aluminium extrusion, linear rails and carriages for travel, rack-and-pinion motion for the axis along the length of the beam, ball screw motion for the axis in and out of the beam, and a servo motor for low rpm drilling speeds. The design is [open source](https://github.com/villagekit/gridbot-tahi), using OpenSCAD / NopSCADlib. The firmware is also [open source](https://github.com/villagekit/robokit), written in Rust. The parts for the machine have been ordered, next up is to assemble the prototype.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/gridbot-tahi_nf4gwb' alt="GridBot Tahi" width={1024} height={520} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={4}>
+    <StoryColumn index={0}>
+      ### Landing page redesign
+
+      We’ve updated our [landing page](https://www.gridkit.nz) to bring it in line with the refreshed website design. It now shows off the design catalogue, our latest stories, testimonials from some of our early adopters, and our visions for a more sustainable, collaborative, and community-oriented future.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/landing-screenshot_czbm7x' alt="Redesigned landing page" aspectRatio="wide" width={3326} height={1884} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={5}>
+    <StoryColumn index={0}>
+      ### Design catalogue updates
+
+      Numerous updates have been made to our [design catalogue](https://www.gridkit.nz/designs), notably: improvements to existing designs, some new designs (Super Table & Shoe Rack), automatically calculating the assembled dimensions & estimated pricing, and a breakdown of the individual parts that make up a design. In addition we’ve made improvements to the viewer controls, added a full screen mode, and now generate and display the individual fasteners per design.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 2 }}
+        ariaLabel="Design catalogue updates"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/shoe-rack-screenshot_konqys',
+            alt: 'Shoe rack design',
+            width: 3326,
+            height: 1884,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/updates/parts-breakdown-screenshot_tngztw',
+            alt: 'The parts breakdown for designs',
+            width: 3326,
+            height: 1882,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={6}>
+    <StoryColumn index={0}>
+      ### Product catalogue
+
+      We’ve added a preliminary [products catalogue](https://www.gridkit.nz/products) to the website, a first step in laying the groundwork for online ordering of Grid Kit. It lists the core products you’ll be able to buy once we’re production ready. Our current idea is that you’ll be able to buy bundles of beams, panels, and fasteners, as well as a starter kit with all of the essential components included. We’ve also listed tools that you might need, though it’s unlikely we’ll stock these from the get go, instead, we’ll link to local suppliers where you can buy them. Behind the scenes we’ve also been getting the shopping cart and payments functionality ready for when we have beams to sell.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/products-screenshot_bnnich' alt="Product catalogue" width={3326} height={1884} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={7}>
+    <StoryColumn index={0}>
+      ### Stories page
+
+      As promised in our previous newsletter, we have since published the [Stories page](https://www.gridkit.nz/stories) to our website. Now you can read our newsletters, assorted guides, and related history & inspirations for Grid Kit, all in one place.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/stories-screenshot_qql0kf' alt="Stories page" width={3326} height={1884} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={8}>
+    <StoryColumn index={0}>
+      ### Discussion forum
+
+      Grid Kit is a small part of a wider vision for a more sustainable, creative, solarpunk future. We can’t do it alone, so we’re fostering a community space to inspire and enable, and that’s where you come in: We’ve now launched a [discussion forum](https://discuss.villagekit.com) where you can showcase your creations, discuss learnings from the past, and present ideas for the future. We’d also simply love to hear your feedback on the work we’re doing, so we invite you to sign up to the discussion and let us know your thoughts. 💙
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/discuss-screenshot_q1smw8' alt="Village kit discussion forum" width={3326} height={1884} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={9}>
+    <StoryColumn index={0}>
+      ### Meeting Phil Jergenson
+
+      Recently we got to meet Phil Jergenson, one of the original inventors of [Grid Beam](http://gridbeam.xyz), on which our work is based. He plays with the future, always imagining and tinkering; an absolute delight to spend time with. We are forever grateful to Phil and Richard Jergenson for sharing the Grid Beam system with the world. 🙏🌻
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/updates/phil-jergenson_mlnmvc' alt="Phil Jergenson playing with a grid beam creation" width={3072} height={2387} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
+
+<StorySection index={1}>
+  ## Our latest creations with Grid Kit
+
+  This year we’ve been busy using Grid Kit to try out new designs. See what we created below! 🔨
+
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      ### Kitchen Unit
+
+      A temporary [kitchen storage system](https://discuss.villagekit.com/t/kitchen-goodies/28) was made using offcuts from previous projects and a standard shelf. Our standard joint connector nuts and bolts worked well as hooks and a small off cut was used to make a knife rack. The plan for the next iteration is to disassemble everything and rebuild it with kitchen units made entirely from Grid Kit components.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 2 }}
+        ariaLabel="Kitchen unit"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-unit-1_eq8tnn',
+            alt: 'Kitchen unit',
+            width: 800,
+            height: 450,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-unit-2_vptja7',
+            alt: 'Kitchen unit bench',
+            width: 4000,
+            height: 3000,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={1}>
+    <StoryColumn index={0}>
+      ### Record player shelving unit
+
+      We spent a weekend building a [shelving unit](https://discuss.villagekit.com/t/record-shelf/22) to store an extensive record collection. The design required sturdy shelves for holding the weight of many records, space for a record player & amplifier, a place to present the record currently being played, and a small shelf for 7” singles. The design process involved creating an initial mock-up in SketchUp which was then built for real. The design was then gradually improved as we discovered what worked and what didn’t. For example, we added side & rear panels to provide diagonal bracing and 8mm dowels to act as dividers between shelves.
+
+      The result was a creation both beautiful and functional. Each “square” of the finished storage unit can hold 100 records. Fully loaded, the shelf can hold 900 x 12” records and 100 x 7” records. In addition, a place for charging USB devices was included. A further improvement in the works is a grid beam compatible dimmable LED lamp to illuminate the record playing area.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 2 }}
+        ariaLabel="Record player shelving unit"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/record-player-1_wmnia2',
+            alt: 'Record player shelf',
+            width: 2048,
+            height: 1536,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/record-player-2_p4ppba',
+            alt: 'Record player shelf SketchUp mock-up',
+            width: 4128,
+            height: 2322,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/record-player-3_iyagyy',
+            alt: 'Record player shelf under construction',
+            width: 4128,
+            height: 2322,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/record-player-4_d0fpav',
+            alt: 'Record player shelf under construction',
+            width: 2322,
+            height: 4128,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={2}>
+    <StoryColumn index={0}>
+      ### Server rack
+
+      As a personal experiment in self-hosted cloud services, we built a [server rack](https://discuss.villagekit.com/t/server-rack-for-the-homelab/25) using grid beam. For the creation to work we had to 3D print a custom part to bridge between the standard server rack modular system (based on rack units) to our grid system (based on grid units).
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 2 }}
+        ariaLabel="Server rack"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/server-rack-1_ytbvf6',
+            alt: 'Server rack',
+            width: 1600,
+            height: 1200,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/server-rack-2_xfuuvd',
+            alt: 'Server rack custom bridge part',
+            width: 1200,
+            height: 1600,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={3}>
+    <StoryColumn index={0}>
+      ### Hanging lights
+
+      A local community pottery was recently renovated, presenting an opportunity to build some [hanging lights](https://discuss.villagekit.com/t/dumpster-led-tubes/26) with Grid Kit. Four dumpster-dived 60 watt LED bars, WAGO connectors and some stainless steel wire light hangers were used to create a fixture with 100% reusable components. The large diffuse light source creates minimal shadows which helps potters when working on small details.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 3 }}
+        ariaLabel="Hanging lights"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/hanging-lights-1_xn2pyl',
+            alt: 'Hanging lights',
+            width: 1200,
+            height: 1600,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/hanging-lights-2_tkazir',
+            alt: 'Hanging lights side view',
+            width: 1200,
+            height: 1600,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/hanging-lights-3_y4dcww',
+            alt: 'Hanging lights close up',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/hanging-lights-4_rxtotr',
+            alt: 'Hanging lights close up',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/hanging-lights-5_ptwe1e',
+            alt: 'Stainless steel wire light hanger',
+            width: 3096,
+            height: 4128,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={4}>
+    <StoryColumn index={0}>
+      ### Simple tool holder
+
+      We’ve found Grid beam offcuts to be useful in a variety of ways. In this example, we used an offcut to build a [simple tool holder](https://discuss.villagekit.com/t/off-cut-use-simple-tool-holder/51). The holder easily attaches to a standard 4040 aluminium profile.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/creations/simple-tool-holder_wrpgta' alt="Simple tool holder" width={1600} height={1200} isInColumn />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={5}>
+    <StoryColumn index={0}>
+      ### Peacock truck
+
+      In another project we worked with a friend to add a ridiculously large tail to his [1930s truck](https://discuss.villagekit.com/t/peacock-retro-truck/52) for a local festival. He wanted to use bamboo to rise and then spread out behind the truck like a peacock’s tail. After three failed attempts, we designed a prototype using grid beam that could tilt and spread out without breaking. This design almost lasted until the truck took a tight turn across a bump in the paddock, causing a bamboo shoot to scrape the ground. During the project we discovered that two 4040 angle brackets could be joined together to make a strong universal joint. Going forward, the long term plan is to integrate a mesh of individually addressable LEDs to the tail.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 3 }}
+        ariaLabel="Peacock truck"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/peacock-truck-1_lf2xte',
+            alt: 'Peacock truck',
+            width: 1600,
+            height: 1200,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/peacock-truck-2_ikzexq',
+            alt: 'Peacock truck bamboo shoots',
+            width: 1200,
+            height: 1600,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/peacock-truck-3_yk0nxr',
+            alt: 'Universal joint with two 4040 angle brackets',
+            width: 3000,
+            height: 4000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/peacock-truck-4_miqfxh',
+            alt: 'Peacock truck behind',
+            width: 1200,
+            height: 1600,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/peacock-truck-5_dvfihi',
+            alt: 'Peacock truck close up',
+            width: 3000,
+            height: 4000,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={6}>
+    <StoryColumn index={0}>
+      ### Kitchen island
+
+      Recently we’ve been using Grid Kit to prototype a design for a [kitchen island](https://discuss.villagekit.com/t/kitchen-island/48) as part of a community kitchen renovation. The project has involved working closely with the community to come up with a design that best fits their needs, and an initial functional prototype using Grid Kit is now in place. The long term plan is to rebuild it from solid timber so it can last generations, while the prototypes will be dismantled and reused in other projects. One tricky problem is figuring out how to connect castor wheels to the end of each beam, if you have any thoughts on this, we’d love to [hear from you](https://discuss.villagekit.com/t/kitchen-island/48)!
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 2, md: 2 }}
+        ariaLabel="Kitchen island"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-island-1_jhtb9b',
+            alt: 'Kitchen island prototype',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-island-2_z84jix',
+            alt: 'Kitchen island prototype mock-up',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-island-3_fr3qwi',
+            alt: 'Kitchen island prototype under construction',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/kitchen-island-4_zaxah8',
+            alt: 'Attempt at attaching castor wheel to kitchen island',
+            width: 4000,
+            height: 3000,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+
+  <StoryRow index={7}>
+    <StoryColumn index={0}>
+      ### New components - insert nuts & castor wheels
+
+      We’re always on the lookout for new components that integrate well with Grid Kit. These [insert nuts](https://discuss.villagekit.com/t/grid-beam-component-insert-nuts/53) are screwed into our 8mm holes to provide a 6mm thread for our standard bolts to go into, allowing mounting of flat panels with undrilled surfaces. We also found some cute M6 castor wheels that work with our standard nuts.
+    </StoryColumn>
+
+    <StoryColumn index={1}>
+      <StoryImageGrid
+        columns={{ base: 1, md: 2 }}
+        ariaLabel="New components"
+        images={[
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/insert-nuts_dbnygd',
+            alt: 'Grid Kit compatible insert nuts',
+            width: 4000,
+            height: 3000,
+          },
+          {
+            src: 'v1/gridkit.nz/stories/2022-newsletter/creations/castor-wheels_g2d7o8',
+            alt: 'Grid Kit compatible castor wheels',
+            width: 4000,
+            height: 3000,
+          },
+        ]}
+      />
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
+
+<StorySection index={2}>
+  <StoryRow index={0}>
+    <StoryColumn index={0}>
+      ## In summary
+
+      Our top priority going forward is to develop our production pipeline so we can produce and deliver beams to customers (you!). We’ll also continue to expand our design catalogue and website to improve the online Grid Kit experience.
+
+      Thanks for checking in! Make sure to follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates. Join in on the discussion on our [community forum](https://discuss.villagekit.com) and let us know what you think of [this newsletter](https://discuss.villagekit.com/t/village-kit-2022-newsletter/55) 🌙
+
+      <StoryImage src='v1/gridkit.nz/stories/2022-newsletter/team-robot_qngp4v' alt="The team with GridBot Hex" width={4864} height={3648} />
+    </StoryColumn>
+  </StoryRow>
+</StorySection>
