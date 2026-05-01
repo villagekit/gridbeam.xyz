@@ -2,6 +2,7 @@ import { MainLayout, NavContextProvider, Provider, SkipNavLink } from '@villagek
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
+import { EmotionRegistry } from './_components/EmotionRegistry'
 import { SiteBrand } from './_components/SiteBrand'
 import { SiteFooter } from './_components/SiteFooter'
 import { SiteHeaderAction } from './_components/SiteHeaderAction'
@@ -47,19 +48,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Provider>
-          <SkipNavLink>Skip to main content</SkipNavLink>
-          <NavContextProvider items={navItems}>
-            <MainLayout
-              HeaderBrand={SiteBrand}
-              HeaderAction={SiteHeaderAction}
-              Footer={SiteFooter}
-              headerColorPalette="accentB"
-            >
-              {children}
-            </MainLayout>
-          </NavContextProvider>
-        </Provider>
+        <EmotionRegistry>
+          <Provider>
+            <SkipNavLink>Skip to main content</SkipNavLink>
+            <NavContextProvider items={navItems}>
+              <MainLayout
+                HeaderBrand={SiteBrand}
+                HeaderAction={SiteHeaderAction}
+                Footer={SiteFooter}
+                headerColorPalette="accentB"
+              >
+                {children}
+              </MainLayout>
+            </NavContextProvider>
+          </Provider>
+        </EmotionRegistry>
       </body>
     </html>
   )
