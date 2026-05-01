@@ -15,7 +15,7 @@ A polished, public, npm-published `@villagekit/ui` on **Chakra v3 + React 19**, 
 | 03 | [Fold in `ui-page` (layout primitives)](./03-fold-ui-page.md) | DONE (storybook stories deferred) |
 | 04 | [Fold in `ui-nav` (header, side nav, mobile menu)](./04-fold-ui-nav.md) | DONE (storybook stories deferred) |
 | 05 | [Fold in `ui-media` (Image, Video, hooks)](./05-fold-ui-media.md) | DONE (storybook stories deferred) |
-| 06 | [Fold in `ui-mdx` (MDX component overrides)](./06-fold-ui-mdx.md) | TODO |
+| 06 | [Fold in `ui-mdx` (MDX component overrides)](./06-fold-ui-mdx.md) | DONE (storybook story deferred) |
 | 09 | [`'use client'` audit on component wrappers](./09-use-client-audit.md) | TODO |
 | 10 | [`tsup` install + `dist/` build](./10-build-pkg-setup.md) | TODO |
 | 07 | [Storybook upgrade + Chakra integration](./07-storybook-and-ci.md) | TODO |
