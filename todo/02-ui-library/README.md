@@ -18,7 +18,7 @@ A polished, public, npm-published `@villagekit/ui` on **Chakra v3 + React 19**, 
 | 06 | [Fold in `ui-mdx` (MDX component overrides)](./06-fold-ui-mdx.md) | DONE (storybook story deferred) |
 | 09 | [`'use client'` audit on component wrappers](./09-use-client-audit.md) | DONE (recipes split out; directives intentionally not added — see task notes) |
 | 10 | [`tsup` install + `dist/` build](./10-build-pkg-setup.md) | DONE |
-| 07 | [Storybook upgrade + Chakra integration](./07-storybook-and-ci.md) | TODO |
+| 07 | [Storybook upgrade + Chakra integration](./07-storybook-and-ci.md) | DONE (engine `apps/storybook` bump rolled into Stream 03 task 08; Vercel deploy paired with task 08) |
 | 08 | [Publish to npm with proper CI/CD](./08-publish-npm.md) | TODO |
 
 ## Order of attack

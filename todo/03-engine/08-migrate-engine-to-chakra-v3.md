@@ -40,6 +40,7 @@ Doing both together avoids migrating `core/ui` to v3 only to delete it later.
 ### Migrate the engine to Chakra v3
 - [ ] In each consumer that uses Chakra v3 surface (Provider, hooks, primitives), update to v3 idioms.
 - [ ] If `apps/studio` had a custom Chakra theme, port it from `extendTheme` to `createSystem`.
+- [ ] Bump `apps/storybook` from Storybook 8 → 10 along with the Chakra v3 migration. (Task originally planned to handle this in Stream 02 task 07, but the engine's Storybook can't run without Chakra v3 — so it lands here.) Switch framework to `@storybook/nextjs-vite` if `apps/storybook` uses any `next/*` imports; otherwise `@storybook/react-vite` is enough.
 - [ ] Verify Storybook (`apps/storybook`) renders.
 - [ ] Verify studio app (`pnpm run dev:app:studio`) renders.
 
