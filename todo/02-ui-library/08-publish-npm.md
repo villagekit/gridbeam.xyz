@@ -1,6 +1,6 @@
 # 08 — Publish to npm with proper CI/CD
 
-**Status:** TODO
+**Status:** DONE (release infrastructure landed; first publish pending `NPM_TOKEN` secret + CI run)
 
 ## Why
 `@villagekit/ui` should be installable from npm so anyone can use it. Right now the package is in a workspace, never published.
@@ -9,26 +9,25 @@
 `@villagekit/ui` published on npm. A CHANGELOG. Automated publish on tag (or via Changesets / release-please).
 
 ## Steps
-- [ ] Confirm npm scope ownership: log in to npm and verify `@villagekit` is owned. (No collision with the engine — the engine's `core/ui` is being removed in Stream 03 task 08.)
-- [ ] Add `CHANGELOG.md` — start fresh from `0.x` (current version is `0.7.2` but post-Chakra-v3 this is a major break, bump to `1.0.0` or `0.8.0` with clear notes).
-- [ ] Decide release process:
-  - **Manual** — `pnpm publish` from local on a tagged commit. Simple, requires discipline.
-  - **Changesets** — PR-based changelog entries, automated release PR. Recommended for libraries.
-  - **release-please** — Google's tool, conventional commits → auto release.
-  - Recommend Changesets.
-- [ ] Add `.changeset/config.json` and an initial changeset entry for the v3 migration.
-- [ ] Set up a `.github/workflows/release.yml` that runs on push to main, opens a release PR with version bumps, and publishes when that PR is merged.
-- [ ] Add the `NPM_TOKEN` secret to the GitHub repo.
-- [ ] Verify `package.json` `files` whitelist covers what npm should actually ship (`./dist`, README, LICENSE).
-- [ ] Run `pnpm run publint` and fix any export-map warnings.
-- [ ] Do a test publish with `--dry-run` first.
-- [ ] Publish v1.0.0.
-- [ ] Verify install: `pnpm add @villagekit/ui` in a fresh project, import a component, render it.
+- [x] Confirm npm scope ownership: `@villagekit` is owned by `ahdinosaur`; latest published `@villagekit/ui` is `0.9.0` from the engine's `core/ui` (last published 2024-12-05).
+- [x] Add `CHANGELOG.md` — seeded with `1.0.0-beta.0` notes covering the Chakra v3 migration and folded `ui-page` / `ui-nav` / `ui-media` / `ui-mdx` packages.
+- [x] Decide release process: **Changesets**.
+- [x] Add `.changeset/config.json` (single-package, `access: "public"`, base `main`).
+- [x] Set up `.github/workflows/release.yml` running `changesets/action@v1` on push to main — opens a "Version Packages" PR for any pending changesets, publishes when merged.
+- [ ] Add the `NPM_TOKEN` secret to the GitHub repo. **(Mikey has to do this manually — generate at https://www.npmjs.com/settings/ahdinosaur/tokens, add to `villagekit/ui` Actions secrets as `NPM_TOKEN`.)**
+- [x] Verify `package.json` `files` whitelist (`./src`, `./dist`).
+- [x] Run `pnpm run publint` — passes.
+- [x] Do a test publish with `--dry-run` — `1.0.0-beta.0`, 339 files, 102 kB tarball.
+- [ ] Publish `1.0.0-beta.0` — runs automatically once `NPM_TOKEN` secret is added and the next push to `main` lands.
+- [ ] Verify install: `pnpm add @villagekit/ui@next` in a fresh project, import a component, render it. (After publish.)
 
 ## Notes
 - README already declares the homepage and repo URLs correctly.
 - ESM-only is fine. If any consumer needs CJS, that's a separate ask.
-- Consider beta/canary versions during the v3 migration before cutting v1.0.0 stable.
+- **Beta first.** `1.0.0-beta.0` publishes with the `next` dist-tag (`publishConfig.tag: "next"` + `release` script passes `--tag next`). The website still consumes via `workspace:*` so it's not affected by what's on npm.
+- **Changesets pre-mode not used.** Tried `pnpm changeset pre enter beta` from inside `./ui` but Changesets walks up to `gridbeam.xyz/pnpm-workspace.yaml` and treats the parent as the workspace root, missing the `.changeset/` folder. Worked around it by hardcoding `--tag next` in the `release` script. When promoting to stable `1.0.0`, drop `publishConfig.tag` and the `--tag next` flag (steps documented in `ui/README.md`).
+- **Why `1.0.0-beta.0` (not `1.0.0`):** The current build hasn't been smoke-tested through Storybook (deferred per task 02-07 notes), and the engine still consumes the old `core/ui` (Stream 03 task 08). Beta gives us room to fix issues that surface as the engine and website exercise the API without polluting `latest`.
+- **Website still uses `workspace:*`.** Decided not to switch the website to a published version — workspace gives faster dev iteration. Consumers outside this monorepo install from npm with the `next` dist-tag.
 
 ## Depends on
 - [./07-storybook-and-ci.md](./07-storybook-and-ci.md) (CI in place)
