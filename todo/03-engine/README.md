@@ -19,7 +19,7 @@ Cleanly publish the engine as open-source under EUPL-1.2, with consistent licens
 | 08 | [Migrate engine to Chakra v3 + remove `core/ui`](./08-migrate-engine-to-chakra-v3.md) | DONE (build/types/lint clean; runtime verification deferred) |
 | 05 | [Publish runtime packages to npm](./05-publish-npm.md) | TODO |
 | 06 | [Decide future of the studio Tauri app](./06-studio-app-future.md) | DONE (decision) |
-| 07 | [Wire engine into gridbeam.xyz website (designs catalog)](./07-website-integration.md) | TODO |
+| 07 | [Wire engine into gridbeam.xyz website (designs catalog)](./07-website-integration.md) | DONE (build/types/lint clean; live canvas runtime verification deferred) |
 | 09 | [`@villagekit/products` distribution decision](./09-products-catalog-publish.md) | TODO |
 
 ## Order of attack

@@ -10,15 +10,17 @@ The legacy site has a strong designs catalog — browse by category (bedroom, de
 - `app/designs/[id]/page.tsx` — individual design page with parameters UI, 3D preview, parts list, build instructions
 
 ## Steps
-- [ ] Wire up the design data source. Designs live in the `./gridkit-products` submodule (`@villagekit/products` on npm), 37 products at the time of writing. Add it as a dependency of the website (workspace path during dev, published version for prod).
-- [ ] Build the listing page: server component reads design index, renders grid of cards. Filter by category (client component over the index).
-- [ ] Build the detail page:
-  - Server component for static design data (title, description, parts list)
-  - Client component for the parameters UI (`@villagekit/parameters` from the engine)
-  - Client component for the 3D sandbox preview (`@villagekit/sandbox`)
+- [x] Wire up the design data source. Designs live in `./gridkit-products/products/` and are read at build time by `app/_lib/designs.ts` (Node fs + `smol-toml`). 37 products as of writing. (Done as part of [../03-engine/07-website-integration.md](../03-engine/07-website-integration.md).)
+- [ ] Build the listing page: server component reads design index, renders grid of cards. Filter by category (client component over the index). *(Basic listing exists from task 03-engine/07; category filter still TODO.)*
+- [x] Build the detail page:
+  - Server component for static design data (title, description) — `app/designs/[id]/page.tsx`
+  - Client component for the parameters UI (`@villagekit/parameters`) — `app/_components/design/DesignViewer.tsx`
+  - Client component for the 3D sandbox preview (`@villagekit/sandbox`, dynamic with `ssr: false`) — `app/_components/design/DesignViewerDynamic.tsx`
+  - Parts list still TODO (legacy uses `<ProductSummary>`)
+  - Build instructions still TODO
 - [ ] Embed the cutting planner inline (legacy site does this — see commit `392eb975`).
-- [ ] "Get the parts" CTA → links to `/suppliers` (instead of the old `/store/[id]` link).
-- [ ] Pre-render design pages at build time where possible (`generateStaticParams`).
+- [x] "Get the parts" CTA → links to `/suppliers` (instead of the old `/store/[id]` link).
+- [x] Pre-render design pages at build time via `generateStaticParams` — confirmed in production build (37/37 pages).
 
 ## Notes
 - The 3D sandbox uses react-three-fiber. Mount it client-side only (`'use client'` + dynamic import with `ssr: false`).
