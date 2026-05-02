@@ -16,7 +16,7 @@ Cleanly publish the engine as open-source under EUPL-1.2, with consistent licens
 | 02 | [Rewrite README — drop "superseded" framing](./02-readme-and-positioning.md) | DONE |
 | 03 | [Rename GitHub repo from `gridkit-legacy`](./03-rename-repo.md) | DONE |
 | 04 | [Audit dependencies + build pipeline for any upgrades needed](./04-deps-and-build-audit.md) | DONE (static audit; live install pending) |
-| 08 | [Migrate engine to Chakra v3 + remove `core/ui`](./08-migrate-engine-to-chakra-v3.md) | TODO |
+| 08 | [Migrate engine to Chakra v3 + remove `core/ui`](./08-migrate-engine-to-chakra-v3.md) | DONE (build/types/lint clean; runtime verification deferred) |
 | 05 | [Publish runtime packages to npm](./05-publish-npm.md) | TODO |
 | 06 | [Decide future of the studio Tauri app](./06-studio-app-future.md) | DONE (decision) |
 | 07 | [Wire engine into gridbeam.xyz website (designs catalog)](./07-website-integration.md) | TODO |

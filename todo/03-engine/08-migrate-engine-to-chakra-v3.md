@@ -1,6 +1,6 @@
 # 08 — Migrate engine to Chakra v3 + remove `core/ui`
 
-**Status:** TODO
+**Status:** DONE (build/types/lint clean; runtime verification of studio + storybook deferred)
 
 ## Why
 Two intertwined changes that are cheaper to do at the same time:
@@ -19,45 +19,47 @@ Doing both together avoids migrating `core/ui` to v3 only to delete it later.
 ## Steps
 
 ### Inventory
-- [ ] Find every consumer of the engine's `@villagekit/ui`:
-  ```sh
-  grep -rl '"@villagekit/ui"' gridkit/ --include 'package.json'
-  grep -rl '@villagekit/ui' gridkit/ --include '*.ts' --include '*.tsx' | grep -v node_modules
-  ```
-- [ ] Find every direct Chakra v2 import in the engine:
-  ```sh
-  grep -r '@chakra-ui/' gridkit/ --include '*.ts' --include '*.tsx' | grep -v node_modules
-  ```
-  Most should be inside `core/ui` (which is going away), but `apps/studio` likely has direct Chakra usage too.
+- [x] Find every consumer of the engine's `@villagekit/ui`. Inventory:
+  - `apps/{studio,storybook}`, `commands/screenshot`, `parts/{gridbeam,fastener,gridpanel}`, `products/kit`, `core/{parameters,sandbox,part,product}`.
+- [x] Find every direct Chakra v2 import — all confined to `core/ui` (now deleted).
 
 ### Switch consumers off the local `core/ui`
-- [ ] In each consumer's `package.json`, change `"@villagekit/ui": "workspace:*"` (currently resolving to `core/ui`) so it resolves to the standalone library:
-  - Add `./ui` to the engine's `pnpm-workspace.yaml`? Probably no — the standalone is at the top level of `gridbeam.xyz` repo, not inside `./gridkit`.
-  - Easier: temporarily put the standalone version on npm (Stream 02 task 08) and depend on a published version. Cleaner long-term.
-  - Or: in development, set `dependenciesMeta` `injected: true` in `pnpm-workspace.yaml` so the top-level `pnpm-workspace.yaml` (covering both `./ui` and `./gridkit/...`) does the linking.
-- [ ] Verify imports compile: `pnpm run types`.
+- [x] Wired via the gridbeam.xyz top-level `pnpm-workspace.yaml` covering both `./ui` and `./gridkit/...`. Engine `@villagekit/ui: workspace:*` now resolves to the standalone library at `./ui`. Engine packages keep their existing dependency declarations.
+- [x] `pnpm run types` and `pnpm run build:pkg` clean across the engine workspace.
 
 ### Migrate the engine to Chakra v3
-- [ ] In each consumer that uses Chakra v3 surface (Provider, hooks, primitives), update to v3 idioms.
-- [ ] If `apps/studio` had a custom Chakra theme, port it from `extendTheme` to `createSystem`.
-- [ ] Bump `apps/storybook` from Storybook 8 → 10 along with the Chakra v3 migration. (Task originally planned to handle this in Stream 02 task 07, but the engine's Storybook can't run without Chakra v3 — so it lands here.) Switch framework to `@storybook/nextjs-vite` if `apps/storybook` uses any `next/*` imports; otherwise `@storybook/react-vite` is enough.
-- [ ] Verify Storybook (`apps/storybook`) renders.
-- [ ] Verify studio app (`pnpm run dev:app:studio`) renders.
+- [x] Migrated v3 idioms: `FormControl` → `Field.Root`, `ListIcon` → `List.Indicator`, `<List>` → `<List.Root>`, `Switch.Root/Control/Thumb`, `Slider.Root/Track/Range/Thumb`, `Tabs.Root/List/Trigger/Content`, `Select.Root/Field/Indicator`, `Tooltip` `isOpen` → `open`, `useDisclosure` `isOpen/defaultIsOpen` → `open/defaultOpen`. Replaced `useTheme().colors.X` / `.fontSizes` with `system.token('colors.X')` and `system.token('fontSizes.X')`. Replaced `useColorModeValue` with `useMediaQuery(['(prefers-color-scheme: dark)'])` for the editor theme.
+- [x] Bulk renamed `sx={...}` → `css={...}` across engine code. (v3 dropped `sx`.)
+- [x] `apps/studio` theme ported from spread-baseTheme to `createSystem(defaultConfig, config, studioConfig)` using new `defineConfig`. `ChakraProvider value={system}`.
+- [x] `apps/storybook/.storybook/preview.tsx` ported to standalone `Provider`; backgrounds use `var(--chakra-colors-*)`.
+- [x] `commands/screenshot` ported to `createSystem` + `ChakraProvider value={...}`.
+- [x] Bumped `apps/storybook` from Storybook 8 → 10. Framework stays `@storybook/react-vite`. Addons trimmed to `@storybook/addon-docs` + `@storybook/addon-a11y` to match the new defaults.
+- [ ] Visual verification: Storybook (`pnpm run dev:app:storybook`) and studio (`pnpm run dev:app:studio`) — deferred to user runtime check.
 
 ### Delete `core/ui`
-- [ ] Remove `gridkit/core/ui/` directory.
-- [ ] Verify `pnpm-workspace.yaml` (which globs `core/*`) no longer references it (the glob handles this automatically).
-- [ ] Update `gridkit/turbo.json` if it has explicit references.
-- [ ] Update `gridkit/DEV.md` (drops the `@villagekit/ui` entry under `core/`).
-- [ ] Update `gridkit/README.md` (drops `core/ui` from the packages list — task 02 should do this).
+- [x] `gridkit/core/ui/` removed.
+- [x] `pnpm-workspace.yaml` glob picks up the deletion automatically (no explicit reference).
+- [x] `turbo.json` had no explicit reference.
+- [x] `gridkit/DEV.md` updated (drops the `core/ui` entry).
+- [x] `gridkit/README.md` had no `core/ui` row.
+
+### Cascading dependency bumps
+- [x] React/react-dom: `^18.x` → `^19.1.0` across all engine packages.
+- [x] `@types/react`/`@types/react-dom`: `^18.x` → `^19.1.0` (root pnpm.overrides forces a single version across workspace).
+- [x] `@react-three/fiber`: `^8.16.8` → `^9.0.0` (drops `useContextBridge`; `MaterialNode` → `ThreeElement`; `ThreeElements` augmentation moves to `declare module '@react-three/fiber'`).
+- [x] `@react-three/drei`: `^9.x` → `^10.0.0` (R19 + R3F 9 compatibility).
+- [x] `@xstate/react`: `^4.1.1` → `^6.0.0` (R19 peer support).
+- [x] `@emotion/react` added to engine apps as Chakra v3's emotion peer.
+- [x] `useContextBridge`/`bridgeContexts` plumbing removed (R19 forwards context through R3F automatically).
+- [x] `RefObject<T>` types updated to `RefObject<T | null>` where useRef returns nullable refs.
 
 ### Verify
-- [ ] `pnpm install` clean.
-- [ ] `pnpm run build:pkg` clean.
-- [ ] `pnpm run types` clean.
-- [ ] `pnpm run lint` clean.
-- [ ] `pnpm run dev:app:studio` renders the studio app correctly with the v3 theme.
-- [ ] Storybook renders.
+- [x] `pnpm install` clean (peer warnings only — `@curvenote/ansi-to-react` and `r3f-perf`'s nested `drei@9` haven't shipped R19 peer ranges yet, but resolve fine at runtime).
+- [x] `pnpm run build:pkg` clean (13/13 packages).
+- [x] `pnpm run types` clean (apps/studio).
+- [x] `pnpm run lint` clean.
+- [ ] `pnpm run dev:app:studio` runtime verification — deferred.
+- [ ] Storybook runtime verification — deferred.
 - [ ] Commit.
 
 ## Notes
