@@ -1,6 +1,6 @@
 # 08 — Publish to npm with proper CI/CD
 
-**Status:** DONE (release infrastructure landed; first publish pending `NPM_TOKEN` secret + CI run)
+**Status:** DONE (release infrastructure landed; first publish pending trusted-publisher config on npmjs.com + CI run)
 
 ## Why
 `@villagekit/ui` should be installable from npm so anyone can use it. Right now the package is in a workspace, never published.
@@ -14,11 +14,12 @@
 - [x] Decide release process: **Changesets**.
 - [x] Add `.changeset/config.json` (single-package, `access: "public"`, base `main`).
 - [x] Set up `.github/workflows/release.yml` running `changesets/action@v1` on push to main — opens a "Version Packages" PR for any pending changesets, publishes when merged.
-- [ ] Add the `NPM_TOKEN` secret to the GitHub repo. **(Mikey has to do this manually — generate at https://www.npmjs.com/settings/ahdinosaur/tokens, add to `villagekit/ui` Actions secrets as `NPM_TOKEN`.)**
+- [x] Configure publishing via npm trusted publisher (OIDC). Workflow grants `id-token: write`, drops `NPM_TOKEN`. Node 24 LTS is used so npm 11.5+ is available natively (`changeset publish` shells out to `npm publish`, which negotiates the OIDC token exchange).
+- [ ] **(Mikey)** Configure the trusted publisher on npmjs.com for `@villagekit/ui` — repo `villagekit/ui`, workflow filename `release.yml`, no environment. https://docs.npmjs.com/trusted-publishers
 - [x] Verify `package.json` `files` whitelist (`./src`, `./dist`).
 - [x] Run `pnpm run publint` — passes.
 - [x] Do a test publish with `--dry-run` — `1.0.0-beta.0`, 339 files, 102 kB tarball.
-- [ ] Publish `1.0.0-beta.0` — runs automatically once `NPM_TOKEN` secret is added and the next push to `main` lands.
+- [ ] Publish `1.0.0-beta.0` — runs automatically once the trusted publisher is configured and the next push to `main` lands.
 - [ ] Verify install: `pnpm add @villagekit/ui@next` in a fresh project, import a component, render it. (After publish.)
 
 ## Notes

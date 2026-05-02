@@ -22,8 +22,8 @@ Every public runtime package published to npm under the `@villagekit` scope. CI 
   - `@villagekit/util-math`, `@villagekit/util-units`
 - [ ] **Note: `@villagekit/ui` is NOT in this list.** That name is owned by the standalone library at `./ui`. The engine's old `core/ui` package was removed in task 08.
 - [ ] Already using Lerna-Lite (`packageManager` already supports it via `lerna.json`). Run `pnpm version:bump` for the next release.
-- [ ] Add `.github/workflows/release.yml`: on tag, run `pnpm run build:pkg`, then `pnpm publish -r --filter '@villagekit/*' --no-git-checks`.
-- [ ] Add `NPM_TOKEN` secret to the GitHub repo.
+- [ ] Add `.github/workflows/release.yml`: on tag, run `pnpm run build:pkg`, then publish. Note: pnpm itself doesn't yet support trusted publishing (pnpm/pnpm#9812) — for OIDC, either invoke `npm publish` per package or wait for pnpm support and use `NPM_TOKEN` in the meantime. Mirror the `@villagekit/ui` workflow pattern for consistency.
+- [ ] Configure npm trusted publisher (OIDC) for each `@villagekit/*` engine package on npmjs.com (or fall back to `NPM_TOKEN` until pnpm supports OIDC).
 - [ ] Test publish to a beta/dist-tag first: `pnpm publish -r --tag beta`.
 - [ ] Verify install: in a fresh project, `pnpm add @villagekit/sandbox @villagekit/product-kit`, run a smoke test.
 - [ ] Promote beta → latest.

@@ -19,7 +19,7 @@ A polished, public, npm-published `@villagekit/ui` on **Chakra v3 + React 19**, 
 | 09 | [`'use client'` audit on component wrappers](./09-use-client-audit.md) | DONE (recipes split out; directives intentionally not added — see task notes) |
 | 10 | [`tsup` install + `dist/` build](./10-build-pkg-setup.md) | DONE |
 | 07 | [Storybook upgrade + Chakra integration](./07-storybook-and-ci.md) | DONE (engine `apps/storybook` bump rolled into Stream 03 task 08; Vercel deploy paired with task 08) |
-| 08 | [Publish to npm with proper CI/CD](./08-publish-npm.md) | DONE (infra landed; awaiting `NPM_TOKEN` secret + first CI publish) |
+| 08 | [Publish to npm with proper CI/CD](./08-publish-npm.md) | DONE (infra landed; awaiting trusted-publisher config on npmjs.com + first CI publish) |
 
 ## Order of attack
 
