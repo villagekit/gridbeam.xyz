@@ -1,5 +1,6 @@
 import { MainLayout, NavContextProvider, Provider, SkipNavLink } from '@villagekit/ui'
 import type { Metadata, Viewport } from 'next'
+import { Bitter, Fredoka } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import { EmotionRegistry } from './_components/EmotionRegistry'
@@ -7,6 +8,19 @@ import { SiteBrand } from './_components/SiteBrand'
 import { SiteFooter } from './_components/SiteFooter'
 import { SiteHeaderAction } from './_components/SiteHeaderAction'
 import { navItems } from './_lib/nav'
+
+const bodyFont = Bitter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
+})
+
+const headingFont = Fredoka({
+  subsets: ['latin'],
+  weight: '600',
+  display: 'swap',
+  variable: '--font-heading',
+})
 
 const description =
   'An open-source educational site about grid beam — modular construction made simple.'
@@ -46,7 +60,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body>
         <EmotionRegistry>
           <Provider>
