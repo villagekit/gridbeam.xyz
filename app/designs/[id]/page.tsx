@@ -1,13 +1,4 @@
-import {
-  Container,
-  LinkButton,
-  Main,
-  Section,
-  SkipNavContent,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { LinkButton, Main, Section, SkipNavContent, Text, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -63,11 +54,7 @@ export default async function DesignPage({ params }: DesignPageProps) {
       <SkipNavContent />
 
       <Section index={0} maxW="6xl">
-        <Title description={meta.description}>{meta.label}</Title>
-
-        <Container maxW="6xl">
-          <DesignViewerDynamic meta={meta} code={code} />
-        </Container>
+        <DesignViewerDynamic meta={meta} code={code} />
       </Section>
 
       <Section index={1} maxW="6xl" colorPalette="accentA">

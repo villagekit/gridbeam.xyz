@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductSummary } from '@villagekit/product'
-import { Box, FormLabel, HStack, Heading, Switch, Text, VStack } from '@villagekit/ui'
+import { FormLabel, HStack, Switch, Text, VStack } from '@villagekit/ui'
 import { useState } from 'react'
 
 import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
@@ -16,30 +16,14 @@ export function PartsBreakdown(props: PartsBreakdownProps) {
   const [groupParts, setGroupParts] = useState(true)
 
   return (
-    <Box
-      p="6"
-      bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentB.300"
-      w="full"
-    >
-      <VStack alignItems="stretch" gap="4">
-        <HStack justifyContent="space-between" alignItems="flex-start" gap="4" flexWrap="wrap">
-          <Heading as="h2" size="md">
-            Parts list
-          </Heading>
+    <VStack alignItems="stretch" gap="4">
+      <HStack gap="6" flexWrap="wrap" justifyContent="flex-end">
+        <DisplayUnitToggle value={displayUnit} onChange={onDisplayUnitChange} />
+        <GroupPartsToggle value={groupParts} onChange={setGroupParts} />
+      </HStack>
 
-          <HStack gap="4" flexWrap="wrap">
-            <DisplayUnitToggle value={displayUnit} onChange={onDisplayUnitChange} />
-            <GroupPartsToggle value={groupParts} onChange={setGroupParts} />
-          </HStack>
-        </HStack>
-
-        <ProductSummary displayUnit={displayUnit} groupParts={groupParts} />
-      </VStack>
-    </Box>
+      <ProductSummary displayUnit={displayUnit} groupParts={groupParts} />
+    </VStack>
   )
 }
 

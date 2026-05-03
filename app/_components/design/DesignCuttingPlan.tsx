@@ -2,7 +2,7 @@
 
 import type { PartCreator } from '@villagekit/part'
 import { ProductKitContext } from '@villagekit/product-kit'
-import { Box, HStack, Heading, Link, LinkButton, Text, VStack } from '@villagekit/ui'
+import { HStack, Link, LinkButton, Text, VStack } from '@villagekit/ui'
 import NextLink from 'next/link'
 import { useContext, useDeferredValue, useMemo } from 'react'
 
@@ -65,68 +65,54 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
   }, [requiredBeams, stockSize, displayUnit])
 
   return (
-    <Box
-      p="6"
-      bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentA.300"
-      w="full"
-    >
-      <VStack alignItems="stretch" gap="4">
-        <Heading as="h2" size="md">
-          Cutting plan
-        </Heading>
-
-        {requiredBeams.length === 0 ? (
-          <Text variant="secondary">This design has no grid-beam parts to cut.</Text>
-        ) : planResult.infeasibleBeams.length > 0 && planResult.cutBeams.length === 0 ? (
+    <VStack alignItems="stretch" gap="4">
+      {requiredBeams.length === 0 ? (
+        <Text variant="secondary">This design has no grid-beam parts to cut.</Text>
+      ) : planResult.infeasibleBeams.length > 0 && planResult.cutBeams.length === 0 ? (
+        <Text>
+          All required cuts are longer than the {stockSize} gu stock length — needs custom-length
+          stock. Try the{' '}
+          <Link as={NextLink} href={plannerHref}>
+            cutting planner
+          </Link>{' '}
+          for full control.
+        </Text>
+      ) : (
+        <>
           <Text>
-            All required cuts are longer than the {stockSize} gu stock length — needs custom-length
-            stock. Try the{' '}
-            <Link as={NextLink} href={plannerHref}>
-              cutting planner
-            </Link>{' '}
-            for full control.
+            Needs {planResult.cutBeams.length} {plural('stock beam', planResult.cutBeams.length)} (
+            {formatLength(stockSize, displayUnit)} each), cut into{' '}
+            {summariseRequired(requiredBeams)}.
           </Text>
-        ) : (
-          <>
-            <Text>
-              Needs {planResult.cutBeams.length} {plural('stock beam', planResult.cutBeams.length)}{' '}
-              ({formatLength(stockSize, displayUnit)} each), cut into{' '}
-              {summariseRequired(requiredBeams)}.
+          <Text variant="secondary" fontSize="sm">
+            Required cuts total {formatLength(totalRequired, displayUnit)}; off-cut waste{' '}
+            {formatLength(totalWaste, displayUnit)} from {formatLength(totalCut, displayUnit)} of
+            stock.
+          </Text>
+
+          <VStack alignItems="stretch" gap="3">
+            {planResult.cutBeams.map((beam, i) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: stable order from algorithm output
+              <CutBeamSvg key={i} beam={beam} displayUnit={displayUnit} />
+            ))}
+          </VStack>
+
+          {planResult.infeasibleBeams.length > 0 && (
+            <Text color="red.700" fontSize="sm">
+              Some cuts are too long for the {stockSize} gu stock —{' '}
+              {summariseRequired(planResult.infeasibleBeams)}. Open the cutting planner to use
+              longer stock.
             </Text>
-            <Text variant="secondary" fontSize="sm">
-              Required cuts total {formatLength(totalRequired, displayUnit)}; off-cut waste{' '}
-              {formatLength(totalWaste, displayUnit)} from {formatLength(totalCut, displayUnit)} of
-              stock.
-            </Text>
+          )}
+        </>
+      )}
 
-            <VStack alignItems="stretch" gap="3">
-              {planResult.cutBeams.map((beam, i) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: stable order from algorithm output
-                <CutBeamSvg key={i} beam={beam} displayUnit={displayUnit} />
-              ))}
-            </VStack>
-
-            {planResult.infeasibleBeams.length > 0 && (
-              <Text color="red.700" fontSize="sm">
-                Some cuts are too long for the {stockSize} gu stock —{' '}
-                {summariseRequired(planResult.infeasibleBeams)}. Open the cutting planner to use
-                longer stock.
-              </Text>
-            )}
-          </>
-        )}
-
-        <HStack justifyContent="flex-end">
-          <LinkButton href={plannerHref} variant="secondary" size="sm">
-            Open in cutting planner
-          </LinkButton>
-        </HStack>
-      </VStack>
-    </Box>
+      <HStack justifyContent="flex-end">
+        <LinkButton href={plannerHref} variant="secondary" size="sm">
+          Open in cutting planner
+        </LinkButton>
+      </HStack>
+    </VStack>
   )
 }
 

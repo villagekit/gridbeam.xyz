@@ -3,13 +3,14 @@
 import './registerParts'
 
 import { useRouter } from 'next/navigation'
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
-import { ParamControls } from '@villagekit/parameters'
+import { ParamControls, useHasParams } from '@villagekit/parameters'
 import { ProductInfo, type ProductMeta, ProductProvider, ProductView } from '@villagekit/product'
 import { ProductKitModule } from '@villagekit/product-kit'
-import { Box, VStack } from '@villagekit/ui'
+import { Text, VStack } from '@villagekit/ui'
 
+import { CatalogueItem, type CatalogueItemHandle } from '@/app/_components/catalogue'
 import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
 
 import { DesignCuttingPlan } from './DesignCuttingPlan'
@@ -23,12 +24,10 @@ export interface DesignViewerProps {
 export function DesignViewer(props: DesignViewerProps) {
   const { meta, code } = props
   const router = useRouter()
-  const [displayUnit, setDisplayUnit] = useState<DisplayUnit>('gu')
 
   const onLocationUpdate = useCallback(
     (nextLocation: Location) => {
-      const next = `${nextLocation.pathname}${nextLocation.search}`
-      router.replace(next, { scroll: false })
+      router.replace(`${nextLocation.pathname}${nextLocation.search}`, { scroll: false })
     },
     [router],
   )
@@ -40,26 +39,63 @@ export function DesignViewer(props: DesignViewerProps) {
       code={code}
       onLocationUpdate={onLocationUpdate}
     >
-      <VStack alignItems="stretch" gap="8" w="full">
-        <Box
-          w="full"
-          h={{ base: '320px', md: '480px', lg: '560px' }}
-          borderRadius="lg"
-          overflow="hidden"
-          borderWidth="1px"
-          borderColor="gray.200"
-        >
-          <ProductView />
-        </Box>
-
-        <ParamControls />
-
-        <ProductInfo />
-
-        <PartsBreakdown displayUnit={displayUnit} onDisplayUnitChange={setDisplayUnit} />
-
-        <DesignCuttingPlan displayUnit={displayUnit} />
-      </VStack>
+      <DesignViewerContent label={meta.label} description={meta.description} />
     </ProductProvider>
+  )
+}
+
+interface DesignViewerContentProps {
+  label: string
+  description: string
+}
+
+function DesignViewerContent(props: DesignViewerContentProps) {
+  const { label, description } = props
+  const itemRef = useRef<CatalogueItemHandle>(null)
+  const [displayUnit, setDisplayUnit] = useState<DisplayUnit>('gu')
+  const hasParams = useHasParams()
+
+  return (
+    <CatalogueItem
+      ref={itemRef}
+      title={label}
+      description={description}
+      preview={<ProductView />}
+      controls={
+        <>
+          {hasParams && <ParamControls />}
+          <ProductInfo />
+        </>
+      }
+      action={{
+        label: 'View cutting plan',
+        navigateToTab: 'plan',
+        variant: 'secondary',
+      }}
+      tabs={[
+        { key: 'overview', label: 'Overview', content: <Overview /> },
+        {
+          key: 'parts',
+          label: 'Parts',
+          content: (
+            <PartsBreakdown displayUnit={displayUnit} onDisplayUnitChange={setDisplayUnit} />
+          ),
+        },
+        {
+          key: 'plan',
+          label: 'Cutting plan',
+          content: <DesignCuttingPlan displayUnit={displayUnit} />,
+        },
+      ]}
+    />
+  )
+}
+
+function Overview() {
+  return (
+    <VStack alignItems="flex-start" gap="3">
+      <Text fontWeight="bold">Product care</Text>
+      <Text>Beams and panels can be safely wiped clean.</Text>
+    </VStack>
   )
 }

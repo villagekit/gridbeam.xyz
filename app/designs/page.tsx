@@ -1,7 +1,10 @@
-import { Main, Section, SkipNavContent, Title } from '@villagekit/ui'
+import { Main, Section, SkipNavContent } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 
+import { CatalogueStatic } from '@/app/_components/catalogue'
 import { DesignsBrowser } from '@/app/_components/design/DesignsBrowser'
+import { designsToCatalogueItems } from '@/app/_components/design/designs-to-catalogue'
 import { getDesignIndex } from '@/app/_lib/designs'
 
 const title = 'Designs'
@@ -21,17 +24,16 @@ export const metadata: Metadata = {
 
 export default async function DesignsPage() {
   const designs = await getDesignIndex()
+  const items = designsToCatalogueItems(designs)
 
   return (
     <Main>
       <SkipNavContent />
 
-      <Section index={0} maxW="6xl">
-        <Title description="Browse designs and tweak the parameters in your browser. Every design is open-source.">
-          {title}
-        </Title>
-
-        <DesignsBrowser designs={designs} />
+      <Section index={0} maxW="8xl">
+        <Suspense fallback={<CatalogueStatic items={items} basePath="designs" />}>
+          <DesignsBrowser designs={designs} />
+        </Suspense>
       </Section>
     </Main>
   )
