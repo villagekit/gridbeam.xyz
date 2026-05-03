@@ -20,7 +20,7 @@ A clean, content-focused Next.js (latest, app router) + Chakra v3 site that expl
 | 08 | [Suppliers page (replaces store)](./08-suppliers.md) | DONE |
 | 09 | [Contact + subscribe pages](./09-contact-and-subscribe.md) | DONE |
 | 10 | [Legal pages (privacy, cookies, etc)](./10-legal-pages.md) | DONE |
-| 11 | [Deployment, SEO, sitemaps, robots](./11-deployment-and-seo.md) | TODO |
+| 11 | [Deployment, SEO, sitemaps, robots](./11-deployment-and-seo.md) | DONE (code-side; Vercel hookup, Lighthouse, share-card validation deferred to launch) |
 
 ## Order of attack
 

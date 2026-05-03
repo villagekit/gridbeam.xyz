@@ -25,13 +25,14 @@ export interface Design {
 }
 
 export async function getDesignIndex(): Promise<ReadonlyArray<DesignIndexEntry>> {
-  const ids = await readdir(DESIGNS_DIR)
+  const ids = await getDesignIds()
   const entries = await Promise.all(ids.map(readDesignIndexEntry))
   return entries.sort((a, b) => a.label.localeCompare(b.label))
 }
 
 export async function getDesignIds(): Promise<ReadonlyArray<string>> {
-  return readdir(DESIGNS_DIR)
+  const entries = await readdir(DESIGNS_DIR, { withFileTypes: true })
+  return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name)
 }
 
 export async function getDesign(id: string): Promise<Design> {
