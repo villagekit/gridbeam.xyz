@@ -132,9 +132,14 @@ export function CuttingPlanner() {
             flexWrap="wrap"
           >
             <HStack gap="3">
-              <Text as="label" htmlFor="unlimited-stock" fontSize="sm" variant="secondary">
+              {/* Plain <label> for the Select; Chakra's polymorphic `as`
+                  doesn't widen htmlFor onto Box/Text props in v3. */}
+              <label
+                htmlFor="unlimited-stock"
+                style={{ fontSize: '0.875rem', color: 'var(--chakra-colors-gray-600)' }}
+              >
                 Top up with full-length beams
-              </Text>
+              </label>
               <Select.Root size="sm" maxW="36">
                 <Select.Field
                   id="unlimited-stock"

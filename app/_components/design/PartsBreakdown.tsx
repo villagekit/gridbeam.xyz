@@ -66,9 +66,14 @@ function GroupPartsToggle(props: GroupToggleProps) {
   const { value, onChange } = props
   return (
     <HStack gap="2">
-      <Text as="label" htmlFor="design-parts-group" fontSize="sm" variant="secondary">
+      {/* Plain <label> for the Switch; Chakra's polymorphic `as`
+          doesn't widen htmlFor onto Box/Text props in v3. */}
+      <label
+        htmlFor="design-parts-group"
+        style={{ fontSize: '0.875rem', color: 'var(--chakra-colors-gray-600)' }}
+      >
         Group same size
-      </Text>
+      </label>
       <Switch.Root
         id="design-parts-group"
         size="sm"
