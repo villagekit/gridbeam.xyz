@@ -10,11 +10,13 @@ import {
   SimpleGrid,
   SkipNavContent,
   Span,
+  Stack,
   Text,
   Title,
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextImage from 'next/image'
 
 const title = 'About grid beam'
 const description =
@@ -63,14 +65,19 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section index={1} maxW="6xl" colorPalette="accentA">
+      <Section index={1} maxW="6xl" colorPalette="gray">
         <Title as="h2" description="Holes every 40 mm in every direction. That's the whole spec.">
           The 40 mm grid
         </Title>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap="8" alignItems="center">
-          <ImagePlaceholder label="40 mm grid diagram" h="280px" />
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 8, md: 12 }} alignItems="center">
+          <AboutPhoto
+            src="v1/gridkit.nz/grid_yvn1om"
+            alt="A 40 mm × 40 mm grid square highlighted on a larger grid background."
+            width={1188}
+            height={841}
+          />
           <VStack alignItems="flex-start" gap="4">
-            <Text>
+            <Text fontSize="lg">
               Imagine a 3D grid of points spaced 40&nbsp;mm apart. Every hole on every beam, every
               hole on every panel, lines up with that grid. Two parts that share the grid bolt
               together; two parts that don't, won't.
@@ -79,6 +86,12 @@ export default function AboutPage() {
               That single constraint is what makes the system work. You can mix beams and panels
               from any compatible supplier, in any wood or metal, and they'll fit.
             </Text>
+            <AboutPhoto
+              src="v1/gridkit.nz/grid-example_vezsvx"
+              alt="A 40 mm grid overlaid on a grid beam and a grid panel showing how their holes line up."
+              width={1333}
+              height={750}
+            />
           </VStack>
         </SimpleGrid>
       </Section>
@@ -87,35 +100,56 @@ export default function AboutPage() {
         <Title as="h2" description="Three primitives. Everything else is composition.">
           The parts
         </Title>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap="8">
           <PartCard
             title="Beams"
-            placeholder="Photo of grid beams"
+            src="v1/gridkit.nz/beams_czf9hb"
+            alt="A row of square wooden grid beams with holes drilled at 40 mm centres."
+            width={1207}
+            height={714}
             body="40 × 40 mm profile with 8 mm holes drilled at 40 mm centres along the length. Wood for furniture; aluminium or steel for load-bearing builds."
           />
           <PartCard
             title="Panels"
-            placeholder="Photo of grid panel"
+            src="v1/gridkit.nz/panels_rs1ea1"
+            alt="A grid panel — plywood with a 40 mm hole grid drilled across both dimensions."
+            width={1111}
+            height={564}
             body="Plywood (or other sheet material) with the same 40 mm hole grid drilled across both dimensions. Used for shelves, doors, work surfaces, walls."
           />
           <PartCard
             title="Fasteners"
-            placeholder="Photo of hex bolts"
+            src="v1/gridkit.nz/fasteners_ctuejz"
+            alt="A handful of hex-key furniture bolts and nuts."
+            width={685}
+            height={528}
             body="Hex-key furniture bolts and nuts that pass through the holes. One tool, one fastener type — assembly is fast, and disassembly is just as fast."
           />
         </SimpleGrid>
       </Section>
 
-      <Section index={3} maxW="6xl" colorPalette="accentA">
+      <Section index={3} maxW="6xl" colorPalette="gray">
         <Title
           as="h2"
           description="Three beams + three bolts = a rigid corner. Repeat to build anything."
         >
           How it goes together
         </Title>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap="8" alignItems="center">
-          <VStack alignItems="flex-start" gap="4">
-            <Text>
+        <Stack
+          direction={{ base: 'column', md: 'row-reverse' }}
+          gap={{ base: 8, md: 12 }}
+          alignItems="center"
+        >
+          <Box flex="1" w="full">
+            <AboutPhoto
+              src="v1/gridkit.nz/tri-joint_lqtzvf"
+              alt="Three grid beams meeting at right angles, each pair connected by a single bolt — a tri-joint."
+              width={1333}
+              height={750}
+            />
+          </Box>
+          <VStack alignItems="flex-start" gap="4" flex="1">
+            <Text fontSize="lg">
               The fundamental joint is the <Span fontWeight="bold">tri-joint</Span>: three beams
               meeting at right angles, each pair connected by a single bolt. Three bolts make the
               corner rigid in all three axes.
@@ -125,12 +159,11 @@ export default function AboutPage() {
               cross-brace there, and you have a desk, a shelf, or a bed.
             </Text>
             <Text variant="secondary">
-              No glue. No welding. No specialised joinery. A 4 mm hex key and a measuring tape will
-              build almost anything in the catalogue.
+              No glue. No welding. No specialised joinery. A 4&nbsp;mm hex key and a measuring tape
+              will build almost anything in the catalogue.
             </Text>
           </VStack>
-          <ImagePlaceholder label="Tri-joint diagram" h="280px" />
-        </SimpleGrid>
+        </Stack>
       </Section>
 
       <Section index={4} maxW="6xl">
@@ -142,7 +175,7 @@ export default function AboutPage() {
         </Title>
         <Container maxW="3xl">
           <VStack alignItems="flex-start" gap="5">
-            <Text>
+            <Text fontSize="lg">
               The lineage begins with <Span fontWeight="bold">Ken Isaacs</Span>, whose 1974 manual{' '}
               <em>How to Build Your Own Living Structures</em> showed how furniture, beds, and whole
               rooms could be built from a kit of identical drilled timbers.{' '}
@@ -163,7 +196,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section index={5} maxW="6xl" colorPalette="accentA">
+      <Section index={5} maxW="6xl" colorPalette="gray">
         <Title as="h2" description="Three places to go from here.">
           Start building
         </Title>
@@ -202,54 +235,50 @@ export default function AboutPage() {
   )
 }
 
-interface ImagePlaceholderProps {
-  label: string
-  h: string | { base: string; md: string }
+interface AboutPhotoProps {
+  src: string
+  alt: string
+  width: number
+  height: number
 }
 
-function ImagePlaceholder(props: ImagePlaceholderProps) {
-  const { label, h } = props
+function AboutPhoto(props: AboutPhotoProps) {
+  const { src, alt, width, height } = props
   return (
-    <Flex
-      aria-hidden
+    <Box
+      position="relative"
       w="full"
-      h={h}
       borderRadius="xl"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentB.300"
-      bg="accentB.50"
-      alignItems="center"
-      justifyContent="center"
+      overflow="hidden"
+      boxShadow="md"
+      aspectRatio={`${width} / ${height}`}
     >
-      <Text variant="tertiary" fontSize="sm">
-        {label} — coming soon
-      </Text>
-    </Flex>
+      <NextImage
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 768px) 50vw, 100vw"
+        style={{ objectFit: 'cover' }}
+      />
+    </Box>
   )
 }
 
 interface PartCardProps {
   title: string
-  placeholder: string
+  src: string
+  alt: string
+  width: number
+  height: number
   body: string
 }
 
 function PartCard(props: PartCardProps) {
-  const { title, placeholder, body } = props
+  const { title, src, alt, width, height, body } = props
   return (
-    <VStack
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="gray.200"
-    >
-      <ImagePlaceholder label={placeholder} h="180px" />
-      <Heading as="h3" size="md">
+    <VStack as="article" alignItems="flex-start" gap="4">
+      <AboutPhoto src={src} alt={alt} width={width} height={height} />
+      <Heading as="h3" size="lg">
         {title}
       </Heading>
       <Text>{body}</Text>
@@ -267,23 +296,22 @@ interface NextStepCardProps {
 function NextStepCard(props: NextStepCardProps) {
   const { title, body, href, cta } = props
   return (
-    <Box
+    <VStack
+      as="article"
+      alignItems="flex-start"
+      gap="4"
       p="6"
       bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentA.300"
+      borderRadius="xl"
+      boxShadow="sm"
     >
-      <VStack alignItems="flex-start" gap="4">
-        <Heading as="h3" size="md">
-          {title}
-        </Heading>
-        <Text>{body}</Text>
-        <LinkButton href={href} variant="secondary" size="sm">
-          {cta}
-        </LinkButton>
-      </VStack>
-    </Box>
+      <Heading as="h3" size="lg">
+        {title}
+      </Heading>
+      <Text flex="1">{body}</Text>
+      <LinkButton href={href} variant="secondary" size="sm">
+        {cta}
+      </LinkButton>
+    </VStack>
   )
 }
