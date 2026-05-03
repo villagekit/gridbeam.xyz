@@ -43,7 +43,7 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section index={1} maxW="6xl" colorPalette="accentA">
+      <Section index={1} maxW="6xl" colorPalette="gray">
         <Title as="h2" description="Email for private notes. GitHub for anything public.">
           Two channels
         </Title>
@@ -53,10 +53,8 @@ export default function ContactPage() {
             gap="4"
             p="8"
             bg="white"
-            borderRadius="lg"
-            borderWidth="2px"
-            borderStyle="dashed"
-            borderColor="accentA.300"
+            borderRadius="xl"
+            boxShadow="sm"
           >
             <Heading as="h3" size="md">
               Email
@@ -70,7 +68,7 @@ export default function ContactPage() {
               domain="mikey.nz"
               css={{
                 '& a': {
-                  color: 'accentA.700',
+                  color: 'primary.600',
                   fontWeight: 'bold',
                   fontSize: 'xl',
                   textDecoration: 'underline',
@@ -79,7 +77,7 @@ export default function ContactPage() {
                   textAlign: 'center',
                 },
                 '& a:hover': {
-                  color: 'accentA.800',
+                  color: 'primary.700',
                 },
               }}
             />
@@ -90,10 +88,8 @@ export default function ContactPage() {
             gap="3"
             p="6"
             bg="white"
-            borderRadius="lg"
-            borderWidth="2px"
-            borderStyle="dashed"
-            borderColor="accentA.300"
+            borderRadius="xl"
+            boxShadow="sm"
           >
             <Heading as="h3" size="md">
               GitHub Issues

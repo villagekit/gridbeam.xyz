@@ -61,7 +61,7 @@ export default function LegalPage() {
         </SimpleGrid>
       </Section>
 
-      <Section index={2} maxW="6xl" colorPalette="accentA">
+      <Section index={2} maxW="6xl" colorPalette="gray">
         <Container maxW="3xl">
           <VStack alignItems="flex-start" gap="4">
             <Heading as="h2" size="lg">
@@ -103,10 +103,8 @@ function LegalCard(props: LegalCardProps) {
       gap="4"
       p="6"
       bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentA.300"
+      borderRadius="xl"
+      boxShadow="sm"
       h="full"
     >
       <Heading as="h2" size="md">

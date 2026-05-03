@@ -105,7 +105,7 @@ export function CuttingPlanner() {
     <>
       <style>{PRINT_STYLES}</style>
 
-      <Section index={1} maxW="6xl" className="vk-cutting-controls">
+      <Section index={1} maxW="6xl" className="vk-cutting-controls" colorPalette="gray">
         <VStack alignItems="stretch" gap="6">
           <Stack direction={{ base: 'column', md: 'row' }} gap="6" alignItems="stretch">
             <BeamsTable
@@ -165,7 +165,7 @@ export function CuttingPlanner() {
       </Section>
 
       {result != null && (
-        <Section index={2} maxW="6xl" className="vk-cutting-result" colorPalette="accentA">
+        <Section index={2} maxW="6xl" className="vk-cutting-result" colorPalette="gray">
           <VStack alignItems="stretch" gap="6">
             <Center>
               <Heading as="h2" size="lg">
@@ -251,10 +251,8 @@ function BeamsTable(props: BeamsTableProps) {
       flex="1"
       p="4"
       bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentA.300"
+      borderRadius="xl"
+      boxShadow="sm"
     >
       <Heading as="h3" size="md" textAlign="center">
         {title}

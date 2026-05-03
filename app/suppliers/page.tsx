@@ -120,7 +120,7 @@ export default function SuppliersPage() {
       <Section
         index={2}
         maxW="6xl"
-        colorPalette="accentA"
+        colorPalette="gray"
         id="how-to-be-listed"
         aria-labelledby="how-to-be-listed-heading"
       >
@@ -168,14 +168,7 @@ export default function SuppliersPage() {
 
 function SupplierCard({ supplier }: { supplier: Supplier }) {
   return (
-    <Box
-      p="6"
-      bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor="accentA.300"
-    >
+    <Box p="6" bg="white" borderRadius="xl" boxShadow="sm">
       <VStack alignItems="flex-start" gap="4" h="full">
         <VStack alignItems="flex-start" gap="1">
           <HStack gap="2" alignItems="center" flexWrap="wrap">

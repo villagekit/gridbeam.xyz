@@ -57,7 +57,7 @@ export default async function DesignPage({ params }: DesignPageProps) {
         <DesignViewerDynamic meta={meta} code={code} />
       </Section>
 
-      <Section index={1} maxW="6xl" colorPalette="accentA">
+      <Section index={1} maxW="6xl" colorPalette="gray">
         <VStack alignItems="flex-start" gap="4" maxW="3xl">
           <Text fontSize="lg">Find a supplier for the parts on the suppliers page.</Text>
           <LinkButton href="/suppliers" variant="primary">

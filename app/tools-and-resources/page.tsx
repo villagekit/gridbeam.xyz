@@ -1,5 +1,4 @@
 import {
-  Box,
   Container,
   Heading,
   LinkButton,
@@ -109,24 +108,24 @@ export default function ToolsAndResourcesPage() {
         </Container>
       </Section>
 
-      <Section index={1} maxW="6xl">
+      <Section index={1} maxW="6xl" colorPalette="gray">
         <Title as="h2" description="Built into the site. Free, open-source, no signup.">
           Tools
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
           {tools.map((entry) => (
-            <ResourceCard key={entry.href} {...entry} accent="accentA" />
+            <ResourceCard key={entry.href} {...entry} />
           ))}
         </SimpleGrid>
       </Section>
 
-      <Section index={2} maxW="6xl" colorPalette="accentA">
+      <Section index={2} maxW="6xl">
         <Title as="h2" description="Background reading and links to the wider grid-beam community.">
           Resources
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="6">
           {resources.map((entry) => (
-            <ResourceCard key={entry.href} {...entry} accent="accentB" />
+            <ResourceCard key={entry.href} {...entry} />
           ))}
         </SimpleGrid>
       </Section>
@@ -134,30 +133,26 @@ export default function ToolsAndResourcesPage() {
   )
 }
 
-interface ResourceCardProps extends CardEntry {
-  accent: 'accentA' | 'accentB'
-}
-
-function ResourceCard(props: ResourceCardProps) {
-  const { title, body, href, cta, isExternal, accent } = props
+function ResourceCard(props: CardEntry) {
+  const { title, body, href, cta, isExternal } = props
   return (
-    <Box
+    <VStack
+      as="article"
+      alignItems="flex-start"
+      gap="4"
       p="6"
       bg="white"
-      borderRadius="lg"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor={`${accent}.300`}
+      borderRadius="xl"
+      boxShadow="sm"
+      h="full"
     >
-      <VStack alignItems="flex-start" gap="4" h="full">
-        <Heading as="h3" size="md">
-          {title}
-        </Heading>
-        <Text flex="1">{body}</Text>
-        <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
-          {cta}
-        </LinkButton>
-      </VStack>
-    </Box>
+      <Heading as="h3" size="md">
+        {title}
+      </Heading>
+      <Text flex="1">{body}</Text>
+      <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
+        {cta}
+      </LinkButton>
+    </VStack>
   )
 }

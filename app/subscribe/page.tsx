@@ -55,60 +55,57 @@ export default function SubscribePage() {
         </Container>
       </Section>
 
-      <Section index={1} maxW="6xl" colorPalette="accentA">
+      <Section index={1} maxW="6xl" colorPalette="gray">
         <Title as="h2" description="Two ways to be told when the newsletter goes live.">
           Find out when it launches
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
-          <VStack
-            alignItems="flex-start"
-            gap="4"
-            p="6"
-            bg="white"
-            borderRadius="lg"
-            borderWidth="2px"
-            borderStyle="dashed"
-            borderColor="accentA.300"
-          >
-            <Heading as="h3" size="md">
-              Email the maintainer
-            </Heading>
-            <Text flex="1">
-              Drop a quick note via the contact page and ask to be told when signups open. Same
-              channel for any other newsletter questions.
-            </Text>
-            <LinkButton href="/contact" variant="secondary" size="sm">
-              Go to contact page
-            </LinkButton>
-          </VStack>
-          <VStack
-            alignItems="flex-start"
-            gap="4"
-            p="6"
-            bg="white"
-            borderRadius="lg"
-            borderWidth="2px"
-            borderStyle="dashed"
-            borderColor="accentA.300"
-          >
-            <Heading as="h3" size="md">
-              Watch the repository
-            </Heading>
-            <Text flex="1">
-              The launch will land as a site update in the GitHub repo. Star or watch it to see
-              updates as they ship.
-            </Text>
-            <LinkButton
-              href="https://github.com/villagekit/gridbeam.xyz"
-              variant="secondary"
-              size="sm"
-              isExternal
-            >
-              View on GitHub
-            </LinkButton>
-          </VStack>
+          <SubscribeCard
+            title="Email the maintainer"
+            body="Drop a quick note via the contact page and ask to be told when signups open. Same channel for any other newsletter questions."
+            cta="Go to contact page"
+            href="/contact"
+          />
+          <SubscribeCard
+            title="Watch the repository"
+            body="The launch will land as a site update in the GitHub repo. Star or watch it to see updates as they ship."
+            cta="View on GitHub"
+            href="https://github.com/villagekit/gridbeam.xyz"
+            isExternal
+          />
         </SimpleGrid>
       </Section>
     </Main>
+  )
+}
+
+interface SubscribeCardProps {
+  title: string
+  body: string
+  cta: string
+  href: string
+  isExternal?: boolean
+}
+
+function SubscribeCard(props: SubscribeCardProps) {
+  const { title, body, cta, href, isExternal } = props
+  return (
+    <VStack
+      as="article"
+      alignItems="flex-start"
+      gap="4"
+      p="6"
+      bg="white"
+      borderRadius="xl"
+      boxShadow="sm"
+    >
+      <Heading as="h3" size="md">
+        {title}
+      </Heading>
+      <Text flex="1">{body}</Text>
+      <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
+        {cta}
+      </LinkButton>
+    </VStack>
   )
 }
