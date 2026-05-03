@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductSummary } from '@villagekit/product'
-import { FormLabel, HStack, Switch, Text, VStack } from '@villagekit/ui'
+import { HStack, Switch, Text, VStack } from '@villagekit/ui'
 import { useState } from 'react'
 
 import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
@@ -66,11 +66,9 @@ function GroupPartsToggle(props: GroupToggleProps) {
   const { value, onChange } = props
   return (
     <HStack gap="2">
-      <FormLabel htmlFor="design-parts-group" mb="0">
-        <Text fontSize="sm" variant="secondary">
-          Group same size
-        </Text>
-      </FormLabel>
+      <Text as="label" htmlFor="design-parts-group" fontSize="sm" variant="secondary">
+        Group same size
+      </Text>
       <Switch.Root
         id="design-parts-group"
         size="sm"

@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Center,
-  FormLabel,
   HStack,
   Heading,
   IconButton,
@@ -133,11 +132,9 @@ export function CuttingPlanner() {
             flexWrap="wrap"
           >
             <HStack gap="3">
-              <FormLabel htmlFor="unlimited-stock" mb="0">
-                <Text fontSize="sm" variant="secondary">
-                  Top up with full-length beams
-                </Text>
-              </FormLabel>
+              <Text as="label" htmlFor="unlimited-stock" fontSize="sm" variant="secondary">
+                Top up with full-length beams
+              </Text>
               <Select.Root size="sm" maxW="36">
                 <Select.Field
                   id="unlimited-stock"
