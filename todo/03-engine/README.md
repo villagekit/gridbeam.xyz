@@ -17,10 +17,10 @@ Cleanly publish the engine as open-source under EUPL-1.2, with consistent licens
 | 03 | [Rename GitHub repo from `gridkit-legacy`](./03-rename-repo.md) | DONE |
 | 04 | [Audit dependencies + build pipeline for any upgrades needed](./04-deps-and-build-audit.md) | DONE (static audit; live install pending) |
 | 08 | [Migrate engine to Chakra v3 + remove `core/ui`](./08-migrate-engine-to-chakra-v3.md) | DONE (build/types/lint clean; runtime verification deferred) |
-| 05 | [Publish runtime packages to npm](./05-publish-npm.md) | TODO |
+| 05 | [Publish runtime packages to npm](./05-publish-npm.md) | BLOCKED (engine standalone install + `@villagekit/ui` first publish) |
 | 06 | [Decide future of the studio Tauri app](./06-studio-app-future.md) | DONE (decision) |
 | 07 | [Wire engine into gridbeam.xyz website (designs catalog)](./07-website-integration.md) | DONE (build/types/lint clean; live canvas runtime verification deferred) |
-| 09 | [`@villagekit/products` distribution decision](./09-products-catalog-publish.md) | TODO |
+| 09 | [`@villagekit/products` distribution decision](./09-products-catalog-publish.md) | DONE (decisions logged + cleanup landed; publishing deferred) |
 
 ## Order of attack
 
