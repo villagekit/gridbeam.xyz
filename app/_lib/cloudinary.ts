@@ -4,12 +4,11 @@
 // video URL builder stays local because the legacy ui-media `Video`
 // component generates a different URL shape (per-format `<source>` with
 // shared transformations) than the site's `StoryVideo`, which uses
-// per-format full URLs without transformations. Stream 04 task 02 will
-// replace the hardcoded cloud name with an env var.
+// per-format full URLs without transformations.
 
 import { getCloudinaryImageUrl } from '@villagekit/ui'
 
-const CLOUDINARY_NAME = 'villagekit'
+export const CLOUDINARY_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ?? 'villagekit'
 
 interface GetCloudinaryUrlOptions {
   src: string
