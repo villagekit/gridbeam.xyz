@@ -3,12 +3,17 @@
 import './registerParts'
 
 import { useRouter } from 'next/navigation'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 import { ParamControls } from '@villagekit/parameters'
 import { ProductInfo, type ProductMeta, ProductProvider, ProductView } from '@villagekit/product'
 import { ProductKitModule } from '@villagekit/product-kit'
 import { Box, VStack } from '@villagekit/ui'
+
+import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
+
+import { DesignCuttingPlan } from './DesignCuttingPlan'
+import { PartsBreakdown } from './PartsBreakdown'
 
 export interface DesignViewerProps {
   meta: ProductMeta
@@ -18,6 +23,7 @@ export interface DesignViewerProps {
 export function DesignViewer(props: DesignViewerProps) {
   const { meta, code } = props
   const router = useRouter()
+  const [displayUnit, setDisplayUnit] = useState<DisplayUnit>('gu')
 
   const onLocationUpdate = useCallback(
     (nextLocation: Location) => {
@@ -34,7 +40,7 @@ export function DesignViewer(props: DesignViewerProps) {
       code={code}
       onLocationUpdate={onLocationUpdate}
     >
-      <VStack alignItems="stretch" gap="6" w="full">
+      <VStack alignItems="stretch" gap="8" w="full">
         <Box
           w="full"
           h={{ base: '320px', md: '480px', lg: '560px' }}
@@ -49,6 +55,10 @@ export function DesignViewer(props: DesignViewerProps) {
         <ParamControls />
 
         <ProductInfo />
+
+        <PartsBreakdown displayUnit={displayUnit} onDisplayUnitChange={setDisplayUnit} />
+
+        <DesignCuttingPlan displayUnit={displayUnit} />
       </VStack>
     </ProductProvider>
   )

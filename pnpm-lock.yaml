@@ -36,6 +36,9 @@ importers:
       '@villagekit/parameters':
         specifier: workspace:*
         version: link:gridkit/core/parameters
+      '@villagekit/part':
+        specifier: workspace:*
+        version: link:gridkit/core/part
       '@villagekit/part-fastener':
         specifier: workspace:*
         version: link:gridkit/parts/fastener

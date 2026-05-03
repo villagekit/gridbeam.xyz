@@ -15,7 +15,7 @@ A clean, content-focused Next.js (latest, app router) + Chakra v3 site that expl
 | 03 | [Home page](./03-home-page.md) | DONE |
 | 04 | [Educational pages: about, FAQ, tools-and-resources](./04-educational-pages.md) | DONE |
 | 05 | [MDX stories / guides](./05-stories.md) | DONE |
-| 06 | [Designs catalog browser](./06-designs-catalog.md) | TODO |
+| 06 | [Designs catalog browser](./06-designs-catalog.md) | DONE (build/types/lint clean; live canvas runtime verification deferred) |
 | 07 | [Cutting planner tool](./07-cutting-planner.md) | DONE |
 | 08 | [Suppliers page (replaces store)](./08-suppliers.md) | DONE |
 | 09 | [Contact + subscribe pages](./09-contact-and-subscribe.md) | DONE |
