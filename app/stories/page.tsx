@@ -29,13 +29,13 @@ export default function StoriesPage() {
     <Main>
       <SkipNavContent />
 
-      <Section index={0} maxW="6xl">
+      <Section index={0} maxW="5xl">
         <Title as="h1" description={pageDescription}>
           {pageTitle}
         </Title>
 
-        <Container maxW="6xl">
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="6">
+        <Container maxW="4xl">
+          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 12 }}>
             {stories.map(({ metadata: storyMetadata }) => (
               <StoryCard key={storyMetadata.slug} metadata={storyMetadata} />
             ))}

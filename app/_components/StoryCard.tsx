@@ -33,45 +33,53 @@ export function StoryCard(props: StoryCardProps) {
   return (
     <LinkBox
       as="article"
-      borderRadius="xl"
-      borderWidth="2px"
-      borderStyle="dashed"
-      borderColor={`${palette}.300`}
-      bg="white"
-      overflow="hidden"
-      transition="border-color 0.15s ease"
-      _hover={{ borderColor: `${palette}.500` }}
-      _focusWithin={{ borderColor: `${palette}.500`, boxShadow: 'outline' }}
+      aria-label={title}
+      css={{
+        transitionDuration: 'fast',
+        transitionProperty: 'transform',
+        _hover: { cursor: 'pointer', transform: 'scale(1.02)' },
+        _focusWithin: {
+          '[data-story-image]': { boxShadow: 'outlineLarge' },
+        },
+      }}
     >
-      <Box bg={`${palette}.50`}>
-        <StoryImage
-          src={image.src}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
-          aspectRatio="standard"
-        />
-      </Box>
+      <VStack alignItems="stretch" gap="4">
+        <Box
+          data-story-image
+          borderRadius="xl"
+          transitionDuration="fast"
+          transitionProperty="box-shadow"
+        >
+          <StoryImage
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            aspectRatio="standard"
+          />
+        </Box>
 
-      <VStack alignItems="flex-start" gap="3" p="5">
-        <HStack justifyContent="space-between" width="100%">
-          <Badge colorPalette={palette} variant="subtle">
-            {categoryLabels[category]}
-          </Badge>
-          <Text fontSize="xs" variant="tertiary">
-            {formattedDate}
-          </Text>
+        <HStack alignItems="flex-start" justifyContent="space-between" gap="4" px="2">
+          <VStack alignItems="flex-start" gap="1" flex="1" minW="0">
+            <Heading as="h2" size="md" lineHeight="1.2">
+              <LinkOverlay href={`/stories/${slug}`}>{title}</LinkOverlay>
+            </Heading>
+            {summary != null && (
+              <Text variant="tertiary" fontSize="sm" lineHeight="1.5">
+                {summary.replace(/\.$/, '')}
+              </Text>
+            )}
+          </VStack>
+
+          <VStack alignItems="flex-end" gap="1" flexShrink={0}>
+            <Badge colorPalette={palette} variant="subtle">
+              {categoryLabels[category]}
+            </Badge>
+            <Text fontSize="xs" variant="tertiary" whiteSpace="nowrap">
+              {formattedDate}
+            </Text>
+          </VStack>
         </HStack>
-
-        <Heading as="h3" size="md" lineHeight="1.2">
-          <LinkOverlay href={`/stories/${slug}`}>{title}</LinkOverlay>
-        </Heading>
-
-        {summary != null && (
-          <Text variant="secondary" fontSize="sm" lineHeight="1.5">
-            {summary}
-          </Text>
-        )}
       </VStack>
     </LinkBox>
   )
