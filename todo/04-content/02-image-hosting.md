@@ -1,6 +1,6 @@
 # 02 — Image hosting decision + migration
 
-**Status:** AWAITING MIKEY — `villagekit-media` is bootstrapped and the 113 legacy assets are downloaded and committed (LFS) at `../villagekit-media` (initial commit `35387d9`). Mikey's hand-off: push to GitHub, run `pnpm run sync-media`, then add the repo as a submodule of this site. After that, the bulk find-replace + verify steps can land here.
+**Status:** DONE — `villagekit-media` is live (Mikey reorganised under `media/gridbeam.xyz/` and synced to Cloudinary), wired in here as a submodule pinned at `bfdc5b6`. 126 image and video refs across `app/` + `content/` rewritten to the new `gridbeam.xyz/...` IDs; pages confirmed rendering via `pnpm dev`.
 
 ## Why
 Every image on the legacy site lives at `https://res.cloudinary.com/villagekit/v1/gridkit.nz/...`. We need to decide where the images for the new site live, and migrate references.
@@ -23,9 +23,10 @@ A clear hosting strategy and updated image references throughout the codebase.
 - [x] Bootstrap `../villagekit-media` repo: `git init`, `git lfs install`, `.gitattributes`, `package.json` with `cloudinary` dep, `.env.example`, README, LICENSE (EUPL-1.2). Initial commit `35387d9`.
 - [x] Add `scripts/fetch-legacy.ts`. Run it: 113/113 assets downloaded under deterministic IDs (`about/grid`, `stories/2022-newsletter/creations/insert-nuts`, etc.), committed into LFS.
 - [x] Add `scripts/sync-media.ts` — idempotent uploader using the Cloudinary Node SDK (hash content, compare with `etag` via `api.resource(public_id)`, upload only when missing or mismatched). Reads creds from `.env`.
-- [ ] **Mikey:** push `villagekit-media` to GitHub (`villagekit/villagekit-media`), `cp .env.example .env` and fill in the API key/secret, run `pnpm run sync-media`, then add the repo as a submodule of this site repo at `./villagekit-media`.
-- [ ] Bulk find-and-replace `v1/gridkit.nz/<old>_<suffix>(.<ext>)?` → new asset ID across the website's MDX and TSX files (per `scripts/assets.ts` in `villagekit-media`). Watch for dual-form references with/without extension (e.g. `whats-a-grid-unit/grid-unit-cube_fndokk` is used both with and without `.jpg`).
-- [ ] Verify every page renders the new images via `pnpm dev` + `pnpm build`.
+- [x] Mikey: pushed `villagekit-media` to GitHub, reorganised under `media/gridbeam.xyz/` (so each site has its own subdir), ran `pnpm run sync-media`. (Site-side: `villagekit-media/scripts/assets.ts` updated with a `SITE_PREFIX` const so the on-disk layout, the Cloudinary public IDs, and the scripts all stay in sync — local commit `2f04b9a`, unpushed pending Mikey.)
+- [x] Add `villagekit-media` as a submodule at `./villagekit-media`, pinned at `bfdc5b6`. `biome.json` + `tsconfig.json` updated to ignore the new path.
+- [x] Bulk find-and-replace 126 image and video refs across `app/` + `content/` from `v1/gridkit.nz/<old>_<suffix>(.<ext>)?` (and `gridkit.nz/...` for videos) → `gridbeam.xyz/<new-id>`. Dual-form (`<id>` vs `<id>.jpg`) handled.
+- [x] Verify every page renders the new images via `pnpm dev`. Home, about, and stories all return 200; sample Cloudinary URLs (`gridbeam.xyz/home/record-shelf-hero`, video `gridbeam.xyz/stories/2021-winter-newsletter/gridcraft-playground.mp4`) confirmed resolving.
 
 ## Notes
 - Source masters live in a separate repo (`villagekit-media`), not this one. Cleaner separation: the site's git history doesn't get bloated by image churn, and the sync script + masters travel together.

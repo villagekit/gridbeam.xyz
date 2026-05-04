@@ -2,7 +2,7 @@
 
 Reviving the dead [gridkit.nz](https://gridkit.nz) startup as **[gridbeam.xyz](https://gridbeam.xyz)** — a non-commercial, open-source educational site about **grid beam**, a modular construction system based on a 40 mm grid of identical aluminium beams with regularly-spaced holes.
 
-This top-level repo IS the website. It consumes three open-source submodules (`./ui`, `./gridkit`, `./gridkit-products`) and temporarily depends on a private legacy submodule (`./node-modules`) as source material for extraction.
+This top-level repo IS the website. It consumes four open-source submodules (`./ui`, `./gridkit`, `./gridkit-products`, `./villagekit-media`) and temporarily depends on a private legacy submodule (`./node-modules`) as source material for extraction.
 
 ## Repo shape
 
@@ -12,6 +12,7 @@ This top-level repo IS the website. It consumes three open-source submodules (`.
 | `./ui` | `@villagekit/ui` — open-source React component library on Chakra UI | Public — `villagekit/ui` |
 | `./gridkit` | The grid-kit engine — code-as-CAD, parts library, sandbox renderer | Public — `villagekit/gridkit` |
 | `./gridkit-products` | The set of products (designs) authored with the `./gridkit` engine. Powered the original gridkit.nz catalog; powers the new gridbeam.xyz catalog too. Stays a separate repo (not folded into gridkit). | Public — `villagekit/gridkit-products` |
+| `./villagekit-media` | Source images + Cloudinary sync tooling. Cross-site (each site under `media/<site>/...`); today only `gridbeam.xyz/`. LFS-tracked. | Public — `villagekit/villagekit-media` |
 | `./node-modules` | Legacy private monorepo. Source material for extraction. **Retired by stream 05.** | Private — `villagekit/node-modules` |
 
 ## Tech stack (target)

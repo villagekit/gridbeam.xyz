@@ -10,3 +10,6 @@
 [submodule "gridkit-products"]
 	path = gridkit-products
 	url = git@github.com:villagekit/gridkit-products
+[submodule "villagekit-media"]
+	path = villagekit-media
+	url = git@github.com:villagekit/villagekit-media.git
