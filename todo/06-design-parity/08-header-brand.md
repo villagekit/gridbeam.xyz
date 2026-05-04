@@ -1,6 +1,6 @@
 # 08 — Uplift: Header brand (cross-cutting)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -23,15 +23,19 @@ Header behaviour (sticky, hamburger menu on mobile) is fine on both. The link to
 
 ## Steps
 
-- [ ] Locate the cube SVG in the legacy assets (`node-modules/apps/gridkit/public/` or the `ui-brand` package) and port it to `app/_components/SiteBrand.tsx`. Cite source SHA per the [CLAUDE.md "Citing copied code" convention](../../CLAUDE.md#conventions).
-- [ ] Render the wordmark as "Grid Beam" beside the cube. Match the legacy typography (weight, kerning, vertical alignment).
-- [ ] Update `app/icon.svg` and `app/apple-icon.png` to use the cube glyph (currently placeholders).
-- [ ] Update `app/opengraph-image.tsx` and `app/twitter-image.tsx` so the OG/Twitter cards include the cube + "Grid Beam" wordmark.
-- [ ] Verify at 375 / 768 / 1280 — brand should remain legible on mobile.
+- [x] Ported the cube SVG to `app/_components/CubeLogo.tsx` as a pure JSX React component, citing the legacy source pinned to SHA `fce357d`. Inlined (vs SVGR import) so the same component can be re-used by `app/opengraph-image.tsx` (which runs through Satori's edge runtime and can't use SVGR's webpack loader).
+- [x] `SiteBrand.tsx` now renders cube + "Grid Beam" wordmark via `<HStack><CubeLogo /><Heading size="xl">Grid Beam</Heading></HStack>` — flat sizes matching legacy (`size="10"` cube, `size="xl"` wordmark).
+- [x] `app/icon.svg` and `app/apple-icon.png` already had the cube glyph — verified visually, no change needed.
+- [x] `app/opengraph-image.tsx` updated to import the shared `CubeLogo` and render "Grid Beam" wordmark at fontSize 120 (was "gridbeam.xyz" at 96). `app/twitter-image.tsx` re-exports the OG image — no change needed.
+- [x] Verified at 375 / 768 / 1280 (snapshots in `/tmp/header-shots/`). 1280 and 375 render cleanly. 768 shows the brand correctly but the nav crops the last item ("Contact") — pre-existing nav-pressure issue from having 6 top-nav items vs legacy's 3, **not** a brand-task concern.
 
 ## Notes
 - The cube was originally Grid Kit's brand asset. Mikey (the same founder) is choosing to carry it forward to Grid Beam; that's their call.
 - The header colour (`headerColorPalette="accentB"` in `app/layout.tsx`) gives the cream/yellow background — that can stay; this task is about the content of the brand, not the chrome around it.
+- `CubeLogo` accepts `ariaLabel: string | null`. When `null` (decorative), the SVG renders with `aria-hidden="true"` — the surrounding `Link`'s text "Grid Beam" provides the accessible name. When a string is passed, the SVG renders with `role="img" aria-label={…}` for standalone use.
+- The cube SVG inline in `CubeLogo.tsx` carries a `biome-ignore lint/a11y/noSvgWithoutTitle` for the decorative case; the rule doesn't recognise `aria-hidden` as a valid alternative to `<title>`.
+- Brand `pr={{ base: 0, md: 4 }}` adds 16px right padding from md+ so "Grid Beam" doesn't visually run into the first nav item ("About") at 768. At base (mobile) the brand is centred, so no padding needed.
+- Follow-up (not in scope): at 768 the 6-item top nav overflows its flex region and the last item gets cut off. Either reduce nav items at md, push the hamburger breakpoint to lg, or add horizontal scrolling on the nav. Track separately if needed.
 
 ## Depends on
 - `./02-initial-audit.md`
