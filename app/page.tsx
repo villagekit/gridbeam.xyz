@@ -5,6 +5,7 @@ import {
   HStack,
   Heading,
   LinkButton,
+  LinkCard,
   Main,
   Section,
   SimpleGrid,
@@ -18,6 +19,7 @@ import {
 import type { Metadata } from 'next'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
+import { FaCut, FaShoppingBag, FaTools } from 'react-icons/fa'
 
 import { StoryCard } from './_components/StoryCard'
 import { designImages } from './_lib/design-images'
@@ -65,8 +67,7 @@ export default function HomePage() {
         >
           <VStack alignItems="flex-start" gap="6" flex="1">
             <Heading as="h1" size={{ base: '4xl', md: '5xl' }} lineHeight="1.05">
-              Modular furniture, on a{' '}
-              <Span color="primary.500">40&nbsp;mm grid</Span>.
+              Modular furniture, on a <Span color="primary.500">40&nbsp;mm grid</Span>.
             </Heading>
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
               Grid beam is a family of construction systems built from perforated beams that bolt
@@ -144,22 +145,22 @@ export default function HomePage() {
           For makers
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
-          <MakerCard
+          <LinkCard
             title="Cutting planner"
-            body="Work out how many full-length beams to buy, and how to cut them with the least off-cut waste."
-            cta="Open the planner"
+            icon={<FaCut />}
+            description="Work out how many full-length beams to buy, and how to cut them with the least off-cut waste."
             href="/tools/cutting-planner"
           />
-          <MakerCard
+          <LinkCard
             title="Suppliers"
-            body="Already-cut grid beams and panels from suppliers around the world. We don't sell parts; we link to people who do."
-            cta="Find suppliers"
+            icon={<FaShoppingBag />}
+            description="Already-cut grid beams and panels from suppliers around the world. We don't sell parts; we link to people who do."
             href="/suppliers"
           />
-          <MakerCard
+          <LinkCard
             title="Tools & resources"
-            body="Everything else built into the site — engine source, FAQ, how-tos, community links."
-            cta="See all tools"
+            icon={<FaTools />}
+            description="Everything else built into the site — engine source, FAQ, how-tos, community links."
             href="/tools-and-resources"
           />
         </SimpleGrid>
@@ -308,35 +309,5 @@ function DesignThumb(props: DesignThumbProps) {
         </Text>
       </VStack>
     </NextLink>
-  )
-}
-
-interface MakerCardProps {
-  title: string
-  body: string
-  cta: string
-  href: string
-}
-
-function MakerCard(props: MakerCardProps) {
-  const { title, body, cta, href } = props
-  return (
-    <VStack
-      as="article"
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      boxShadow="sm"
-    >
-      <Heading as="h3" size="lg">
-        {title}
-      </Heading>
-      <Text flex="1">{body}</Text>
-      <LinkButton href={href} variant="secondary" size="sm">
-        {cta}
-      </LinkButton>
-    </VStack>
   )
 }

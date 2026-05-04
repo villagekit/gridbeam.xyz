@@ -60,7 +60,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${bodyFont.variable} ${headingFont.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${bodyFont.variable} ${headingFont.variable}`}
+    >
       <body>
         <EmotionRegistry>
           <Provider>

@@ -2,7 +2,7 @@ import {
   Container,
   Heading,
   Link,
-  LinkButton,
+  LinkCard,
   Main,
   Section,
   SimpleGrid,
@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import { FaCode, FaUserShield } from 'react-icons/fa'
 
 import { ObfuscatedEmailLink } from '../_components/ObfuscatedEmail'
 
@@ -44,18 +45,21 @@ export default function LegalPage() {
       </Section>
 
       <Section index={1} maxW="6xl">
+        <Title as="h2" description="Two policies and a licence — that's the whole legal stack.">
+          Policies
+        </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
-          <LegalCard
+          <LinkCard
             title="Privacy policy"
-            body="What we collect, what we don't, and what we do with anything you send us. Short — we collect almost nothing."
+            icon={<FaUserShield />}
+            description="What we collect, what we don't, and what we do with anything you send us. Short — we collect almost nothing."
             href="/legal/privacy-policy"
-            cta="Read the privacy policy"
           />
-          <LegalCard
+          <LinkCard
             title="Site licence"
-            body="The site, the design catalogue, the engine, and the @villagekit/ui component library are all open source under the European Union Public Licence (EUPL-1.2)."
+            icon={<FaCode />}
+            description="The site, the design catalogue, the engine, and the @villagekit/ui component library are all open source under the European Union Public Licence (EUPL-1.2)."
             href="https://github.com/villagekit"
-            cta="Source on GitHub"
             isExternal
           />
         </SimpleGrid>
@@ -84,36 +88,5 @@ export default function LegalPage() {
         </Container>
       </Section>
     </Main>
-  )
-}
-
-interface LegalCardProps {
-  title: string
-  body: string
-  href: string
-  cta: string
-  isExternal?: boolean
-}
-
-function LegalCard(props: LegalCardProps) {
-  const { title, body, href, cta, isExternal } = props
-  return (
-    <VStack
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      boxShadow="sm"
-      h="full"
-    >
-      <Heading as="h2" size="md">
-        {title}
-      </Heading>
-      <Text flex="1">{body}</Text>
-      <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
-        {cta}
-      </LinkButton>
-    </VStack>
   )
 }

@@ -5,6 +5,7 @@ import {
   HStack,
   Heading,
   LinkButton,
+  LinkCard,
   Main,
   Section,
   SimpleGrid,
@@ -17,6 +18,7 @@ import {
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextImage from 'next/image'
+import { FaCubes, FaShoppingBag, FaTools } from 'react-icons/fa'
 
 const title = 'About grid beam'
 const description =
@@ -201,23 +203,23 @@ export default function AboutPage() {
           Start building
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
-          <NextStepCard
+          <LinkCard
             title="Browse designs"
-            body="A catalogue of beds, desks, shelves, and more — every part listed, every cut measured."
+            icon={<FaCubes />}
+            description="A catalogue of beds, desks, shelves, and more — every part listed, every cut measured."
             href="/designs"
-            cta="See the catalogue"
           />
-          <NextStepCard
+          <LinkCard
             title="Plan a build"
-            body="The cutting planner works out how many beams to buy and how to cut them with the least off-cut waste."
+            icon={<FaTools />}
+            description="The cutting planner works out how many beams to buy and how to cut them with the least off-cut waste."
             href="/tools-and-resources"
-            cta="Tools & resources"
           />
-          <NextStepCard
+          <LinkCard
             title="Find parts"
-            body="A directory of suppliers around the world. We don't sell parts; we link to people who do."
+            icon={<FaShoppingBag />}
+            description="A directory of suppliers around the world. We don't sell parts; we link to people who do."
             href="/suppliers"
-            cta="Find suppliers"
           />
         </SimpleGrid>
         <Flex justifyContent="center" pt="2">
@@ -282,36 +284,6 @@ function PartCard(props: PartCardProps) {
         {title}
       </Heading>
       <Text>{body}</Text>
-    </VStack>
-  )
-}
-
-interface NextStepCardProps {
-  title: string
-  body: string
-  href: string
-  cta: string
-}
-
-function NextStepCard(props: NextStepCardProps) {
-  const { title, body, href, cta } = props
-  return (
-    <VStack
-      as="article"
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      boxShadow="sm"
-    >
-      <Heading as="h3" size="lg">
-        {title}
-      </Heading>
-      <Text flex="1">{body}</Text>
-      <LinkButton href={href} variant="secondary" size="sm">
-        {cta}
-      </LinkButton>
     </VStack>
   )
 }

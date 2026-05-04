@@ -1,6 +1,7 @@
 import {
   Container,
   Heading,
+  Icon,
   Link,
   Main,
   Section,
@@ -10,6 +11,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import { FaEnvelope, FaGithub } from 'react-icons/fa'
 
 import { ObfuscatedEmail } from '../_components/ObfuscatedEmail'
 
@@ -48,14 +50,10 @@ export default function ContactPage() {
           Two channels
         </Title>
         <VStack alignItems="stretch" gap="6" maxW="3xl" mx="auto" w="full">
-          <VStack
-            alignItems="center"
-            gap="4"
-            p="8"
-            bg="white"
-            borderRadius="xl"
-            boxShadow="sm"
-          >
+          <VStack alignItems="center" gap="4" p="8" bg="white" borderRadius="xl" boxShadow="sm">
+            <Icon w="8" h="8" color="primary.600">
+              <FaEnvelope />
+            </Icon>
             <Heading as="h3" size="md">
               Email
             </Heading>
@@ -83,14 +81,10 @@ export default function ContactPage() {
             />
           </VStack>
 
-          <VStack
-            alignItems="flex-start"
-            gap="3"
-            p="6"
-            bg="white"
-            borderRadius="xl"
-            boxShadow="sm"
-          >
+          <VStack alignItems="flex-start" gap="3" p="6" bg="white" borderRadius="xl" boxShadow="sm">
+            <Icon w="8" h="8" color="primary.600">
+              <FaGithub />
+            </Icon>
             <Heading as="h3" size="md">
               GitHub Issues
             </Heading>

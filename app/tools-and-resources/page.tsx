@@ -1,16 +1,25 @@
 import {
   Container,
-  Heading,
-  LinkButton,
+  LinkCard,
   Main,
   Section,
   SimpleGrid,
   SkipNavContent,
   Text,
   Title,
-  VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import {
+  FaBookOpen,
+  FaCubes,
+  FaCut,
+  FaGithub,
+  FaInfoCircle,
+  FaQuestionCircle,
+  FaShoppingBag,
+  FaUsers,
+} from 'react-icons/fa'
 
 const title = 'Tools & resources'
 const description =
@@ -29,64 +38,70 @@ export const metadata: Metadata = {
 
 interface CardEntry {
   title: string
-  body: string
+  description: string
   href: string
-  cta: string
+  icon: ReactNode
   isExternal?: boolean
 }
 
 const tools: Array<CardEntry> = [
   {
     title: 'Cutting planner',
-    body: 'Work out how many beams to buy and how to cut them with the least off-cut waste.',
+    description: 'Work out how many beams to buy and how to cut them with the least off-cut waste.',
     href: '/tools/cutting-planner',
-    cta: 'Open the planner',
+    icon: <FaCut />,
   },
   {
     title: 'Designs catalogue',
-    body: 'Beds, desks, shelves, market stalls — every design with parts list and a 3D preview you can rotate.',
+    description:
+      'Beds, desks, shelves, market stalls — every design with parts list and a 3D preview you can rotate.',
     href: '/designs',
-    cta: 'Browse designs',
+    icon: <FaCubes />,
   },
   {
     title: 'Suppliers directory',
-    body: "Manufacturers and resellers around the world that make 40 mm grid beam and compatible parts. We don't sell parts; we link to people who do.",
+    description:
+      "Manufacturers and resellers around the world that make 40 mm grid beam and compatible parts. We don't sell parts; we link to people who do.",
     href: '/suppliers',
-    cta: 'Find suppliers',
+    icon: <FaShoppingBag />,
   },
 ]
 
 const resources: Array<CardEntry> = [
   {
     title: 'About grid beam',
-    body: 'A primer on the 40 mm grid, the parts that fit it, and where the system came from.',
+    description:
+      'A primer on the 40 mm grid, the parts that fit it, and where the system came from.',
     href: '/about',
-    cta: 'Read the intro',
+    icon: <FaInfoCircle />,
   },
   {
     title: 'FAQ',
-    body: 'Common questions about durability, materials, sourcing, sustainability, and how to get parts.',
+    description:
+      'Common questions about durability, materials, sourcing, sustainability, and how to get parts.',
     href: '/faq',
-    cta: 'Read the FAQ',
+    icon: <FaQuestionCircle />,
   },
   {
     title: 'Stories',
-    body: 'Build logs and field reports from people doing it — what worked, what they would do differently next time.',
+    description:
+      'Build logs and field reports from people doing it — what worked, what they would do differently next time.',
     href: '/stories',
-    cta: 'Read stories',
+    icon: <FaBookOpen />,
   },
   {
     title: 'Source on GitHub',
-    body: 'The site, the @villagekit/ui component library, the engine that draws the designs, and the catalogue itself — all open-source under EUPL-1.2.',
+    description:
+      'The site, the @villagekit/ui component library, the engine that draws the designs, and the catalogue itself — all open-source under EUPL-1.2.',
     href: 'https://github.com/villagekit',
-    cta: 'GitHub',
+    icon: <FaGithub />,
     isExternal: true,
   },
   {
     title: 'Community forum',
-    body: 'Questions, build logs, and design discussion at discuss.villagekit.com.',
+    description: 'Questions, build logs, and design discussion at discuss.villagekit.com.',
     href: 'https://discuss.villagekit.com',
-    cta: 'Visit the forum',
+    icon: <FaUsers />,
     isExternal: true,
   },
 ]
@@ -114,7 +129,14 @@ export default function ToolsAndResourcesPage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
           {tools.map((entry) => (
-            <ResourceCard key={entry.href} {...entry} />
+            <LinkCard
+              key={entry.href}
+              title={entry.title}
+              icon={entry.icon}
+              description={entry.description}
+              href={entry.href}
+              isExternal={entry.isExternal}
+            />
           ))}
         </SimpleGrid>
       </Section>
@@ -125,34 +147,17 @@ export default function ToolsAndResourcesPage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="6">
           {resources.map((entry) => (
-            <ResourceCard key={entry.href} {...entry} />
+            <LinkCard
+              key={entry.href}
+              title={entry.title}
+              icon={entry.icon}
+              description={entry.description}
+              href={entry.href}
+              isExternal={entry.isExternal}
+            />
           ))}
         </SimpleGrid>
       </Section>
     </Main>
-  )
-}
-
-function ResourceCard(props: CardEntry) {
-  const { title, body, href, cta, isExternal } = props
-  return (
-    <VStack
-      as="article"
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      boxShadow="sm"
-      h="full"
-    >
-      <Heading as="h3" size="md">
-        {title}
-      </Heading>
-      <Text flex="1">{body}</Text>
-      <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
-        {cta}
-      </LinkButton>
-    </VStack>
   )
 }

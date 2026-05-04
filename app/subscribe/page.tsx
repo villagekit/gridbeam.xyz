@@ -1,7 +1,6 @@
 import {
   Container,
-  Heading,
-  LinkButton,
+  LinkCard,
   Main,
   Section,
   SimpleGrid,
@@ -11,6 +10,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import { FaEnvelope, FaGithub } from 'react-icons/fa'
 
 const title = 'Newsletter'
 const description =
@@ -60,52 +60,21 @@ export default function SubscribePage() {
           Find out when it launches
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
-          <SubscribeCard
+          <LinkCard
             title="Email the maintainer"
-            body="Drop a quick note via the contact page and ask to be told when signups open. Same channel for any other newsletter questions."
-            cta="Go to contact page"
+            icon={<FaEnvelope />}
+            description="Drop a quick note via the contact page and ask to be told when signups open. Same channel for any other newsletter questions."
             href="/contact"
           />
-          <SubscribeCard
+          <LinkCard
             title="Watch the repository"
-            body="The launch will land as a site update in the GitHub repo. Star or watch it to see updates as they ship."
-            cta="View on GitHub"
+            icon={<FaGithub />}
+            description="The launch will land as a site update in the GitHub repo. Star or watch it to see updates as they ship."
             href="https://github.com/villagekit/gridbeam.xyz"
             isExternal
           />
         </SimpleGrid>
       </Section>
     </Main>
-  )
-}
-
-interface SubscribeCardProps {
-  title: string
-  body: string
-  cta: string
-  href: string
-  isExternal?: boolean
-}
-
-function SubscribeCard(props: SubscribeCardProps) {
-  const { title, body, cta, href, isExternal } = props
-  return (
-    <VStack
-      as="article"
-      alignItems="flex-start"
-      gap="4"
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      boxShadow="sm"
-    >
-      <Heading as="h3" size="md">
-        {title}
-      </Heading>
-      <Text flex="1">{body}</Text>
-      <LinkButton href={href} variant="secondary" size="sm" isExternal={isExternal}>
-        {cta}
-      </LinkButton>
-    </VStack>
   )
 }
