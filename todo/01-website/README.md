@@ -22,6 +22,10 @@ A clean, content-focused Next.js (latest, app router) + Chakra v3 site that expl
 | 10 | [Legal pages (privacy, cookies, etc)](./10-legal-pages.md) | DONE |
 | 11 | [Deployment, SEO, sitemaps, robots](./11-deployment-and-seo.md) | DONE (code-side; Vercel hookup, Lighthouse, share-card validation deferred to launch) |
 
+## Re-opened by Stream 06
+
+Every task here is marked DONE, but every shipped page is a candidate for parity uplift. **Stream 06 ([06-design-parity](../06-design-parity/README.md)) owns the audit + per-page uplift work** — it compares each page against the legacy gridkit.nz site on visual / interaction / a11y / copy / code-patterns axes. Don't reopen tasks here for parity work; pick them up via the Stream 06 per-page tasks instead.
+
 ## Order of attack
 
 **Stream 02 must ship a usable Chakra-v3 `@villagekit/ui` before Stream 01 starts** — decided to avoid a double-migration. Then 01 → 02 within this stream must come first.

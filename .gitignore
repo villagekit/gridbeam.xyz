@@ -65,6 +65,9 @@ out/
 # Vercel
 .vercel
 
+# Stream 06 audit artifacts (generated screenshots + index)
+/audit/
+
 # Mac files
 .DS_Store
 

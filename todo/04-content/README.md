@@ -34,3 +34,7 @@ A complete content audit + rewrite pass that produces:
 - **Tone:** educational, community-oriented, not transactional. No "buy now" copy.
 - **"Grid Kit" → "grid beam"** when referring to the system/product family. Keep "Grid Kit" only when referring to the historical NZ startup (mostly in stories about its history).
 - **No mailing list signup as a primary CTA.** A "follow updates" link is fine — just don't make it the conversion goal.
+
+## Re-opened by Stream 06
+
+Although every task here is marked DONE, the **copy itself** has known regressions vs the legacy gridkit.nz site (the rebrand pass produced wording that's often weaker than the senior-written original). **Copy parity is now owned by Stream 06** ([06-design-parity](../06-design-parity/README.md)) — the per-page uplift tasks there will re-evaluate copy on every page, restoring legacy phrasing where it was better. Don't reopen tasks here; pick them up via the Stream 06 per-page tasks instead.

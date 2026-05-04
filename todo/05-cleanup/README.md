@@ -10,10 +10,10 @@ Once the new website is live, cut ties with the legacy bits we no longer need. P
 
 | # | Task | Status |
 |---|------|--------|
-| 01 | [Retire `./node-modules` submodule](./01-retire-node-modules.md) | TODO |
+| 01 | [Retire `./node-modules` submodule](./01-retire-node-modules.md) | BLOCKED (waiting on Stream 06 design parity) |
 | 02 | [Archive old gridkit.nz deploy + redirect](./02-archive-old-site.md) | TODO |
 | 03 | [DNS / domain — point gridbeam.xyz at new deployment](./03-dns-and-domain.md) | TODO |
-| 04 | [Pre-launch real-browser QA pass](./04-pre-launch-qa.md) | TODO |
+| 04 | [Pre-launch real-browser QA pass](./04-pre-launch-qa.md) | SUPERSEDED by Stream 06 |
 
 ## Order of attack
 
@@ -21,7 +21,7 @@ Once the new website is live, cut ties with the legacy bits we no longer need. P
 
 03 (DNS) can happen any time after the new site is reachable on its preview URL and 04 (QA) is clean enough to ship.
 
-01 (retire node-modules) only after every dependency on `node-modules/packages/*` and `node-modules/apps/*` has been removed from the website. That's only true once Streams 01, 02, 03, 04 are functionally done.
+01 (retire node-modules) only after every dependency on `node-modules/packages/*` and `node-modules/apps/*` has been removed from the website AND Stream 06 (design parity uplift) is complete — the legacy site is the design reference for parity work, so retiring early would make Stream 06 harder.
 
 02 (archive old site) is a courtesy — gridkit.nz could stay up for archival, redirect to gridbeam.xyz, or be replaced with a "this site has moved" page.
 

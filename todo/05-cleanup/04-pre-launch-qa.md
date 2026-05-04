@@ -1,6 +1,6 @@
 # 04 — Pre-launch real-browser QA pass
 
-**Status:** TODO
+**Status:** SUPERSEDED by Stream 06 (parity audit & uplift). The per-page audit + browser walkthrough described here is folded into Stream 06's task 02 and the per-page tasks (03+) it produces. The Lighthouse / OG card / share-card validation bits below are a small remaining subset that should be checked once Stream 06 work lands and a Vercel preview exists — track those there or as fresh tasks.
 
 ## Why
 Every Stream 01 page task ships with a "verified via SSR markup only — real-browser visual QA at base/md/lg widths deferred" follow-up. Tasks 01-02, 01-03, 01-04, 01-07, 01-09, 01-10 all flag this. Nobody currently owns the actual pass. It needs to happen once, before deployment, so we don't ship CSS/interaction bugs that SSR string inspection can't catch.

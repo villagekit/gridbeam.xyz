@@ -32,6 +32,32 @@ This top-level repo IS the website. It consumes four open-source submodules (`./
 - Prefer robustness over performance.
 - Achieve performance with simple fit-for-purpose abstractions, not clever hacks.
 
+### Legacy gridkit.nz is the baseline
+
+This rebuild was meant to **upgrade dependencies and strip startup / e-commerce references** — not to redesign every page, rewrite every paragraph, or invent new code patterns. The legacy site was made by experienced people:
+
+- A real **designer** thought about the visual / interaction design.
+- A senior **developer** wrote the code with deliberate practices.
+- The **copy** was written more carefully than its rewrite.
+
+References for parity work:
+
+- **Live legacy site (visual + interaction ground truth):** https://gridkit-landing-villagekit.vercel.app/
+- **Legacy source code (code patterns, structure, copy ground truth):** `./node-modules/apps/gridkit/`
+
+Rules:
+
+1. Before changing any page or component, compare against the legacy reference on **all five axes**: visual design, interaction, accessibility, copy, code patterns. The legacy version is the **default**; deviations need a stated reason.
+2. **Change only when it improves.** Convenience of the new framework / library is not by itself an improvement. "The new way is easier to write" is not a reason.
+3. When fixing a regression, two acceptable modes — and only two:
+   - **Restore / closely match the legacy approach** — the usual answer.
+   - **Re-think from first principles** — only when that produces something genuinely better, with a stated reason.
+   Never settle for "slightly adapt the current broken thing" because adaptation is easier.
+4. Same rule for **code patterns** as for design — prefer the legacy author's approach unless there's a concrete reason a different one is better.
+5. The `./node-modules` submodule **stays** until parity is reached. Stream 05 task 01 (retirement) is gated on Stream 06 (parity uplift). Don't propose retiring it before then.
+
+Full statement and per-page workflow: [`./todo/06-design-parity/README.md`](./todo/06-design-parity/README.md).
+
 ### Complexity check
 
 Before adding significant amounts of code, verify:
@@ -133,7 +159,7 @@ When working on tasks in this repo, follow this loop:
 1. **Read CLAUDE.md** for current state, principles, and decisions.
 2. **Find the next actionable task** in `./todo/`. Walk the stream READMEs; pick the topmost `Status: TODO` task whose dependencies are met.
 3. **Research the details** beyond what the task file describes. Things may have changed since `./todo` was written — trust the current state of the code over the task's notes when they conflict.
-4. **Ask the user for decisions or advice** if anything is genuinely unclear or has multiple reasonable paths. Don't guess on load-bearing choices.
+4. **Ask the user for decisions or advice** if anything is genuinely unclear or has multiple reasonable paths. Don't guess on load-bearing choices. A task file's "Recommend X" line is **not** authorization — always confirm before relicensing, publishing, archiving, retiring submodules, DNS changes, or deployments. Same applies to anything irreversible or that affects shared / production systems.
 5. **Complete the task.** Set `Status: DOING` in the task file when starting.
 6. **Update relevant documentation** (CLAUDE.md, READMEs, related task files) as part of the same change.
 7. **Review with fresh sub-agents** via the Agent tool. Iterate until no critical feedback remains. Each review starts fresh — give the reviewer the context it needs.
@@ -150,6 +176,7 @@ The full plan lives at [`./todo/README.md`](./todo/README.md) as a hierarchical 
 - [`todo/03-engine/`](./todo/03-engine/README.md) — clean `./gridkit` for open-source publication
 - [`todo/04-content/`](./todo/04-content/README.md) — copy, imagery, rebrand from gridkit.nz to gridbeam.xyz
 - [`todo/05-cleanup/`](./todo/05-cleanup/README.md) — retire `node-modules` submodule, archive old site, point DNS
+- [`todo/06-design-parity/`](./todo/06-design-parity/README.md) — page-by-page audit + uplift to legacy gridkit.nz parity (visual / interaction / a11y / copy / code patterns)
 
 Each subdirectory has its own `README.md` summarising the stream; individual task files inside detail steps and dependencies.
 

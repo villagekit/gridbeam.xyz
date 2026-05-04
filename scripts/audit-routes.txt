@@ -1,0 +1,43 @@
+# scripts/audit-routes.txt
+# Routes captured by `pnpm audit:pages` (Stream 06 — parity audit).
+# One route per line. Lines starting with `#` are comments. Blank lines are skipped.
+# Each route is captured against BOTH the legacy base and the current base.
+# Routes that only exist on one side will produce a 404 capture on the other — that's a useful signal.
+#
+# Extend this file as part of Stream 06 task 02. Designs catalog: pick 2-3 representative slugs.
+
+# --- top-level pages ---
+/
+/about
+/faq
+/contact
+/subscribe
+/tools-and-resources
+
+# --- tools ---
+/tools/cutting-planner
+
+# --- legal ---
+/legal
+/legal/privacy-policy
+# Legacy-only (current site has /legal as a single page):
+/legal/cookie-policy
+/legal/return-policy
+
+# --- stories ---
+/stories
+/stories/whats-a-grid-unit
+/stories/how-to-cut-grid-beams
+/stories/how-to-furniture-bolts
+/stories/building-with-grid-kit
+/stories/2021-winter-newsletter
+/stories/2022-newsletter
+
+# --- designs ---
+# Index, plus a small representative sample (extend in task 02 with real product IDs):
+/designs
+
+# --- suppliers (current) vs store (legacy) ---
+# These compare structurally, not as direct route mirrors:
+/suppliers
+/store

@@ -2,7 +2,7 @@
 
 Hierarchical task tree for reviving gridkit.nz as gridbeam.xyz — a non-commercial, open-source educational site about grid beam.
 
-Five parallel streams. Within each stream, tasks are roughly ordered. Across streams, there are a handful of cross-cutting dependencies (see below).
+Six parallel streams. Within each stream, tasks are roughly ordered. Across streams, there are a handful of cross-cutting dependencies (see below).
 
 ## Streams
 
@@ -21,6 +21,9 @@ Audit every page of copy and imagery. Rebrand gridkit.nz → gridbeam.xyz. Re-ho
 ### [05 — Cleanup](./05-cleanup/README.md)
 Once the website doesn't depend on `node-modules` anymore, retire the legacy submodule. Archive the old gridkit.nz Vercel deploy. Point gridbeam.xyz DNS at the new deployment.
 
+### [06 — Parity audit & uplift](./06-design-parity/README.md)
+Page-by-page audit of the new site against the legacy gridkit.nz site. The rebuild quietly regressed quality on visual design, interaction, accessibility, copy, and code patterns; this stream brings every page back to (at least) parity. The legacy site was made by experienced people — the rebuild was supposed to upgrade dependencies and strip startup references, not redesign every page.
+
 ## Cross-stream dependencies
 
 ```
@@ -28,18 +31,20 @@ Once the website doesn't depend on `node-modules` anymore, retire the legacy sub
                   │
                   ▼
             [01 Website] ◄────── [04 Content]
-                  ▲
-                  │
-       [03 Engine] (only for designs catalog page)
-                  │
-                  ▼
-            [05 Cleanup]
+                  ▲                   │
+                  │                   ▼
+       [03 Engine]              [06 Parity uplift]
+                  │                   │
+                  ▼                   ▼
+            [05 Cleanup] ◄────────────┘
 ```
 
 - **02 blocks 01** if you want to avoid double-migrating Chakra. (Alternative: bootstrap 01 on Chakra v2 first, migrate later. Default plan: do 02 first.)
 - **03 blocks** the *designs catalog* page in 01 (and only that page). Other pages can ship without the engine.
 - **04** runs in parallel with 01; some bits (image hosting decision) feed into 01 deployment.
-- **05** is the final stream — runs after 01-04 are functionally done.
+- **06** runs after 01 / 04 ship pages worth comparing — re-opens parts of both for parity work.
+- **06 blocks 05** task 01 — `./node-modules` is the legacy reference for parity work and stays until 06 completes.
+- **05** is the final stream — runs after 01-04, 06 are functionally done.
 
 ## Conventions
 
