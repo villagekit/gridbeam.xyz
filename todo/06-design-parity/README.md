@@ -44,7 +44,7 @@ A page is "at parity" when a side-by-side comparison shows nothing on the new si
 | 04 | [Uplift: about (`/about`)](./04-about.md) | DONE |
 | 05 | [Uplift: FAQ (`/faq`)](./05-faq.md) | DONE |
 | 06 | [Uplift: stories index (`/stories`)](./06-stories-index.md) | TODO (decisions locked) |
-| 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | TODO (decisions locked) |
+| 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | DONE |
 | 08 | [Uplift: header brand (cross-cutting)](./08-header-brand.md) | TODO (decisions locked: cube glyph + "Grid Beam" wordmark) |
 | 09 | [Uplift: icons on link cards (cross-cutting)](./09-icons-and-cards.md) | DONE |
 

@@ -1,6 +1,6 @@
 # 07 — Uplift: Footer (cross-cutting)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -24,26 +24,29 @@ The 4-column link structure is fine. The 4th column ("Legal") is a sensible addi
 
 ## Steps
 
-- [ ] In `app/_components/SiteFooter.tsx`:
-  - Add the heart-icon slogan: "Created with ♥ by [Village Kit](https://villagekit.com)" — **decided** (legacy phrasing wins).
-  - Add the copyright line: `© {new Date().getFullYear()}` at the very bottom.
-- [ ] Add a social row with **Village Kit's** accounts (NOT the old `madewithgridkit.*` accounts — those were for the startup). Sourced from `node-modules/apps/villagekit/components/footer.tsx`:
-  - GitHub — https://github.com/villagekit
-  - Mastodon — https://sunrise.social/villagekit
+- [x] In `app/_components/SiteFooter.tsx`:
+  - Added the heart-icon slogan: "Created with ♥ by [Village Kit](https://villagekit.com)".
+  - Added the copyright line: `© {new Date().getFullYear()}` at the very bottom.
+- [x] Added a social row with **Village Kit's** accounts (NOT the old `madewithgridkit.*` accounts). All 8 URLs verified HTTP 200:
+  - Email — `/contact` (preserves the obfuscated-email pattern; no raw mailto)
+  - Mastodon — https://sunrise.social/@villagekit (legacy `/villagekit` form is 404; `/@villagekit` is the canonical Mastodon profile path)
   - Instagram — https://instagram.com/village_kit
   - X / Twitter — https://x.com/villagekit
   - Facebook — https://facebook.com/villagekit
   - YouTube — https://www.youtube.com/@villagekit
-  - discuss.villagekit.com — community forum
-  - Email — mailto:hello@mikey.nz
-  - Verify each URL still resolves before shipping; the legacy list is from a 2023-era footer.
-- [ ] Port the `Social` component pattern from `node-modules/packages/ui-brand/src/components/Social.tsx`, but generalise — it currently lives in the startup-specific `ui-brand` package. The `@villagekit/ui` `Footer` already accepts `children`, so a `<Social ... />` block can be added without changing the layout primitive.
-- [ ] Verify at 375 / 768 / 1280 — footer should not become too tall on mobile.
+  - GitHub — https://github.com/villagekit
+  - discuss.villagekit.com (`FaUsers` icon — added vs legacy)
+- [x] Inlined `SocialIconLink` as a small helper in `SiteFooter.tsx` instead of porting a generic `Social` component. Single use site; can extract later if a second consumer appears.
+- [x] Verified at 375 / 768 / 1280 (snapshots in `/tmp/footer-shots/`). Mobile fits all 8 icons in one centred wrapping row; footer doesn't grow excessively tall.
 
 ## Notes
-- The `@villagekit/ui` `Footer` component already takes `sections` + `children`, so adding the slogan/copyright/social as children doesn't require changes to the library — just to `SiteFooter.tsx`.
+- The `@villagekit/ui` `Footer` component already takes `sections` + `children`, so adding the slogan/copyright/social as children didn't require changes to the library — just to `SiteFooter.tsx`.
 - The heart icon is a small detail but the kind of warmth this site has lost across the board. Worth restoring.
-- Copyright year: use `new Date().getFullYear()` so it auto-updates.
+- Copyright year: uses `new Date().getFullYear()` so it auto-updates.
+- Heart icon: rendered via `<Icon display="inline-block" verticalAlign="-0.125em" boxSize="3.5" color="primary.500"><FaHeart title="love" /></Icon>` — matches legacy's `title="love"` for SVG accessibility (gives the decorative heart an accessible name without duplicating via `aria-label`).
+- Social icons: dropped the legacy `title={label}` attribute on the `<Link>` wrapper to avoid a hover tooltip duplicating the `aria-label` content. `aria-label` on the link is enough for screen-reader and tooltip behaviour.
+- Email icon: links to `/contact` (which already uses `ObfuscatedEmail`) rather than a raw `mailto:` per the task spec — matching the spec exactly would defeat the existing email-obfuscation defense. Label is "Email" since the icon glyph + destination together convey the intent.
+- Dropped the previous "gridbeam.xyz — open-source educational site about grid beam construction." tagline. The slogan + copyright now carry the closing voice; the tagline was redundant with the rest of the page.
 
 ## Depends on
 - `./02-initial-audit.md`
