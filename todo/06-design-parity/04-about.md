@@ -1,6 +1,6 @@
 # 04 — Uplift: About (`/about`)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -44,19 +44,22 @@ Specifically:
 
 ## Steps
 
-- [ ] Re-architect `app/about/page.tsx`:
-  - Section 1: intro (keep current, slight copy lift)
-  - Section 2: parts essay (legacy rhythm) — Beam → Panel → Fastener → tri-joint, each as image+statement
-  - Section 3: "Where it came from" (keep current)
-  - Section 4: "Start building" navigation cards (keep current)
-- [ ] Extract the 5 near-identical card components into a shared `LinkCard` in `@villagekit/ui` as part of this work. **Decided** — the about-page rewrite + tasks 09 (icons-on-cards) ship together so each call site is touched once.
-- [ ] Verify visually at 375 / 768 / 1280 and confirm the parts essay reads more like the legacy.
-- [ ] Re-check that the heading order is sensible (`h1` for "What is grid beam?", `h2` for sections).
+- [x] Re-architect `app/about/page.tsx`:
+  - Single Section 0: intro paragraphs flow into the parts-essay rhythm under one h1 (matches legacy structure — one essay, no inner h2s).
+  - Section 1 (gray): "Where it came from" (kept).
+  - Section 2: "Start building" navigation cards (kept).
+- [x] Extract the 5 near-identical card components into a shared `LinkCard` in `@villagekit/ui` — landed in task 09.
+- [x] Verify visually at 375 / 768 / 1280 (snapshots in `/tmp/about-shots/` during dev).
+- [x] Heading order verified: h1 (page) → h2 (Where it came from, Start building) → h3 (cards inside Start building). No skips.
 
 ## Notes
 - Don't be tempted to make this a one-to-one legacy port. The Phelps history is a worthwhile addition. The goal is "parts essay rhythm restored, history kept".
-- The legacy text for the parts ("Beam profiles are 40mm x 40mm and have a repeating pattern of 8mm holes drilled 40mm apart.") is good — port it verbatim or close.
+- The legacy text for the parts ("Beam profiles are 40mm x 40mm and have a repeating pattern of 8mm holes drilled 40mm apart.") is good — ported close to verbatim.
 - Image assets used: `v1/gridkit.nz/grid_yvn1om`, `grid-example_vezsvx`, `beams_czf9hb`, `panels_rs1ea1`, `fasteners_ctuejz`, `tri-joint_lqtzvf`. Already re-hosted under `gridbeam.xyz/about/...` per recent stream-04 work.
+- Collapsed three former sections (40 mm grid / parts / how it goes together) into one continuous flow inside section 0. The intro paragraphs end and the AboutText / AboutPhoto rhythm picks up immediately, matching the legacy single-essay feel.
+- Tightened intro paragraph 3 — dropped the Phelps/Jergenson/Isaacs detail since it's covered in "Where it came from"; kept the "this site = 40 mm" focus.
+- Tri-joint copy upgraded from legacy: "rigid corner is formed in all three axes" replaces the vaguer "a strong connection is created" — more precise engineering language.
+- `AboutText` helper ports the legacy pattern (`fontSize={['xl', null, '2xl']}`, `textAlign: 'center'`) into Chakra v3 syntax; `AboutPhoto` is the existing helper, kept as-is.
 
 ## Depends on
 - `./02-initial-audit.md`

@@ -41,7 +41,7 @@ A page is "at parity" when a side-by-side comparison shows nothing on the new si
 | 01 | [Build the audit tooling — side-by-side legacy vs current screenshots](./01-audit-tooling.md) | DONE (per-machine: `pnpm install` + `pnpm exec playwright install chromium` before first run) |
 | 02 | [First-pass audit — run the tooling, file per-page uplift tasks](./02-initial-audit.md) | DONE (findings: [`initial-audit/findings.md`](./initial-audit/findings.md)) |
 | 03 | [Uplift: home (`/`)](./03-home.md) | TODO (decisions locked) |
-| 04 | [Uplift: about (`/about`)](./04-about.md) | TODO (decisions locked; depends on `LinkCard` from 09) |
+| 04 | [Uplift: about (`/about`)](./04-about.md) | DONE |
 | 05 | [Uplift: FAQ (`/faq`)](./05-faq.md) | DONE |
 | 06 | [Uplift: stories index (`/stories`)](./06-stories-index.md) | TODO (decisions locked) |
 | 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | TODO (decisions locked) |
