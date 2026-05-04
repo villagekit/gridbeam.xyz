@@ -71,7 +71,7 @@ The rest of the audit uses these proposed IDs.
 
 ## Story: how-to-cut-grid-beams (`content/stories/how-to-cut-grid-beams.mdx`)
 
-14 images. All KEEP — pure tutorial content.
+15 images. All KEEP — pure tutorial content.
 
 | Old asset | New asset ID |
 |-----------|--------------|
@@ -111,7 +111,7 @@ Long descriptive names retained verbatim (Mikey's call: "I don't mind long names
 
 ## Story: whats-a-grid-unit (`content/stories/whats-a-grid-unit.mdx`)
 
-14 images. All KEEP. Note: 6 of these are user submissions under `madewithgridkit-N` — rename to `made-with-grid-beam-N` to match the rebrand.
+15 images. All KEEP. Note: 6 of these are user submissions under `madewithgridkit-N` — rename to `made-with-grid-beam-N` to match the rebrand. The MDX references `grid-unit-cube_fndokk` both with and without `.jpg` — bulk find-replace needs to handle both forms.
 
 | Old asset | New asset ID |
 |-----------|--------------|
@@ -133,7 +133,7 @@ Long descriptive names retained verbatim (Mikey's call: "I don't mind long names
 
 ## Story: 2021-winter-newsletter (`content/stories/2021-winter-newsletter.mdx`)
 
-12 images + 4 videos. All KEEP — historical newsletter. Drop the `_xxxxx` suffix.
+10 images + 3 videos. All KEEP — historical newsletter. Drop the `_xxxxx` suffix.
 
 Images:
 
