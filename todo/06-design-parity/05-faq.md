@@ -1,6 +1,6 @@
 # 05 — Uplift: FAQ (`/faq`)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -24,14 +24,16 @@ At parity. Categories use `<section aria-labelledby="faq-…">`, accordion behav
 
 ## Steps
 
-- [ ] Tighten the `gap` on each category's `Accordion.Root` (and the gap between accordion items inside it) to roughly half what's there now. Compare side-by-side with `audit/faq/1280/legacy.png`.
-- [ ] Bump section heading from `size="lg"` to `size="xl"` (or apply `fontWeight="bold"` + a margin-bottom that creates clear visual separation from the questions below).
-- [ ] Consider adding a thin top border on each category section for additional visual separation (legacy used spacing alone, but a border can help if spacing tweaks aren't enough).
-- [ ] Re-verify at 375 / 768 / 1280 px.
+- [x] Tighten the per-row padding on each `Accordion.ItemTrigger` / `Accordion.ItemContent` (paddingY="3" override; the shared `@villagekit/ui` Accordion recipe still defaults to 4 since other consumers may want the looser default).
+- [x] Bump section heading from `size="lg"` to `size="xl"` so it reads as a divider, not a label.
+- [x] Bump parent `VStack` `gap="10"` → `gap="12"` (matches legacy `spacing="12"`); inner `VStack` `gap="3"` → `gap="4"` (matches legacy `marginBottom: 4` on heading).
+- [x] Re-verify at 375 / 768 / 1280 px.
+- [x] Fix incidental a11y: `<Text>` (renders `<p>`) inside `Accordion.ItemTrigger` (renders `<button>`) is invalid HTML; added `as="span"`.
 
 ## Notes
 - The `Accordion` indicator (chevron) and per-item dashed underline are appropriate; don't change those.
-- This is a small task — likely 30 mins of CSS tweaking. Ship it as a single commit.
+- The shared `@villagekit/ui` `Accordion` recipe is intentionally NOT modified — the tighter spacing is a /faq-page choice, applied via style props locally so future consumers keep the looser default.
+- The `paddingX: 2` on trigger vs `paddingX: 4` on content in `ui/src/components/Accordion.recipe.ts` is asymmetric; not in scope for this task but worth a `// Note(cc):` follow-up.
 
 ## Depends on
 - `./02-initial-audit.md`

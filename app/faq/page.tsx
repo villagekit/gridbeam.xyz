@@ -273,28 +273,34 @@ export default function FaqPage() {
           Frequently asked questions
         </Title>
         <Container maxW="3xl">
-          <VStack alignItems="stretch" gap="10">
+          <VStack alignItems="stretch" gap="12">
             {categories.map((category) => (
               <VStack
                 key={category.slug}
                 as="section"
                 aria-labelledby={`faq-${category.slug}`}
                 alignItems="stretch"
-                gap="3"
+                gap="4"
               >
-                <Heading as="h2" id={`faq-${category.slug}`} size="lg">
+                <Heading as="h2" id={`faq-${category.slug}`} size="xl">
                   {category.heading}
                 </Heading>
                 <Accordion.Root multiple collapsible>
                   {category.entries.map((entry) => (
                     <Accordion.Item key={entry.question} value={entry.question}>
-                      <Accordion.ItemTrigger>
-                        <Text variant="secondary" fontWeight="bold" textAlign="left" flex="1">
+                      <Accordion.ItemTrigger paddingY="3">
+                        <Text
+                          as="span"
+                          variant="secondary"
+                          fontWeight="bold"
+                          textAlign="left"
+                          flex="1"
+                        >
                           {entry.question}
                         </Text>
                         <Accordion.ItemIndicator />
                       </Accordion.ItemTrigger>
-                      <Accordion.ItemContent>
+                      <Accordion.ItemContent paddingY="3">
                         <Accordion.ItemBody>
                           <Text>{entry.answer}</Text>
                         </Accordion.ItemBody>
