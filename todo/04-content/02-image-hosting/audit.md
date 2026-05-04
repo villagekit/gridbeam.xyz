@@ -2,9 +2,14 @@
 
 Source: every Cloudinary image / video reference currently in the new site code under `app/` and `content/`. All paths today resolve to `https://res.cloudinary.com/villagekit/image/upload/.../v1/gridkit.nz/...` (or `/video/upload/.../`).
 
-Decision in `02-image-hosting.md` is **D** — host under a new `media.gridbeam.xyz` CNAME on Cloudinary, source images committed to the repo, an idempotent script syncs them to Cloudinary.
+Resolved approach (per `02-image-hosting.md` and Mikey's answers):
 
-This doc enumerates every reference and classifies it; produces the proposed target asset IDs; flags the load-bearing decisions still pending Mikey input.
+- Stay on the existing `villagekit` Cloudinary cloud (free plan).
+- Use the default `https://res.cloudinary.com/villagekit/...` URLs — no custom CNAME.
+- Source images live in a new `villagekit/villagekit-media` repo with Git LFS, cloned as a submodule of this site repo.
+- An idempotent sync script in `villagekit-media` uploads new/changed images from Mikey's machine using local `.env` credentials.
+
+This doc enumerates every reference and classifies it; produces the proposed target asset IDs.
 
 ## Legend
 
@@ -75,18 +80,18 @@ The rest of the audit uses these proposed IDs.
 | `.../placing-cut-alignment-tool-into-beam-holes_hhgdtf` | `stories/how-to-cut-grid-beams/placing-cut-alignment-tool-into-beam-holes` |
 | `.../tracing-edge-of-cut-alignment-tool-with-pencil_nlub7c` | `stories/how-to-cut-grid-beams/tracing-edge-of-cut-alignment-tool-with-pencil` |
 | `.../tracing-edge-of-cut-alignment-tool-with-pencil-rotated-90-degrees_bvlo8e` | `stories/how-to-cut-grid-beams/tracing-edge-of-cut-alignment-tool-with-pencil-rotated-90-degrees` |
-| `.../preparing-a-workspace-with-enough-space-for-material-and-on-a-table-below-the-waist_b3fsul` | `stories/how-to-cut-grid-beams/preparing-a-workspace` |
-| `.../cutting-a-grid-beam-on-the-garage-floor-using-timber-as-support_d7mhvw` | `stories/how-to-cut-grid-beams/cutting-on-garage-floor` |
-| `.../lining-the-saw-blade-up-with-the-cut-line_zscrr4` | `stories/how-to-cut-grid-beams/lining-saw-blade-with-cut-line` |
-| `.../starting-to-saw-at-an-angle-to-get-the-cut-started_hgfsa2` | `stories/how-to-cut-grid-beams/starting-saw-at-angle` |
-| `.../saw-blade-straight-on-as-cutting-through-a-beam-making-a-visible-kerf_o0eabl` | `stories/how-to-cut-grid-beams/saw-cutting-through-beam-with-kerf` |
+| `.../preparing-a-workspace-with-enough-space-for-material-and-on-a-table-below-the-waist_b3fsul` | `stories/how-to-cut-grid-beams/preparing-a-workspace-with-enough-space-for-material-and-on-a-table-below-the-waist` |
+| `.../cutting-a-grid-beam-on-the-garage-floor-using-timber-as-support_d7mhvw` | `stories/how-to-cut-grid-beams/cutting-a-grid-beam-on-the-garage-floor-using-timber-as-support` |
+| `.../lining-the-saw-blade-up-with-the-cut-line_zscrr4` | `stories/how-to-cut-grid-beams/lining-the-saw-blade-up-with-the-cut-line` |
+| `.../starting-to-saw-at-an-angle-to-get-the-cut-started_hgfsa2` | `stories/how-to-cut-grid-beams/starting-to-saw-at-an-angle-to-get-the-cut-started` |
+| `.../saw-blade-straight-on-as-cutting-through-a-beam-making-a-visible-kerf_o0eabl` | `stories/how-to-cut-grid-beams/saw-blade-straight-on-as-cutting-through-a-beam-making-a-visible-kerf` |
 | `.../measuring-saw-teeth-with-calipers_ckueek` | `stories/how-to-cut-grid-beams/measuring-saw-teeth-with-calipers` |
 | `.../cut-alignment-tool-in-replicad_gv0quv` | `stories/how-to-cut-grid-beams/cut-alignment-tool-in-replicad` |
 | `.../slicing-3d-model_ntpmbd` | `stories/how-to-cut-grid-beams/slicing-3d-model` |
-| `.../custom-cut-alignment-tool-with-the-offset-from-the-original-cut-line_fykisl` | `stories/how-to-cut-grid-beams/custom-cut-alignment-tool` |
-| `.../cut-using-saw-and-custom-cut-alignment-tool_rkqj2t` | `stories/how-to-cut-grid-beams/cut-using-custom-alignment-tool` |
+| `.../custom-cut-alignment-tool-with-the-offset-from-the-original-cut-line_fykisl` | `stories/how-to-cut-grid-beams/custom-cut-alignment-tool-with-the-offset-from-the-original-cut-line` |
+| `.../cut-using-saw-and-custom-cut-alignment-tool_rkqj2t` | `stories/how-to-cut-grid-beams/cut-using-saw-and-custom-cut-alignment-tool` |
 
-The shorter IDs (e.g. dropping "preparing-a-workspace-with-enough-space-for-material-and-on-a-table-below-the-waist") are a one-time chance to trim. Open question for Mikey if he prefers verbatim names.
+Long descriptive names retained verbatim (Mikey's call: "I don't mind long names if they are descriptive").
 
 ## Story: how-to-furniture-bolts (`content/stories/how-to-furniture-bolts.mdx`)
 
@@ -106,7 +111,7 @@ The shorter IDs (e.g. dropping "preparing-a-workspace-with-enough-space-for-mate
 
 ## Story: whats-a-grid-unit (`content/stories/whats-a-grid-unit.mdx`)
 
-14 images. All KEEP. Note: 6 of these are user submissions under `madewithgridkit-N` — alt text frames them as community builds; rename for clarity.
+14 images. All KEEP. Note: 6 of these are user submissions under `madewithgridkit-N` — rename to `made-with-grid-beam-N` to match the rebrand.
 
 | Old asset | New asset ID |
 |-----------|--------------|
@@ -115,12 +120,12 @@ The shorter IDs (e.g. dropping "preparing-a-workspace-with-enough-space-for-mate
 | `.../lego-dimensions_ipuhws.jpg` | `stories/whats-a-grid-unit/lego-dimensions` |
 | `.../grid-beam-composite-numbers_fqsj3t.jpg` | `stories/whats-a-grid-unit/grid-beam-composite-numbers` |
 | `.../grid-panel-composite-numbers_ke3cbo.jpg` | `stories/whats-a-grid-unit/grid-panel-composite-numbers` |
-| `.../madewithgridkit-0_idbwz0.jpg` | `stories/whats-a-grid-unit/community-build-0` |
-| `.../madewithgridkit-1_izasbg.jpg` | `stories/whats-a-grid-unit/community-build-1` |
-| `.../madewithgridkit-2_nvvgne.jpg` | `stories/whats-a-grid-unit/community-build-2` |
-| `.../madewithgridkit-3_kiagqw.jpg` | `stories/whats-a-grid-unit/community-build-3` |
-| `.../madewithgridkit-4_baq4cq.jpg` | `stories/whats-a-grid-unit/community-build-4` |
-| `.../madewithgridkit-5_itvjxv.jpg` | `stories/whats-a-grid-unit/community-build-5` |
+| `.../madewithgridkit-0_idbwz0.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-0` |
+| `.../madewithgridkit-1_izasbg.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-1` |
+| `.../madewithgridkit-2_nvvgne.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-2` |
+| `.../madewithgridkit-3_kiagqw.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-3` |
+| `.../madewithgridkit-4_baq4cq.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-4` |
+| `.../madewithgridkit-5_itvjxv.jpg` | `stories/whats-a-grid-unit/made-with-grid-beam-5` |
 | `.../telephone-rack-1923_tieg5o.jpg` | `stories/whats-a-grid-unit/telephone-rack-1923` |
 | `.../computer-rack-with-units_o2twra.jpg` | `stories/whats-a-grid-unit/computer-rack-with-units` |
 | `.../synth-rack-unit_hxint7.jpg` | `stories/whats-a-grid-unit/synth-rack-unit` |
@@ -135,7 +140,7 @@ Images:
 | Old asset | New asset ID |
 |-----------|--------------|
 | `.../the-team_gy2f0k` | `stories/2021-winter-newsletter/the-team` |
-| `.../grid-beam-video-thumbnail-with-play-button_no80fj` | `stories/2021-winter-newsletter/grid-beam-video-thumbnail` (drops `with-play-button` — see Q5 long-name shortening) |
+| `.../grid-beam-video-thumbnail-with-play-button_no80fj` | `stories/2021-winter-newsletter/grid-beam-video-thumbnail-with-play-button` |
 | `.../dish-rack_nhiv8n` | `stories/2021-winter-newsletter/dish-rack` |
 | `.../temporary-kitchen_f3qch4` | `stories/2021-winter-newsletter/temporary-kitchen` |
 | `.../compost-toilet_gnbeiz` | `stories/2021-winter-newsletter/compost-toilet` |
@@ -198,9 +203,9 @@ Top-level:
 
 ## Site-wide
 
-- **Favicon.** `app/icon.svg` and `app/apple-icon.tsx` are already in place — both are SVG/CSS-generated, not Cloudinary-hosted. No migration needed unless we commission a logo-based favicon (decision item below).
-- **OG / social-card images.** `app/opengraph-image.tsx` and `app/twitter-image.tsx` (re-export) are dynamic CSS-rendered. No Cloudinary needed unless we commission a real photo-based card (decision item below).
-- The legacy `node-modules/apps/gridbeam/faviconConfig.json` is the old `cli-real-favicon` config — useful only if we commission a multi-size favicon set.
+- **Favicon.** `app/icon.svg` is the original Grid Kit cube SVG (sourced from `node-modules/apps/gridkit/public/icon.svg` at `fce357d`). `app/apple-icon.png` is the matching 180×180 PNG. Static files, not Cloudinary-hosted.
+- **OG / social-card images.** `app/opengraph-image.tsx` (and `app/twitter-image.tsx` re-export) renders the cube SVG inline alongside a wordmark + subtitle via `next/og`. No Cloudinary needed.
+- The legacy `node-modules/apps/gridbeam/faviconConfig.json` is the old `cli-real-favicon` config — useful only if we ever commission a multi-size favicon set. Skipped for now.
 
 ## Drops
 
@@ -209,27 +214,23 @@ These are referenced in the rebrand audit but are NOT used in the new site code:
 - `gridkit.nz/douglas-fir-forest_etzvle` — flagged DROP/TWEAK in rebrand audit (`/home` "A future without waste" section was rewritten without this image). Not in new code; no migration needed.
 - The "Closing-down sale" banner — banner removed entirely; no image.
 
-## Open questions for Mikey (load-bearing)
+## Decisions (Mikey, 2026-05-04)
 
-1. **Cloudinary cloud name.** Stay on the existing `villagekit` cloud (in which case the new images live alongside the old, just under different paths), or create a new `gridbeam` cloud? Trade-off: same cloud is simpler and the old paths keep working as a fallback; a new cloud cleanly separates the old startup namespace from the new community site. Default: stay on `villagekit`.
-2. **CNAME `media.gridbeam.xyz`.** Has the CNAME been set up at Cloudinary yet, or is this still TBD? Cloudinary supports private CDN distribution — if so, the URL builder needs to emit `https://media.gridbeam.xyz/.../` instead of `https://res.cloudinary.com/villagekit/.../`. Cloudinary doc: <https://support.cloudinary.com/hc/en-us/articles/202520242-Can-I-use-a-CNAME-to-create-a-custom-Cloudinary-sub-domain-CDN-prefix>. Note: when this lands, **two** URL builders need updating — `getCloudinaryImageUrl` in `@villagekit/ui` (used by the loader and `getCloudinaryUrl`) and the local `getCloudinaryVideoUrl` in `app/_lib/cloudinary.ts` (which independently hardcodes `https://res.cloudinary.com/${CLOUDINARY_NAME}`).
-3. **Source images in repo.** Where do the PNG/JPG masters live? Proposed: `media/` at the repo root (LFS-tracked per existing `.gitattributes`). Alternative: a separate `villagekit/gridbeam-media` repo. Default: in-repo `media/`.
-4. **Upload script — three sub-questions.**
-    - **(a) SDK.** Cloudinary's official Node SDK (`cloudinary` on npm) is the default. OK?
-    - **(b) Idempotency strategy.** Hash content + compare with Cloudinary's `etag` field via `api.resource(public_id)` — only upload when missing or hash mismatched. OK?
-    - **(c) Script location.** Proposed: `scripts/sync-media.ts` at the repo root, runnable via `pnpm run sync-media`. OK?
-5. **Asset-ID rename.** Some legacy IDs are very long (e.g. `preparing-a-workspace-with-enough-space-for-material-and-on-a-table-below-the-waist`). This audit shortens them. Confirm the shortenings are OK, or keep verbatim?
-6. **`madewithgridkit-N` rename.** This audit renames them to `community-build-N`. Confirm the rebrand makes sense, or keep the old slug?
-7. **Real favicon + OG image.** Current generated artwork is functional but minimal. Commission proper artwork (logo-based favicon, photographed OG image), or ship as-is?
-8. **Cloudinary credential management.**
-    - **(a) Where stored.** Default: 1Password vault Mikey controls; mirrored into Vercel + GitHub Actions repo secrets when needed.
-    - **(b) Run target.** Local-only (Mikey runs `pnpm run sync-media` from his machine when adding/changing images), or CI-driven (GitHub Action syncs on push to `main`)? Default: local-only for v1, CI later.
+1. **Cloudinary cloud name** — stay on `villagekit`. New images live alongside the old, under different paths.
+2. **CNAME** — none. Use the default `https://res.cloudinary.com/villagekit/...` URLs (free plan).
+3. **Source images** — separate repo `villagekit/villagekit-media` with Git LFS, cloned in-tree at `../villagekit-media` and added as a submodule of this site repo once pushed.
+4. **Upload script** — Cloudinary Node SDK (`cloudinary` on npm); hash + `etag` idempotency check; script lives in `villagekit-media` (not in this site repo) at `scripts/sync-media.ts`, runnable via `pnpm run sync-media`.
+5. **Asset-ID rename** — keep the long descriptive names verbatim.
+6. **`madewithgridkit-N` rename** — rename to `made-with-grid-beam-N` (matches the broader rebrand).
+7. **Real favicon + OG image** — use the original Grid Kit cube logo from `node-modules/apps/gridkit/public/`. Done in commit 493a568 (icon.svg, apple-icon.png, opengraph-image.tsx).
+8. **Cloudinary credentials** — local `.env` in `villagekit-media`, Mikey runs sync from his machine. No CI sync.
 
-## Steps to execute (after decisions land)
+## Steps to execute
 
-1. Create `media/` source directory (or wherever decided).
-2. Download legacy assets from `https://res.cloudinary.com/villagekit/image/upload/v1/gridkit.nz/...` to local masters.
-3. Re-upload under the new asset IDs via the idempotent script (or commit and let CI sync).
-4. Update `getCloudinaryImageUrl` in `@villagekit/ui` (and its consumers) to emit the new base URL — env-var driven. Also update `getCloudinaryVideoUrl` in `app/_lib/cloudinary.ts`.
-5. Bulk find-replace `v1/gridkit.nz/<old>_<suffix>` → new asset ID across `app/` + `content/`. **Watch for dual-form references**: e.g. `whats-a-grid-unit/grid-unit-cube_fndokk` is used both with and without `.jpg` extension — both forms need to map to the same target (`stories/whats-a-grid-unit/grid-unit-cube`). Same pattern likely for any `<id>_<suffix>` vs `<id>_<suffix>.jpg` pairs in the MDX files.
-6. Verify every page renders the new images via `pnpm dev` + `pnpm build`.
+1. Bootstrap `../villagekit-media` repo: `git init`, LFS install, `.gitattributes` for image/video extensions, `package.json` with `cloudinary` SDK dep, `.env.example`, README, LICENSE.
+2. Add `scripts/fetch-legacy.ts` to `villagekit-media` — downloads every legacy asset listed above from `https://res.cloudinary.com/villagekit/image/upload/v1/gridkit.nz/...` (and `/video/upload/...`) into `media/<new-id>.<ext>`.
+3. Add `scripts/sync-media.ts` to `villagekit-media` — idempotent uploader (hash content, compare with Cloudinary's `etag` via `api.resource(public_id)`; only upload when missing or hash mismatched).
+4. Run `fetch-legacy`, commit the masters into `villagekit-media` (LFS).
+5. Mikey: push `villagekit-media` to GitHub; run `pnpm run sync-media` to push masters under the new asset IDs; add the repo as a submodule of this site repo at `./villagekit-media`.
+6. In this site repo: bulk find-replace `v1/gridkit.nz/<old>_<suffix>(.<ext>)?` → new asset ID across `app/` + `content/`. **Watch for dual-form references**: e.g. `whats-a-grid-unit/grid-unit-cube_fndokk` is used both with and without `.jpg` extension — both forms must map to the same target (`stories/whats-a-grid-unit/grid-unit-cube`). Same pattern likely for any `<id>_<suffix>` vs `<id>_<suffix>.jpg` pairs in the MDX files.
+7. Verify every page renders the new images via `pnpm dev` + `pnpm build`.
