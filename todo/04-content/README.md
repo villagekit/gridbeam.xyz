@@ -16,7 +16,7 @@ A complete content audit + rewrite pass that produces:
 | # | Task | Status |
 |---|------|--------|
 | 01 | [Rebrand copy audit (gridkit.nz → gridbeam.xyz)](./01-rebrand-copy.md) | DONE |
-| 02 | [Image hosting decision + migration](./02-image-hosting.md) | DOING (decisions resolved; favicon/OG done; bootstrapping `villagekit-media` repo next) |
+| 02 | [Image hosting decision + migration](./02-image-hosting.md) | AWAITING MIKEY (`villagekit-media` bootstrapped + 113 masters downloaded; hand-off: push + `sync-media` + submodule, then bulk find-replace) |
 | 03 | [Port + update MDX stories](./03-stories-port.md) | DONE (port plan ready; placement deferred to Stream 01 task 05) |
 | 04 | [Rewrite the About / grid-beam explainer page](./04-grid-beam-explainer.md) | DONE |
 | 05 | [Suppliers content + initial data](./05-suppliers-content.md) | DONE (pending supplier list from Mikey) |
