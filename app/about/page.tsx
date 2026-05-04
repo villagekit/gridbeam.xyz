@@ -71,7 +71,7 @@ export default function AboutPage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 8, md: 12 }} alignItems="center">
           <AboutPhoto
-            src="v1/gridkit.nz/grid_yvn1om"
+            src="gridbeam.xyz/about/grid"
             alt="A 40 mm × 40 mm grid square highlighted on a larger grid background."
             width={1188}
             height={841}
@@ -87,7 +87,7 @@ export default function AboutPage() {
               from any compatible supplier, in any wood or metal, and they'll fit.
             </Text>
             <AboutPhoto
-              src="v1/gridkit.nz/grid-example_vezsvx"
+              src="gridbeam.xyz/shared/grid-example"
               alt="A 40 mm grid overlaid on a grid beam and a grid panel showing how their holes line up."
               width={1333}
               height={750}
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="8">
           <PartCard
             title="Beams"
-            src="v1/gridkit.nz/beams_czf9hb"
+            src="gridbeam.xyz/about/beams"
             alt="A row of square wooden grid beams with holes drilled at 40 mm centres."
             width={1207}
             height={714}
@@ -111,7 +111,7 @@ export default function AboutPage() {
           />
           <PartCard
             title="Panels"
-            src="v1/gridkit.nz/panels_rs1ea1"
+            src="gridbeam.xyz/about/panels"
             alt="A grid panel — plywood with a 40 mm hole grid drilled across both dimensions."
             width={1111}
             height={564}
@@ -119,7 +119,7 @@ export default function AboutPage() {
           />
           <PartCard
             title="Fasteners"
-            src="v1/gridkit.nz/fasteners_ctuejz"
+            src="gridbeam.xyz/about/fasteners"
             alt="A handful of hex-key furniture bolts and nuts."
             width={685}
             height={528}
@@ -142,7 +142,7 @@ export default function AboutPage() {
         >
           <Box flex="1" w="full">
             <AboutPhoto
-              src="v1/gridkit.nz/tri-joint_lqtzvf"
+              src="gridbeam.xyz/about/tri-joint"
               alt="Three grid beams meeting at right angles, each pair connected by a single bolt — a tri-joint."
               width={1333}
               height={750}

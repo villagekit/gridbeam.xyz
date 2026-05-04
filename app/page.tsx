@@ -116,7 +116,7 @@ export default function HomePage() {
         >
           <Box flex="1" w="full">
             <CloudPhoto
-              src="v1/gridkit.nz/grid-example_vezsvx"
+              src="gridbeam.xyz/shared/grid-example"
               alt="A 40 mm grid overlaid on a grid beam and a grid panel, showing how the holes line up."
               width={1333}
               height={750}
@@ -225,7 +225,7 @@ function HeroPhoto() {
       boxShadow="md"
     >
       <NextImage
-        src="v1/gridkit.nz/made-with-grid-kit/record-shelf_x6zscs"
+        src="gridbeam.xyz/home/record-shelf-hero"
         alt="A wooden grid-beam shelving unit holding a record collection, books, and audio gear in a plant-filled living room."
         fill
         priority
