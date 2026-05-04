@@ -27,7 +27,7 @@ There are five near-identical card components currently in the codebase (`MakerC
 
 ## Steps
 
-- [ ] Decide whether to extract a shared `LinkCard` component or just add an `icon` prop to each existing component. Lean toward extraction — five copies of the same card is the bigger code smell. If extraction, do it before adding icons so we only touch each call-site once.
+- [ ] Extract a shared `LinkCard` component in `@villagekit/ui` first, then replace the 5 existing card components in one PR (covers tasks 04 + 09 together). **Decided** — addressing the duplication is worth the up-front cost; we touch each call site once.
 - [ ] Add icons:
   - `/legal`: `FaUserShield` for Privacy policy, `FaCode` for Site licence (or similar — pick fitting glyphs from `react-icons/fa`).
   - `/tools-and-resources`: `FaCut` for Cutting planner, `FaCubes` for Designs catalogue, `FaShoppingBag` for Suppliers; plus glyphs for the Resources cards (About: `FaInfoCircle`, FAQ: `FaQuestionCircle`, Stories: `FaBookOpen`, GitHub: `FaGithub`, Forum: `FaUsers`).

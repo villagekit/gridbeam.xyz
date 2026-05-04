@@ -41,7 +41,11 @@ At parity for the title/intro line. The bigger copy issue is that 6 of the 12+ l
 
 - [ ] Extend `StoryMetadata` (in `app/_lib/stories.ts`) with optional `external?: { url: string; originallyPublishedOn: string }` so a story can be either in-repo MDX or an external link.
 - [ ] Find the legacy external stories list. They were likely defined as `StoryMetadata` records *outside* the MDX files. Check `node-modules/apps/gridkit/stories.ts` (or similar) for the source list.
-- [ ] Add the external stories to `app/_lib/stories.ts` with appropriate metadata. Confirm with the user that linking out to third-party sites is desired (the new site is non-commercial educational — pointing at outside inspiration is on-brand).
+- [ ] Add the external stories to `app/_lib/stories.ts` with appropriate metadata. **Decided** — include all four legacy entries (vet each URL still resolves first):
+  - "Grid Beam modular system builds anything..." — Kirsten Dirksen / faircompanies.com (2017)
+  - "Enter the Matrix: An Interview with Ken Isaacs" — walkerart.org (2015)
+  - "How to Make Everything Ourselves: Open Modular Hardware" — Kris De Decker / lowtechmagazine.com (2012)
+  - "Shelter: Documenting a personal quest for non-toxic housing" — Eric Hunting (2003, web archive)
 - [ ] Add filter chips at the top of `/stories`:
   - Filter values: `all` | `guide` | `newsletter` | `inspiration` (the last for external stories).
   - Use the same colour-coded `Badge`-style chips as the legacy `Filters` component. The `Catalogue`'s `Option` component is similar — could be lifted out and reused for both designs and stories filtering.

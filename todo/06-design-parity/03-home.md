@@ -57,10 +57,15 @@ Specifics:
 - [ ] Verify visually at 375 / 768 / 1280 with `pnpm audit:pages` against the new home page.
 - [ ] Re-test typing-effect's `aria-live` announcement with a screen reader (VoiceOver / NVDA).
 
+## User decisions (locked in)
+- **Hero copy:** "Anyone can be a maker." (the legacy line). Warmer beats descriptive.
+- **Testimonials:** restore the legacy Rhona / Mix / Alexander quotes, lightly edited — replace "Grid Kit" with "Grid Beam" inside each quote so the quote text fits the rebranded site.
+- **Sustainability copy:** replace the legacy "untreated New Zealand old pine" with "Locally-sourced untreated wood, intended to be reused" — keeps the locality framing without naming a country.
+- **"How to get started" 6th step:** "Find a supplier, or make your own." (links to /suppliers; covers the DIY-fabrication path too.)
+- **Restore everything from the legacy home:** Hero `ImageCarousel` (4 rotating images), `TypingDesignSection` (typing-effect "Build a [design]" + cycling carousel + `aria-live`), `LandingVideo` (coffee-table assembly), and the "A place to share ideas" community section pointing at discuss.villagekit.com. All four are confirmed in scope.
+
 ## Notes
-- The hero copy ("Anyone can be a maker." vs "Modular furniture, on a 40 mm grid.") is a brand-voice question. Worth confirming with the user before rewriting — both have merit, but the legacy is warmer and the current is more descriptive. Lean toward warmer.
-- Testimonial wording is a content question; ask the user if the legacy quotes (from Rhona / Mix / Alexander) should be re-used as-is, lightly edited, or replaced with new quotes from the gridbeam.xyz era.
-- "A future without waste" copy mentions "untreated New Zealand old pine" — that's a legacy-era detail. Generalise for the multi-supplier, international site (e.g. "untreated wood beams, intended to be reused again and again").
+- Image assets for the hero carousel and the coffee-table video need re-hosting under `gridbeam.xyz/home/...` via the `villagekit-media` workflow before the carousel/video can be wired up.
 
 ## Depends on
 - `./02-initial-audit.md`

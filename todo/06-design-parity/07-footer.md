@@ -25,13 +25,19 @@ The 4-column link structure is fine. The 4th column ("Legal") is a sensible addi
 ## Steps
 
 - [ ] In `app/_components/SiteFooter.tsx`:
-  - Add the heart-icon slogan: "Built by [Village Kit](https://villagekit.com)" with a heart accent. (Update wording to fit the educational/non-commercial framing — "Created with ❤ by" is fine; "Built and maintained by" might fit better.)
+  - Add the heart-icon slogan: "Created with ♥ by [Village Kit](https://villagekit.com)" — **decided** (legacy phrasing wins).
   - Add the copyright line: `© {new Date().getFullYear()}` at the very bottom.
-- [ ] Decide on the social row:
-  - Option A: list Village Kit's social accounts (Mastodon, GitHub, etc.) — community pointers.
-  - Option B: omit until gridbeam.xyz has its own accounts; add later.
-  - **Confirm with the user before adding** — adding social handles is an editorial decision.
-- [ ] If Option A is chosen, port the `Social` component pattern from `node-modules/packages/ui-brand/src/components/Social.tsx`, but generalise — it currently lives in the startup-specific `ui-brand` package. The `@villagekit/ui` `Footer` already accepts `children`, so a `<Social ... />` block can be added without changing the layout primitive.
+- [ ] Add a social row with **Village Kit's** accounts (NOT the old `madewithgridkit.*` accounts — those were for the startup). Sourced from `node-modules/apps/villagekit/components/footer.tsx`:
+  - GitHub — https://github.com/villagekit
+  - Mastodon — https://sunrise.social/villagekit
+  - Instagram — https://instagram.com/village_kit
+  - X / Twitter — https://x.com/villagekit
+  - Facebook — https://facebook.com/villagekit
+  - YouTube — https://www.youtube.com/@villagekit
+  - discuss.villagekit.com — community forum
+  - Email — mailto:hello@mikey.nz
+  - Verify each URL still resolves before shipping; the legacy list is from a 2023-era footer.
+- [ ] Port the `Social` component pattern from `node-modules/packages/ui-brand/src/components/Social.tsx`, but generalise — it currently lives in the startup-specific `ui-brand` package. The `@villagekit/ui` `Footer` already accepts `children`, so a `<Social ... />` block can be added without changing the layout primitive.
 - [ ] Verify at 375 / 768 / 1280 — footer should not become too tall on mobile.
 
 ## Notes

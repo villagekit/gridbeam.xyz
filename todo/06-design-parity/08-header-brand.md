@@ -19,25 +19,18 @@ Header behaviour (sticky, hamburger menu on mobile) is fine on both. The link to
 
 ## Recommended mode
 
-**Restore (or re-think) the brand mark.** Two paths, **both should be discussed with the user before implementation:**
-
-1. **Build a new gridbeam.xyz mark.** A small geometric glyph that hints at the 40 mm grid (perforated beam in isometric, a 40 mm hole, a tri-joint silhouette). One-time design task; the icon then lives at `app/_components/SiteBrand.tsx` and is reused in favicons, OG images, etc.
-2. **Use only the wordmark, but design it.** "**gridbeam**.xyz" with the "gridbeam" in the heading-font weight and ".xyz" in a lighter / smaller / tinted treatment. Gives the URL typographic identity without requiring a glyph.
-
-The legacy cube glyph was specific to "Grid Kit" — it can't be lifted directly because the brand is now "gridbeam.xyz", not "Grid Kit". This is genuinely a new design problem, not a "restore the legacy" one.
+**Restore the legacy cube glyph; update the wordmark to "Grid Beam".** **Decided by Mikey** — re-use the same isometric cube mark from gridkit.nz, paired with a new "Grid Beam" wordmark in place of "Grid Kit". The cube glyph stays; only the text changes.
 
 ## Steps
 
-- [ ] Discuss with the user which path (mark + wordmark, or wordmark-only) to take. Don't proceed without confirmation — brand is editorial.
-- [ ] If glyph: design and produce the SVG; add to `app/_components/SiteBrand.tsx`; export as a primary brand asset (favicon, OG image, possibly nav).
-- [ ] If wordmark-only: rework `SiteBrand.tsx` to render "**gridbeam**.xyz" with weight/colour treatment. Both halves should share a common base typography but be visually distinguishable.
-- [ ] Update `app/icon.svg` and `app/apple-icon.png` to reflect the new mark (currently they're placeholders).
-- [ ] Update `app/opengraph-image.tsx` and `app/twitter-image.tsx` to include the new mark.
+- [ ] Locate the cube SVG in the legacy assets (`node-modules/apps/gridkit/public/` or the `ui-brand` package) and port it to `app/_components/SiteBrand.tsx`. Cite source SHA per the [CLAUDE.md "Citing copied code" convention](../../CLAUDE.md#conventions).
+- [ ] Render the wordmark as "Grid Beam" beside the cube. Match the legacy typography (weight, kerning, vertical alignment).
+- [ ] Update `app/icon.svg` and `app/apple-icon.png` to use the cube glyph (currently placeholders).
+- [ ] Update `app/opengraph-image.tsx` and `app/twitter-image.tsx` so the OG/Twitter cards include the cube + "Grid Beam" wordmark.
 - [ ] Verify at 375 / 768 / 1280 — brand should remain legible on mobile.
 
 ## Notes
-- This is a brand decision and should not be made unilaterally by an implementor. Always confirm the direction with Mikey first.
-- The Grid Kit cube glyph from the legacy site is an asset of the closed startup; it shouldn't be re-used unmodified for gridbeam.xyz even though the open-source repo contains it.
+- The cube was originally Grid Kit's brand asset. Mikey (the same founder) is choosing to carry it forward to Grid Beam; that's their call.
 - The header colour (`headerColorPalette="accentB"` in `app/layout.tsx`) gives the cream/yellow background — that can stay; this task is about the content of the brand, not the chrome around it.
 
 ## Depends on

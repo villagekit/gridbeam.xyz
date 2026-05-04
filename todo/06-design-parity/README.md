@@ -40,19 +40,21 @@ A page is "at parity" when a side-by-side comparison shows nothing on the new si
 |---|------|--------|
 | 01 | [Build the audit tooling — side-by-side legacy vs current screenshots](./01-audit-tooling.md) | DONE (per-machine: `pnpm install` + `pnpm exec playwright install chromium` before first run) |
 | 02 | [First-pass audit — run the tooling, file per-page uplift tasks](./02-initial-audit.md) | DONE (findings: [`initial-audit/findings.md`](./initial-audit/findings.md)) |
-| 03 | [Uplift: home (`/`)](./03-home.md) | TODO |
-| 04 | [Uplift: about (`/about`)](./04-about.md) | TODO |
-| 05 | [Uplift: FAQ (`/faq`)](./05-faq.md) | TODO |
-| 06 | [Uplift: stories index (`/stories`)](./06-stories-index.md) | TODO |
-| 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | TODO |
-| 08 | [Uplift: header brand (cross-cutting)](./08-header-brand.md) | TODO |
-| 09 | [Uplift: icons on link cards (cross-cutting)](./09-icons-and-cards.md) | TODO |
+| 03 | [Uplift: home (`/`)](./03-home.md) | TODO (decisions locked) |
+| 04 | [Uplift: about (`/about`)](./04-about.md) | TODO (decisions locked; depends on `LinkCard` from 09) |
+| 05 | [Uplift: FAQ (`/faq`)](./05-faq.md) | DONE |
+| 06 | [Uplift: stories index (`/stories`)](./06-stories-index.md) | TODO (decisions locked) |
+| 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | TODO (decisions locked) |
+| 08 | [Uplift: header brand (cross-cutting)](./08-header-brand.md) | TODO (decisions locked: cube glyph + "Grid Beam" wordmark) |
+| 09 | [Uplift: icons on link cards (cross-cutting)](./09-icons-and-cards.md) | TODO (decisions locked: extract shared `LinkCard` first) |
 
 Pages found at parity (no task): `/contact`, `/subscribe` (intentional placeholder), `/tools-and-resources`, `/tools/cutting-planner`, `/legal`, `/legal/privacy-policy`, `/stories/<slug>`, `/designs`, `/designs/<slug>`, `/suppliers` (new). See [`initial-audit/findings.md`](./initial-audit/findings.md) for per-page reasoning.
 
 ## Order of attack
 
-01 → 02 sequentially. 02 produced the per-page task files (03–09). They can now run in any order — pages are independent — though the cross-cutting ones (07, 08) touch every page and should be coordinated with per-page work to avoid merge churn. High-impact starts: 03 (home) and 06 (stories index).
+01 → 02 sequentially. 02 produced the per-page task files (03–09); 05 (FAQ) is done. They can now run in any order — pages are independent — though the cross-cutting ones (07, 08, 09) touch every page and should be coordinated with per-page work to avoid merge churn.
+
+Recommended sequence: **09 first** (extracts the shared `LinkCard` that 04 depends on), then **04** (about, with the new `LinkCard`), then **07** (footer) and **08** (header brand) — both small and visible everywhere, so worth landing early. **03** (home) and **06** (stories) are larger scoped pieces; do them last.
 
 ## Cross-stream relationships
 

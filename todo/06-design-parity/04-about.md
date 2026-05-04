@@ -49,7 +49,7 @@ Specifically:
   - Section 2: parts essay (legacy rhythm) — Beam → Panel → Fastener → tri-joint, each as image+statement
   - Section 3: "Where it came from" (keep current)
   - Section 4: "Start building" navigation cards (keep current)
-- [ ] Decide whether to extract the 5 near-identical card components into a single shared `LinkCard` in `@villagekit/ui` (defer if controversial; the about-page rewrite is the priority).
+- [ ] Extract the 5 near-identical card components into a shared `LinkCard` in `@villagekit/ui` as part of this work. **Decided** — the about-page rewrite + tasks 09 (icons-on-cards) ship together so each call site is touched once.
 - [ ] Verify visually at 375 / 768 / 1280 and confirm the parts essay reads more like the legacy.
 - [ ] Re-check that the heading order is sensible (`h1` for "What is grid beam?", `h2` for sections).
 
