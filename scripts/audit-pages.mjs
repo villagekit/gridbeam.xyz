@@ -15,10 +15,14 @@
 //
 // Usage:
 //   pnpm audit:pages
-//   pnpm audit:pages -- --widths 375,1280
-//   pnpm audit:pages -- --routes scripts/audit-routes.txt --headed
-//   pnpm audit:pages -- --current-base http://localhost:3001
-//   pnpm audit:pages -- --help
+//   pnpm audit:pages --widths 375,1280
+//   pnpm audit:pages --routes scripts/audit-routes.txt --headed
+//   pnpm audit:pages --current-base http://localhost:3001
+//   pnpm audit:pages --help
+//
+// Wait strategy: each capture tries `networkidle` first (best for static pages); on the
+// 15 s timeout it falls back to `load` + 2.5 s settle. This handles 3D-viewer pages
+// (`/designs/<slug>`) where the network never goes quiet.
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
@@ -58,7 +62,7 @@ function parseArgs(argv) {
     else if (arg === '--out') args.outDir = next()
     else if (arg === '--headed') args.headed = true
     else if (arg === '--help' || arg === '-h') {
-      console.log(`Usage: pnpm audit:pages [-- options]
+      console.log(`Usage: pnpm audit:pages [options]
 
   --legacy-base URL    Default: ${DEFAULTS.legacyBase}
   --current-base URL   Default: ${DEFAULTS.currentBase}
@@ -90,10 +94,22 @@ function routeToSlug(route) {
 }
 
 async function captureSide({ page, url, outFile }) {
+  // Try networkidle first (best for static pages); fall back to load for pages that
+  // never settle (3D viewers, long-polling). Either way, give animations 800 ms.
+  let response
   try {
-    const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 30_000 })
-    // Settle animations / late paint.
-    await page.waitForTimeout(800)
+    response = await page.goto(url, { waitUntil: 'networkidle', timeout: 15_000 })
+  } catch {
+    try {
+      response = await page.goto(url, { waitUntil: 'load', timeout: 30_000 })
+      // Pages that don't reach networkidle usually have heavy late-paint work; give them more.
+      await page.waitForTimeout(2_500)
+    } catch (err) {
+      return { ok: false, status: 0, error: err.message }
+    }
+  }
+  await page.waitForTimeout(800)
+  try {
     await mkdir(dirname(outFile), { recursive: true })
     await page.screenshot({ path: outFile, fullPage: true })
     return { ok: true, status: response?.status() ?? 0 }

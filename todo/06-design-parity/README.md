@@ -39,12 +39,20 @@ A page is "at parity" when a side-by-side comparison shows nothing on the new si
 | # | Task | Status |
 |---|------|--------|
 | 01 | [Build the audit tooling — side-by-side legacy vs current screenshots](./01-audit-tooling.md) | DONE (per-machine: `pnpm install` + `pnpm exec playwright install chromium` before first run) |
-| 02 | [First-pass audit — run the tooling, file per-page uplift tasks](./02-initial-audit.md) | TODO |
-| 03+ | Per-page uplift tasks — created during 02 | — |
+| 02 | [First-pass audit — run the tooling, file per-page uplift tasks](./02-initial-audit.md) | DONE (findings: [`initial-audit/findings.md`](./initial-audit/findings.md)) |
+| 03 | [Uplift: home (`/`)](./03-home.md) | TODO |
+| 04 | [Uplift: about (`/about`)](./04-about.md) | TODO |
+| 05 | [Uplift: FAQ (`/faq`)](./05-faq.md) | TODO |
+| 06 | [Uplift: stories index (`/stories`)](./06-stories-index.md) | TODO |
+| 07 | [Uplift: footer (cross-cutting)](./07-footer.md) | TODO |
+| 08 | [Uplift: header brand (cross-cutting)](./08-header-brand.md) | TODO |
+| 09 | [Uplift: icons on link cards (cross-cutting)](./09-icons-and-cards.md) | TODO |
+
+Pages found at parity (no task): `/contact`, `/subscribe` (intentional placeholder), `/tools-and-resources`, `/tools/cutting-planner`, `/legal`, `/legal/privacy-policy`, `/stories/<slug>`, `/designs`, `/designs/<slug>`, `/suppliers` (new). See [`initial-audit/findings.md`](./initial-audit/findings.md) for per-page reasoning.
 
 ## Order of attack
 
-01 → 02 sequentially. 02 produces the per-page task files (03+). Once those exist, they can run in any order — pages are independent — though high-traffic pages (home, about, designs catalog, stories) likely need more work than legal pages.
+01 → 02 sequentially. 02 produced the per-page task files (03–09). They can now run in any order — pages are independent — though the cross-cutting ones (07, 08) touch every page and should be coordinated with per-page work to avoid merge churn. High-impact starts: 03 (home) and 06 (stories index).
 
 ## Cross-stream relationships
 

@@ -35,5 +35,9 @@ A script under `scripts/` that takes a list of routes and produces, for each rou
 - Capture **dark mode separately** if either site has it — a follow-up if the first pass shows it matters. Don't bake dark-mode capture into v1.
 - A `--headed` flag for debugging is cheap to add and worth it.
 
+## Post-task 02 changes
+- **Wait-strategy fallback (2026-05-04):** the original `waitUntil: 'networkidle'` strategy timed out on every `/designs/<slug>` capture because the 3D viewer keeps the network busy. Patched `captureSide` to try `networkidle` (15 s) first, then fall back to `load` + 2.5 s settle. Resolves design pages without changing behaviour for static pages.
+- **Index rebuild helper (2026-05-04):** `scripts/rebuild-audit-index.mjs` regenerates `audit/index.html` by scanning the `audit/` directory. Useful after a partial re-run (e.g. only design routes), since `audit-pages.mjs` overwrites the master index with only the routes from the current run.
+
 ## Depends on
 - Nothing. First task in Stream 06.

@@ -34,8 +34,11 @@
 /stories/2022-newsletter
 
 # --- designs ---
-# Index, plus a small representative sample (extend in task 02 with real product IDs):
+# Index, plus a small representative sample of slugs that exist in both legacy and current:
 /designs
+/designs/bed-frame
+/designs/shelf-tower
+/designs/5-12-13-triangle-desk
 
 # --- suppliers (current) vs store (legacy) ---
 # These compare structurally, not as direct route mirrors:
