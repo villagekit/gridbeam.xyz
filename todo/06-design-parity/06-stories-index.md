@@ -1,6 +1,6 @@
 # 06 — Uplift: Stories index (`/stories`)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -39,20 +39,14 @@ At parity for the title/intro line. The bigger copy issue is that 6 of the 12+ l
 
 ## Steps
 
-- [ ] Extend `StoryMetadata` (in `app/_lib/stories.ts`) with optional `external?: { url: string; originallyPublishedOn: string }` so a story can be either in-repo MDX or an external link.
-- [ ] Find the legacy external stories list. They were likely defined as `StoryMetadata` records *outside* the MDX files. Check `node-modules/apps/gridkit/stories.ts` (or similar) for the source list.
-- [ ] Add the external stories to `app/_lib/stories.ts` with appropriate metadata. **Decided** — include all four legacy entries (vet each URL still resolves first):
-  - "Grid Beam modular system builds anything..." — Kirsten Dirksen / faircompanies.com (2017)
-  - "Enter the Matrix: An Interview with Ken Isaacs" — walkerart.org (2015)
-  - "How to Make Everything Ourselves: Open Modular Hardware" — Kris De Decker / lowtechmagazine.com (2012)
-  - "Shelter: Documenting a personal quest for non-toxic housing" — Eric Hunting (2003, web archive)
-- [ ] Add filter chips at the top of `/stories`:
-  - Filter values: `all` | `guide` | `newsletter` | `inspiration` (the last for external stories).
-  - Use the same colour-coded `Badge`-style chips as the legacy `Filters` component. The `Catalogue`'s `Option` component is similar — could be lifted out and reused for both designs and stories filtering.
-  - Maintain selected state in URL (`?f=guide`) to match the `/designs` Catalogue convention.
-- [ ] Add `FaExternalLinkAlt` icon to story cards when `external != null`. Wrap the link with `target="_blank" rel="noopener noreferrer"`.
-- [ ] (Optional) Add hover-card effect to story cards — restore the `HoverCardContainer`-style shadow / lift on hover that the legacy had.
-- [ ] Verify at 375 / 768 / 1280 and confirm filter interaction, external-link cards, and updated story count.
+- [x] Extended `StoryMetadata` (`app/_lib/stories.ts`) with optional `external?: { url: string; byline?: string }`. `Story.Content` is now optional too — external stories carry only metadata, no MDX. Added `inspiration` to `StoryCategory`. Sourced the 4 external entries from the legacy `node-modules/apps/gridkit/stories.ts` (pinned at SHA `fce357d`); each URL re-verified resolving 2026-05-05 before adding.
+- [x] Added `app/stories/StoriesBrowser.tsx` (client component): URL-driven filter chips (`?f=guide` / `?f=newsletter` / `?f=inspiration` / no param = all), `radiogroup` ARIA pattern for keyboard support, colour-coded badge chips per category. Pattern adjacent to the existing `/designs` `Catalogue` filter convention but doesn't yet reuse the `Option` component (lifting that into `@villagekit/ui` is a follow-up — both filters could share it).
+- [x] `StoryCard` (`app/_components/StoryCard.tsx`) now renders external-story cards as outbound links (`target="_blank" rel="noopener noreferrer"`) with a small `FaExternalLinkAlt` glyph below the date.
+- [x] Added `isExternalStory(metadata)` helper and used it in `app/sitemap.ts` to exclude external stories from the sitemap (they aren't hosted here).
+- [x] `app/stories/[slug]/page.tsx`: added an unreachable-but-TS-required `story.Content == null` guard alongside the existing `story == null` notFound, since `Content` is now optional. Real-world guard: `STORY_SLUGS` only includes internal slugs, so external stories never reach the route.
+- [x] Verified visually at 375 / 768 / 1280 with snapshots in `/tmp/stories-shots/`. `?f=inspiration` filter view confirmed showing only the 4 external cards. Hit `/stories` returns 200; no console errors beyond the pre-existing `data-story-image` kebab-case warning.
+- [ ] **Deferred follow-up:** restore the `HoverCardContainer`-style shadow lift on cards. Current `_hover: { transform: 'scale(1.02)' }` covers the lift; the legacy added a stronger box-shadow as well — minor.
+- [ ] **Deferred follow-up:** re-host the 4 external-story preview images from `v1/gridkit.nz/stories/linked-articles/...` to `gridbeam.xyz/stories/external/...` via the `villagekit-media` workflow. Same Cloudinary cloud, so they render today; the path rewrite is cleanup, not a parity blocker.
 
 ## Notes
 - The legacy `Filters` component used `useIsMobile()` to switch between `size="sm"` and `size="lg"` chips. Replicate that responsive sizing or use the `Catalogue`'s breakpoint pattern (`<select>` on mobile, chip group on desktop).
@@ -63,5 +57,5 @@ At parity for the title/intro line. The bigger copy issue is that 6 of the 12+ l
 - `./02-initial-audit.md`
 
 ## Files
-- Current: `app/stories/page.tsx`, `app/_components/StoryCard.tsx`, `app/_lib/stories.ts`
-- Legacy: `node-modules/apps/gridkit/pages/stories.tsx`, `node-modules/apps/gridkit/components/stories/{filters,list,item}.tsx`, `node-modules/apps/gridkit/stories.ts` (likely contains external story records), `node-modules/apps/gridkit/context/stories.ts` (filter context)
+- Current: `app/stories/page.tsx`, `app/stories/StoriesBrowser.tsx` (new), `app/_components/StoryCard.tsx`, `app/_lib/stories.ts`, `app/sitemap.ts`, `app/stories/[slug]/page.tsx`
+- Legacy reference: `node-modules/apps/gridkit/pages/stories.tsx`, `node-modules/apps/gridkit/components/stories/{filters,list,item}.tsx`, `node-modules/apps/gridkit/stories.ts` (external story records), `node-modules/apps/gridkit/context/stories.ts` (filter context) — pinned at SHA `fce357d`

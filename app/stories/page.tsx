@@ -1,8 +1,10 @@
-import { Container, Main, Section, SimpleGrid, SkipNavContent, Title } from '@villagekit/ui'
+import { Container, Main, Section, SkipNavContent, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 
-import { StoryCard } from '../_components/StoryCard'
 import { getAllStories } from '../_lib/stories'
+import { StoriesBrowser } from './StoriesBrowser'
+import { StoriesStatic } from './StoriesStatic'
 
 const pageTitle = 'Stories'
 const pageDescription =
@@ -23,7 +25,9 @@ export const metadata: Metadata = {
 }
 
 export default function StoriesPage() {
-  const stories = getAllStories()
+  // The page is a server component; the metadata-only `Story[]` (no MDX
+  // Content references) crosses the RSC boundary into the client browser.
+  const stories = getAllStories().map((story) => ({ metadata: story.metadata }))
 
   return (
     <Main>
@@ -35,11 +39,13 @@ export default function StoriesPage() {
         </Title>
 
         <Container maxW="4xl">
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 12 }}>
-            {stories.map(({ metadata: storyMetadata }) => (
-              <StoryCard key={storyMetadata.slug} metadata={storyMetadata} />
-            ))}
-          </SimpleGrid>
+          {/* Suspense boundary needed because StoriesBrowser uses
+              `useSearchParams`. The static grid acts as the SSR fallback so
+              search engines and no-JS readers see the full unfiltered list
+              before client-side hydration. */}
+          <Suspense fallback={<StoriesStatic stories={stories} />}>
+            <StoriesBrowser stories={stories} />
+          </Suspense>
         </Container>
       </Section>
     </Main>

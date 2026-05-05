@@ -59,7 +59,10 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
 export default async function StoryPage({ params }: StoryPageProps) {
   const { slug } = await params
   const story = getStory(slug)
-  if (story == null) notFound()
+  // External stories don't carry MDX `Content` — but they're also not in
+  // `STORY_SLUGS`, so they never reach this route. The `Content == null`
+  // guard exists for TypeScript; in practice it's unreachable.
+  if (story == null || story.Content == null) notFound()
 
   const { metadata, Content } = story
   const { title, description, image, showImageInStory, publishedAt, originallyPublishedOn } =
