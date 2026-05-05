@@ -1,8 +1,8 @@
 # 01 — Retire `./node-modules` submodule
 
-**Status:** BLOCKED — awaiting Stream 06 (design parity uplift).
+**Status:** BLOCKED — held pending Mikey's explicit say-so (do not retire on the basis of Stream 06 alone).
 
-The submodule has zero remaining *code* dependencies (verified 2026-05-04: no `@villagekit-private/*` imports, no `workspace:*` deps inside `node-modules/`, no scripts touching it; only a port-citation comment in `app/tools/cutting-planner/algorithm.ts` and ignore-array entries in `biome.json` / `tsconfig.json`). However, `./node-modules/apps/gridkit/` is still the **design reference** for the page-by-page parity work in Stream 06. Don't retire until that stream is done — losing the reference would make parity work much harder.
+The submodule has zero remaining *code* dependencies (verified 2026-05-04: no `@villagekit-private/*` imports, no `workspace:*` deps inside `node-modules/`, no scripts touching it; only a port-citation comment in `app/tools/cutting-planner/algorithm.ts` and ignore-array entries in `biome.json` / `tsconfig.json`). The Stream 06 design parity uplift is complete (2026-05-05) — the original "we still need it as a visual reference" blocker no longer applies. **However**, Mikey has explicitly asked for this task to remain BLOCKED until they say otherwise. Don't propose retirement, don't begin steps. Wait for explicit approval.
 
 ## Why
 Once the website doesn't depend on anything inside `./node-modules` anymore, it's dead weight. Keep the `villagekit/node-modules` GitHub repo (it still hosts villagekit.com and supplykit.com), but unhook it from this repo.
@@ -41,4 +41,5 @@ The `./node-modules` submodule removed from this repo. `.gitmodules` updated. Th
 - All of Stream 02 (UI lib is self-contained) — ✅
 - All of Stream 03 (engine is self-contained) — ✅
 - Stream 04 task 03 (stories are ported out) — ✅
-- **All of Stream 06 (design parity uplift)** — `./node-modules/apps/gridkit/` is the visual reference; retiring before parity is reached would make Stream 06 work much harder.
+- All of Stream 06 (design parity uplift) — ✅ done 2026-05-05
+- **Explicit go-ahead from Mikey** — all of the above are met, but retirement is gated on user approval, not just dependency satisfaction.
