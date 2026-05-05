@@ -1,6 +1,6 @@
 # 03 — Uplift: Home (`/`)
 
-**Status:** TODO
+**Status:** DONE
 
 ## Why
 
@@ -49,13 +49,13 @@ Specifics:
 
 ## Steps
 
-- [ ] Port `useDesignTypingEffect` hook and `DesignCarousel` component from `node-modules/apps/gridkit/`. Cite source SHA in the new file's header comment per the [CLAUDE.md "Citing copied code" convention](../../CLAUDE.md#conventions).
-- [ ] Build the `LandingSection` / `LandingRow` / `LandingColumn` primitives (or wire equivalents into `@villagekit/ui`).
-- [ ] Re-host the four hero carousel images to `gridbeam.xyz/home/...` paths (via the `villagekit-media` workflow).
-- [ ] Re-host the coffee-table assembly video (poster + mp4) to `gridbeam.xyz/home/...`.
-- [ ] Rewrite `app/page.tsx` to follow the legacy section sequence, with the new "For makers" + "Open and free to remix" sections inserted in place of the e-commerce-specific ones.
-- [ ] Verify visually at 375 / 768 / 1280 with `pnpm audit:pages` against the new home page.
-- [ ] Re-test typing-effect's `aria-live` announcement with a screen reader (VoiceOver / NVDA).
+- [x] Ported `useDesignTypingEffect` hook to `app/_components/landing/useDesignTypingEffect.ts`, citing the legacy source pinned to SHA `fce357d`. Dropped the lodash dep (inline Fisher–Yates) and narrowed the input type to the local `DesignIndexEntry` shape.
+- [x] Built the `LandingSection` / `LandingRow` / `LandingColumn` primitives in `app/_components/landing/LandingSection.tsx`. Even sections render untinted, odd sections get the `gray` palette tint (matches legacy `colorScheme={isEven ? undefined : 'gray'}`). `LandingRow` enforces `column-reverse` at base (image-above-copy on mobile) and alternates `row` / `row-reverse` at lg by section index.
+- [ ] **Deferred to follow-up:** re-host the 3 remaining hero-carousel images, the coffee-table video (poster + mp4), the sustainability forest image, and the community camp-kitchen image to `gridbeam.xyz/home/...` paths via the `villagekit-media` workflow. Currently referenced via the legacy `v1/gridkit.nz/...` paths on the same Cloudinary cloud (`villagekit`) — works in production today; the path rewrite lands once the masters are in `villagekit-media` and synced.
+- [x] Built `ImageCarousel`, `LandingVideo`, `Testimonial`, and `TypingDesignSection` under `app/_components/landing/` (the carousel uses Framer Motion's `AnimatePresence` for slide cross-fades; the typing section uses Motion's `useInView` to pause the timer offscreen).
+- [x] Rewrote `app/page.tsx` to follow the legacy section sequence (hero+testimonials → typing → modular kit + video → how-to-get-started → stories → sustainability → community), with the new "For makers" + "Open and free to remix" sections inserted at the end.
+- [x] Verified visually at 375 / 768 / 1280 with snapshots in `/tmp/home-shots/`. Layout collapses to single column with image-above-copy at base, alternating row direction at lg, with gray-tinted odd sections.
+- [ ] **Deferred to follow-up:** re-test typing-effect's `aria-live` announcement with a screen reader (VoiceOver / NVDA). Manually verified the markup contains a `<VisuallyHidden aria-live="polite" aria-atomic="true">` region naming the current design.
 
 ## User decisions (locked in)
 - **Hero copy:** "Anyone can be a maker." (the legacy line). Warmer beats descriptive.
@@ -65,13 +65,15 @@ Specifics:
 - **Restore everything from the legacy home:** Hero `ImageCarousel` (4 rotating images), `TypingDesignSection` (typing-effect "Build a [design]" + cycling carousel + `aria-live`), `LandingVideo` (coffee-table assembly), and the "A place to share ideas" community section pointing at discuss.villagekit.com. All four are confirmed in scope.
 
 ## Notes
-- Image assets for the hero carousel and the coffee-table video need re-hosting under `gridbeam.xyz/home/...` via the `villagekit-media` workflow before the carousel/video can be wired up.
+- The legacy `Carousel` was based on `react-responsive-carousel`; rebuilt locally on Framer Motion's `AnimatePresence` so we don't pull in a maintenance burden for one component.
+- The legacy `useDesignTypingEffect` depended on `framer-motion` (`useInView`) and `lodash-es` (`shuffle`) and `pluralize-esm`. We already use Motion in the bundle, so kept `useInView`. Replaced `shuffle` with an inline Fisher–Yates and the `pluralize` lookup with a regex-based check (`/(s|x|ch|sh|ss)$/i` minus `(us|is|sis)$/i` exceptions) — sufficient for our ~36-design label set.
+- `Testimonial` is `'use client'` because `BlockSection` from `@villagekit/ui` takes the icon as a function reference (`Icon: ComponentType`); RSC can't pass function refs across the boundary, so the wrapping component has to render on the client.
+- Hero uses a plain `Stack` (text-then-carousel at base) rather than `LandingRow` (image-then-copy at base). The brand promise — "Anyone can be a maker." — should be the first thing a mobile reader sees; visual context follows.
+- Image assets for 3 of the 4 hero-carousel slides, the coffee-table video, the forest, and the camp-kitchen are still referenced at the legacy `v1/gridkit.nz/...` Cloudinary paths. Re-hosting them under `gridbeam.xyz/home/...` is left as a follow-up task — see Steps. The paths work today on the same Cloudinary cloud (`villagekit`), so the page renders correctly without the re-host.
 
 ## Depends on
 - `./02-initial-audit.md`
 
 ## Files
-- Current: `app/page.tsx`
-- Legacy: `node-modules/apps/gridkit/pages/index.tsx` (551 lines — read end-to-end)
-- Hook to port: `node-modules/apps/gridkit/hooks/useDesignTypingEffect.tsx`
-- Components to port: `node-modules/apps/gridkit/components/{DesignCarousel,ImageCarousel,Testimonial,LandingSection,...}.tsx`
+- Current: `app/page.tsx`, `app/_components/landing/{ImageCarousel,LandingSection,LandingVideo,Testimonial,TypingDesignSection,useDesignTypingEffect,index}.{tsx,ts}`
+- Legacy reference: `node-modules/apps/gridkit/pages/index.tsx`, `node-modules/apps/gridkit/hooks/useDesignTypingEffect.tsx`, `node-modules/apps/gridkit/components/{carousel,image-carousel,testimonial}.tsx` (pinned to SHA `fce357d`)

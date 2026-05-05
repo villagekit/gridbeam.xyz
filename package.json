@@ -39,6 +39,7 @@
     "@xstate/react": "^6.0.0",
     "motion": "^12.38.0",
     "next": "^15.5.0",
+    "pluralize-esm": "^9.0.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.2.1",
