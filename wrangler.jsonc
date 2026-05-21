@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "gridbeam-xyz",
+  "name": "gridbeam-landing",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-05-20",
   "compatibility_flags": ["nodejs_compat"],
