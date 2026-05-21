@@ -7,7 +7,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "ignore": [".next", ".open-next", ".wrangler", "products"]
+    "ignore": [".next", ".open-next", ".wrangler", "products", "app/_lib/designs-data.generated.ts"]
   },
   "organizeImports": {
     "enabled": true
