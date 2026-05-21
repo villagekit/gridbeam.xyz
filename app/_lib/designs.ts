@@ -7,7 +7,7 @@ import { parse as parseToml } from 'smol-toml'
 
 import { designImages } from './design-images'
 
-const DESIGNS_DIR = join(process.cwd(), 'gridkit-products', 'products')
+const DESIGNS_DIR = join(process.cwd(), 'products')
 
 export interface DesignIndexEntry {
   id: string

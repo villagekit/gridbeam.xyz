@@ -1,0 +1,13 @@
+[product]
+name = "@villagekit/side-table"
+label = "Side Table"
+description = "A trusty furniture companion. Situated next to a couch or bed, the side table helps keep everything you need within easy reach."
+tags = [
+  'furniture',
+  'table',
+  'storage',
+  'bedroom',
+  'lounge'
+]
+type = "kit"
+exports = "./side-table.ts"

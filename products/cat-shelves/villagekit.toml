@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/cat-shelves"
+label = "Cat Shelves"
+description = "A tall, multi-level shelving unit perfect for cat exploration and plant display. Provides ample space for cats to climb and rest, while also offering numerous spots to showcase house plants."
+tags = [
+  'furniture',
+  'cat',
+  'lounge'
+]
+type = "kit"
+exports = "./cat-shelves.ts"

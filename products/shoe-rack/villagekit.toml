@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/shoe-rack"
+label = "Shoe Rack"
+description = "A stylish home for footwear. Configurable to suit your shoe collection."
+tags = [
+  'furniture',
+  'storage',
+  'bedroom'
+]
+type = "kit"
+exports = "./shoe-rack.ts"

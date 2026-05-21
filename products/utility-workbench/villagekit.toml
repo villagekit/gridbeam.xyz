@@ -1,0 +1,13 @@
+[product]
+name = "@villagekit/utility-workbench"
+label = "Utility Workbench"
+description = "A spacious workbench with a flat surface and an additional lower shelf. Ideal for drafting, crafting, and other detailed work, providing a comfortable and organized workspace for various projects."
+tags = [
+  'furniture',
+  'desk',
+  'garage',
+  'workbench',
+  'office'
+]
+type = "kit"
+exports = "./utility-workbench.ts"

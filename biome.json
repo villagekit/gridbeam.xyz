@@ -7,7 +7,7 @@
     "defaultBranch": "main"
   },
   "files": {
-    "ignore": [".next", "ui", "gridkit", "gridkit-products", "node-modules", "villagekit-media"]
+    "ignore": [".next", ".open-next", ".wrangler", "products"]
   },
   "organizeImports": {
     "enabled": true

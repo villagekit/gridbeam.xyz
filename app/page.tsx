@@ -58,10 +58,9 @@ export const metadata: Metadata = {
   },
 }
 
-// Hero carousel — Cloudinary public IDs at the legacy `v1/gridkit.nz/...`
-// paths (cloud `villagekit`, same cloud as the new site). Re-hosting these
-// to `gridbeam.xyz/home/<descriptor>` is tracked as a follow-up; the path
-// rewrite lands once the masters are in `villagekit-media` and synced.
+// Hero carousel — Cloudinary public IDs under `gridbeam.xyz/home/...`
+// (cloud `villagekit`). Masters live in the `villagekit/media` repo at
+// `media/gridbeam.xyz/home/`; sync via `pnpm sync-media` from that repo.
 const HERO_SLIDES = [
   {
     src: 'gridbeam.xyz/home/record-shelf-hero',

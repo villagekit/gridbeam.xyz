@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/baby-learning-tower"
+label = "Baby Learning Tower"
+description = "An adjustable learning tower. Provides a safe and sturdy platform for young children to stand on. Enourages your kids to play, learn, and assist you."
+tags = [
+  'furniture',
+  'kid'
+]
+type = "kit"
+exports = "./baby-learning-tower.ts"

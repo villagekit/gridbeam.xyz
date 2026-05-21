@@ -1,0 +1,9 @@
+[product]
+name = "@villagekit/ladder"
+label = "Ladder"
+description = "A sturdy, multi-rung ladder designed for both practical use in construction and playful climbing activities for children. Ideal for reaching high places or adding to a play structure."
+tags = [
+  'utility'
+]
+type = "kit"
+exports = "./ladder.ts"

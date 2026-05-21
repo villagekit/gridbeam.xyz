@@ -48,7 +48,7 @@ async function discoverRoutes() {
     if (idx !== -1) return idx
     // Group children with their parent prefix.
     for (let i = 0; i < KNOWN_ORDER.length; i++) {
-      if (route.startsWith(KNOWN_ORDER[i] + '/')) return i + 0.5
+      if (route.startsWith(`${KNOWN_ORDER[i]}/`)) return i + 0.5
     }
     return KNOWN_ORDER.length
   }

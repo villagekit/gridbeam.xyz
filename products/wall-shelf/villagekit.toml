@@ -1,0 +1,13 @@
+[product]
+name = "@villagekit/wall-shelf"
+label = "Wall Shelf"
+description = "A wall-mounted shelf, perfect for cats, plants, or storage. Provides elevated lounging spots for pets, space for displaying houseplants, or a practical solution for organizing small items in any room."
+tags = [
+  'furniture',
+  'storage',
+  'cat',
+  'bedroom',
+  'lounge'
+]
+type = "kit"
+exports = "./wall-shelf.ts"

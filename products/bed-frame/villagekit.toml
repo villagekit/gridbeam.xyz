@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/bed-frame"
+label = "Bed Frame"
+description = "A sturdy bed frame. Configurable to suit a number of standard mattress sizes."
+tags = [
+  'furniture',
+  'bedroom'
+]
+type = "kit"
+exports = "./bed-frame.ts"

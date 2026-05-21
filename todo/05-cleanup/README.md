@@ -4,29 +4,23 @@ Once the new website is live, cut ties with the legacy bits we no longer need. P
 
 ## Goal
 
-`./node-modules` no longer required as a submodule of this repo. Old gridkit.nz Vercel deploy archived and redirecting (or the domain freed). DNS for gridbeam.xyz points at the new hosting.
+Old gridkit.nz Vercel deploy archived and redirecting (or the domain freed). DNS for gridbeam.xyz points at the new Cloudflare deployment.
 
 ## Tasks
 
 | # | Task | Status |
 |---|------|--------|
-| 01 | [Retire `./node-modules` submodule](./01-retire-node-modules.md) | BLOCKED (waiting on Stream 06 design parity) |
+| 01 | [Retire `./node-modules` submodule](./01-retire-node-modules.md) | DONE — submodule unregistered when the repo switched to npm-only deps; `../node-modules` lives on as a dev-only sibling checkout for parity work. |
 | 02 | [Archive old gridkit.nz deploy + redirect](./02-archive-old-site.md) | TODO |
 | 03 | [DNS / domain — point gridbeam.xyz at new deployment](./03-dns-and-domain.md) | TODO |
 | 04 | [Pre-launch real-browser QA pass](./04-pre-launch-qa.md) | SUPERSEDED by Stream 06 |
 
 ## Order of attack
 
-04 (pre-launch QA) runs against a Vercel preview as soon as Stream 01 task 11 ships a deploy URL — fixes from this audit feed back into Stream 01 page tasks before launch.
+04 (pre-launch QA) runs against a Cloudflare preview as soon as Stream 01 task 11 ships a deploy URL — fixes from this audit feed back into Stream 01 page tasks before launch.
 
 03 (DNS) can happen any time after the new site is reachable on its preview URL and 04 (QA) is clean enough to ship.
 
-01 (retire node-modules) only after every dependency on `node-modules/packages/*` and `node-modules/apps/*` has been removed from the website AND Stream 06 (design parity uplift) is complete — the legacy site is the design reference for parity work, so retiring early would make Stream 06 harder.
+01 (retire node-modules) is done. The site no longer depends on any code from `node-modules/`; the sibling checkout at `../node-modules/` stays around as legacy reference for parity work.
 
 02 (archive old site) is a courtesy — gridkit.nz could stay up for archival, redirect to gridbeam.xyz, or be replaced with a "this site has moved" page.
-
-## What "retired" means for `node-modules`
-
-- The `gitmodules` entry for `node-modules` is removed.
-- The `node-modules/` directory is removed from this repo (`git submodule deinit` + `git rm`).
-- The legacy `villagekit/node-modules` GitHub repo stays around as an archive — not deleted (it still hosts villagekit.com and supplykit.com).

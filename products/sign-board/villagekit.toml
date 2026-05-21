@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/sign-board"
+label = "Sign Board"
+description = "A freestanding notice board. Suitable for displaying messages, decorations, and other attachments."
+tags = [
+  'furniture',
+  'office'
+]
+type = "kit"
+exports = "./sign-board.ts"

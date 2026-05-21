@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/5-12-13-triangle-desk"
+label = "5-12-13 Triangle Desk"
+description = "A triangular-legged desk featuring shelves for extra storage and workspace. Ideal for home offices, studios, or creative spaces, providing both functionality and style."
+tags = [
+  'furniture',
+  'office',
+  'workbench'
+]
+type = "kit"
+exports = "./5-12-13-triangle-desk.ts"

@@ -1,0 +1,12 @@
+[product]
+name = "@villagekit/wall-shelves-vertical"
+label = "Vertical Wall Shelves"
+description = "A wall-mounted shelving unit features vertically aligned platforms, with optional staggering. Perfect as a vertical garden, as a cat climbing structure, or as versatile storage, adding functionality and style to any space."
+tags = [
+  'furniture',
+  'cat',
+  'lounge',
+  'storage'
+]
+type = "kit"
+exports = "./wall-shelves-vertical.ts"

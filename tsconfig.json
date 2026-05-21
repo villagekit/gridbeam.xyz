@@ -28,13 +28,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", ".next/types/**/*.ts"],
-  "exclude": [
-    "node_modules",
-    ".next",
-    "ui",
-    "gridkit",
-    "gridkit-products",
-    "node-modules",
-    "villagekit-media"
-  ]
+  "exclude": ["node_modules", ".next", ".open-next", ".wrangler", "products"]
 }

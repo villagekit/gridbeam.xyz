@@ -1,6 +1,6 @@
 // Bin-packing for grid-beam cuts: first-fit-decreasing.
 // All sizes are in grid units (gu); 1 gu = 40 mm.
-// Ported from node-modules/packages/applet-cutting-planner @ 2026-04-30, with one
+// Ported from https://github.com/villagekit/node-modules/blob/fce357d/packages/applet-cutting-planner/src/lib.ts, with one
 // edge-case fix: legacy version produced a beam with negative remainder when a
 // required cut exceeded the unlimited-stock length. Now those cuts go to
 // infeasibleBeams.

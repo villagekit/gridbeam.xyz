@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/stage"
+label = "Stage"
+description = "A sturdy, low-profile stage platform. Perfect for performances, presentations, or events, providing a stable and elevated surface for various activities."
+tags = [
+  'utility',
+  'event'
+]
+type = "kit"
+exports = "./stage.ts"

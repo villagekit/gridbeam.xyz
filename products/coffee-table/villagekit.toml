@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/coffee-table"
+label = "Coffee Table"
+description = "A low, functional table. Conveniently supports beverages and small decorations - a centerpiece for any sitting area."
+tags = [
+  'furniture',
+  'table',
+  'lounge'
+]
+type = "kit"
+exports = "./coffee-table.ts"

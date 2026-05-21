@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/bike-rack"
+label = "Bike Rack"
+description = "A vertical bike rack. Provides a sturdy, reliable, and efficient solution for bike storage in a garage."
+tags = [
+  'furniture',
+  'garage',
+  'storage'
+]
+type = "kit"
+exports = "./bike-rack.ts"

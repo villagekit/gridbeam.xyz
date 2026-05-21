@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/lumber-rack"
+label = "Lumber Rack"
+description = "A sturdy lumber rack designed for organizing and storing wood or other long materials. Ideal for workshops, garages, or storage areas, keeping materials easily accessible and neatly arranged."
+tags = [
+  'furniture',
+  'storage',
+  'garage'
+]
+type = "kit"
+exports = "./lumber-rack.ts"

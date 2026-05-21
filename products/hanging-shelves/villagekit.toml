@@ -1,0 +1,12 @@
+[product]
+name = "@villagekit/hanging-shelves"
+label = "Hanging Shelves"
+description = "A wall or ceiling mounted shelving unit featuring multiple adjustable platforms. Perfect for organizing and displaying various items in a space-efficient manner, suitable for both functional storage and decorative purposes."
+tags = [
+  'furniture',
+  'storage',
+  'shelving',
+  'lounge'
+]
+type = "kit"
+exports = "./hanging-shelves.ts"

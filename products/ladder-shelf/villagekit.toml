@@ -1,0 +1,12 @@
+[product]
+name = "@villagekit/ladder-shelf"
+label = "Ladder Shelf"
+description = "A compact shelving unit featuring multiple levels. Ideal for displaying decorative items or storing small household essentials in a space-saving design."
+tags = [
+  'furniture',
+  'storage',
+  'lounge',
+  'bedroom'
+]
+type = "kit"
+exports = "./ladder-shelf.ts"

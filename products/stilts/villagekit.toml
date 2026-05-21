@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/stilts"
+label = "Stilts"
+description = "A pair of adjustable stilts designed for versatility. Perfect for circus play, providing fun and balance training, and also ideal for construction support, offering height adjustments and stability for various DIY projects."
+tags = [
+  'kid',
+  'utility'
+]
+type = "kit"
+exports = "./stilts.ts"

@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/shelf-tower"
+label = "Shelf Tower"
+description = "A versatile storage tower. Can be used as a narrow bookcase, bathroom organiser, and more."
+tags = [
+  'furniture',
+  'bedroom',
+  'storage'
+]
+type = "kit"
+exports = "./shelf-tower.ts"

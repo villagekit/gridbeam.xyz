@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/baby-chair"
+label = "Baby Chair"
+description = "A small chair for your little one."
+tags = [
+  'furniture',
+  'seating',
+  'kid'
+]
+type = "kit"
+exports = "./baby-chair.ts"

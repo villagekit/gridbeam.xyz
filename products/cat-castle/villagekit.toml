@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/cat-castle"
+label = "Cat Castle"
+description = "A versatile structure designed for both cats and house plants. Offers multiple levels for climbing, lounging, and displaying greenery, enhancing both pet play and home decor."
+tags = [
+  'furniture',
+  'cat',
+  'lounge'
+]
+type = "kit"
+exports = "./cat-castle.ts"

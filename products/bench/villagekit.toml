@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/bench"
+label = "Bench"
+description = "A classic bench design with optional backrest. Suitable for seating multiple people at the same time."
+tags = [
+  'furniture',
+  'seating',
+  'dining'
+]
+type = "kit"
+exports = "./bench.ts"

@@ -220,11 +220,11 @@ const categories: Array<FaqCategory> = [
             The catalogue and stories are open-source. The designs live in{' '}
             <Link
               variant="paragraph"
-              href="https://github.com/villagekit/gridkit-products"
+              href="https://github.com/villagekit/products"
               target="_blank"
               rel="noopener noreferrer"
             >
-              villagekit/gridkit-products
+              villagekit/products
             </Link>
             ; the site itself lives in{' '}
             <Link

@@ -1,0 +1,12 @@
+[product]
+name = "@villagekit/clothes-rack"
+label = "Clothes Rack"
+description = "A minimalist clothes rack, providing a simple solution for hanging garments. Perfect for organizing clothing in a bedroom or laundry room, or for use as a display rack in a retail setting."
+tags = [
+  'furniture',
+  'bedroom',
+  'laundry',
+  'retail'
+]
+type = "kit"
+exports = "./clothes-rack.ts"

@@ -1,0 +1,12 @@
+[product]
+name = "@villagekit/console-table"
+label = "Console Table"
+description = "A sleek console table, perfect for entryways or living areas. Ideal for displaying decorative items or providing a convenient spot for keys and mail."
+tags = [
+  'furniture',
+  'table',
+  'entryway',
+  'lounge'
+]
+type = "kit"
+exports = "./console-table.ts"

@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/coat-rack"
+label = "Coat Rack"
+description = "A simple and functional coat rack featuring multiple hooks. Ideal for organizing jackets, hats, and accessories in an entryway, hallway, or office."
+tags = [
+  'furniture',
+  'utility'
+]
+type = "kit"
+exports = "./coat-rack.ts"

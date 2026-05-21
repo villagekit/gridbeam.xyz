@@ -1,0 +1,15 @@
+[product]
+name = "@villagekit/shelving-unit"
+label = "Shelving Unit"
+description = "A multi-tier shelving unit designed for efficient storage. Perfect for organizing books, tools, or household items, making it a versatile addition to any room or workspace."
+tags = [
+  'furniture',
+  'storage',
+  'bedroom',
+  'garage',
+  'kitchen',
+  'lounge',
+  'office'
+]
+type = "kit"
+exports = "./shelving-unit.ts"

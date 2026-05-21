@@ -1,6 +1,6 @@
 # 04 — Pre-launch real-browser QA pass
 
-**Status:** SUPERSEDED by Stream 06 (parity audit & uplift). The per-page audit + browser walkthrough described here is folded into Stream 06's task 02 and the per-page tasks (03+) it produces. The Lighthouse / OG card / share-card validation bits below are a small remaining subset that should be checked once Stream 06 work lands and a Vercel preview exists — track those there or as fresh tasks.
+**Status:** SUPERSEDED by Stream 06 (parity audit & uplift). The per-page audit + browser walkthrough described here is folded into Stream 06's task 02 and the per-page tasks (03+) it produces. The Lighthouse / OG card / share-card validation bits below are a small remaining subset that should be checked once Stream 06 work lands and a Cloudflare preview exists — track those there or as fresh tasks.
 
 ## Why
 Every Stream 01 page task ships with a "verified via SSR markup only — real-browser visual QA at base/md/lg widths deferred" follow-up. Tasks 01-02, 01-03, 01-04, 01-07, 01-09, 01-10 all flag this. Nobody currently owns the actual pass. It needs to happen once, before deployment, so we don't ship CSS/interaction bugs that SSR string inspection can't catch.
@@ -9,7 +9,7 @@ Every Stream 01 page task ships with a "verified via SSR markup only — real-br
 A single live walk-through of every shipped page in real browsers (Chrome, Firefox, Safari) at base/md/lg widths, with notes on every regression found and a follow-up PR/task per fix. Plus Lighthouse audits and OG/Twitter card validation against a preview deploy.
 
 ## Steps
-- [ ] Spin up `pnpm dev` (or a Vercel preview from Stream 01 task 11) and walk every route:
+- [ ] Spin up `pnpm dev` (or a Cloudflare preview from Stream 01 task 11) and walk every route:
   - `/`, `/about`, `/faq`, `/tools-and-resources`, `/tools/cutting-planner`, `/contact`, `/subscribe`, `/legal`, `/legal/privacy-policy`, plus `/stories`, `/designs`, `/suppliers` (whichever have shipped)
 - [ ] At each route, exercise:
   - [ ] Three viewport widths: base (mobile, ~375px), md (tablet, ~768px), lg (desktop, ~1280px)
@@ -36,4 +36,4 @@ A single live walk-through of every shipped page in real browsers (Chrome, Firef
 
 ## Depends on
 - All of Stream 01 (pages need to exist before they can be QA'd)
-- [../01-website/11-deployment-and-seo.md](../01-website/11-deployment-and-seo.md) — preferable to QA against a Vercel preview rather than localhost
+- [../01-website/11-deployment-and-seo.md](../01-website/11-deployment-and-seo.md) — preferable to QA against a Cloudflare preview rather than localhost

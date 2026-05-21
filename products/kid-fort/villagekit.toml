@@ -1,0 +1,10 @@
+[product]
+name = "@villagekit/kid-fort"
+label = "Kid Fort"
+description = "A creative fort structure designed for kids. Provides an engaging play space when used with fabrics and blankets, perfect for imaginative adventures."
+tags = [
+  'furniture',
+  'kid'
+]
+type = "kit"
+exports = "./kid-fort.ts"

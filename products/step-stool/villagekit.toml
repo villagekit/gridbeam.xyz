@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/step-stool"
+label = "Step Stool"
+description = "A sturdy stool with a configurable number of steps. Useful for reaching high places or boosting up your little ones."
+tags = [
+  'furniture',
+  'kid',
+  'utility'
+]
+type = "kit"
+exports = "./step-stool.ts"

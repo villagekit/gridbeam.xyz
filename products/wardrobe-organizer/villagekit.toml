@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/wardrobe-organizer"
+label = "Wardrobe Organizer"
+description = "A freestanding open wardrobe. Includes a healthy number of shelves and tall vertical space to store clothing and other personal belongings."
+tags = [
+  'furniture',
+  'bedroom',
+  'storage'
+]
+type = "kit"
+exports = "./wardrobe-organizer.ts"

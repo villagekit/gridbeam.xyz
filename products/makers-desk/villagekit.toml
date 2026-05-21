@@ -1,0 +1,13 @@
+[product]
+name = "@villagekit/makers-desk"
+label = "Maker Desk"
+description = "A practical desk featuring a raised platform for additional workspace. Perfect for makers, crafters, and hobbyists needing a versatile and organized area for projects and tools."
+tags = [
+  'furniture',
+  'desk',
+  'garage',
+  'office',
+  'workbench'
+]
+type = "kit"
+exports = "./makers-desk.ts"

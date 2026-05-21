@@ -1,0 +1,11 @@
+[product]
+name = "@villagekit/cat-tree"
+label = "Cat Tree"
+description = "A tall, tiered structure ideal for cats and house plants. Features multiple platforms for cats to climb and lounge on, while also providing ample space for displaying a variety of house plants."
+tags = [
+  'furniture',
+  'cat',
+  'lounge'
+]
+type = "kit"
+exports = "./cat-tree.ts"
