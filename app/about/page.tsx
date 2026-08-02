@@ -58,7 +58,7 @@ export default function AboutPage() {
                 That's the point. It's a building system, not a furniture catalogue.
               </Text>
               <Text fontSize="lg" variant="secondary">
-                Many sizes have appeared since the original 1½″ Phelps grid beam in the 1970s.{' '}
+                Many sizes have appeared since the original 1½″ grid beam in the 1970s.{' '}
                 <Span fontWeight="bold">This site focuses on the 40&nbsp;mm flavour.</Span> The
                 designs, cutting planner, and listed suppliers are all sized for 40&nbsp;mm beams on
                 a 40&nbsp;mm hole spacing.
@@ -148,12 +148,19 @@ export default function AboutPage() {
         </Title>
         <Container maxW="3xl">
           <VStack alignItems="flex-start" gap="5">
+            {/* Note(cc): attribution is sourced, not paraphrased — Ken Isaacs, How to Build Your
+                Own Living Structures (1974); Phil Jergenson, Richard Jergenson and Wilma Keppel,
+                How to Build with Grid Beam (New Society, 2008); and the legacy site crediting the
+                brothers as "the original inventors of Grid Beam" (node-modules@917daac
+                apps/gridkit/pages/stories/2022-newsletter.mdx:256). Check a source before editing
+                these names — an earlier draft invented one. */}
             <Text fontSize="lg">
               The lineage begins with <Span fontWeight="bold">Ken Isaacs</Span>, whose 1974 manual{' '}
               <em>How to Build Your Own Living Structures</em> showed how furniture, beds, and whole
-              rooms could be built from a kit of identical drilled timbers.{' '}
-              <Span fontWeight="bold">Phil Jergenson</Span> took that idea, refined the geometry,
-              and named the result grid beam — and kept improving it for decades.
+              rooms could be built from a kit of bolted-together timbers.{' '}
+              <Span fontWeight="bold">Phil and Richard Jergenson</Span> took that idea, made the
+              hole pattern regular so that every beam was interchangeable, and named the result grid
+              beam — and kept improving it for decades.
             </Text>
             <Text>
               The system has stayed alive because it's intentionally generic. Anyone can mill a

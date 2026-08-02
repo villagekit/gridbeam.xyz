@@ -13,6 +13,8 @@
 
 Two changes show up on almost every page; they're called out in the [cross-cutting findings](#cross-cutting) section rather than repeated under each page.
 
+**2026-08-03 correction:** the `/about` rows below originally praised the "Phelps/Isaacs history". "Phelps" was a fabricated name with no source in either legacy repo or externally; the real lineage is Ken Isaacs → Phil and Richard Jergenson. Mentions rewritten in place — see [`../../07-code-review/01-phelps-history.md`](../../07-code-review/01-phelps-history.md).
+
 ---
 
 ## Per-page audit
@@ -37,9 +39,9 @@ Two changes show up on almost every page; they're called out in the [cross-cutti
 | Visual | ➖ | Legacy was a tight vertical essay: large centered text + image, repeating. Current is a 6-section "marketing page" layout with `Title → Container → SimpleGrid` — competent but less coherent. The 3-card parts breakdown breaks the legacy's text-image-text-image rhythm. |
 | Interaction | ✅ | Both static; no interactive content was lost. |
 | Accessibility | ✅ | Both have appropriate heading order. Current's `Section` adds a `<section>` landmark; better than legacy. |
-| Copy | 🆕 | Current adds Phelps/Isaacs history ("Where it came from") and a "Start building" navigation block — both strong additions for a non-commercial educational site. Legacy's centered emphatic statements ("Grid Kit is a **modular system based on a 40mm grid**") have been absorbed into longer paragraphs; some of that punch is gone. |
+| Copy | 🆕 | Current adds Jergenson/Isaacs history ("Where it came from") and a "Start building" navigation block — both strong additions for a non-commercial educational site. Legacy's centered emphatic statements ("Grid Kit is a **modular system based on a 40mm grid**") have been absorbed into longer paragraphs; some of that punch is gone. |
 | Code | ➖ | Current builds local `AboutPhoto`, `PartCard`, `NextStepCard` components inline in the file — fine, but each new section card pattern is essentially the same shape as the home page's `MakerCard`, `DesignThumb`, etc. Worth extracting a single shared `LinkCard` / `NavCard` later. |
-| **Recommended mode** | **First-principles rethink** — partial. Keep the new content (Phelps/Isaacs history, navigation cards) but restore some of the legacy's tight image-text-image visual rhythm in the middle sections. The legacy "essay" feel is the bit worth recovering. |
+| **Recommended mode** | **First-principles rethink** — partial. Keep the new content (Jergenson/Isaacs history, navigation cards) but restore some of the legacy's tight image-text-image visual rhythm in the middle sections. The legacy "essay" feel is the bit worth recovering. |
 | Files | `app/about/page.tsx` ↔ `node-modules/apps/gridkit/pages/about.tsx` |
 | Screenshots | `audit/about/{375,768,1280}/` |
 

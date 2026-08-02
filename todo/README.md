@@ -24,6 +24,9 @@ Once the website doesn't depend on `node-modules` anymore, retire the legacy sub
 ### [06 — Parity audit & uplift](./06-design-parity/README.md)
 Page-by-page audit of the new site against the legacy gridkit.nz site. The rebuild quietly regressed quality on visual design, interaction, accessibility, copy, and code patterns; this stream brings every page back to (at least) parity. The legacy site was made by experienced people — the rebuild was supposed to upgrade dependencies and strip startup references, not redesign every page.
 
+### [07 — Code review remediation](./07-code-review/README.md)
+Findings from the 2026-08-03 file-by-file code review against the legacy baseline — the code-level complement to Stream 06's screenshot audit. Content-accuracy fixes (a fabricated historical attribution shipped in copy), dropped legacy interaction behavior (shallow routing, client navigation), test infrastructure, duplication of `@villagekit/*`-shipped components, dead code, and config cleanup.
+
 ## Cross-stream dependencies
 
 ```
@@ -44,7 +47,8 @@ Page-by-page audit of the new site against the legacy gridkit.nz site. The rebui
 - **04** runs in parallel with 01; some bits (image hosting decision) feed into 01 deployment.
 - **06** runs after 01 / 04 ship pages worth comparing — re-opens parts of both for parity work.
 - **06 blocks 05** task 01 — `./node-modules` is the legacy reference for parity work and stays until 06 completes.
-- **05** is the final stream — runs after 01-04, 06 are functionally done.
+- **07** re-opens pages 01/04/06 marked done — its review compared code, not screenshots. It also needs `../node-modules` (updated to origin/main), so it too blocks 05 task 01.
+- **05** is the final stream — runs after 01-04, 06, 07 are functionally done.
 
 ## Conventions
 

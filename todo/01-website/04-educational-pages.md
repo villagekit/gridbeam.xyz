@@ -47,9 +47,9 @@ Also: `app/_lib/nav.ts` updated — top-nav "Tools" now points at `/tools-and-re
 
 ## Follow-ups
 - **Imagery (Stream 04 task 02).** Replace the five dashed-border placeholders on `/about` (hero hidden, grid-diagram, beams photo, panels photo, fasteners photo, tri-joint diagram).
-- **Home page Phelps detail.** `app/page.tsx` line ~104 currently says "1.5″ holes on a four-bolt cycle" — should be "1½″ profile on a four-bolt cycle" (the about page uses the corrected wording). Out of scope for this task; tiny copy fix in a future pass.
+- ~~**Home page Phelps detail.**~~ Stale as of 2026-08-03: the home page no longer carries that sentence at all (`app/page.tsx` was reworked in Stream 06), and the "Phelps" name was fabricated — see [../07-code-review/01-phelps-history.md](../07-code-review/01-phelps-history.md).
 - **Real-browser visual QA at base/md/lg widths** — currently verified via SSR markup only, same as tasks 02 + 03. Roll into the Stream 05 pre-launch QA pass.
-- **External-resources catalogue (deferred).** /tools-and-resources currently links to internal pages + GitHub + forum only. External resources worth adding once verified: Open Structures, Phil Jergenson's *How to Build with Grid Beam* (book), Open Source Ecology references. Held back to avoid hallucinated URLs.
+- **External-resources catalogue (deferred).** /tools-and-resources currently links to internal pages + GitHub + forum only. External resources worth adding once verified: Open Structures, *How to Build with Grid Beam* by Phil Jergenson, Richard Jergenson, and Wilma Keppel (book), Open Source Ecology references. Held back to avoid hallucinated URLs.
 
 ## Depends on
 - [./02-layout-and-nav.md](./02-layout-and-nav.md)

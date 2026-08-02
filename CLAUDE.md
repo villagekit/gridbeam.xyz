@@ -191,6 +191,7 @@ The full plan lives at [`./todo/README.md`](./todo/README.md) as a hierarchical 
 - [`todo/04-content/`](./todo/04-content/README.md) — copy, imagery, rebrand from gridkit.nz to gridbeam.xyz
 - [`todo/05-cleanup/`](./todo/05-cleanup/README.md) — archive old site, point DNS
 - [`todo/06-design-parity/`](./todo/06-design-parity/README.md) — page-by-page audit + uplift to legacy gridkit.nz parity (visual / interaction / a11y / copy / code patterns)
+- [`todo/07-code-review/`](./todo/07-code-review/README.md) — remediation of the 2026-08-03 code-level review vs the legacy baseline (content accuracy, dropped interaction behavior, tests, dead code, config)
 
 Each subdirectory has its own `README.md` summarising the stream; individual task files inside detail steps and dependencies.
 

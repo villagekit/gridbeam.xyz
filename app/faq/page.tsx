@@ -49,9 +49,9 @@ const categories: Array<FaqCategory> = [
         answer: (
           <>
             Grid beam is a modular construction system: identical beams drilled with
-            regularly-spaced holes that bolt together with a hex key. Developed by Phil Jergenson in
-            the 1970s, building on the open-construction work of Ken Isaacs; this site catalogues
-            the 40 mm flavour.{' '}
+            regularly-spaced holes that bolt together with a hex key. Developed by Phil and Richard
+            Jergenson in the 1970s, building on the open-construction work of Ken Isaacs; this site
+            catalogues the 40 mm flavour.{' '}
             <Link variant="paragraph" href="/about">
               Learn more
             </Link>
@@ -120,7 +120,7 @@ const categories: Array<FaqCategory> = [
       {
         question: 'What can I make with it?',
         answer:
-          "Practically anything that bolts together: beds, desks, shelves, kitchens, market stalls, even bicycles and trailers. Phil Jergenson's original grid beam covered that whole range.",
+          "Practically anything that bolts together: beds, desks, shelves, kitchens, market stalls, even bicycles and trailers. The Jergensons' original grid beam covered that whole range.",
       },
       {
         question: 'What does "modular" actually mean here?',

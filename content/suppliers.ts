@@ -38,9 +38,9 @@ export const suppliers: Array<Supplier> = [
     website: 'https://gridbeamsupply.com',
     offerings: ['beams', 'fasteners', 'kits'],
     compatibility:
-      "Imperial profile — the original Phelps grid beam, traced back to Ken Isaacs' Living Structures. Different geometry from this site's 40 mm focus; parts don't mix with 40 mm hardware.",
+      "Imperial profile — the original grid beam, traced back to Ken Isaacs' Living Structures. Different geometry from this site's 40 mm focus; parts don't mix with 40 mm hardware.",
     blurb:
-      "The OG grid-beam supplier. Sells tan-oak gridbeam box sets in 2'–8' lengths, furniture bolts, button shelves, and Phil Jergenson's 'How to Build with Gridbeam' book.",
+      "The OG grid-beam supplier. Sells tan-oak gridbeam box sets in 2'–8' lengths, furniture bolts, button shelves, and “How to Build with Grid Beam” by Phil Jergenson, Richard Jergenson, and Wilma Keppel.",
     status: 'active',
   },
 ]

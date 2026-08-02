@@ -10,7 +10,7 @@ The home page is the introduction to grid beam for someone arriving cold. The le
 
 ## Steps
 - [x] Hero section — tagline ("Modular furniture, on a 40 mm grid"), subhead, two CTAs ("Browse designs", "What is grid beam?"). No "Buy Grid Kit". Hero image is a dashed `accentB.50` placeholder until Stream 04 provides imagery.
-- [x] "What is grid beam?" preview block — accurate framing (acknowledges the broader Phelps grid beam and that this site focuses on the 40 mm flavour). Links to `/about`.
+- [x] "What is grid beam?" preview block — accurate framing (acknowledges the broader ~~Phelps~~ grid beam family and that this site focuses on the 40 mm flavour). Links to `/about`.
 - [x] Designs preview — three dashed-border placeholder cards labelled "A bed / A desk / A shelf" + "See the catalogue" CTA. Replaced when Stream 03 task 07 ships.
 - [x] Stories preview — three dashed-border placeholder cards labelled "Story one / two / three" + "Read all stories" CTA. Replaced when Stream 01 task 05 ships real MDX stories.
 - [x] Tools preview — folded into a "For makers" `SimpleGrid` with two `MakerCard`s: cutting planner + suppliers. Tools card links to `/tools/cutting-planner`.
@@ -22,7 +22,7 @@ The home page is the introduction to grid beam for someone arriving cold. The le
 - **Section structure.** Each `<Section index={N}>` directly contains the section's content (Title + body). The lib's `Section` accepts free children — it asserts only on `.vk-row` descendants, so wrapping in an explicit `<Row index={0}>` is unnecessary unless you actually need a multi-column row layout (the hero and "For makers" sections use `<Stack>` / `<SimpleGrid>` instead, which is simpler).
 - **No `chakra.span` highlight.** The hero's "40 mm grid" highlight uses `<Span color="primary.500" fontWeight="bold">` rather than `chakra.span` — the chakra factory Proxy fails the Server Component prerender step (returns undefined), but the explicit `Span` export works.
 - **No Framer Motion typing animation.** Skipped — the legacy effect drove a designs carousel from the engine, and we don't have either yet. Re-evaluate after Stream 03 lands the catalog.
-- **Accuracy on grid beam.** Don't claim "grid beam IS 40 mm" — that's the Grid Kit / villagekit choice. Original Phelps grid beam was 1.5″ on a four-bolt cycle. Hero and "What is grid beam?" both make that distinction explicit.
+- **Accuracy on grid beam.** Don't claim "grid beam IS 40 mm" — that's the Grid Kit / villagekit choice. The original grid beam (Phil and Richard Jergenson, building on Ken Isaacs) was 1½″ on a four-bolt cycle. Hero and "What is grid beam?" both make that distinction explicit. (This file previously said "~~Phelps~~ grid beam" — a fabricated name; corrected per [../07-code-review/01-phelps-history.md](../07-code-review/01-phelps-history.md).)
 - **External links.** GitHub link uses `LinkButton isExternal`; the lib was patched to set `rel="noopener noreferrer"` automatically on external `LinkButton`s.
 - **No imagery yet.** All photo/3D-render slots are dashed-border placeholders so a Stream 04 author can't miss them.
 

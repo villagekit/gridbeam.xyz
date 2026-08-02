@@ -4,7 +4,7 @@
 
 ## Why
 
-The legacy `/about` was a tight visual essay: large centered text statements, alternating with single full-width images. It read like one coherent argument. The current rebuild reorganised it into a six-section "marketing page" with `Title → Container → SimpleGrid` per section. Some of the new content (the Phelps/Isaacs history, the navigation cards) is a real improvement; the loss of the legacy's tight image-text rhythm in the middle is the regression.
+The legacy `/about` was a tight visual essay: large centered text statements, alternating with single full-width images. It read like one coherent argument. The current rebuild reorganised it into a six-section "marketing page" with `Title → Container → SimpleGrid` per section. Some of the new content (the Jergenson/Isaacs history, the navigation cards) is a real improvement; the loss of the legacy's tight image-text rhythm in the middle is the regression.
 
 ## Concrete regressions
 
@@ -35,8 +35,8 @@ At parity. Current's `<Section>` adds `<section>` landmarks, slightly better.
 
 Specifically:
 
-1. Keep the new top section (intro paragraphs + Phelps history call-out).
-2. Keep the new "Where it came from" section (Phelps/Isaacs history is good content for a non-commercial site).
+1. Keep the new top section (intro paragraphs + grid-beam history call-out).
+2. Keep the new "Where it came from" section (Jergenson/Isaacs history is good content for a non-commercial site).
 3. Keep the new "Start building" navigation cards at the bottom.
 4. **Restore the legacy parts breakdown:** for Beam, Panel, Fastener, use the legacy pattern of one full-width image + one centered emphatic sentence (instead of 3-card grid). Same for "How it goes together" (tri-joint).
 5. Drop alternating section background colours in the parts area so it feels like a single essay, not 6 separate marketing sections.
@@ -53,11 +53,12 @@ Specifically:
 - [x] Heading order verified: h1 (page) → h2 (Where it came from, Start building) → h3 (cards inside Start building). No skips.
 
 ## Notes
-- Don't be tempted to make this a one-to-one legacy port. The Phelps history is a worthwhile addition. The goal is "parts essay rhythm restored, history kept".
+- **2026-08-03 correction:** this file originally called the history section "the Phelps history". "Phelps" was a fabricated name with no source; the real lineage is Ken Isaacs → Phil and Richard Jergenson. Mentions rewritten in place — see [../07-code-review/01-phelps-history.md](../07-code-review/01-phelps-history.md).
+- Don't be tempted to make this a one-to-one legacy port. The grid-beam history is a worthwhile addition. The goal is "parts essay rhythm restored, history kept".
 - The legacy text for the parts ("Beam profiles are 40mm x 40mm and have a repeating pattern of 8mm holes drilled 40mm apart.") is good — ported close to verbatim.
 - Image assets used: `v1/gridkit.nz/grid_yvn1om`, `grid-example_vezsvx`, `beams_czf9hb`, `panels_rs1ea1`, `fasteners_ctuejz`, `tri-joint_lqtzvf`. Already re-hosted under `gridbeam.xyz/about/...` per recent stream-04 work.
 - Collapsed three former sections (40 mm grid / parts / how it goes together) into one continuous flow inside section 0. The intro paragraphs end and the AboutText / AboutPhoto rhythm picks up immediately, matching the legacy single-essay feel.
-- Tightened intro paragraph 3 — dropped the Phelps/Jergenson/Isaacs detail since it's covered in "Where it came from"; kept the "this site = 40 mm" focus.
+- Tightened intro paragraph 3 — dropped the Jergenson/Isaacs detail since it's covered in "Where it came from"; kept the "this site = 40 mm" focus.
 - Tri-joint copy upgraded from legacy: "rigid corner is formed in all three axes" replaces the vaguer "a strong connection is created" — more precise engineering language.
 - `AboutText` helper ports the legacy pattern (`fontSize={['xl', null, '2xl']}`, `textAlign: 'center'`) into Chakra v3 syntax; `AboutPhoto` is the existing helper, kept as-is.
 
