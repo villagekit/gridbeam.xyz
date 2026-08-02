@@ -11,13 +11,14 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 
 import { ObfuscatedEmailLink } from '../../_components/ObfuscatedEmail'
 
 const title = 'Privacy policy'
 const description =
   'gridbeam.xyz collects almost nothing. No cookies, no analytics, no third-party trackers. Here is the full picture.'
-const lastUpdated = '2026-04-30'
+const lastUpdated = '2026-08-03'
 
 export const metadata: Metadata = {
   title,
@@ -51,7 +52,10 @@ export default function PrivacyPolicyPage() {
             <Text>
               No cookies. No analytics — no Google Analytics, no Plausible, no Matomo, no Sentry. No
               third-party tracking pixels. No advertising. No social-media share-trackers. The site
-              does not run any JavaScript that phones home.
+              does not run any JavaScript that reports on you. Even the web fonts are served from
+              this site's own domain rather than from Google Fonts. Two pages do fetch a file from
+              somewhere else — a YouTube embed on one guide, a graphics-benchmark file on the design
+              pages — and both are described under Third parties below.
             </Text>
             <Text>
               You can verify this. The site is open source at{' '}
@@ -74,10 +78,50 @@ export default function PrivacyPolicyPage() {
               Server access logs
             </Heading>
             <Text>
-              Whichever hosting provider serves the site records standard server access logs: IP
-              address, request URL, user-agent string, and timestamp. These are retained according
-              to that provider's policy. We don't aggregate or analyse them. Once the site is
-              deployed, the named provider and a link to their privacy policy will be added here.
+              The site is hosted on Cloudflare Workers. Serving a page means Cloudflare necessarily
+              sees standard server-log data: your IP address, the URL you requested, your user-agent
+              string, and a timestamp. Cloudflare retains that data under{' '}
+              <Link
+                variant="paragraph"
+                href="https://www.cloudflare.com/privacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                its own privacy policy
+              </Link>
+              . We can see recent requests in the Cloudflare dashboard when debugging a problem; we
+              don't aggregate, analyse, or export them, and we don't build any profile of you from
+              them.
+            </Text>
+
+            <Heading as="h3" size="md">
+              Images and video
+            </Heading>
+            <Text>
+              Photos and videos are served by{' '}
+              <Link
+                variant="paragraph"
+                href="https://cloudinary.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cloudinary
+              </Link>
+              , a media CDN. Your browser fetches those files from Cloudinary directly, so
+              Cloudinary sees the same kind of server-log data — IP address, requested file,
+              user-agent string, timestamp — for every page that has a photo or a video on it. That
+              includes the home page, the about page, and the stories. The design images in the
+              catalogue, the icons, and the fonts come from this site's own domain instead.
+            </Text>
+
+            <Heading as="h3" size="md">
+              Settings kept in your browser
+            </Heading>
+            <Text>
+              The 3D viewer on a design page remembers two display preferences — whether the model
+              auto-rotates and whether the grid is shown — in your browser's local storage. That
+              stays on your device: it isn't a cookie, it's never sent to us or to anyone else, and
+              clearing your browser data removes it.
             </Text>
 
             <Heading as="h3" size="md">
@@ -105,10 +149,38 @@ export default function PrivacyPolicyPage() {
               Third parties
             </Heading>
             <Text>
-              The only third party currently in the path is the hosting provider, which receives the
-              access logs described above. When the newsletter or contact form ship, the providers
-              handling them will be listed here. We will not use any third party that requires
-              cookies or runs tracking scripts in your browser.
+              Two third parties are in the path across the site:{' '}
+              <Span fontWeight="bold">Cloudflare</Span>, which hosts it, and{' '}
+              <Span fontWeight="bold">Cloudinary</Span>, which serves the photos and videos. Both
+              receive the server-log data described above. Neither runs any script in your browser —
+              they hand over pages and media files, nothing else.
+            </Text>
+            <Text>
+              Two places reach one step further. The guide on{' '}
+              <Link as={NextLink} variant="paragraph" href="/stories/how-to-furniture-bolts">
+                installing furniture bolts
+              </Link>{' '}
+              embeds a YouTube video. It loads from{' '}
+              <Span fontStyle="italic">youtube-nocookie.com</Span>, YouTube's privacy-enhanced
+              domain, which Google says holds off on tracking cookies until you press play — but
+              YouTube receives your IP address and user-agent as soon as the player appears. It's
+              the only embed of its kind anywhere on the site.
+            </Text>
+            <Text>
+              And the 3D viewer on a{' '}
+              <Link as={NextLink} variant="paragraph" href="/designs">
+                design page
+              </Link>{' '}
+              downloads a graphics-benchmark file from <Span fontStyle="italic">unpkg.com</Span>, a
+              public CDN for open-source packages. The rendering library uses it to judge how much
+              detail your graphics hardware can handle. It's a plain file download — nothing about
+              you or your session is sent along — but unpkg does see your IP address and user-agent
+              when it happens.
+            </Text>
+            <Text>
+              When the newsletter or contact form ship, the providers handling them will be listed
+              here. We will not add any third party that requires cookies or runs tracking scripts
+              in your browser.
             </Text>
 
             <Heading as="h2" size="lg" pt="4">

@@ -18,7 +18,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | # | Task | Severity | Status |
 |---|------|----------|--------|
 | 01 | [Fix fabricated "Phelps" history + attribution errors](./01-phelps-history.md) | High | DONE |
-| 02 | [Correct the privacy policy (Cloudflare + Cloudinary)](./02-privacy-policy.md) | Medium | TODO |
+| 02 | [Correct the privacy policy (Cloudflare + Cloudinary)](./02-privacy-policy.md) | Medium | DONE |
 | 03 | [Unsourced FAQ claims + supplier-page promises](./03-faq-and-suppliers-claims.md) | Medium, decision-gated | TODO |
 | 04 | [Restore missing photo in how-to-cut-grid-beams](./04-restore-cut-alignment-photo.md) | High | TODO |
 | 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | TODO |
@@ -32,6 +32,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 13 | [Dead / invented code sweep](./13-dead-code-sweep.md) | Low | TODO |
 | 14 | [Metadata, config, and doc-drift cleanup](./14-metadata-and-config-cleanup.md) | Low | TODO |
 | 15 | [Small parity nits batch (visual / a11y)](./15-parity-nits.md) | Low | TODO |
+| 16 | [Self-host detect-gpu benchmarks (drop unpkg.com request)](./16-self-host-gpu-benchmarks.md) | Medium, touches `../gridkit` | TODO |
 
 ## What the review found was GOOD (don't churn these)
 
@@ -45,7 +46,7 @@ For calibration — these were explicitly verified as sound; don't "improve" the
 
 ## Cross-stream relationships
 
-- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead.
+- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead. Task 16 has the same shape against `villagekit/gridkit` — batch the two releases if possible.
 - Task 04 requires `../media` and `pnpm sync-media` (see `../04-content/02-image-hosting.md` for the media pipeline).
 - Task 11 re-opens copy that Stream 06 tasks marked DONE — that's expected; Stream 06 audited screenshots, not the wording-vs-legacy diff.
 - Stream 05 (retire `../node-modules`) remains blocked until this stream and Stream 06 are done.
