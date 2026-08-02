@@ -19,7 +19,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 |---|------|----------|--------|
 | 01 | [Fix fabricated "Phelps" history + attribution errors](./01-phelps-history.md) | High | DONE |
 | 02 | [Correct the privacy policy (Cloudflare + Cloudinary)](./02-privacy-policy.md) | Medium | DONE |
-| 03 | [Unsourced FAQ claims + supplier-page promises](./03-faq-and-suppliers-claims.md) | Medium, decision-gated | TODO |
+| 03 | [Unsourced FAQ claims + supplier-page promises](./03-faq-and-suppliers-claims.md) | Medium, decision-gated | DONE |
 | 04 | [Restore missing photo in how-to-cut-grid-beams](./04-restore-cut-alignment-photo.md) | High | TODO |
 | 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | TODO |
 | 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | TODO |

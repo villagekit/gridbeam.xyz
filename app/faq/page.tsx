@@ -64,19 +64,34 @@ const categories: Array<FaqCategory> = [
         answer: (
           <>
             No special tools — basic hand tools and a 4 mm hex key are enough for almost every
-            build. A measuring tape and a saw if you're cutting beams to length yourself.
+            build. A measuring tape and a saw if you're cutting beams to length yourself. For help
+            on assembly, see our guide{' '}
+            <Link variant="paragraph" href="/stories/how-to-furniture-bolts">
+              How to Install Furniture Bolts
+            </Link>
+            .
           </>
         ),
       },
       {
         question: 'What materials are used?',
-        answer:
-          'The 40 mm grid-beam family is most often pine for furniture, structural plywood for panels, and stainless steel for fasteners. Aluminium and steel beams exist for load-bearing builds. Suppliers vary by region — check the suppliers page.',
+        answer: (
+          <>
+            The grid is defined by hole spacing, not by material. Grid Kit's 40 mm beams were
+            untreated locally-sourced pine, with plywood panels and stainless steel fasteners; the
+            original Imperial grid beam is sold in tan oak. Anything that holds a bolt on the grid
+            works — see the{' '}
+            <Link variant="paragraph" href="/suppliers">
+              suppliers page
+            </Link>{' '}
+            for what each supplier actually stocks.
+          </>
+        ),
       },
       {
         question: 'How durable are grid beams?',
         answer:
-          'Drilled-beam construction is intentionally over-engineered. Tri-joints distribute load across three bolts, so failures are rare. If a beam ever does break, you replace it individually — the rest of the build stays in service.',
+          'Grid beam is built to be repaired rather than to never fail. Three beams joined with three bolts make a rigid corner in all three axes, and a damaged beam gets replaced on its own — the rest of the build stays in service.',
       },
       {
         question: 'Is the wood treated?',
@@ -171,8 +186,9 @@ const categories: Array<FaqCategory> = [
             <Link variant="paragraph" href="/suppliers">
               suppliers page
             </Link>{' '}
-            — we list manufacturers and resellers around the world that make 40 mm grid beam,
-            panels, and compatible fasteners. The list is regional; pick the entry closest to you.
+            — we list manufacturers and resellers that make grid beam, panels, and compatible
+            fasteners. Each listing says where the supplier is based, what they stock, and which
+            profile it is, so you know what mixes with what.
           </>
         ),
       },

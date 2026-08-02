@@ -89,9 +89,11 @@ Hide the filter UI when fewer than ~5 suppliers are listed.
 >
 > **What "compatible" means.** Your beams (or panels, or fasteners) honour the [40 mm grid](/about): 40 mm hole spacing, 8 mm hole diameter, M6 bolts. We're material-agnostic — wood, aluminium, recycled, anything that holds a bolt is fine.
 >
-> **What we ask.** Just that the parts genuinely fit. We don't charge listing fees, take commissions, or require exclusivity. If a customer reports compatibility issues with parts from your shop, we'll reach out before changing your listing.
+> **What we ask.** Just that the parts genuinely fit. We don't charge listing fees, take commissions, or require exclusivity.
 >
-> **How to apply.** [Email us](/contact?subject=become-a-supplier) with your shop URL, a short blurb, and a sample part you can ship for fit-check (or detailed photos with a 40 mm reference object). We'll respond within a week.
+> **How to apply.** [Contact us](/contact?subject=become-a-supplier) with your shop URL and a short blurb about what you make.
+
+The draft originally carried three process commitments to third parties — "we'll reach out before changing your listing", a sample-part fit-check, and a one-week response SLA. Mikey dropped all three on 2026-08-03 (see `todo/07-code-review/03-faq-and-suppliers-claims.md`): a volunteer-run site shouldn't promise turnaround times, and asking a stranger to post hardware is too high a bar to be listed.
 
 ## Open items for Mikey
 
@@ -99,7 +101,7 @@ Hide the filter UI when fewer than ~5 suppliers are listed.
    - Is the original Grid Kit NZ still shipping any stock?
    - Any other vendors you've come across?
    - Default plan: ship v1 with an **empty list** + the empty-state copy above. Add suppliers as they appear.
-2. **Sample-part requirement.** I've drafted "ship a sample part for fit-check (or detailed photos with a 40 mm reference object)". Reasonable, or too high a bar? Alternative: just trust the supplier's compatibility claim and remove suppliers later if customers report issues.
+2. ~~**Sample-part requirement.**~~ **Resolved 2026-08-03:** too high a bar. Dropped, along with the response-time SLA and the "reach out before changing your listing" promise. Trust the supplier's compatibility claim; delist later if builders report problems.
 3. **Email subject pre-fill.** I'm using `?subject=become-a-supplier`. The contact applet currently just opens a `mailto:` — verify the subject parameter passes through, or adjust copy.
 4. **Per-supplier detail pages.** Worth building `/suppliers/[id]` for v1, or just stick with cards on the index page until there's a supplier with enough story to warrant their own page?
 5. **Logo licensing.** Do we want explicit written permission per supplier to use their logo, or assume listing on a curated public site implies fair use?

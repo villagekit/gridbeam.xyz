@@ -62,9 +62,9 @@ export default function SuppliersPage() {
             <Link variant="paragraph" href="/about">
               40&nbsp;mm flavour
             </Link>{' '}
-            of grid beam, and most listed suppliers ship 40&nbsp;mm hardware. We also list the
-            original Imperial flavour for completeness — each card flags its profile so you know
-            what mixes with what. We don't sell parts; we link to those who do.
+            of grid beam. We also list suppliers of the original Imperial flavour for completeness —
+            each card flags its profile so you know what mixes with what. We don't sell parts; we
+            link to those who do.
           </Text>
         </Container>
       </Section>
@@ -144,17 +144,14 @@ export default function SuppliersPage() {
             </Text>
             <Text>
               <Span fontWeight="bold">What we ask.</Span> Just that the parts genuinely fit. We
-              don't charge listing fees, take commissions, or require exclusivity. If a customer
-              reports compatibility issues with parts from your shop, we'll reach out before
-              changing your listing.
+              don't charge listing fees, take commissions, or require exclusivity.
             </Text>
             <Text>
               <Span fontWeight="bold">How to apply.</Span>{' '}
               <Link variant="paragraph" href="/contact">
-                Email us
+                Contact us
               </Link>{' '}
-              with your shop URL, a short blurb, and a sample part you can ship for fit-check (or
-              detailed photos with a 40&nbsp;mm reference object). We'll respond within a week.
+              with your shop URL and a short blurb about what you make.
             </Text>
             <Flex justifyContent="center" pt="2" w="full">
               <LinkButton href="/contact">Become a supplier</LinkButton>
