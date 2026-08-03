@@ -17,7 +17,7 @@ import {
   VStack,
   VisuallyHidden,
 } from '@villagekit/ui'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import {
@@ -25,6 +25,7 @@ import {
   type DisplayUnit,
   formatLength,
 } from '@/app/_components/cutting-plan/CutBeamSvg'
+import { replaceUrl } from '@/app/_lib/url-state'
 
 import {
   type BeamQuota,
@@ -63,7 +64,6 @@ const DEFAULT_UNLIMITED: UnlimitedStock = 60
 const DEFAULT_DISPLAY: DisplayUnit = 'gu'
 
 export function CuttingPlanner() {
-  const router = useRouter()
   const searchParams = useSearchParams()
 
   const initial = useMemo(() => decodeUrlState(searchParams), [searchParams])
@@ -92,10 +92,8 @@ export function CuttingPlanner() {
       unlimited: hasUnlimitedStock,
       display: displayUnit,
     })
-    router.replace(query ? `/tools/cutting-planner?${query}` : '/tools/cutting-planner', {
-      scroll: false,
-    })
-  }, [router, requiredBeams, stockBeams, hasUnlimitedStock, displayUnit])
+    replaceUrl(query ? `/tools/cutting-planner?${query}` : '/tools/cutting-planner')
+  }, [requiredBeams, stockBeams, hasUnlimitedStock, displayUnit])
 
   const handlePrint = useCallback(() => {
     if (typeof window !== 'undefined') window.print()

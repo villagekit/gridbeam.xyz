@@ -15,7 +15,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import { AnimatePresence, type Variants, motion } from 'motion/react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import {
   type ChangeEvent,
   type KeyboardEvent,
@@ -27,6 +27,8 @@ import {
   useState,
 } from 'react'
 import { FaSearch, FaTimes } from 'react-icons/fa'
+
+import { replaceUrl, withSearchParams } from '@/app/_lib/url-state'
 
 import { ItemCard } from './ItemCard'
 import { type CatalogueItemData, SORT_OPTIONS, type SortOption } from './types'
@@ -73,7 +75,6 @@ export function Catalogue<Tag extends string>(props: CatalogueProps<Tag>) {
     searchPlaceholder = 'Search…',
   } = props
 
-  const router = useRouter()
   const searchParams = useSearchParams()
   const queryString = searchParams.toString()
 
@@ -93,13 +94,9 @@ export function Catalogue<Tag extends string>(props: CatalogueProps<Tag>) {
 
   const updateUrl = useCallback(
     (mutate: (next: URLSearchParams) => void) => {
-      const next = new URLSearchParams(queryString)
-      mutate(next)
-      const qs = next.toString()
-      const url = qs ? `?${qs}` : window.location.pathname
-      router.replace(url, { scroll: false })
+      replaceUrl(withSearchParams(queryString, mutate))
     },
-    [queryString, router],
+    [queryString],
   )
 
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -154,8 +151,8 @@ export function Catalogue<Tag extends string>(props: CatalogueProps<Tag>) {
   const handleReset = useCallback(() => {
     setSearch('')
     if (debounceRef.current != null) clearTimeout(debounceRef.current)
-    router.replace(window.location.pathname, { scroll: false })
-  }, [router])
+    replaceUrl(window.location.pathname)
+  }, [])
 
   const filteredItems = useMemo(() => {
     const filtered =

@@ -1,11 +1,12 @@
 'use client'
 
 import { HStack, SimpleGrid, VStack, chakra } from '@villagekit/ui'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useCallback, useMemo } from 'react'
 
 import { StoryCard } from '../_components/StoryCard'
 import type { StoryCategory, StoryMetadata } from '../_lib/stories'
+import { replaceUrl, withSearchParams } from '../_lib/url-state'
 
 interface StoriesBrowserProps {
   stories: ReadonlyArray<{ metadata: StoryMetadata }>
@@ -28,7 +29,6 @@ const FILTERS: ReadonlyArray<{ value: FilterValue; label: string; palette: strin
 export function StoriesBrowser(props: StoriesBrowserProps) {
   const { stories } = props
 
-  const router = useRouter()
   const searchParams = useSearchParams()
   const queryString = searchParams.toString()
 
@@ -37,14 +37,14 @@ export function StoriesBrowser(props: StoriesBrowserProps) {
 
   const setFilter = useCallback(
     (next: FilterValue) => {
-      const params = new URLSearchParams(queryString)
-      if (next === ALL_FILTER) params.delete(FILTER_PARAM)
-      else params.set(FILTER_PARAM, next)
-      const qs = params.toString()
-      const url = qs ? `?${qs}` : window.location.pathname
-      router.replace(url, { scroll: false })
+      replaceUrl(
+        withSearchParams(queryString, (params) => {
+          if (next === ALL_FILTER) params.delete(FILTER_PARAM)
+          else params.set(FILTER_PARAM, next)
+        }),
+      )
     },
-    [queryString, router],
+    [queryString],
   )
 
   const filteredStories = useMemo(() => {

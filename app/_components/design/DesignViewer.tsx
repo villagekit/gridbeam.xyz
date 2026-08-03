@@ -2,7 +2,6 @@
 
 import './registerParts'
 
-import { useRouter } from 'next/navigation'
 import { useCallback, useRef, useState } from 'react'
 
 import { ParamControls, useHasParams } from '@villagekit/parameters'
@@ -12,6 +11,7 @@ import { Text, VStack } from '@villagekit/ui'
 
 import { CatalogueItem, type CatalogueItemHandle } from '@/app/_components/catalogue'
 import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
+import { replaceUrl } from '@/app/_lib/url-state'
 
 import { DesignCuttingPlan } from './DesignCuttingPlan'
 import { PartsBreakdown } from './PartsBreakdown'
@@ -23,14 +23,10 @@ export interface DesignViewerProps {
 
 export function DesignViewer(props: DesignViewerProps) {
   const { meta, code } = props
-  const router = useRouter()
 
-  const onLocationUpdate = useCallback(
-    (nextLocation: Location) => {
-      router.replace(`${nextLocation.pathname}${nextLocation.search}`, { scroll: false })
-    },
-    [router],
-  )
+  const onLocationUpdate = useCallback((nextLocation: Location) => {
+    replaceUrl(`${nextLocation.pathname}${nextLocation.search}`)
+  }, [])
 
   return (
     <ProductProvider
@@ -60,7 +56,7 @@ function DesignViewerContent(props: DesignViewerContentProps) {
       ref={itemRef}
       title={label}
       description={description}
-      preview={<ProductView />}
+      preview={<ProductView showParamControls={hasParams} />}
       controls={
         <>
           {hasParams && <ParamControls />}

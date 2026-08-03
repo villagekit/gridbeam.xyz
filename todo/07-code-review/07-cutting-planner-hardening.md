@@ -25,6 +25,9 @@ URL decode clamped to the same bounds the UI enforces (size and count caps + a m
 
 ## Notes
 
+- The planner's URL *write* already moved off `router.replace` onto `replaceUrl`
+  (`app/_lib/url-state.ts`) in [task 05](./05-design-viewer-url-state.md) — "Plan" no longer
+  refetches the page from the worker. The decode side is untouched and still this task's job.
 - Wiggle room: exact line numbers will have drifted; the shapes to look for are the `decodeQuotas` regex/parse block, the auto-run mount effect, and the two summary computations.
 - Do NOT touch `algorithm.ts` logic — the FFD port was verified faithful (all four legacy Jest cases byte-identical) and its infeasibility fix is correct and properly cited. The only algorithm-adjacent note: `beamsToBeamQuotas` lists quotas in Map insertion order vs legacy's ascending-size order — cosmetic, fix only if trivial.
 - UI copy/default deviations (button text, default quantities, Switch→Select with the 30 gu option) are handled in `./11-copy-reconciliation.md`, not here.

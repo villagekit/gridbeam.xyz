@@ -21,7 +21,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 02 | [Correct the privacy policy (Cloudflare + Cloudinary)](./02-privacy-policy.md) | Medium | DONE |
 | 03 | [Unsourced FAQ claims + supplier-page promises](./03-faq-and-suppliers-claims.md) | Medium, decision-gated | DONE |
 | 04 | [Restore missing photo in how-to-cut-grid-beams](./04-restore-cut-alignment-photo.md) | High | DONE |
-| 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | TODO |
+| 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | DONE |
 | 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | TODO |
 | 07 | [Cutting planner hardening (URL decode clamp + small fixes)](./07-cutting-planner-hardening.md) | High | TODO |
 | 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | TODO |
@@ -33,6 +33,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 14 | [Metadata, config, and doc-drift cleanup](./14-metadata-and-config-cleanup.md) | Low | TODO |
 | 15 | [Small parity nits batch (visual / a11y)](./15-parity-nits.md) | Low | TODO |
 | 16 | [Self-host detect-gpu benchmarks (drop unpkg.com request)](./16-self-host-gpu-benchmarks.md) | Medium, touches `../gridkit` | TODO |
+| 17 | [Sandbox controls are invisible (Chakra v3 CSS regressions)](./17-sandbox-chakra-v3-css.md) | High, touches `../gridkit` | TODO |
 
 ## What the review found was GOOD (don't churn these)
 
@@ -46,7 +47,7 @@ For calibration — these were explicitly verified as sound; don't "improve" the
 
 ## Cross-stream relationships
 
-- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead. Task 16 has the same shape against `villagekit/gridkit` — batch the two releases if possible.
+- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead. Tasks 16 and 17 have the same shape against `villagekit/gridkit` — batch the releases if possible.
 - Task 04 requires `../media` and `pnpm sync-media` (see `../04-content/02-image-hosting.md` for the media pipeline).
 - Task 11 re-opens copy that Stream 06 tasks marked DONE — that's expected; Stream 06 audited screenshots, not the wording-vs-legacy diff.
 - Stream 05 (retire `../node-modules`) remains blocked until this stream and Stream 06 are done.
