@@ -124,10 +124,10 @@ export default async function HomePage() {
                 . Eco-friendly, adaptable, and fun for the whole family.
               </Text>
               <HStack gap="3" flexWrap="wrap">
-                <LinkButton href="/designs" size="lg">
+                <LinkButton as={NextLink} href="/designs" size="lg">
                   Browse designs
                 </LinkButton>
-                <LinkButton href="/about" variant="secondary" size="lg">
+                <LinkButton as={NextLink} href="/about" variant="secondary" size="lg">
                   What is grid beam?
                 </LinkButton>
               </HStack>
@@ -190,7 +190,7 @@ export default async function HomePage() {
               fasteners, and you have a desk, a shelf, or a coffee table — take it apart and it's
               something else.
             </Text>
-            <LinkButton href="/about" variant="secondary" size="lg">
+            <LinkButton as={NextLink} href="/about" variant="secondary" size="lg">
               Read the full intro
             </LinkButton>
           </LandingColumn>
@@ -254,7 +254,7 @@ export default async function HomePage() {
             </List.Root>
 
             <Flex justifyContent="center" pt="2">
-              <LinkButton href="/designs" size="lg">
+              <LinkButton as={NextLink} href="/designs" size="lg">
                 Browse designs
               </LinkButton>
             </Flex>
@@ -277,7 +277,7 @@ export default async function HomePage() {
             ))}
           </SimpleGrid>
           <Flex justifyContent="center" pt="2">
-            <LinkButton href="/stories" variant="secondary">
+            <LinkButton as={NextLink} href="/stories" variant="secondary">
               Read all stories
             </LinkButton>
           </Flex>
@@ -357,18 +357,21 @@ export default async function HomePage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
           <LinkCard
+            linkComponent={NextLink}
             title="Cutting planner"
             icon={<FaCut />}
             description="Work out how many full-length beams to buy, and how to cut them with the least off-cut waste."
             href="/tools/cutting-planner"
           />
           <LinkCard
+            linkComponent={NextLink}
             title="Suppliers"
             icon={<FaShoppingBag />}
             description="Already-cut grid beams and panels from suppliers around the world. We don't sell parts; we link to people who do."
             href="/suppliers"
           />
           <LinkCard
+            linkComponent={NextLink}
             title="Tools & resources"
             icon={<FaTools />}
             description="Everything else built into the site — engine source, FAQ, how-tos, community links."
@@ -395,7 +398,7 @@ export default async function HomePage() {
               <LinkButton href="https://github.com/villagekit" isExternal>
                 GitHub
               </LinkButton>
-              <LinkButton href="/subscribe" variant="secondary">
+              <LinkButton as={NextLink} href="/subscribe" variant="secondary">
                 Subscribe to the newsletter
               </LinkButton>
             </HStack>

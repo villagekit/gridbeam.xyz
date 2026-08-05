@@ -3,6 +3,7 @@
 import { Box, Heading, LinkButton, Span, Text, VisuallyHidden } from '@villagekit/ui'
 import { motion, useInView, useReducedMotion } from 'motion/react'
 import NextImage from 'next/image'
+import NextLink from 'next/link'
 import pluralize from 'pluralize-esm'
 import { useRef } from 'react'
 
@@ -63,7 +64,7 @@ export function TypingDesignSection(props: TypingDesignSectionProps) {
               space.
             </Text>
 
-            <LinkButton href="/designs" variant="secondary">
+            <LinkButton as={NextLink} href="/designs" variant="secondary">
               Explore the design catalogue
             </LinkButton>
           </LandingColumn>

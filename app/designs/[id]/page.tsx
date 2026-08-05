@@ -1,5 +1,6 @@
 import { LinkButton, Main, Section, SkipNavContent, Text, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { DesignViewerDynamic } from '@/app/_components/design/DesignViewerDynamic'
@@ -60,7 +61,7 @@ export default async function DesignPage({ params }: DesignPageProps) {
       <Section index={1} maxW="6xl" colorPalette="gray">
         <VStack alignItems="flex-start" gap="4" maxW="3xl">
           <Text fontSize="lg">Find a supplier for the parts on the suppliers page.</Text>
-          <LinkButton href="/suppliers" variant="primary">
+          <LinkButton as={NextLink} href="/suppliers" variant="primary">
             Find suppliers
           </LinkButton>
         </VStack>

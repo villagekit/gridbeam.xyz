@@ -1,6 +1,7 @@
 'use client'
 
 import { Container, Footer, HStack, Icon, Link, Text, VStack } from '@villagekit/ui'
+import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 import {
   FaEnvelope,
@@ -117,6 +118,7 @@ function SocialIconLink(props: SocialLinkDescriptor) {
 
   return (
     <Link
+      as={isExternal ? undefined : NextLink}
       href={href}
       variant="tertiary"
       aria-label={label}

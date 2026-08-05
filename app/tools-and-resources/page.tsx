@@ -9,6 +9,7 @@ import {
   Title,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 import {
   FaBookOpen,
@@ -131,6 +132,7 @@ export default function ToolsAndResourcesPage() {
           {tools.map((entry) => (
             <LinkCard
               key={entry.href}
+              linkComponent={entry.isExternal ? undefined : NextLink}
               title={entry.title}
               icon={entry.icon}
               description={entry.description}
@@ -149,6 +151,7 @@ export default function ToolsAndResourcesPage() {
           {resources.map((entry) => (
             <LinkCard
               key={entry.href}
+              linkComponent={entry.isExternal ? undefined : NextLink}
               title={entry.title}
               icon={entry.icon}
               description={entry.description}

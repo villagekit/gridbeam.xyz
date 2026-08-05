@@ -10,6 +10,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 import { FaEnvelope, FaGithub } from 'react-icons/fa'
 
 const title = 'Newsletter'
@@ -61,6 +62,7 @@ export default function SubscribePage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
           <LinkCard
+            linkComponent={NextLink}
             title="Email the maintainer"
             icon={<FaEnvelope />}
             description="Drop a quick note via the contact page and ask to be told when signups open. Same channel for any other newsletter questions."

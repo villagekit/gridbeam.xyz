@@ -16,6 +16,7 @@ import {
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextImage from 'next/image'
+import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 import { FaCubes, FaShoppingBag, FaTools } from 'react-icons/fa'
 
@@ -182,18 +183,21 @@ export default function AboutPage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
           <LinkCard
+            linkComponent={NextLink}
             title="Browse designs"
             icon={<FaCubes />}
             description="A catalogue of beds, desks, shelves, and more — every part listed, every cut measured."
             href="/designs"
           />
           <LinkCard
+            linkComponent={NextLink}
             title="Plan a build"
             icon={<FaTools />}
             description="The cutting planner works out how many beams to buy and how to cut them with the least off-cut waste."
             href="/tools-and-resources"
           />
           <LinkCard
+            linkComponent={NextLink}
             title="Find parts"
             icon={<FaShoppingBag />}
             description="A directory of suppliers around the world. We don't sell parts; we link to people who do."
@@ -202,7 +206,7 @@ export default function AboutPage() {
         </SimpleGrid>
         <Flex justifyContent="center" pt="2">
           <HStack gap="3" flexWrap="wrap">
-            <LinkButton href="/faq" variant="secondary">
+            <LinkButton as={NextLink} href="/faq" variant="secondary">
               Read the FAQ
             </LinkButton>
             <LinkButton href="https://github.com/villagekit" variant="secondary" isExternal>

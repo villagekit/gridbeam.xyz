@@ -42,7 +42,7 @@
     "@villagekit/product": "^0.10.0",
     "@villagekit/product-kit": "^0.10.0",
     "@villagekit/sandbox": "^0.10.0",
-    "@villagekit/ui": "^1.1.1",
+    "@villagekit/ui": "^1.2.0",
     "@xstate/react": "^6.0.0",
     "motion": "^12.38.0",
     "next": "^15.5.18",

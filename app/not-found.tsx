@@ -11,6 +11,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 
 const title = 'Page not found'
 const description =
@@ -53,8 +54,10 @@ export default function NotFound() {
               </Text>
             </VStack>
             <HStack gap="3" flexWrap="wrap" justifyContent="center">
-              <LinkButton href="/">Home</LinkButton>
-              <LinkButton href="/designs" variant="secondary">
+              <LinkButton as={NextLink} href="/">
+                Home
+              </LinkButton>
+              <LinkButton as={NextLink} href="/designs" variant="secondary">
                 Browse designs
               </LinkButton>
             </HStack>

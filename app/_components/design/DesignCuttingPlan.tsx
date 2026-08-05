@@ -108,7 +108,7 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
       )}
 
       <HStack justifyContent="flex-end">
-        <LinkButton href={plannerHref} variant="secondary" size="sm">
+        <LinkButton as={NextLink} href={plannerHref} variant="secondary" size="sm">
           Open in cutting planner
         </LinkButton>
       </HStack>

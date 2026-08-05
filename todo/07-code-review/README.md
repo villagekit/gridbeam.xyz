@@ -22,7 +22,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 03 | [Unsourced FAQ claims + supplier-page promises](./03-faq-and-suppliers-claims.md) | Medium, decision-gated | DONE |
 | 04 | [Restore missing photo in how-to-cut-grid-beams](./04-restore-cut-alignment-photo.md) | High | DONE |
 | 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | DONE |
-| 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | TODO |
+| 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | DONE |
 | 07 | [Cutting planner hardening (URL decode clamp + small fixes)](./07-cutting-planner-hardening.md) | High | TODO |
 | 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | TODO |
 | 09 | [Swap hand-rolled CutBeamSvg for CutGridBeamSvg](./09-cutgridbeamsvg-swap.md) | Medium | TODO |
@@ -34,6 +34,8 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 15 | [Small parity nits batch (visual / a11y)](./15-parity-nits.md) | Low | TODO |
 | 16 | [Self-host detect-gpu benchmarks (drop unpkg.com request)](./16-self-host-gpu-benchmarks.md) | Medium, touches `../gridkit` | TODO |
 | 17 | [Sandbox controls are invisible (Chakra v3 CSS regressions)](./17-sandbox-chakra-v3-css.md) | High, touches `../gridkit` | TODO |
+| 18 | [LinkCard's overlay anchor has no accessible name](./18-linkcard-accessible-name.md) | Medium, touches `../ui` | TODO |
+| 19 | [`@villagekit/ui` claims Next is optional but hard-requires it](./19-ui-next-peer-dependency.md) | Low, touches `../ui` | TODO |
 
 ## What the review found was GOOD (don't churn these)
 

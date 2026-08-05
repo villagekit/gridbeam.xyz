@@ -11,6 +11,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 
 const title = 'FAQ'
@@ -52,7 +53,7 @@ const categories: Array<FaqCategory> = [
             regularly-spaced holes that bolt together with a hex key. Developed by Phil and Richard
             Jergenson in the 1970s, building on the open-construction work of Ken Isaacs; this site
             catalogues the 40 mm flavour.{' '}
-            <Link variant="paragraph" href="/about">
+            <Link as={NextLink} variant="paragraph" href="/about">
               Learn more
             </Link>
             .
@@ -66,7 +67,7 @@ const categories: Array<FaqCategory> = [
             No special tools — basic hand tools and a 4 mm hex key are enough for almost every
             build. A measuring tape and a saw if you're cutting beams to length yourself. For help
             on assembly, see our guide{' '}
-            <Link variant="paragraph" href="/stories/how-to-furniture-bolts">
+            <Link as={NextLink} variant="paragraph" href="/stories/how-to-furniture-bolts">
               How to Install Furniture Bolts
             </Link>
             .
@@ -81,7 +82,7 @@ const categories: Array<FaqCategory> = [
             untreated locally-sourced pine, with plywood panels and stainless steel fasteners; the
             original Imperial grid beam is sold in tan oak. Anything that holds a bolt on the grid
             works — see the{' '}
-            <Link variant="paragraph" href="/suppliers">
+            <Link as={NextLink} variant="paragraph" href="/suppliers">
               suppliers page
             </Link>{' '}
             for what each supplier actually stocks.
@@ -183,7 +184,7 @@ const categories: Array<FaqCategory> = [
         answer: (
           <>
             See the{' '}
-            <Link variant="paragraph" href="/suppliers">
+            <Link as={NextLink} variant="paragraph" href="/suppliers">
               suppliers page
             </Link>{' '}
             — we list manufacturers and resellers that make grid beam, panels, and compatible
@@ -221,7 +222,7 @@ const categories: Array<FaqCategory> = [
         question: 'I have an idea for a custom design — can you help?',
         answer: (
           <>
-            <Link variant="paragraph" href="/contact">
+            <Link as={NextLink} variant="paragraph" href="/contact">
               Get in touch
             </Link>
             . We're happy to discuss new designs, especially if you're willing to publish them back
@@ -268,7 +269,7 @@ const categories: Array<FaqCategory> = [
               discuss.villagekit.com
             </Link>{' '}
             — the community forum. If you'd rather email,{' '}
-            <Link variant="paragraph" href="/contact">
+            <Link as={NextLink} variant="paragraph" href="/contact">
               contact us
             </Link>{' '}
             and we'll point you at the right thread.
@@ -329,7 +330,7 @@ export default function FaqPage() {
 
             <Text>
               Question not answered here?{' '}
-              <Link variant="paragraph" href="/contact">
+              <Link as={NextLink} variant="paragraph" href="/contact">
                 Send us an email
               </Link>{' '}
               or ask on the{' '}

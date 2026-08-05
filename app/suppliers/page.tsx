@@ -17,6 +17,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 
 import { type Supplier, type SupplierOffering, suppliers } from '../../content/suppliers'
 
@@ -59,7 +60,7 @@ export default function SuppliersPage() {
         <Container maxW="3xl">
           <Text fontSize="lg" textAlign="center">
             This site catalogues the{' '}
-            <Link variant="paragraph" href="/about">
+            <Link as={NextLink} variant="paragraph" href="/about">
               40&nbsp;mm flavour
             </Link>{' '}
             of grid beam. We also list suppliers of the original Imperial flavour for completeness —
@@ -92,7 +93,7 @@ export default function SuppliersPage() {
             <VStack alignItems="flex-start" gap="5">
               <Text>
                 If you make or stock grid-beam-compatible hardware,{' '}
-                <Link variant="paragraph" href="/contact">
+                <Link as={NextLink} variant="paragraph" href="/contact">
                   get in touch
                 </Link>{' '}
                 — we'll add you. Until then, two paths:
@@ -101,7 +102,7 @@ export default function SuppliersPage() {
                 <Text>
                   <Span fontWeight="bold">Build your own.</Span> A drill press and a jig is enough
                   to mill beams in your own workshop. The{' '}
-                  <Link variant="paragraph" href="/stories/how-to-cut-grid-beams">
+                  <Link as={NextLink} variant="paragraph" href="/stories/how-to-cut-grid-beams">
                     How to mark and cut grid beams
                   </Link>{' '}
                   story walks through the basics.
@@ -136,7 +137,7 @@ export default function SuppliersPage() {
             <Text>
               <Span fontWeight="bold">What "compatible" means.</Span> Your beams (or panels, or
               fasteners) honour the{' '}
-              <Link variant="paragraph" href="/about">
+              <Link as={NextLink} variant="paragraph" href="/about">
                 40&nbsp;mm grid
               </Link>{' '}
               — 40&nbsp;mm hole spacing, 8&nbsp;mm hole diameter, M6 bolts. We're material-agnostic
@@ -148,13 +149,15 @@ export default function SuppliersPage() {
             </Text>
             <Text>
               <Span fontWeight="bold">How to apply.</Span>{' '}
-              <Link variant="paragraph" href="/contact">
+              <Link as={NextLink} variant="paragraph" href="/contact">
                 Contact us
               </Link>{' '}
               with your shop URL and a short blurb about what you make.
             </Text>
             <Flex justifyContent="center" pt="2" w="full">
-              <LinkButton href="/contact">Become a supplier</LinkButton>
+              <LinkButton as={NextLink} href="/contact">
+                Become a supplier
+              </LinkButton>
             </Flex>
           </VStack>
         </Container>

@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@villagekit/ui'
 import type { Metadata } from 'next'
+import NextLink from 'next/link'
 import { FaCode, FaUserShield } from 'react-icons/fa'
 
 import { ObfuscatedEmailLink } from '../_components/ObfuscatedEmail'
@@ -50,6 +51,7 @@ export default function LegalPage() {
         </Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
           <LinkCard
+            linkComponent={NextLink}
             title="Privacy policy"
             icon={<FaUserShield />}
             description="What we collect, what we don't, and what we do with anything you send us. Short — we collect almost nothing."
