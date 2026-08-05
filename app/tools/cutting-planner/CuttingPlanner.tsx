@@ -16,9 +16,10 @@ import {
   Text,
   VStack,
   VisuallyHidden,
+  chakra,
 } from '@villagekit/ui'
 import { useSearchParams } from 'next/navigation'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import {
   CutBeamSvg,
@@ -33,8 +34,8 @@ import {
   type UnlimitedStock,
   firstFitDecreasing,
   totalCutLength,
+  totalPlacedLength,
   totalRemainderLength,
-  totalRequiredLength,
 } from './algorithm'
 
 const PRINT_STYLES = `
@@ -63,6 +64,29 @@ const DEFAULT_STOCK: Array<BeamQuota> = []
 const DEFAULT_UNLIMITED: UnlimitedStock = 60
 const DEFAULT_DISPLAY: DisplayUnit = 'gu'
 
+// Bounds shared by the number inputs and the URL decode, so the two can't disagree about what
+// a plan may contain. Legacy's were size 2–60, count 1–50
+// (packages/applet-cutting-planner/src/components/beam-row.tsx).
+//
+// Size is bounded only by what the packing can model, at either end — legacy's 2–60 window was
+// safe for legacy, which had no design pages linking in. Ours do, and they emit beams outside it:
+//   - `sign-board` at full size wants an 80 gu cut, and its own page says "too long for the 60 gu
+//     stock, open the cutting planner to use longer stock". A ceiling makes that instruction
+//     impossible to follow, and since the number input clamps on blur, merely tabbing through an
+//     80 gu row would rewrite it to 60 and produce a confident, wrong plan.
+//   - `utility-workbench` emits a 1 gu beam at some parameters, which a floor of 2 silently drops.
+// Neither bound bought any safety: cost scales with the number of beams, not their length. What
+// does need a floor is the pack itself — a cut of 0 or less always "fits", so it is meaningless
+// as a cut. (A 0 gu beam is reachable from `utility-workbench`; that's an upstream bug, see
+// todo/07-code-review/20-utility-workbench-degenerate-beams.md.)
+const MIN_SIZE = 1
+const MIN_COUNT = 1
+const MAX_COUNT = 50
+// Row cap for the table and the URL decode alike. Legacy needed none — it had no URL state and
+// no share link to round-trip. 60 rows is an order of magnitude past any real plan (the largest
+// design in ./products needs 7) and bounds a decoded plan at MAX_ROWS × MAX_COUNT = 3000 beams.
+const MAX_ROWS = 60
+
 export function CuttingPlanner() {
   const searchParams = useSearchParams()
 
@@ -72,17 +96,18 @@ export function CuttingPlanner() {
   const [stockBeams, setStockBeams] = useState<Array<BeamQuota>>(initial.stock)
   const [hasUnlimitedStock, setHasUnlimitedStock] = useState<UnlimitedStock>(initial.unlimited)
   const [displayUnit, setDisplayUnit] = useState<DisplayUnit>(initial.display)
-  const [result, setResult] = useState<CuttingPlannerOutput | null>(null)
-
-  // Auto-plan on first mount if URL state was present (so a shared link shows the result).
-  const didAutoPlan = useRef(false)
-  useEffect(() => {
-    if (didAutoPlan.current) return
-    didAutoPlan.current = true
-    if (initial.hasState) {
-      setResult(firstFitDecreasing({ requiredBeams, stockBeams, hasUnlimitedStock }))
-    }
-  }, [initial.hasState, requiredBeams, stockBeams, hasUnlimitedStock])
+  // Plan straight away when the URL carried state, so a shared link lands on its result.
+  // A lazy initialiser rather than a mount effect: it is the same run-once semantics without
+  // the ref guard, and it avoids rendering the empty state for a frame first.
+  const [result, setResult] = useState<CuttingPlannerOutput | null>(() =>
+    initial.hasState && initial.required.length > 0
+      ? firstFitDecreasing({
+          requiredBeams: initial.required,
+          stockBeams: initial.stock,
+          hasUnlimitedStock: initial.unlimited,
+        })
+      : null,
+  )
 
   const handlePlan = useCallback(() => {
     setResult(firstFitDecreasing({ requiredBeams, stockBeams, hasUnlimitedStock }))
@@ -96,15 +121,29 @@ export function CuttingPlanner() {
   }, [requiredBeams, stockBeams, hasUnlimitedStock, displayUnit])
 
   const handlePrint = useCallback(() => {
-    if (typeof window !== 'undefined') window.print()
+    window.print()
   }, [])
 
   return (
     <>
       <style>{PRINT_STYLES}</style>
 
-      <Section index={1} maxW="6xl" className="vk-cutting-controls" colorPalette="gray">
+      <Section
+        index={1}
+        aria-label="Controls"
+        maxW="6xl"
+        className="vk-cutting-controls"
+        colorPalette="gray"
+      >
         <VStack alignItems="stretch" gap="6">
+          {/* A dropped entry leaves a table that looks like the whole plan. Say so, or the
+              planner is as misleading as the truncation this avoids. */}
+          {initial.dropped && (
+            <Text variant="tertiary" color="red.700" textAlign="center">
+              Some beams in that link were out of range and have been left out.
+            </Text>
+          )}
+
           <Stack direction={{ base: 'column', md: 'row' }} gap="6" alignItems="stretch">
             <BeamsTable
               title="Beams you want"
@@ -130,14 +169,14 @@ export function CuttingPlanner() {
             flexWrap="wrap"
           >
             <HStack gap="3">
-              {/* Plain <label> for the Select; Chakra's polymorphic `as`
-                  doesn't widen htmlFor onto Box/Text props in v3. */}
-              <label
-                htmlFor="unlimited-stock"
-                style={{ fontSize: '0.875rem', color: 'var(--chakra-colors-gray-600)' }}
-              >
-                Top up with full-length beams
-              </label>
+              {/* Legacy's shape was `FormLabel > Text variant="tertiary"`. `chakra.label`
+                  stands in for FormLabel because Chakra v3's `FieldLabel` needs a `Field.Root`
+                  and its polymorphic `as` doesn't widen htmlFor onto Text's props. */}
+              <chakra.label htmlFor="unlimited-stock">
+                <Text as="span" fontSize="sm" variant="tertiary">
+                  Top up with full-length beams
+                </Text>
+              </chakra.label>
               <Select.Root size="sm" maxW="36">
                 <Select.Field
                   id="unlimited-stock"
@@ -168,14 +207,20 @@ export function CuttingPlanner() {
       </Section>
 
       {result != null && (
-        <Section index={2} maxW="6xl" className="vk-cutting-result" colorPalette="gray">
+        <Section
+          index={2}
+          aria-label="Cut beams"
+          maxW="6xl"
+          className="vk-cutting-result"
+          colorPalette="gray"
+        >
           <VStack alignItems="stretch" gap="6">
             <Center>
               <Heading as="h2" size="lg">
                 Cutting plan
               </Heading>
             </Center>
-            <ResultSummary result={result} required={requiredBeams} displayUnit={displayUnit} />
+            <ResultSummary result={result} displayUnit={displayUnit} />
             {result.cutBeams.length > 0 && (
               <VStack alignItems="stretch" gap="3">
                 {result.cutBeams.map((beam, i) => (
@@ -194,7 +239,7 @@ export function CuttingPlanner() {
       )}
 
       {result != null && (result.infeasibleBeams.length > 0 || result.unusedBeams.length > 0) && (
-        <Section index={3} maxW="6xl">
+        <Section index={3} aria-label="Uncut beams" maxW="6xl">
           <Stack direction={{ base: 'column', md: 'row' }} gap="6" alignItems="stretch">
             {result.infeasibleBeams.length > 0 && (
               <Box flex="1" className="vk-cutting-infeasible">
@@ -310,7 +355,15 @@ function BeamsTable(props: BeamsTableProps) {
             <Table.Row>
               <Table.Cell colSpan={3}>
                 <Center>
-                  <Button onClick={handleAdd} variant="secondary" size="sm">
+                  {/* Capped at MAX_ROWS so the table can't build a plan its own share link
+                      would truncate on the way back in. No tooltip explaining the cap: a
+                      `disabled` button fires no mouse events, so `title` would never show. */}
+                  <Button
+                    onClick={handleAdd}
+                    disabled={beams.length >= MAX_ROWS}
+                    variant="secondary"
+                    size="sm"
+                  >
                     <PlusIcon /> Add row
                   </Button>
                 </Center>
@@ -335,8 +388,7 @@ function BeamSizeInput(props: BeamSizeInputProps) {
     <NumberInput.Root
       size="sm"
       value={Number.isFinite(value) ? String(value) : ''}
-      min={2}
-      max={60}
+      min={MIN_SIZE}
       step={1}
       disabled={disabled}
       onValueChange={({ valueAsNumber }) => {
@@ -366,8 +418,8 @@ function BeamCountInput(props: BeamCountInputProps) {
     <NumberInput.Root
       size="sm"
       value={Number.isFinite(value) ? String(value) : ''}
-      min={1}
-      max={50}
+      min={MIN_COUNT}
+      max={MAX_COUNT}
       step={1}
       disabled={disabled}
       onValueChange={({ valueAsNumber }) => {
@@ -394,7 +446,11 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
   const { value, onChange } = props
   return (
     <HStack gap="2">
-      <Text fontSize="sm" variant="secondary">
+      {/* aria-hidden because the switch carries the whole announcement, so a bare "gu" / "mm"
+          either side would just be noise. Legacy also made these clickable (they were FormLabels
+          bound to the switch); these are plain text, which is a smaller click target than legacy
+          offered — see todo/07-code-review/15-parity-nits.md. */}
+      <Text fontSize="sm" variant="secondary" aria-hidden>
         gu
       </Text>
       <Switch.Root
@@ -406,8 +462,15 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
         <Switch.Control>
           <Switch.Thumb />
         </Switch.Control>
+        {/* Legacy named this control explicitly (display-unit-toggle.tsx); the port dropped it.
+            It goes in Switch.Label rather than an aria-label because Switch.Root unconditionally
+            points the input's aria-labelledby here, and a real element beats the dangling idref
+            an aria-label-only version would leave behind. */}
+        <Switch.Label>
+          <VisuallyHidden>Display units as millimeters or grid units</VisuallyHidden>
+        </Switch.Label>
       </Switch.Root>
-      <Text fontSize="sm" variant="secondary">
+      <Text fontSize="sm" variant="secondary" aria-hidden>
         mm
       </Text>
     </HStack>
@@ -416,13 +479,14 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
 
 interface ResultSummaryProps {
   result: CuttingPlannerOutput
-  required: Array<BeamQuota>
   displayUnit: DisplayUnit
 }
 
 function ResultSummary(props: ResultSummaryProps) {
-  const { result, required, displayUnit } = props
-  const totalRequired = totalRequiredLength(required)
+  const { result, displayUnit } = props
+  // Placed, not required: with infeasible cuts in play the required total doesn't reconcile
+  // against the stock used. These three always satisfy `placed + waste === stock used`.
+  const totalPlaced = totalPlacedLength(result.cutBeams)
   const totalCut = totalCutLength(result.cutBeams)
   const totalWaste = totalRemainderLength(result.cutBeams)
 
@@ -434,7 +498,7 @@ function ResultSummary(props: ResultSummaryProps) {
           {formatLength(totalCut, displayUnit)}.
         </Text>
         <Text variant="secondary">
-          Required cuts total {formatLength(totalRequired, displayUnit)}; off-cut waste{' '}
+          Cuts placed total {formatLength(totalPlaced, displayUnit)}; off-cut waste{' '}
           {formatLength(totalWaste, displayUnit)}.
         </Text>
         {result.infeasibleBeams.length > 0 && (
@@ -470,10 +534,19 @@ function plural(noun: string, n: number): string {
   return n === 1 ? noun : `${noun}s`
 }
 
-function parseUnlimited(value: string): UnlimitedStock {
+function tryParseUnlimited(value: string | null): UnlimitedStock | null {
   if (value === '30') return 30
   if (value === '60') return 60
-  return false
+  if (value === 'false') return false
+  return null
+}
+
+// Trusted input: the Select's option values are literals a few lines up, so anything else is a
+// bug in this file rather than user data. Legacy threw here too (cutting-planner.tsx:86-95).
+function parseUnlimited(value: string): UnlimitedStock {
+  const parsed = tryParseUnlimited(value)
+  if (parsed == null) throw new Error(`Unexpected unlimited-stock value: ${value}`)
+  return parsed
 }
 
 interface UrlState {
@@ -482,30 +555,68 @@ interface UrlState {
   unlimited: UnlimitedStock
   display: DisplayUnit
   hasState: boolean
+  dropped: boolean
 }
 
 function decodeUrlState(params: URLSearchParams): UrlState {
-  const required = decodeQuotas(params.get('r')) ?? DEFAULT_REQUIRED
-  const stock = decodeQuotas(params.get('s')) ?? DEFAULT_STOCK
-  const unlimited = parseUnlimited(params.get('u') ?? String(DEFAULT_UNLIMITED))
+  const required = decodeQuotas(params.get('r'))
+  const stock = decodeQuotas(params.get('s'))
+  // Untrusted: an unrecognised `?u=` falls back to the default rather than to `false`, which is
+  // a real setting ("use only stock") and would quietly change the plan a typo'd link produces.
+  const unlimited = tryParseUnlimited(params.get('u')) ?? DEFAULT_UNLIMITED
   const display = params.get('d') === 'mm' ? 'mm' : DEFAULT_DISPLAY
-  const hasState = params.has('r') || params.has('s')
-  return { required, stock, unlimited, display, hasState }
+  return {
+    required: required?.quotas ?? DEFAULT_REQUIRED,
+    stock: stock?.quotas ?? DEFAULT_STOCK,
+    unlimited,
+    display,
+    hasState: params.has('r') || params.has('s'),
+    dropped: (required?.dropped ?? false) || (stock?.dropped ?? false),
+  }
 }
 
-function decodeQuotas(value: string | null): Array<BeamQuota> | null {
+interface DecodedQuotas {
+  quotas: Array<BeamQuota>
+  /** Whether anything in the parameter was rejected — surfaced rather than swallowed. */
+  dropped: boolean
+}
+
+// The URL is untrusted and the planner plans on mount, so decoded quotas are bounded. Unbounded,
+// `?r=2-9999999` materialises millions of beams in an O(n²) pack and freezes the tab. Only the
+// beam *count* is bounded: cost scales with how many beams there are, not how long they are.
+//
+// Counts above MAX_COUNT are split across rows rather than clamped, since a design can need more
+// of one length than a single row holds (stage at max parameters wants ~288). An entry that
+// doesn't fit in the rows left is dropped whole — never part-placed — because half an entry is a
+// plan nobody asked for, and it would render as confidently as a correct one.
+function decodeQuotas(value: string | null): DecodedQuotas | null {
   if (value == null) return null
-  if (value === '') return []
-  const out: Array<BeamQuota> = []
+  if (value === '') return { quotas: [], dropped: false }
+  const quotas: Array<BeamQuota> = []
+  let dropped = false
   for (const pair of value.split('~')) {
     const [sizeStr, countStr] = pair.split('-')
     const size = Number.parseInt(sizeStr ?? '', 10)
     const count = Number.parseInt(countStr ?? '', 10)
-    if (Number.isFinite(size) && Number.isFinite(count) && size >= 2 && count >= 1) {
-      out.push({ size, count })
+    const rowsNeeded = Math.ceil(count / MAX_COUNT)
+    if (
+      !Number.isInteger(size) ||
+      size < MIN_SIZE ||
+      !Number.isInteger(count) ||
+      count < MIN_COUNT ||
+      rowsNeeded > MAX_ROWS - quotas.length
+    ) {
+      dropped = true
+      continue
+    }
+    let remaining = count
+    while (remaining > 0) {
+      const rowCount = Math.min(remaining, MAX_COUNT)
+      quotas.push({ size, count: rowCount })
+      remaining -= rowCount
     }
   }
-  return out
+  return { quotas, dropped }
 }
 
 function encodeUrlState(state: {

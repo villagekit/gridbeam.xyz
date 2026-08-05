@@ -90,12 +90,14 @@ export function lengthRemaining(beam: CutBeam): number {
   return beam.size - beam.cuts.reduce((sum, cut) => sum + cut, 0)
 }
 
-export function totalRequiredLength(requiredBeams: Array<BeamQuota>): number {
-  return requiredBeams.reduce((sum, { size, count }) => sum + size * count, 0)
-}
-
 export function totalCutLength(cutBeams: Array<OutputBeam>): number {
   return cutBeams.reduce((sum, beam) => sum + beam.size, 0)
+}
+
+// Sums the plan's output, not its input, so `placed + waste === stock used` holds
+// even when some required cuts were infeasible and never made it into a beam.
+export function totalPlacedLength(cutBeams: Array<OutputBeam>): number {
+  return cutBeams.reduce((sum, beam) => sum + beam.cuts.reduce((cuts, cut) => cuts + cut, 0), 0)
 }
 
 export function totalRemainderLength(cutBeams: Array<OutputBeam>): number {

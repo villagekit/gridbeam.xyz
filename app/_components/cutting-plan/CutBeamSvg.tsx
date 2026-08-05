@@ -47,7 +47,9 @@ export function CutBeamSvg(props: CutBeamSvgProps) {
         </Text>
       </HStack>
       <svg
-        viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+        // Stock longer than a standard beam is legal (the planner accepts custom stock), so the
+        // canvas has to grow with it or the bar draws past the right edge.
+        viewBox={`0 0 ${Math.max(VIEW_W, beam.size)} ${VIEW_H}`}
         preserveAspectRatio="none"
         style={{ width: '100%', height: '40px', display: 'block' }}
         role="presentation"

@@ -15,8 +15,8 @@ import {
   type BeamQuota,
   firstFitDecreasing,
   totalCutLength,
+  totalPlacedLength,
   totalRemainderLength,
-  totalRequiredLength,
 } from '@/app/tools/cutting-planner/algorithm'
 
 interface DesignCuttingPlanProps {
@@ -51,7 +51,9 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
     [requiredBeams, stockSize],
   )
 
-  const totalRequired = totalRequiredLength(requiredBeams)
+  // Placed, not required: cuts too long for the stock never enter a beam, so the required
+  // total wouldn't reconcile against the stock used. `placed + waste === stock used` always.
+  const totalPlaced = totalPlacedLength(planResult.cutBeams)
   const totalCut = totalCutLength(planResult.cutBeams)
   const totalWaste = totalRemainderLength(planResult.cutBeams)
 
@@ -85,7 +87,7 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
             {summariseRequired(requiredBeams)}.
           </Text>
           <Text variant="secondary" fontSize="sm">
-            Required cuts total {formatLength(totalRequired, displayUnit)}; off-cut waste{' '}
+            Cuts placed total {formatLength(totalPlaced, displayUnit)}; off-cut waste{' '}
             {formatLength(totalWaste, displayUnit)} from {formatLength(totalCut, displayUnit)} of
             stock.
           </Text>
@@ -123,7 +125,12 @@ function getRequiredBeamsFromParts(parts: Array<PartCreator>): Array<BeamQuota> 
   for (const part of parts) {
     const { spec } = part
     if (spec.type === 'gridbeam') {
-      const size = spec.lengthInGrids
+      // Parametric designs divide to place beams, so lengthInGrids arrives with float drift
+      // (lumber-rack yields both 1.9999999999999991 and 2.000000000000001 for the same beam).
+      // Beams are cut on the 40 mm grid, so the whole number is the real length. Without this
+      // the drift splits one length into two rows, prints "2.000000000000001 gu", and the
+      // planner's URL decode reads 1.9999999999999991 as 1 and drops the row entirely.
+      const size = Math.round(spec.lengthInGrids)
       countBySize[size] = (countBySize[size] ?? 0) + 1
     }
   }

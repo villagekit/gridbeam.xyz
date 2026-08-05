@@ -23,7 +23,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 04 | [Restore missing photo in how-to-cut-grid-beams](./04-restore-cut-alignment-photo.md) | High | DONE |
 | 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | DONE |
 | 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | DONE |
-| 07 | [Cutting planner hardening (URL decode clamp + small fixes)](./07-cutting-planner-hardening.md) | High | TODO |
+| 07 | [Cutting planner hardening (URL decode bounds + small fixes)](./07-cutting-planner-hardening.md) | High | DONE |
 | 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | TODO |
 | 09 | [Swap hand-rolled CutBeamSvg for CutGridBeamSvg](./09-cutgridbeamsvg-swap.md) | Medium | TODO |
 | 10 | [Cloudinary video/media transforms + ui media components](./10-media-transforms.md) | Medium | TODO |
@@ -36,6 +36,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 17 | [Sandbox controls are invisible (Chakra v3 CSS regressions)](./17-sandbox-chakra-v3-css.md) | High, touches `../gridkit` | TODO |
 | 18 | [LinkCard's overlay anchor has no accessible name](./18-linkcard-accessible-name.md) | Medium, touches `../ui` | TODO |
 | 19 | [`@villagekit/ui` claims Next is optional but hard-requires it](./19-ui-next-peer-dependency.md) | Low, touches `../ui` | TODO |
+| 20 | [`utility-workbench` emits 0 gu grid beams](./20-utility-workbench-degenerate-beams.md) | Medium, touches `../products` | TODO |
 
 ## What the review found was GOOD (don't churn these)
 
