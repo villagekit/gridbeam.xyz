@@ -1,6 +1,5 @@
 'use client'
 
-import type { PartCreator } from '@villagekit/part'
 import { ProductKitContext } from '@villagekit/product-kit'
 import { HStack, Link, LinkButton, Text, VStack } from '@villagekit/ui'
 import NextLink from 'next/link'
@@ -18,6 +17,8 @@ import {
   totalPlacedLength,
   totalRemainderLength,
 } from '@/app/tools/cutting-planner/algorithm'
+
+import { getRequiredBeamsFromParts } from './required-beams'
 
 interface DesignCuttingPlanProps {
   displayUnit: DisplayUnit
@@ -116,27 +117,6 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
       </HStack>
     </VStack>
   )
-}
-
-// `parts` is a flat list of individual PartCreators (the kit context flattens
-// any grouped parts before exposing them), so each gridbeam entry == one beam.
-function getRequiredBeamsFromParts(parts: Array<PartCreator>): Array<BeamQuota> {
-  const countBySize: Record<number, number> = {}
-  for (const part of parts) {
-    const { spec } = part
-    if (spec.type === 'gridbeam') {
-      // Parametric designs divide to place beams, so lengthInGrids arrives with float drift
-      // (lumber-rack yields both 1.9999999999999991 and 2.000000000000001 for the same beam).
-      // Beams are cut on the 40 mm grid, so the whole number is the real length. Without this
-      // the drift splits one length into two rows, prints "2.000000000000001 gu", and the
-      // planner's URL decode reads 1.9999999999999991 as 1 and drops the row entirely.
-      const size = Math.round(spec.lengthInGrids)
-      countBySize[size] = (countBySize[size] ?? 0) + 1
-    }
-  }
-  return Object.entries(countBySize)
-    .map(([size, count]) => ({ size: Number(size), count }))
-    .sort((a, b) => b.size - a.size)
 }
 
 function summariseRequired(beams: Array<BeamQuota>): string {

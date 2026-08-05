@@ -36,6 +36,7 @@ None of `../ui`, `../gridkit`, `../products`, `../media`, or `../node-modules` h
 - **Three.js + @react-three/fiber** for the 3D engine work
 - **TypeScript** everywhere
 - **Biome** for lint/format
+- **Vitest** for unit tests (`pnpm test`)
 - **pnpm** at the top level. No workspace setup: `@villagekit/*` packages come from npm; `../media`, `../products`, `../node-modules` are dev-only siblings and run their own `pnpm install` separately
 
 ## Principles
@@ -105,6 +106,12 @@ Complexity is fine when warranted. The point is to be deliberate.
 - Update affected `README.md` / CLAUDE.md as part of the change.
 
 ## Testing
+
+`pnpm test` (Vitest, `vitest.config.ts`) — `pnpm test:watch` while working. Tests live beside the
+code as `*.test.ts` and cover pure TypeScript only: no jsdom, no testing-library. Add them when a
+component genuinely needs rendering, not before. `.github/workflows/check.yml` runs lint, typecheck,
+test and build on pushes to `main` and on every PR. It builds because Cloudflare Workers Builds —
+which is meant to own the build — isn't connected yet; drop that step when it is.
 
 - Don't assume the current code is correct. Before "fixing" a failing test, verify the test isn't already correctly catching a real bug.
 - Before adding tests, identify the specific edge cases worth covering. Don't add tests for coverage's sake.

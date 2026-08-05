@@ -21,7 +21,7 @@ URL decode clamped to the same bounds the UI enforces (size and count caps + a m
 - [x] Check the `u` (unit) and `d` (design/stock) params for the same class of hole while in there.
 - [x] Fix the summary: compute placed-cut totals from `result.cutBeams` so `placed + waste = stock used`, and surface infeasible cuts separately. Same fix in both `CuttingPlanner.tsx` and `DesignCuttingPlan.tsx` — consider extracting one shared summary helper if it stays duplicated.
 - [x] Clean the small slop items listed above (guard, inline style → theme token, section aria-labels, effect deps).
-- [ ] Add the decode bounds + summary reconciliation to the test suite if `./08-tests.md` has landed (URL codec round-trip + clamp cases; infeasible-summary case). — deferred: task 08 hasn't landed. The specific cases to port are listed in Notes and added to `./08-tests.md`.
+- [x] Add the decode bounds + summary reconciliation to the test suite if `./08-tests.md` has landed (URL codec round-trip + clamp cases; infeasible-summary case). — done in [task 08](./08-tests.md), which landed next: the codec moved to `url-codec.ts` and every bound below has a unit test.
 
 ## Notes
 
@@ -119,6 +119,14 @@ tests": the `?r=2-3000` / `?r=2-3001` boundary, split boundaries, sizes outside 
 surviving decode, the whole-entry overflow drop, `tryParseUnlimited` fallbacks,
 `placed + waste === stock used` with non-empty `infeasibleBeams`, and float-drift rounding.
 
+**Follow-up in task 08 (2026-08-06).** Everything above now has unit tests. Two things changed
+while writing them: the codec moved out of the component into
+`app/tools/cutting-planner/url-codec.ts` (behaviour unchanged, re-verified with this task's
+scripts), and pair parsing got stricter. `Number.parseInt` reads leading digits and discards the
+rest, so `2-3-4` decoded as 2×3 and `1.9999999999999991-8` as size 1 — the same float-drift string
+this task stopped `DesignCuttingPlan` from emitting, silently landing on a wrong plan. Pairs are
+now matched whole against `/^(\d+)-(\d+)$/` and anything else is reported through the notice.
+
 **Discovered, not fixed:** `products/utility-workbench` emits a **0 gu** grid beam at some
 parameters, and `lumber-rack` can throw `RangeError: Invalid array length` out of
 `@villagekit/part-gridbeam`. Both are upstream and predate this task — filed as
@@ -128,7 +136,7 @@ parameters, and `lumber-rack` can throw `RangeError: Invalid array length` out o
   (`app/_lib/url-state.ts`) in [task 05](./05-design-viewer-url-state.md) — "Plan" no longer
   refetches the page from the worker. The decode side is untouched and still this task's job.
 - Wiggle room: exact line numbers will have drifted; the shapes to look for are the `decodeQuotas` regex/parse block, the auto-run mount effect, and the two summary computations.
-- Do NOT touch `algorithm.ts` logic — the FFD port was verified faithful (all four legacy Jest cases byte-identical) and its infeasibility fix is correct and properly cited. The only algorithm-adjacent note: `beamsToBeamQuotas` lists quotas in Map insertion order vs legacy's ascending-size order — cosmetic, fix only if trivial.
+- Do NOT touch `algorithm.ts` logic — the FFD port was verified faithful (all four legacy Jest cases byte-identical) and its infeasibility fix is correct and properly cited. The only algorithm-adjacent note: `beamsToBeamQuotas` lists quotas in Map insertion order vs legacy's ascending-size order — cosmetic, fix only if trivial. **Not cosmetic, as it turned out:** required beams are packed largest-first, so encounter order reversed the "Infeasible cuts" table against legacy. Caught by the ported legacy helper test and fixed in [task 08](./08-tests.md).
 - UI copy/default deviations (button text, default quantities, Switch→Select with the 30 gu option) are handled in `./11-copy-reconciliation.md`, not here.
 
 ## Depends on

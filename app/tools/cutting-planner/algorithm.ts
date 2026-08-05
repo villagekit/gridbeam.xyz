@@ -76,6 +76,11 @@ export function beamQuotasToBeams(beamQuotas: Array<BeamQuota>): Array<Beam> {
   return beamQuotas.flatMap(({ size, count }) => Array.from({ length: count }, () => ({ size })))
 }
 
+// Ascending by size, as legacy was: it grouped into a plain object keyed by size, and
+// integer-like keys iterate in ascending numeric order. The port's Map preserved encounter
+// order instead, which reversed the "Infeasible cuts" table (desired beams are packed
+// largest-first). Sorting explicitly also keeps the order defined for non-integer sizes,
+// which legacy's key ordering would have appended in insertion order.
 export function beamsToBeamQuotas(beams: Array<Beam>): Array<BeamQuota> {
   const grouped = new Map<number, BeamQuota>()
   for (const { size } of beams) {
@@ -83,7 +88,7 @@ export function beamsToBeamQuotas(beams: Array<Beam>): Array<BeamQuota> {
     if (existing != null) existing.count += 1
     else grouped.set(size, { count: 1, size })
   }
-  return Array.from(grouped.values())
+  return Array.from(grouped.values()).sort((a, b) => a.size - b.size)
 }
 
 export function lengthRemaining(beam: CutBeam): number {

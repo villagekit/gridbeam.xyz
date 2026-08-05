@@ -24,7 +24,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 05 | [DesignViewer: shallow URL updates, popstate sync, fullscreen params](./05-design-viewer-url-state.md) | High | DONE |
 | 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | DONE |
 | 07 | [Cutting planner hardening (URL decode bounds + small fixes)](./07-cutting-planner-hardening.md) | High | DONE |
-| 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | TODO |
+| 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | DONE |
 | 09 | [Swap hand-rolled CutBeamSvg for CutGridBeamSvg](./09-cutgridbeamsvg-swap.md) | Medium | TODO |
 | 10 | [Cloudinary video/media transforms + ui media components](./10-media-transforms.md) | Medium | TODO |
 | 11 | [Copy-rewrite reconciliation (decision list for Mikey)](./11-copy-reconciliation.md) | Medium, decision-gated | TODO |

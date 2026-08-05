@@ -35,15 +35,15 @@ The cutting planner is one of the most useful things on the legacy site — you 
 
 ## Notes
 - **`<CutGridBeamSvg>` deferred.** Legacy applet rendered cuts via `@villagekit/part-gridbeam`'s SVG component, which depends on the engine submodule (still on Chakra v2 per Stream 03 task 08). Building an inline visualisation here unblocks the website without dragging the engine port forward. Once Stream 03 ships, swapping the inline `<CutBeamSvg>` for the engine's `<CutGridBeamSvg>` is a one-component substitution — both take roughly the same shape (`{ size, cuts, remainder }`).
-- **No test runner yet.** CLAUDE.md flags the cutting planner as a high-value test target. Legacy had Jest tests; this port has no test framework configured in the gridbeam.xyz workspace. Verified parity via `pnpm dlx tsx` one-shots; a follow-up should set up Vitest and port the legacy describe/test cases. Captured as a follow-up.
+- ~~**No test runner yet.**~~ Done 2026-08-06 in [../07-code-review/08-tests.md](../07-code-review/08-tests.md): Vitest is wired up (`pnpm test`) and both legacy suites are ported. The one-shot verification recorded above is now a committed suite — and the ported legacy helper test caught an ordering divergence the one-shots had missed.
 - **Defaults match legacy on screen.** Initial example: `[8 × 10 gu] + [4 × 15 gu]`, no stock, unlimited 60 gu. Same totals + same on-screen ordering as the legacy applet so a returning user sees what they remember.
 - **Unit conversion.** 1 gu = 40 mm. The intro paragraph states this; the display toggle changes the rendered units in the result section (SVG labels, ResultSummary, beam captions, aria-labels). Inputs stay gu — pinning input precision to the algorithm's native unit avoids the round-trip-rounding bug.
 
 ## Follow-ups (separate tasks)
-- **Set up Vitest** in this workspace and port the legacy `first-fit-decreasing.test.ts` describe/test cases. Add coverage for the new edge-case fix (size > unlimited → infeasible). The cutting planner + designs catalog logic + engine math are the highest-value test targets per CLAUDE.md.
+- ~~**Set up Vitest**~~ — done, [../07-code-review/08-tests.md](../07-code-review/08-tests.md).
 - **Reuse the `CuttingPlanner` component on designs-detail pages** when Stream 01 task 06 lands — designs page should embed it pre-populated with that design's cut list.
 - **Swap inline `<CutBeamSvg>` for engine's `<CutGridBeamSvg>`** once Stream 03 task 08 (engine on Chakra v3) is done. The inline version is correct but stylistically simpler than the engine's; the engine renders true-to-spec gridbeam holes + size markers.
-- **Real-browser visual QA.** Same gap as tasks 02–04 / 09 / 10: SSR + algorithm verified, but no live browser testing of the interactive flow (form input → Plan it → URL update → result render → print preview).
+- ~~**Real-browser visual QA.**~~ Covered by [../07-code-review/05-design-viewer-url-state.md](../07-code-review/05-design-viewer-url-state.md), [../07-code-review/07-cutting-planner-hardening.md](../07-code-review/07-cutting-planner-hardening.md) and [../07-code-review/08-tests.md](../07-code-review/08-tests.md), which drove the full flow (input → clamp → Plan it → URL → result → share link back in) against a production build in Playwright. Print preview specifically is still untested.
 - **Consider a `step={5}` shortcut on Beam size input** for the common case of cuts in 5 gu increments (5 gu = 200 mm — typical shelf depth, panel width). Currently `step={1}`, which works but takes more clicks for big sizes. Could be a UX-only NumberInput tweak.
 
 ## Depends on

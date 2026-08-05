@@ -1,0 +1,42 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      # Reads the pnpm version from package.json's `packageManager` field.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm lint
+
+      - run: pnpm typecheck
+
+      - run: pnpm test
+
+      # Cloudflare Workers Builds is meant to own the build, but connecting it is still a
+      # pending user action (todo/01-website/11-deployment-and-seo.md), so today nothing else
+      # would catch a change that typechecks and fails to build. Drop this step once Workers
+      # Builds runs on every push.
+      - run: pnpm build
+
+      # `prebuild` regenerates the committed `designs-data.generated.ts`, so by here it has just
+      # been rebuilt from ./products. A diff means the two have drifted apart.
+      - run: git diff --exit-code app/_lib/designs-data.generated.ts
