@@ -25,7 +25,7 @@ Ordered roughly by severity and suggested attack order. Content-accuracy fixes f
 | 06 | [LinkButton: internal links bypass Next client navigation](./06-linkbutton-nextlink.md) | High, touches `../ui` | DONE |
 | 07 | [Cutting planner hardening (URL decode bounds + small fixes)](./07-cutting-planner-hardening.md) | High | DONE |
 | 08 | [Test infrastructure: Vitest + port legacy cutting-planner suites](./08-tests.md) | High | DONE |
-| 09 | [Swap hand-rolled CutBeamSvg for CutGridBeamSvg](./09-cutgridbeamsvg-swap.md) | Medium | TODO |
+| 09 | [Swap hand-rolled CutBeamSvg for CutGridBeamSvg](./09-cutgridbeamsvg-swap.md) | Medium | DOING — done on branch, blocked on a `part-gridbeam` publish |
 | 10 | [Cloudinary video/media transforms + ui media components](./10-media-transforms.md) | Medium | TODO |
 | 11 | [Copy-rewrite reconciliation (decision list for Mikey)](./11-copy-reconciliation.md) | Medium, decision-gated | TODO |
 | 12 | [ImageCarousel: accessibility + dead half](./12-carousel-a11y.md) | Medium | TODO |
@@ -50,7 +50,7 @@ For calibration — these were explicitly verified as sound; don't "improve" the
 
 ## Cross-stream relationships
 
-- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead. Tasks 16 and 17 have the same shape against `villagekit/gridkit` — batch the releases if possible.
+- Task 06 requires changes in `villagekit/ui` (sibling repo) and an npm publish — coordinate with the Stream 02 release process; publishing needs Mikey's go-ahead. Tasks 09, 16 and 17 have the same shape against `villagekit/gridkit` — batch the releases if possible. Task 09's three fixes are already committed in `../gridkit` (`915085f`, `d4b3e7e`, `e58d700`) and just need the publish.
 - Task 04 requires `../media` and `pnpm sync-media` (see `../04-content/02-image-hosting.md` for the media pipeline).
 - Task 11 re-opens copy that Stream 06 tasks marked DONE — that's expected; Stream 06 audited screenshots, not the wording-vs-legacy diff.
 - Stream 05 (retire `../node-modules`) remains blocked until this stream and Stream 06 are done.
