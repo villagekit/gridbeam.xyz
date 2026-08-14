@@ -10,13 +10,12 @@ import background from '../helpers/background'
 
 const suppliers = [
   {
-    name: 'Original Grid Beam',
-    href: 'https://web.archive.org/web/20200226012424/http://www.gridbeam.com/',
-    isDead: true,
+    name: 'Grid Beam Supply',
+    href: 'https://gridbeamsupply.com/'
   },
   {
     name: 'Grid Kit',
-    href: 'https://gridkit.nz/order',
+    href: 'https://gridkit.nz/',
     logo: '/suppliers/gridkit.svg'
   }
 ]
