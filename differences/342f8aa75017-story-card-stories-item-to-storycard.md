@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: A `StoryCard` difference, filed on `/` where first met; the stories ledger cites it.
+
+- 2026-09-12: On /stories the card also swaps `LinkOverlay isExternal` (`item.tsx:102-103`) for explicit `target="_blank" rel="noopener noreferrer"` (`StoryCard.tsx:81`), a Chakra v3 rename, and keys by slug. Stories ledger, plan 843901f4.

@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note `526d5330`'s ImageCarousel dead half: checked and holds.
+
+- 2026-09-12: The stories ledger cites this for the two newsletters: legacy `StoryImageCarousel` (`apps/gridkit/components/story/story-image-carousel.tsx`) wrapped this component in interactive mode; the current story components have no carousel and the galleries are static grids (see the items on /stories/2021-winter-newsletter and /stories/2022-newsletter). Plan 843901f4.
