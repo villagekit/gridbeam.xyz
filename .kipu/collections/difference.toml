@@ -1,0 +1,56 @@
+version = 1
+root    = "differences"
+
+# The parity ledger: one item per difference between the legacy site and
+# this one, on one route and one axis. Found by the parity skill, judged by
+# a rule or by the operator, closed by a plan.
+
+sort            = "route"
+log_heading     = "## Log"
+outcome_heading = "## Verdict"
+
+# Found by the diff, not yet judged.
+[[state]]
+id       = "open"
+category = "unstarted"
+initial  = true
+
+# Judged worse than legacy; a plan closes it and cites it.
+[[state]]
+id       = "regression"
+category = "started"
+
+# Judged acceptable: the verdict names the rule, or the operator's call.
+[[state]]
+id               = "sanctioned"
+category         = "completed"
+verb             = "sanction"
+requires_outcome = true
+
+# Closed by a plan: the verdict names the plan.
+[[state]]
+id               = "fixed"
+category         = "completed"
+verb             = "fix"
+requires_outcome = true
+
+# Not a real difference (a diff artifact, a duplicate): the verdict says why.
+[[state]]
+id               = "dismissed"
+category         = "canceled"
+verb             = "dismiss"
+requires_outcome = true
+
+# The route the difference is on, as its path (`/`, `/stories`), or `shell`
+# for the header, footer, nav, theme and page layouts every route shares.
+[fields.route]
+type = "string"
+
+[fields.axis]
+type   = "string"
+values = ["visual", "interaction", "accessibility", "copy", "code"]
+
+# Whether the current site changed, added or removed what the legacy site had.
+[fields.kind]
+type   = "string"
+values = ["changed", "added", "removed"]

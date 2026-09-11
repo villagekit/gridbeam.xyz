@@ -1,0 +1,40 @@
+version = 1
+root    = "plans"
+
+sort            = "priority"
+log_heading     = "## Log"
+outcome_heading = "## Outcome"
+
+# Queued: work may begin.
+[[state]]
+id       = "todo"
+category = "unstarted"
+initial  = true
+
+# In flight.
+[[state]]
+id       = "doing"
+category = "started"
+
+# Parked: the trigger for un-parking is prose in the body.
+[[state]]
+id       = "later"
+category = "backlog"
+
+[[state]]
+id       = "done"
+category = "completed"
+verb     = "finish"
+
+# A declined plan says why.
+[[state]]
+id               = "declined"
+category         = "canceled"
+verb             = "decline"
+requires_outcome = true
+
+# The weight that breaks ties among ready items; unset sorts last. Order
+# lives in edges, never here.
+[fields.priority]
+type   = "string"
+values = ["urgent", "high", "medium", "low"]

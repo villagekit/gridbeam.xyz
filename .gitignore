@@ -47,7 +47,7 @@ cloudflare-env.d.ts
 # Vercel
 .vercel
 
-# Stream 06 audit artifacts (generated screenshots + index)
+# Parity audit artifacts (generated screenshots, DOM extractions, index)
 /audit/
 
 # Mac files

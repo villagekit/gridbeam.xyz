@@ -1,0 +1,7 @@
+[relation]
+blocked_by   = { inverse = "blocks", affects_ready = true }
+parent       = { inverse = "child", hierarchy = true }
+derived_from = { inverse = "derives", derivation = true }
+supersedes   = { inverse = "superseded_by" }
+duplicates   = { inverse = "duplicated_by" }
+relates      = { self_inverse = true }

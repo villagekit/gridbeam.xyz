@@ -6,7 +6,7 @@
 // screenshot of both bases and writes audit/<slug>/<width>/{legacy,current}.png. Then
 // generates audit/index.html — a static grid that puts every pair side by side.
 //
-// Stream 06 task 01.
+// The screenshot half of the parity ledger's tooling; `pnpm audit:dom` is the text half.
 //
 // Prerequisites (per machine):
 //   - `pnpm install` (adds the playwright dep)
@@ -80,12 +80,15 @@ function parseArgs(argv) {
   return args
 }
 
+// A route may carry a side marker after the path (`legacy-only`, `current-only`); this
+// script screenshots both sides regardless, so it reads the path only.
 async function loadRoutes(routesFile) {
   const text = await readFile(resolve(REPO_ROOT, routesFile), 'utf8')
   return text
     .split('\n')
     .map((line) => line.replace(/#.*$/, '').trim())
     .filter(Boolean)
+    .map((line) => line.split(/\s+/)[0])
 }
 
 function routeToSlug(route) {
@@ -159,7 +162,7 @@ ${widthBlocks}
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Stream 06 — parity audit</title>
+<title>Parity audit</title>
 <style>
   :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
   body { margin: 0; padding: 1.5rem; max-width: 1800px; margin-inline: auto; }
@@ -180,7 +183,7 @@ ${widthBlocks}
 </style>
 </head>
 <body>
-<h1>Stream 06 — parity audit</h1>
+<h1>Parity audit</h1>
 <nav>${nav}</nav>
 ${sections}
 </body>

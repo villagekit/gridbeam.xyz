@@ -1,0 +1,18 @@
+version = 1
+root    = "decisions"
+
+requires_fields = ["date"]
+
+[[state]]
+id      = "proposed"
+initial = true
+
+[[state]]
+id = "accepted"
+
+# Justified by the incoming `supersedes` edge on the successor.
+[[state]]
+id = "superseded"
+
+[fields.date]
+type = "string"   # YYYY-MM-DD

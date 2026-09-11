@@ -98,7 +98,7 @@ ${widthBlocks}
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Stream 06 — parity audit</title>
+<title>Parity audit</title>
 <style>
   :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
   body { margin: 0; padding: 1.5rem; max-width: 1800px; margin-inline: auto; }
@@ -118,7 +118,7 @@ ${widthBlocks}
 </style>
 </head>
 <body>
-<h1>Stream 06 — parity audit</h1>
+<h1>Parity audit</h1>
 <nav>${nav}</nav>
 ${sections}
 </body>

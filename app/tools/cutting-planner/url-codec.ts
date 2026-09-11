@@ -23,7 +23,7 @@ import type { BeamQuota, UnlimitedStock } from './algorithm'
 // Neither bound bought any safety: cost scales with the number of beams, not their length. What
 // does need a floor is the pack itself — a cut of 0 or less always "fits", so it is meaningless
 // as a cut. (A 0 gu beam is reachable from `utility-workbench`; that's an upstream bug, see
-// todo/07-code-review/20-utility-workbench-degenerate-beams.md.)
+// note 526d5330 in notes/ carries it.)
 export const MIN_SIZE = 1
 export const MIN_COUNT = 1
 export const MAX_COUNT = 50

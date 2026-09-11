@@ -1,0 +1,4 @@
+version = 1
+root    = "notes"
+
+log_heading = "## Log"

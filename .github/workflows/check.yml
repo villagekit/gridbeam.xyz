@@ -32,7 +32,7 @@ jobs:
       - run: pnpm test
 
       # Cloudflare Workers Builds is meant to own the build, but connecting it is still a
-      # pending user action (todo/01-website/11-deployment-and-seo.md), so today nothing else
+      # pending user action (the release milestone in plans/), so today nothing else
       # would catch a change that typechecks and fails to build. Drop this step once Workers
       # Builds runs on every push.
       - run: pnpm build

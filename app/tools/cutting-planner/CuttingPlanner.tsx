@@ -432,7 +432,7 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
       {/* aria-hidden because the switch carries the whole announcement, so a bare "gu" / "mm"
           either side would just be noise. Legacy also made these clickable (they were FormLabels
           bound to the switch); these are plain text, which is a smaller click target than legacy
-          offered — see todo/07-code-review/15-parity-nits.md. */}
+          offered; the ledger carries it as a difference on /tools/cutting-planner. */}
       <Text fontSize="sm" variant="secondary" aria-hidden>
         gu
       </Text>
