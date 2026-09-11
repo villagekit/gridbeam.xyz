@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: The app-router move from `getStaticProps` is rule 4; the generated module, the sort and the nullable image are not forced. `app/_lib/designs.ts` itself is the designs ledger's; this item is the home's use of it.
 
 - 2026-09-12: The move from getStaticProps to an async server component is forced by the app router and has its own sanctioned item; this regression is the generated module, the label sort and the nullable image.
+
+- 2026-09-12: The designs route's own use of the generated module is filed on `/designs` with the same judgement (plan cf52c388).

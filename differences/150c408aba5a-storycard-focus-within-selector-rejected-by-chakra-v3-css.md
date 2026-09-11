@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Found by the stories ledger (plan 843901f4); filed on `/` with the other StoryCard items.
+
+- 2026-09-12: The sandbox has the same rejected key (`@villagekit/sandbox@0.10.0 src/index.tsx:82`), which hides the viewer toolbar; filed on `/designs/bed-frame` (plan cf52c388).

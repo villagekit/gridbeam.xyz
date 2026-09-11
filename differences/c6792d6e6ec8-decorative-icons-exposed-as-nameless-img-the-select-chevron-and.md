@@ -16,3 +16,5 @@ The native Chakra v2 `Select` (`packages/applet-cutting-planner/src/components/c
 ## Verdict
 
 ## Log
+
+- 2026-09-12: The parameters package's own `Select.Indicator` exposes the same nameless img on the design pages; filed on `/designs/bed-frame` (plan cf52c388).

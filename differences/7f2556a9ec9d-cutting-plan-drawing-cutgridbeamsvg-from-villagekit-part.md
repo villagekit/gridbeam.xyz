@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-12: The design pages draw their cutting plan with the same `CutBeamSvg` (`app/_components/design/DesignCuttingPlan.tsx:96-101`); the designs ledger filed the drawing and its garbled 16 px labels on `/designs/bed-frame` (plan cf52c388).
