@@ -92,7 +92,7 @@ Decision `077cef20`. The worker is Fable and has the last say. Reviews, design a
 | `timeout 900 pnpm check` | The quality gate: lint, typecheck, test, build. If `next build` dies with `SQLITE_BUSY` from workerd, delete `.wrangler/state` (the local miniflare cache, gitignored) and retry |
 | `pnpm dev` | The dev server on `http://localhost:3000` (regenerates the designs data first) |
 | `pnpm audit:pages --routes <file>` | Screenshot pairs, legacy beside current, at 375, 768 and 1280, under `audit/<slug>/<width>/` (needs `pnpm dev` running and `pnpm exec playwright install chromium` once per machine) |
-| `pnpm audit:dom --routes <file>` | DOM extraction pairs under `audit/<slug>/dom/` (ships in M1) |
+| `pnpm audit:dom --routes <file>` | DOM extraction pairs under `audit/<slug>/dom/`: `{legacy,current}.txt` (visible text in document order, `diff` them for the copy diff), `{legacy,current}.aria.yaml` (the accessibility tree) and `manifest.json` (each side's status). Same flags as `audit:pages` minus `--widths`; skips the missing side of a route marked `legacy-only` / `current-only`; exits non-zero if a declared side failed. Needs `pnpm dev` running and Node 22.18+ |
 | `pnpm test:watch` | Vitest while working |
 | `pnpm preview` / `pnpm deploy` | The Cloudflare build, locally / for real (deploy is the operator's) |
 | `kipu ready --collection plan` | The order of work |

@@ -22,6 +22,7 @@
     "test:watch": "vitest",
     "generate:designs": "node scripts/generate-designs-data.mjs",
     "audit:pages": "node scripts/audit-pages.mjs",
+    "audit:dom": "node scripts/audit-dom.mjs",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
@@ -64,7 +65,7 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@types/three": "^0.165.0",
-    "playwright": "^1.48.0",
+    "playwright": "^1.60.0",
     "typescript": "^5.5.0",
     "vitest": "^4.1.10",
     "wrangler": "^4.93.0"

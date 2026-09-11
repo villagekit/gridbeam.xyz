@@ -29,10 +29,12 @@ the routes it is given. It records; it never fixes.
 1. **Capture.** Write the routes to a file, start `pnpm dev` in the
    background, and run `pnpm audit:pages --routes <file>` for the screenshot
    pairs at 375, 768 and 1280 under `audit/<slug>/<width>/`. Run the DOM
-   extraction the same way (`pnpm audit:dom --routes <file>`, once M1 ships
-   it) for the visible text, the heading outline, the landmarks, the links,
-   the images with their alt text, and the interactive elements with their
-   ARIA, on both sides.
+   extraction the same way (`pnpm audit:dom --routes <file>`) for the visible
+   text in document order (`audit/<slug>/dom/{legacy,current}.txt`, `diff`
+   them) and the accessibility tree (`{legacy,current}.aria.yaml`: the
+   heading outline, the landmarks, the links, the images with their alt text,
+   and the interactive elements with their ARIA), on both sides. Read the two
+   files together; the script's header says what each holds and lacks.
 2. **Fan out.** One Sonnet sub-agent per route per family, started cold with
    the paths it needs and the brief below. Families:
    - **copy**: an exact diff of the visible text on both sides, in document

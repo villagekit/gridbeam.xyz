@@ -20,102 +20,30 @@
 //   pnpm audit:pages --current-base http://localhost:3001
 //   pnpm audit:pages --help
 //
-// Wait strategy: each capture tries `networkidle` first (best for static pages); on the
-// 15 s timeout it falls back to `load` + 2.5 s settle. This handles 3D-viewer pages
-// (`/designs/<slug>`) where the network never goes quiet.
+// The argument parsing, the routes-file reader, the slugging and the wait strategy live in
+// scripts/audit-shared.mjs, shared with `pnpm audit:dom`.
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+
 import { chromium } from 'playwright'
 
-const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-
-const DEFAULTS = {
-  legacyBase: 'https://gridkit-landing-villagekit.vercel.app',
-  currentBase: 'http://localhost:3000',
-  widths: [375, 768, 1280],
-  routesFile: 'scripts/audit-routes.txt',
-  outDir: 'audit',
-  headed: false,
-}
-
-function parseArgs(argv) {
-  const args = { ...DEFAULTS }
-  for (let i = 0; i < argv.length; i++) {
-    const arg = argv[i]
-    const next = () => {
-      const v = argv[++i]
-      if (v === undefined) {
-        console.error(`Missing value for ${arg}`)
-        process.exit(1)
-      }
-      return v
-    }
-    if (arg === '--legacy-base') args.legacyBase = next()
-    else if (arg === '--current-base') args.currentBase = next()
-    else if (arg === '--widths')
-      args.widths = next()
-        .split(',')
-        .map((s) => Number(s.trim()))
-    else if (arg === '--routes') args.routesFile = next()
-    else if (arg === '--out') args.outDir = next()
-    else if (arg === '--headed') args.headed = true
-    else if (arg === '--help' || arg === '-h') {
-      console.log(`Usage: pnpm audit:pages [options]
-
-  --legacy-base URL    Default: ${DEFAULTS.legacyBase}
-  --current-base URL   Default: ${DEFAULTS.currentBase}
-  --widths W1,W2,...   Default: ${DEFAULTS.widths.join(',')}
-  --routes PATH        Default: ${DEFAULTS.routesFile}
-  --out DIR            Default: ${DEFAULTS.outDir} (relative to repo root)
-  --headed             Run browser in headed mode (debugging)
-  --help, -h           Show this help`)
-      process.exit(0)
-    } else {
-      console.error(`Unknown argument: ${arg}\nRun with --help for usage.`)
-      process.exit(1)
-    }
-  }
-  return args
-}
-
-// A route may carry a side marker after the path (`legacy-only`, `current-only`); this
-// script screenshots both sides regardless, so it reads the path only.
-async function loadRoutes(routesFile) {
-  const text = await readFile(resolve(REPO_ROOT, routesFile), 'utf8')
-  return text
-    .split('\n')
-    .map((line) => line.replace(/#.*$/, '').trim())
-    .filter(Boolean)
-    .map((line) => line.split(/\s+/)[0])
-}
-
-function routeToSlug(route) {
-  if (route === '/') return '_root'
-  return route.replace(/^\/+|\/+$/g, '').replace(/\//g, '__')
-}
+import {
+  REPO_ROOT,
+  SIDES,
+  gotoSettled,
+  loadRoutes,
+  parseArgs,
+  routeToSlug,
+} from './audit-shared.mjs'
 
 async function captureSide({ page, url, outFile }) {
-  // Try networkidle first (best for static pages); fall back to load for pages that
-  // never settle (3D viewers, long-polling). Either way, give animations 800 ms.
-  let response
-  try {
-    response = await page.goto(url, { waitUntil: 'networkidle', timeout: 15_000 })
-  } catch {
-    try {
-      response = await page.goto(url, { waitUntil: 'load', timeout: 30_000 })
-      // Pages that don't reach networkidle usually have heavy late-paint work; give them more.
-      await page.waitForTimeout(2_500)
-    } catch (err) {
-      return { ok: false, status: 0, error: err.message }
-    }
-  }
-  await page.waitForTimeout(800)
+  const loaded = await gotoSettled(page, url)
+  if (!loaded.ok) return loaded
   try {
     await mkdir(dirname(outFile), { recursive: true })
     await page.screenshot({ path: outFile, fullPage: true })
-    return { ok: true, status: response?.status() ?? 0 }
+    return { ok: true, status: loaded.status }
   } catch (err) {
     return { ok: false, status: 0, error: err.message }
   }
@@ -192,7 +120,7 @@ ${sections}
 }
 
 async function main() {
-  const args = parseArgs(process.argv.slice(2))
+  const args = parseArgs(process.argv.slice(2), { command: 'audit:pages', widths: true })
   const outDir = resolve(REPO_ROOT, args.outDir)
 
   console.log(`Audit configuration:
@@ -217,8 +145,12 @@ async function main() {
   const browser = await chromium.launch({ headless: !args.headed })
   const results = []
 
+  const bases = { legacy: args.legacyBase, current: args.currentBase }
+
   try {
-    for (const route of routes) {
+    // A route marked one-sided in the routes file is still screenshotted on both sides: the
+    // 404 capture is a useful signal.
+    for (const { route } of routes) {
       console.log(`▷ ${route}`)
       const slug = routeToSlug(route)
       for (const width of args.widths) {
@@ -227,11 +159,8 @@ async function main() {
           deviceScaleFactor: 1,
         })
         const page = await context.newPage()
-        for (const [side, base] of [
-          ['legacy', args.legacyBase],
-          ['current', args.currentBase],
-        ]) {
-          const url = `${base}${route}`
+        for (const side of SIDES) {
+          const url = `${bases[side]}${route}`
           const outFile = join(outDir, slug, String(width), `${side}.png`)
           const r = await captureSide({ page, url, outFile })
           results.push({ route, width, side, ...r })
