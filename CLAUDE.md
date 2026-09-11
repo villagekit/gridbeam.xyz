@@ -182,6 +182,7 @@ This site will be live for years. Logs are a first-class concern, even though th
 - **No e-commerce.** The old store is replaced by a Suppliers page with a map (`8b5e51fc`) that links out to suppliers of compatible hardware.
 - **Engine packages on npm**, from `villagekit/gridkit`. Fixes that belong upstream land in the sibling checkout and wait for the operator's publish.
 - **Products vendored** into `./products/`; not published to npm.
+- **Media assets published from `media/gridbeam.xyz/`** in the media repo, so Cloudinary public IDs carry the `gridbeam.xyz/` prefix (`6b7a97f83ce7`); a re-hosted asset is the same picture unless a difference says otherwise.
 - **Hosting on Cloudflare Workers** via `@opennextjs/cloudflare` (`91cbeac8`); the legacy Vercel deploy is not carried over.
 - **Hosted newsletter** via Buttondown: the `/subscribe` page is a real form. Needs the API key in env vars, the operator's.
 
