@@ -28,3 +28,5 @@ The release.
 ## Outcome
 
 ## Log
+
+- 2026-09-11: GitHub reported 46 Dependabot alerts on main at the push of 339b80c (22 high, 20 moderate, 4 low): https://github.com/villagekit/gridbeam.xyz/security/dependabot. They are this milestone's input; an alert on a package a route depends on may pull that upgrade forward into M2 as a slice, with the ledger as the regression check.
