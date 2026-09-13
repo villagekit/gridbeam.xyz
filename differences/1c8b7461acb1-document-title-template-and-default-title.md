@@ -1,6 +1,6 @@
 ---
 title: Document title template and default title
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/layout.tsx:30-33`: `title: { default: 'gridbeam.xyz', template: '%s — gridbeam.xyz' }`. Rendered `<title>About grid beam — gridbeam.xyz</title>` on `/about`.
 
 ## Verdict
+
+rule: rebrand (1). Keeps the legacy prefix-colon shape: title template `Grid Beam: %s`, default title `Grid Beam`.
 
 ## Log
 

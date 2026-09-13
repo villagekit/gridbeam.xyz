@@ -1,6 +1,6 @@
 ---
 title: "404 page: Next default error page to a shell-wrapped custom page"
-status: open
+status: sanctioned
 route: shell
 axis: visual
 kind: added
@@ -14,5 +14,7 @@ No `apps/gridkit/pages/404.tsx`. The live site serves Next's built-in error page
 `app/not-found.tsx:1-69`: rendered inside `MainLayout` (header, nav, footer, skip target), a decorative inline SVG, `robots: { index: false, follow: false }`, two `LinkButton`s. Its text blocks are their own copy items.
 
 ## Verdict
+
+rule: operator (5), [[dc1a7a98373f]].
 
 ## Log

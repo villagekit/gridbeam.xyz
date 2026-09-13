@@ -1,6 +1,6 @@
 ---
 title: robots.ts and sitemap.ts route handlers added
-status: open
+status: sanctioned
 route: shell
 axis: code
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/robots.ts:1-19` and `app/sitemap.ts:1-60` (`MetadataRoute` exports).
 
 ## Verdict
+
+rule: upgrade (4).
 
 ## Log

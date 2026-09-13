@@ -1,6 +1,6 @@
 ---
 title: "Footer envelope link: Newsletter (/subscribe) to Email (/contact)"
-status: open
+status: regression
 route: shell
 axis: copy
 kind: changed
@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: The footer lock keeps the social row as `apps/villagekit` lists it, and that list has the envelope going to `/subscribe` as `Newsletter`. No rule covers the retarget.
 
 - 2026-09-12: Moved to open (review): copy stays the operator's whatever the lock says about its neighbours; the lock's list is the evidence for the grilling.
+
+- 2026-09-13: 2026-09-13: Confirmed regression. The envelope goes back to `/subscribe`, labelled `Newsletter`, matching the footer lock's own cited source.

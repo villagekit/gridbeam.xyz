@@ -1,6 +1,6 @@
 ---
 title: ObfuscatedEmail added
-status: open
+status: sanctioned
 route: shell
 axis: code
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_components/ObfuscatedEmail.tsx:1-45`: `ObfuscatedEmail` and `ObfuscatedEmailLink`, entity-encoding the address into `dangerouslySetInnerHTML`; used by `app/contact/page.tsx`, `app/legal/page.tsx`, `app/legal/privacy-policy/page.tsx`.
 
 ## Verdict
+
+rule: operator (5).
 
 ## Log

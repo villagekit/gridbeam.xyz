@@ -1,6 +1,6 @@
 ---
 title: "Top nav: Contact added"
-status: open
+status: regression
 route: shell
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-13: 2026-09-13: Regression per [[c21b7e35f0c7]]: the operator wants Contact footer-only, as in legacy. A closing plan drops the top-level entry from `app/_lib/nav.ts`, keeping the existing footer entry (`cfc422822736`).

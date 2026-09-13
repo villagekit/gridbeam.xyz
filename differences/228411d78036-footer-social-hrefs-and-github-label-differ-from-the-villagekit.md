@@ -1,6 +1,6 @@
 ---
 title: Footer social hrefs and GitHub label differ from the villagekit list the lock cites
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/SiteFooter.tsx:30`: `https://sunrise.social/@villagekit`; `:60-61`: label `GitHub`, `https://github.com/villagekit`.
 
 ## Verdict
+
+rule: operator (5). The lock (`ad5363e4`) names the accounts, not the URL format; `@villagekit` is how a Mastodon profile is correctly addressed by handle, and dropping `www.` from the GitHub URL is a no-op. Confirmed 2026-09-13.
 
 ## Log
 

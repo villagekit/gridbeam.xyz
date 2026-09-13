@@ -1,6 +1,6 @@
 ---
 title: Open Graph image alt text rewritten
-status: open
+status: regression
 route: shell
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-13: 2026-09-13: Regression, paired with [[f8cca746b4bb]]: the operator wants the real photo back (`media/gridbeam.xyz/home/record-shelf-hero.jpg`, already the home hero image, [[6b7a97f83ce7]]), not a generated card, so the alt text reverts to legacy's verbatim, no rebrand edit needed (it never named Grid Kit).

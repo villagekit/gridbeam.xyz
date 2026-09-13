@@ -1,6 +1,6 @@
 ---
 title: Viewport meta gains initial-scale=1
-status: open
+status: sanctioned
 route: shell
 axis: code
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/layout.tsx:55-57`: `viewport: { width: 'device-width', initialScale: 1, ... }`, rendered `width=device-width, initial-scale=1`.
 
 ## Verdict
+
+rule: upgrade (4).
 
 ## Log

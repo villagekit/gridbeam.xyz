@@ -1,6 +1,6 @@
 ---
 title: "images.loader: custom Cloudinary loaderFile added"
-status: open
+status: sanctioned
 route: shell
 axis: code
 kind: added
@@ -15,4 +15,8 @@ kind: added
 
 ## Verdict
 
+rule: upgrade (4).
+
 ## Log
+
+- 2026-09-13: 2026-09-13: Reviewed `app/_lib/cloudinary-loader.ts` and `app/_lib/cloudinary.ts` for complexity per the operator's request: both are small, single-purpose, and well-commented (the loader's header explains why it can't be a client component or use context). No changes needed.

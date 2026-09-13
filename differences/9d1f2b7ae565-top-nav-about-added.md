@@ -1,6 +1,6 @@
 ---
 title: "Top nav: About added"
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:4`: `{ href: '/about', label: 'About', location: 'top' }`.
 
 ## Verdict
+
+rule: operator (5), [[c21b7e35f0c7]]. About is one of the three pages promoted.
 
 ## Log

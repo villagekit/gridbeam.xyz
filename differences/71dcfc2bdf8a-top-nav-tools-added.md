@@ -1,6 +1,6 @@
 ---
 title: "Top nav: Tools added"
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:8`: `{ href: '/tools-and-resources', label: 'Tools', location: 'top' }`.
 
 ## Verdict
+
+rule: operator (5), [[c21b7e35f0c7]]. Store's removal leaves room in the top nav; Tools is one of the three pages promoted.
 
 ## Log

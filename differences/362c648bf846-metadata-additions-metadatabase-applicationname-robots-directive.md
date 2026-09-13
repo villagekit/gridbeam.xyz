@@ -1,6 +1,6 @@
 ---
 title: "Metadata additions: metadataBase, applicationName, robots directive, twitter title, description and image"
-status: open
+status: sanctioned
 route: shell
 axis: code
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/layout.tsx:29,35,49-52`: `metadataBase`, `applicationName: 'gridbeam.xyz'`, `robots: { index: true, follow: true }`, `twitter.title` and `twitter.description`; `app/twitter-image.tsx` yields `twitter:image` and `twitter:image:alt`.
 
 ## Verdict
+
+rule: upgrade (4).
 
 ## Log

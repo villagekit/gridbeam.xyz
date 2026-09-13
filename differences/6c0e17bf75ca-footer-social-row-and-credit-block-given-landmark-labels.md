@@ -1,6 +1,6 @@
 ---
 title: Footer social row and credit block given landmark labels
-status: open
+status: sanctioned
 route: shell
 axis: accessibility
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_components/SiteFooter.tsx:79-84`: `<HStack as="nav" aria-label="Village Kit on social media">`; `:92`: `<VStack as="section" aria-label="Site credit">`. `navigation "Village Kit on social media"` and `region "Site credit"` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+rule: operator (5).
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: Skip link added
-status: open
+status: sanctioned
 route: shell
 axis: accessibility
 kind: added
@@ -14,5 +14,7 @@ No skip link: `@villagekit/ui@0.9.0 src/index.ts:325-327` re-exports `SkipNavLin
 `app/layout.tsx:71`: `<SkipNavLink>Skip to main content</SkipNavLink>`; routes render `<SkipNavContent />` (e.g. `app/page.tsx:101`). First node of `audit/_root/dom/current.aria.yaml`: `link "Skip to main content"` to `#chakra-skip-nav`.
 
 ## Verdict
+
+rule: operator (5).
 
 ## Log
