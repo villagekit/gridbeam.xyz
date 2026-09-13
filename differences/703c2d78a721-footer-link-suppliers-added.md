@@ -1,6 +1,6 @@
 ---
 title: Footer link Suppliers added
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:26`: `{ href: '/suppliers', label: 'Suppliers' }` under Browse.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

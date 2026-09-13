@@ -1,6 +1,6 @@
 ---
 title: Footer link Roadmap removed
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No roadmap link in `app/_lib/nav.ts:12-48`.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Footer link: Contact us to Contact"
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_lib/nav.ts:32`: `{ href: '/contact', label: 'Contact' }`.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

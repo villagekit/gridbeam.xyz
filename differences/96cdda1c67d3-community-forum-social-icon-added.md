@@ -1,6 +1,6 @@
 ---
 title: Community forum social icon added
-status: open
+status: sanctioned
 route: shell
 axis: visual
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_components/SiteFooter.tsx:66-72`: `{ href: 'https://discuss.villagekit.com', label: 'Community forum', icon: <FaUsers /> }` in the social row, with the comment `Note(cc): added vs legacy footer`. Last icon in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

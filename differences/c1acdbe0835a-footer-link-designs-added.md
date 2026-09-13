@@ -1,6 +1,6 @@
 ---
 title: Footer link Designs added
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:24`: `{ href: '/designs', label: 'Designs' }` under Browse.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

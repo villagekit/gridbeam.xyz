@@ -1,6 +1,6 @@
 ---
 title: Footer link GitHub added to the sections
-status: open
+status: dismissed
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:33-37`: `{ href: 'https://github.com/villagekit', label: 'GitHub', isExternal: true }` under Connect.
 
 ## Verdict
+
+Not shipping: [[9f344fbfde9a]] explicitly excludes a footer-section GitHub link, since it's already a social icon in the row below and listing it twice is clutter with no payoff.
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: Footer link Community removed from the sections
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No section link to the forum in `app/_lib/nav.ts:12-48`; the URL moved to the social row as `Community forum` (`app/_components/SiteFooter.tsx:66-72`, its own item).
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

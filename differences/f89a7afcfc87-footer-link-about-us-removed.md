@@ -1,6 +1,6 @@
 ---
 title: Footer link About us removed
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No link to villagekit.com in `app/_lib/nav.ts:12-48` (the slogan's `Village Kit` link in `app/_components/SiteFooter.tsx:99` remains).
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

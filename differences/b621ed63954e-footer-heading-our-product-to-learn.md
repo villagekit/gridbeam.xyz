@@ -1,6 +1,6 @@
 ---
 title: "Footer heading: Our product to Learn"
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_lib/nav.ts:14`: `heading: 'Learn'` over the same three links.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

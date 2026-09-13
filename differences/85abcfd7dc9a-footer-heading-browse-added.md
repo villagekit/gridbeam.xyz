@@ -1,6 +1,6 @@
 ---
 title: Footer heading Browse added
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: added
@@ -14,5 +14,7 @@ kind: added
 `app/_lib/nav.ts:22`: `heading: 'Browse'` over Designs, Stories, Suppliers.
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log

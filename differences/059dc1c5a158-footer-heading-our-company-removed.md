@@ -1,6 +1,6 @@
 ---
 title: Footer heading Our company removed
-status: open
+status: sanctioned
 route: shell
 axis: copy
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No such heading in `app/_lib/nav.ts:12-48`; Newsletter and Contact sit under `Connect` (`:30`).
 
 ## Verdict
+
+rule: operator (5), [[9f344fbfde9a]].
 
 ## Log
