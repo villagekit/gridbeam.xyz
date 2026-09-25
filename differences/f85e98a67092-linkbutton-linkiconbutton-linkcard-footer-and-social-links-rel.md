@@ -1,6 +1,6 @@
 ---
 title: "LinkButton, LinkIconButton, LinkCard, Footer and Social links: rel noopener noreferrer where legacy rendered noopener or none"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-26: Read by the palette slice (plan c14505b76b6a) and left: its fix is one line in each of five components (LinkButton, LinkIconButton, LinkCard, Footer, Social), not the package theme, so it is outside that slice's shape. No slice owns it: a ui slice the operator mints or the bump plan 99f2fe62c62f takes it, or rule 4 is judged on it.
 
 - 2026-09-26: Handed to the slice [[9e54dca30d48]], minted beside the shell record [[a78b167170b8]] at its finish (decision 40abdb2f222a): one line in each of the five components in ../ui, parked in upstream when it lands.
+
+- 2026-09-26: Fixed in ../ui commit 46eab3c (plan [[9e54dca30d48]]): LinkButton and LinkIconButton pass isExternal through to the ui Link, and Footer's external column links, its villagekit.com credit and Social's external links render the ui Link with isExternal, so all four carry rel="noopener", Chakra v2's Link output (@chakra-ui/layout@2.3.1, chunk-K7XRJ7NL.mjs:19), probed under the file:../ui override on /faq and /suppliers. Two claims in the Legacy section are wrong and are corrected here, the section left as filed: 0.9.0's LinkButton and LinkIconButton did take isExternal (LinkButtonProps intersects Omit<LinkProps, 'variant'>, and 0.9.0's Link declares isExternal, both rendered through Button as={Link}), so noopener is their 0.9.0 output; and Chakra v2's LinkOverlay rendered isExternal as rel="noopener noreferrer" (chunk-NRJBSIIZ.mjs:16, and the live legacy /stories external cards), so LinkCard's overlay keeps "noopener noreferrer", already recorded by the sanctioned [[ed16aad27638]], with only its TSDoc changed. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.

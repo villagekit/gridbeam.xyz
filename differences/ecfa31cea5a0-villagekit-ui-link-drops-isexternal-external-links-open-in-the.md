@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-26: From the recipes slice [[45d6f5634a11]]: the Legacy line above overstates v2. Chakra v2's `Link` (`@chakra-ui/layout@2.3.1`, the version the legacy lockfile pins) renders `isExternal` as `target="_blank" rel="noopener"`, and the live legacy story page shows `rel="noopener"`; only v2's `LinkOverlay` wrote `noopener noreferrer`. The port renders `noopener`.
 
 - 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Link.tsx: LinkProps.isExternal renders target _blank and rel noopener noreferrer; the External story in stories/Link.stories.tsx carries it. Waits in upstream for the bump plan [[99f2fe62c62f]].
+
+- 2026-09-26: Correction from plan [[9e54dca30d48]]: the fix note above says the ui Link renders rel noopener noreferrer; since the recipes slice (../ui 540e9c3) Link.tsx renders isExternal as rel="noopener", Chakra v2's Link output, and ../ui 46eab3c gives LinkButton, LinkIconButton, Footer and Social the same.
