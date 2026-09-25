@@ -1,6 +1,6 @@
 ---
 title: Home meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No `description` on the page's `NextSeo` (`apps/gridkit/pages/index.tsx:75`); th
 `app/page.tsx:44-45,50,54,58` `heroDescription = 'A 40 mm grid system for building furniture — open, modular, and reusable. Find designs, cutting tools, and suppliers.'` as `description`, `openGraph.description` and `twitter.description`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

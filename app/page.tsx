@@ -2,12 +2,10 @@ import {
   Box,
   Container,
   Flex,
-  HStack,
   Heading,
   Icon,
   Link,
   LinkButton,
-  LinkCard,
   List,
   SimpleGrid,
   Span,
@@ -20,7 +18,7 @@ import type { Metadata } from 'next'
 import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 import { BiHappyHeartEyes } from 'react-icons/bi'
-import { FaCut, FaSeedling, FaShoppingBag, FaTools } from 'react-icons/fa'
+import { FaSeedling, FaShoppingBag } from 'react-icons/fa'
 import { GiHandSaw } from 'react-icons/gi'
 import { TfiPencilAlt, TfiThought } from 'react-icons/tfi'
 
@@ -38,13 +36,8 @@ import {
 import { getDesignIndex } from './_lib/designs'
 import { getAllStories } from './_lib/stories'
 
-const heroTitle = 'gridbeam.xyz — modular furniture from a 40 mm grid'
-const heroDescription =
-  'A 40 mm grid system for building furniture — open, modular, and reusable. Find designs, cutting tools, and suppliers.'
-
 export const metadata: Metadata = {
-  title: { absolute: heroTitle },
-  description: heroDescription,
+  title: { absolute: 'Grid Beam' },
 }
 
 // Hero carousel — Cloudinary public IDs under `gridbeam.xyz/home/...`
@@ -110,14 +103,9 @@ export default async function HomePage() {
                 </Span>
                 . Eco-friendly, adaptable, and fun for the whole family.
               </Text>
-              <HStack gap="3" flexWrap="wrap">
-                <LinkButton as={NextLink} href="/designs" size="lg">
-                  Browse designs
-                </LinkButton>
-                <LinkButton as={NextLink} href="/about" variant="secondary" size="lg">
-                  What is grid beam?
-                </LinkButton>
-              </HStack>
+              <LinkButton as={NextLink} href="/designs" size="lg">
+                Browse designs
+              </LinkButton>
             </LandingColumn>
 
             <Box flex="1" w="full">
@@ -335,62 +323,6 @@ export default async function HomePage() {
             />
           </Box>
         </LandingRow>
-      </LandingSection>
-
-      {/* 7. For makers — toolbox shortcuts. */}
-      <LandingSection index={7}>
-        <Title as="h2" description="Plan a build, find the parts, learn from the community.">
-          For makers
-        </Title>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
-          <LinkCard
-            linkComponent={NextLink}
-            title="Cutting planner"
-            icon={<FaCut />}
-            description="Work out how many full-length beams to buy, and how to cut them with the least off-cut waste."
-            href="/tools/cutting-planner"
-          />
-          <LinkCard
-            linkComponent={NextLink}
-            title="Suppliers"
-            icon={<FaShoppingBag />}
-            description="Already-cut grid beams and panels from suppliers around the world. We don't sell parts; we link to people who do."
-            href="/suppliers"
-          />
-          <LinkCard
-            linkComponent={NextLink}
-            title="Tools & resources"
-            icon={<FaTools />}
-            description="Everything else built into the site — engine source, FAQ, how-tos, community links."
-            href="/tools-and-resources"
-          />
-        </SimpleGrid>
-      </LandingSection>
-
-      {/* 8. Open and free to remix. */}
-      <LandingSection index={8}>
-        <Title
-          as="h2"
-          description="The site, the components, the engine, the catalogue — all open-source under EUPL-1.2."
-        >
-          Open and free to remix
-        </Title>
-        <Container maxW="3xl">
-          <VStack gap="4" alignItems="center">
-            <Text fontSize="lg" textAlign="center">
-              Built in the spirit of grid beam itself: standard parts, public specifications, anyone
-              can fork it.
-            </Text>
-            <HStack gap="3" flexWrap="wrap" justifyContent="center">
-              <LinkButton href="https://github.com/villagekit" isExternal>
-                GitHub
-              </LinkButton>
-              <LinkButton as={NextLink} href="/subscribe" variant="secondary">
-                Subscribe to the newsletter
-              </LinkButton>
-            </HStack>
-          </VStack>
-        </Container>
       </LandingSection>
     </>
   )

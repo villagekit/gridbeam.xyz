@@ -1,6 +1,6 @@
 ---
 title: "Home: the added sections, the second hero button and the per-page metadata removed"
-status: todo
+status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
 blocked_by: ffe8e5d56f8e
@@ -33,5 +33,15 @@ None pure; the proof is the served HTML and the DOM pair.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as scoped. app/page.tsx: deleted LandingSection index=7 (For makers) and index=8 (Open and free to remix), their now-unused imports (HStack, LinkCard, FaCut, FaTools), the hero's second button and its wrapping HStack (Browse designs now sits directly in LandingColumn, as legacy's one button does), and heroTitle/heroDescription; metadata is now title: { absolute: 'Grid Beam' } with no description, so the layout default (app/layout.tsx:25-26) renders on /, matching bfc81eb7197c's verdict. Corrected the bump plan's LinkCard note as the slice asked: 99f2fe62c62f now says the home page renders no LinkCard after this slice, and the bump's remaining call sites are the four other pages, not app/page.tsx.
+
+Sixteen items on / moved to fixed, outcome "plan 4faefea8": bfc81eb7197c, b1d7776f996d, ac0985188582, ab6adb51866a, 56c60f34ef43, b37e6cd0d56f, 1bdc9e63ed76, 258dddf5f815, 55f606401ab8, 66e7da679656, b3471287e97a, fad5fdf81c4b, 4164ec6a2472, c0cf44ccbc28, 5ebdc4a4f50c, dd19bb3343bf.
+
+Verified: pnpm exec biome check and tsc --noEmit clean before the gate; against a running pnpm dev, the / response has no "For makers", "Open and free to remix" or "What is grid beam" text, <title>Grid Beam</title>, and the meta description is the layout default; pnpm audit:dom --routes <a file naming /> shows current.txt's last main-content line before the footer as "Join the community" (legacy.txt's is "Join our community" at the same position, the copy slice's to rename); timeout 900 just check green (lint, typecheck, 78 tests, build, the generated-data drift check); kipu verify --warnings-as-errors clean (881 items, 0 errors).
+
+Reviewed on three fresh Opus sub-agents (Standards, Spec, Parity, the brief in .claude/skills/parity/SKILL.md). Parity: no critical findings, no new visitor-facing copy beyond the plan's own 'Grid Beam', the sixteen items genuinely closed, nothing the change introduced left unrecorded. Standards and Spec both caught the same critical finding: the first draft of the bump-plan note carried stale line numbers (copied from the pre-edit files) and miscounted "five" call sites where only four remain once app/page.tsx drops out; fixed in place before this commit, current lines verified by rereading each of the four files. Standards' two minor notes taken: the note now cites the plan as [[4faefea81c76]], matching the file's other entries; the plan was moved to doing before this finish, so the board showed it in flight (moot once this closes it in the same commit's history, but done for the record).
+
+Not settled by the plan and left as found: the Suppliers card item 5ebdc4a4f50c closes by removal (the section and its LinkCard are gone), consistent with the record's read that the section deleting it makes the clip moot; no separate LinkCard box-sizing fix was needed or made.
 
 ## Log

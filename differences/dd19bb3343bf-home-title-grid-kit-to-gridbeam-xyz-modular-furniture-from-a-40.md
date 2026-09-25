@@ -1,6 +1,6 @@
 ---
 title: "Home title: Grid Kit to gridbeam.xyz, modular furniture from a 40 mm grid"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:43,49,53,57` `heroTitle = 'gridbeam.xyz — modular furniture from a 40 mm grid'` as `title: { absolute: heroTitle }`, `openGraph.title` and `twitter.title`; rendered `<title>gridbeam.xyz — modular furniture from a 40 mm grid</title>` on `http://localhost:3000/`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

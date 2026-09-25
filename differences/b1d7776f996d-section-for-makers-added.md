@@ -1,6 +1,6 @@
 ---
 title: Section For makers added
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ Seven sections (`apps/gridkit/pages/index.tsx:77-371`); `audit/_root/1280/legacy
 `app/page.tsx:354-381` section index 7: a `Title` and a `SimpleGrid` of three `LinkCard`s; `audit/_root/1280/current.png` below "A place to share ideas".
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

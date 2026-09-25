@@ -1,6 +1,6 @@
 ---
 title: Suppliers card description clips inside the fixed 224 by 256 card
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 With LinkCard re-ported to that box (ui LinkCard.tsx after plan 1cc03cfabcf2, seen through the sibling override), the For makers section's Suppliers card content is 262px tall in a 252px inner height, so its last line is cut, at 375, 768 and 1280 (measured by a Playwright probe on 2026-09-26; `app/page.tsx:357-362`). The copy is this route's: the section and card items b1d7776f996d and 56c60f34ef43.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

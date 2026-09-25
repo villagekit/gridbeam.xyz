@@ -1,6 +1,6 @@
 ---
 title: Open and free to remix paragraph
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:393-396` "Built in the spirit of grid beam itself: standard parts, public specifications, anyone can fork it."
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

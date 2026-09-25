@@ -1,6 +1,6 @@
 ---
 title: "For makers card: Cutting planner"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:359-365` title "Cutting planner", description "Work out how many full-length beams to buy, and how to cut them with the least off-cut waste.", to `/tools/cutting-planner`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

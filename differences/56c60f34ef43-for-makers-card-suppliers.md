@@ -1,6 +1,6 @@
 ---
 title: "For makers card: Suppliers"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:366-372` title "Suppliers", description "Already-cut grid beams and panels from suppliers around the world. We don't sell parts; we link to people who do.", to `/suppliers`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: For makers heading
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:355-357` `<Title as="h2" ...>For makers</Title>`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

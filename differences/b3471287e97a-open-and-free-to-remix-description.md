@@ -1,6 +1,6 @@
 ---
 title: Open and free to remix description
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:387` "The site, the components, the engine, the catalogue — all open-source under EUPL-1.2."
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

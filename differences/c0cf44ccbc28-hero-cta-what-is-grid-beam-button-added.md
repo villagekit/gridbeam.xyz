@@ -1,6 +1,6 @@
 ---
 title: "Hero CTA: What is grid beam? button added"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ One hero button (`apps/gridkit/pages/index.tsx:101-103`).
 `app/page.tsx:130-132` `<LinkButton as={NextLink} href="/about" variant="secondary" size="lg">What is grid beam?</LinkButton>`, second in an `HStack` (`:126`).
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

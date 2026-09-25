@@ -1,6 +1,6 @@
 ---
 title: "For makers card: Tools & resources"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:373-379` title "Tools & resources", description "Everything else built into the site — engine source, FAQ, how-tos, community links.", to `/tools-and-resources`.
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

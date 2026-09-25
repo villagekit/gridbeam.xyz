@@ -1,6 +1,6 @@
 ---
 title: For makers description
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:355` "Plan a build, find the parts, learn from the community."
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 

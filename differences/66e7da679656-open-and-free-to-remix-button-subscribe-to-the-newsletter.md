@@ -1,6 +1,6 @@
 ---
 title: "Open and free to remix button: Subscribe to the newsletter"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 `app/page.tsx:401-403` "Subscribe to the newsletter" (to `/subscribe`).
 
 ## Verdict
+
+plan 4faefea8
 
 ## Log
 
