@@ -1,6 +1,6 @@
 ---
 title: "Cutting planner description: Use this tool to plan how to cut your beams to Tell it the cuts you need"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C1). Ships as legacy verbatim: "Use this tool to plan how to cut your beams into desired lengths."

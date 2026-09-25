@@ -1,6 +1,6 @@
 ---
 title: Cutting planner title and meta description where legacy inherited the site default
-status: open
+status: sanctioned
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,5 +14,7 @@ No page-level `NextSeo` on `apps/gridkit/pages/tools/cutting-planner.tsx`, so th
 `app/tools/cutting-planner/page.tsx:7-20` title "Cutting planner" (rendered "Cutting planner — gridbeam.xyz" through `app/layout.tsx:30-32`), description "Plan how to cut a list of grid beams from your stock with the least off-cut waste. First-fit-decreasing bin packing.", reused for Open Graph and Twitter. The mechanism is the shell's [[f46533a8ae54]]; the home precedent is [[bfc81eb7197c]].
 
 ## Verdict
+
+rule: operator (5) for the title only. Legacy set no page title and rendered the site default, an oversight; ships as "Cutting planner", templated by the shell ([[1c8b7461acb1]]). The meta description is not kept: the route inherits the site default ([[1906af99b588]]). Cutting planner grilling C1.
 
 ## Log

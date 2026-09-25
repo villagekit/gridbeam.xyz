@@ -1,6 +1,6 @@
 ---
 title: "Column header: Length to Length (gu)"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Length", secondary text as legacy.

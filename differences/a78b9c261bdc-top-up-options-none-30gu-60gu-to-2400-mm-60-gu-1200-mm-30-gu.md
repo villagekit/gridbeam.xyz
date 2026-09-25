@@ -1,6 +1,6 @@
 ---
 title: "Top-up options: None, 30gu, 60gu to 2400 mm (60 gu), 1200 mm (30 gu), None — use only stock"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as legacy's options in legacy's order: "None", "30gu", "60gu"; the default selection is [[0db3cce2de84]].

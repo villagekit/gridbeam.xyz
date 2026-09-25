@@ -1,6 +1,6 @@
 ---
 title: Cutting planner intro paragraph 1 added
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No text between the title and the controls (`apps/gridkit/pages/tools/cutting-pl
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C2). The intro paragraph is removed; legacy has nothing between the title and the controls.

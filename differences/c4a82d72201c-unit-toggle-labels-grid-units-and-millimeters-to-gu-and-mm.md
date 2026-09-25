@@ -1,6 +1,6 @@
 ---
 title: "Unit toggle labels: Grid units and Millimeters to gu and mm"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The design page's parts breakdown has its own copy of this label change (`app/_components/design/PartsBreakdown.tsx:40,54`), filed on `/designs/bed-frame` (plan cf52c388).
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Grid units" and "Millimeters" (legacy's American spelling, [[6fce53c0a18e]]).

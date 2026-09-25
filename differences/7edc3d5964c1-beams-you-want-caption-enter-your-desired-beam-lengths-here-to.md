@@ -1,6 +1,6 @@
 ---
 title: "Beams you want caption: Enter your desired beam lengths here. to The cuts you need."
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Enter your desired beam lengths here."

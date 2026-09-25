@@ -1,6 +1,6 @@
 ---
 title: "Top-up select label: Automatically add full length beams if needed to Top up with full-length beams"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Automatically add full length beams if needed".

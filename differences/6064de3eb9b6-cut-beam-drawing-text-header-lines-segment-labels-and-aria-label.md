@@ -1,6 +1,6 @@
 ---
 title: "Cut beam drawing text: header lines, segment labels and aria-label"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ The engine's `CutGridBeamSvg` (`@villagekit/part-gridbeam`, sibling `../gridkit`
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C4). Goes with the drawing swap [[7f2556a9ec9d]]: the engine's CutGridBeamSvg carries its own labels and title; no HTML header or per-segment text.

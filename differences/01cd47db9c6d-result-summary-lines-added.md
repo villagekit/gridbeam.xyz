@@ -1,6 +1,6 @@
 ---
 title: Result summary lines added
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No summary text: `packages/applet-cutting-planner/src/components/cutting-plan.ts
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C5). The result summary is removed; legacy renders the heading, the drawings and the unit toggle.

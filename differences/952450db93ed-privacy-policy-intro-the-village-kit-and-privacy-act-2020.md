@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: Filed per section (heading plus its paragraphs and lists), the text quoted in full, since the route is a wholesale rewrite; a verdict on the section covers its blocks. Flagged in plan 848b026f's Outcome as a convention for the operator.
 
 - 2026-09-25: Regression (privacy grilling P2). Legacy's three paragraphs and six key messages return verbatim, with: the fourth message cut under rule 2 to "We use some third party providers to manage some of our engagement processes including Buttondown."; the first sentence's entity and the second message's storage location pending the operator's wording (P7: Village Kit is no longer a company; hosting moves from Vercel to Cloudflare).
+
+- 2026-09-25: Confirmed (privacy grilling PV1, PV2). The first paragraph ships as: "This privacy policy describes how Village Kit collects, uses, stores, and shares your personal information. Village Kit is not a company; it is a project run by one person, Mikey Williams (mikey.nz)." (link on mikey.nz to https://mikey.nz). The second key message ships as: "We store most of our data (including your personal information) on Cloudflare's cloud platform."

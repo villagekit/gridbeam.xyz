@@ -1,6 +1,6 @@
 ---
 title: "Unused table: Unused beams and its caption to Unused stock"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Unused beams" / "We didn't end up using the following beams."

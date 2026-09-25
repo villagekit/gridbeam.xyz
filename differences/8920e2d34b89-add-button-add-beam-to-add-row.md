@@ -1,6 +1,6 @@
 ---
 title: "Add button: Add beam to Add row"
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C3). Ships as "Add beam" with legacy's plus-square icon ([[423cdd0c2533]]).

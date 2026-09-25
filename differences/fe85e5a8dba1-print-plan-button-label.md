@@ -1,6 +1,6 @@
 ---
 title: Print plan button label
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No print affordance in `packages/applet-cutting-planner/src/components/`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C7). The print button and print stylesheet are removed; legacy has no print affordance.

@@ -1,6 +1,6 @@
 ---
 title: Dropped share-link beams warning added
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No share links, so no such text.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C6). The share-link URL state, its row cap and its warning are removed; legacy keeps no URL state. Shareable plans would return only as an operator-approved improvement with its own decision.

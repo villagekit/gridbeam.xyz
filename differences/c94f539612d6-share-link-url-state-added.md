@@ -1,6 +1,6 @@
 ---
 title: Share-link URL state added
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: code
 kind: added
@@ -16,3 +16,5 @@ No URL state: `packages/applet-cutting-planner/src/components/cutting-planner.ts
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C6). The share-link URL state, its row cap and its warning are removed; legacy keeps no URL state. Shareable plans would return only as an operator-approved improvement with its own decision.

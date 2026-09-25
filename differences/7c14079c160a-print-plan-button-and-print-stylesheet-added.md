@@ -1,6 +1,6 @@
 ---
 title: Print plan button and print stylesheet added
-status: open
+status: regression
 route: /tools/cutting-planner
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ No print button or print styles in `packages/applet-cutting-planner/src/`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (cutting planner grilling C7). The print button and print stylesheet are removed; legacy has no print affordance.
