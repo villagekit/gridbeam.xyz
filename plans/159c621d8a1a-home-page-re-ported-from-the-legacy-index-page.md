@@ -69,3 +69,5 @@ Gate: `timeout 900 just check` green after the dev server was stopped; `kipu ver
 ## Log
 
 - 2026-09-26: From the design carousel slice (plan [[60cca8519469]]): one more item on the section's heading for this re-port, [[0903eceefbaf]] (the article before the shuffle, legacy's currentDesignIsPlural null falling through to 'a '). The DesignCarousel call site (app/_components/landing/TypingDesignSection.tsx:69-75, with the hasImage type guard the nullable image needs until [[272613135119]] closes) and the hidden next-design Image (:79-90) move into app/page.tsx as they are; useDesignTypingEffect lives at app/_lib/useDesignTypingEffect.ts.
+
+- 2026-09-26: Shipped in two commits, not one: 5522dde carried the landing module's deletion and the store but left app/page.tsx modified and app/HomePage.tsx untracked, with five citation corrections from the reviews unstaged, because the staging step aborted on a pathspec for the already-staged deletions and the commit ran on the partial index; the commit after it completes the change, and the tree at that commit is the one the gate ran on.

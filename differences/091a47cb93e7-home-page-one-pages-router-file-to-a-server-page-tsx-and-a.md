@@ -7,7 +7,7 @@ kind: changed
 ---
 ## Legacy
 
-`apps/gridkit/pages/index.tsx` at `fce357d` is one file: `HomePage` with `NextSeo` for the title (`:75`), the breakpoint hooks (`:59-70`), the seven sections, `getStaticProps` (`:382-386`), the two stories' `metadata` imports (`:48-49`) and the private helpers below the page (`:388-551`).
+`apps/gridkit/pages/index.tsx` at `fce357d` is one file: `HomePage` with `NextSeo` for the title (`:74`), the breakpoint hooks (`:59-70`), the seven sections, `getStaticProps` (`:382-386`), the two stories' `metadata` imports (`:48-49`) and the private helpers below the page (`:388-551`).
 
 ## Current
 

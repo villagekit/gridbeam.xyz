@@ -11,7 +11,7 @@ kind: changed
 
 ## Current
 
-`app/HomePage.tsx:228-230` and the five items after it: `<List.Indicator asChild>` around `<Icon as={...} />`, styled by Chakra v3's list recipe (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/list.js:22-28`: `marginEnd: 2`, `minHeight: 1lh`, `flexShrink: 0`, `display: inline-block`, `verticalAlign: middle`) and its icon recipe (`recipes/icon.js:7-12`, `verticalAlign: middle`); the same probe on `pnpm dev` reads `inline-block`, `margin-right: 8px`, `vertical-align: middle`, the same 1em box, so each icon sits a few pixels higher against its line than legacy's; `audit/_root/1280/current.png`. The root's `display: flex; gap: 32px` for v2's `spacing={8}` margins renders the same 32px between items.
+`app/HomePage.tsx:228-230` and the five items after it: `<List.Indicator asChild>` around `<Icon as={...} />`, styled by Chakra v3's list recipe (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/list.js:21-27`: `marginEnd: 2`, `minHeight: 1lh`, `flexShrink: 0`, `display: inline-block`, `verticalAlign: middle`) and its icon recipe (`recipes/icon.js:7-12`, `verticalAlign: middle`); the same probe on `pnpm dev` reads `inline-block`, `margin-right: 8px`, `vertical-align: middle`, the same 1em box, so each icon sits a few pixels higher against its line than legacy's; `audit/_root/1280/current.png`. The root's `display: flex; gap: 32px` for v2's `spacing={8}` margins renders the same 32px between items.
 
 ## Verdict
 

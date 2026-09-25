@@ -11,7 +11,7 @@ Chakra v2's button theme (`@chakra-ui/theme`, `components/button.ts`: `md` is `h
 
 ## Current
 
-`@villagekit/ui@1.2.0`'s `buttonRecipe` (`node_modules/@villagekit/ui/dist/components/Button.js:11-27`) defines no `size` variants, so Chakra v3's button recipe applies (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/button.js:69-86`: `md` is `h: 10`, `textStyle: sm`, `px: 4`; `lg` is `h: 11`, `textStyle: md`, `px: 5`); the same CTAs on `pnpm dev` (`app/HomePage.tsx:73`, legacy's `buttonSize`) are 40px tall at 14px at 375 and 44px tall at 16px at 768 and 1280 (`audit/_root/{375,1280}/current.png`). Every `Button` and `LinkButton` on every route takes these sizes.
+`@villagekit/ui@1.2.0`'s `buttonRecipe` (`node_modules/@villagekit/ui/dist/components/Button.js:11-89`) defines no `size` variants, so Chakra v3's button recipe applies (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/button.js:69-86`: `md` is `h: 10`, `textStyle: sm`, `px: 4`; `lg` is `h: 11`, `textStyle: md`, `px: 5`); the same CTAs on `pnpm dev` (`app/HomePage.tsx:73`, legacy's `buttonSize`) are 40px tall at 14px at 375 and 44px tall at 16px at 768 and 1280 (`audit/_root/{375,1280}/current.png`). Every `Button` and `LinkButton` on every route takes these sizes.
 
 ## Verdict
 
