@@ -15,22 +15,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   pageExtensions: ['ts', 'tsx', 'mdx'],
-  // The published `@villagekit/*` packages ship TypeScript sources at their
-  // top-level `exports`; without `transpilePackages`, Next.js can't compile
-  // them and the build dies with "Module not found". Drop only if a package
-  // ever publishes built JS instead.
-  transpilePackages: [
-    '@villagekit/parameters',
-    '@villagekit/part',
-    '@villagekit/part-fastener',
-    '@villagekit/part-gridbeam',
-    '@villagekit/part-gridpanel',
-    '@villagekit/plugin-smart-fasteners',
-    '@villagekit/product',
-    '@villagekit/product-kit',
-    '@villagekit/sandbox',
-    '@villagekit/ui',
-  ],
   images: {
     loader: 'custom',
     loaderFile: './app/_lib/cloudinary-loader.ts',
