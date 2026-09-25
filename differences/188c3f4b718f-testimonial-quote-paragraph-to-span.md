@@ -1,6 +1,6 @@
 ---
 title: "Testimonial quote: paragraph to span"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/Testimonial.tsx:34` `<Text as="span">`; plain `text:` nodes in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan 0bb6cc8ab1ad
 
 ## Log

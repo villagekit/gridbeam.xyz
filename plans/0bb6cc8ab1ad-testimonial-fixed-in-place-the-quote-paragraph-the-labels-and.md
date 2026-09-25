@@ -1,6 +1,6 @@
 ---
 title: "Testimonial fixed in place: the quote paragraph, the labels and the breakpoint hook"
-status: todo
+status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
 tags:
@@ -31,5 +31,13 @@ None pure; the proof is the aria tree and the pairs.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped: `Testimonial` fixed in place against legacy's `components/testimonial.tsx` at `fce357d` and moved with `git mv` to `app/_components/Testimonial.tsx`, the `landing` barrel's export dropped and `app/page.tsx` importing the new path. The file follows legacy line for line (the `TestimonalProps` spelling, the `useBreakpointValue<boolean>({ base: false, xl: true }, { fallback: 'xl' }) as boolean` call and cast, the three `aria-label`s), with its `// ported from` header. The current code's own additions are gone: the per-author region name, `as="span"` on the quote, `w="full"` and `alignItems="stretch"` on the stack and `alignSelf="center"` on the name (Chakra v3's `VStack` centers its children, `node_modules/@chakra-ui/react/dist/esm/components/stack/v-stack.js`). Fixed: `188c3f4b718f`, `4bae9fe2b245`, `0538bfb1e38a`, `1bbb3def5d97`.
+
+Chakra v2 to v3 translations: `spacing="2"` to `gap="2"`; the stack's `sx={{ flex: 1 }}` to `flex="1"`; `BlockSection`'s `sx={{ flex: 1, width: '100%' }}` to `css={{ flex: 1, width: '100%' }}` (typed on `BlockSectionProps`); the quote's `sx={{ fontStyle: 'italic', textAlign: 'center' }}` to the `fontStyle` and `textAlign` style props; the name's `sx={{ color: 'gray.500' }}` to `color="gray.500"`; `BlockSection` imported from `@villagekit/ui` in place of the private `@villagekit-private/ui-page`. The `'use client'` directive stays: the hook forces it, which makes the boundary upgrade-forced (a note on `1bbb3def5d97`).
+
+Proof: `pnpm audit:dom` on `/` against `pnpm dev`: `audit/_root/dom/current.aria.yaml` holds three `region "Testimonial"`, each with two `paragraph` children, quote then name, as `legacy.aria.yaml` lines 41-49 do. A Playwright read of the first testimonial on both sides: the quote and the name at 14px at 375 and 1024 and at 16px at 1280, italic and centered, the same as legacy. The pairs at 375, 768 and 1280 looked at: the row gap and card widths are `fde554c6891c` (the page re-port's) and the grays are the shell palette's. `timeout 900 just check` green.
+
+Review: Standards, Spec and Parity on fresh Opus sub-agents, no critical finding. Taken: the four items fixed after the fixes; a note on `1bbb3def5d97` saying the directive is kept as upgrade-forced; a note on `418682fd0f5f` whose Places list named the moved file. The Parity reviewer asked whether the dev "1 Issue" badge is new: a console read shows its cause is `app/_components/StoryCard.tsx:57`, the `'[data-story-image]'` selector key that Emotion reads as a kebab-case property, committed before this slice and not the testimonial's; left for the story card slice `e332105c3b52`. Dropped: none.
 
 ## Log

@@ -30,3 +30,5 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-26: The Places list names app/_components/landing/Testimonial.tsx, which plan 0bb6cc8ab1ad moved to app/_components/Testimonial.tsx with its ported from header in place; that entry is closed.

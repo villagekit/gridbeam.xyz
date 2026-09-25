@@ -1,6 +1,6 @@
 ---
 title: "Testimonial: aria-label Quote and Name removed"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/landing/Testimonial.tsx:33-46` neither `Text` carries a label.
 
 ## Verdict
+
+plan 0bb6cc8ab1ad
 
 ## Log

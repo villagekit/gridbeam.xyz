@@ -24,13 +24,13 @@ import { TfiPencilAlt, TfiThought } from 'react-icons/tfi'
 
 import { ImageCarousel, type ImageCarouselProps } from './_components/ImageCarousel'
 import { StoryCard } from './_components/StoryCard'
+import { Testimonial } from './_components/Testimonial'
 import {
   LandingColumn,
   LandingPhoto,
   LandingRow,
   LandingSection,
   LandingVideo,
-  Testimonial,
   TypingDesignSection,
 } from './_components/landing'
 import { getDesignIndex } from './_lib/designs'
