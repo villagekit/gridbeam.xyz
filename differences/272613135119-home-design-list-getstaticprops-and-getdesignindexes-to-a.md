@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-12: The move from getStaticProps to an async server component is forced by the app router and has its own sanctioned item; this regression is the generated module, the label sort and the nullable image.
 
 - 2026-09-12: The designs route's own use of the generated module is filed on `/designs` with the same judgement (plan cf52c388).
+
+- 2026-09-26: At the home record's split (plan fd9a92bd8abd): no home slice closes this item. Its fix is the designs lib's (app/_lib/designs.ts: the generated module, the label sort and the nullable image, the mechanism abb539b3555e records on /designs), and the home's use (the image !== null filter, the guard in the typing section) goes with it. At the home record's finish this item goes on the home's verdicts plan (decision 40abdb2f222a) for the operator to judge alongside abb539b3555e.
