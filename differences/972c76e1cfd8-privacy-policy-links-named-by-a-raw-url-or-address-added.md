@@ -1,6 +1,6 @@
 ---
 title: Privacy policy links named by a raw URL or address added
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Every legacy link has a descriptive name: `link "Read Buttondown's privacy polic
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (privacy grilling P6). Moot once the added sections go: every legacy link has a descriptive name.

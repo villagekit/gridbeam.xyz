@@ -1,6 +1,6 @@
 ---
 title: Privacy policy lead paragraph set at fontSize lg
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (privacy grilling P2). The lead paragraph renders at the default paragraph size, as legacy.

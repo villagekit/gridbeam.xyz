@@ -1,6 +1,6 @@
 ---
 title: Privacy policy section Personal information we collect removed
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: removed
@@ -20,3 +20,5 @@ No section of that name; the nearest current sections, "What we don't collect" a
 - 2026-09-12: Filed per section (heading plus its paragraphs and lists), the text quoted in full, since the route is a wholesale rewrite; a verdict on the section covers its blocks. Flagged in plan 848b026f's Outcome as a convention for the operator.
 
 - 2026-09-12: Rule 2 covers the order-details item and rule 3 the cookies link inside it; the rest names no rule, so the section is the operator's.
+
+- 2026-09-25: Regression (privacy grilling P3). Legacy verbatim with: "fulfilling orders, " out of the first sentence and the billing/shipping/payment list item out (rule 2); "The search terms you used." out (the site has no search; operator); the "See our cookies policy..." line out (rule 3). The other six website-use items stay.

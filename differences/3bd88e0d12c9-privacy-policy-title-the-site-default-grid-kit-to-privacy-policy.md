@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy title: the site default Grid Kit to Privacy policy"
-status: open
+status: sanctioned
 route: /legal/privacy-policy
 axis: copy
 kind: changed
@@ -14,5 +14,7 @@ No `NextSeo` in the chain (`packages/applet-legal/src/pages/privacy-policy.tsx:1
 `app/legal/privacy-policy/page.tsx:18,23-24` `const title = 'Privacy policy'` in `metadata`; rendered `<title>Privacy policy — gridbeam.xyz</title>`.
 
 ## Verdict
+
+rule: operator (5). Legacy set no title and rendered the bare site default, an oversight rather than a choice; ships as "Privacy policy", templated by the shell ([[1c8b7461acb1]]). Privacy grilling P1.
 
 ## Log

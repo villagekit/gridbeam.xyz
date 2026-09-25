@@ -32,3 +32,5 @@ None.
 - 2026-09-25: Suppliers wordings confirmed (Metric/Imperial; Grid Kit Wellington only; Willits, California). About route closed: 32 items, all regressions to legacy verbatim with the rule 1 swap; the intro block and the two added sections go. Next: /faq.
 
 - 2026-09-25: FAQ route closed: 30 items. Legacy's three sections return (Product, Sustainability, Support); ten answers ship legacy verbatim with the swap, five in the company's voice ship in the operator's words, contact-support returns, the price and manufacturing questions go under rule 2, the seven added questions go. Next: /legal/privacy-policy.
+
+- 2026-09-25: Privacy policy route closed: 26 items. The legacy Privacy Act policy returns with the store, Stripe, payment and cookie lines cut under rules 2 and 3; the seven added sections go; the title keeps "Privacy policy". Two wordings pending the operator (the entity now that Village Kit is not a company; storage on Cloudflare and the email provider). Next: /tools/cutting-planner.

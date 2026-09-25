@@ -1,6 +1,6 @@
 ---
 title: GitHub Issues URL overflows the text column at 375
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ No such link in the legacy policy (`packages/applet-legal/src/mdx/privacy-policy
 ## Log
 
 - 2026-09-12: Found by the Parity review of plan 848b026f; a sibling of 90f294279f16 on `/contact`. The link sits in the added Your rights section, which the operator judges.
+
+- 2026-09-25: Regression (privacy grilling P6). Moot once the added Your rights text goes; the legacy section links "contact us".

@@ -1,6 +1,6 @@
 ---
 title: Privacy policy last updated shown as a subtitle under the h1
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ The h1 (`packages/applet-legal/src/mdx/privacy-policy.mdx:1`) has no description
 ## Log
 
 - 2026-09-12: The wording and date are the copy item on this route.
+
+- 2026-09-25: Regression (privacy grilling P1). No caption line under the h1, as legacy.

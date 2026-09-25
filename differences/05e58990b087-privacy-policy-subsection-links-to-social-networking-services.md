@@ -1,6 +1,6 @@
 ---
 title: Privacy policy subsection Links to social networking services removed
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: removed
@@ -18,3 +18,5 @@ No such subsection in `app/legal/privacy-policy/page.tsx`.
 ## Log
 
 - 2026-09-12: Filed per section (heading plus its paragraphs and lists), the text quoted in full, since the route is a wholesale rewrite; a verdict on the section covers its blocks. Flagged in plan 848b026f's Outcome as a convention for the operator.
+
+- 2026-09-25: Regression (privacy grilling P3). The subsection returns verbatim minus the sentence "See our cookies policy for more information." (rule 3). The operator keeps the social accounts (P7).

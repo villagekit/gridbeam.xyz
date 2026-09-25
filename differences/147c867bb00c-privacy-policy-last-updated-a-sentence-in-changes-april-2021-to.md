@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy last updated: a sentence in Changes, April 2021, to a subtitle, 2026-08-03"
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (privacy grilling P1). No subtitle. The date returns to the end of the Changes paragraph as legacy had it, reading the month the restored policy ships: "This privacy policy was last updated in <month year>."

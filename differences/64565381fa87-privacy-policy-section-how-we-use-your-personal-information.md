@@ -1,6 +1,6 @@
 ---
 title: Privacy policy section How we use your personal information removed
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: removed
@@ -18,3 +18,5 @@ No such section in `app/legal/privacy-policy/page.tsx`.
 ## Log
 
 - 2026-09-12: Filed per section (heading plus its paragraphs and lists), the text quoted in full, since the route is a wholesale rewrite; a verdict on the section covers its blocks. Flagged in plan 848b026f's Outcome as a convention for the operator.
+
+- 2026-09-25: Regression (privacy grilling P4). Legacy verbatim minus the order clauses (rule 2): the parenthesis becomes "(such as to publish a discussion post or design on our community platform, or to subscribe to our newsletter)" and the list item "Contact you about any order you have placed through our website." goes.

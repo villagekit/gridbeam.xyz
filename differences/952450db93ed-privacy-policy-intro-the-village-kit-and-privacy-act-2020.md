@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy intro: the Village Kit and Privacy Act 2020 preamble with key messages to one paragraph"
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed per section (heading plus its paragraphs and lists), the text quoted in full, since the route is a wholesale rewrite; a verdict on the section covers its blocks. Flagged in plan 848b026f's Outcome as a convention for the operator.
+
+- 2026-09-25: Regression (privacy grilling P2). Legacy's three paragraphs and six key messages return verbatim, with: the fourth message cut under rule 2 to "We use some third party providers to manage some of our engagement processes including Buttondown."; the first sentence's entity and the second message's storage location pending the operator's wording (P7: Village Kit is no longer a company; hosting moves from Vercel to Cloudflare).

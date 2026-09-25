@@ -17,4 +17,4 @@ kind: changed
 
 ## Log
 
-- 2026-09-25: Regression (faq grilling F3). Question ships as "Do I need any special tools to assemble it?" (legacy's ended on the kit; operator). Answer legacy with the rule 1 swap: "No special tools needed! Grid beam is designed for easy assembly, and you only need basic hand tools like a 4mm hex key. For help on assembly, see our guide \"How To Install Furniture Bolts\"." with legacy's quoted link label.
+- 2026-09-25: Regression (faq grilling F3). Question ships as "Do I need any special tools to assemble it?" (legacy's ended on the kit; operator). Answer legacy with the rule 1 swap: "No special tools needed! Grid beam is designed for easy assembly, and you only need basic hand tools like a 4mm hex key. For help on assembly, see our guide "How To Install Furniture Bolts"." with legacy's quoted link label.

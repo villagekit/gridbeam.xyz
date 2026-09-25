@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy meta description: the site default to a route description"
-status: open
+status: regression
 route: /legal/privacy-policy
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ The site default from `apps/gridkit/pages/_app.tsx:49` ("Anyone can be a maker w
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (privacy grilling P1). No per-page description; the route inherits the site default ([[1906af99b588]]) as legacy did.
