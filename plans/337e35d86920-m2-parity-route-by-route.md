@@ -32,3 +32,5 @@ Dependency upgrades (M3) and the release (M4).
 ## Log
 
 - 2026-09-25: The unattended run starts (plan e0d02ccdfb3f). Standing instructions for every worker: the publishes are deferred, so a sibling fix parks its items in `upstream` and blocks the bump plan `99f2fe62c62f` (decision `28c1a536`); every slice is tagged `worker:<model>` (decision `8eed053a`); the subscribe form's key is an attended slice; a copy item is closed by the verbatim legacy text or the item's verdict and nothing else; a `\"` in a heredoc note lands literally, so notes are single-quoted; the gate is `timeout 900 just check`.
+
+- 2026-09-26: The shell record's slices have all shipped; fourteen items on shell wait on the operator. From here a record finishes with its operator items on an attended verdicts plan beside it and its agent-fixable leftovers on slices beside it (decision 40abdb2f222a), so the route records are not held on the operator's time.

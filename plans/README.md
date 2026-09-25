@@ -53,7 +53,9 @@ record never competes with them for ready. A slice moves to `done` with its
 Outcome in the commit that ships it (`kipu finish <id> --outcome -`). A
 record stays open until its slices have shipped and its exit demo holds;
 then `/finish-epic` runs the demo and finishes it, unattended
-([[b9af27e0df50]]). A gate between records (the copy grilling, the
+([[b9af27e0df50]]); an item left for the operator's verdict goes on one
+attended plan minted beside the record, an agent-fixable one on a slice
+beside it, and the record finishes anyway ([[40abdb2f222a]]). A gate between records (the copy grilling, the
 operator's declaration of parity) is a plan the next record is `blocked_by`
 and tagged `gate`; where the trigger is the operator's, it is tagged
 `attended` too, and agents stop at it whoever handed it to them. Nothing
