@@ -34,3 +34,5 @@ Other routes; the shell, except where a difference on this route is closed by a 
 ## Outcome
 
 ## Log
+
+- 2026-09-25: From the shell split (plan a78b167170b8): the footer's standalone Subscribe signup box, the verdict of `ac6579ec16d2` (a shell item), is this record's to slice, since it consumes the subscribe form and the Buttondown key; until then the shell's site footer slice `5e4529a6aeac` ships Subscribe as the legacy `Newsletter` text link in the Connect section.

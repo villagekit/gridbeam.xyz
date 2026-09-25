@@ -24,3 +24,7 @@ None.
 - `kipu list --collection difference --status upstream` is empty, checked after the moves
 - `package.json` pins the published versions and `pnpm-lock.yaml` matches
 - `timeout 900 just check` is green
+
+## Log
+
+- 2026-09-25: From the shell split (plan a78b167170b8): the shell's ui slices move the package's API toward the legacy shape (the nav provider taking `usePathname` and a link component, `Footer` taking `socialLinks`, `Provider` taking a `system`, `LinkCard`'s `icon` as a component type, the tuple `FooterSections`, the media components defaulting to legacy's cloud name). Each such slice writes a note here naming the site edits (file, prop, value) this plan's bump commit makes before its gate, since a bump is the commit that adapts to what it buys; the site's video components moving onto the ui `Video` (`b397b0deb1cc`) and `SiteFooter` becoming legacy's thin `footer.tsx` (`ca69d5d2e67c`) are among them.
