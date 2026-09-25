@@ -1,6 +1,6 @@
 ---
 title: "Footer: ui-brand Footer and Social replaced by a site-local SiteFooter"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in ../ui by the ui brand footer slice [[1977c9af920c]], commit ae593d0: src/components/layouts/Footer.tsx is the brand footer (socialLinks, children between the row and the credit, shouldLinkToCompanyWebsite) around a private BaseFooter, and src/components/Social.tsx is legacy's Social with SocialLinkDescriptor exported. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] thins app/_components/SiteFooter.tsx to legacy's footer.tsx shape.

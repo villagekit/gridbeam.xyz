@@ -1,6 +1,6 @@
 ---
 title: "Footer social row container: prose to 8xl with responsive padding"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found by the site footer slice (plan [[5e4529a6aeac]]): no rule covers the wider row, so regression. The Container is the package's and the site's markup is legacy's bare Container, so the fix is the ui side's, not a site-side maxW: the brand footer slice [[1977c9af920c]] re-ports the Container around the social row, or the recipes slice [[45d6f5634a11]] gives the ui provider legacy's container default.
+
+- 2026-09-26: Fixed in ../ui by the ui brand footer slice [[1977c9af920c]], commit ae593d0: src/components/layouts/Footer.tsx wraps the social row in Container maxW prose px 4, Chakra v2's default container; measured 600px wide with 16px padding on both sides at 768 and 1280. Waits on the operator's publish.

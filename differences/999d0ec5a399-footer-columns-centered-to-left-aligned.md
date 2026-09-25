@@ -1,6 +1,6 @@
 ---
 title: "Footer columns: centered to left-aligned"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in ../ui by the ui brand footer slice [[1977c9af920c]], commit ae593d0: src/components/layouts/Footer.tsx drops alignItems from the row and the columns, so each column's VStack centers its heading and links as legacy's did (legacy's alignItems top was an invalid value the browser ignored). Measured align-items center on every section on both sides. Waits on the operator's publish.

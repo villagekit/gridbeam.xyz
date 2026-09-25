@@ -1,6 +1,6 @@
 ---
 title: footerSections moved to nav.ts; FooterSections tuple to array
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: Follows the footer restructure (its copy items, one per heading and link, are open); the shape of the code differs from the legacy author's whichever way that is judged.
 
 - 2026-09-26: The site half is done by the site footer slice (plan [[5e4529a6aeac]]): footerSections lives beside SiteFooter in app/_components/SiteFooter.tsx as legacy's footer.tsx had it, and app/_lib/nav.ts keeps navItems only. The item stays regression for the FooterSections tuple type, which the ui brand footer slice [[1977c9af920c]] owns.
+
+- 2026-09-26: Fixed in ../ui by the ui brand footer slice [[1977c9af920c]], commit ae593d0: src/components/layouts/Footer.tsx exports FooterSections as a tuple again. It is a 4-tuple where legacy's was a 3-tuple, since decision 9f344fbfde9a sanctions four sections; the site's footerSections type-checks against it. Waits on the operator's publish.
