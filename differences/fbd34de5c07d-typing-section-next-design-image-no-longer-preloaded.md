@@ -1,6 +1,6 @@
 ---
 title: "Typing section: next design image no longer preloaded"
-status: regression
+status: fixed
 route: /
 axis: interaction
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/landing/TypingDesignSection.tsx:30` destructures `[currentDesign, typedLabel]` only; no preload element. From code.
 
 ## Verdict
+
+plan 60cca8519469
 
 ## Log
 

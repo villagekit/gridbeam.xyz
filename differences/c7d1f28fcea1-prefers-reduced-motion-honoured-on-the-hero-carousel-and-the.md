@@ -1,6 +1,6 @@
 ---
 title: prefers-reduced-motion honoured on the hero carousel and the typing section
-status: regression
+status: fixed
 route: /
 axis: interaction
 kind: added
@@ -14,6 +14,8 @@ No reduced-motion handling in `apps/gridkit/pages/index.tsx`, `components/image-
 `app/_components/landing/ImageCarousel.tsx:42-46` no autoplay and no cross-fade; `TypingDesignSection.tsx:28-39,110-117` typing paused, full label shown, no zoom. From code.
 
 ## Verdict
+
+plan 60cca8519469
 
 ## Log
 

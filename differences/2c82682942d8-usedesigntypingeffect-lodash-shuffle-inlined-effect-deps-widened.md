@@ -1,6 +1,6 @@
 ---
 title: "useDesignTypingEffect: lodash shuffle inlined, effect deps widened, nextDesign unused"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/useDesignTypingEffect.ts:1,84,97-108` cites the port; a local Fisher-Yates `shuffle`; deps `[designs, pause, loop, playbackRate]`; `nextDesign` is returned (`:90-94`) but the only caller drops it (`TypingDesignSection.tsx:30`).
 
 ## Verdict
+
+plan 60cca8519469
 
 ## Log

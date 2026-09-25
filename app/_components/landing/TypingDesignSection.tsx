@@ -1,15 +1,17 @@
 'use client'
 
-import { Box, Heading, LinkButton, Span, Text, VisuallyHidden } from '@villagekit/ui'
-import { motion, useInView, useReducedMotion } from 'motion/react'
-import NextImage from 'next/image'
+import { Box, Heading, Image, LinkButton, Span, Text, VisuallyHidden } from '@villagekit/ui'
+import { useInView } from 'motion/react'
 import NextLink from 'next/link'
 import pluralize from 'pluralize-esm'
 import { useRef } from 'react'
 
+import type { StaticImageData } from 'next/image'
+
 import type { DesignIndexEntry } from '../../_lib/designs'
+import { useDesignTypingEffect } from '../../_lib/useDesignTypingEffect'
+import { DesignCarousel } from '../DesignCarousel'
 import { LandingColumn, LandingRow, LandingSection } from './LandingSection'
-import { useDesignTypingEffect } from './useDesignTypingEffect'
 
 interface TypingDesignSectionProps {
   index: number
@@ -21,22 +23,16 @@ export function TypingDesignSection(props: TypingDesignSectionProps) {
 
   const ref = useRef<HTMLDivElement>(null)
   // Pauses the typing-effect timer (and the live-region announcements) when
-  // the section is offscreen. Honour `prefers-reduced-motion` too — the
-  // continuous keystroke + image-zoom effect is exactly what motion-sensitive
-  // users avoid, so we render the static current label instead.
+  // the section is offscreen.
   const isInView = useInView(ref)
-  const prefersReducedMotion = useReducedMotion() ?? false
 
-  const [currentDesign, typedLabel] = useDesignTypingEffect({
+  const [currentDesign, typedLabel, nextDesign] = useDesignTypingEffect({
     designs,
     loop: true,
-    pause: !isInView || prefersReducedMotion,
+    pause: !isInView,
   })
 
   const article = getArticle(currentDesign?.label ?? '')
-  // When motion is reduced, show the full label — the typing effect is
-  // suppressed but the section still reads as "Build a [design]".
-  const displayLabel = prefersReducedMotion ? (currentDesign?.label ?? '') : typedLabel
 
   return (
     <LandingSection index={index}>
@@ -55,7 +51,7 @@ export function TypingDesignSection(props: TypingDesignSectionProps) {
             )}
             <Heading as="h2" size={{ base: '3xl', md: '4xl' }} lineHeight="1.1" aria-hidden="true">
               Build {article}
-              <Span color="accentA.500">{displayLabel}</Span>
+              <Span color="accentA.500">{typedLabel}</Span>
             </Heading>
 
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
@@ -70,17 +66,28 @@ export function TypingDesignSection(props: TypingDesignSectionProps) {
           </LandingColumn>
 
           <Box flex="1" w="full" overflow="hidden">
-            {currentDesign !== null && currentDesign.image !== null && (
-              <DesignCarouselImage
-                src={currentDesign.image.src}
-                alt={currentDesign.label}
+            {currentDesign !== null && hasImage(currentDesign) && (
+              <DesignCarousel
+                design={currentDesign}
+                sizes={{ base: '100%', md: ['1500px', 2] }}
                 shouldMirror
-                prefersReducedMotion={prefersReducedMotion}
               />
             )}
           </Box>
         </LandingRow>
       </Box>
+      {nextDesign !== null && nextDesign.image !== null && (
+        // eagerly load the next design
+        <Image
+          type="local"
+          priority
+          unoptimized
+          src={nextDesign.image}
+          alt={nextDesign.label}
+          sizes={{ base: '100%', md: ['1500px', 2] }}
+          css={{ display: 'none' }}
+        />
+      )}
     </LandingSection>
   )
 }
@@ -93,53 +100,10 @@ function getArticle(label: string): string {
   return pluralize.isPlural(lastWord) ? '' : 'a '
 }
 
-interface DesignCarouselImageProps {
-  src: string
-  alt: string
-  shouldMirror?: boolean
-  prefersReducedMotion?: boolean
-}
-
-function DesignCarouselImage(props: DesignCarouselImageProps) {
-  const { src, alt, shouldMirror = false, prefersReducedMotion = false } = props
-
-  // motion.key drives the cross-fade + zoom-in animation each time the image
-  // src changes — same shape as the legacy `DesignCarousel` (Web Animations
-  // API) but expressed via Framer Motion since it's already in the bundle.
-  // Reduced-motion users get a plain swap with no animation.
-  const initial = prefersReducedMotion ? false : { opacity: 0, scale: 0.85 }
-  const animate = { opacity: 1, scale: 1 }
-  const transition = prefersReducedMotion
-    ? { duration: 0 }
-    : {
-        opacity: { duration: 0.6, ease: 'easeOut' as const },
-        scale: { duration: 1.2, ease: [0.33, 1, 0.68, 1] as const },
-      }
-
-  return (
-    <Box display="flex" justifyContent="center" h="full" w="full">
-      <Box aspectRatio="4 / 3" w="full" position="relative">
-        <motion.div
-          key={src}
-          initial={initial}
-          animate={animate}
-          transition={transition}
-          style={{
-            position: 'absolute',
-            inset: 0,
-            transform: shouldMirror ? 'scaleX(-1)' : undefined,
-          }}
-        >
-          <NextImage
-            src={src}
-            alt={alt}
-            fill
-            unoptimized
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            style={{ objectFit: 'contain' }}
-          />
-        </motion.div>
-      </Box>
-    </Box>
-  )
+// The site's design index may lack a picture (272613135119, the designs
+// record's); DesignCarousel takes a design that has one, as legacy's did.
+function hasImage(
+  design: DesignIndexEntry,
+): design is DesignIndexEntry & { image: StaticImageData } {
+  return design.image !== null
 }

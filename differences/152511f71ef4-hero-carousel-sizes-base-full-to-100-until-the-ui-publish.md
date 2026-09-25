@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]): src/hooks/useSizeWidths.ts names full as 100% again, the shell item [[252edab16c7a]]. Filed by the image carousel slice (plan [[c92c235205f5]]). Waits on the operator's publish; the bump plan [[99f2fe62c62f]] swaps the call site back to full and moves this to fixed.
+
+- 2026-09-26: The design carousel slice (plan [[60cca8519469]]) writes the same base: '100%' at two more call sites, app/_components/landing/TypingDesignSection.tsx:72,87 (the DesignCarousel and the hidden next-design Image, legacy pages/index.tsx:444,454). Both images are unoptimized ([[a704be5b8765]]), so Next writes no sizes attribute for them and the swap back to full changes nothing rendered; the check stays the grep. The page re-port inlines the section and moves the two lines into app/page.tsx.

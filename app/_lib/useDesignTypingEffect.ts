@@ -1,11 +1,10 @@
-// Ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/hooks/useDesignTypingEffect.tsx
-// The cycling logic is unchanged; the only difference is dropping the lodash
-// dep (inline Fisher–Yates) and narrowing the input type to the local
-// DesignIndexEntry shape.
-
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/hooks/useDesignTypingEffect.tsx
+import { shuffle } from 'lodash-es'
 import { useEffect, useState } from 'react'
 
-import type { DesignIndexEntry } from '../../_lib/designs'
+import type { DesignIndexEntry } from './designs'
+
+// Reference: https://github.com/Hermanya/use-typing-effect/blob/master/src/index.tsx
 
 interface DesignTypingEffectOptions {
   designs: ReadonlyArray<DesignIndexEntry>
@@ -14,15 +13,12 @@ interface DesignTypingEffectOptions {
   playbackRate?: number
 }
 
-const NON_BREAKING_SPACE = ' '
-
 export function useDesignTypingEffect(
   options: DesignTypingEffectOptions,
 ): [DesignIndexEntry | null, string, DesignIndexEntry | null] {
   const { designs: allDesigns, pause = false, loop = false, playbackRate = 1 } = options
 
-  // Designs must start empty so server render matches client render — the
-  // shuffle below would otherwise produce a different order each refresh.
+  // designs must start empty so server render matches client render
   const [designs, setDesigns] = useState<ReadonlyArray<DesignIndexEntry> | null>(null)
 
   useEffect(() => {
@@ -37,15 +33,14 @@ export function useDesignTypingEffect(
     designIndex: 0,
   })
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: characterIndex/designIndex are intentionally read inside the effect from local mutable copies; including them would re-arm the timer every keystroke.
+  // biome-ignore lint/correctness/useExhaustiveDependencies:
   useEffect(() => {
     if (pause === true) return
-    if (designs === null) return
 
     let nextCharacterIndex = characterIndex
     let nextDesignIndex = designIndex
 
-    let timeoutId: number | undefined
+    let timeoutId: number
 
     emulateKeyStroke()
 
@@ -55,22 +50,24 @@ export function useDesignTypingEffect(
 
     function emulateKeyStroke() {
       if (designs === null) return
-      const currentLabel = designs[nextDesignIndex]?.label
-      if (currentLabel === undefined) return
+      const nextDesign = designs[nextDesignIndex]
+      if (nextDesign === undefined) return
 
       nextCharacterIndex++
 
-      if (nextCharacterIndex === currentLabel.length) {
+      if (nextCharacterIndex === nextDesign.label.length) {
         nextCharacterIndex = 0
         nextDesignIndex++
 
         if (nextDesignIndex === designs.length) {
-          if (!loop) return
+          if (!loop) {
+            return
+          }
           nextDesignIndex = 0
         }
 
         timeoutId = window.setTimeout(emulateKeyStroke, 100 * playbackRate)
-      } else if (nextCharacterIndex === currentLabel.length - 1) {
+      } else if (nextCharacterIndex === nextDesign.label.length - 1) {
         timeoutId = window.setTimeout(emulateKeyStroke, 2500 * playbackRate)
       } else {
         timeoutId = window.setTimeout(emulateKeyStroke, 100 * playbackRate)
@@ -81,28 +78,16 @@ export function useDesignTypingEffect(
         designIndex: nextDesignIndex,
       })
     }
-  }, [designs, pause, loop, playbackRate])
+  }, [designs, pause])
 
   const currentDesign = designs === null ? null : (designs[designIndex] ?? null)
-  const currentLabel = currentDesign === null ? '' : currentDesign.label
+  const currentDesignLabel = currentDesign === null ? '' : currentDesign.label
   const nextDesign = designs === null ? null : (designs[(designIndex + 1) % designs.length] ?? null)
 
+  const nonBreakingSpace = '\u00A0'
   return [
     currentDesign,
-    currentLabel.slice(0, characterIndex + 1) || NON_BREAKING_SPACE,
+    currentDesignLabel.slice(0, characterIndex + 1) || nonBreakingSpace,
     nextDesign,
   ]
-}
-
-function shuffle<T>(input: ReadonlyArray<T>): Array<T> {
-  const arr = [...input]
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    const a = arr[i]
-    const b = arr[j]
-    if (a === undefined || b === undefined) continue
-    arr[i] = b
-    arr[j] = a
-  }
-  return arr
 }

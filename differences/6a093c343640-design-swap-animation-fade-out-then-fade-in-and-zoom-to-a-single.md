@@ -1,6 +1,6 @@
 ---
 title: "Design swap animation: fade-out then fade-in and zoom to a single fade and zoom"
-status: regression
+status: fixed
 route: /
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:110-117` one `motion.div` keyed by `src`: opacity 0 to 1 over 0.6s, scale 0.85 to 1 over 1.2s; no fade-out, no `onLoad` gating. From code.
 
 ## Verdict
+
+plan 60cca8519469
 
 ## Log

@@ -52,3 +52,5 @@ None pure; the proof is the DOM pair's copy diff and aria tree, the screenshot p
 ## Outcome
 
 ## Log
+
+- 2026-09-26: From the design carousel slice (plan [[60cca8519469]]): one more item on the section's heading for this re-port, [[0903eceefbaf]] (the article before the shuffle, legacy's currentDesignIsPlural null falling through to 'a '). The DesignCarousel call site (app/_components/landing/TypingDesignSection.tsx:69-75, with the hasImage type guard the nullable image needs until [[272613135119]] closes) and the hidden next-design Image (:79-90) move into app/page.tsx as they are; useDesignTypingEffect lives at app/_lib/useDesignTypingEffect.ts.

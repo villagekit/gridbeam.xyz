@@ -1,6 +1,6 @@
 ---
 title: "DesignCarousel: Web Animations API component to a private motion DesignCarouselImage"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:96-145` an unexported `DesignCarouselImage` with `motion.div key={src}` and a `prefersReducedMotion` branch.
 
 ## Verdict
+
+plan 60cca8519469
 
 ## Log
