@@ -1,6 +1,6 @@
 ---
 title: "Empty state line 2: Try again using a different keyword or hit reset to Try a different keyword or category, or hit reset."
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). Ships as legacy verbatim: "Try again using a different keyword or hit reset".

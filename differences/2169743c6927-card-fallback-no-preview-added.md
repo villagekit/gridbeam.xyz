@@ -1,6 +1,6 @@
 ---
 title: Card fallback No preview added
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Found by the Parity review (plan cf52c388, round one).
+
+- 2026-09-25: Regression (designs grilling D4). The card always renders the image, as legacy; no fallback text.

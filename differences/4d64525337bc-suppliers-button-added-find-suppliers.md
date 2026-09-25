@@ -1,6 +1,6 @@
 ---
 title: "Suppliers button added: Find suppliers"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ The legacy page ends after the `CatalogueItem` (`apps/gridkit/pages/designs/[id]
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T4). The suppliers section is removed; the page ends after the tabs as legacy. Template.

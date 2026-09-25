@@ -36,3 +36,5 @@ None.
 - 2026-09-25: Privacy policy route closed: 26 items. The legacy Privacy Act policy returns with the store, Stripe, payment and cookie lines cut under rules 2 and 3; the seven added sections go; the title keeps "Privacy policy". Two wordings pending the operator (the entity now that Village Kit is not a company; storage on Cloudflare and the email provider). Next: /tools/cutting-planner.
 
 - 2026-09-25: Privacy wordings confirmed (Mikey Williams, mikey.nz; Cloudflare; Google Workspace). Cutting planner route closed: 23 items, legacy's labels and captions verbatim, the intro, summary, share links and print removed; the title keeps "Cutting planner". Next: /designs/bed-frame and /designs.
+
+- 2026-09-25: Designs index and design page template closed: 38 items, all regressions to legacy. The index keeps its fixed 14 filters, legacy's strings and a single grid; the design page keeps legacy's labels, the Settings and Cutting plan headings and the footnote, with the Plan tab's headline cut to "Requires Nx Sgu (grid unit) beams." under rule 2. Next: /tools-and-resources.

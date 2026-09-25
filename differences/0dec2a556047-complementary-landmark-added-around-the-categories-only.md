@@ -1,6 +1,6 @@
 ---
 title: Complementary landmark added around the categories only
-status: open
+status: regression
 route: /designs
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ No landmark wraps the categories; they are a child of the virtual menubar (`apps
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D3). Legacy's markup returns; landmarks wait for the accessibility pass after M2 ([[eeba2a65cee4]]).

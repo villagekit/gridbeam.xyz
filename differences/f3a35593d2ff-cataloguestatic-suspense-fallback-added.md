@@ -1,6 +1,6 @@
 ---
 title: CatalogueStatic Suspense fallback added
-status: open
+status: regression
 route: /designs
 axis: code
 kind: added
@@ -18,3 +18,5 @@ No fallback and no server/client split: `apps/gridkit/pages/designs/index.tsx:67
 ## Log
 
 - 2026-09-12: Its column mismatch with the hydrated grid is a visual item on this route.
+
+- 2026-09-25: Regression (designs grilling D4). The fallback grid goes with the URL-synced filter state legacy never had; one grid, rendered once.

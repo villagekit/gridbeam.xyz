@@ -1,6 +1,6 @@
 ---
 title: "Parts unit toggle name: Display units as millimeters or grid units to Show measurements in millimetres"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T2). Ships as "Display units as millimeters or grid units". Template.

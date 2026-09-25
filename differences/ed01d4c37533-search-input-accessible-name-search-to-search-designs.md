@@ -1,6 +1,6 @@
 ---
 title: "Search input accessible name: Search to Search designs"
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The dropped `role="search"` landmark has its own accessibility item.
+
+- 2026-09-25: Regression (designs grilling D2). The role=search wrapper is named "Search" and the input by its placeholder, as legacy.

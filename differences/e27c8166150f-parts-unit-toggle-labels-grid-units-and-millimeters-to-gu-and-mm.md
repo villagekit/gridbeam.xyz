@@ -1,6 +1,6 @@
 ---
 title: "Parts unit toggle labels: Grid units and Millimeters to gu and mm"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Template. The planner's own instance is [[c4a82d72201c]].
+
+- 2026-09-25: Regression (design page grilling T2). Ships as "Grid units" / "Millimeters". Template; the planner's instance is [[c4a82d72201c]].

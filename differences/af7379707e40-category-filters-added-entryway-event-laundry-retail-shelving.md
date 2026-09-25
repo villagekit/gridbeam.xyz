@@ -1,6 +1,6 @@
 ---
 title: "Category filters added: Entryway, Event, Laundry, Retail, Shelving"
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). Legacy's fixed table of 14 filter labels returns; no filter is derived from tags. The five single-design tags (entryway, event, laundry, retail, shelving) get no filter, as in legacy: those designs show under All designs.

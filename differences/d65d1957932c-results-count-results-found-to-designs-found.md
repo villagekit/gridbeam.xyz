@@ -1,6 +1,6 @@
 ---
 title: "Results count: results found to designs found"
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). Ships as legacy: "{n} results found" / "1 result found".

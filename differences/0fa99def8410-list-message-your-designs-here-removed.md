@@ -1,6 +1,6 @@
 ---
 title: List message Your designs here… ✨ removed
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: removed
@@ -16,3 +16,5 @@ kind: removed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). The list message "Your designs here… ✨" returns after the grid with legacy's delayed fade-in.

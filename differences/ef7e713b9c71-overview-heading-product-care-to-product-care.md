@@ -1,6 +1,6 @@
 ---
 title: "Overview heading: Product Care to Product care"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Template: the same on every design page.
+
+- 2026-09-25: Regression (design page grilling T2). Ships as "Product Care". Template.

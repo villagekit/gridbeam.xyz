@@ -1,6 +1,6 @@
 ---
 title: "Empty state button: Reset search to Reset"
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). Ships as "Reset search".

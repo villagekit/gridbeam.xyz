@@ -1,6 +1,6 @@
 ---
 title: In-tab heading Cutting plan removed
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: removed
@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T2). The "Cutting plan" heading returns inside the Plan tab. Template.

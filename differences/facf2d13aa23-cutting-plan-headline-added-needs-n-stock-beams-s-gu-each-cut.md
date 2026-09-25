@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan headline added: Needs N stock beams (S gu each), cut into …"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ Nothing like it in the legacy plan tab: its headline is the Starter Kit sentence
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T3). Ships as legacy's sentence with the store clause cut (rules 2 + 5, the [[5dfd824923c9]] pattern): "Requires {N}x {size}gu (grid unit) beams." with "grid unit" linked to /stories/whats-a-grid-unit as legacy had; one sentence for both stock sizes. Template.

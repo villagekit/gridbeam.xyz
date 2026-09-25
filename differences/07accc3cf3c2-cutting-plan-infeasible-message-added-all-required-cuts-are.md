@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan infeasible message added: All required cuts are longer than the N gu stock length — needs custom-length stock."
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ Nothing like it in the legacy plan tab: `apps/gridkit/pages/designs/[id].tsx:181
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T3). Removed; legacy's Plan tab shows the heading, the sentence, the engine drawings, the unit toggle and the footnote. Template.

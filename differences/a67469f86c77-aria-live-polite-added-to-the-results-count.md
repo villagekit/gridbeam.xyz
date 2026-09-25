@@ -1,6 +1,6 @@
 ---
 title: aria-live polite added to the results count
-status: open
+status: regression
 route: /designs
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D3). Legacy's plain results count returns; the live region waits for the accessibility pass after M2 ([[eeba2a65cee4]]).

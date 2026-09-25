@@ -1,6 +1,6 @@
 ---
 title: Runtime TOML checks and an Unknown design error added
-status: open
+status: regression
 route: /designs
 axis: code
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D4). Back to legacy's shape in the designs loader; the not-found path for an unknown id stays under the sanctioned app-router data item [[f97cae6ea3c8]].

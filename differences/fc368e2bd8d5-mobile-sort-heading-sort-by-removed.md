@@ -1,6 +1,6 @@
 ---
 title: Mobile sort heading Sort by removed
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: removed
@@ -16,3 +16,5 @@ kind: removed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D2). The mobile "Sort by" heading returns above the dropdown, as legacy.

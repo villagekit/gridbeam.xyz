@@ -1,6 +1,6 @@
 ---
 title: Suppliers section added below the tabs
-status: open
+status: regression
 route: /designs/bed-frame
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ The page ends after the `CatalogueItem` (`apps/gridkit/pages/designs/[id].tsx:92
 ## Log
 
 - 2026-09-12: Template. Its two strings are copy items.
+
+- 2026-09-25: Regression (design page grilling T4). The suppliers section is removed; the page ends after the tabs as legacy. Template.

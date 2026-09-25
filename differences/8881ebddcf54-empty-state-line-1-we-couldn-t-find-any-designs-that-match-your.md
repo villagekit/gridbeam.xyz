@@ -1,6 +1,6 @@
 ---
 title: "Empty state line 1: We couldn't find any designs that match your search criteria to We couldn’t find any designs that match your search."
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note [[526d5330ef4e]]: the catalogue empty-state rewrite holds; this item and the two that follow are it.
+
+- 2026-09-25: Regression (designs grilling D2). Ships as legacy verbatim: "We couldn't find any designs that match your search criteria" (straight apostrophe, no period).

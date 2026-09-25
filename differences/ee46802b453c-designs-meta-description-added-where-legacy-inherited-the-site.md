@@ -1,6 +1,6 @@
 ---
 title: Designs meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /designs
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Same pattern as [[bfc81eb7197c]] on `/` and [[39bf8c100615]] on `/stories`; the mechanism is the shell item [[65c21e08b3f1]].
+
+- 2026-09-25: Regression (designs grilling D1). No per-page description; the route inherits the site default ([[1906af99b588]]) as legacy did.

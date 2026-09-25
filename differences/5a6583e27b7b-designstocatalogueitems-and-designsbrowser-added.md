@@ -1,6 +1,6 @@
 ---
 title: designsToCatalogueItems and DesignsBrowser added
-status: open
+status: regression
 route: /designs
 axis: code
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D4). Back to legacy's inline useMemo mapping in the page and a direct <Catalogue>; no mapper module or client wrapper.

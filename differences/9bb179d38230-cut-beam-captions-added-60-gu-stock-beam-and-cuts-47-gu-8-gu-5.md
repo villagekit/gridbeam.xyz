@@ -1,6 +1,6 @@
 ---
 title: "Cut-beam captions added: 60 gu stock beam and cuts: 47 gu + 8 gu + 5 gu waste"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T3). Goes with the drawing swap ([[8ea5d69ee6ed]]): the engine's CutGridBeamSvg carries its own numbers and title. Template.

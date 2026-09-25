@@ -1,6 +1,6 @@
 ---
 title: "Suppliers paragraph added: Find a supplier for the parts on the suppliers page."
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ No section follows the tabs: the legacy page ends after the `CatalogueItem` (`ap
 ## Log
 
 - 2026-09-12: Template. The section itself is a visual item.
+
+- 2026-09-25: Regression (design page grilling T4). The suppliers section is removed; the page ends after the tabs as legacy. Template.

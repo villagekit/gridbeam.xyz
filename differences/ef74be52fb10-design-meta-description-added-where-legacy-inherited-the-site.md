@@ -1,6 +1,6 @@
 ---
 title: Design meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Template: `/designs/shelf-tower` serves `A versatile storage tower. Can be used as a narrow bookcase, bathroom organiser, and more.` and `/designs/5-12-13-triangle-desk` its own description the same way.
+
+- 2026-09-25: Regression (design page grilling T1). No per-design description; every design page inherits the site default ([[1906af99b588]]) as legacy did. Template: applies to every /designs/[id] route.

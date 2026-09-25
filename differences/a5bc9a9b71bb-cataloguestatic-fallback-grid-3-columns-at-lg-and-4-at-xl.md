@@ -1,6 +1,6 @@
 ---
 title: "CatalogueStatic fallback grid: 3 columns at lg and 4 at xl, reflowing to 2 and 3 on hydration"
-status: open
+status: regression
 route: /designs
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ No fallback: `apps/gridkit/components/catalogue/list.tsx` is the only grid.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (designs grilling D4). Moot once the fallback grid goes ([[f3a35593d2ff]]).

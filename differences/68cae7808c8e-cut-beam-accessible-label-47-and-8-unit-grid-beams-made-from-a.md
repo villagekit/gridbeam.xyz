@@ -1,6 +1,6 @@
 ---
 title: "Cut-beam accessible label: 47 and 8 unit grid beams made from a 60 unit grid beam cut at 47 and 55 grid unit markers. to 60 gu stock beam, cuts: 47 gu, 8 gu, remainder 5 gu"
-status: open
+status: regression
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-25: Regression (design page grilling T3). Goes with the drawing swap ([[8ea5d69ee6ed]]): the engine's CutGridBeamSvg carries its own numbers and title. Template.
