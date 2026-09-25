@@ -40,3 +40,7 @@ None pure.
 ## Log
 
 - 2026-09-26: From the framework boundary slice (plan 1c74a465996d, ui commit 4e11d57): the mechanism to follow is the framework context in ../ui/src/framework.tsx, filled by NavContextProvider({ items, usePathname?, linkComponent? }) and read through useFramework() by every composite that renders its own anchors; the leaf link components keep the explicit `as`. The override that shows a sibling change on this site is pnpm.overrides["@villagekit/ui"] = "file:../ui" (link: fails under next dev --turbopack), with pnpm install after each sibling edit, reverted by `git restore -- package.json pnpm-lock.yaml` and `pnpm install --frozen-lockfile` before the commit.
+
+- 2026-09-26: The site theme slice [[39b1a28bb0cc]] filed [[f40107b60034]] (Chakra v3's radius scale where legacy kept v2's) for this slice's theme change.
+
+- 2026-09-26: Found by the Spec review of the site theme slice [[39b1a28bb0cc]]: with the site's families written into the tokens, the ui's `var(--font-body, Bitter)` and `var(--font-heading, Fredoka)` tokens and the comment above them in `src/theme/index.ts` (consumers expose the fonts as CSS variables on html) are dead for this site; the package's theme is this slice's to reword.

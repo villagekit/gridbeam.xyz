@@ -1,6 +1,6 @@
 ---
 title: "Radius token xl: 1rem to 0.75rem"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 No `radii` override in `@villagekit/ui@1.2.0 src/theme/index.ts` or `app/layout.tsx`; Chakra v3's default applies. `http://localhost:3000/` inline CSS: `--chakra-radii-xl:0.75rem`. Buttons still use `borderRadius: 'xl'` (`@villagekit/ui@1.2.0 src/components/Button.tsx`).
 
 ## Verdict
+
+plan 39b1a28b
 
 ## Log

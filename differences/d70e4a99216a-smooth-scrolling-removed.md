@@ -1,6 +1,6 @@
 ---
 title: Smooth scrolling removed
-status: regression
+status: fixed
 route: shell
 axis: interaction
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No `scrollBehavior` or `scroll-behavior` in `app/` or `@villagekit/ui@1.2.0 src/theme/index.ts`. In-page anchor jumps snap.
 
 ## Verdict
+
+plan 39b1a28b
 
 ## Log

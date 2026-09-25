@@ -1,27 +1,14 @@
-import { MainLayout, NavContextProvider, Provider, SkipNavLink } from '@villagekit/ui'
+import { MainLayout, NavContextProvider, SkipNavLink } from '@villagekit/ui'
 import type { Metadata, Viewport } from 'next'
-import { Bitter, Fredoka } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import { EmotionRegistry } from './_components/EmotionRegistry'
 import { SiteBrand } from './_components/SiteBrand'
 import { SiteFooter } from './_components/SiteFooter'
 import { SiteHeaderAction } from './_components/SiteHeaderAction'
+import { SiteProvider } from './_components/SiteProvider'
 import { navItems } from './_lib/nav'
 import { siteOpenGraph } from './_lib/open-graph'
-
-const bodyFont = Bitter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-body',
-})
-
-const headingFont = Fredoka({
-  subsets: ['latin'],
-  weight: '600',
-  display: 'swap',
-  variable: '--font-heading',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gridbeam.xyz'),
@@ -65,14 +52,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
+    <html lang="en">
       <head>
         {/* https://web.dev/uses-rel-preconnect/ */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
       </head>
       <body>
         <EmotionRegistry>
-          <Provider>
+          <SiteProvider>
             <SkipNavLink>Skip to main content</SkipNavLink>
             <NavContextProvider items={navItems}>
               <MainLayout
@@ -84,7 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 {children}
               </MainLayout>
             </NavContextProvider>
-          </Provider>
+          </SiteProvider>
         </EmotionRegistry>
       </body>
     </html>
