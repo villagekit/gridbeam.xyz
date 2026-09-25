@@ -1,6 +1,6 @@
 ---
 title: "Stories button: See all stories to Read all stories"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:280-282` "Read all stories" (to `/stories`).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

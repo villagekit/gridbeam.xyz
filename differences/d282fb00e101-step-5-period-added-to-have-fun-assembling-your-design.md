@@ -1,6 +1,6 @@
 ---
 title: "Step 5: period added to Have fun assembling your design"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:241` "Have fun assembling your design."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

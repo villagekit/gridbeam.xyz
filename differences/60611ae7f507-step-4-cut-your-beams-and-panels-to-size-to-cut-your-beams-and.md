@@ -1,6 +1,6 @@
 ---
 title: "Step 4: Cut* your beams and panels to size to Cut your beams and panels to size."
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:240` "Cut your beams and panels to size."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

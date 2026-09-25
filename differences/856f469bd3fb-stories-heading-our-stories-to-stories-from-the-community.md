@@ -1,6 +1,6 @@
 ---
 title: "Stories heading: Our stories to Stories from the community"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:268-273` "Stories from the community"
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

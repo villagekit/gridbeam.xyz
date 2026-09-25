@@ -1,6 +1,6 @@
 ---
 title: "Hero subhead: custom furniture to your own furniture"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:119-125` "Start building your own furniture, no experience needed."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

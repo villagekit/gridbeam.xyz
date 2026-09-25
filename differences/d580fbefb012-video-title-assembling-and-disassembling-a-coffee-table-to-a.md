@@ -1,6 +1,6 @@
 ---
 title: "Video title: Assembling and disassembling a coffee table to a grid-beam coffee table"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:202` `title="Assembling and disassembling a grid-beam coffee table"` (`app/_components/landing/LandingVideo.tsx:31-32`).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

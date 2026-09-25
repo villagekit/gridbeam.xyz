@@ -59,13 +59,13 @@ export function TypingDesignSection(props: TypingDesignSectionProps) {
             </Heading>
 
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
-              Imagine, build, and rebuild — Grid Beam evolves with your life. From practical
+              Imagine, build, and rebuild — grid beam evolves with your life. From practical
               furniture to fun family projects, our designs are simple to make and can fit any
               space.
             </Text>
 
             <LinkButton as={NextLink} href="/designs" variant="secondary">
-              Explore the design catalogue
+              Explore our design catalog
             </LinkButton>
           </LandingColumn>
 

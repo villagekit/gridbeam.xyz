@@ -1,6 +1,6 @@
 ---
 title: Bold spans added inside two body paragraphs
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:188` `<Span fontWeight="bold">40&nbsp;mm grid</Span>` and `:296` `<Span fontWeight="bold">Locally-sourced untreated wood, intended to be reused</Span>`; bold runs in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

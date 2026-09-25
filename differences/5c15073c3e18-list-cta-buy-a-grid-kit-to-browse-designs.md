@@ -1,6 +1,6 @@
 ---
 title: "List CTA: Buy a Grid Kit to Browse designs"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:256-260` `<LinkButton as={NextLink} href="/designs" size="lg">Browse designs</LinkButton>`.
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

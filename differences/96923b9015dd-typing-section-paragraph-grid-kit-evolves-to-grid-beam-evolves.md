@@ -1,6 +1,6 @@
 ---
 title: "Typing section paragraph: Grid Kit evolves to Grid Beam evolves"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:64-67` "Imagine, build, and rebuild — Grid Beam evolves with your life. From practical furniture to fun family projects, our designs are simple to make and can fit any space."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

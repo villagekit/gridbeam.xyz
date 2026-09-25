@@ -1,6 +1,6 @@
 ---
 title: "Community button: Join our community to Join the community"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:332-339` "Join the community" (to `https://discuss.villagekit.com`).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

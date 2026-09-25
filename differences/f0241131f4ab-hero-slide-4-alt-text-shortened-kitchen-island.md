@@ -1,6 +1,6 @@
 ---
 title: Hero slide 4 alt text shortened (kitchen island)
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:85` "A wooden rolling cart with a smooth tabletop and two shelves underneath, holding a variety of metal pots and pans, set in a kitchen with a windowed wall."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

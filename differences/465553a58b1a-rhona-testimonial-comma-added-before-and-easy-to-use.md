@@ -1,6 +1,6 @@
 ---
 title: "Rhona testimonial: comma added before and easy to use"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:153` "The kits are super fun, versatile, and easy to use ❤"
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

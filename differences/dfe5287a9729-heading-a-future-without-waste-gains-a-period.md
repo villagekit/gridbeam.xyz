@@ -1,6 +1,6 @@
 ---
 title: "Heading: A future without waste gains a period"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:292` "A future without waste."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

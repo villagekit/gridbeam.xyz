@@ -1,6 +1,6 @@
 ---
 title: "Kit paragraph rewritten: Everything just fits together dropped, new ending"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:187-191` "Grid beam uses a 40 mm grid to make building easy for beginners. Cut to size with a hand saw, connect beams and panels with hex-key fasteners, and you have a desk, a shelf, or a coffee table — take it apart and it's something else." (`40&nbsp;mm grid` bold).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Hero slide 1 alt text rewritten (record shelf)
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:67` "A wooden grid-beam shelving unit holding a record collection, books, and audio gear in a plant-filled living room."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

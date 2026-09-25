@@ -1,6 +1,6 @@
 ---
 title: "Typing section button: Explore our design catalogue to Explore the design catalogue"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:69-71` "Explore the design catalogue" (to `/designs`).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

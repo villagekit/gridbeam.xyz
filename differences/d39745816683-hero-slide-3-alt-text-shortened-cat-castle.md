@@ -1,6 +1,6 @@
 ---
 title: Hero slide 3 alt text shortened (cat castle)
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:79` "A modular wooden bookshelf with adjustable sections, holding books, board games, and decorative items. A cat is perched on the highest shelf."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Step 6: with the community! to with the community."
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:242-251` "Share your creation with the community." (link text "with the community", the period outside the link).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel label: Showcase of things made with Grid Kit to Things made with grid beam"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:138` `ariaLabel="Things made with grid beam"`; `region "Things made with grid beam"` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

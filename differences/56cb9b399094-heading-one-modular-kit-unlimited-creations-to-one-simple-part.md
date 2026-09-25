@@ -1,6 +1,6 @@
 ---
 title: "Heading: One modular kit, unlimited creations to One simple part. Endless configurations."
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:184-186` "One simple part. Endless configurations."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

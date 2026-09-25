@@ -46,25 +46,25 @@ export const metadata: Metadata = {
 const HERO_SLIDES = [
   {
     src: 'gridbeam.xyz/home/record-shelf-hero',
-    alt: 'A wooden grid-beam shelving unit holding a record collection, books, and audio gear in a plant-filled living room.',
+    alt: 'A wooden shelving unit filled with vinyl records, books, and audio equipment. A speaker is positioned on the top left shelf. A small chair with carved woodwork sits to the left of the shelving unit, and a rotating wire rack holding more records stands on the right. The room has light teal walls and a decorative hanging artwork of a butterfly on the top left.',
     width: 5250,
     height: 3500,
   },
   {
     src: 'v1/gridkit.nz/made-with-grid-kit/standing-desk_cbzvbv',
-    alt: 'A compact, adjustable wooden standing desk with a computer monitor, keyboard, and mouse on the tabletop. The desk has caster wheels and is positioned in front of a bay window.',
+    alt: 'A compact, adjustable wooden standing desk with a computer monitor, keyboard, and mouse on the tabletop. The desk has a unique, angular base with caster wheels. A desktop computer tower is situated underneath, and the desk is positioned in front of a bay window with a view of a residential neighborhood outside.',
     width: 1600,
     height: 1200,
   },
   {
     src: 'v1/gridkit.nz/made-with-grid-kit/cat-castle_flivqh',
-    alt: 'A modular wooden bookshelf with adjustable sections, holding books, board games, and decorative items. A cat is perched on the highest shelf.',
+    alt: 'A modular wooden bookshelf with adjustable sections, holding books, board games, and decorative items like a spider plant in a pot and a framed poster at the top. A cat is perched on the highest shelf. The bookshelf is placed on a carpeted floor, with a coat rack to the left and a tall potted plant to the right.',
     width: 4864,
     height: 3648,
   },
   {
     src: 'v1/gridkit.nz/made-with-grid-kit/kitchen-island_ilq6z5',
-    alt: 'A wooden rolling cart with a smooth tabletop and two shelves underneath, holding a variety of metal pots and pans, set in a kitchen with a windowed wall.',
+    alt: 'A wooden rolling cart with a smooth tabletop and two shelves underneath. The shelves store a variety of metal pots, pans, and lids. The cart has caster wheels and is set on a hardwood floor, with a windowed kitchen wall in the background.',
     width: 3072,
     height: 2304,
   },
@@ -97,20 +97,20 @@ export default async function HomePage() {
                 Anyone can be a maker.
               </Heading>
               <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
-                Start building your own furniture,{' '}
+                Start building custom furniture,{' '}
                 <Span color="primary.500" fontWeight="bold">
                   no experience needed
                 </Span>
                 . Eco-friendly, adaptable, and fun for the whole family.
               </Text>
-              <LinkButton as={NextLink} href="/designs" size="lg">
-                Browse designs
+              <LinkButton as={NextLink} href="/suppliers" size="lg">
+                Buy a Grid Beam
               </LinkButton>
             </LandingColumn>
 
             <Box flex="1" w="full">
               <ImageCarousel
-                ariaLabel="Things made with grid beam"
+                ariaLabel="Showcase of things made with grid beam"
                 slides={HERO_SLIDES}
                 autoPlay
                 priority
@@ -125,7 +125,7 @@ export default async function HomePage() {
             alignItems="stretch"
           >
             <Testimonial
-              quote="Grid Beam is an awesome way to make furniture fit around your life. Want to expand your family? Just add more beams! The kits are super fun, versatile, and easy to use ❤"
+              quote="Grid Beam is an awesome way to make furniture fit around your life. Want to expand your family? Just add more beams! The kits are super fun, versatile and easy to use ❤"
               name="Rhona"
             />
             <Testimonial
@@ -157,16 +157,15 @@ export default async function HomePage() {
         <LandingRow sectionIndex={2}>
           <LandingColumn>
             <Heading as="h2" size="2xl">
-              One simple part. Endless configurations.
+              One modular kit, unlimited creations
             </Heading>
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
-              Grid beam uses a <Span fontWeight="bold">40&nbsp;mm grid</Span> to make building easy
-              for beginners. Cut to size with a hand saw, connect beams and panels with hex-key
-              fasteners, and you have a desk, a shelf, or a coffee table — take it apart and it's
-              something else.
+              Grid beam uses a 40mm grid to make building easy for beginners. Everything just fits
+              together using only simple tools. Cut to size with a hand saw, connect beams and
+              panels with fasteners and a hex key.
             </Text>
             <LinkButton as={NextLink} href="/about" variant="secondary" size="lg">
-              Read the full intro
+              Learn more
             </LinkButton>
           </LandingColumn>
 
@@ -174,7 +173,7 @@ export default async function HomePage() {
             <LandingVideo
               src="gridkit.nz/gridkit-coffee-table-website_bqmjpv"
               posterSrc="gridkit.nz/gridkit-coffee-table-website_gyr39u"
-              title="Assembling and disassembling a grid-beam coffee table"
+              title="Assembling and disassembling a coffee table"
               width={2276}
               height={1280}
             />
@@ -194,16 +193,12 @@ export default async function HomePage() {
               <Step icon={TfiThought}>
                 Browse designs from{' '}
                 <Link as={NextLink} variant="paragraph" href="/designs">
-                  the catalogue
+                  our catalog
                 </Link>
-                , or imagine your own.
+                , or imagine your own
               </Step>
               <Step icon={TfiPencilAlt}>
-                Use the{' '}
-                <Link as={NextLink} variant="paragraph" href="/tools/cutting-planner">
-                  cutting planner
-                </Link>{' '}
-                to work out how many beams and panels you need.
+                See how many beams, panels, and other components you need
               </Step>
               <Step icon={FaShoppingBag}>
                 Find a{' '}
@@ -212,8 +207,8 @@ export default async function HomePage() {
                 </Link>
                 , or make your own.
               </Step>
-              <Step icon={GiHandSaw}>Cut your beams and panels to size.</Step>
-              <Step icon={BiHappyHeartEyes}>Have fun assembling your design.</Step>
+              <Step icon={GiHandSaw}>Cut your beams and panels to size</Step>
+              <Step icon={BiHappyHeartEyes}>Have fun assembling your design</Step>
               <Step icon={FaSeedling}>
                 Share your creation{' '}
                 <Link
@@ -222,15 +217,14 @@ export default async function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  with the community
+                  with the community!
                 </Link>
-                .
               </Step>
             </List.Root>
 
             <Flex justifyContent="center" pt="2">
-              <LinkButton as={NextLink} href="/designs" size="lg">
-                Browse designs
+              <LinkButton as={NextLink} href="/suppliers" size="lg">
+                Buy a Grid Beam
               </LinkButton>
             </Flex>
           </VStack>
@@ -242,9 +236,9 @@ export default async function HomePage() {
         <LandingSection index={4}>
           <Title
             as="h2"
-            description="Build logs, field reports, and explainers from people doing it."
+            description="Discover all things grid beam in our collection of guides, newsletters, and inspiration."
           >
-            Stories from the community
+            Our stories
           </Title>
           <SimpleGrid columns={{ base: 1, md: featuredStories.length === 2 ? 2 : 3 }} gap="10">
             {featuredStories.map((story) => (
@@ -253,7 +247,7 @@ export default async function HomePage() {
           </SimpleGrid>
           <Flex justifyContent="center" pt="2">
             <LinkButton as={NextLink} href="/stories" variant="secondary">
-              Read all stories
+              See all stories
             </LinkButton>
           </Flex>
         </LandingSection>
@@ -264,19 +258,19 @@ export default async function HomePage() {
         <LandingRow sectionIndex={5}>
           <LandingColumn>
             <Heading as="h2" size="2xl">
-              A future without waste.
+              A future without waste
             </Heading>
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
-              Grid beam helps reduce waste by making everyday items reusable instead of disposable.{' '}
-              <Span fontWeight="bold">Locally-sourced untreated wood, intended to be reused</Span> —
-              durable, non-toxic, and ready for the next thing you build.
+              Grid beam helps reduce waste by making everyday items reusable instead of disposable.
+              Locally-sourced untreated wood, intended to be reused: grid beams are durable and made
+              to be used again and again.
             </Text>
           </LandingColumn>
 
           <Box flex="1" w="full">
             <LandingPhoto
               src="v1/gridkit.nz/douglas-fir-forest_etzvle"
-              alt="A forest of Douglas fir trees with sun streaming through the canopy."
+              alt="Forest of douglas fir trees"
               width={5120}
               height={3840}
             />
@@ -289,7 +283,7 @@ export default async function HomePage() {
         <LandingRow sectionIndex={6}>
           <LandingColumn>
             <Heading as="h2" size="2xl">
-              A place to share ideas.
+              A place to share ideas
             </Heading>
             <Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">
               Grid beam is part of a{' '}
@@ -301,8 +295,9 @@ export default async function HomePage() {
               >
                 wider vision
               </Link>{' '}
-              for a more sustainable, creative future. There's a community space where everyone can
-              share their creations, exchange ideas, and learn together.
+              for a more sustainable, creative future. So we're building a community space where
+              everyone can share their creations, exchange ideas, and learn together to shape a
+              brighter tomorrow.
             </Text>
             <LinkButton
               href="https://discuss.villagekit.com"
@@ -310,14 +305,14 @@ export default async function HomePage() {
               size="lg"
               isExternal
             >
-              Join the community
+              Join our community
             </LinkButton>
           </LandingColumn>
 
           <Box flex="1" w="full">
             <LandingPhoto
               src="v1/gridkit.nz/gridkit-camp-kitchen_jpwvy1"
-              alt="A temporary outdoor camp kitchen built from grid beams, set up with cooking gear under a sun shade."
+              alt="A temporary camp kitchen constructed with grid beam"
               width={3872}
               height={2160}
             />

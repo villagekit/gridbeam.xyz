@@ -1,6 +1,6 @@
 ---
 title: Community paragraph rewritten
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:318-330` "Grid beam is part of a wider vision for a more sustainable, creative future. There's a community space where everyone can share their creations, exchange ideas, and learn together."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Step 2 rewritten: See how many beams to Use the cutting planner"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:225-231` "Use the cutting planner to work out how many beams and panels you need." (link "cutting planner" to `/tools/cutting-planner`).
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

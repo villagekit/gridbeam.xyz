@@ -1,6 +1,6 @@
 ---
 title: "Heading: A place to share ideas gains a period"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:317` "A place to share ideas."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

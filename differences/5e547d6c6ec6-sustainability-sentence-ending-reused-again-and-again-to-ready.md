@@ -1,6 +1,6 @@
 ---
 title: "Sustainability sentence ending: reused again and again to ready for the next thing you build"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:295-297` "... — durable, non-toxic, and ready for the next thing you build."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

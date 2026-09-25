@@ -1,6 +1,6 @@
 ---
 title: "Forest image alt: Forest of douglas fir trees expanded"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:303` "A forest of Douglas fir trees with sun streaming through the canopy."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Camp kitchen image alt expanded
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:344` "A temporary outdoor camp kitchen built from grid beams, set up with cooking gear under a sun shade."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

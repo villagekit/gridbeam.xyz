@@ -1,6 +1,6 @@
 ---
 title: Stories subheading rewritten
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:270` "Build logs, field reports, and explainers from people doing it."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Hero slide 2 alt text shortened (standing desk)
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:73` "A compact, adjustable wooden standing desk with a computer monitor, keyboard, and mouse on the tabletop. The desk has caster wheels and is positioned in front of a bay window."
 
 ## Verdict
+
+plan 2de4b709bb36
 
 ## Log
 
