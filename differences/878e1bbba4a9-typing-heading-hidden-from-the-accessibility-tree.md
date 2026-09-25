@@ -1,6 +1,6 @@
 ---
 title: Typing heading hidden from the accessibility tree
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:50-59` the live region is a sibling and the `<Heading as="h2" aria-hidden="true">` is hidden whole; no heading node for the section in `audit/_root/dom/current.aria.yaml` (`text: Build Vertical Wall Shelves`).
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

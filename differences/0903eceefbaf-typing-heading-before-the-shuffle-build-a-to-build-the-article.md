@@ -1,6 +1,6 @@
 ---
 title: "Typing heading before the shuffle: Build a to Build, the article dropped for the empty label"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:97-101`: `getArticle('')` returns `''` for the empty label, so the server HTML reads `Build ` followed by the span with the non-breaking space (a curl of `pnpm dev`, 2026-09-26); the article appears with the first design after hydration. Found by the Parity review of plan 60cca8519469, in code the design carousel slice did not touch.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "LandingColumn: ui-page Column to a bare VStack"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingSection.tsx:53-68` a `VStack` with `flex` and `gap` props, no `index`, not the ui `Column`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

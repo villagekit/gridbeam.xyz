@@ -1,6 +1,6 @@
 ---
 title: "Testimonial row gap: 16/8 to 10/6"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:146-150` `<Stack direction={{ base: 'column', lg: 'row' }} gap={{ base: 6, lg: 10 }}>`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

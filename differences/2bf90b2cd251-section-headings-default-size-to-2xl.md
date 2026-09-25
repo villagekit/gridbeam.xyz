@@ -1,6 +1,6 @@
 ---
 title: "Section headings: default size to 2xl"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:184,291,316` `<Heading as="h2" size="2xl">`; larger in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

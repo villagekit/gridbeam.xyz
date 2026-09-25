@@ -1,6 +1,6 @@
 ---
 title: "LandingRow: useSectionIndex to an explicit sectionIndex prop"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingSection.tsx:28-51` `sectionIndex: number` passed by the caller (`app/page.tsx:182`); `useSectionIndex` is still exported by `node_modules/@villagekit/ui/src/components/layouts/Section.tsx:19`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

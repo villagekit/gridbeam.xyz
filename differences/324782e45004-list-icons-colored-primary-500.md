@@ -1,6 +1,6 @@
 ---
 title: List icons colored primary.500
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:417-423` `<Icon color="primary.500" boxSize="6" mt="1">`; pink icons in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

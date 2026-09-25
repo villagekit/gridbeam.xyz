@@ -1,6 +1,6 @@
 ---
 title: "Hero heading: size 2xl to responsive 4xl/5xl with lineHeight 1.05"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:116-118` `<Heading as="h1" size={{ base: '4xl', md: '5xl' }} lineHeight="1.05">`; visibly larger in `audit/_root/1280/current.png` than `legacy.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

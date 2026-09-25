@@ -1,6 +1,6 @@
 ---
 title: "Typing heading: default size to responsive 3xl/4xl with lineHeight 1.1"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/TypingDesignSection.tsx:56` `<Heading as="h2" size={{ base: '3xl', md: '4xl' }} lineHeight="1.1" aria-hidden="true">`; "Build a Maker Desk" in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

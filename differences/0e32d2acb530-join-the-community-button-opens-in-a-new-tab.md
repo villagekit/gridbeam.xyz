@@ -1,6 +1,6 @@
 ---
 title: Join the community button opens in a new tab
-status: regression
+status: fixed
 route: /
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:332-339` `isExternal`, which `node_modules/@villagekit/ui/src/components/LinkButton.tsx:23-33` renders as `target="_blank" rel="noopener noreferrer"`. From code.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

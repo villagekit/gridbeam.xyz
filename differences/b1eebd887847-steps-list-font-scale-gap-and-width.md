@@ -1,6 +1,6 @@
 ---
 title: "Steps list: font scale, gap and width"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:212-218` `<Container maxW="3xl"><List.Root variant="plain" gap="6" fontSize={{ base: 'md', md: 'lg' }}>`: one step smaller than the page's paragraphs, gap 6, `3xl` wide.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

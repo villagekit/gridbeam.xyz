@@ -1,6 +1,6 @@
 ---
 title: "Landing row gap: 8/12 from md to 8/16 from lg"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingSection.tsx:47` `gap={gap ?? { base: 8, lg: 16 }}` (16 from `lg`). From code.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

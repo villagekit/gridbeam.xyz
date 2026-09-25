@@ -1,6 +1,6 @@
 ---
 title: "Hero emphasis span: primary.400 to primary.500"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:121` `<Span color="primary.500" fontWeight="bold">no experience needed</Span>`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

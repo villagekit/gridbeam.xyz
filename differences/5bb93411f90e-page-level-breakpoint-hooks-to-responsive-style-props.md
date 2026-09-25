@@ -1,6 +1,6 @@
 ---
 title: Page-level breakpoint hooks to responsive style props
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx` and `app/_components/landing/*`: no `useIsMobile` or `useBreakpointValue`; responsive objects on each prop (`app/page.tsx:110,116`).
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Buy step icon: BsFillBox2HeartFill to FaShoppingBag"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:233` `<Step icon={FaShoppingBag}>`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

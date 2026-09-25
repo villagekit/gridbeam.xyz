@@ -1,6 +1,6 @@
 ---
 title: Landing row padding removed
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/landing/LandingSection.tsx:34-51` no padding on `LandingRow`; only `gap`. From code.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

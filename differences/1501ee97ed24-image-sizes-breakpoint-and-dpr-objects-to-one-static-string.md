@@ -1,6 +1,6 @@
 ---
 title: "Image sizes: breakpoint and DPR objects to one static string, unoptimized design image"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/ImageCarousel.tsx:36`, `LandingPhoto.tsx:26` and `TypingDesignSection.tsx:138` each hardcode `'(min-width: 1024px) 50vw, 100vw'`; `TypingDesignSection.tsx:137` passes `unoptimized` on the design image.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

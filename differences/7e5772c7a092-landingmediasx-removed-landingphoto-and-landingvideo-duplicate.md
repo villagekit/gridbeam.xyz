@@ -1,6 +1,6 @@
 ---
 title: landingMediaSx removed; LandingPhoto and LandingVideo duplicate their styles
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/LandingPhoto.tsx:18-25` and `LandingVideo.tsx:24-30` each declare `borderRadius="xl" boxShadow="md" overflow="hidden"` and an `aspectRatio` box.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

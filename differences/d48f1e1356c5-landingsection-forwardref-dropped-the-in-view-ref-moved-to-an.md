@@ -1,6 +1,6 @@
 ---
 title: "LandingSection: forwardRef dropped, the in-view ref moved to an inner Box"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingSection.tsx:14-26` a plain function; `TypingDesignSection.tsx:22,43` attaches `useInView`'s ref to `<Box ref={ref} w="full">` inside the row.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

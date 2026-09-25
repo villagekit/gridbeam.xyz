@@ -1,6 +1,6 @@
 ---
 title: "Stories heading: Heading and Text to Title with description"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:268-273` `<Title as="h2" description="...">`, which wraps the heading in `Container maxW="2xl"` with `my="8"` and the description in its own `Container maxW="lg"` (`node_modules/@villagekit/ui/src/components/layouts/Title.tsx:17-25`).
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

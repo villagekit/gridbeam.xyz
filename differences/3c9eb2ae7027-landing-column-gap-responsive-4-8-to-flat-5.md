@@ -1,6 +1,6 @@
 ---
 title: "Landing column gap: responsive 4/8 to flat 5"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingSection.tsx:61-67` `VStack gap={5}` default. From code.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

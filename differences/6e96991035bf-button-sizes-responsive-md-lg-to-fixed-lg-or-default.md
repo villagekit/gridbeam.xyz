@@ -1,6 +1,6 @@
 ---
 title: "Button sizes: responsive md/lg to fixed lg or default"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `size="lg"` fixed on `app/page.tsx:127,130,193,257,332`; no `size` on "Read all stories" (`:280`), "GitHub" and "Subscribe to the newsletter" (`:398-403`); `audit/_root/375/current.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

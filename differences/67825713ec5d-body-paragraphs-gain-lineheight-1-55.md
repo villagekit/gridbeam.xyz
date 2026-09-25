@@ -1,6 +1,6 @@
 ---
 title: Body paragraphs gain lineHeight 1.55
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:119,187,294,319` and `app/_components/landing/TypingDesignSection.tsx:61` `<Text fontSize={{ base: 'lg', md: 'xl' }} lineHeight="1.55">`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Hero subhead: two paragraphs merged into one"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:119-125` one `<Text>` holding both sentences; `audit/_root/1280/current.png` hero.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

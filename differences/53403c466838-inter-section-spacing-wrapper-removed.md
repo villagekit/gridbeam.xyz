@@ -1,6 +1,6 @@
 ---
 title: Inter-section spacing wrapper removed
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/page.tsx:100` `<Main>` holds the sections directly; only the `Section`'s `Container py` separates them (`node_modules/@villagekit/ui/src/components/layouts/Section.tsx`).
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

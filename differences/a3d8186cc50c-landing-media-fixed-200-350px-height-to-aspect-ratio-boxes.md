@@ -1,6 +1,6 @@
 ---
 title: "Landing media: fixed 200/350px height to aspect-ratio boxes"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/LandingVideo.tsx:24-29` and `LandingPhoto.tsx:18-27` `aspectRatio={width / height}` boxes that grow with the column; taller media in `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

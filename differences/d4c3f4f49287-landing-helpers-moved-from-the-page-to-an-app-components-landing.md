@@ -1,6 +1,6 @@
 ---
 title: Landing helpers moved from the page to an app/_components/landing module
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/index.ts:1-6` re-exports eight components from eight files; `app/page.tsx` is their only importer.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

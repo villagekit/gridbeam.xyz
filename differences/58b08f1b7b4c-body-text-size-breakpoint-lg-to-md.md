@@ -1,6 +1,6 @@
 ---
 title: "Body text size breakpoint: lg to md"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:119,187,294,319` `fontSize={{ base: 'lg', md: 'xl' }}`: `xl` from `md`. From code; `audit/_root/768/current.png` paragraphs are `xl` where legacy's are `lg`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

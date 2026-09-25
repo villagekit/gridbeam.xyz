@@ -1,6 +1,6 @@
 ---
 title: Hero heading promoted to h1
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:116` `<Heading as="h1" ...>`; `heading "Anyone can be a maker." [level=1]` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

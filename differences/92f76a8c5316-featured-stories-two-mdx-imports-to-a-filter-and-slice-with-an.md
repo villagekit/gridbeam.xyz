@@ -1,6 +1,6 @@
 ---
 title: "Featured stories: two MDX imports to a filter and slice with an empty guard"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/page.tsx:95-97,266` `getAllStories().filter((story) => story.metadata.category === 'guide').slice(0, 3)` (`app/_lib/stories.ts:181-185`, newest first) and `{featuredStories.length > 0 && ...}` around the section.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Featured stories: two fixed cards to the three latest guides"
-status: regression
+status: fixed
 route: /
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/page.tsx:95-97` the three newest `guide` stories: "How to Mark and Cut Grid Beams" (29 Nov 2024), "How to Install Furniture Bolts (Joint Connector Bolts)" (30 Oct 2024), "What's a Grid Unit" (10 Oct 2024); "Building with Grid Kit" is not shown. `audit/_root/1280/current.png`. Both added stories exist in the legacy corpus (`apps/gridkit/pages/stories/how-to-cut-grid-beams.mdx`, `how-to-furniture-bolts.mdx`) with the same title and description.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 

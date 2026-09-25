@@ -1,6 +1,6 @@
 ---
 title: Step helper added for the list items
-status: regression
+status: fixed
 route: /
 axis: code
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/page.tsx:410-427` `function Step({ icon, children })` rendering `<List.Item display="flex" ...><Icon color="primary.500" boxSize="6" mt="1"><StepIcon /></Icon><Span>{children}</Span></List.Item>` where v3 offers `List.Indicator`.
 
 ## Verdict
+
+plan 159c621d8a1a
 
 ## Log
 
