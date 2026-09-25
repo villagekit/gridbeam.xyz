@@ -1,6 +1,6 @@
 ---
 title: Subscribe paragraph 1 added
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ None on the route.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S4). Removed; legacy's route is the heading, one sentence and the form.

@@ -1,6 +1,6 @@
 ---
 title: "Subscribe title: Subscribe to Newsletter"
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S1). Ships as "Subscribe", templated by the shell to "Grid Beam: Subscribe".

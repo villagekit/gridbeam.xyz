@@ -1,6 +1,6 @@
 ---
 title: Subscribe intro sentence removed
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: removed
@@ -16,3 +16,5 @@ No equivalent sentence in `app/subscribe/page.tsx`; the three paragraphs that re
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S2). Ships as legacy verbatim, centered: "Subscribe to stay tuned for news and updates, we have a journey ahead! " followed by the seedling emoji with its aria-label.

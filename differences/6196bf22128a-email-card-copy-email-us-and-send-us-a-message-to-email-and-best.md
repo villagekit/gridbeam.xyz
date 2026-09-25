@@ -1,6 +1,6 @@
 ---
 title: "Email card copy: Email us and Send us a message to Email and Best for private questions"
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K2). Ships as legacy verbatim: "Email us" / "Send us a message and we will get back to you as soon as we can."

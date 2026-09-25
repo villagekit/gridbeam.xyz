@@ -1,6 +1,6 @@
 ---
 title: About grid beam card added
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such card: the legacy route has one card, Cutting planner (`apps/gridkit/page
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R4). The added card is removed; legacy's route has one card, Cutting planner.

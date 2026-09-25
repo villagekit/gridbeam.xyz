@@ -1,6 +1,6 @@
 ---
 title: GitHub Issues URL overflows its card at 375
-status: open
+status: regression
 route: /contact
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ No such link on legacy `/contact` (one email `LinkCard`, `packages/applet-contac
 ## Log
 
 - 2026-09-12: Found by the Parity review of plan 848b026f. An `added` card with a layout defect: the operator judges the card; the defect goes with it.
+
+- 2026-09-25: Regression (contact grilling K3). Moot once the GitHub Issues card goes ([[fc861bd50946]]).

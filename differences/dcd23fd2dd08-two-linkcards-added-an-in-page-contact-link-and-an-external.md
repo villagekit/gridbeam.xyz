@@ -1,6 +1,6 @@
 ---
 title: "Two LinkCards added: an in-page contact link and an external GitHub link"
-status: open
+status: regression
 route: /subscribe
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ No cards or links in the route body (`packages/applet-subscribe/src/page.tsx:32-
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S4). Removed; legacy's route is the heading, one sentence and the form.

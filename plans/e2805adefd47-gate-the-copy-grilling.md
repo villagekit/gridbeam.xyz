@@ -38,3 +38,5 @@ None.
 - 2026-09-25: Privacy wordings confirmed (Mikey Williams, mikey.nz; Cloudflare; Google Workspace). Cutting planner route closed: 23 items, legacy's labels and captions verbatim, the intro, summary, share links and print removed; the title keeps "Cutting planner". Next: /designs/bed-frame and /designs.
 
 - 2026-09-25: Designs index and design page template closed: 38 items, all regressions to legacy. The index keeps its fixed 14 filters, legacy's strings and a single grid; the design page keeps legacy's labels, the Settings and Cutting plan headings and the footnote, with the Plan tab's headline cut to "Requires Nx Sgu (grid unit) beams." under rule 2. Next: /tools-and-resources.
+
+- 2026-09-25: Tools and resources, subscribe and contact closed: 40 items, all regressions to legacy. Tools keeps its one card; subscribe keeps "Subscribe to Grid Beam", the sentence, the form's strings and the success state; contact keeps "Contact us" and the email card linking to hello+gridbeam@mikey.nz in the href only. Next: /legal and the stories family.

@@ -1,6 +1,6 @@
 ---
 title: "Tools and resources title and heading: Tools and resources to Tools & resources"
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R1). Ships as "Tools and resources" for the title and the heading, as legacy.

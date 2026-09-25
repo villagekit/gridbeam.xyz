@@ -1,6 +1,6 @@
 ---
 title: Tools and resources meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No `description` in the chain (`CardsLayout.tsx:19` `<NextSeo title={title} />`)
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R1). No per-page description; the route inherits the site default ([[1906af99b588]]).

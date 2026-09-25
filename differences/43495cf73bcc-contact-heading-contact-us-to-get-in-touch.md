@@ -1,6 +1,6 @@
 ---
 title: "Contact heading: Contact us to Get in touch"
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K1). Ships as "Contact us".

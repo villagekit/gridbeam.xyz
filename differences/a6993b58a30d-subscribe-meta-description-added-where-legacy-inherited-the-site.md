@@ -1,6 +1,6 @@
 ---
 title: Subscribe meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No `description` on the `NextSeo` (`packages/applet-subscribe/src/page.tsx:30`);
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S1). No per-page description; the route inherits the site default ([[1906af99b588]]).

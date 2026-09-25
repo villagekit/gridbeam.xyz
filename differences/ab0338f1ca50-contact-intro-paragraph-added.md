@@ -1,6 +1,6 @@
 ---
 title: Contact intro paragraph added
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No paragraph: the page body is one `LinkCard` (`packages/applet-contact/src/page
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K3). Removed; legacy's route is the heading and one email card.

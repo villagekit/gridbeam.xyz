@@ -1,6 +1,6 @@
 ---
 title: Section Resources heading and description added
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No section heading.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R2). Removed; legacy has the heading and the cards, no body copy or section headings.

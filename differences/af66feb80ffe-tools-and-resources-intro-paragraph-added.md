@@ -1,6 +1,6 @@
 ---
 title: Tools and resources intro paragraph added
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No body copy on the route (`apps/gridkit/pages/tools-and-resources.tsx:9-19`).
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R2). Removed; legacy has the heading and the cards, no body copy or section headings.

@@ -1,6 +1,6 @@
 ---
 title: GitHub Issues card added
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No GitHub channel on legacy `/contact`: one email `LinkCard` (`packages/applet-c
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K3). Removed; legacy's route is the heading and one email card.

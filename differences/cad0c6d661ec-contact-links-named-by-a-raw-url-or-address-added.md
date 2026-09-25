@@ -1,6 +1,6 @@
 ---
 title: Contact GitHub Issues link named by its raw URL added
-status: open
+status: regression
 route: /contact
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ The one legacy link is unnamed (`audit/contact/dom/legacy.aria.yaml:27-28`); no 
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K3). Moot once the GitHub Issues card goes ([[fc861bd50946]]).

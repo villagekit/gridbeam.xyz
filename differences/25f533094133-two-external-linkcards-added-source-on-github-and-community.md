@@ -1,6 +1,6 @@
 ---
 title: "Two external LinkCards added: Source on GitHub and Community forum open a new tab"
-status: open
+status: regression
 route: /tools-and-resources
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ The one legacy card is internal (`href="/tools/cutting-planner"`, `linkComponent
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R4). Moot once the two external cards go; the one legacy card is internal.

@@ -1,6 +1,6 @@
 ---
 title: Tools and resources heading description added
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R1). No description line under the heading, as legacy.

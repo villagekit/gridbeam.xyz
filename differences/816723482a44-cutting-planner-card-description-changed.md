@@ -1,6 +1,6 @@
 ---
 title: Cutting planner card description changed
-status: open
+status: regression
 route: /tools-and-resources
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (tools grilling R3). Ships as legacy verbatim: "Online tool to plan how to cut beams into desired lengths."

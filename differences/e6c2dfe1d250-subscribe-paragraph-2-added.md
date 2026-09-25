@@ -1,6 +1,6 @@
 ---
 title: Subscribe paragraph 2 added
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ None on the route.
 ## Log
 
 - 2026-09-12: Note 526d5330 lists the "no audience pressure" clause among the rewrites never presented to the operator; it holds and is this item.
+
+- 2026-09-25: Regression (subscribe grilling S4). Removed; legacy's route is the heading, one sentence and the form.

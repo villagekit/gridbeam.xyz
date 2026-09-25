@@ -1,6 +1,6 @@
 ---
 title: Section Find out when it launches heading and description added
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ One section on the route (`packages/applet-subscribe/src/page.tsx:32-64`).
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S4). Removed; legacy's route is the heading, one sentence and the form.

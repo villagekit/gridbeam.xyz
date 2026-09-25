@@ -1,6 +1,6 @@
 ---
 title: "Contact email: hello@madewithgridkit.com in the href only to hello+gridbeam@mikey.nz shown as text"
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Copy: the footer lock (ad5363e4e1d5) names `hello@mikey.nz` for the footer; this route uses `hello+gridbeam@mikey.nz` and shows it as text, which no lock or rule names. The rendering helper is the shell item 68b53054e1f4.
+
+- 2026-09-25: Regression (contact grilling K2). The card links to mailto:hello+gridbeam@mikey.nz, the address in the href only and never shown as text, as legacy had it. The operator keeps the +gridbeam tag on this route; the footer lock's hello@mikey.nz ([[ad5363e4e1d5]]) is the footer's.

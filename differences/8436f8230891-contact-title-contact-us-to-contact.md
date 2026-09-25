@@ -1,6 +1,6 @@
 ---
 title: "Contact title: Contact us to Contact"
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The title template is the shell item 1c8b7461acb1.
+
+- 2026-09-25: Regression (contact grilling K1). Ships as "Contact us", templated by the shell to "Grid Beam: Contact us".

@@ -1,6 +1,6 @@
 ---
 title: Contact meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /contact
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (contact grilling K1). No per-page description; the route inherits the site default ([[1906af99b588]]).

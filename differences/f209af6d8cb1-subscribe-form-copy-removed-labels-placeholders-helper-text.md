@@ -1,6 +1,6 @@
 ---
 title: "Subscribe form copy removed: labels, placeholders, helper text, button and toasts"
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: removed
@@ -18,3 +18,5 @@ No form, labels, button or toasts on `app/subscribe/page.tsx`. The form's remova
 ## Log
 
 - 2026-09-12: One item for the whole form's copy: the strings stand or fall with the form (the interaction regression), so per-field items would each carry the same verdict.
+
+- 2026-09-25: Regression (subscribe grilling S3). The form's strings return with the form ([[11a126190ef5]]) verbatim, one swap: "Why are you interested in Grid Beam?" (the interpolated site name). Fields, placeholders, helpers, "Subscribe!", the two toasts and the zod field errors as quoted under Legacy.

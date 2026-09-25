@@ -1,6 +1,6 @@
 ---
 title: Subscribe success state copy removed
-status: open
+status: regression
 route: /subscribe
 axis: copy
 kind: removed
@@ -16,3 +16,5 @@ No success state: `app/subscribe/page.tsx` is static. The state itself is the in
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (subscribe grilling S3). The success state returns verbatim: "Thanks for subscribing!" and "We've just sent an email with a link to confirm your subscription. You'll need to click the link to start receiving updates. " with the sunflower emoji.
