@@ -1,6 +1,6 @@
 ---
 title: "Inspiration card alt: Castles in West Africa rewritten"
-status: open
+status: regression
 route: /stories
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (stories grilling I2). Ships as legacy verbatim: "Castles in West Africa".

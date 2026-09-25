@@ -1,6 +1,6 @@
 ---
 title: Stories meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /stories
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Same shape as bfc81eb7197c on `/`; the shell items 65c21e08b3f1 and f46533a8ae54 cover the Metadata mechanism.
+
+- 2026-09-25: Regression (stories grilling I1). No per-page description; the route inherits the site default ([[1906af99b588]]).

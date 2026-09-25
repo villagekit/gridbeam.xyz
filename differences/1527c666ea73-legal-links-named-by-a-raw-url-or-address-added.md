@@ -1,6 +1,6 @@
 ---
 title: Legal links named by a raw URL or address added
-status: open
+status: regression
 route: /legal
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ The three legacy card links are unnamed overlays (`audit/legal/dom/legacy.aria.y
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L3). Moot once the Questions section goes ([[d3f88003fbfb]]).

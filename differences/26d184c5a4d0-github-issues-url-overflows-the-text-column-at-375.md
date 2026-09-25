@@ -1,6 +1,6 @@
 ---
 title: GitHub Issues URL overflows the text column at 375
-status: open
+status: regression
 route: /legal
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ No such link on legacy `/legal` (three `LinkCard`s, `packages/applet-legal/src/p
 ## Log
 
 - 2026-09-12: Found by the Parity review of plan 848b026f; a sibling of 90f294279f16 on `/contact`. The link belongs to the added Questions section, which the operator judges; the defect goes with it.
+
+- 2026-09-25: Regression (legal grilling L3). Moot once the Questions section goes ([[d3f88003fbfb]]).

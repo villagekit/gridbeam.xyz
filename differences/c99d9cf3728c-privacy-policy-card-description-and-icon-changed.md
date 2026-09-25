@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy card: description and icon changed"
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The icon swap (FaLock to FaUserShield) rides with the copy item since it is the same card; the operator's verdict covers both, or the icon is split out on request.
+
+- 2026-09-25: Regression (legal grilling L2). Ships as legacy verbatim: "How we collect, use, store, and share personal information." with the FaLock icon.

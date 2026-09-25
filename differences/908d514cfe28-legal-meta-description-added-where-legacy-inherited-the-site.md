@@ -1,6 +1,6 @@
 ---
 title: Legal meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No `description` anywhere in the chain (`packages/applet-legal/src/pages/legal.t
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L1). No per-page description; the route inherits the site default ([[1906af99b588]]).

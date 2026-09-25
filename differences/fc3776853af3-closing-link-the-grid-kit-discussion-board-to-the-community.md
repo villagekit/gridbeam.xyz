@@ -1,6 +1,6 @@
 ---
 title: "Closing link: the Grid Kit discussion board to the community forum"
-status: open
+status: regression
 route: /stories/how-to-furniture-bolts
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (story grilling P4). Ships as "For further tips, advice, and inspiration, visit the Village Kit [discussion board](https://discuss.villagekit.com)." (legacy's link extent and href; rule 1 names Village Kit as the maker).

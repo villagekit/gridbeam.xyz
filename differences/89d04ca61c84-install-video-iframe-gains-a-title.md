@@ -1,6 +1,6 @@
 ---
 title: Install video iframe gains a title
-status: open
+status: regression
 route: /stories/how-to-furniture-bolts
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (story grilling P5). Legacy's markup returns; waits for the accessibility pass after M2 ([[eeba2a65cee4]]).

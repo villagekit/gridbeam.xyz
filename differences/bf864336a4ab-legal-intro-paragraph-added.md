@@ -1,6 +1,6 @@
 ---
 title: Legal intro paragraph added
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No paragraph: the page is `Title` plus three `LinkCard`s (`packages/applet-legal
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L1). The intro paragraph is removed.

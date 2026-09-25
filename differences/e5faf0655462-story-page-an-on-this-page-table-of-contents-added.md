@@ -1,6 +1,6 @@
 ---
 title: "Story page: an On this page table of contents added"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Story page template: shared by the six story routes; filed on /stories/whats-a-grid-unit where first met. The legacy ui-page package shipped a TableOfContents too (packages/ui-page/src/components/TableOfContents.tsx) but the story pages did not use it. On /stories/2021-winter-newsletter the list is empty; see that route.
+
+- 2026-09-25: Regression (story grilling P1). No table of contents on story pages, as legacy; the template item is [[e5faf0655462]].

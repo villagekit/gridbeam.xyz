@@ -1,6 +1,6 @@
 ---
 title: Grid Kit to hyphenated grid-beam in the hex key tip and the grid label
-status: open
+status: regression
 route: /stories/how-to-furniture-bolts
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 1 says "grid beam"; the hyphen is the operator's call.
+
+- 2026-09-25: Regression (story grilling P4). Ships as "All grid beam furniture bolts use a 4mm hex key." and ariaLabel "Grid of common grid beam connections", no hyphen (rule 1).

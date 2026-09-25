@@ -1,6 +1,6 @@
 ---
 title: "Gate: the copy grilling"
-status: todo
+status: done
 tags:
   - gate
 parent: 1783931160f2
@@ -40,3 +40,13 @@ None.
 - 2026-09-25: Designs index and design page template closed: 38 items, all regressions to legacy. The index keeps its fixed 14 filters, legacy's strings and a single grid; the design page keeps legacy's labels, the Settings and Cutting plan headings and the footnote, with the Plan tab's headline cut to "Requires Nx Sgu (grid unit) beams." under rule 2. Next: /tools-and-resources.
 
 - 2026-09-25: Tools and resources, subscribe and contact closed: 40 items, all regressions to legacy. Tools keeps its one card; subscribe keeps "Subscribe to Grid Beam", the sentence, the form's strings and the success state; contact keeps "Contact us" and the email card linking to hello+gridbeam@mikey.nz in the href only. Next: /legal and the stories family.
+
+## Outcome
+
+Done 2026-09-25. All 313 open items judged across every route, in nine grilling commits from `824a52b` to this one; `kipu list --collection difference --status open` prints nothing; every sanctioned copy item's Verdict quotes the wording that ships; `kipu verify` is green.
+
+The operator's standing call, set on the home round and applied everywhere after: change as little as makes sense. Legacy verbatim is the target, with "Grid Kit" swapped to "grid beam" and nothing else, so nearly every rewrite from the first port is a regression back to the legacy text. The exceptions carry a rule: the store surfaces and promises (rule 2), cookies (rule 3), and a handful of operator calls (page titles where legacy set none; "FAQ"; the five FAQ answers rewritten out of the company's voice; the privacy policy's entity and storage lines; the suppliers page reduced to the decision's shape with a Metric/Imperial label).
+
+Decisions minted: American English ([[6fce53c0a18e]]), legacy em dashes exempt ([[edad0df805f0]]), store CTAs as "Buy a Grid Beam" ([[5dfd824923c9]]), historical posts keep the name ([[dcd8df79a843]]); earlier in the gate, no em dashes ([[64ee4dfa393d]]), the nav shape ([[c21b7e35f0c7]]), the 404 page ([[dc1a7a98373f]]), the footer sections ([[9f344fbfde9a]]).
+
+Ledger at close: 635 regression, 112 sanctioned, 2 dismissed. M2 (slicing the route records to fix the regressions) is the next phase and waits for the operator's go.

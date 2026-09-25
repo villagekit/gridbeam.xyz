@@ -1,6 +1,6 @@
 ---
 title: "Story page TOC: an unnamed navigation landmark ahead of the article, h2 before the h1"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Story page template, six routes; filed where first met.
+
+- 2026-09-25: Regression (story grilling P1). No table of contents on story pages, as legacy; the template item is [[e5faf0655462]].

@@ -1,6 +1,6 @@
 ---
 title: "Two tables of contents: the article Contents list kept beside the generated nav"
-status: open
+status: regression
 route: /stories/how-to-cut-grid-beams
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ The article list stays and the generated "On this page" nav lists the same headi
 ## Log
 
 - 2026-09-12: A consequence of the table of contents added on the story template (e5faf0655462); filed where first met, and it holds on /stories/how-to-furniture-bolts and /stories/building-with-grid-kit.
+
+- 2026-09-25: Regression (story grilling P1). No table of contents on story pages, as legacy; the template item is [[e5faf0655462]].

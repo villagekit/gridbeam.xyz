@@ -1,6 +1,6 @@
 ---
 title: Editorial note added
-status: open
+status: regression
 route: /stories/2021-winter-newsletter
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No equivalent block in `apps/gridkit/pages/stories/2021-winter-newsletter.mdx`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (story grilling P3, [[dcd8df79a843]]). The editorial note, the originally-on byline and the note component are removed; the historical posts keep "Grid Kit" in their text as legacy published it.

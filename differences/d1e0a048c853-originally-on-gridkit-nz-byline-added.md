@@ -1,6 +1,6 @@
 ---
 title: Originally on gridkit.nz byline added
-status: open
+status: regression
 route: /stories/building-with-grid-kit
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ No such line; the legacy metadata has no `originallyPublishedOn` (`apps/gridkit/
 ## Log
 
 - 2026-09-12: Note 526d5330 names the byline; filed where first met in the plan's route order.
+
+- 2026-09-25: Regression (story grilling P3, [[dcd8df79a843]]). The editorial note, the originally-on byline and the note component are removed; the historical posts keep "Grid Kit" in their text as legacy published it.

@@ -1,6 +1,6 @@
 ---
 title: Filter group aria-label on a roleless div
-status: open
+status: regression
 route: /stories
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ No group name: `apps/gridkit/pages/stories.tsx:26` a bare `role="menubar"` box.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (stories grilling I3). Legacy's markup returns; waits for the accessibility pass after M2 ([[eeba2a65cee4]]).

@@ -1,6 +1,6 @@
 ---
 title: Three connection headings promoted from h4 to h3
-status: open
+status: regression
 route: /stories/how-to-furniture-bolts
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note 526d5330 names this promotion among the copy edits never presented to the operator; it holds.
+
+- 2026-09-25: Regression (story grilling P4). The three connection headings return to h4 under "Here's How To Determine Which Size Combo To Use".

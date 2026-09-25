@@ -1,6 +1,6 @@
 ---
 title: "On this page list empty: the newsletter has no h2 headings"
-status: open
+status: regression
 route: /stories/2021-winter-newsletter
 axis: visual
 kind: added
@@ -18,3 +18,5 @@ No table of contents; the sections are `#` (h1) and `###` (h3) headings on both 
 ## Log
 
 - 2026-09-12: A consequence of the TOC added on the story template (filed on /stories/whats-a-grid-unit).
+
+- 2026-09-25: Regression (story grilling P1). No table of contents on story pages, as legacy; the template item is [[e5faf0655462]].

@@ -1,6 +1,6 @@
 ---
 title: "Story byline: plain paragraphs, no time element"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: added
@@ -18,3 +18,5 @@ No date on the page.
 ## Log
 
 - 2026-09-12: Story page template, six routes; filed where first met.
+
+- 2026-09-25: Regression (story grilling P2). No publish date on the page, as legacy ([[dcd8df79a843]]).

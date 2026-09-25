@@ -1,6 +1,6 @@
 ---
 title: Filter selected state exposed with aria-pressed
-status: open
+status: regression
 route: /stories
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (stories grilling I3). Legacy's markup returns; waits for the accessibility pass after M2 ([[eeba2a65cee4]]).

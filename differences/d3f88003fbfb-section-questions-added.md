@@ -1,6 +1,6 @@
 ---
 title: Section Questions added
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ The page ends after the cards (`packages/applet-legal/src/pages/legal.tsx:54`).
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L3). The Questions section is removed; legacy ends after the cards.

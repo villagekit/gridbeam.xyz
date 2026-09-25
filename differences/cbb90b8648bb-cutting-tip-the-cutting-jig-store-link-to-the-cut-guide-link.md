@@ -1,6 +1,6 @@
 ---
 title: "Cutting tip: the cutting jig store link to the cut guide link"
-status: open
+status: regression
 route: /stories/building-with-grid-kit
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 2 (no e-commerce) covers the dead `/products/cutting-jig` link; the replacement sentence is the operator's.
+
+- 2026-09-25: Regression (story grilling P4). Ships as legacy with the dead store link removed (rule 2) and "our" to "a": "> Make use of a cutting jig to help guide cuts. Otherwise, use a tape measure to mark each cut precisely."

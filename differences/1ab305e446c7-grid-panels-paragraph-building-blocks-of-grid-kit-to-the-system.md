@@ -1,6 +1,6 @@
 ---
 title: "Grid Panels paragraph: building blocks of Grid Kit to the system"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (story grilling P4). Ships as legacy with the rule 1 swap: "Grid Panels are another application of Grid Units and one of the essential building blocks of grid beam."

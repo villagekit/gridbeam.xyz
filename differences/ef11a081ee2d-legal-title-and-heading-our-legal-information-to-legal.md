@@ -1,6 +1,6 @@
 ---
 title: "Legal title and heading: Our legal information to Legal"
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L1). Ships as "Our legal information" for the title and the heading.

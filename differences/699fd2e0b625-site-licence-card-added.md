@@ -1,6 +1,6 @@
 ---
 title: Site licence card added
-status: open
+status: regression
 route: /legal
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such card (`packages/applet-legal/src/pages/legal.tsx:22-56`: return, privacy
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (legal grilling L3). The Site licence card is removed; the page is the heading and the privacy card.

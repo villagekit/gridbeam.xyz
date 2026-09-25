@@ -1,6 +1,6 @@
 ---
 title: Editor’s note exposed as a note landmark
-status: open
+status: regression
 route: /stories/building-with-grid-kit
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ No note.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (story grilling P3, [[dcd8df79a843]]). The editorial note, the originally-on byline and the note component are removed; the historical posts keep "Grid Kit" in their text as legacy published it.

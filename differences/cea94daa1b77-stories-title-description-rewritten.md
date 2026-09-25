@@ -1,6 +1,6 @@
 ---
 title: Stories title description rewritten
-status: open
+status: regression
 route: /stories
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (stories grilling I1). Ships as legacy with the rule 1 swap: "Discover all things grid beam in our collection of articles, guides, and newsletters."

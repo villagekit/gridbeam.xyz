@@ -1,6 +1,6 @@
 ---
 title: StoryEditorialNote component and the originallyPublishedOn field added
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: code
 kind: added
@@ -18,3 +18,5 @@ No note component under `apps/gridkit/components/story/`; no such field on `Stor
 ## Log
 
 - 2026-09-12: Note 526d5330 lists the device among the copy rewrites never presented to the operator; its text is filed per route as copy.
+
+- 2026-09-25: Regression (story grilling P3, [[dcd8df79a843]]). The editorial note, the originally-on byline and the note component are removed; the historical posts keep "Grid Kit" in their text as legacy published it.

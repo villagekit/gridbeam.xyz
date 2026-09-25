@@ -1,6 +1,6 @@
 ---
 title: "Story byline: the publish date added under the title"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Story page template, six routes; filed where first met. Note 526d5330 lists the byline among the copy devices never presented to the operator.
+
+- 2026-09-25: Regression (story grilling P2). No publish date on the page, as legacy ([[dcd8df79a843]]).

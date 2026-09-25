@@ -1,6 +1,6 @@
 ---
 title: "Image grids: an unnamed run of images to a named region"
-status: open
+status: regression
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: added
@@ -20,3 +20,5 @@ kind: added
 - 2026-09-12: Story page template; filed where first met.
 
 - 2026-09-12: Story page template: shared by the six story routes (/stories/whats-a-grid-unit, /stories/how-to-cut-grid-beams, /stories/how-to-furniture-bolts, /stories/building-with-grid-kit, /stories/2021-winter-newsletter, /stories/2022-newsletter); filed here where first met.
+
+- 2026-09-25: Regression (story grilling P5). Legacy's markup returns; waits for the accessibility pass after M2 ([[eeba2a65cee4]]).
