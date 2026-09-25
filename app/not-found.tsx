@@ -1,15 +1,4 @@
-import {
-  Box,
-  Container,
-  HStack,
-  Heading,
-  LinkButton,
-  Main,
-  Section,
-  SkipNavContent,
-  Text,
-  VStack,
-} from '@villagekit/ui'
+import { Box, Container, HStack, Heading, LinkButton, Section, Text, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
 
@@ -25,9 +14,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="4xl">
         <Container maxW="3xl">
           <VStack alignItems="center" gap="8" textAlign="center">
@@ -64,6 +51,6 @@ export default function NotFound() {
           </VStack>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }

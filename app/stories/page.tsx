@@ -1,4 +1,4 @@
-import { Container, Main, Section, SkipNavContent, Title } from '@villagekit/ui'
+import { Container, Section, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 
@@ -21,9 +21,7 @@ export default function StoriesPage() {
   const stories = getAllStories().map((story) => ({ metadata: story.metadata }))
 
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="5xl">
         <Title as="h1" description={pageDescription}>
           {pageTitle}
@@ -39,6 +37,6 @@ export default function StoriesPage() {
           </Suspense>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }

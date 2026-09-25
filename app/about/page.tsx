@@ -5,10 +5,8 @@ import {
   HStack,
   LinkButton,
   LinkCard,
-  Main,
   Section,
   SimpleGrid,
-  SkipNavContent,
   Span,
   Text,
   Title,
@@ -31,9 +29,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="A modular construction system anyone can build, modify, or fork.">
           What is grid beam?
@@ -209,7 +205,7 @@ export default function AboutPage() {
           </HStack>
         </Flex>
       </Section>
-    </Main>
+    </>
   )
 }
 

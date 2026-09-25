@@ -9,9 +9,7 @@ import {
   LinkButton,
   LinkCard,
   List,
-  Main,
   SimpleGrid,
-  SkipNavContent,
   Span,
   Stack,
   Text,
@@ -88,9 +86,7 @@ export default async function HomePage() {
     .slice(0, 3)
 
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       {/* 0. Hero — headline + image carousel, then 3 testimonials below. */}
       <LandingSection index={0}>
         <VStack gap={{ base: 12, lg: 16 }} w="full">
@@ -396,7 +392,7 @@ export default async function HomePage() {
           </VStack>
         </Container>
       </LandingSection>
-    </Main>
+    </>
   )
 }
 

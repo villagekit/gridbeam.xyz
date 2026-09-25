@@ -1,14 +1,4 @@
-import {
-  Box,
-  Container,
-  ContentMainTocLayout,
-  HStack,
-  Main,
-  SkipNavContent,
-  Span,
-  Text,
-  Title,
-} from '@villagekit/ui'
+import { Box, Container, ContentMainTocLayout, HStack, Span, Text, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -69,9 +59,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   return (
     <ContentMainTocLayout>
-      <Main>
-        <SkipNavContent />
-
+      <>
         <Container maxW="3xl" pt={{ base: 4, md: 8 }}>
           <Box as="article">
             <Title as="h1" hasAnchor description={description}>
@@ -104,7 +92,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
         </Container>
 
         <Content />
-      </Main>
+      </>
     </ContentMainTocLayout>
   )
 }

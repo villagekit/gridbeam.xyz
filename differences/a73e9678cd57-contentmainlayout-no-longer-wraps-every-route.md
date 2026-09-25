@@ -1,6 +1,6 @@
 ---
 title: ContentMainLayout no longer wraps every route
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/layout.tsx:73-80` renders `MainLayout` without a content layout; `@villagekit/ui@1.2.0 src/components/layouts/ContentLayout.tsx:16-56` still exports `ContentMainLayout` and its siblings but nothing in `app/` imports them (`grep -rl ContentMainLayout app`); routes compose `Main` and `Section` themselves (e.g. `app/about/page.tsx:8-9,37-38`).
 
 ## Verdict
+
+plan a7bf623f
 
 ## Log

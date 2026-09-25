@@ -1,14 +1,4 @@
-import {
-  Container,
-  LinkCard,
-  Main,
-  Section,
-  SimpleGrid,
-  SkipNavContent,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { Container, LinkCard, Section, SimpleGrid, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
 import { FaEnvelope, FaGithub } from 'react-icons/fa'
@@ -24,9 +14,7 @@ export const metadata: Metadata = {
 
 export default function SubscribePage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="A low-volume newsletter is on the way. No signup form yet.">
           Newsletter
@@ -71,6 +59,6 @@ export default function SubscribePage() {
           />
         </SimpleGrid>
       </Section>
-    </Main>
+    </>
   )
 }

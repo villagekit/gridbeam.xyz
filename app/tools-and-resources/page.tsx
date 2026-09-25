@@ -1,13 +1,4 @@
-import {
-  Container,
-  LinkCard,
-  Main,
-  Section,
-  SimpleGrid,
-  SkipNavContent,
-  Text,
-  Title,
-} from '@villagekit/ui'
+import { Container, LinkCard, Section, SimpleGrid, Text, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
 import type { ReactNode } from 'react'
@@ -103,9 +94,7 @@ const resources: Array<CardEntry> = [
 
 export default function ToolsAndResourcesPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="Tools to plan a build, plus references for going deeper into the system.">
           Tools &amp; resources
@@ -155,6 +144,6 @@ export default function ToolsAndResourcesPage() {
           ))}
         </SimpleGrid>
       </Section>
-    </Main>
+    </>
   )
 }

@@ -1,15 +1,4 @@
-import {
-  Container,
-  Heading,
-  Link,
-  Main,
-  Section,
-  SkipNavContent,
-  Span,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { Container, Heading, Link, Section, Span, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
 
@@ -27,9 +16,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description={`Last updated ${lastUpdated}.`}>Privacy policy</Title>
         <Container maxW="3xl">
@@ -219,6 +206,6 @@ export default function PrivacyPolicyPage() {
           </VStack>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }

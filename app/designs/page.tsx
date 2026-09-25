@@ -1,4 +1,4 @@
-import { Main, Section, SkipNavContent } from '@villagekit/ui'
+import { Section } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 
@@ -21,14 +21,12 @@ export default async function DesignsPage() {
   const items = designsToCatalogueItems(designs)
 
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="8xl">
         <Suspense fallback={<CatalogueStatic items={items} basePath="designs" />}>
           <DesignsBrowser designs={designs} />
         </Suspense>
       </Section>
-    </Main>
+    </>
   )
 }

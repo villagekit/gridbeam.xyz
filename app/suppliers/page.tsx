@@ -7,10 +7,8 @@ import {
   Heading,
   Link,
   LinkButton,
-  Main,
   Section,
   SimpleGrid,
-  SkipNavContent,
   Span,
   Text,
   Title,
@@ -44,9 +42,7 @@ export default function SuppliersPage() {
   const hasSuppliers = visibleSuppliers.length > 0
 
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="Places that sell grid-beam hardware: beams, panels, fasteners, and sometimes full kits.">
           Suppliers
@@ -156,7 +152,7 @@ export default function SuppliersPage() {
           </VStack>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }
 

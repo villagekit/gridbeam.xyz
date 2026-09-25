@@ -1,4 +1,10 @@
-import { MainLayout, NavContextProvider, SkipNavLink } from '@villagekit/ui'
+import {
+  ContentMainLayout,
+  MainLayout,
+  NavContextProvider,
+  SkipNavContent,
+  SkipNavLink,
+} from '@villagekit/ui'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
@@ -68,7 +74,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 Footer={SiteFooter}
                 headerColorPalette="accentB"
               >
-                {children}
+                <ContentMainLayout>
+                  <SkipNavContent />
+                  {children}
+                </ContentMainLayout>
               </MainLayout>
             </NavContextProvider>
           </SiteProvider>

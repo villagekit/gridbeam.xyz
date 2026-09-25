@@ -1,4 +1,4 @@
-import { Container, Main, Section, SkipNavContent, Text, Title, VStack } from '@villagekit/ui'
+import { Container, Section, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 
@@ -15,9 +15,7 @@ export const metadata: Metadata = {
 
 export default function CuttingPlannerPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="Tell it the cuts you need; it tells you how many beams to buy and how to cut them.">
           Cutting planner
@@ -44,6 +42,6 @@ export default function CuttingPlannerPage() {
       <Suspense fallback={null}>
         <CuttingPlanner />
       </Suspense>
-    </Main>
+    </>
   )
 }

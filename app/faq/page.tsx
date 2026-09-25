@@ -1,15 +1,4 @@
-import {
-  Accordion,
-  Container,
-  Heading,
-  Link,
-  Main,
-  Section,
-  SkipNavContent,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { Accordion, Container, Heading, Link, Section, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
 import type { ReactNode } from 'react'
@@ -276,9 +265,7 @@ const categories: Array<FaqCategory> = [
 
 export default function FaqPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="Common questions about grid beam, the 40 mm grid, and where to find parts.">
           Frequently asked questions
@@ -341,6 +328,6 @@ export default function FaqPage() {
           </VStack>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }

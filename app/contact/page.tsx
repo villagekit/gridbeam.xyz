@@ -1,15 +1,4 @@
-import {
-  Container,
-  Heading,
-  Icon,
-  Link,
-  Main,
-  Section,
-  SkipNavContent,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { Container, Heading, Icon, Link, Section, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { FaEnvelope, FaGithub } from 'react-icons/fa'
 
@@ -26,9 +15,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="How to reach the gridbeam.xyz maintainer.">Get in touch</Title>
         <Container maxW="3xl">
@@ -97,6 +84,6 @@ export default function ContactPage() {
           </VStack>
         </VStack>
       </Section>
-    </Main>
+    </>
   )
 }

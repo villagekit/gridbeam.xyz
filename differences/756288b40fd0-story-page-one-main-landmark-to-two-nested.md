@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Story page template, six routes; filed where first met.
+
+- 2026-09-26: Cause moved by plan [[a7bf623f885c]]: the route no longer renders its own Main; the outer main is now the root layout ContentMainLayout (app/layout.tsx), and the inner one is still ContentMainTocLayout ContentMain (app/stories/[slug]/page.tsx:61), so the nesting is main (layout) > main (route). The fix stays with the story pages record: drop ContentMainTocLayout from the route, as legacy had no TOC layout. The same nesting now stacks two ContentContainer bottom margins, filed as its own visual item.

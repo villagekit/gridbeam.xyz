@@ -1,6 +1,6 @@
 ---
 title: "Layout composition: ContentMainLayout around every route and the QueryParamProvider"
-status: todo
+status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by:
@@ -39,5 +39,11 @@ None pure.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped the layout half: `app/layout.tsx` renders `<ContentMainLayout><SkipNavContent />{children}</ContentMainLayout>` inside `MainLayout`, as legacy's `components/layouts/main.tsx:22` did, and the fourteen route files and `app/not-found.tsx` swapped `<Main>` for a fragment and dropped `<SkipNavContent />` and the two imports, nothing re-indented. One `<main>` on `/`, `/about`, `/designs`, `/designs/bed-frame`, `/stories`, `/tools/cutting-planner`, `/contact` and the 404; the skip link still lands (its target is Chakra's default `id="chakra-skip-nav"`, as [[9c1d2ab08b15]] records, so the Done when's `id="skip-nav"` grep was a slip in the letter, checked as `chakra-skip-nav`); no `useAssertChildIndexes` warning in the browser console on eight routes; `/designs?q=shelf` filters to three cards. [[a73e9678cd57]] is fixed. Screenshot and DOM pairs captured on eight routes at three widths and looked at: landmarks are banner, one main, contentinfo everywhere but the story page.
+
+Deviation: the `QueryParamProvider` half was verified and not built. `next-query-params@5.1.0` (peers Next 15 and React 19, MIT) exports an app-router adapter, `dist/app.cjs.development.js:12`, that calls `useSearchParams()`. Mounted in `SiteProvider` with no `Suspense`, `next build` failed every static route (`useSearchParams() should be wrapped in a suspense boundary`, first at `/designs/[id]` and `/stories/[slug]`); wrapped in `Suspense` at the root, the build passed but every route bailed out to client-side rendering, `.next/server/app/about.html` holding `<template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">` and no `<main>`. Legacy's pages adapter kept the static HTML and read the query after hydration, so the plan's "wrap as Next requires" would have traded every route's static HTML for the provider: a change to what the visitor gets that no rule sanctions and not an agent's call. The probe was reverted and the packages removed; [[43c1babc2051]] stays `regression` with the evidence in its Log; the choice of adapter is the new Phase 0 slice [[531b810f2dbd]] under the shell record, which lists the candidates found (a site-written adapter with the pages adapter's semantics, the library adapter inside each consumer's client-only boundary, another library) and routes any shape change through a `difference` judged by rule 4. So two Done when lines fail as written: the `QueryParamProvider` grep names no file, and [[43c1babc2051]] is not `fixed`. The five route URL-state items ([[2a723807e7dc]], [[1fc20938eb70]], [[a693e2f34e13]], [[cbe45596b840]], [[c94f539612d6]]) carry their notes: the migration to `useQueryParams` waits on that slice, the cutting planner deletes its consumer instead, and the last consumer deletes `app/_lib/url-state.ts`.
+
+Review findings acted on (Standards, Spec and Parity on Opus): the story page's nested main ([[756288b40fd0]]) now comes from the layout's main around the route's `ContentMainTocLayout`, noted there; that nesting stacks two `ContentContainer` bottom margins, about 64 px against legacy's 32 at 1280, filed as [[7584e6e05aea]] (`regression`, story pages record); [[f323b5834590]] on `/designs` noted for its stale Current; the notes' ids rewritten as `[[id]]`; the follow-up plan names the consumer slices' `blocked_by` edge and the design viewer's `next/dynamic` boundary. Dropped: the useless fragment inside `ContentMainTocLayout` on the story page, since the route's shape is its record's. No docs change: no `Providers` component was added. Gate green (`timeout 900 just check`: 78 tests, 61 static pages, no generated drift); `kipu verify --warnings-as-errors` clean; diff 25 files, under 500 lines.
 
 ## Log

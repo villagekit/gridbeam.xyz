@@ -3,10 +3,8 @@ import {
   Heading,
   Link,
   LinkCard,
-  Main,
   Section,
   SimpleGrid,
-  SkipNavContent,
   Text,
   Title,
   VStack,
@@ -27,9 +25,7 @@ export const metadata: Metadata = {
 
 export default function LegalPage() {
   return (
-    <Main>
-      <SkipNavContent />
-
+    <>
       <Section index={0} maxW="6xl">
         <Title description="The legal small-print, kept as small as possible.">Legal</Title>
         <Container maxW="3xl">
@@ -83,6 +79,6 @@ export default function LegalPage() {
           </VStack>
         </Container>
       </Section>
-    </Main>
+    </>
   )
 }
