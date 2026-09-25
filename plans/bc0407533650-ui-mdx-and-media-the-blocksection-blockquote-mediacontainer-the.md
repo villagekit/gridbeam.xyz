@@ -35,3 +35,5 @@ None pure.
 ## Outcome
 
 ## Log
+
+- 2026-09-26: From the framework boundary slice (plan 1c74a465996d): follow its mechanism, the framework context in ../ui/src/framework.tsx read through useFramework(), for MdxLink and the media components; the link component is the context's default for a route href. The Parity review of that slice filed 63baa85427e0 (MDX internal links open in the same tab where legacy opened every non-hash link in a new tab), on shell, axis interaction, regression; this slice re-ports MdxLink and is where it is closed or judged. The override that shows a sibling change on this site is pnpm.overrides["@villagekit/ui"] = "file:../ui" (link: fails under next dev --turbopack), with pnpm install after each sibling edit.

@@ -1,6 +1,6 @@
 ---
 title: NavContextProvider no longer takes usePathname
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in ../ui at commit 4e11d57 (plan 1c74a465996d): src/components/nav/context.tsx, NavContextProvider({ items, usePathname?, linkComponent? }), the hook and the link component read by NavBar and NavList from the framework context the provider fills. The site half, a client wrapper passing usePathname from next/navigation and NextLink, lands at the bump (the note on 99f2fe62c62f names the edits). Waits on the operator's publish.
