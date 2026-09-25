@@ -9,11 +9,14 @@ on one `route` (a path, or `shell` for what every route shares) and one
 States: `open` (found, not yet judged), `regression` (worse than legacy; a
 plan closes it), `sanctioned` (acceptable; the Verdict names the rule or
 the operator's call), `fixed` (the Verdict names the plan), `dismissed`
-(not a real difference; the Verdict says why).
+(not a real difference; the Verdict says why), `upstream` (fixed in
+`../ui` or `../gridkit` and committed there, waiting on the operator's
+publish; a note cites the sibling commit, and the bump plan that consumes
+the publish moves it to `fixed`, decision `28c1a536`).
 
 The ledger is the definition of parity. A route is at parity when no item
 on it is `open` or `regression`; the site is at parity when that holds for
-every route and for `shell`. "Unexpected differences" are, by
+every route and for `shell` and no item is `upstream`. "Unexpected differences" are, by
 construction, the items that do not exist yet: the `parity` skill files
 them, and the code review's Parity axis looks for the ones it missed.
 

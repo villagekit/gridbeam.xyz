@@ -1,6 +1,6 @@
 ---
 title: Agent roles and who commits
-status: accepted
+status: superseded
 date: 2026-09-11
 ---
 ## Context

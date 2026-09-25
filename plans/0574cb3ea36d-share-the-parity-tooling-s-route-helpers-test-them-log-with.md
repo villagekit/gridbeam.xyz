@@ -5,6 +5,8 @@ blocked_by:
   - target: d04ec0d664be
     strength: soft
     note: the port to TypeScript first, so the helpers' module and test are written once
+tags:
+  - "worker:opus"
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found three rules broken in the parity tooling under `scripts/`.
 

@@ -1,6 +1,8 @@
 ---
 title: Use biome check --write in the format scripts
 status: todo
+tags:
+  - "worker:sonnet"
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found the deprecated flags.
 

@@ -20,6 +20,12 @@ initial  = true
 id       = "regression"
 category = "started"
 
+# Fixed in `../ui` or `../gridkit`, committed there, waiting on the
+# operator's publish; the bump plan moves it to `fixed`. Decision 28c1a536.
+[[state]]
+id       = "upstream"
+category = "started"
+
 # Judged acceptable: the verdict names the rule, or the operator's call.
 [[state]]
 id               = "sanctioned"

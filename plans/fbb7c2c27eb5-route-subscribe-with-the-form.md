@@ -25,7 +25,7 @@ Named when sliced; none pure unless the route carries logic.
 
 `kipu list --collection difference --filter route=/subscribe --json` shows no `open` or `regression` item, and `/finish-epic` finishes this record; the operator reviews the route at the parity gate `f7a700a3e482`.
 
-wants: the Buttondown API key, for the form.
+The form's wiring against Buttondown needs the API key, the operator's: the one slice that needs it is minted tagged `attended` with the line `wants: the Buttondown API key, for the form`, and every other slice of this route ships without it; this record waits on that slice, so `/finish-epic` runs after the operator has.
 
 ## Out of scope
 

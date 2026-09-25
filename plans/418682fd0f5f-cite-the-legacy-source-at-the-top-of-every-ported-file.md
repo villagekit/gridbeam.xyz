@@ -1,6 +1,11 @@
 ---
 title: Cite the legacy source at the top of every ported file
 status: todo
+tags:
+  - "worker:opus"
+blocked_by:
+  - target: 337e35d86920
+    note: the re-ports rewrite most of these files; the bulk pass covers what stays
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found ported files without their citation, and one citation that points nowhere.
 

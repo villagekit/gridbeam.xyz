@@ -23,7 +23,7 @@ Not this slice: what is deferred, and to which sibling. -->
 <!-- One observable outcome per line, at least one a command or a named
 test. A line that reads the store's own state says when it is checked.
 The quality-gate line stays last. -->
-- `pnpm check` is green
+- `timeout 900 just check` is green
 
 ## Outcome
 

@@ -1,6 +1,8 @@
 ---
 title: Reword the comments that narrate a fix into the constraint they guard
 status: todo
+tags:
+  - "worker:opus"
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found six comments that describe the change just made.
 

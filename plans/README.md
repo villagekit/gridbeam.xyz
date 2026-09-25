@@ -33,8 +33,12 @@ if it has one (a slice cut by `kipu split` also carries `derived_from` to
 it); `blocked_by` for every plan whose deliverable this one consumes, hard
 unless `--soft` with a `--note` for an ordering preference; `priority` only
 on a slice, `medium` unless it is pulled ahead (`urgent`, `high`) or pushed
-back (`low`); `tags` for the two process tags this store uses, `gate` and
-`epic`. Sequence lives in edges and nowhere else: priority is the weight
+back (`low`); `tags` for the process tags this store uses, `gate`, `epic` and
+`attended`, and for the worker tag `worker:<model>` (`worker:fable`,
+`worker:opus`, `worker:sonnet`) naming the model a slice runs on under
+`/orchestrate`, written at the mint by the rule in CLAUDE.md, Sub-agents
+(decision `8eed053a`); a slice with no worker tag runs on Fable. Sequence
+lives in edges and nowhere else: priority is the weight
 that breaks ties among ready items, and a record carries none. kipu writes
 edge targets as full ids; prose and commit subjects cite by prefix.
 
@@ -62,8 +66,13 @@ needs one carries a "wants:" line in its body, and an orchestrator stops at
 it when the environment cannot meet it:
 
 - A publish of `@villagekit/ui` or a `@villagekit/*` engine package to npm:
-  the operator's.
-- The Buttondown API key, for the subscribe form: the operator's.
+  the operator's, deferred to the end of M2, where the one attended bump
+  plan `99f2fe62c62f` consumes it; until then a sibling fix parks its
+  differences in `upstream` (decision `28c1a536`), and no slice carries
+  this line.
+- The Buttondown API key, for the subscribe form: the operator's; the one
+  slice that needs it is tagged `attended` and carries the line, and the
+  rest of the route ships without it.
 - Cloudflare and DNS credentials, for the release: the operator's.
 - The operator's eyes on `pnpm dev`, for the parity gate, where every route is reviewed.
 

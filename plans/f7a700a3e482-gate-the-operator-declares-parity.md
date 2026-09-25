@@ -5,7 +5,10 @@ tags:
   - gate
   - attended
 parent: 1783931160f2
-blocked_by: 337e35d86920
+blocked_by:
+  - 337e35d86920
+  - target: 99f2fe62c62f
+    note: the deferred publishes land before the operator reviews
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.

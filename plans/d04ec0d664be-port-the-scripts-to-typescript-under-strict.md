@@ -1,6 +1,8 @@
 ---
 title: Port the scripts to TypeScript under strict
 status: todo
+tags:
+  - "worker:opus"
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found the five scripts outside the typechecker.
 

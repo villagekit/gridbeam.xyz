@@ -13,7 +13,7 @@ Every route is at parity: no `difference` on it is `open` or `regression`, and t
 
 One route record per child of this milestone, the shell first since every route inherits it, then the routes in the order the soft edges give: home, about, faq, stories index, story pages, designs index, design pages, cutting planner, tools and resources, contact, legal, suppliers (with the map), subscribe (with the Buttondown form). Each route record lists the differences it will close and is sliced with `/to-slices` once the ledger and the copy verdicts exist, attended or by an orchestrator's worker.
 
-Work in `../ui` and `../gridkit` is its own slice under the route that needs it, and the site slice that consumes the publish carries "wants: publish".
+Work in `../ui` and `../gridkit` is its own slice under the route that needs it, on Fable, and the publishes are deferred to the end of the milestone (decision `28c1a536`): the slice commits in the sibling by pathspec, verifies there, moves each item it closes to `upstream` with a note citing the sibling commit, and writes `kipu relate 99f2fe62c62f blocked_by <itself>`; no slice consumes a publish or carries a Wants line for one, and a route record finishes with `upstream` items on it. Every slice is minted with its `worker:<model>` tag (decision `8eed053a`). A route slice is `blocked_by` the shell slice whose deliverable it consumes, since a slice does not inherit its record's edges.
 
 ## Seams under test
 
@@ -30,3 +30,5 @@ Dependency upgrades (M3) and the release (M4).
 ## Outcome
 
 ## Log
+
+- 2026-09-25: The unattended run starts (plan e0d02ccdfb3f). Standing instructions for every worker: the publishes are deferred, so a sibling fix parks its items in `upstream` and blocks the bump plan `99f2fe62c62f` (decision `28c1a536`); every slice is tagged `worker:<model>` (decision `8eed053a`); the subscribe form's key is an attended slice; a copy item is closed by the verbatim legacy text or the item's verdict and nothing else; a `\"` in a heredoc note lands literally, so notes are single-quoted; the gate is `timeout 900 just check`.

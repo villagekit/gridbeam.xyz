@@ -112,7 +112,9 @@ cold, and its brief carries:
   `../node-modules/apps/gridkit/` plus `../node-modules/packages/ui-*/` at
   `fce357d`.
 - The sanctioned-deviation rules (the decision that records them, by path)
-  and the editorial locks.
+  and the editorial locks, and the ids of the route's `upstream` items:
+  fixed in a sibling and waiting on the publish, so their difference is
+  expected on the pairs and is never a finding.
 - The brief: "For every touched route, compare legacy and current on the
   five axes the ledger tracks (visual, interaction, accessibility, copy,
   code) by looking at the screenshot pairs at all three widths yourself and
