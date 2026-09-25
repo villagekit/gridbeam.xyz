@@ -1,6 +1,6 @@
 ---
 title: "Shadow token scale: Chakra v2's sm and md to v3's two-layer gray shadows"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found by the ui mdx and media slice [[bc0407533650]] measuring the tip and the story videos on both sides; pre-existing, not introduced there, the same shape as the radius scale item [[f40107b60034]]. The scale is the package's theme, so the fix is the ui's: v2's sm, base, md, lg, xl and 2xl values under defineTokens.shadows in ../ui/src/theme/index.ts, or a rule 4 verdict; a later ui slice or the bump plan [[99f2fe62c62f]] owns it, no slice does now.
+
+- 2026-09-26: Fixed in ../ui as commit 9642114 (src/theme/index.ts: Chakra v2's xs, sm, md, lg, xl, 2xl and inner as semantic shadow tokens, base as a raw token), waiting on the operator's publish; the bump plan 99f2fe62c62f moves it to fixed. Closed by the palette slice c14505b76b6a on the orchestrator's brief, the fix being the package theme's tokens; measured on /stories/how-to-cut-grid-beams at 1280, every shadowed element with the same computed box-shadow on both sides.

@@ -1,6 +1,6 @@
 ---
 title: "Palette literals: Chakra v2 defaults to Chakra v3 defaults"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 4 does not cover it: Chakra v3 ships a new default palette but does not force it; `definePalette` can carry the v2 literals.
+
+- 2026-09-26: Fixed in ../ui as commit 9642114 (src/theme/colors.ts: gray, pink, cyan and yellow as color tokens with Chakra v2's values from @chakra-ui/theme@3.3.1, a derived 950 each; purple and red carried too, since both sides read them by name), waiting on the operator's publish; the bump plan 99f2fe62c62f moves it to fixed. Plan c14505b76b6a.
