@@ -1,6 +1,6 @@
 ---
 title: QueryParamProvider replaced by a hand-written url-state helper
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/url-state.ts:1-30`: `replaceUrl` and `withSearchParams` over `window.history.replaceState`; no provider in `app/layout.tsx`.
 
 ## Verdict
+
+plan 531b810f
 
 ## Log
 

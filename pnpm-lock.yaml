@@ -99,6 +99,9 @@ importers:
       three:
         specifier: ^0.165.0
         version: 0.165.0
+      use-query-params:
+        specifier: ^2.2.2
+        version: 2.2.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       xstate:
         specifier: ^5.13.1
         version: 5.31.1
@@ -4503,6 +4506,19 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  use-query-params@2.2.2:
+    resolution: {integrity: sha512-OwGab8u8/x2xZp9uSyBsx0kXlkR9IR436zbygsYVGikPYY3OJosvve6IJVGwIJPcfyb/YHwvPrUNu65/JR++Kw==}
+    peerDependencies:
+      '@reach/router': ^1.2.1
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-router-dom: '>=5'
+    peerDependenciesMeta:
+      '@reach/router':
+        optional: true
+      react-router-dom:
         optional: true
 
   use-sync-external-store@1.6.0:
@@ -10337,6 +10353,12 @@ snapshots:
       react: 19.2.6
     optionalDependencies:
       '@types/react': 19.2.15
+
+  use-query-params@2.2.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6):
+    dependencies:
+      react: 19.2.6
+      react-dom: 19.2.6(react@19.2.6)
+      serialize-query-params: 2.0.4
 
   use-sync-external-store@1.6.0(react@19.2.6):
     dependencies:
