@@ -1,6 +1,6 @@
 ---
 title: "Mobile menu toggle hover and press: pink icon to gray.900, the color prop beats the toolbar variant in Chakra v3"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Handed to the slice [[61a42a0adbc8]], minted beside the shell record [[a78b167170b8]] at its finish (decision 40abdb2f222a): a fix in ../ui on the toggle's rest color against the toolbar variant's states, parked in upstream when it lands.
+
+- 2026-09-26: Fixed in ../ui at commit d736bfe on main (plan 61a42a0adbc8): src/components/Button.tsx, the toolbar variant's rest color reads var(--toolbar-color, {colors.gray.700}); src/components/nav/NavHeader.tsx, the toggle sets css={{ '--toolbar-color': 'colors.gray.900' }} in place of color="gray.900"; CHANGELOG.md under Fixed. On pnpm dev under the file:../ui override the toggle reads rgb(23, 25, 35) at rest and rgb(213, 63, 140) on hover and on press, legacy's values. Waits on the operator's publish and the bump plan 99f2fe62c62f (decision 28c1a536).
