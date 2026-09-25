@@ -1,6 +1,6 @@
 ---
 title: "Kit section button: Learn more to Read the full intro"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7). Ships as "Learn more".

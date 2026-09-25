@@ -1,6 +1,6 @@
 ---
 title: "For makers card: Tools & resources"
-status: open
+status: regression
 route: /
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q12). The "For makers" section is removed; the page ends at "A place to share ideas" as legacy does.

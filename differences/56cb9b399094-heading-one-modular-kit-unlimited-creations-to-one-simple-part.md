@@ -1,6 +1,6 @@
 ---
 title: "Heading: One modular kit, unlimited creations to One simple part. Endless configurations."
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q6). Ships as legacy verbatim: "One modular kit, unlimited creations".

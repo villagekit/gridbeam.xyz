@@ -40,6 +40,7 @@ The legacy site is the default on every axis; a deviation needs a stated reason.
 - **Copy is the operator's** (`ca677697`). No agent writes, rewords or shortens visitor-facing text. Copy comes verbatim from the legacy source or from the verdict of a sanctioned difference.
 - **Ground truth** (`bfa9a416`). Live site `https://gridkit-landing-villagekit.vercel.app` for visuals and interaction; `../node-modules` at `fce357d` for copy and code. They agree.
 - **Editorial locks** (`ad5363e4`) and the **suppliers map** (`8b5e51fc`): the operator's calls already made. Don't re-ask.
+- **Copy style** (`64ee4dfa`, `edad0df8`, `6fce53c0`): no em dash in copy written for this port, legacy's own em dashes kept; American English spelling on every route. **Store CTAs** (`5dfd8249`): "Buy a Grid Kit" ships as "Buy a Grid Beam" linking to `/suppliers`.
 
 ## The process
 

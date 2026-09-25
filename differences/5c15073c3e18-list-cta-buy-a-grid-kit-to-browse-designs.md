@@ -1,6 +1,6 @@
 ---
 title: "List CTA: Buy a Grid Kit to Browse designs"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 2 covers the store link's removal; the replacement label is new copy.
+
+- 2026-09-25: Regression (grilling Q2, [[5dfd824923c9]]). Ships as "Buy a Grid Beam" linking to `/suppliers`, under the list as legacy has it.

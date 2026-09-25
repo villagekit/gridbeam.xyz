@@ -1,6 +1,6 @@
 ---
 title: "Typing section button: Explore our design catalogue to Explore the design catalogue"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q9, [[6fce53c0a18e]]). Ships as "Explore our design catalog".

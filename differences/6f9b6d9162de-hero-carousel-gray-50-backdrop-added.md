@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel: gray.50 backdrop added"
-status: open
+status: regression
 route: /
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q4). No backdrop behind the slides, as legacy.

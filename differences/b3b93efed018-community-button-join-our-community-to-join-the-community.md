@@ -1,6 +1,6 @@
 ---
 title: "Community button: Join our community to Join the community"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q14). Ships as "Join our community".

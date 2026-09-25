@@ -1,6 +1,6 @@
 ---
 title: "Kit paragraph rewritten: Everything just fits together dropped, new ending"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note `526d5330`'s home copy rewrite. The brand swap alone is the sanctioned rebrand item.
+
+- 2026-09-25: Regression (grilling Q6). Ships as legacy with the rule 1 swap: "Grid beam uses a 40mm grid to make building easy for beginners. Everything just fits together using only simple tools. Cut to size with a hand saw, connect beams and panels with fasteners and a hex key."

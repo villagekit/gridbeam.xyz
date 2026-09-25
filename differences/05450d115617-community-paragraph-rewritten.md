@@ -1,6 +1,6 @@
 ---
 title: Community paragraph rewritten
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note `526d5330`'s community paragraph.
+
+- 2026-09-25: Regression (grilling Q14). Ships as legacy with the rule 1 swap and the stray space before the first period dropped: "Grid beam is part of a wider vision for a more sustainable, creative future. So we're building a community space where everyone can share their creations, exchange ideas, and learn together to shape a brighter tomorrow."

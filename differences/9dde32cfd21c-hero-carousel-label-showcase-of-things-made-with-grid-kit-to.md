@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel label: Showcase of things made with Grid Kit to Things made with grid beam"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 1 covers the brand swap, not the dropped `Showcase of`.
+
+- 2026-09-25: Regression (grilling Q3). Ships as "Showcase of things made with grid beam", rule 1 only.

@@ -1,6 +1,6 @@
 ---
 title: "Step 5: period added to Have fun assembling your design"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7). Ships as "Have fun assembling your design", no period.

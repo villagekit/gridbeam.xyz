@@ -1,6 +1,6 @@
 ---
 title: "Step 1: our catalogue to the catalogue, period added"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7, [[6fce53c0a18e]]). Ships as "Browse designs from our catalog, or imagine your own", link on "our catalog", no period. American spelling per the decision.

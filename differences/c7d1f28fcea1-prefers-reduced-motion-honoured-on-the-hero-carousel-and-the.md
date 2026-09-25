@@ -1,6 +1,6 @@
 ---
 title: prefers-reduced-motion honoured on the hero carousel and the typing section
-status: open
+status: regression
 route: /
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ No reduced-motion handling in `apps/gridkit/pages/index.tsx`, `components/image-
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q4). Legacy behaviour restored: the carousel and the typing effect animate regardless of the visitor's motion preference. Returns in the dedicated accessibility pass after M2 ([[eeba2a65cee4]]).

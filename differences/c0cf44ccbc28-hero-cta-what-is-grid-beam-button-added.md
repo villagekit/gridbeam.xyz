@@ -1,6 +1,6 @@
 ---
 title: "Hero CTA: What is grid beam? button added"
-status: open
+status: regression
 route: /
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ One hero button (`apps/gridkit/pages/index.tsx:101-103`).
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q2). The second hero button is removed; legacy has one.

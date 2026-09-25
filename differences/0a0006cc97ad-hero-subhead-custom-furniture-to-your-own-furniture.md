@@ -1,6 +1,6 @@
 ---
 title: "Hero subhead: custom furniture to your own furniture"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q2). Ships as legacy verbatim: "Start building custom furniture, no experience needed."

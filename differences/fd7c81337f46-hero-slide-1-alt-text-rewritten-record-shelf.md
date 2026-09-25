@@ -1,6 +1,6 @@
 ---
 title: Hero slide 1 alt text rewritten (record shelf)
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q5). Ships as the legacy alt text verbatim, quoted above under Legacy.

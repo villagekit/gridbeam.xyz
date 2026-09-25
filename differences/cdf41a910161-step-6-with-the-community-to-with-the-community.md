@@ -1,6 +1,6 @@
 ---
 title: "Step 6: with the community! to with the community."
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7). Ships as "Share your creation with the community!", the link text "with the community!" as legacy.

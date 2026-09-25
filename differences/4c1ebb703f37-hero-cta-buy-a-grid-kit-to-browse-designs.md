@@ -1,6 +1,6 @@
 ---
 title: "Hero CTA: Buy a Grid Kit to Browse designs"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 2 (no e-commerce) covers the store link's removal; the replacement label and target are new copy for the operator.
+
+- 2026-09-25: Regression (grilling Q2, [[5dfd824923c9]]). Ships as "Buy a Grid Beam" linking to `/suppliers`, same place and size as legacy's button. Rules 1 + 2 + 5 cover the target.

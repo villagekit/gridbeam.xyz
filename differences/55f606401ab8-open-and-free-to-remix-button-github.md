@@ -1,6 +1,6 @@
 ---
 title: "Open and free to remix button: GitHub"
-status: open
+status: regression
 route: /
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such section: the legacy page ends with "A place to share ideas" (`apps/gridk
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q13). The "Open and free to remix" section is removed; the page ends at "A place to share ideas" as legacy does.

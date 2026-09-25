@@ -1,6 +1,6 @@
 ---
 title: "Stories heading: Our stories to Stories from the community"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q10). Ships as "Our stories".

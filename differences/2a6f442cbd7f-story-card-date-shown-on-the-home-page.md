@@ -1,6 +1,6 @@
 ---
 title: Story card date shown on the home page
-status: open
+status: regression
 route: /
 axis: visual
 kind: added
@@ -20,3 +20,5 @@ kind: added
 - 2026-09-12: A `StoryCard` difference, filed on `/` where first met; the stories ledger cites it.
 
 - 2026-09-12: On /stories legacy shows the date too (`apps/gridkit/components/stories/list.tsx:41` calls `Item` without `showDate`, default true); there only the format differs: "29/11/2024" to "29 Nov 2024" (`audit/stories/dom/{legacy,current}.txt`). Stories ledger, plan 843901f4.
+
+- 2026-09-25: Regression (grilling Q11). No date on the home page's story cards, as legacy (`showDate` off).

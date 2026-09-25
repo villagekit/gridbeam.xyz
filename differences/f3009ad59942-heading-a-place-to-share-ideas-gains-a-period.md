@@ -1,6 +1,6 @@
 ---
 title: "Heading: A place to share ideas gains a period"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q14). Ships as "A place to share ideas", no period.

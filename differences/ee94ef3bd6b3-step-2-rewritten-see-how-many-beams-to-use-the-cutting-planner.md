@@ -1,6 +1,6 @@
 ---
 title: "Step 2 rewritten: See how many beams to Use the cutting planner"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7). Ships as legacy verbatim, no link: "See how many beams, panels, and other components you need".

@@ -1,6 +1,6 @@
 ---
 title: "Stories button: See all stories to Read all stories"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q10). Ships as "See all stories".

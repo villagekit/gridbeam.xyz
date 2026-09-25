@@ -22,3 +22,7 @@ None.
 - `kipu list --collection difference --status open` prints nothing
 - Every `sanctioned` copy item's Verdict quotes the wording to ship
 - `kipu verify` is green
+
+## Log
+
+- 2026-09-25: Home route closed: 53 items judged, 52 regressions (legacy verbatim with the rule 1 swap) and one rule 2 sanction. Three decisions minted: American English ([[6fce53c0a18e]]), legacy em dashes exempt ([[edad0df805f0]]), store CTAs ([[5dfd824923c9]]). Next: /suppliers.

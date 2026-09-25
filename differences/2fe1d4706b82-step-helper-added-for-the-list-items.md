@@ -1,6 +1,6 @@
 ---
 title: Step helper added for the list items
-status: open
+status: regression
 route: /
 axis: code
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: The icon color is the visual item.
+
+- 2026-09-25: Regression (grilling Q15). The list items go back inline as the legacy author wrote them; no `Step` helper. Not upgrade-forced: v3's `List.Item` and `List.Indicator` carry the same shape.

@@ -1,6 +1,6 @@
 ---
 title: "Featured stories: two fixed cards to the three latest guides"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The selection mechanism is a code item; the card component's own differences are filed on this route and the stories ledger cites them.
+
+- 2026-09-25: Regression (grilling Q11). The two fixed legacy cards return: "What's a Grid Unit" and "Building with Grid Kit", in that order, no auto-selection.

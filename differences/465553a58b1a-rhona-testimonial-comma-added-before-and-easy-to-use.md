@@ -1,6 +1,6 @@
 ---
 title: "Rhona testimonial: comma added before and easy to use"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Beyond the home lock, which names only the Grid Kit to Grid Beam edit.
+
+- 2026-09-25: Regression (grilling Q16). Ships as Rhona wrote it: "The kits are super fun, versatile and easy to use ❤".

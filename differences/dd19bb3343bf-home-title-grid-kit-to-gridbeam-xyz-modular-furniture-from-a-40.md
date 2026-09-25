@@ -1,6 +1,6 @@
 ---
 title: "Home title: Grid Kit to gridbeam.xyz, modular furniture from a 40 mm grid"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Copy: rule 1 names the domain, not the tagline. The route's `og:url` moves from `https://gridkit.nz` (the layout default) to `https://gridbeam.xyz` (rule 1); the per-route override mechanism is the shell item [[f46533a8ae54]].
+
+- 2026-09-25: Regression (grilling Q1). Legacy set the home title to the bare brand; ships as `Grid Beam` for the title and og:title, rule 1 only. The tagline goes.

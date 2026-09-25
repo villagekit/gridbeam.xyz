@@ -1,6 +1,6 @@
 ---
 title: Section For makers added
-status: open
+status: regression
 route: /
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ Seven sections (`apps/gridkit/pages/index.tsx:77-371`); `audit/_root/1280/legacy
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q12). The "For makers" section is removed; the page ends at "A place to share ideas" as legacy does.

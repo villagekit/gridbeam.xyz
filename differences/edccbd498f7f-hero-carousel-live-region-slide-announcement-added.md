@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel: live-region slide announcement added"
-status: open
+status: regression
 route: /
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q4). No live region, as legacy. Returns in the dedicated accessibility pass after M2 ([[eeba2a65cee4]]).

@@ -1,6 +1,6 @@
 ---
 title: Section Open and free to remix added
-status: open
+status: regression
 route: /
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ Seven sections (`apps/gridkit/pages/index.tsx:77-371`).
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q13). The "Open and free to remix" section is removed; the page ends at "A place to share ideas" as legacy does.

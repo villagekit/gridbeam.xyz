@@ -1,6 +1,6 @@
 ---
 title: Home meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /
 axis: copy
 kind: added
@@ -18,3 +18,5 @@ No `description` on the page's `NextSeo` (`apps/gridkit/pages/index.tsx:75`); th
 ## Log
 
 - 2026-09-12: The site default's own rewrite is the shell item [[1906af99b588]].
+
+- 2026-09-25: Regression (grilling Q1). Legacy's home page inherited the site default; this one does too. The per-page description is removed and the default's own verdict ([[1906af99b588]]) is the text that renders.

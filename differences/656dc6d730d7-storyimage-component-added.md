@@ -1,6 +1,6 @@
 ---
 title: StoryImage component added
-status: open
+status: regression
 route: /
 axis: code
 kind: added
@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-12: Filed on `/` where first met; the stories ledger cites it.
+
+- 2026-09-25: Regression (grilling Q15). Story covers render with the `@villagekit/ui` media `Image` inline, as legacy's `stories/item.tsx` does; the `StoryImage` wrapper goes. Not upgrade-forced: the component still ships in `@villagekit/ui`.

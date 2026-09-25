@@ -1,6 +1,6 @@
 ---
 title: "Heading: A future without waste gains a period"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q8). Ships as "A future without waste", no period.

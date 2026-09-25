@@ -1,6 +1,6 @@
 ---
 title: "Video title: Assembling and disassembling a coffee table to a grid-beam coffee table"
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (grilling Q7). Ships as "Assembling and disassembling a coffee table".

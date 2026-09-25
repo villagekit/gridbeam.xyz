@@ -1,6 +1,6 @@
 ---
 title: Stories subheading rewritten
-status: open
+status: regression
 route: /
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Note `526d5330`'s stories blurb.
+
+- 2026-09-25: Regression (grilling Q10). Ships as legacy with the rule 1 swap: "Discover all things grid beam in our collection of guides, newsletters, and inspiration."
