@@ -28,3 +28,5 @@ None.
 - 2026-09-25: Home route closed: 53 items judged, 52 regressions (legacy verbatim with the rule 1 swap) and one rule 2 sanction. Three decisions minted: American English ([[6fce53c0a18e]]), legacy em dashes exempt ([[edad0df805f0]]), store CTAs ([[5dfd824923c9]]). Next: /suppliers.
 
 - 2026-09-25: Suppliers route closed: 33 items, all regressions to the decision's shape ([[8b5e51fcaf61]]): title, map with the Locations list, cards with name (linked), location and a metric/imperial label. Grid Kit stays listed; Gridbeam Supply is in Willits, California. Three wordings pending the operator's confirmation (system label, Grid Kit entries, the Willits location line). Next: /about.
+
+- 2026-09-25: Suppliers wordings confirmed (Metric/Imperial; Grid Kit Wellington only; Willits, California). About route closed: 32 items, all regressions to legacy verbatim with the rule 1 swap; the intro block and the two added sections go. Next: /faq.

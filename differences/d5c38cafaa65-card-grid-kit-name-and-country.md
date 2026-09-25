@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`.
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q4). Grid Kit stays listed: it still trades, under other hands. Name and location follow legacy's producer entries; the operator confirms whether both Auckland and Wellington return.
+
+- 2026-09-25: Confirmed (suppliers grilling S2): one entry, legacy's Wellington producer verbatim: "Grid Kit Wellington", location "Wellington, New Zealand", coordinates -41.2768, 174.7779 (`apps/gridkit/producers.ts`). Auckland does not return.

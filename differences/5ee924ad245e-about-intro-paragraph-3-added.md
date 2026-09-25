@@ -1,6 +1,6 @@
 ---
 title: About intro paragraph 3 added
-status: open
+status: regression
 route: /about
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No intro: the first block after the heading is the caption "Grid Kit is a modula
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A2). The intro block is removed; legacy opens with the first caption.

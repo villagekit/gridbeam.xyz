@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`.
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q3 + Q4). The compatibility sentence is replaced by a one-word system label on the card, imperial for Gridbeam Supply; the operator confirms the label's wording.
+
+- 2026-09-25: Confirmed (suppliers grilling S1): the label ships as "Imperial".

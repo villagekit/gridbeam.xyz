@@ -1,6 +1,6 @@
 ---
 title: "Caption 4: Plywood panels sentence rewritten"
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A3). Ships as legacy verbatim: "Plywood panels have holes drilled in a 40mm grid."

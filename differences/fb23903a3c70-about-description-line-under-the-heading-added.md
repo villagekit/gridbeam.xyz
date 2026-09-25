@@ -1,6 +1,6 @@
 ---
 title: About description line under the heading added
-status: open
+status: regression
 route: /about
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A1). No description line under the heading, as legacy.

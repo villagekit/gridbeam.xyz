@@ -1,6 +1,6 @@
 ---
 title: "Caption 6: three connectors a strong connection to three bolts, a rigid corner"
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A3). Ships as legacy verbatim: "When three beams are joined with three connectors a strong connection is created.", bold on "three beams are joined with three connectors".

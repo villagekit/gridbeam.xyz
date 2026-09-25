@@ -1,6 +1,6 @@
 ---
 title: About meta description added where legacy inherited the site default
-status: open
+status: regression
 route: /about
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No `description` on `apps/gridkit/pages/about.tsx:12`; the `_app.tsx:49` default
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A1). No per-page description; the route inherits the site default ([[1906af99b588]]) as legacy did.

@@ -1,6 +1,6 @@
 ---
 title: Start building description
-status: open
+status: regression
 route: /about
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A6). The "Start building" section is removed; legacy ends after the tri-joint caption.

@@ -1,6 +1,6 @@
 ---
 title: "Caption 3: beam profile sentence rewritten"
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A3). Ships as legacy verbatim: "Beam profiles are 40mm x 40mm and have a repeating pattern of 8mm holes drilled 40mm apart."

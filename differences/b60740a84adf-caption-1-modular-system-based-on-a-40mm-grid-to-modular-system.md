@@ -1,6 +1,6 @@
 ---
 title: "Caption 1: modular system based on a 40mm grid to modular system on a 40 mm grid"
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Rule 1 covers the brand swap only.
+
+- 2026-09-25: Regression (about grilling A3). Ships as legacy with the rule 1 swap: "Grid beam is a modular system based on a 40mm grid.", bold on "modular system based on a 40mm grid".

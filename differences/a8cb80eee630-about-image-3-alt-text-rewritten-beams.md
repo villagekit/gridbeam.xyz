@@ -1,6 +1,6 @@
 ---
 title: About image 3 alt text rewritten (beams)
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A4). Ships as legacy verbatim: "Grid beams".

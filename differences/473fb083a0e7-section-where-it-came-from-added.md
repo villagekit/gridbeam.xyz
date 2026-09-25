@@ -1,6 +1,6 @@
 ---
 title: Section Where it came from added
-status: open
+status: regression
 route: /about
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ One block of captions and images, no sections (`apps/gridkit/pages/about.tsx:14-
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A5). The "Where it came from" section is removed; legacy ends after the tri-joint caption.

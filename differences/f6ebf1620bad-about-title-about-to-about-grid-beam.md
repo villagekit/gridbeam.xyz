@@ -1,6 +1,6 @@
 ---
 title: "About title: About to About grid beam"
-status: open
+status: regression
 route: /about
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The template is the shell item [[1c8b7461acb1]]; the route's `og:url` becomes `https://gridbeam.xyz/about` where legacy inherited the layout's `https://gridkit.nz` (rule 1 for the domain, [[f46533a8ae54]] for the override).
+
+- 2026-09-25: Regression (about grilling A1). Ships as "About", templated by the shell to "Grid Beam: About" ([[1c8b7461acb1]]).

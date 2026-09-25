@@ -1,6 +1,6 @@
 ---
 title: About intro block added before the captions
-status: open
+status: regression
 route: /about
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A2). The intro block is removed; legacy opens with the first caption.

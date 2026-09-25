@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`.
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q4). Gridbeam Supply stays. Location: Willits, California (39.4031029, -123.3590017) for the map; the operator confirms the location line's wording.
+
+- 2026-09-25: Confirmed (suppliers grilling S3): "Gridbeam Supply", location "Willits, California", coordinates 39.4031029, -123.3590017.

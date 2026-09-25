@@ -1,6 +1,6 @@
 ---
 title: Section Start building added
-status: open
+status: regression
 route: /about
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ The page ends after the tri-joint caption (`apps/gridkit/pages/about.tsx:109-118
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (about grilling A6). The "Start building" section is removed; legacy ends after the tri-joint caption.
