@@ -1,6 +1,6 @@
 ---
 title: "LinkCard: fixed 3xs by 64 box with space-around to a fluid full-height card packed to the top"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed on shell from the faq/contact/legal/tools/subscribe ledger (plan 848b026f): LinkCard is a `@villagekit/ui` component of which the shell pass filed only the aria-label drop (2cbb4f4b8497). Consumed on `/legal`, `/tools-and-resources` and `/subscribe` (current) and on legacy `/contact`, `/legal`, `/tools-and-resources`.
+
+- 2026-09-26: Fixed in ../ui as commit a4ef8ed on its main (not pushed; the push goes with the operator's publish, decision 28c1a536): src/components/LinkCard.tsx re-ported from @villagekit/ui@0.9.0 by plan [[1cc03cfabcf2]]. Waits in upstream for the bump plan [[99f2fe62c62f]].

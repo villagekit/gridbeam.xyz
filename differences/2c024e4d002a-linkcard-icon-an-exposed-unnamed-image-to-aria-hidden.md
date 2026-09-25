@@ -1,6 +1,6 @@
 ---
 title: "LinkCard icon: an exposed unnamed image to aria-hidden"
-status: regression
+status: upstream
 route: shell
 axis: accessibility
 kind: changed
@@ -18,3 +18,7 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f. The rule is absent, so regression by default; the legacy server HTML already hides the icon and the current markup matches it, which the operator may weigh under rule 5. Same shape as the footer heart item c49a53197086.
+
+- 2026-09-26: Fixed in ../ui as commit a4ef8ed on its main (not pushed; the push goes with the operator's publish, decision 28c1a536): src/components/LinkCard.tsx re-ported from @villagekit/ui@0.9.0 by plan [[1cc03cfabcf2]]. Waits in upstream for the bump plan [[99f2fe62c62f]].
+
+- 2026-09-26: Correction to the Legacy section, from the Parity review of plan [[1cc03cfabcf2]]: the legacy card's own svg carries no aria-hidden in the served HTML (the hidden svgs on the legacy page are other icons), so the exposed img the live tree shows is the markup as served, not a hydration change. The port matches it: Chakra v3's Icon writes aria-hidden true by default and the sibling passes aria-hidden undefined to clear it; the DOM pairs under audit/legal/dom/current.aria.yaml and audit/tools-and-resources/dom/current.aria.yaml show an unnamed img before each card's h2.

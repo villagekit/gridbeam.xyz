@@ -1,6 +1,6 @@
 ---
 title: "CardsLayout: container.md to 2xl, and no route consumes it"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f: decision bfa9a416 names `packages/ui-page` as shell, and the shell pass covered ContentMainLayout (a73e9678cd57) but not CardsLayout. The NextSeo drop is rule 4 (65c21e08b3f1); the width change and the routes not consuming the port are the regression. The three routes' list-role items cite this as their cause.
+
+- 2026-09-26: The width half is fixed in ../ui as commit a4ef8ed on its main (not pushed; the push goes with the operator's publish, decision 28c1a536): src/components/layouts/CardsLayout.tsx's Container is maxW breakpoint-md, the v3 size token generated from the md breakpoint (768px), the legacy container.md, by plan [[1cc03cfabcf2]]. Waits in upstream for the bump plan [[99f2fe62c62f]]. The other half, the routes consuming CardsLayout, is the records of /contact, /legal and /tools-and-resources, and their list-role items cite this item as the cause.

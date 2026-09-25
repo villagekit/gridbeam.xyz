@@ -1,6 +1,6 @@
 ---
 title: "LinkCard heading: h2 to h3"
-status: regression
+status: upstream
 route: shell
 axis: accessibility
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f. The routes that now put an h2 section heading above the cards have their own heading-outline items.
+
+- 2026-09-26: Fixed in ../ui as commit a4ef8ed on its main (not pushed; the push goes with the operator's publish, decision 28c1a536): src/components/LinkCard.tsx re-ported from @villagekit/ui@0.9.0 by plan [[1cc03cfabcf2]]. Waits in upstream for the bump plan [[99f2fe62c62f]].

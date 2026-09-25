@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: From the ui LinkCard slice [[1cc03cfabcf2]]: the Current section's `h3` cards are `@villagekit/ui@1.2.0`'s. The sibling's LinkCard renders its heading as `h2` again (item bd05a2d3642d, upstream), so once the bump plan [[99f2fe62c62f]] lands it the outline reads h1, h2 (Policies), h2, h2, h2 (Questions); the section headings this item records are unchanged.
