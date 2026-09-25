@@ -1,6 +1,6 @@
 ---
 title: "Button press: the hover scale 1.08 holds through the press, Chakra v3 emits the hover rule after the active rule"
-status: regression
+status: upstream
 route: shell
 axis: interaction
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in `../ui` at commit 6a7c036 on `main` (`src/components/Button.tsx`, the recipe base's active transform nested under the hover state as well as beside it; `CHANGELOG.md` under Fixed), by plan `8a869061bce7`, waiting on the operator's publish of `@villagekit/ui`. Under the `file:../ui` override the toggle at 375 and the header action at 1280 on `/faq` read `matrix(1, 0, 0, 1, 0, 0)` on press, as the live legacy site does (the scratchpad's `press-override-after.json` and `press-legacy.json`).
