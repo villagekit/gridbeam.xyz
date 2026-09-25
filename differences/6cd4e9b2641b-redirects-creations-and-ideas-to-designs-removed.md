@@ -1,6 +1,6 @@
 ---
 title: Redirects /creations and /ideas to /designs removed
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `next.config.ts` has no `redirects()`.
 
 ## Verdict
+
+plan 4f6f086c
 
 ## Log

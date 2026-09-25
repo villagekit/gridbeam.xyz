@@ -1,8 +1,19 @@
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/next.config.mjs
 import createMDX from '@next/mdx'
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 import type { NextConfig } from 'next'
 
+const cspHeader = `
+    default-src *;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https: data: blob:;
+    style-src 'self' 'unsafe-inline';
+`
+
 const nextConfig: NextConfig = {
+  eslint: {
+    // TODO: remove, but for now GitHub Actions build is failing but lint checks are not.
+    ignoreDuringBuilds: true,
+  },
   pageExtensions: ['ts', 'tsx', 'mdx'],
   // The published `@villagekit/*` packages ship TypeScript sources at their
   // top-level `exports`; without `transpilePackages`, Next.js can't compile
@@ -34,6 +45,34 @@ const nextConfig: NextConfig = {
         as: '*.js',
       },
     },
+  },
+  async redirects() {
+    return [
+      ...['/creations', '/ideas'].flatMap((source) => [
+        { destination: '/designs', permanent: false, source },
+      ]),
+
+      ...['/creations/:slug', '/ideas/:slug'].flatMap((source) => [
+        { destination: '/designs/:slug', permanent: false, source },
+      ]),
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: cspHeader.replace(/\n/g, ''),
+          },
+        ],
+      },
+    ]
+  },
+  typescript: {
+    // TODO: remove, but for now GitHub Actions build is failing but type checks are not.
+    ignoreBuildErrors: true,
   },
 }
 

@@ -30,3 +30,5 @@ Anything after launch.
 ## Outcome
 
 ## Log
+
+- 2026-09-26: Parity review of plan 4f6f086c: the live legacy site sends strict-transport-security and x-robots-tag noindex from Vercel, not from next.config; the release decides which platform headers Cloudflare sets, and the ledger has no item for them.

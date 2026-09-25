@@ -1,6 +1,6 @@
 ---
 title: Content-Security-Policy header removed
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `next.config.ts` has no `headers()`.
 
 ## Verdict
+
+plan 4f6f086c
 
 ## Log

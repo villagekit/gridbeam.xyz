@@ -1,6 +1,6 @@
 ---
 title: eslint.ignoreDuringBuilds and typescript.ignoreBuildErrors removed
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `next.config.ts` sets neither; `package.json` `check` runs `pnpm lint && pnpm typecheck && pnpm test && pnpm build`.
 
 ## Verdict
+
+plan 4f6f086c
 
 ## Log
 
