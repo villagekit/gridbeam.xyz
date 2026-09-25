@@ -1,6 +1,6 @@
 ---
 title: Footer WebGL logo cube removed
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/SiteFooter.tsx:75-114` renders the social row and the credit block only; no logo in the footer. `CubeLogo` (static SVG) appears in the header and the OG image only. Absent from `audit/_root/1280/current.png` and `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan 93ef1234
 
 ## Log
 

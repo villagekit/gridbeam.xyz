@@ -1,6 +1,6 @@
 ---
 title: Footer WebGL logo cube
-status: todo
+status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by:
@@ -35,5 +35,15 @@ None pure.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped: the footer shows legacy's rotating WebGL cube again. `app/_components/logo/gl.tsx` is `logo/gl.tsx` at `fce357d` on `@react-three/fiber@9.6.1` and `three@0.165.0`: the same six instanced faces, four holes, `useFrame` rotation, orthographic camera fitted to the group's bounding box, events off in `onCreated`, `Object3D.DEFAULT_UP` set as legacy set it (the same value `@villagekit/sandbox`'s `globals.js` sets). `@react-three/drei@10.7.7` (MIT, the drei that pairs with r3f 9, already in the store as `@villagekit/sandbox`'s dependency, so the install grows by nothing) keeps legacy's `RoundedBox` with `radius` and `smoothness={4}`; `three/examples`'s `RoundedBoxGeometry` was not taken because it changes the geometry (a subdivided box, not drei's extruded bevel) for no gain. r3f 9's `Canvas` still takes `resize.polyfill` (`react-use-measure@2.1.7`'s `Options`), so `@juggle/resize-observer@3.4.0` (Apache-2.0) stays as legacy's dependency and the `resize={{ polyfill: ResizeObserver }}` prop stays. The face colours read `useChakraContext().token('colors.cyan.400')`, `pink.400` and `yellow.400` (Chakra v3's `token()` returns the hex value), so the palette slice's literals flow through at the bump (`72b776cb0d3f`); `role="img" aria-label="Grid Beam logo"` by rule 1. `app/_components/SiteFooter.tsx` is legacy's `footer.tsx:19,126`: `dynamic(() => import('./logo/gl'), { ssr: false })` rendered as `<LogoGl size="12" />` between the social row's Container and the slogan, where ui-brand's Footer placed its children. Closed: `625a06dd5951`.
+
+Translations forced by the upgrade: the six `// @ts-ignore` on `InstancedMesh.setColorAt` are gone, `@types/three@0.165` types it; `useEffect(() => () => mesh.dispose(), [mesh])` becomes a block body, since `InstancedMesh.dispose` returns the mesh and React 19's effect destructor type is `void`; `useTheme().colors.cyan[400]` becomes the `token()` read. `logo/index.tsx` keeps the brand slice's `export * from './svg'` alone where legacy's barrel also re-exported `gl` and the brand slice's plan expected `gl` to join it here: `SiteBrand` imports the barrel from the layout, so re-exporting `gl` would evaluate three, drei and the polyfill in every route's server render and put them in every route's client bundle through the header, against the client-only `ssr: false` import legacy's footer wrote for it; the footer imports `./logo/gl` by path, as legacy's did. Legacy paid that cost, so the reason is an agent's and covers no rule: filed at the Parity review as `2f91880a9f4a`, `regression`, code axis, for the operator to judge (the one-line re-export or a rule 5 sanction).
+
+Proof: on `pnpm dev`, a Playwright probe (`chromium.launch()` headless, whose default WebGL is ANGLE on SwiftShader Vulkan, no flag needed) at `/` finds `footer [role="img"][aria-label="Grid Beam logo"]` 48 by 48 with a 48 by 48 canvas between the social row's `chakra-container` and the credit `section`, two canvas captures 600 ms apart differ (the cube rotates), and the console carries no r3f or three message (the page's messages are the pre-existing kebab-case css error and the LCP image warning, and the GPU-stall warnings the probe's own `readPixels` raised); `audit/_root/{375,768,1280}/current.png` show the cube in the footer where `legacy.png` shows it, the same size, the faces at Chakra v3's cyan, pink and yellow (`72b776cb0d3f`); `audit/_root/dom/current.aria.yaml:184` has `img "Grid Beam logo"` after the social row as `legacy.aria.yaml:173` has `img "Grid Kit logo"`.
+
+Gate: `timeout 900 just check` green; `kipu verify --warnings-as-errors` green.
+
+Findings dropped: TSDoc on `LogoGl` and `LogoGlProps` (the Standards review; legacy and the neighboring logo and shell components have none, and the audit slice `b209e5941cdd` owns TSDoc on every export); the six repeated `setMatrixAt` and `setColorAt` blocks named as duplicated code (the port rule keeps legacy's shape). The Spec review's note that the brand plan's line `gl joins it in the cube slice` is not met stands, recorded above with the item.
 
 ## Log

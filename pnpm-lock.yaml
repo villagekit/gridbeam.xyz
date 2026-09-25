@@ -21,6 +21,9 @@ importers:
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.2.15)(react@19.2.6)
+      '@juggle/resize-observer':
+        specifier: ^3.4.0
+        version: 3.4.0
       '@mdx-js/loader':
         specifier: ^3.1.0
         version: 3.1.1
@@ -33,6 +36,9 @@ importers:
       '@opennextjs/cloudflare':
         specifier: ^1.19.11
         version: 1.19.11(next@15.5.18(@babel/core@7.29.7)(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(wrangler@4.93.0)
+      '@react-three/drei':
+        specifier: ^10.7.7
+        version: 10.7.7(@react-three/fiber@9.6.1(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(three@0.165.0))(@types/react@19.2.15)(@types/three@0.165.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(three@0.165.0)
       '@react-three/fiber':
         specifier: ^9.0.0
         version: 9.6.1(@types/react@19.2.15)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(three@0.165.0)
