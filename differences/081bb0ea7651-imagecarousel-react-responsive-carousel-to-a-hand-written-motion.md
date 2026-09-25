@@ -1,6 +1,6 @@
 ---
 title: "ImageCarousel: react-responsive-carousel to a hand-written motion carousel with a dead interactive half"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/landing/ImageCarousel.tsx:1-192` `'use client'`, `AnimatePresence`, `useState` and an interval; `isInteractive = !autoPlay && slideCount > 1` gates `IconButton` arrows, `IconButton` dots, `tabIndex` and an arrow-key handler (`:67-79,131-187`), and `app/page.tsx:137-142` is the only caller and always passes `autoPlay`. `index.ts:1` also exports `CarouselSlide` and `ImageCarouselProps`, which nothing imports.
 
 ## Verdict
+
+plan c92c235205f5
 
 ## Log
 

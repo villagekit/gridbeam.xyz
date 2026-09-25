@@ -1,6 +1,6 @@
 // Static rounded-corner photo used in landing sections (sustainability,
 // community, etc.) where there's no carousel or video — just a single image
-// next to a copy block. Sibling to `LandingVideo` and `ImageCarousel`.
+// next to a copy block. Sibling to `LandingVideo`.
 
 import { Box } from '@villagekit/ui'
 import NextImage from 'next/image'

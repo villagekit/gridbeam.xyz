@@ -22,9 +22,9 @@ import { FaSeedling, FaShoppingBag } from 'react-icons/fa'
 import { GiHandSaw } from 'react-icons/gi'
 import { TfiPencilAlt, TfiThought } from 'react-icons/tfi'
 
+import { ImageCarousel, type ImageCarouselProps } from './_components/ImageCarousel'
 import { StoryCard } from './_components/StoryCard'
 import {
-  ImageCarousel,
   LandingColumn,
   LandingPhoto,
   LandingRow,
@@ -43,32 +43,37 @@ export const metadata: Metadata = {
 // Hero carousel — Cloudinary public IDs under `gridbeam.xyz/home/...`
 // (cloud `villagekit`). Masters live in the `villagekit/media` repo at
 // `media/gridbeam.xyz/home/`; sync via `pnpm sync-media` from that repo.
-const HERO_SLIDES = [
+const HERO_SLIDES: ImageCarouselProps['slides'] = [
   {
+    type: 'cloudinary',
     src: 'gridbeam.xyz/home/record-shelf-hero',
     alt: 'A wooden shelving unit filled with vinyl records, books, and audio equipment. A speaker is positioned on the top left shelf. A small chair with carved woodwork sits to the left of the shelving unit, and a rotating wire rack holding more records stands on the right. The room has light teal walls and a decorative hanging artwork of a butterfly on the top left.',
+    priority: true,
     width: 5250,
     height: 3500,
   },
   {
+    type: 'cloudinary',
     src: 'v1/gridkit.nz/made-with-grid-kit/standing-desk_cbzvbv',
     alt: 'A compact, adjustable wooden standing desk with a computer monitor, keyboard, and mouse on the tabletop. The desk has a unique, angular base with caster wheels. A desktop computer tower is situated underneath, and the desk is positioned in front of a bay window with a view of a residential neighborhood outside.',
     width: 1600,
     height: 1200,
   },
   {
+    type: 'cloudinary',
     src: 'v1/gridkit.nz/made-with-grid-kit/cat-castle_flivqh',
     alt: 'A modular wooden bookshelf with adjustable sections, holding books, board games, and decorative items like a spider plant in a pot and a framed poster at the top. A cat is perched on the highest shelf. The bookshelf is placed on a carpeted floor, with a coat rack to the left and a tall potted plant to the right.',
     width: 4864,
     height: 3648,
   },
   {
+    type: 'cloudinary',
     src: 'v1/gridkit.nz/made-with-grid-kit/kitchen-island_ilq6z5',
     alt: 'A wooden rolling cart with a smooth tabletop and two shelves underneath. The shelves store a variety of metal pots, pans, and lids. The cart has caster wheels and is set on a hardwood floor, with a windowed kitchen wall in the background.',
     width: 3072,
     height: 2304,
   },
-] as const
+]
 
 export default async function HomePage() {
   const designs = await getDesignIndex()
@@ -111,9 +116,10 @@ export default async function HomePage() {
             <Box flex="1" w="full">
               <ImageCarousel
                 ariaLabel="Showcase of things made with grid beam"
+                sizes={{ base: '100%', md: ['1500px', 2] }}
                 slides={HERO_SLIDES}
-                autoPlay
                 priority
+                autoPlayEnabled
               />
             </Box>
           </Stack>

@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel: gray.50 backdrop added"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/landing/ImageCarousel.tsx:97` `bg="gray.50"`, visible behind a loading or fading slide. From code.
 
 ## Verdict
+
+plan c92c235205f5
 
 ## Log
 

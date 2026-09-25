@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel: every slide and its loop clones exposed to only the current slide mounted"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/landing/ImageCarousel.tsx:103-125` `AnimatePresence` mounts the current slide only; one `img` under the region in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan c92c235205f5
 
 ## Log

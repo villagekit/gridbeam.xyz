@@ -1,6 +1,6 @@
 ---
 title: "Hero carousel: live-region slide announcement added"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/landing/ImageCarousel.tsx:127-129` `<VisuallyHidden aria-live="polite" aria-atomic="true">Slide {index + 1} of {slideCount}: {slide.alt}</VisuallyHidden>`; `text: "Slide 1 of 4: ..."` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan c92c235205f5
 
 ## Log
 
