@@ -1,6 +1,6 @@
 ---
 title: "Visit website links: identical names, external indication by attributes only"
-status: open
+status: regression
 route: /suppliers
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q7). Moot after the re-port: the name is the link, so each link's name is the supplier's.

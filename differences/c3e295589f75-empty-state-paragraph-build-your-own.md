@@ -1,6 +1,6 @@
 ---
 title: "Empty state paragraph: Build your own"
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q6). The unreachable empty-state branch is removed with its text.

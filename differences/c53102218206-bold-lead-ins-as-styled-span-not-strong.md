@@ -1,6 +1,6 @@
 ---
 title: Bold lead-ins as styled Span, not strong
-status: open
+status: regression
 route: /suppliers
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`. The home ledger's pattern item is [[01ae1e943907
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q7). Moot after the re-port: the bold lead-ins go with their sections.

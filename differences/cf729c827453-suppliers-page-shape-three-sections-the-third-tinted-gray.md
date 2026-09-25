@@ -1,6 +1,6 @@
 ---
 title: "Suppliers page shape: three Sections, the third tinted gray"
-status: open
+status: regression
 route: /suppliers
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`. Decision [[8b5e51fcaf61]] names a map at the top
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). Ships as the decision's shape: the title, the map with its Locations list, the cards below. No third section.

@@ -1,6 +1,6 @@
 ---
 title: Suppliers intro paragraph
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q2). The intro paragraph is removed; the decision names no intro.

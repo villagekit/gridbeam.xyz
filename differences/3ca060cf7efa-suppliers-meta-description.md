@@ -1,6 +1,6 @@
 ---
 title: Suppliers meta description
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers` (`audit/suppliers/1280/legacy.png` is the legacy 
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q1). No per-page description; the route inherits the site default ([[1906af99b588]]) as legacy pages without their own did.

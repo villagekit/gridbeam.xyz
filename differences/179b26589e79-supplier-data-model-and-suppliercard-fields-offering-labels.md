@@ -1,6 +1,6 @@
 ---
 title: "Supplier data model and SupplierCard: fields, offering labels, status filter"
-status: open
+status: regression
 route: /suppliers
 axis: code
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`. The decision's reference data is `apps/gridkit/p
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The record goes back to legacy's `Producer` shape (`apps/gridkit/producers.ts:1-6`: id, title, location, latitude, longitude) plus `website` and a `system: 'metric' | 'imperial'` field. `region`, `offerings`, `compatibility`, `blurb`, `notes` and `status` go, and the archived filter with them.

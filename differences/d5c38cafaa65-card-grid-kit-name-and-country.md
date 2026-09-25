@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit name and country"
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q4). Grid Kit stays listed: it still trades, under other hands. Name and location follow legacy's producer entries; the operator confirms whether both Auckland and Wellington return.

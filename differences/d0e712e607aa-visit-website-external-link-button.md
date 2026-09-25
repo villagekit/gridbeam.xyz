@@ -1,6 +1,6 @@
 ---
 title: Visit website external link button
-status: open
+status: regression
 route: /suppliers
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`. The legacy map's producers had no website link (
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The external link moves onto the supplier's name (rules 2 + 5); no separate button.

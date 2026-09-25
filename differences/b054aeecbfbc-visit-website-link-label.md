@@ -1,6 +1,6 @@
 ---
 title: Visit website link label
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The "Visit website" button goes; the supplier's name is the link to its site (rules 2 + 5: the decision's page exists to link out).

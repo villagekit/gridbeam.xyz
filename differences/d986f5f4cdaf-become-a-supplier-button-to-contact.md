@@ -1,6 +1,6 @@
 ---
 title: Become a supplier button to /contact
-status: open
+status: regression
 route: /suppliers
 axis: interaction
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q5). The "How to be listed" section is removed; the decision names no such section, and Contact is in the footer.

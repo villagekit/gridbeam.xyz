@@ -1,6 +1,6 @@
 ---
 title: Offering badges are adjacent spans with no separator
-status: open
+status: regression
 route: /suppliers
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q7). Moot after the re-port: the badges go.

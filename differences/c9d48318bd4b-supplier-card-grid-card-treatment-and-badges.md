@@ -1,6 +1,6 @@
 ---
 title: Supplier card grid, card treatment and badges
-status: open
+status: regression
 route: /suppliers
 axis: visual
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`. The decision says "supplier cards below" and not
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The cards carry what legacy's producer item carried (name, location) plus the name as the link out and a one-word metric/imperial label ([[a6f8bb6c6738]]). No badges, blurb or button.

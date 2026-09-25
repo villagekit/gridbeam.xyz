@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit blurb"
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q4). The blurb goes with the `blurb` field (Q3).

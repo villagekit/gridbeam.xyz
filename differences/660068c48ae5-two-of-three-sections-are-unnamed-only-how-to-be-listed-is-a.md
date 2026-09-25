@@ -1,6 +1,6 @@
 ---
 title: Two of three Sections are unnamed, only How to be listed is a region
-status: open
+status: regression
 route: /suppliers
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q7). Section naming follows legacy's markup for now and waits for the accessibility pass after M2 ([[eeba2a65cee4]]).

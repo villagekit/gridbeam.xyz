@@ -1,6 +1,6 @@
 ---
 title: Suppliers empty-state branch
-status: open
+status: regression
 route: /suppliers
 axis: code
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`; the decision names no empty state.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q6). The unreachable empty-state branch is removed with its text.

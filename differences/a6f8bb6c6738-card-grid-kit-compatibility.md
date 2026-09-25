@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit compatibility"
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3 + Q4). The compatibility sentence is replaced by a one-word system label on the card, metric for Grid Kit; the operator confirms the label's wording.

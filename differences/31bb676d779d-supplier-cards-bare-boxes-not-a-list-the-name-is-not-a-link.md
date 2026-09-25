@@ -1,6 +1,6 @@
 ---
 title: "Supplier cards: bare boxes, not a list; the name is not a link"
-status: open
+status: regression
 route: /suppliers
 axis: accessibility
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q7). The name becomes the link in the re-port; list semantics follow legacy's producer list markup for now and wait for the accessibility pass after M2 ([[eeba2a65cee4]]).

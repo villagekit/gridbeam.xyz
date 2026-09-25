@@ -1,6 +1,6 @@
 ---
 title: Listings heading and description
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The Listings title goes; the ported producer list's own "Locations" heading (`components/map/producer-list.tsx:68`) is the list's name, per [[8b5e51fcaf61]] and [[36541273e623]].

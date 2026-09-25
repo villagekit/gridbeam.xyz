@@ -1,6 +1,6 @@
 ---
 title: Suppliers title and description
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q1). Ships as the bare title "Suppliers", no description line; the decision [[8b5e51fcaf61]] names none.

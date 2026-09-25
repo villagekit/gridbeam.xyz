@@ -1,6 +1,6 @@
 ---
 title: Offering badge labels
-status: open
+status: regression
 route: /suppliers
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ Absent: no legacy `/suppliers`.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (suppliers grilling Q3). The offering badges and their labels are removed with the `offerings` field.
