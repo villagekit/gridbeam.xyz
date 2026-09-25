@@ -1,6 +1,6 @@
 ---
 title: FAQ paint or stain question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy verbatim: "Can you paint or stain the wood?" / "Absolutely! The untreated wood can be painted or stained to match your style. Customize it to make it truly your own."

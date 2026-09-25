@@ -1,6 +1,6 @@
 ---
 title: FAQ add-ons question and two-paragraph answer rewritten as one, link label changed
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Question ships as "What add-ons are compatible with grid beam?". The first paragraph ("We plan to offer a wide range of add-ons...") stays out under rule 2; the second ships verbatim: "For now, if you have a 3d printer, we have an open source repository of 3d printable add-on designs." with legacy's link extent and href.

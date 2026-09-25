@@ -1,6 +1,6 @@
 ---
 title: FAQ What is grid beam? answer rewritten, the Grid Beam link dropped
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F4, operator's words). Ships as: "Grid beam is a modular construction system. Kits of modular parts enable you to build anything from furniture to creative storage solutions — it's limited only by your imagination! Learn more." (link "Learn more." to /about as legacy; the em dash is legacy's).

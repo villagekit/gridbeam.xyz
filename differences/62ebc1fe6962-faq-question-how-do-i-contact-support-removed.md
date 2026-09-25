@@ -1,6 +1,6 @@
 ---
 title: FAQ question How do I contact support? removed
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: removed
@@ -18,3 +18,5 @@ No equivalent question in `app/faq/page.tsx`; the closing line "Question not ans
 ## Log
 
 - 2026-09-12: Copy: the section it sat in was mostly e-commerce (rule 2), but a support contact question is not, so the operator judges it.
+
+- 2026-09-25: Regression (faq grilling F5). Restored under Support: "How do I contact support?" / "Find our contact details here. We're here to help!" (link on "here" to /contact; legacy's stray space before the period dropped).

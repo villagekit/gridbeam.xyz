@@ -1,6 +1,6 @@
 ---
 title: FAQ durability question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F4, operator's words). Ships as: "Are the materials durable?" / "Yes, the materials are both strong and long-lasting, so your builds stand the test of time."

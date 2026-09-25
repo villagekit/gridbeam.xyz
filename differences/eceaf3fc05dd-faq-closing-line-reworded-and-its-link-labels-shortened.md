@@ -1,6 +1,6 @@
 ---
 title: FAQ closing line reworded and its link labels shortened
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The link extents (`link "ask on the community forum"` to `link "community forum"`, `audit/faq/dom/*.aria.yaml`) follow the copy verdict.
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy verbatim: "If your question isn't answered here, please send us an email or ask on the community forum" with legacy's link extents, no full stop.

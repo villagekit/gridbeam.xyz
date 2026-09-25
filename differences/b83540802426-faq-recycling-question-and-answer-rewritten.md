@@ -1,6 +1,6 @@
 ---
 title: FAQ recycling question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F4, operator's words). Ships as: "Can I recycle or repurpose grid beam?" / "Yes! Grid beam is built to be reused, adapted, or reassembled into new projects. When it reaches the end of its life, components can be repurposed or recycled, supporting a circular economy."

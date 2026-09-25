@@ -1,6 +1,6 @@
 ---
 title: FAQ Can I make my own beams and panels? added
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ No such question.
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F6). The added question is removed; legacy's FAQ had no such question.

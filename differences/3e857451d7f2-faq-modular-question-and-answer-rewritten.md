@@ -1,6 +1,6 @@
 ---
 title: FAQ modular question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy verbatim, both paragraphs, "Grid Kit system" to "grid beam system"; the em dash is legacy's ([[edad0df805f0]]).

@@ -1,6 +1,6 @@
 ---
 title: FAQ heading description added
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: added
@@ -16,3 +16,5 @@ kind: added
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F1). No description line under the heading, as legacy.

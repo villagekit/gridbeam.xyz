@@ -1,6 +1,6 @@
 ---
 title: FAQ What can I make question and answer rewritten, the Grid Beam link dropped
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy with the swap, two paragraphs: "More like, what can't you make with it! Grid beam is designed to adapt to almost any structure or furniture you can think of, from shelves and desks to beds and creative storage solutions." then "The original inventor of grid beam made bicycles, electrical vehicles, trailers, and more. Anything is possible." Legacy's link on "Grid Beam" to gridbeam.xyz is this site now, so no link (rule 1).

@@ -1,6 +1,6 @@
 ---
 title: FAQ section Product to The system, with two Sustainability questions moved in
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F2). Legacy's "Product" heading and question order return; "What can I make with grid beam?" and "What do you mean by modular?" go back under Sustainability.

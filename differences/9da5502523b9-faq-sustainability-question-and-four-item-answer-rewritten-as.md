@@ -1,6 +1,6 @@
 ---
 title: FAQ sustainability question and four-item answer rewritten as one paragraph, the Australia link dropped
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Question ships as "What makes grid beam sustainable?" (legacy's "your product", rule 1 + operator). The four points ship verbatim, the third with the swap: "Grid beam is designed to be repairable, reusable, recyclable, and it reduces furniture waste going to landfill every year." The Australia link stays, href updated to its permanent redirect target `https://www.handkrafted.com/blog/landfill-australias-underground-furniture-movement/` (checked 2026-09-25).

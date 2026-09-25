@@ -1,6 +1,6 @@
 ---
 title: FAQ Is the wood treated? answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F4, operator's words). Ships as: "Is the wood treated?" / "Depends on the supplier. Untreated wood keeps grid beam non-toxic and safe for indoor use."

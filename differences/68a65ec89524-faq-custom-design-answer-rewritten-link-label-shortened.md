@@ -1,6 +1,6 @@
 ---
 title: FAQ custom design answer rewritten, link label shortened
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy verbatim: "We'd love to hear your ideas! Get in touch with us to discuss custom designs and how we can make your vision a reality." with the link on "Get in touch with us".

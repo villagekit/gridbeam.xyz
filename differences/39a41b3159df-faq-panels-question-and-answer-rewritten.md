@@ -1,6 +1,6 @@
 ---
 title: FAQ panels question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy with the swap: "How do I use panels with grid beam?" / "Panels can be easily integrated into your grid beam structure to create surfaces, walls, or dividers. Feel free to experiment!"

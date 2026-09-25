@@ -1,6 +1,6 @@
 ---
 title: FAQ outdoors question and answer rewritten
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F3). Ships as legacy with the swap: "Is the wood suitable for outdoors?" / "Grid beam is designed primarily for indoor use. If you want to use it outdoors, consider treating the wood with a suitable finish for added protection."

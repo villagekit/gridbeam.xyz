@@ -1,6 +1,6 @@
 ---
 title: FAQ question Where are your kits made? removed
-status: open
+status: sanctioned
 route: /faq
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 No equivalent question in `app/faq/page.tsx`.
 
 ## Verdict
+
+rule: no e-commerce (2). The answer is about the startup's manufacturing and fulfilment. FAQ grilling F5.
 
 ## Log
 

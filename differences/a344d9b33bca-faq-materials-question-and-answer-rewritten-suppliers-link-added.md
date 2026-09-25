@@ -1,6 +1,6 @@
 ---
 title: FAQ materials question and answer rewritten, suppliers link added
-status: open
+status: regression
 route: /faq
 axis: copy
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-25: Regression (faq grilling F4, operator's words). Ships as: "What materials are used?" / "Locally sourced wood and fasteners."
