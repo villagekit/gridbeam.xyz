@@ -24,6 +24,17 @@ const nextConfig: NextConfig = {
     loader: 'custom',
     loaderFile: './app/_lib/cloudinary-loader.ts',
   },
+  // An `*.svg` import is a React component (`svg.d.ts` types it), the
+  // legacy site's `next-plugin-svgr`; `app/icon.svg` is both the favicon
+  // route and the header logo.
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
 }
 
 const withMDX = createMDX()

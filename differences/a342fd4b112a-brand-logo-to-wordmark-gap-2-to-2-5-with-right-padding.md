@@ -1,6 +1,6 @@
 ---
 title: "Brand: logo to wordmark gap 2 to 2.5 with right padding"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteBrand.tsx:19`: `<HStack gap="2.5" alignItems="center" pr={{ base: 0, md: 4 }}>` around the logo and wordmark.
 
 ## Verdict
+
+plan f8c93eaf
 
 ## Log

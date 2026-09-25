@@ -1,6 +1,6 @@
 ---
 title: "Icon SVG in CubeLogo: presentation attributes dropped, lens subpaths closed with z"
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -16,6 +16,8 @@ kind: changed
 ## Verdict
 
 diff artifact: every dropped attribute is the SVG default; the path data is byte-identical and nothing renders differently
+
+plan f8c93eaf
 
 ## Log
 

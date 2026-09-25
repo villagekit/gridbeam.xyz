@@ -1,6 +1,6 @@
 ---
 title: "Header logo: separate named image to hidden decoration inside the link"
-status: regression
+status: fixed
 route: shell
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteBrand.tsx:14-25`: the logo sits inside the `Link` and `:21` passes `ariaLabel={null}`, which `app/_components/CubeLogo.tsx:12-15` turns into `aria-hidden`. Only `link "Grid Beam"` in `audit/_root/dom/current.aria.yaml`; no image node.
 
 ## Verdict
+
+plan f8c93eaf
 
 ## Log

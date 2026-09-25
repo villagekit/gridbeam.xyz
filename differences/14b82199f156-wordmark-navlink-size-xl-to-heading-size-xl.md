@@ -1,6 +1,6 @@
 ---
 title: "Wordmark: NavLink size xl to Heading size xl"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteBrand.tsx:23`: `<Heading as="span" size="xl">` inside a `Link`; `@villagekit/ui@1.2.0 src/components/Heading.tsx:39-43`: `xl: { textStyle: 'none', fontSize: { base: '3xl', md: '4xl' }, lineHeight: { base: '1.33', md: '1.2' } }`, 36px from `md` up, and the line height changes the header row's height with it. Compare the wordmarks in `audit/_root/1280/legacy.png` and `audit/_root/1280/current.png`.
 
 ## Verdict
+
+plan f8c93eaf
 
 ## Log

@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The nav count, the wordmark size, the column gap and the sections have their own items; this one records the breakage they add up to.
+
+- 2026-09-26: Current is stale since plans 63e9c753 (four top items) and f8c93eaf (the brand re-ported, no `Heading`, no `whiteSpace: nowrap`): at 768 the header no longer runs past the viewport but the wordmark wraps onto two lines and the row grows to 108px, filed as its own item `1d2562d6b3bc`; the footer's overflow is the brand footer slice's expected stop (the shell record's Log).

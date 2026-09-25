@@ -1,6 +1,6 @@
 ---
 title: LogoSvg (svgr import of icon.svg) to CubeLogo (inline JSX)
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/CubeLogo.tsx:1-63`: the same paths hand-authored as JSX, `size: number | string`, `ariaLabel?: string | null`. No svgr plugin or `*.svg` module declaration in the repo.
 
 ## Verdict
+
+plan f8c93eaf
 
 ## Log
