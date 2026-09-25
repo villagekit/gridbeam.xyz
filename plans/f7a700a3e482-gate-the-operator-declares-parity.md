@@ -9,6 +9,8 @@ blocked_by:
   - 337e35d86920
   - target: 99f2fe62c62f
     note: the deferred publishes land before the operator reviews
+  - target: 77cf83a1285a
+    note: the operator's verdicts on the shell come before the review of the site
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.

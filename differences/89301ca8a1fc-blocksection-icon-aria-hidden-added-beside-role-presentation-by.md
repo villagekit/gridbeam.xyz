@@ -18,3 +18,5 @@ kind: added
 ## Log
 
 - 2026-09-26: Found at the Parity review of the ui mdx and media slice [[bc0407533650]], which renders BlockSection on the story tips; pre-existing in the 1.2.0 component. A rule 4 (upgrade-forced) candidate for the operator: Chakra v3's Icon hides itself by default, and the tree is the same.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

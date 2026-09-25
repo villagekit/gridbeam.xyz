@@ -18,3 +18,5 @@ kind: added
 rule: operator (5), [[c21b7e35f0c7]]. Store's removal leaves room in the top nav; Tools is one of the three pages promoted.
 
 ## Log
+
+- 2026-09-26: Current is stale since plan 63e9c753ca55 reordered the nav to decision c21b7e35f0c7's four items: the Tools entry is now app/_lib/nav.ts:5. The Verdict stands.

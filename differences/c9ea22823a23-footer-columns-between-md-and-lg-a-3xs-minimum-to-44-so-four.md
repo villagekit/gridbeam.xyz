@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-26: Filed by the ui brand footer slice [[1977c9af920c]] as the expected stop the shell record's Log names: the four sanctioned sections (decision 9f344fbfde9a) do not fit a 768px row at legacy's 3xs minimum, so the smallest change to the ui Footer that fits them, a narrower minimum between md and lg, ships in the sibling, and the operator judges it. The alternatives left for that verdict: the row stacking until lg, or a wrap at md. Not sanctioned by an agent.
 
 - 2026-09-26: The Current cites ../ui/src/components/layouts/Footer.tsx:110 at commit ae593d0 in the sibling.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

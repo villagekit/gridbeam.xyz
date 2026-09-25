@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-25: Filed by plan ffe8e5d5 at its Parity review: the plan applied rule 1 literally to the alt, as the shell record's split called it, and no verdict quotes the string, so it waits for the operator. Split out of [[aa71d706e02b]], whose code difference (the video removed) the plan fixed.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

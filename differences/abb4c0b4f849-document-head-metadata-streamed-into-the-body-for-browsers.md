@@ -18,3 +18,5 @@ Next 15.5 streams the metadata of `app/layout.tsx` and each route's `metadata` e
 ## Log
 
 - 2026-09-25: Filed by plan ffe8e5d5 at its Parity review. Behavior of the framework from before the plan, not changed by it; `htmlLimitedBots` in `next.config.ts` is the setting that governs it. For the operator to judge.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

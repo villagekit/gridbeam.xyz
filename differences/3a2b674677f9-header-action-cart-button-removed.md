@@ -18,3 +18,5 @@ No cart control. The `HeaderAction` slot holds `SiteHeaderAction` (`app/layout.t
 rule: no e-commerce (the cart surface is gone)
 
 ## Log
+
+- 2026-09-26: Current is stale since plan 63e9c753ca55: the header action is the Find a supplier link to /suppliers (the verdict of e48df8d1ce98), not a Subscribe button. The Verdict stands.

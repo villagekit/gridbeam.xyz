@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by plan [[531b810f2dbd]] for its own deviation, so not judged by it. The rule to test it against is rule 4 of `2032533f` (upgrade-forced): the app router has no library adapter that keeps the static prerender, and the site-written one changes nothing a consumer sees (`useQueryParams` from `use-query-params`, one provider in the shell, empty query until hydrated, back and forward through the history). The Phase 0 alternatives dropped, with their evidence, are in that plan's Outcome.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

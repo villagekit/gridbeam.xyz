@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Handed to the slice [[61a42a0adbc8]], minted beside the shell record [[a78b167170b8]] at its finish (decision 40abdb2f222a): a fix in ../ui on the toggle's rest color against the toolbar variant's states, parked in upstream when it lands.

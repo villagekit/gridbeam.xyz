@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-25: Filed by plan ffe8e5d5 at its Parity review, which shipped these three values as the plan named them under rule 1 (rebrand). An agent does not sanction its own deviation, so the item waits for the operator.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

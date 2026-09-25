@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by plan f8c93eaf at its Parity review. The cause is the sum of three sanctioned changes (the four-item nav, the header action, the longer wordmark) on legacy's own brand shape, so the fix is the operator's call: `whiteSpace: nowrap` on the wordmark, a tighter nav gap, or a narrower action at md. Not fixed by an agent's taste.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.

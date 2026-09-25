@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-26: Filed by plan 93ef1234 at its Parity review. The cube slice kept the brand slice's barrel on a stated reason (the server render and the bundle of every route), which none of the five rules covers, so the item is a regression by default: the fix is the one-line re-export, or the operator's sanction under rule 5. Not decided by an agent.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.
