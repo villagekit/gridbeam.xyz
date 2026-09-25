@@ -3,6 +3,7 @@ title: "Gate: the operator declares parity"
 status: todo
 tags:
   - gate
+  - attended
 parent: 1783931160f2
 blocked_by: 337e35d86920
 ---

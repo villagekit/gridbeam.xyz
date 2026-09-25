@@ -7,7 +7,7 @@ blocked_by: a78b167170b8
 
 ## Goal
 
-The route `/` is at parity with the legacy site: every difference on it is `fixed` or `sanctioned`, and the operator has reviewed it on `pnpm dev` against the legacy site. Decision `ee86d68a`.
+The route `/` is at parity with the legacy site: every difference on it is `fixed` or `sanctioned`, and the operator reviews it at the parity gate `f7a700a3e482`. Decision `ee86d68a`.
 
 ## Scope
 
@@ -19,7 +19,7 @@ Named when sliced; none pure unless the route carries logic.
 
 ## Exit demo
 
-`kipu list --collection difference --filter route=/ --json` shows no `open` or `regression` item, and the operator finishes this record after reviewing the route.
+`kipu list --collection difference --filter route=/ --json` shows no `open` or `regression` item, and `/finish-epic` finishes this record; the operator reviews the route at the parity gate `f7a700a3e482`.
 
 ## Out of scope
 

@@ -93,3 +93,42 @@ the routes it is given. It records; it never fixes.
   difference and moves on; the plan that closes it cites it.
 - The operator judges copy and additions. The rules judge the rest, and a
   rule is cited by name in the verdict so a wrong sanction can be found.
+
+## Reviewing for parity
+
+The third axis of `/code-review`, bound under `CLAUDE.md, Skills`, "Bound
+here": the failure the other two axes cannot see is a route that ships
+differing from the legacy site in a way no `difference` records, with the
+code clean and the plan met. The reviewer runs on the review model, starts
+cold, and its brief carries:
+
+- The diff command and the commit list, the routes the change touches, the
+  ids of the differences the plan cites, and the paths of the screenshot
+  pairs under `audit/<slug>/<width>/{legacy,current}.png` (it runs
+  `pnpm audit:pages --routes <file>` against a running `pnpm dev` when the
+  pairs are stale or missing).
+- The legacy references: the live site
+  `https://gridkit-landing-villagekit.vercel.app` and the source at
+  `../node-modules/apps/gridkit/` plus `../node-modules/packages/ui-*/` at
+  `fce357d`.
+- The sanctioned-deviation rules (the decision that records them, by path)
+  and the editorial locks.
+- The brief: "For every touched route, compare legacy and current on the
+  five axes the ledger tracks (visual, interaction, accessibility, copy,
+  code) by looking at the screenshot pairs at all three widths yourself and
+  reading both sources. Report: (a) every difference the plan claims to
+  close that is still visible or still in the code; (b) every difference
+  the change introduces that no `difference` item records, or that an item
+  records as sanctioned under a rule the rule does not cover; (c) copy in
+  the diff that is neither verbatim legacy nor the verdict of a sanctioned
+  difference; (d) anything the legacy route did that the current route
+  silently drops (a hover state, a focus ring, an aria attribute, a
+  transition, a breakpoint). Cite the screenshot path or file:line on both
+  sides for each finding. The plan's `## Outcome` may be in flight in the
+  working tree: review its claims against the files, never its presence,
+  and never stash, restore or edit the tree. Under 400 words, critical
+  first, and say which routes and widths you looked at and found at
+  parity."
+
+The report is presented under `## Parity` beside the other two, never
+merged or reranked with them.

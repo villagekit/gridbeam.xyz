@@ -11,7 +11,7 @@ blocked_by:
 
 ## Goal
 
-Every page of this record's route family is at parity with the legacy site: every difference on it is `fixed` or `sanctioned`, and the operator has reviewed it on `pnpm dev` against the legacy site. Decision `ee86d68a`.
+Every page of this record's route family is at parity with the legacy site: every difference on it is `fixed` or `sanctioned`, and the operator reviews it at the parity gate `f7a700a3e482`. Decision `ee86d68a`.
 
 ## Scope
 
@@ -23,7 +23,7 @@ Named when sliced; none pure unless the route carries logic.
 
 ## Exit demo
 
-`kipu list --collection difference --filter route=<route> --not-status sanctioned --not-status fixed --not-status dismissed` prints nothing for each of the three sampled design routes, and the operator finishes this record after reviewing the route.
+`kipu list --collection difference --filter route=<route> --not-status sanctioned --not-status fixed --not-status dismissed` prints nothing for each of the three sampled design routes, and `/finish-epic` finishes this record; the operator reviews the route at the parity gate `f7a700a3e482`.
 
 ## Out of scope
 
