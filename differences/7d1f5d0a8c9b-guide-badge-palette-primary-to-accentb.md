@@ -1,6 +1,6 @@
 ---
 title: "Guide badge palette: primary to accentB"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:28-32` `categoryPalettes = { guide: 'accentB', newsletter: 'accentA', inspiration: 'purple' }`, `<Badge colorPalette={palette} variant="subtle">`.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

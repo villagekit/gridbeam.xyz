@@ -1,6 +1,6 @@
 ---
 title: "Story card hover: HoverCardContainer to a bespoke scale"
-status: regression
+status: fixed
 route: /
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:49-59` `LinkBox` with `_hover: { transform: 'scale(1.02)' }` and `_focusWithin` shadow on the image only. From code.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

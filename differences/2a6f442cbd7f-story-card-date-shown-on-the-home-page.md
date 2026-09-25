@@ -1,6 +1,6 @@
 ---
 title: Story card date shown on the home page
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/StoryCard.tsx:42-46,101-103` always renders `formattedDate` ("29 Nov 2024"); `audit/_root/1280/current.png`. Legacy's format is `day/month/year` numeric; current's is `month: 'short'`.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

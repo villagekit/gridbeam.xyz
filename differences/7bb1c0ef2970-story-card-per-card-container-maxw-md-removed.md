@@ -1,6 +1,6 @@
 ---
 title: "Story card: per-card Container maxW md removed"
-status: regression
+status: fixed
 route: /
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:48-61` the grid column sets the width; no per-card cap. From code.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

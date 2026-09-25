@@ -1,6 +1,6 @@
 ---
 title: StoryCard focus-within selector rejected by Chakra v3 css
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:49-59` `css={{ _focusWithin: { '[data-story-image]': { boxShadow: 'outlineLarge' } } }}`; on `/stories` (dev server, 1280) the console reports "Using kebab-case for css properties in objects is not supported. Did you mean [dataStoryImage]?" for every card, so the focus-within image shadow depends on a selector Chakra v3 rejects.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

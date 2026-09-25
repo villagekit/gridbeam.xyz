@@ -20,3 +20,5 @@ rule: upgrade (Chakra v3 LinkOverlay drops isExternal and discards rel, link-box
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f.
+
+- 2026-09-26: The story card slice (plan [[e332105c3b52]]) writes the same shape site-side for an external story's overlay, app/_components/stories/Item.tsx:111-119: LinkOverlay asChild around a chakra.a with href, target _blank, rel noopener noreferrer and the title as aria-label, in place of legacy's item.tsx:103 LinkOverlay href isExternal aria-label. The rendered anchor is legacy's (curl of /stories: target and rel on the four external cards), the same Chakra v3 cause this Verdict names, so no item of its own; noted here at the Parity review.

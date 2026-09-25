@@ -1,6 +1,6 @@
 ---
 title: StoryImage component added
-status: regression
+status: fixed
 route: /
 axis: code
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/story/StoryImage.tsx:1-61` a `next/image` wrapper with an `aspectRatio` enum, `isInColumn` sizes and `priority`.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

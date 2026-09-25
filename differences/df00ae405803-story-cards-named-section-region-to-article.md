@@ -1,6 +1,6 @@
 ---
 title: "Story cards: named section region to article"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:49-51` `<LinkBox as="article" aria-label={title}>`; `article "What's a Grid Unit"` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

@@ -23,7 +23,6 @@ import { GiHandSaw } from 'react-icons/gi'
 import { TfiPencilAlt, TfiThought } from 'react-icons/tfi'
 
 import { ImageCarousel, type ImageCarouselProps } from './_components/ImageCarousel'
-import { StoryCard } from './_components/StoryCard'
 import { Testimonial } from './_components/Testimonial'
 import {
   LandingColumn,
@@ -33,6 +32,7 @@ import {
   LandingVideo,
   TypingDesignSection,
 } from './_components/landing'
+import { Item as StoryItem } from './_components/stories/Item'
 import { getDesignIndex } from './_lib/designs'
 import { getAllStories } from './_lib/stories'
 
@@ -248,7 +248,7 @@ export default async function HomePage() {
           </Title>
           <SimpleGrid columns={{ base: 1, md: featuredStories.length === 2 ? 2 : 3 }} gap="10">
             {featuredStories.map((story) => (
-              <StoryCard key={story.metadata.slug} metadata={story.metadata} />
+              <StoryItem key={story.metadata.slug} metadata={story.metadata} showDate={false} />
             ))}
           </SimpleGrid>
           <Flex justifyContent="center" pt="2">

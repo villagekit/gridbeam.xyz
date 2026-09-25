@@ -1,6 +1,6 @@
 ---
 title: "Story card: stories Item to StoryCard"
-status: regression
+status: fixed
 route: /
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:1-114` `LinkBox as="article"`; hand-written `_hover`/`_focusWithin`; a `StoryImage` child; local `categoryLabels` and `categoryPalettes` maps; no `showDate`; `publishedAt` a string.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Card dates: numeric d/m/y to short month on every card"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:42-46` `month: 'short'`: "29 Nov 2024", "17 Sept 2017" (`audit/stories/dom/current.txt`).
 
 ## Verdict
+
+plan e332105c3b52: the card is legacy's Item again, the date toLocaleDateString('en-NZ', numeric day, month and year): 29/11/2024 on every /stories card (audit/stories/dom/current.txt against legacy.txt).
 
 ## Log
 

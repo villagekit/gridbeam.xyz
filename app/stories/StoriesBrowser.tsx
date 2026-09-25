@@ -4,7 +4,7 @@ import { HStack, SimpleGrid, VStack, chakra } from '@villagekit/ui'
 import { useSearchParams } from 'next/navigation'
 import { useCallback, useMemo } from 'react'
 
-import { StoryCard } from '../_components/StoryCard'
+import { Item } from '../_components/stories/Item'
 import type { StoryCategory, StoryMetadata } from '../_lib/stories'
 import { replaceUrl, withSearchParams } from '../_lib/url-state'
 
@@ -73,7 +73,7 @@ export function StoriesBrowser(props: StoriesBrowserProps) {
 
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 12 }}>
         {filteredStories.map((story) => (
-          <StoryCard key={story.metadata.slug} metadata={story.metadata} />
+          <Item key={story.metadata.slug} metadata={story.metadata} />
         ))}
       </SimpleGrid>
     </VStack>

@@ -1,6 +1,6 @@
 ---
 title: "Story cards: separate heading and named link to a heading wrapping the link"
-status: regression
+status: fixed
 route: /
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/StoryCard.tsx:79-89` `<Heading as="h2" size="md">` wrapping `<LinkOverlay>` with the title as its text; one nested `heading` > `link` in `audit/_root/dom/current.aria.yaml`.
 
 ## Verdict
+
+plan e332105c3b52
 
 ## Log
 

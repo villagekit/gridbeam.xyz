@@ -5,7 +5,7 @@
 
 import { SimpleGrid } from '@villagekit/ui'
 
-import { StoryCard } from '../_components/StoryCard'
+import { Item } from '../_components/stories/Item'
 import type { StoryMetadata } from '../_lib/stories'
 
 interface StoriesStaticProps {
@@ -17,7 +17,7 @@ export function StoriesStatic(props: StoriesStaticProps) {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 12 }}>
       {stories.map((story) => (
-        <StoryCard key={story.metadata.slug} metadata={story.metadata} />
+        <Item key={story.metadata.slug} metadata={story.metadata} />
       ))}
     </SimpleGrid>
   )

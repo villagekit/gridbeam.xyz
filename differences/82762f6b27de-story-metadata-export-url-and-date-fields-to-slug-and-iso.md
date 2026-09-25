@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: Story page template; filed where first met.
 
 - 2026-09-12: Story page template: shared by the six story routes (/stories/whats-a-grid-unit, /stories/how-to-cut-grid-beams, /stories/how-to-furniture-bolts, /stories/building-with-grid-kit, /stories/2021-winter-newsletter, /stories/2022-newsletter); filed here where first met.
+
+- 2026-09-26: The story card slice (plan [[e332105c3b52]]) re-ported the card as app/_components/stories/Item.tsx, which renders publishedAt with new Date(publishedAt).toLocaleDateString('en-NZ', numeric day, month and year), legacy's item.tsx:90-94 on this string field. The visible side of the UTC parse this item records is on the /stories cards and any card with showDate: the server (UTC) and a browser at or east of UTC print the same day as legacy, a browser west of UTC prints the previous day and React reports a hydration text mismatch on every card. The old StoryCard parsed the same way. The fix is this item's, the catalog's shape (753b16d28130), not the card's.

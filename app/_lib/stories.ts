@@ -53,6 +53,12 @@ export interface StoryMetadata {
   external?: ExternalStoryRef
 }
 
+export const StoryCategoryColors: Record<StoryCategory, string> = {
+  guide: 'primary',
+  inspiration: 'purple',
+  newsletter: 'accentA',
+}
+
 export interface Story {
   metadata: StoryMetadata
   /** Internal stories render via MDX; external stories link out instead and have no Content. */
