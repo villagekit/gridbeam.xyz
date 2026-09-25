@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Follows the footer restructure (its copy items, one per heading and link, are open); the shape of the code differs from the legacy author's whichever way that is judged.
+
+- 2026-09-26: The site half is done by the site footer slice (plan [[5e4529a6aeac]]): footerSections lives beside SiteFooter in app/_components/SiteFooter.tsx as legacy's footer.tsx had it, and app/_lib/nav.ts keeps navItems only. The item stays regression for the FooterSections tuple type, which the ui brand footer slice [[1977c9af920c]] owns.

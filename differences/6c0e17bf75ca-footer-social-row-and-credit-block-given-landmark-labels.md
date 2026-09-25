@@ -18,3 +18,5 @@ kind: added
 rule: operator (5).
 
 ## Log
+
+- 2026-09-26: Current refreshed by the site footer slice (plan [[5e4529a6aeac]]): the social row is legacy's `HStack as="section"` again, so it shows as `region "Village Kit on social media"` in `audit/_root/dom/current.aria.yaml`, not `navigation`; the two labels stay as this verdict sanctions them.

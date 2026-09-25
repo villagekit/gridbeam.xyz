@@ -1,6 +1,6 @@
 ---
 title: "Footer credit link: primary variant to paragraph variant"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteFooter.tsx:99-106`: `<Link href="https://villagekit.com" variant="paragraph" ...>`: `accentA.800`, underlined (`@villagekit/ui@1.2.0 src/components/Link.tsx`, `paragraph`). `audit/_root/1280/current.png`, footer.
 
 ## Verdict
+
+plan 5e4529a6
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Footer credit text: tertiary variant to gray.700"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteFooter.tsx:93,108`: `<Text fontSize="sm" color="gray.700">` and `<Text fontSize="xs" color="gray.700">`.
 
 ## Verdict
+
+plan 5e4529a6
 
 ## Log

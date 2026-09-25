@@ -1,8 +1,23 @@
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/footer.tsx
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/packages/ui-brand/src/components/Footer.tsx
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/packages/ui-brand/src/components/Social.tsx
 'use client'
 
-import { Container, Footer, HStack, Icon, Link, Text, VStack } from '@villagekit/ui'
+import {
+  Container,
+  Footer,
+  type FooterSections,
+  HStack,
+  Icon,
+  type IconProps,
+  Link,
+  type LinkProps,
+  type StackProps,
+  Text,
+  VStack,
+} from '@villagekit/ui'
 import NextLink from 'next/link'
-import type { ReactNode } from 'react'
+import type React from 'react'
 import {
   FaEnvelope,
   FaFacebook,
@@ -15,60 +30,87 @@ import {
 } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
-import { footerSections } from '../_lib/nav'
-
-interface SocialLinkDescriptor {
-  href: string
-  label: string
-  icon: ReactNode
-  isExternal?: boolean
-}
-
-const socialLinks: ReadonlyArray<SocialLinkDescriptor> = [
-  { href: '/contact', label: 'Email', icon: <FaEnvelope /> },
+const footerSections: FooterSections = [
   {
+    heading: 'Explore',
+    links: [
+      { href: '/designs', label: 'Designs' },
+      { href: '/stories', label: 'Stories' },
+      { href: '/tools-and-resources', label: 'Tools and resources' },
+      { href: '/suppliers', label: 'Suppliers' },
+    ],
+  },
+  {
+    heading: 'About',
+    links: [
+      { href: '/about', label: 'About' },
+      { href: '/faq', label: 'FAQ' },
+    ],
+  },
+  {
+    heading: 'Connect',
+    links: [
+      { href: '/contact', label: 'Contact' },
+      { href: '/subscribe', label: 'Newsletter' },
+    ],
+  },
+  {
+    heading: 'Legal',
+    links: [
+      { href: '/legal/privacy-policy', label: 'Privacy policy' },
+      { href: '/legal', label: 'Site licence' },
+    ],
+  },
+]
+
+const socialLinks: Array<SocialLinkDescriptor> = [
+  {
+    Icon: FaEnvelope,
+    href: '/subscribe',
+    isExternal: false,
+    label: 'Newsletter',
+  },
+  {
+    Icon: FaMastodon,
     href: 'https://sunrise.social/@villagekit',
+    isExternal: true,
     label: 'Mastodon',
-    icon: <FaMastodon />,
-    isExternal: true,
   },
   {
+    Icon: FaInstagram,
     href: 'https://instagram.com/village_kit',
+    isExternal: true,
     label: 'Instagram',
-    icon: <FaInstagram />,
-    isExternal: true,
   },
   {
+    Icon: FaXTwitter,
     href: 'https://x.com/villagekit',
+    isExternal: true,
     label: 'X / Twitter',
-    icon: <FaXTwitter />,
-    isExternal: true,
   },
   {
+    Icon: FaFacebook,
     href: 'https://facebook.com/villagekit',
+    isExternal: true,
     label: 'Facebook',
-    icon: <FaFacebook />,
-    isExternal: true,
   },
   {
+    Icon: FaYoutube,
     href: 'https://www.youtube.com/@villagekit',
+    isExternal: true,
     label: 'YouTube',
-    icon: <FaYoutube />,
-    isExternal: true,
   },
   {
+    Icon: FaGithub,
     href: 'https://github.com/villagekit',
-    label: 'GitHub',
-    icon: <FaGithub />,
     isExternal: true,
+    label: 'GitHub',
   },
   {
+    Icon: FaUsers,
     href: 'https://discuss.villagekit.com',
-    label: 'Community forum',
-    // Note(cc): added vs legacy footer — discuss.villagekit.com is the project's
-    // forum; FaUsers chosen for the community-of-people semantic.
-    icon: <FaUsers />,
     isExternal: true,
+    label: 'Community forum',
   },
 ]
 
@@ -76,56 +118,116 @@ export function SiteFooter() {
   return (
     <Footer sections={footerSections}>
       <Container>
-        <HStack
-          as="nav"
-          gap={{ base: 4, md: 5 }}
-          justifyContent="center"
-          flexWrap="wrap"
-          aria-label="Village Kit on social media"
-        >
-          {socialLinks.map((link) => (
-            <SocialIconLink key={link.href} {...link} />
-          ))}
-        </HStack>
+        <Social socialLinks={socialLinks} width="full" iconMaxWidth={8} />
       </Container>
 
-      <VStack as="section" gap="1" textAlign="center" aria-label="Site credit">
-        <Text fontSize="sm" color="gray.700">
-          Created with{' '}
-          <Icon display="inline-block" verticalAlign="-0.125em" boxSize="3.5" color="primary.500">
-            <FaHeart title="love" />
-          </Icon>{' '}
-          by{' '}
-          <Link
-            href="https://villagekit.com"
-            variant="paragraph"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Village Kit
-          </Link>
-        </Text>
-        <Text fontSize="xs" color="gray.700">
-          © {new Date().getFullYear()}
-        </Text>
-      </VStack>
+      <FooterSlogan />
     </Footer>
   )
 }
 
-function SocialIconLink(props: SocialLinkDescriptor) {
-  const { href, label, icon, isExternal } = props
+interface SocialLinkDescriptor {
+  href: string
+  isExternal: boolean
+  label: string
+  Icon: React.ComponentType
+}
+
+interface SocialProps {
+  socialLinks: Array<SocialLinkDescriptor>
+  width?: StackProps['width']
+  iconBoxSize?: IconProps['boxSize']
+  iconMaxWidth?: IconProps['maxWidth']
+}
+
+function Social(props: SocialProps) {
+  const { socialLinks, width, iconBoxSize, iconMaxWidth } = props
 
   return (
-    <Link
-      as={isExternal ? undefined : NextLink}
-      href={href}
-      variant="tertiary"
-      aria-label={label}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
+    <HStack
+      as="section"
+      gap="4"
+      width={width}
+      justifyContent="flex-end"
+      alignItems="baseline"
+      aria-label="Village Kit on social media"
     >
-      <Icon boxSize="7">{icon}</Icon>
+      {socialLinks.map((socialLink) => (
+        <SocialLink
+          key={socialLink.href}
+          {...socialLink}
+          iconBoxSize={iconBoxSize}
+          iconMaxWidth={iconMaxWidth}
+        />
+      ))}
+    </HStack>
+  )
+}
+
+interface SocialLinkProps extends SocialLinkDescriptor {
+  iconBoxSize?: IconProps['boxSize']
+  iconMaxWidth?: IconProps['maxWidth']
+}
+
+function SocialLink(props: SocialLinkProps) {
+  const { label, href, Icon: SocialIcon, isExternal, iconBoxSize = 'auto', iconMaxWidth } = props
+
+  const flexGrow = iconBoxSize === 'auto' ? 1 : undefined
+  // Chakra v3's Icon writes aria-hidden="true" on every icon; undefined removes the attribute
+  // so the icon carries the link's name, as legacy's Chakra v2 Icon did.
+  const icon = (
+    <Icon
+      as={SocialIcon}
+      aria-label={label}
+      aria-hidden={undefined}
+      boxSize={iconBoxSize}
+      flexGrow={flexGrow}
+      maxWidth={iconMaxWidth}
+    />
+  )
+  const linkProps: LinkProps = {
+    variant: 'tertiary',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    flexGrow,
+  }
+
+  if (isExternal) {
+    return (
+      <Link href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
+        {icon}
+      </Link>
+    )
+  }
+
+  return (
+    <Link as={NextLink} href={href} {...linkProps}>
+      {icon}
     </Link>
+  )
+}
+
+function FooterSlogan() {
+  return (
+    <VStack as="section" aria-label="Site credit">
+      <Text variant="tertiary" fontSize="sm">
+        Created with{' '}
+        {/* Chakra v3's icon recipe adds verticalAlign middle, which v2's Icon did not set;
+            baseline keeps the heart where legacy's line puts it. */}
+        <Icon aria-hidden={undefined} color="primary.400" verticalAlign="baseline">
+          <FaHeart title="love" />
+        </Icon>{' '}
+        by{' '}
+        <Link href="https://villagekit.com" target="_blank" rel="noopener noreferrer">
+          Village Kit
+        </Link>
+      </Text>
+
+      <Text variant="tertiary" fontSize="xs">
+        © {new Date().getFullYear()}
+      </Text>
+    </VStack>
   )
 }

@@ -18,3 +18,5 @@ kind: changed
 rule: operator (5), [[9f344fbfde9a]].
 
 ## Log
+
+- 2026-09-26: Superseded heading text: decision [[9f344fbfde9a]] names the four headings Explore, About, Connect and Legal, so the Learn this item's title quotes never ships; the site footer slice (plan [[5e4529a6aeac]]) ships About over About and FAQ, with Tools and resources under Explore.

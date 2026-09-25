@@ -1,6 +1,6 @@
 ---
 title: "Footer social icons: spread across the row to centered fixed-size"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteFooter.tsx:79-89`: `<HStack as="nav" gap={{ base: 4, md: 5 }} justifyContent="center" flexWrap="wrap">` with `<Icon boxSize="7">`.
 
 ## Verdict
+
+plan 5e4529a6
 
 ## Log

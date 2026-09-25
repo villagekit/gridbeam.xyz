@@ -1,6 +1,6 @@
 ---
 title: "Footer envelope link: Newsletter (/subscribe) to Email (/contact)"
-status: regression
+status: fixed
 route: shell
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/SiteFooter.tsx:28`: `{ href: '/contact', label: 'Email', icon: <FaEnvelope /> }`.
 
 ## Verdict
+
+plan 5e4529a6
 
 ## Log
 

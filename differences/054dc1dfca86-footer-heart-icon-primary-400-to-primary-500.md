@@ -1,6 +1,6 @@
 ---
 title: "Footer heart icon: primary.400 to primary.500"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/SiteFooter.tsx:95`: `<Icon display="inline-block" verticalAlign="-0.125em" boxSize="3.5" color="primary.500">`.
 
 ## Verdict
+
+plan 5e4529a6
 
 ## Log
