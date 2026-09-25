@@ -47,7 +47,7 @@ export default function NotFound() {
             </Box>
             <VStack gap="3">
               <Heading as="h1" size={{ base: '3xl', md: '4xl' }}>
-                404 — page not found
+                404: page not found
               </Heading>
               <Text fontSize="lg" variant="secondary">
                 That page isn't here. It may have moved, or never existed.

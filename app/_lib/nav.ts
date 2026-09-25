@@ -1,12 +1,10 @@
 import type { FooterSections, NavItemDescriptors } from '@villagekit/ui'
 
 export const navItems: NavItemDescriptors = [
-  { href: '/about', label: 'About', location: 'top' },
   { href: '/designs', label: 'Designs', location: 'top' },
-  { href: '/stories', label: 'Stories', location: 'top' },
-  { href: '/suppliers', label: 'Suppliers', location: 'top' },
   { href: '/tools-and-resources', label: 'Tools', location: 'top' },
-  { href: '/contact', label: 'Contact', location: 'top' },
+  { href: '/about', label: 'About', location: 'top' },
+  { href: '/stories', label: 'Stories', location: 'top' },
 ]
 
 export const footerSections: FooterSections = [

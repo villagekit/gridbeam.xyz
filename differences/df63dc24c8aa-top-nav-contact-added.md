@@ -1,6 +1,6 @@
 ---
 title: "Top nav: Contact added"
-status: regression
+status: fixed
 route: shell
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_lib/nav.ts:9`: `{ href: '/contact', label: 'Contact', location: 'top' }`.
 
 ## Verdict
+
+plan 63e9c753
 
 ## Log
 

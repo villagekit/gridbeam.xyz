@@ -7,8 +7,8 @@ export function SiteHeaderAction(props: NavActionProps) {
   const { onHideMobileMenu } = props
 
   return (
-    <LinkButton as={NextLink} href="/subscribe" onClick={onHideMobileMenu} size="sm">
-      Subscribe
+    <LinkButton as={NextLink} href="/suppliers" onClick={onHideMobileMenu} size="sm">
+      Find a supplier
     </LinkButton>
   )
 }

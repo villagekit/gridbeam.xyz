@@ -18,3 +18,5 @@ The `HeaderAction` slot (`packages/ui-page/src/components/layouts/MainLayout.tsx
 rule: no e-commerce (2). Legacy's header held the cart/buy action; the closer non-commercial equivalent is finding where to actually get grid beam, not the newsletter. Ships as a button labelled "Find a supplier" (echoing the locked home-page phrase, [[ad5363e4e1d5]]), linking to /suppliers, replacing the current "Subscribe" button. Confirmed 2026-09-13.
 
 ## Log
+
+- 2026-09-26: Shipped this slice's verdict (plan 63e9c753): app/_components/SiteHeaderAction.tsx now reads "Find a supplier", linking to /suppliers.

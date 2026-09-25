@@ -1,6 +1,6 @@
 ---
 title: "Top nav order: Suppliers after Stories where Store came before it"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/nav.ts:4-9`: `About`, `Designs`, `Stories`, `Suppliers`, `Tools`, `Contact`; Suppliers fourth, after Stories (`audit/_root/1280/current.png`, header; the same order in the mobile list).
 
 ## Verdict
+
+plan 63e9c753
 
 ## Log
 

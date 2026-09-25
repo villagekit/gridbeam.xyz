@@ -1,6 +1,6 @@
 ---
 title: "Top nav, header action and 404 heading: the operator's verdicts"
-status: todo
+status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 tags:
@@ -30,5 +30,15 @@ None pure.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped exactly what the Work section asked. `app/_lib/nav.ts`: `navItems` is now `Designs`, `Tools`, `About`, `Stories`, in decision `c21b7e35f0c7`'s order; Contact's and Suppliers' top entries are gone, so the mobile list (which follows the same array) drops them too. `app/_components/SiteHeaderAction.tsx`: label "Find a supplier", href `/suppliers`, the verdict of `e48df8d1ce98`. `app/not-found.tsx`: heading "404: page not found", the verdict of `fb5b26b56721` and decision `dc1a7a98373f`; nothing else on the page changed. `footerSections` is untouched.
+
+Closed `df63dc24c8aa` and `92ee49a8071a` with `kipu fix ... --outcome "plan 63e9c753"`. Notes added per the Work section: `191e28561c6d` (Suppliers left the top nav with `c21b7e35f0c7`, its own sanctioned Verdict on the Suppliers page still stands, its Current section is now historical), `e48df8d1ce98` and `fb5b26b56721` (each notes this slice shipped its verdict).
+
+Verified: `pnpm audit:dom --routes <root-only file>` over `/` shows `current.aria.yaml`'s banner toolbar as `Designs`, `Tools`, `About`, `Stories` with no `Contact` or `Suppliers` link, and `link "Find a supplier"` to `/suppliers`; `curl localhost:3000/no-such-page` shows exactly one `<h1>404: page not found</h1>`. `timeout 900 just check` green (run twice: once before the reviews, once after, since the Parity reviewer found that running the gate while `pnpm dev` was live had corrupted the dev server with HTTP 500s on every route, a process interaction now recorded under CLAUDE.md's Gotchas, not a defect in this change; the second run had no dev server up and passed clean). `kipu verify --warnings-as-errors` clean at 830 items, 0 errors, 0 warnings.
+
+Reviewed on three fresh Opus sub-agents before the commit: Standards found no hard violation; Spec found nothing missing, partial or extra; Parity recaptured the `/` screenshot and DOM pairs at 375/768/1280 and confirmed `df63dc24c8aa`, `92ee49a8071a`, `e48df8d1ce98` and `fb5b26b56721` all closed in the code and no new unrecorded difference. No critical finding from any axis; nothing fixed beyond the code already written.
+
+Flags for a later iteration, left untouched since they are outside this slice's scope: the Standards and Parity reviewers found three already-`sanctioned` items whose Current sections now read stale prose against the reordered `nav.ts` and the renamed header action: `9d1f2b7ae565` (About, cites a shifted line number), `71dcfc2bdf8a` (Tools, cites a shifted line number) and `3a2b674677f9` (cart button removed, its Current section still calls the header action "a Subscribe button"). None of these were cited by this plan, so no note was added; a future slice or `/parity` refresh can add one. `fb033121d164` (shell overflows the viewport at 768) is still `regression` and still visible on the recaptured pair, narrower than before (about 928 px against the prior 1018 px) but still overflowing; the item's own Log already says the nav count, wordmark size, column gap and footer sections each have their own item, and closing it is not this slice's job.
 
 ## Log
