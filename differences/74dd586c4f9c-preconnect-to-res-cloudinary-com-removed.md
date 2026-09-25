@@ -1,6 +1,6 @@
 ---
 title: Preconnect to res.cloudinary.com removed
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No preconnect link in `app/layout.tsx`.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

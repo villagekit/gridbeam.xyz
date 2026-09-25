@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: Copy: rule 1 names the domain, not the tagline. The route's `og:url` moves from `https://gridkit.nz` (the layout default) to `https://gridbeam.xyz` (rule 1); the per-route override mechanism is the shell item [[f46533a8ae54]].
 
 - 2026-09-25: Regression (grilling Q1). Legacy set the home title to the bare brand; ships as `Grid Beam` for the title and og:title, rule 1 only. The tagline goes.
+
+- 2026-09-25: Current text is stale after plan ffe8e5d5: `app/page.tsx` no longer sets `openGraph` or `twitter`; `og:title` and `twitter:title` now follow the page's `title: { absolute }`.

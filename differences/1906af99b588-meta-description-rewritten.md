@@ -18,3 +18,5 @@ kind: changed
 rule: rebrand (1) + operator (5). Ships as: "Anyone can be a maker with Grid Beam: life-size building blocks. Eco-friendly, adaptable, and fun for the whole family."
 
 ## Log
+
+- 2026-09-25: The verdict shipped with plan ffe8e5d5: `app/layout.tsx` sets the description verbatim. Routes that set their own description (each route's own item) still override it.

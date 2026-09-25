@@ -1,6 +1,6 @@
 ---
 title: Open Graph image alt text rewritten
-status: regression
+status: fixed
 route: shell
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/opengraph-image.tsx:5`: `Grid Beam — modular furniture from a 40 mm grid`, rendered as both `og:image:alt` and `twitter:image:alt` (`app/twitter-image.tsx:1` re-exports the module).
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log
 

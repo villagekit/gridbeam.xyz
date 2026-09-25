@@ -29,12 +29,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-    url: 'https://gridbeam.xyz/tools-and-resources',
-  },
-  twitter: { title, description },
 }
 
 interface CardEntry {

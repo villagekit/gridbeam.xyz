@@ -1,6 +1,6 @@
 ---
 title: Route metadata replaces the layout's openGraph and twitter objects
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/layout.tsx:36-48` declares `type`, `siteName`, `locale` and `card`, but `app/page.tsx:50-58` (and `app/about/page.tsx:30-35`) export their own `openGraph` and `twitter` objects, which Next replaces rather than merges. `http://localhost:3000/` `<head>`: no `og:type`, `og:site_name` or `og:locale`, and `twitter:card` is `summary`.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

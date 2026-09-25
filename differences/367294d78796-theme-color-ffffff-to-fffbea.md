@@ -1,6 +1,6 @@
 ---
 title: "theme-color #ffffff to #fffbea"
-status: regression
+status: fixed
 route: shell
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/layout.tsx:58`: `viewport.themeColor: '#fffbea'`.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "twitter:site @villagekit removed"
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/layout.tsx:44-48`: `twitter: { card, title, description }`, no `site`.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

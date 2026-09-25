@@ -1,6 +1,6 @@
 ---
 title: "Open Graph image: Cloudinary record-shelf photo to a generated ImageResponse"
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/opengraph-image.tsx:1-36`: an `ImageResponse` drawing `CubeLogo` and text; `app/twitter-image.tsx:1` re-exports it. No `openGraph.images` in `app/layout.tsx`.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

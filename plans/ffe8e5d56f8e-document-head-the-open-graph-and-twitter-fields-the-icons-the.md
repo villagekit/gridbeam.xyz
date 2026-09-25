@@ -1,6 +1,6 @@
 ---
 title: "Document head: the Open Graph and twitter fields, the icons, the title and description verdicts"
-status: todo
+status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 tags:
@@ -35,5 +35,22 @@ None pure.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped: `app/layout.tsx` carries legacy's `DefaultSeo` and `<Head>` as the Metadata export: the title and description verdicts of `1c8b7461acb1` and `1906af99b588`, `applicationName: 'Grid Beam'`, `twitter` `summary_large_image` and `@villagekit`, the icons, the manifest, the tile colour, `themeColor: '#ffffff'`, the Cloudinary preconnect in `<head>`, and no `suppressHydrationWarning`. The Open Graph fields live in `app/_lib/open-graph.ts` (`siteOpenGraph`): the record-shelf image at `gridbeam.xyz/home/record-shelf-hero` under legacy's transform with legacy's alt verbatim, the coffee-table video at legacy's `v1/gridkit.nz/gridkit-coffee-table-website_bqmjpv` (the id the home page's `LandingVideo` reads; no re-hosted copy exists), `en_NZ`, `Grid Beam`, `https://gridbeam.xyz`. `app/opengraph-image.tsx` and `app/twitter-image.tsx` are deleted. Every route's `openGraph` and `twitter` objects are gone. The fourteen legacy files are in `public/`, byte-identical except the manifest's `start_url`. Closed: `f8cca746b4bb`, `b416d67c2519`, `aa71d706e02b`, `6b2180907f41`, `6f32ac5d51cb`, `f46533a8ae54`, `f3c3cb53867d`, `367294d78796`, `74dd586c4f9c`, `54c8b8390c40`, `1ef32a0328e6`.
+
+Verified first, at Next 15.5.18: `og:title` falls back to the templated page title (`resolve-metadata.js`, `inheritFromMetadata`); `icons.other` renders `rel="mask-icon"` with its `color` (read in the rendered head). Proof: `curl` of the heads of `/`, `/about`, `/faq`, `/designs/shelf-tower` (`og:title` and `<title>` both `Grid Beam: Shelf Tower`) and `/stories/whats-a-grid-unit` on `pnpm dev`; every public file and `/icon.svg` return 200; one preconnect; `timeout 900 just check` green; `kipu verify --warnings-as-errors` green. No visual gate: the change is the document head only and changes nothing the screenshot pairs show.
+
+Deviations, with their evidence:
+- The story page keeps its article `openGraph` and spreads `siteOpenGraph` first. The plan said to remove every route's `openGraph`, but legacy's `components/layouts/stories.tsx:35-53` set an article `openGraph` (type, times, tag, story image) that next-seo merged over `DefaultSeo`, and the live legacy head shows both sets. Next replaces a layout's `openGraph` whole, so removing it would lose the article fields and keeping it alone would lose the site fields. Its `twitter` block is removed. So the Done-when grep lists `app/_lib/open-graph.ts` and `app/stories/[slug]/page.tsx`, and nothing else.
+- `metadata.icons` lists `/icon.svg` explicitly: once `metadata.icons` is set, Next drops the file-convention icon links (`resolve-metadata.js`, the `leafSegmentStaticIcons` block), so the plan's "stay as the conventions serve them" cannot hold. `app/icon.svg` still serves `/icon.svg`.
+- `app/apple-icon.png` moved to `public/apple-touch-icon.png` (byte-identical to legacy's) and is linked at that path, found by the Parity review: legacy linked and served `/apple-touch-icon.png`, which returned 404 here.
+- The Open Graph video type has no `alt`; it is declared apart from the literal so the type check passes, and Next renders it as `og:video:alt` (a `Note(cc)` asks a Next upgrade to re-check).
+- The Done-when line that `/` shows `1906af99b588`'s description does not hold: the home route keeps its own description, its item `bfc81eb7197c`, as the plan's Work says. The site description renders only where a route sets none.
+
+Filed at review, all `open`, for the operator: `13f1a23487f3` the video alt (`made from grid beam`, rule 1 applied literally, split from `aa71d706e02b`, whose code difference is fixed); `065852f6e813` `og:site_name`, `og:url` and `start_url` rebranded; `abb4c0b4f849` Next streams the head metadata into the body for non-bot user agents (from before this plan). Notes on `1c8b7461acb1` and `1906af99b588` (verdicts shipped) and on `362c648bf846`, `65c21e08b3f1`, `fcdf83c992a1`, `dd19bb3343bf`, whose Current text this plan made stale.
+
+Beyond the ask: CLAUDE.md, Structure, names `public/` and the Open Graph module and drops the deleted OG and twitter images.
+
+Findings dropped: the icon link order (Next renders icon links before the apple link; legacy put apple second), a fixed order of Next's renderer; the story image's `og:image:type`, already recorded under `82762f6b27de`.
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: suppressHydrationWarning on the html element
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/layout.tsx:63-66`: `<html lang="en" suppressHydrationWarning className={...}>`. Nothing in `@villagekit/ui@1.2.0 src/Provider.tsx` (a bare `ChakraProvider`, no `next-themes`) requires it.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log
 

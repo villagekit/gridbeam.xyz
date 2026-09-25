@@ -1,6 +1,6 @@
 ---
 title: Web manifest, PNG favicons, mask icon and tile colour removed
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 Only `app/icon.svg` and `app/apple-icon.png`; no manifest, PNG favicons, mask icon or tile colour.
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log

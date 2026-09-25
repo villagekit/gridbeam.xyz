@@ -23,12 +23,6 @@ const lastUpdated = '2026-08-03'
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-    url: 'https://gridbeam.xyz/legal/privacy-policy',
-  },
-  twitter: { title, description },
 }
 
 export default function PrivacyPolicyPage() {

@@ -20,3 +20,5 @@ rule: upgrade (the pages-router layout HOC and next-seo have no app-router equiv
 ## Log
 
 - 2026-09-12: Story page template; filed where first met. The twitter block and the dropped OG image `type` are the shell items f46533a8ae54 and 65c21e08b3f1.
+
+- 2026-09-25: Current text is stale after plan ffe8e5d5: the story page's `twitter` block is gone, and its `openGraph` spreads the site-wide fields of `app/_lib/open-graph.ts` before its article fields, as legacy's `NextSeo` merged over `DefaultSeo`.

@@ -20,3 +20,5 @@ rule: rebrand (1). Keeps the legacy prefix-colon shape: title template `Grid Bea
 ## Log
 
 - 2026-09-12: Copy: the rebrand rule names the domain, not the template's shape (prefix to suffix with an em dash) or the default title (`Grid Kit` would become `Grid Beam`, not `gridbeam.xyz`). The operator judges.
+
+- 2026-09-25: The verdict shipped with plan ffe8e5d5: `app/layout.tsx` sets `title: { default: 'Grid Beam', template: 'Grid Beam: %s' }` and `applicationName: 'Grid Beam'`.

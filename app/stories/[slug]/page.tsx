@@ -14,6 +14,7 @@ import { notFound } from 'next/navigation'
 
 import { StoryImage } from '../../_components/story/StoryImage'
 import { getCloudinaryUrl } from '../../_lib/cloudinary'
+import { siteOpenGraph } from '../../_lib/open-graph'
 import { STORY_SLUGS, getStory } from '../../_lib/stories'
 
 interface StoryPageProps {
@@ -38,20 +39,12 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
     title,
     description: summary,
     openGraph: {
+      ...siteOpenGraph,
       type: 'article',
-      title,
-      description: summary,
-      url: `https://gridbeam.xyz/stories/${slug}`,
       publishedTime: publishedAt,
       modifiedTime: updatedAt,
       tags: [category],
       images: [{ url: ogImageUrl, alt: image.alt }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: summary,
-      images: [ogImageUrl],
     },
   }
 }

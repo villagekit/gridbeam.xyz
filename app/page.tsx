@@ -47,15 +47,6 @@ const heroDescription =
 export const metadata: Metadata = {
   title: { absolute: heroTitle },
   description: heroDescription,
-  openGraph: {
-    title: heroTitle,
-    description: heroDescription,
-    url: 'https://gridbeam.xyz',
-  },
-  twitter: {
-    title: heroTitle,
-    description: heroDescription,
-  },
 }
 
 // Hero carousel — Cloudinary public IDs under `gridbeam.xyz/home/...`

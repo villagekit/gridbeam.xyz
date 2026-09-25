@@ -13,15 +13,6 @@ const pageDescription =
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: 'https://gridbeam.xyz/stories',
-  },
-  twitter: {
-    title: pageTitle,
-    description: pageDescription,
-  },
 }
 
 export default function StoriesPage() {

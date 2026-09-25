@@ -23,12 +23,6 @@ const description = 'Privacy policy and licensing information for gridbeam.xyz.'
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-    url: 'https://gridbeam.xyz/legal',
-  },
-  twitter: { title, description },
 }
 
 export default function LegalPage() {

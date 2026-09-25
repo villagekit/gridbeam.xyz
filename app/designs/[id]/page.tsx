@@ -26,12 +26,6 @@ export async function generateMetadata({ params }: DesignPageProps): Promise<Met
     return {
       title: meta.label,
       description: meta.description,
-      openGraph: {
-        title: meta.label,
-        description: meta.description,
-        url: `https://gridbeam.xyz/designs/${id}`,
-      },
-      twitter: { title: meta.label, description: meta.description },
     }
   } catch {
     return { title: 'Design not found' }

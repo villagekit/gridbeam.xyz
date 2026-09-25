@@ -14,12 +14,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-    url: 'https://gridbeam.xyz/designs',
-  },
-  twitter: { title, description },
 }
 
 export default async function DesignsPage() {

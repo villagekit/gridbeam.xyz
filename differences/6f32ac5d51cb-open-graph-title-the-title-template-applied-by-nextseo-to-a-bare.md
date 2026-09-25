@@ -1,6 +1,6 @@
 ---
 title: "Open Graph title: the title template applied by NextSeo to a bare openGraph.title"
-status: regression
+status: fixed
 route: shell
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/layout.tsx:36-40` sets `openGraph.title: 'gridbeam.xyz'` as a bare string, so Next has no Open Graph title template (`node_modules/next/dist/lib/metadata/resolvers/resolve-opengraph.js:150` applies one only when the layout's `openGraph.title` is a template object); routes that set `openGraph.title` (`app/designs/[id]/page.tsx:30`, `app/designs/page.tsx:19`) emit it untemplated (`og:title` `Shelf Tower`).
 
 ## Verdict
+
+plan ffe8e5d5
 
 ## Log
 
