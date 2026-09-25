@@ -1,6 +1,6 @@
 ---
 title: "Focus-visible: Chakra v3's gray outline layered over the outline shadow"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/{Button,Link,Input,Select,NumberInput}.tsx and Accordion.recipe.ts: v3's focusVisibleRing and focusRing set to none on the ui's controls, so the outline shadow is the only ring; measured on /tools/cutting-planner by Tab-focusing the Add row button (outline none, rgba(0,163,196,0.5) 0 0 0 2px on both sides), the select and the number input (the cyan border and one-pixel shadow on both). Waits in upstream for the bump plan [[99f2fe62c62f]].

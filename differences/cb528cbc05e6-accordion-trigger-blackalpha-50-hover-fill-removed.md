@@ -1,6 +1,6 @@
 ---
 title: "Accordion trigger: blackAlpha.50 hover fill removed"
-status: regression
+status: upstream
 route: shell
 axis: interaction
 kind: removed
@@ -18,3 +18,5 @@ Chakra v2's accordion theme (`@chakra-ui/theme`, `baseStyleButton`) sets `_hover
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f: the Accordion is a `@villagekit/ui` component; only `/faq` consumes it on both sides.
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Accordion.recipe.ts: itemTrigger _hover bg blackAlpha.50 with the common transition, the trigger square as v2's; measured rgba(0,0,0,0.04) on hover on /faq on both sides. Waits in upstream for the bump plan [[99f2fe62c62f]].

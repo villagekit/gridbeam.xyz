@@ -1,6 +1,6 @@
 ---
 title: "@villagekit/ui Link drops isExternal: external links open in the same tab"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,7 @@ kind: changed
 ## Log
 
 - 2026-09-12: Found by the stories ledger (plan 843901f4); a ui fix lands in ../ui and waits for a publish.
+
+- 2026-09-26: From the recipes slice [[45d6f5634a11]]: the Legacy line above overstates v2. Chakra v2's `Link` (`@chakra-ui/layout@2.3.1`, the version the legacy lockfile pins) renders `isExternal` as `target="_blank" rel="noopener"`, and the live legacy story page shows `rel="noopener"`; only v2's `LinkOverlay` wrote `noopener noreferrer`. The port renders `noopener`.
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Link.tsx: LinkProps.isExternal renders target _blank and rel noopener noreferrer; the External story in stories/Link.stories.tsx carries it. Waits in upstream for the bump plan [[99f2fe62c62f]].

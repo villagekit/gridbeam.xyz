@@ -1,6 +1,6 @@
 ---
 title: "Heading size md: Chakra v2's 20px on a 24px line to the ui recipe's 18px on 21.6px"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found by the Parity review of the ui brand footer slice [[1977c9af920c]] and pre-existing: no rule covers a smaller heading, so regression. The fix is the ui Heading recipe's, the recipes slice [[45d6f5634a11]] (its Heading line covers the weight, `7124898563eb`; this is the size beside it).
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Heading.tsx: headingRecipe size md is fontSize xl on lineHeight 1.2; measured 20px on a 24px line on the footer column heading at 1280 on both sides. Waits in upstream for the bump plan [[99f2fe62c62f]].

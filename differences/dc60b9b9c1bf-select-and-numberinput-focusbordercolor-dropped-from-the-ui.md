@@ -1,6 +1,6 @@
 ---
 title: "Select and NumberInput: focusBorderColor dropped from the ui wrappers"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/{Input,Select,NumberInput}.tsx: the recipes set --focus-color to the theme's outlineColor and the focused field's border and one-pixel shadow to it, as 0.9.0's focusBorderColor did; measured on the planner's select and number input, cyan on both sides. Waits in upstream for the bump plan [[99f2fe62c62f]].

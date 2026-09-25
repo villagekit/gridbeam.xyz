@@ -1,6 +1,6 @@
 ---
 title: "Input size lg: 48 px to 44 px"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Found by the Parity review of the designs ledger (plan cf52c388); a v3 recipe default like the palette literals [[72b776cb0d3f]].
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Input.tsx: an inputRecipe with Chakra v2's sizes, lg 48px tall at font size lg, padding 4, radius md; measured 48px on the /designs search bar on both sides at 1280. Waits in upstream for the bump plan [[99f2fe62c62f]].

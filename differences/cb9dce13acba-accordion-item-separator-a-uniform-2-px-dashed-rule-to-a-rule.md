@@ -1,6 +1,6 @@
 ---
 title: "Accordion item separator: a uniform 2 px dashed rule to a rule merged with the outline variant"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Filed on shell from plan 848b026f; only `/faq` consumes the Accordion.
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Accordion.recipe.ts: the recipe defaults to the plain variant, so the item's 2px dashed top rule and the last item's bottom rule are its only borders; measured 2px top and 0 bottom (2px on the last) on /faq at 1280 on both sides. Waits in upstream for the bump plan [[99f2fe62c62f]].

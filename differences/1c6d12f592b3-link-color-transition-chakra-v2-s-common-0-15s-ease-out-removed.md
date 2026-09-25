@@ -1,6 +1,6 @@
 ---
 title: "Link color transition: Chakra v2's common 0.15s ease-out removed"
-status: regression
+status: upstream
 route: shell
 axis: interaction
 kind: removed
@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-26: Found at the Parity review of the site footer slice (plan [[5e4529a6aeac]]); pre-existing, not introduced there. The fix is the ui `Link` recipe's, the recipes slice [[45d6f5634a11]], never a site-side style.
+
+- 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Link.tsx: linkRecipe carries transitionProperty common, transitionDuration fast and transitionTimingFunction ease-out, v2's link base; measured 150ms on a footer link on both sides (v3's ease-out token is cubic-bezier(0, 0, 0.58, 1) where v2's was (0, 0, 0.2, 1), the token's value under the upgrade). Waits in upstream for the bump plan [[99f2fe62c62f]].

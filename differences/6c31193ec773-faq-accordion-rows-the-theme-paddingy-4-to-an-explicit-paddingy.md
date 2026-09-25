@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-26: From the recipes slice [[45d6f5634a11]]: the ui recipe now pads the accordion's `itemBody` (the box v3 does not animate) 4 in place of `itemContent`, so the route's `paddingY="3"` on `ItemContent` no longer overrides the recipe's panel padding but stacks on it, 28px above and below the answer on `pnpm dev` against legacy's 16px; the trigger's `paddingY="3"` still overrides the recipe's 4. Removing both props, this item's fix, gives legacy's 16px on trigger and panel.

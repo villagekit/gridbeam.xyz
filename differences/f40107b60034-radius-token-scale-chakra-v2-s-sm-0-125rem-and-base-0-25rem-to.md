@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found at the Parity review of the site theme slice (plan [[39b1a28bb0cc]]); pre-existing, not introduced there. The scale is the package's theme, so the fix is the ui's (the recipes slice [[45d6f5634a11]], whose input recipe item [[6b5488415a06]] already pins the input's radius to v2's md), or rule 4 judged on it; never a site-side spread of v2's values.
+
+- 2026-09-26: From the recipes slice [[45d6f5634a11]] (ui commit 540e9c3): the controls the site renders on Chakra v3 recipes now round on v2's scale through the ui's own recipes (inputs, native selects and number inputs: radius md at lg and md, xs at sm and xs, which is v2's sm 0.125rem), measured 6px on the /designs search input and selects on both sides. The token scale itself is left: rewriting sm to 0.125rem would move every v3 recipe that reads l2 (buttons the ui does not size, checkboxes, tabs) further from v2, and the added names (2xs, xs, 4xl, l1 to l3) are v3's own recipes' inputs, so the inline CSS keeps v3's list. That residue is a rule 4 verdict, the operator's at the bump or the parity gate; no slice owns it.
