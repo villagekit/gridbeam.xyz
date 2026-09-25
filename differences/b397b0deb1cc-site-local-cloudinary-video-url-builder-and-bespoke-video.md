@@ -1,6 +1,6 @@
 ---
 title: Site-local Cloudinary video URL builder and bespoke video components replace ui-media Video
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The image transform string is identical on both sides (`url.ts:15-22`); only the video path drifted.
+
+- 2026-09-26: Package half fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]): the media context's cloud name defaults to villagekit (defaultCloudinaryName in src/components/media/context.tsx), so the ui Video and the mdx Video work with no MediaProvider mounted, as [[0efe45924dbe]] sanctions. The site half is the bump plan's ([[99f2fe62c62f]], its note from this slice): StoryVideo and LandingVideo onto the ui Video, getCloudinaryVideoUrl out of app/_lib/cloudinary.ts; probed here through the override, every rendered webm, mp4, ogv and poster URL returning 200 from Cloudinary.

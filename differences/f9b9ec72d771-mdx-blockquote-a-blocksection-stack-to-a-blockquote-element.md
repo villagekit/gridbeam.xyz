@@ -1,6 +1,6 @@
 ---
 title: "MDX blockquote: a BlockSection stack to a blockquote element without the shadow"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Found by the stories ledger (plan 843901f4): the story tips are the site's blockquotes.
+
+- 2026-09-26: Fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]): src/mdx/blockquote.tsx renders <BlockSection Icon={FaQuoteRight}>, the legacy ui-mdx blockquote on the already-ported BlockSection (shadow sm, padding 4 by 2, Text variant secondary, exposed as its paragraphs). Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed. The legacy site's own Tip override of this blockquote is [[9affc679c88c]], the story pages record's.

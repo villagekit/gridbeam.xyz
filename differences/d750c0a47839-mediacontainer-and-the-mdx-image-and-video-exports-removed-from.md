@@ -1,6 +1,6 @@
 ---
 title: MediaContainer and the mdx Image and Video exports removed from the ui mdx module
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: removed
@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-12: Fix lands upstream in `../ui`.
+
+- 2026-09-26: Fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]): src/mdx/MediaContainer.tsx, src/mdx/Image.tsx and src/mdx/Video.tsx are the legacy ui-mdx files translated to Chakra v3, exported from @villagekit/ui/mdx beside mdxComponents with useMediaMaxWidthBreakpoints and their props types. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.

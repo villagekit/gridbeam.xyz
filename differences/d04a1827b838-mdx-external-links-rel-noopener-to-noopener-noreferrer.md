@@ -1,6 +1,6 @@
 ---
 title: "MDX external links: rel noopener to noopener noreferrer"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found by the recipes slice [[45d6f5634a11]] checking a story page after `Link` regained `isExternal`; the MDX link is the mdx and media slice's [[bc0407533650]], beside [[63baa85427e0]], which re-ports `MdxLink` and is where this is closed or judged (the same `rel` on the three link components is the same question).
+
+- 2026-09-26: Fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]) for the MDX link: MdxLink renders the ui Link with isExternal, which writes rel="noopener" as Chakra v2's Link did (probed: <a target="_blank" rel="noopener" ...> on the story pages). The last clause here, the same rel on LinkButton, LinkIconButton, LinkCard, Footer and Social, is split out as [[f85e98a67092]]. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.
