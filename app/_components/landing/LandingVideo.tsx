@@ -1,7 +1,7 @@
 // Autoplay/loop/muted/playsInline video, used in the home-page "one modular
-// kit" section. Mirrors `@villagekit/ui`'s Video component (which is gated on
-// MediaProvider context this app doesn't wire up); rolling a tiny local copy
-// avoids that coupling.
+// kit" section. Mirrors `@villagekit/ui`'s Video component, which reads the
+// MediaProvider context `SiteProvider` mounts; the home's page re-port replaces
+// this local copy with the ui `Video`.
 
 import { Box } from '@villagekit/ui'
 

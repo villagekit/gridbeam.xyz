@@ -41,3 +41,5 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-26: From the home's MediaProvider slice (plan [[6f90e7e24ca6]]): two more shell items for the operator. [[afe50ab5c7aa]] (open, code, added): the site mounts MediaProvider in SiteProvider with the cloud name from app/_lib/cloudinary.ts, inside ChakraProvider and around QueryParamProvider, because the published 1.2.0 media components throw without the context and the home's re-ports render the ui Image and Video; legacy's ui-media hard-coded the cloud and its _app.tsx mounted no such provider. Sanctioned under rule 4 (the context is the upgrade's shape), or a sibling change that removes the need (the mdx and media slice's ui commit 1c3e3e8 already defaults the name to villagekit, so after the publish the mount is only the imageComponent wiring)? [[0efe45924dbe]] (open, code, added, was sanctioned): its verdict (the provider not mounted, the loader file being the one call site) is overtaken by the mount and superseded by the item above; the operator re-judges it, dismissed as superseded or sanctioned again.
