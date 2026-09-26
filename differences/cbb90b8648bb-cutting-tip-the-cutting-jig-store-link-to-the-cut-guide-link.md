@@ -1,6 +1,6 @@
 ---
 title: "Cutting tip: the cutting jig store link to the cut guide link"
-status: regression
+status: fixed
 route: /stories/building-with-grid-kit
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/building-with-grid-kit.mdx:140` "> See our [How to mark and cut grid beams](/stories/how-to-cut-grid-beams) guide for the full walkthrough."; `audit/stories__building-with-grid-kit/dom/current.aria.yaml:129-134`.
 
 ## Verdict
+
+plan edf6cccdfbf6
 
 ## Log
 

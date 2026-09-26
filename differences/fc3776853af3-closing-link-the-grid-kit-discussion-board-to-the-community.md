@@ -1,6 +1,6 @@
 ---
 title: "Closing link: the Grid Kit discussion board to the community forum"
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:402` "For further tips, advice, and inspiration, visit the [community forum](https://discuss.villagekit.com)." (same href).
 
 ## Verdict
+
+plan edf6cccdfbf6
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Grid Panels paragraph: building blocks of Grid Kit to the system"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/whats-a-grid-unit.mdx:112` "Grid Panels are another application of Grid Units and one of the essential building blocks of the system."
 
 ## Verdict
+
+plan edf6cccdfbf6
 
 ## Log
 

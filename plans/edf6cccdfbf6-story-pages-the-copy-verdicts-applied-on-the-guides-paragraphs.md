@@ -1,6 +1,6 @@
 ---
 title: "Story pages: the copy verdicts applied on the guides' paragraphs, alts, labels, links and headings"
-status: todo
+status: done
 parent: 56e6eb197e6c
 derived_from: 56e6eb197e6c
 blocked_by:
@@ -36,5 +36,7 @@ None pure; the proof is the copy diff and the aria tree of the DOM pairs.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as written: the seven verdicts applied on the four guide MDX files, each string from the item's last Log line or legacy at fce357d. Verify-first greps print their after values (0; 0 and 0; nothing; 3 h4s; 0; 1 for the lowercase handsaw alt). The DOM pairs (`audit:dom` over the four routes) show the Grid Panels sentence, both `Village Kit discussion board.` closings with no `community forum`, the Title Case hero alt, the three `Beam To ... Connections` headings at level 4 between the level 2 `What Sizes To Use` and the level 3 `Here's How To Determine Which Size Combo To Use`, the label `Grid of common grid beam connections`, the hex key sentence, and the cutting tip differing from legacy by `our` to `a` alone. Two deviations recorded as notes on the items: the closing link on the cut guide keeps legacy's trailing slash (the verdict line quotes it without), and the three headings follow legacy's order under the h2, not under the h3. No visual gate beyond the DOM pairs; no route markup changed.
 
 ## Log

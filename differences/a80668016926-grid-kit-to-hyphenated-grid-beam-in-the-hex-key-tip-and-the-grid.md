@@ -1,6 +1,6 @@
 ---
 title: Grid Kit to hyphenated grid-beam in the hex key tip and the grid label
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:93` "All grid-beam furniture bolts use a 4mm hex key."; `:123` `ariaLabel="Grid of common grid-beam connections"`.
 
 ## Verdict
+
+plan edf6cccdfbf6
 
 ## Log
 

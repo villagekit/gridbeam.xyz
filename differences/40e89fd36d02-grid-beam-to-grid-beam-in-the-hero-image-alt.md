@@ -1,6 +1,6 @@
 ---
 title: Grid Beam to grid beam in the hero image alt
-status: regression
+status: fixed
 route: /stories/how-to-cut-grid-beams
 axis: copy
 kind: changed
@@ -16,6 +16,8 @@ kind: changed
 ## Verdict
 
 rule: rebrand
+
+plan edf6cccdfbf6
 
 ## Log
 
