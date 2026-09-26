@@ -1,6 +1,6 @@
 ---
 title: "Caption 6: three connectors a strong connection to three bolts, a rigid corner"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:135-138` "When three beams are joined with three bolts, a rigid corner is formed in all three axes." (bold "three beams are joined with three bolts").
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

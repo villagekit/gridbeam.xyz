@@ -1,6 +1,6 @@
 ---
 title: About image 4 alt text rewritten (panels)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:106` "A grid panel — plywood with a 40 mm hole grid drilled across both dimensions."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Caption 4: Plywood panels sentence rewritten"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:111-114` "Plywood panels have the same 40 mm hole grid drilled across both dimensions."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

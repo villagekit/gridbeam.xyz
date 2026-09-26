@@ -1,6 +1,6 @@
 ---
 title: "Caption 5: Hex-nut fasteners to Hex-key fasteners, sentence rewritten"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:123-126` "Hex-key fasteners bolt beams and panels together quickly — and disassembly is just as fast." (bold "Hex-key fasteners").
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

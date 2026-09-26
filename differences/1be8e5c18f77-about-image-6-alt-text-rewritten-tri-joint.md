@@ -1,6 +1,6 @@
 ---
 title: About image 6 alt text rewritten (tri-joint)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:130` "Three grid beams meeting at right angles, each pair connected by a single bolt — a tri-joint."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

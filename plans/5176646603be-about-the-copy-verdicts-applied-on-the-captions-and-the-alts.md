@@ -1,6 +1,6 @@
 ---
 title: "About: the copy verdicts applied on the captions and the alts"
-status: todo
+status: done
 parent: 40179ab9e779
 derived_from: 40179ab9e779
 blocked_by: 5ac30176aa70
@@ -37,5 +37,11 @@ None pure; the proof is the copy diff of the DOM pair.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as scoped. app/about/page.tsx now carries the eleven verdicts verbatim: caption 1 (legacy with the rule 1 swap), captions 3, 4, 5 and 6 as legacy, and the six alts as legacy's strings; the nbsp entities and the em dashes went with the old strings. Caption 2 already matched and is untouched. The eleven items are fixed with outcome "plan 51766466".
+
+Proof: grep -c for the six alts prints 6; grep -c '&nbsp;' prints 0 (4 before); the em dash grep prints 0 (3 before). Against a running pnpm dev, pnpm audit:dom on /about then diff of legacy.txt and current.txt: between the nav and the footer the only differing lines are the heading (What is Grid Kit? to What is grid beam?, 1f742640f27f) and caption 1's first words (Grid Kit is to Grid beam is, b60740a84adf); every other residual line is the shell's (skip link, nav items, Find a supplier action, cookie notice, footer columns). Dev server stopped by pid. timeout 900 just check exited 0. No visual gate: copy only, covered by the DOM pair.
+
+Reviewed on a fresh Opus sub-agent (Standards, Spec, Parity): no findings above minor; the minor ones (write the Outcome, stage the page) taken. Dropped: none.
 
 ## Log

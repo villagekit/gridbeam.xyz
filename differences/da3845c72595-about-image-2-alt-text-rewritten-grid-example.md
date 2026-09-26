@@ -1,6 +1,6 @@
 ---
 title: About image 2 alt text rewritten (grid example)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:82` "A 40 mm grid overlaid on a grid beam and a grid panel showing how their holes line up."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

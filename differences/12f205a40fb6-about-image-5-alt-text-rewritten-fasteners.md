@@ -1,6 +1,6 @@
 ---
 title: About image 5 alt text rewritten (fasteners)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:118` "A handful of hex-key furniture bolts and nuts."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

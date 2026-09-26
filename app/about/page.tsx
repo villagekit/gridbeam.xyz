@@ -16,19 +16,19 @@ export default function AboutPage() {
         <Container maxW="3xl">
           <VStack alignItems="stretch" gap={{ base: 8, md: 10 }}>
             <AboutText>
-              Grid beam is a <Span fontWeight="bold">modular system on a 40&nbsp;mm grid</Span>.
+              Grid beam is a <Span fontWeight="bold">modular system based on a 40mm grid</Span>.
             </AboutText>
 
             <AboutPhoto
               src="gridbeam.xyz/about/grid"
-              alt="A 40 mm × 40 mm grid square highlighted on a larger grid background."
+              alt="The 40mm grid"
               width={1188}
               height={841}
             />
 
             <AboutPhoto
               src="gridbeam.xyz/shared/grid-example"
-              alt="A 40 mm grid overlaid on a grid beam and a grid panel showing how their holes line up."
+              alt="40mm grid overlaid on grid beam & panel"
               width={1333}
               height={750}
             />
@@ -38,52 +38,46 @@ export default function AboutPage() {
               <Span fontWeight="bold">beams, panels, and fasteners</Span>.
             </AboutText>
 
-            <AboutPhoto
-              src="gridbeam.xyz/about/beams"
-              alt="A row of square wooden grid beams with holes drilled at 40 mm centres."
-              width={1207}
-              height={714}
-            />
+            <AboutPhoto src="gridbeam.xyz/about/beams" alt="Grid beams" width={1207} height={714} />
 
             <AboutText>
-              <Span fontWeight="bold">Beam</Span> profiles are 40 × 40&nbsp;mm with a repeating
-              pattern of 8&nbsp;mm holes drilled 40&nbsp;mm apart.
+              <Span fontWeight="bold">Beam</Span> profiles are 40mm x 40mm and have a repeating
+              pattern of 8mm holes drilled 40mm apart.
             </AboutText>
 
             <AboutPhoto
               src="gridbeam.xyz/about/panels"
-              alt="A grid panel — plywood with a 40 mm hole grid drilled across both dimensions."
+              alt="Grid panels"
               width={1111}
               height={564}
             />
 
             <AboutText>
-              <Span fontWeight="bold">Plywood panels</Span> have the same 40&nbsp;mm hole grid
-              drilled across both dimensions.
+              <Span fontWeight="bold">Plywood panels</Span> have holes drilled in a 40mm grid.
             </AboutText>
 
             <AboutPhoto
               src="gridbeam.xyz/about/fasteners"
-              alt="A handful of hex-key furniture bolts and nuts."
+              alt="Hex-nut fasteners"
               width={685}
               height={528}
             />
 
             <AboutText>
-              <Span fontWeight="bold">Hex-key fasteners</Span> bolt beams and panels together
-              quickly — and disassembly is just as fast.
+              <Span fontWeight="bold">Hex-nut fasteners</Span> bolt together beams and panels
+              quickly for simple assembly (and disassembly!)
             </AboutText>
 
             <AboutPhoto
               src="gridbeam.xyz/about/tri-joint"
-              alt="Three grid beams meeting at right angles, each pair connected by a single bolt — a tri-joint."
+              alt="Tri joint made with grid beams"
               width={1333}
               height={750}
             />
 
             <AboutText>
-              When <Span fontWeight="bold">three beams are joined with three bolts</Span>, a rigid
-              corner is formed in all three axes.
+              When <Span fontWeight="bold">three beams are joined with three connectors</Span> a
+              strong connection is created.
             </AboutText>
           </VStack>
         </Container>

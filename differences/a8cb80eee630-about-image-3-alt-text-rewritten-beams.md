@@ -1,6 +1,6 @@
 ---
 title: About image 3 alt text rewritten (beams)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:94` "A row of square wooden grid beams with holes drilled at 40 mm centres."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

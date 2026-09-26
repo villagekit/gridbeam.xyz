@@ -1,6 +1,6 @@
 ---
 title: "Caption 1: modular system based on a 40mm grid to modular system on a 40 mm grid"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:69-71` "Grid beam is a modular system on a 40 mm grid." (bold "modular system on a 40&nbsp;mm grid").
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

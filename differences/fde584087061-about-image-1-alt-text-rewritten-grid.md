@@ -1,6 +1,6 @@
 ---
 title: About image 1 alt text rewritten (grid)
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:75` "A 40 mm × 40 mm grid square highlighted on a larger grid background."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Caption 3: beam profile sentence rewritten"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:99-102` "Beam profiles are 40 × 40 mm with a repeating pattern of 8 mm holes drilled 40 mm apart."
 
 ## Verdict
+
+plan 51766466
 
 ## Log
 
