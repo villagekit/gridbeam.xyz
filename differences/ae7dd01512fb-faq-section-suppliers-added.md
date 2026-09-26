@@ -1,6 +1,6 @@
 ---
 title: FAQ section heading Suppliers added
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section.
 `app/faq/page.tsx:178-215` `heading: 'Suppliers'`, `slug: 'suppliers'`, a new category of four questions; each question and answer is its own item on this route.
 
 ## Verdict
+
+plan b52b62e2
 
 ## Log
 

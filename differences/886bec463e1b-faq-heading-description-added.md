@@ -1,6 +1,6 @@
 ---
 title: FAQ heading description added
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/faq/page.tsx:289-291` `description="Common questions about grid beam, the 40 mm grid, and where to find parts."` (`audit/faq/dom/current.aria.yaml`: a paragraph between the h1 and the first region).
 
 ## Verdict
+
+plan b52b62e2
 
 ## Log
 

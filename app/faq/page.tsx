@@ -3,13 +3,8 @@ import type { Metadata } from 'next'
 import NextLink from 'next/link'
 import type { ReactNode } from 'react'
 
-const title = 'FAQ'
-const description =
-  'Frequently asked questions about grid beam — what it is, how to build with it, where to find parts.'
-
 export const metadata: Metadata = {
-  title,
-  description,
+  title: 'FAQ',
 }
 
 interface FaqEntry {
@@ -159,45 +154,6 @@ const categories: Array<FaqCategory> = [
     ],
   },
   {
-    heading: 'Suppliers',
-    slug: 'suppliers',
-    entries: [
-      {
-        question: 'How do I find a supplier?',
-        answer: (
-          <>
-            See the{' '}
-            <Link as={NextLink} variant="paragraph" href="/suppliers">
-              suppliers page
-            </Link>{' '}
-            — we list manufacturers and resellers that make grid beam, panels, and compatible
-            fasteners. Each listing says where the supplier is based, what they stock, and which
-            profile it is, so you know what mixes with what.
-          </>
-        ),
-      },
-      {
-        question: "Why doesn't gridbeam.xyz sell parts?",
-        answer:
-          'gridbeam.xyz is a non-commercial educational site. We catalogue designs, point at suppliers, and host tools. Selling hardware is a different job, and the suppliers we link do it well.',
-      },
-      {
-        question: 'Can I make my own beams and panels?',
-        answer:
-          'Yes. Beams are a 40 × 40 mm profile with 8 mm holes drilled at 40 mm centres along the length. Panels are sheet stock with the same 40 mm hole grid drilled across both dimensions. Any milling and drilling shop can produce them — and many builders do, for the cost saving and the satisfaction.',
-      },
-      {
-        question: "A supplier near me isn't listed. Can I add them?",
-        answer: (
-          <>
-            Yes — the suppliers page explains the submission process. We're keen to add any
-            legitimate supplier of 40 mm grid beam or panels.
-          </>
-        ),
-      },
-    ],
-  },
-  {
     heading: 'Other',
     slug: 'other',
     entries: [
@@ -213,52 +169,6 @@ const categories: Array<FaqCategory> = [
           </>
         ),
       },
-      {
-        question: 'How do I add a design or story to the site?',
-        answer: (
-          <>
-            The catalogue and stories are open-source. The designs live in{' '}
-            <Link
-              variant="paragraph"
-              href="https://github.com/villagekit/products"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              villagekit/products
-            </Link>
-            ; the site itself lives in{' '}
-            <Link
-              variant="paragraph"
-              href="https://github.com/villagekit"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              villagekit
-            </Link>{' '}
-            on GitHub. Pull requests welcome.
-          </>
-        ),
-      },
-      {
-        question: 'Where can I discuss grid beam with other builders?',
-        answer: (
-          <>
-            <Link
-              variant="paragraph"
-              href="https://discuss.villagekit.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              discuss.villagekit.com
-            </Link>{' '}
-            — the community forum. If you'd rather email,{' '}
-            <Link as={NextLink} variant="paragraph" href="/contact">
-              contact us
-            </Link>{' '}
-            and we'll point you at the right thread.
-          </>
-        ),
-      },
     ],
   },
 ]
@@ -267,9 +177,7 @@ export default function FaqPage() {
   return (
     <>
       <Section index={0} maxW="6xl">
-        <Title description="Common questions about grid beam, the 40 mm grid, and where to find parts.">
-          Frequently asked questions
-        </Title>
+        <Title>Frequently asked questions</Title>
         <Container maxW="3xl">
           <VStack alignItems="stretch" gap="12">
             {categories.map((category) => (

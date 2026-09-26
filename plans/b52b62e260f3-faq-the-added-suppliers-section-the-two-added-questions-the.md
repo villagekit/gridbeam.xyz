@@ -1,6 +1,6 @@
 ---
 title: "FAQ: the added Suppliers section, the two added questions, the description line and the per-page metadata removed"
-status: todo
+status: done
 parent: 7f0b60d948c5
 derived_from: 7f0b60d948c5
 blocked_by: ffe8e5d56f8e
@@ -32,5 +32,11 @@ None pure; the proof is the served HTML and the DOM pair.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as scoped. app/faq/page.tsx: deleted the Suppliers category and its four questions, the two added Other questions (How do I add a design or story to the site?, Where can I discuss grid beam with other builders?), the Title description prop, and the title and description consts; metadata is title: 'FAQ' with no description, so the layout renders Grid Beam: FAQ and its default description. No import became unused. The nine items on /faq are fixed with outcome "plan b52b62e2". The bump plan 99f2fe62c62f has the note that /faq leaves the Description probe's list.
+
+Proof, against a running pnpm dev: the grep for the removed copy printed 0; the title is Grid Beam: FAQ and the meta description is the layout default; pnpm audit:dom shows current.txt between nav and footer as the heading, three section headings, fourteen questions and the closing line, nineteen lines. Dev stopped by pid, then timeout 900 just check exited 0; kipu verify --warnings-as-errors green. No visual gate: the removals are covered by the DOM pair.
+
+Reviewed on a fresh Opus sub-agent (Standards, Spec, Parity): no critical or major findings. Nit dropped: the bump note's "three CardsLayout routes" wording is the earlier note's own; the stale Current text of e91809d5069d about openGraph and twitter descriptions is moot now the item is fixed.
 
 ## Log
