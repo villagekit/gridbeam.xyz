@@ -1,6 +1,6 @@
 ---
 title: "Badge text: Chakra v3's user-select none and tabular numerals kept over v2's selectable text and normal numerals"
-status: regression
+status: upstream
 route: shell
 axis: interaction
 kind: added
@@ -19,3 +19,5 @@ Chakra v3's badge recipe base writes `userSelect: none` and `fontVariantNumeric:
 ## Log
 
 - 2026-09-26: At the about record's finish (plan [[40179ab9e779]]), found owned by no slice and no verdicts plan (filed by the recipes slice [[2bd0169a6dda]] after the shell's verdicts plan [[77cf83a1285a]] and the home's finish were written): the fix in ../ui is the slice [[a4f938a27428]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]), two declarations in src/components/Badge.recipe.ts; the slice moves this item to upstream with the sibling commit (decision 28c1a536).
+
+- 2026-09-26: Fixed in ../ui by the Badge slice [[a4f938a27428]], ui commit f8b772f on its main: badgeRecipe's base writes userSelect auto and fontVariantNumeric normal over Chakra v3's none and tabular-nums. Under the file:../ui override the first /stories card badge reads auto and normal and a drag from the page margin across it selects its text, the live legacy site's readings (the scratchpad's badge-probe.mjs, badge-after.json against badge-legacy.json); the /designs option keeps user-select none by the route's own prop, as legacy's option.tsx wrote it. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.
