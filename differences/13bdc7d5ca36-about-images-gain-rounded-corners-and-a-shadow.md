@@ -1,6 +1,6 @@
 ---
 title: About images gain rounded corners and a shadow
-status: regression
+status: fixed
 route: /about
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/about/page.tsx:229-242` `AboutPhoto` `borderRadius="xl" overflow="hidden" boxShadow="md"`; `audit/about/1280/current.png`.
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log

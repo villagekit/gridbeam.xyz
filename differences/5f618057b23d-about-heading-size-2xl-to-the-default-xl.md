@@ -1,6 +1,6 @@
 ---
 title: "About heading size: 2xl to the default xl"
-status: regression
+status: fixed
 route: /about
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/about/page.tsx:44` `<Title>` with no `size`, so the `xl` default (`node_modules/@villagekit/ui/src/components/Heading.tsx:61-63`); smaller in `audit/about/1280/current.png`.
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log

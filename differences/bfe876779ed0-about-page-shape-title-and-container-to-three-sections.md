@@ -1,6 +1,6 @@
 ---
 title: "About page shape: Title and Container to three Sections"
-status: regression
+status: fixed
 route: /about
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:43-217` three `<Section index={n} maxW="6xl">` each with a `Title`, the first holding `<Container maxW="3xl">`; the sections are unlabelled `<section>` elements (`node_modules/@villagekit/ui/src/components/layouts/Section.tsx:83,96-97`).
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log
 

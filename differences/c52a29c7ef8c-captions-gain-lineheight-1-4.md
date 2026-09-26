@@ -1,6 +1,6 @@
 ---
 title: Captions gain lineHeight 1.4
-status: regression
+status: fixed
 route: /about
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/about/page.tsx:245-250` `<Text fontSize={{ base: 'xl', md: '2xl' }} lineHeight="1.4" textAlign="center">`.
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log

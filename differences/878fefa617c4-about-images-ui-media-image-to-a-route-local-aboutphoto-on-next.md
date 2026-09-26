@@ -1,6 +1,6 @@
 ---
 title: "About images: ui-media Image to a route-local AboutPhoto on next/image fill"
-status: regression
+status: fixed
 route: /about
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:18,229-243` `AboutPhoto`: `<Box aspectRatio=...><NextImage src alt fill sizes="(min-width: 768px) 48rem, 100vw" /></Box>`, bypassing the ui `Image` (`node_modules/@villagekit/ui/src/components/media/Image.tsx`).
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log
 

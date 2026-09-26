@@ -1,6 +1,6 @@
 ---
 title: "About column gap: 8 to 8/10"
-status: regression
+status: fixed
 route: /about
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/about/page.tsx:49` `<VStack alignItems="stretch" gap={{ base: 8, md: 10 }}>`.
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log

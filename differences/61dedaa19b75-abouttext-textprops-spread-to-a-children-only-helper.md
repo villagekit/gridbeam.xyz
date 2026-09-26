@@ -1,6 +1,6 @@
 ---
 title: "AboutText: TextProps spread to a children-only helper"
-status: regression
+status: fixed
 route: /about
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:245-250` `function AboutText(props: { children: ReactNode })` with fixed props.
 
 ## Verdict
+
+plan 97e702d4
 
 ## Log
 
