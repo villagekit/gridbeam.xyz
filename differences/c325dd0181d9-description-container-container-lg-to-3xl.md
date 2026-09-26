@@ -1,6 +1,6 @@
 ---
 title: "Description container: container.lg to 3xl"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed from the Parity review of the Title slice [[728a36aedc8c]], which fixed the sibling component's heading container ([[318456ddabc6]]) and scoped this one out; no shell item named it (the earlier Description items are per-route: [[8661edb0bbc8]] cites the legacy width). The ui is first-party (CLAUDE.md, Principles), so the fix is one line in ../ui, src/components/layouts/Description.tsx:18 to maxW="breakpoint-lg", by the ui slice [[c06d8381c4b5]] minted beside the shell record (decision 40abdb2f222a, blocking the bump plan [[99f2fe62c62f]]); it then parks in upstream until the bump (decision 28c1a536). Never fixed in a route.
+
+- 2026-09-26: Fixed in ../ui by the Description slice [[c06d8381c4b5]], ui commit 8f85a7c on its main: Description's Container is maxW breakpoint-lg (1024px), Chakra v3's size token for the lg breakpoint, the width legacy's container.lg wrote; under the file:../ui override the container reads max-width 1024px at 1280, 768 and 375 on /tools/cutting-planner, /stories/how-to-furniture-bolts, /faq and /stories, the live legacy site's reading, and the planner's description at 1280 is 992 by 27, legacy's sizes. Waiting on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed (decision 28c1a536).
