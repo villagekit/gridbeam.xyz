@@ -1,6 +1,6 @@
 ---
 title: Filter selected state exposed with aria-pressed
-status: regression
+status: fixed
 route: /stories
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/stories/StoriesBrowser.tsx:99-101` `aria-pressed={selected}`; `audit/stories/dom/current.aria.yaml:25` `button "All" [pressed]`.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

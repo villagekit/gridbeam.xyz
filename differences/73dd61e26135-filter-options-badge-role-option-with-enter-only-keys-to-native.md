@@ -1,6 +1,6 @@
 ---
 title: "Filter options: Badge role option with Enter-only keys to native toggle buttons"
-status: regression
+status: fixed
 route: /stories
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:57-62,95-131` an `HStack` with no role holding `<chakra.button type="button" aria-pressed={selected}>` x4; `audit/stories/dom/current.aria.yaml:25-28`.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

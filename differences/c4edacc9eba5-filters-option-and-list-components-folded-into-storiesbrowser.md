@@ -1,6 +1,6 @@
 ---
 title: Filters, Option and List components folded into StoriesBrowser
-status: regression
+status: fixed
 route: /stories
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:56-132` the chip row, a local `FilterChip` on `chakra.button` and the grid in one file; keys by `story.metadata.slug` (`:76`).
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Stories state: constate context with use-query-params to a client component with url-state"
-status: regression
+status: fixed
 route: /stories
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:1,29-53` `'use client'`, `useSearchParams`, a `useMemo` filter and a `useCallback` setter over `replaceUrl`/`withSearchParams` (`app/_lib/url-state.ts:17-30`); no context module.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

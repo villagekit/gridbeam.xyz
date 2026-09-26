@@ -1,6 +1,6 @@
 ---
 title: "Filter chips: Inspiration before Newsletters to Newsletters before Inspiration"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:22-27` `FILTERS` in the order all, guide, newsletter, inspiration; `audit/stories/dom/current.txt:13-16`. The tab order follows (`audit/stories/dom/current.aria.yaml:25-28`).
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

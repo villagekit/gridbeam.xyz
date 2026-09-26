@@ -1,6 +1,6 @@
 ---
 title: Breakpoint hooks to responsive style props on the stories index
-status: regression
+status: fixed
 route: /stories
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:56,60,74,113` responsive objects (`{ base, md }`) throughout.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

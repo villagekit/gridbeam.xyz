@@ -1,6 +1,6 @@
 ---
 title: "Story grid gap: 12 at every width to 10/12"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:74` and `app/stories/StoriesStatic.tsx:18` `gap={{ base: 10, md: 12 }}`. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

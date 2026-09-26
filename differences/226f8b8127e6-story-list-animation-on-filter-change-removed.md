@@ -1,6 +1,6 @@
 ---
 title: Story list animation on filter change removed
-status: regression
+status: fixed
 route: /stories
 axis: interaction
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/stories/StoriesBrowser.tsx:74-78` `filteredStories.map(...)` in a plain `SimpleGrid`; no motion, no transition. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

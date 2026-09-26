@@ -1,6 +1,6 @@
 ---
 title: "Filter chip size and gap: Badge sm/lg with gap 2/4 to fontSize sm/md, px 3 py 1, gap 2/3"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:60-61,113-118` `gap={{ base: 2, md: 3 }} flexWrap="wrap"`, `fontSize={{ base: 'sm', md: 'md' }}`, `px="3" py="1"`. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

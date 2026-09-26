@@ -1,6 +1,6 @@
 ---
 title: "Filter change: a history entry to a replaced URL, so Back no longer undoes it"
-status: regression
+status: fixed
 route: /stories
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:38-48` `replaceUrl(...)`; `app/_lib/url-state.ts:12-19` `window.history.replaceState` with the comment "replace, never push": Back leaves the page.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

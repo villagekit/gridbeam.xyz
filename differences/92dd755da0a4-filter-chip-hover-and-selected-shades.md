@@ -1,6 +1,6 @@
 ---
 title: Filter chip hover and selected shades
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:104-105,120-124` selected `bg: 'colorPalette.50'`, `borderColor: 'colorPalette.300'`; hover the same `.50` and `.300`. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

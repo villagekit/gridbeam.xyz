@@ -1,6 +1,6 @@
 ---
 title: "Filters-to-grid spacing: 8/16 to 6/10"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:56` `<VStack gap={{ base: 6, md: 10 }} alignItems="stretch">`. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log

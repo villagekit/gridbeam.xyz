@@ -18,3 +18,5 @@ Filed at the split of the stories index record (plan `ca353de8b645`), for the pa
 ## Log
 
 - 2026-09-26: Filed at the split of the stories index record [[ca353de8b645]] for the page re-port [[278fb531e229]] to meet (the two files exist once it ships; its Done when notes their paths here), and handed to the operator on the attended verdicts plan [[239f17128896]] (decision 40abdb2f222a); the state stays until the operator judges it.
+
+- 2026-09-26: Shipped by the page re-port (plan [[278fb531e229]]) in legacy's form, no verdict having landed: app/stories/page.tsx (11 lines, the server file: metadata title Stories at lines 5-7 and the default export rendering StoriesPage at lines 9-11) and app/stories/StoriesPage.tsx (30 lines, the client file under the ported-from header: useBreakpointValue at line 10, StoriesContextProvider around the Title, the Container 8xl, the menubar Box and the VStack of Filters and List at lines 13-28). The state stays open for the operator on [[239f17128896]].

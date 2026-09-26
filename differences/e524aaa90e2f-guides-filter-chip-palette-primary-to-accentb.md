@@ -1,6 +1,6 @@
 ---
 title: "Guides filter chip palette: primary to accentB"
-status: regression
+status: fixed
 route: /stories
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:24` `{ value: 'guide', label: 'Guides', palette: 'accentB' }`. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
 

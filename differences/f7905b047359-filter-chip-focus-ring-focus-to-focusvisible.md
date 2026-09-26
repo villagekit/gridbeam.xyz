@@ -1,6 +1,6 @@
 ---
 title: "Filter chip focus ring: _focus to _focusVisible"
-status: regression
+status: fixed
 route: /stories
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/stories/StoriesBrowser.tsx:126` `_focusVisible={{ outline: 'none', boxShadow: 'outline' }}`, keyboard focus only. From code.
 
 ## Verdict
+
+plan 278fb531
 
 ## Log
