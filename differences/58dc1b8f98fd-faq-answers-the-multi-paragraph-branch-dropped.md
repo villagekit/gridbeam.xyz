@@ -1,6 +1,6 @@
 ---
 title: "FAQ answers: the multi-paragraph branch dropped"
-status: regression
+status: fixed
 route: /faq
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/faq/page.tsx:34` `answer: ReactNode`; `:322` always one `<Text>{entry.answer}</Text>`. No current answer has more than one paragraph (the merged paragraphs are copy items).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log

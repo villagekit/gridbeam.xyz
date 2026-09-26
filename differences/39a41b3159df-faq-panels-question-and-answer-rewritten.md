@@ -1,6 +1,6 @@
 ---
 title: FAQ panels question and answer rewritten
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:113,115` "How do I use panels?": "Bolt panels onto beams using the same 40 mm hole grid. Panels become shelves, doors, work surfaces, walls — anything flat. The catalogue has examples of every common pattern."
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

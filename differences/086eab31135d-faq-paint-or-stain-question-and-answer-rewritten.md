@@ -1,6 +1,6 @@
 ---
 title: FAQ paint or stain question and answer rewritten
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:103,105` "Can I paint or stain the wood?": "Yes — untreated wood beams take stain and paint well. Many builders leave them raw for the lighter, blonder look."
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: FAQ closing line reworded and its link labels shortened
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:332-345` "Question not answered here? Send us an email or ask on the community forum." (links "Send us an email", "community forum"; "or ask on the" is plain text).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

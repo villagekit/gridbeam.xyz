@@ -1,6 +1,6 @@
 ---
 title: FAQ Is the wood treated? answer rewritten
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:98,100` "Most suppliers ship untreated wood for indoor use. If you want to use grid beam outdoors, treat it yourself with an appropriate finish."
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "FAQ: the copy verdicts applied on the sections, the questions, the answers and the closing line"
-status: todo
+status: done
 parent: 7f0b60d948c5
 derived_from: 7f0b60d948c5
 blocked_by: b52b62e260f3
@@ -52,5 +52,7 @@ None pure; the proof is the copy diff of the DOM pair and the served HTML.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Applied on app/faq/page.tsx: three categories (Product, Sustainability, Support), fifteen questions in legacy's order with the verdict text, the closing line with no full stop, and legacy's array branch for answers (FaqEntry.answer is ReactNode | Array<ReactNode>). Typographic apostrophes as legacy wrote them; one straight apostrophe in "it's limited", as legacy. Proof: audit:dom current.txt reads the twenty lines the plan names between the nav and the footer; the served-HTML check printed 8; grep counts: 3 slugs, 3 em dashes, 4 typographic apostrophes, 1 Array.isArray, 1 handkrafted.com; timeout 900 just check exited 0. Lines that differ from legacy.txt map to the nineteen items. 58dc1b8f98fd had no verdict Log line, so it was closed by the default rule. The quoted link label is written as a JS string expression, a cosmetic form the re-port can replace with plain text. The biome-ignore comment carries a reason. An Opus review found no blocking findings and no unrecorded difference.
 
 ## Log

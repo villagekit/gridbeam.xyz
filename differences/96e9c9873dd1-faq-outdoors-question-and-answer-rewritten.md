@@ -1,6 +1,6 @@
 ---
 title: FAQ outdoors question and answer rewritten
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:108,110` "Can I use grid beam outdoors?": "With a finish applied, yes. Untreated indoor-grade wood will degrade outdoors quickly. Aluminium beams (where available from a supplier) handle weather without treatment."
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

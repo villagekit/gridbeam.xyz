@@ -1,6 +1,6 @@
 ---
 title: FAQ special tools question and answer reworded
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:64,67-73` "Do I need any special tools to assemble it?": "No special tools — basic hand tools and a 4 mm hex key are enough for almost every build. A measuring tape and a saw if you're cutting beams to length yourself. For help on assembly, see our guide How to Install Furniture Bolts." (link "How to Install Furniture Bolts", unquoted).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: FAQ custom design answer rewritten, link label shortened
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:222,225-230` "Get in touch. We're happy to discuss new designs, especially if you're willing to publish them back to the catalogue under EUPL-1.2." (link "Get in touch" to `/contact`).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

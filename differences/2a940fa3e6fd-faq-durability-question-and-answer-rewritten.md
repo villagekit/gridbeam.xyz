@@ -1,6 +1,6 @@
 ---
 title: FAQ durability question and answer rewritten
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:93,95` "How durable are grid beams?": "Grid beam is built to be repaired rather than to never fail. Three beams joined with three bolts make a rigid corner in all three axes, and a damaged beam gets replaced on its own — the rest of the build stays in service."
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

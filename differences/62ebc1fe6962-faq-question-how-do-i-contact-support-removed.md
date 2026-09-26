@@ -1,6 +1,6 @@
 ---
 title: FAQ question How do I contact support? removed
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 No equivalent question in `app/faq/page.tsx`; the closing line "Question not answered here? Send us an email..." (`:332-345`) is the nearest text and has its own item.
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

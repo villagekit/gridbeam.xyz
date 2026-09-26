@@ -1,6 +1,6 @@
 ---
 title: FAQ add-ons question and two-paragraph answer rewritten as one, link label changed
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:118,120-133` "What add-ons exist?": "A small but growing ecosystem: connector brackets, wheels, hooks, replacement caps. Some are off-the-shelf from the suppliers; others are 3D-printable from open repositories like villagekit/replicad-models." (link "villagekit/replicad-models", same href).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

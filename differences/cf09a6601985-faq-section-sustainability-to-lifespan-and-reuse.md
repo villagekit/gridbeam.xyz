@@ -1,6 +1,6 @@
 ---
 title: FAQ section Sustainability to Lifespan and reuse
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:149-176` `heading: 'Lifespan and reuse'`, `slug: 'lifespan'` (2 questions: recycling and sustainability); the other two moved to The system.
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

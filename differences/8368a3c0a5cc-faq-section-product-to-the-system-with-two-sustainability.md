@@ -1,6 +1,6 @@
 ---
 title: FAQ section Product to The system, with two Sustainability questions moved in
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:44-147` `heading: 'The system'`, `slug: 'system'` (11 questions): the nine kept Product questions plus "What can I make with it?" and "What does "modular" actually mean here?" (`:137,142`).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

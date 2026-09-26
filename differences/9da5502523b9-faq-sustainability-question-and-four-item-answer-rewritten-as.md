@@ -1,6 +1,6 @@
 ---
 title: FAQ sustainability question and four-item answer rewritten as one paragraph, the Australia link dropped
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:158,160-173` "What makes it sustainable?": "The U.S. EPA estimates nearly 12 million U.S. tons of furniture waste is disposed of each year, with 9.6 million tons reaching landfill. Grid beam is built around reuse: the same parts move from one project to the next instead of becoming waste. There's no glue, no foam, no laminated particle board — just bolts, beams, and panels." (the EPA link's label and href unchanged).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

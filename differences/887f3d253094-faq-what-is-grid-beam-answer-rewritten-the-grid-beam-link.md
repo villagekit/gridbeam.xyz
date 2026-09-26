@@ -1,6 +1,6 @@
 ---
 title: FAQ What is grid beam? answer rewritten, the Grid Beam link dropped
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:52-60` "Grid beam is a modular construction system: identical beams drilled with regularly-spaced holes that bolt together with a hex key. Developed by Phil and Richard Jergenson in the 1970s, building on the open-construction work of Ken Isaacs; this site catalogues the 40 mm flavour. Learn more." (link "Learn more" to `/about`, the full stop outside; no Grid Beam link).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: FAQ What can I make question and answer rewritten, the Grid Beam link dropped
-status: regression
+status: fixed
 route: /faq
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:137,139` "What can I make with it?": "Practically anything that bolts together: beds, desks, shelves, kitchens, market stalls, even bicycles and trailers. The Jergensons' original grid beam covered that whole range." (no link).
 
 ## Verdict
+
+plan 241b65da8226
 
 ## Log
 
