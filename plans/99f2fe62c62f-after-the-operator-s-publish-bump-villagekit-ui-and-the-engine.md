@@ -29,6 +29,8 @@ blocked_by:
     note: a sibling fix the publish must carry
   - target: c06d8381c4b5
     note: a sibling fix the publish must carry
+  - target: aff1c5f9a5f2
+    note: a sibling fix the publish must carry
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -106,3 +108,5 @@ None.
 - 2026-09-26: From the faq removals slice (plan [[b52b62e260f3]]): the Description note of [[c06d8381c4b5]] lists /faq among the routes its probe reads the Description container on. The page renders no Description after this slice, as legacy's Title had none, so /faq leaves that probe's list: the probe reads /tools/cutting-planner, /stories/how-to-furniture-bolts and /stories, the routes legacy renders a description on, plus /legal, /tools-and-resources and /subscribe, the three CardsLayout routes.
 
 - 2026-09-26: From the faq page re-port (plan [[bba2bb35f208]]): the two isExternal anchors on /faq. app/faq/page.tsx:113-118 (The U.S. EPA estimates, legacy faq.tsx:186-190) and :214 (ask on the community forum, legacy :380) become <Link href={...} isExternal> with their target and rel attributes dropped; the repository and Australia anchors stay as they are, plain Link href in the same tab. The checks: grep -c noreferrer app/faq/page.tsx prints 0, and curl -s localhost:3000/faq | grep -o '<a [^>]*noopener[^>]*>' reads rel="noopener" on the EPA and forum anchors and on no other anchor of the page body; then kipu fix [[154bcd2abdfb]]. The accordion probe of the faq split's note above now applies as written: the route writes no paddingY after this slice, so on /faq at 1280 a trigger reads 8px above and below at weight 500 and an open body 8px above and 16px below until the publish.
+
+- 2026-09-26: From the faq record finish (plan [[7f0b60d948c5]]): one more blocker joins this plan, [[aff1c5f9a5f2]] (worker:fable), the accordion trigger textAlign and the indicator color, size and glyph in ../ui Accordion.recipe.ts and, for the glyph, the Accordion wrapper ([[c7ffae735176]], [[2cc5b00fb582]]); no site edit for it, and what the bump checks on /faq is that slice's own probe repeated on the published package (every trigger text-align center, the wrapped questions centered at 375, every indicator 20px in rgb(26, 32, 44) with a filled path), then kipu fix on both. The accordion probe of the faq split's note above still applies beside it.

@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by the Parity review of the faq page re-port (plan [[bba2bb35f208]]), which removed the route's textAlign on the label ([[55b8453f7512]]) and uncovered the recipe's value. No rule covers a left-aligned wrapped question where legacy centered it: Chakra v3 writes the value, but the ui recipe can reset it, so it is not upgrade-forced. Regression on shell; the fix is a line in ../ui's Accordion.recipe.ts (itemTrigger textAlign center, or the button default), a ui slice beside the shell record, not the faq route's.
+
+- 2026-09-26: Handed to the ui slice [[aff1c5f9a5f2]] minted beside the shell record [[a78b167170b8]] at the finish of the faq record [[7f0b60d948c5]] (decision 40abdb2f222a): itemTrigger textAlign center in ../ui/src/components/Accordion.recipe.ts, one slice with [[2cc5b00fb582]], the same recipe; the state stays regression until the sibling commit moves it to upstream.
