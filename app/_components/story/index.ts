@@ -1,5 +1,4 @@
 export { StoryColumn } from './StoryColumn'
-export { StoryEditorialNote } from './StoryEditorialNote'
 export { StoryImage } from './StoryImage'
 export { StoryImageGrid } from './StoryImageGrid'
 export { StoryRow } from './StoryRow'

@@ -1,6 +1,6 @@
 ---
 title: StoryEditorialNote component and the originallyPublishedOn field added
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: added
@@ -14,6 +14,8 @@ No note component under `apps/gridkit/components/story/`; no such field on `Stor
 `app/_components/story/StoryEditorialNote.tsx:1-50` a dashed `accentB` box with an info icon, `role="note" aria-label="Editor's note"`; `app/_lib/stories.ts:51` `originallyPublishedOn?: 'gridkit.nz'`; `app/stories/[slug]/page.tsx:92-96` the byline clause. Used on /stories/building-with-grid-kit, /stories/2021-winter-newsletter and /stories/2022-newsletter.
 
 ## Verdict
+
+plan 9f174b0d4c72
 
 ## Log
 

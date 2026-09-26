@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-12: Story page template; filed where first met.
 
 - 2026-09-12: Story page template: shared by the six story routes (/stories/whats-a-grid-unit, /stories/how-to-cut-grid-beams, /stories/how-to-furniture-bolts, /stories/building-with-grid-kit, /stories/2021-winter-newsletter, /stories/2022-newsletter); filed here where first met.
+
+- 2026-09-26: Plan 9f174b0d4c72 deleted StoryEditorialNote.tsx; the component set no longer holds it.

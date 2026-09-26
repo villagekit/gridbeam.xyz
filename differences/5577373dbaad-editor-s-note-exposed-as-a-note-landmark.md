@@ -1,6 +1,6 @@
 ---
 title: Editor’s note exposed as a note landmark
-status: regression
+status: fixed
 route: /stories/building-with-grid-kit
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ No note.
 `app/_components/story/StoryEditorialNote.tsx:23-24` `role="note" aria-label="Editor's note"`; `:38-48` the icon is `aria-hidden` yet carries an svg `<title>Editor's note</title>`; `audit/stories__building-with-grid-kit/dom/current.aria.yaml:58-60` `note "Editor's note"`.
 
 ## Verdict
+
+plan 9f174b0d4c72
 
 ## Log
 

@@ -1,4 +1,4 @@
-import { Box, Container, ContentMainTocLayout, HStack, Span, Text, Title } from '@villagekit/ui'
+import { Box, Container, ContentMainTocLayout, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -48,14 +48,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
   if (story == null || story.Content == null) notFound()
 
   const { metadata, Content } = story
-  const { title, description, image, showImageInStory, publishedAt, originallyPublishedOn } =
-    metadata
-
-  const formattedPublished = new Date(publishedAt).toLocaleDateString('en-NZ', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+  const { title, description, image, showImageInStory } = metadata
 
   return (
     <ContentMainTocLayout>
@@ -65,17 +58,6 @@ export default async function StoryPage({ params }: StoryPageProps) {
             <Title as="h1" hasAnchor description={description}>
               {title}
             </Title>
-
-            <HStack justifyContent="center" gap="2" mb="4">
-              <Text fontSize="sm" variant="tertiary">
-                {formattedPublished}
-              </Text>
-              {originallyPublishedOn != null && (
-                <Text fontSize="sm" variant="tertiary">
-                  · originally on <Span fontWeight="medium">{originallyPublishedOn}</Span>
-                </Text>
-              )}
-            </HStack>
 
             {showImageInStory && (
               <Box mt="4" mb="12" maxW="3xl" mx="auto">

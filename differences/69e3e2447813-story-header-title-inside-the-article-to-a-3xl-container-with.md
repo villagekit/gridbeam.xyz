@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Story page template, six routes; filed where first met.
+
+- 2026-09-26: Plan 9f174b0d4c72 removed the date HStack from the page; the Current text no longer lists it.

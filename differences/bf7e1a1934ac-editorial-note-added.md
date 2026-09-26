@@ -1,6 +1,6 @@
 ---
 title: Editorial note added
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No equivalent block in `apps/gridkit/pages/stories/2021-winter-newsletter.mdx`.
 `content/stories/2021-winter-newsletter.mdx:31-33` "Originally published in winter 2021 on gridkit.nz by the Village Kit team. Republished here as a historical record. Where this post says "Grid Kit", the same idea applies to grid beam more generally — the system is what it always was; only the brand has moved."; `audit/stories__2021-winter-newsletter/dom/current.txt:12`.
 
 ## Verdict
+
+plan 9f174b0d4c72
 
 ## Log
 

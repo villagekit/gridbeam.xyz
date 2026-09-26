@@ -1,6 +1,6 @@
 ---
 title: "Story pages: the editorial notes, the originally-on byline, the publish date and their component and field removed"
-status: todo
+status: done
 parent: 56e6eb197e6c
 derived_from: 56e6eb197e6c
 tags:
@@ -33,5 +33,9 @@ None pure; the proof is the copy diff of the DOM pairs and the browser console.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as planned. The three historical posts lost the `StoryEditorialNote` block, its import and the `originallyPublishedOn` line; `StoryEditorialNote.tsx` and its barrel line, the `originallyPublishedOn` field on `StoryMetadata`, and the [slug] page's byline block (`formattedPublished`, the `HStack` with its two `Text` nodes, the unused `HStack`, `Span` and `Text` imports) are deleted. No other character of the MDX changed.
+
+Proof: before, the grep for `StoryEditorialNote|originallyPublishedOn` over app and content printed 19 lines; after, 0, and `toLocaleDateString` under app/stories and content prints 0. `pnpm audit:dom` over the six story routes (12 of 12 captures ok): no `current.txt` holds `originally on`, `historical record` or any of the six dates, and no `current.aria.yaml` holds a note landmark. The `<p>` inside a `<p>` came from the deleted component, so it goes with it; the browser console was not read, and the dev server log shows no hydration line. On `/stories/building-with-grid-kit` current.txt runs title, description, Contents with no added line between them. The nine items are fixed. `timeout 900 just check` exited 0. No deviations; no `../ui` change.
 
 ## Log

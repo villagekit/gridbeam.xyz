@@ -38,7 +38,6 @@ export type StoryMetadata = {
   external?: { url: string }
   publishedAt: string
   updatedAt: string
-  originallyPublishedOn?: 'gridkit.nz'
 }
 
 export const StoryCategoryColors: Record<StoryCategory, string> = {
