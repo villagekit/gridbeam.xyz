@@ -45,3 +45,7 @@ None pure; the proof is the build's route table, the DOM pairs, a probe of the l
 ## Outcome
 
 ## Log
+
+- 2026-09-26: From the fields slice (plan 52adacea5b2f): with image typed as legacy's RasterImagePropsWithOptionalSizes, the expression getCloudinaryUrl({ src: image.src, width: 1200 }) this plan writes for getStoryPageMetadata fails tsc (TS2322, the local member's src admits a StaticImport). The transient [slug] page writes image.src as string, legacy's own cast on the cloudinary branch of ui-media/src/image.tsx:141, and the helper needs the same.
+
+- 2026-09-26: From the Parity review of the fields slice (plan [[52adacea5b2f]]): legacy's NextSeo block also writes type: image/jpeg on the article image (layouts/stories.tsx:47), which the current generateMetadata never did; filed as [[6401346644c2]] (regression, code, removed), for getStoryPageMetadata to close with the line. Its sibling [[45fca45340c8]] (the article times' dependency on the build machine's timezone) is the release milestone's, not this plan's.

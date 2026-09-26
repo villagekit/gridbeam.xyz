@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
   const { title, description, shortDescription, image, publishedAt, updatedAt, category } =
     story.metadata
   const summary = shortDescription ?? description
-  const ogImageUrl = getCloudinaryUrl({ src: image.src, width: 1200 })
+  const ogImageUrl = getCloudinaryUrl({ src: image.src as string, width: 1200 })
 
   return {
     title,
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
     openGraph: {
       ...siteOpenGraph,
       type: 'article',
-      publishedTime: publishedAt,
-      modifiedTime: updatedAt,
+      publishedTime: publishedAt.toISOString(),
+      modifiedTime: updatedAt.toISOString(),
       tags: [category],
       images: [{ url: ogImageUrl, alt: image.alt }],
     },
@@ -61,14 +61,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
             {showImageInStory && (
               <Box mt="4" mb="12" maxW="3xl" mx="auto">
-                <StoryImage
-                  type="cloudinary"
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  priority
-                />
+                <StoryImage {...image} priority />
               </Box>
             )}
           </Box>

@@ -1,4 +1,5 @@
 // ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/stories.ts
+import type { RasterImagePropsWithOptionalSizes } from '@villagekit/ui'
 import type { ComponentType } from 'react'
 
 import TwentyTwentyOneWinterNewsletter, {
@@ -27,17 +28,12 @@ export type StoryMetadata = {
   description?: string
   shortDescription?: string
   category: StoryCategory
-  slug: string
-  image: {
-    src: string
-    alt: string
-    width: number
-    height: number
-  }
+  url: string
+  image: RasterImagePropsWithOptionalSizes
   showImageInStory?: boolean
-  external?: { url: string }
-  publishedAt: string
-  updatedAt: string
+  isExternal?: boolean
+  publishedAt: Date
+  updatedAt: Date
 }
 
 export const StoryCategoryColors: Record<StoryCategory, string> = {
@@ -55,15 +51,14 @@ const linkedStories: Array<StoryMetadata> = [
       alt: 'Modular system for DIY builds',
       height: 960,
       src: 'v1/gridkit.nz/stories/linked-articles/grid-beam-modular-system-builds-anything-furniture-to-bikes_dlfnrf.jpg',
+      type: 'cloudinary',
       width: 1280,
     },
-    external: {
-      url: 'https://faircompanies.com/videos/minecraft-for-life-a-modular-system-to-build-your-own-world/',
-    },
-    publishedAt: '2017-09-17',
+    isExternal: true,
+    publishedAt: new Date('2017/09/17'),
     title: 'Grid Beam modular system builds anything, furniture to bikes',
-    updatedAt: '2021-09-29',
-    slug: 'external-faircompanies-grid-beam-builds-anything',
+    updatedAt: new Date('2021/09/29'),
+    url: 'https://faircompanies.com/videos/minecraft-for-life-a-modular-system-to-build-your-own-world/',
   },
   {
     category: 'inspiration',
@@ -72,15 +67,14 @@ const linkedStories: Array<StoryMetadata> = [
       alt: 'Ken Isaacs, Beach Matrix, installation view in Westport, Connecticut, c. 1967. Photo courtesy the artist',
       height: 1336,
       src: 'v1/gridkit.nz/stories/linked-articles/enter-the-matrix-an-interview-with-ken-isaacs_kjd89r.jpg',
+      type: 'cloudinary',
       width: 2048,
     },
-    external: {
-      url: 'https://walkerart.org/magazine/enter-matrix-interview-ken-isaacs',
-    },
-    publishedAt: '2015-11-16',
+    isExternal: true,
+    publishedAt: new Date('2015/11/16'),
     title: 'Enter the Matrix: An Interview with Ken Isaacs',
-    updatedAt: '2021-09-29',
-    slug: 'external-walker-art-isaacs-interview',
+    updatedAt: new Date('2021/09/29'),
+    url: 'https://walkerart.org/magazine/enter-matrix-interview-ken-isaacs',
   },
   {
     category: 'inspiration',
@@ -89,15 +83,14 @@ const linkedStories: Array<StoryMetadata> = [
       alt: 'Open source consumer goods',
       height: 605,
       src: 'v1/gridkit.nz/stories/linked-articles/how-to-make-everything-ourselves-open-modular-hardware_nfklfe.jpg',
+      type: 'cloudinary',
       width: 750,
     },
-    external: {
-      url: 'https://www.lowtechmagazine.com/2012/12/how-to-make-everything-ourselves-open-modular-hardware.html',
-    },
-    publishedAt: '2012-12-15',
+    isExternal: true,
+    publishedAt: new Date('2012/12/15'),
     title: 'How to Make Everything Ourselves: Open Modular Hardware',
-    updatedAt: '2021-09-29',
-    slug: 'external-lowtech-open-modular-hardware',
+    updatedAt: new Date('2021/09/29'),
+    url: 'https://www.lowtechmagazine.com/2012/12/how-to-make-everything-ourselves-open-modular-hardware.html',
   },
   {
     category: 'inspiration',
@@ -106,15 +99,14 @@ const linkedStories: Array<StoryMetadata> = [
       alt: 'Castles in West Africa',
       height: 256,
       src: 'v1/gridkit.nz/stories/linked-articles/shelter-documenting-a-personal-quest-for-non-toxic-housing_dnkflb.jpg',
+      type: 'cloudinary',
       width: 384,
     },
-    external: {
-      url: 'http://web.archive.org/web/20100619061316/http://radio-weblogs.com/0119080/stories/2003/03/11/galleryUrbanNomadics.html',
-    },
-    publishedAt: '2003-03-11',
+    isExternal: true,
+    publishedAt: new Date('2003/03/11'),
     title: 'Shelter: Documenting a personal quest for non-toxic housing',
-    updatedAt: '2021-09-29',
-    slug: 'external-hunting-shelter',
+    updatedAt: new Date('2021/09/29'),
+    url: 'http://web.archive.org/web/20100619061316/http://radio-weblogs.com/0119080/stories/2003/03/11/galleryUrbanNomadics.html',
   },
 ]
 
@@ -138,8 +130,8 @@ const hostedStories = [
   { metadata: howToCutGridBeams, Content: HowToCutGridBeams },
 ] as Array<{ metadata: StoryMetadata; Content: ComponentType }>
 
-export const STORY_SLUGS = hostedStories.map((story) => story.metadata.slug)
+export const STORY_SLUGS = hostedStories.map((story) => story.metadata.url.slice(1))
 
 export function getStory(slug: string) {
-  return hostedStories.find((story) => story.metadata.slug === slug)
+  return hostedStories.find((story) => story.metadata.url.slice(1) === slug)
 }

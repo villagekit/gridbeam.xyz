@@ -48,10 +48,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // External stories are linked from the index but not hosted on this site,
   // so they don't get sitemap entries — only the in-repo MDX stories do.
-  const stories = allStories.filter((story) => story.external == null)
+  const stories = allStories.filter((story) => !story.isExternal)
   const storyEntries: MetadataRoute.Sitemap = stories.map((metadata) => ({
-    url: `${SITE_URL}/stories/${metadata.slug}`,
-    lastModified: new Date(metadata.updatedAt),
+    url: `${SITE_URL}/stories${metadata.url}`,
+    lastModified: metadata.updatedAt,
     changeFrequency: 'yearly',
     priority: 0.6,
   }))

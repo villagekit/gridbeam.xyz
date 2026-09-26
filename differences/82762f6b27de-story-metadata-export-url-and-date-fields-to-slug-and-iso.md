@@ -1,6 +1,6 @@
 ---
 title: "Story metadata export: url and Date fields to slug and ISO strings, image type dropped"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/whats-a-grid-unit.mdx:11-24` `slug: 'whats-a-grid-unit'`, no `type`, `publishedAt: '2024-10-10'`; `app/_lib/stories.ts:40-54` the type, each story cast `as unknown as StoryMetadata` (`:64`) and its slug repeated as the map key (`:63`). A dashed ISO date parses as UTC where the legacy slash form parsed as local time.
 
 ## Verdict
+
+plan 52adacea5b2f. The six MDX metadata exports and the four linked stories in app/_lib/stories.ts carry legacy fields again: url in place of slug (the path under /stories, or the external address), isExternal: true in place of the external object, type: cloudinary as the first key of every image, and publishedAt and updatedAt as Date values in the slash form new Date(YYYY/MM/DD), parsed as local time. StoryMetadata types image as RasterImagePropsWithOptionalSizes from @villagekit/ui. The readers take legacy lines: the card (Item.tsx) destructures url and isExternal, spreads the image with no explicit type, prints publishedAt.toLocaleDateString and picks the overlay on isExternal with href={url} or /stories${url}; the stories context sorts on getTime(); the sitemap filters on !isExternal and writes /stories${url} and updatedAt; the [slug] page writes toISOString() on the article times and spreads the image onto StoryImage. The card dates read the same day west and east of UTC with no hydration message.
 
 ## Log
 

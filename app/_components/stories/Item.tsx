@@ -33,7 +33,7 @@ interface ItemProps {
 export function Item(props: ItemProps) {
   const { metadata, showDate = true } = props
 
-  const { title, category, slug, external, image, publishedAt } = metadata
+  const { title, category, url, isExternal, image, publishedAt } = metadata
 
   const description = metadata.shortDescription || metadata.description
 
@@ -51,7 +51,6 @@ export function Item(props: ItemProps) {
           }}
         >
           <Image
-            type="cloudinary"
             {...image}
             className="stories-item-image"
             sizes={{ base: 'md' }}
@@ -92,7 +91,7 @@ export function Item(props: ItemProps) {
 
               {showDate && (
                 <Text fontSize="sm" variant="tertiary" css={{ marginLeft: 2 }}>
-                  {new Date(publishedAt).toLocaleDateString('en-NZ', {
+                  {publishedAt.toLocaleDateString('en-NZ', {
                     day: 'numeric',
                     month: 'numeric',
                     year: 'numeric',
@@ -100,24 +99,19 @@ export function Item(props: ItemProps) {
                 </Text>
               )}
 
-              {external != null && (
+              {isExternal && (
                 <Icon as={FaExternalLinkAlt} css={{ color: 'gray.300' }} boxSize="4" />
               )}
             </VStack>
           </HStack>
 
-          {external != null ? (
+          {isExternal ? (
             <LinkOverlay asChild>
               {/* biome-ignore lint/a11y/useAnchorContent: the overlay is named by its aria-label, the way legacy's empty LinkOverlay was */}
-              <chakra.a
-                href={external.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={title}
-              />
+              <chakra.a href={url} target="_blank" rel="noopener noreferrer" aria-label={title} />
             </LinkOverlay>
           ) : (
-            <LinkOverlay as={NextLink} href={`/stories/${slug}`} aria-label={title} />
+            <LinkOverlay as={NextLink} href={`/stories${url}`} aria-label={title} />
           )}
         </Container>
       </LinkBox>

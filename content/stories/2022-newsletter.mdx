@@ -15,16 +15,17 @@ export const metadata = {
     'It’s been a slow and steady year for us at Village Kit. While we are sad to report that we have yet to meet our goal of making and selling beams, we are still very happy to share our accomplishments, learnings, and plans for the upcoming year 🌱',
   shortDescription: 'The slow and steady progress of Village Kit in 2022.',
   category: 'newsletter',
-  slug: '2022-newsletter',
+  url: '/2022-newsletter',
   showImageInStory: true,
   image: {
+    type: 'cloudinary',
     src: 'gridbeam.xyz/stories/2022-newsletter/xmas-tree',
     alt: 'Grid Kit Christmas Tree',
     width: 1279,
     height: 1600,
   },
-  publishedAt: '2022-12-13',
-  updatedAt: '2022-12-13',
+  publishedAt: new Date('2022/12/13'),
+  updatedAt: new Date('2022/12/13'),
 }
 
 <StorySection index={0}>

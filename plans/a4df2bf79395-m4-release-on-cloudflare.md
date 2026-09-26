@@ -32,3 +32,5 @@ Anything after launch.
 ## Log
 
 - 2026-09-26: Parity review of plan 4f6f086c: the live legacy site sends strict-transport-security and x-robots-tag noindex from Vercel, not from next.config; the release decides which platform headers Cloudflare sets, and the ledger has no item for them.
+
+- 2026-09-26: From the Parity review of the fields slice (plan [[52adacea5b2f]]): the story pages' article:published_time and article:modified_time, and the sitemap's lastmod, are the build machine's local midnight as UTC (legacy's toISOString() on a Date built in the slash form), so a build on the operator's NZST machine serves the previous day where legacy's Vercel build served UTC midnight; filed as [[45fca45340c8]] (regression, code, /stories/whats-a-grid-unit). Closing it is a TZ=UTC pin where the Cloudflare build runs, or the operator's verdict; this milestone owns the build.

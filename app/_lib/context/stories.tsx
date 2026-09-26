@@ -30,9 +30,7 @@ interface StoriesContextType {
   setFilter: (filter: FilterOptionType) => void
 }
 
-const sortedStories = allStories.sort(
-  (a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt),
-)
+const sortedStories = allStories.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
 
 function useStories(): StoriesContextType {
   const [query, setQuery] = useQueryParams<{
