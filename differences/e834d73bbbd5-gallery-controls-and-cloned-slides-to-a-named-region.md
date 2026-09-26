@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: The legacy names are the library's generic defaults; a fix plan should ask the operator (rule 5) before restoring them.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[14be8f377b34]] at the split of the story pages record [[56e6eb197e6c]] (decision 40abdb2f222a), as the M1 note above asks. The components slice [[373320c95e55]] restores the carousel for [[d090ce55d1bc]], and the library's control names and cloned slides return with it, so the item closes with the slice unless a verdict lands first; the accessibility pass after M2 (note eeba2a65cee4) is where the names would be bettered. The state stays until the operator judges it.

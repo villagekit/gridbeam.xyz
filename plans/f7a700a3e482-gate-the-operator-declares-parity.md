@@ -15,6 +15,7 @@ blocked_by:
     note: the operator's verdicts on the home come before the review of the site
   - target: 239f17128896
     note: the operator's verdicts on the stories index come before the review of the site
+  - 14be8f377b34
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.

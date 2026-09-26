@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-12: A legacy rendering bug; a fix plan should ask the operator (rule 5) rather than restore the empty cell.
+
+- 2026-09-26: Handed to the operator on the attended verdicts plan [[14be8f377b34]] at the split of the story pages record [[56e6eb197e6c]] (decision 40abdb2f222a), as the M1 note above asks. The components slice [[373320c95e55]] ports legacy's grid line for line, so the sixth cell returns (Next 15.5 renders an image with no src as unoptimized without throwing, get-img-props.js:276-280, and logs the missing src in development) and the item closes with it unless a verdict lands first. The state stays until the operator judges it.
