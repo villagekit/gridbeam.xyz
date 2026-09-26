@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Not upgrade-forced: the app router renders `page.mdx` files directly when `pageExtensions` lists mdx (`node_modules/@next/mdx/readme.md:87-136`, the App directory section and its `pageExtensions` config), and `next.config.ts:6` already does.
+
+- 2026-09-26: The catalog slice 48c8cbdb206a keeps this lookup as STORY_SLUGS and getStory over a private hostedStories array whose Content is typed required. The comment at app/stories/[slug]/page.tsx:45-48 saying the Content == null guard exists for TypeScript and that external stories carry no Content is stale from that commit on: the guard is dead code. The slice leaves the page untouched, as its plan says; the split of the story pages record removes the guard and the comment with the lookup.

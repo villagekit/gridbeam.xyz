@@ -1,6 +1,6 @@
 ---
 title: "Story catalogue: allStories array with url and isExternal to a slug-keyed record with accessors"
-status: regression
+status: fixed
 route: /stories
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/stories.ts:40-60` `StoryMetadata { slug, external?: { url }, publishedAt: string, originallyPublishedOn? }` and a `Story { metadata, Content? }` wrapper; `:62-87` `internalStoriesBySlug`, `:95-173` `externalStories`, `:175-185` `STORY_SLUGS`, `getStory`, `getAllStories` (a spread sort by `Date.parse`), `:187-189` `isExternalStory` which nothing calls (`app/_components/StoryCard.tsx:80` inlines the check); `app/stories/page.tsx:28-30` strips `Content` before the client boundary.
 
 ## Verdict
+
+plan 48c8cbdb: app/_lib/stories.ts is legacy's stories.ts again, one allStories array cast as Array<StoryMetadata>, linkedStories inline with legacy's updatedAt, no Story wrapper, no accessors, no sort in the module. The residue left for the story pages record 56e6eb197e6c: the field names and types (82762f6b27de), originallyPublishedOn (c983ec56248e) and the [slug] route's lookup, STORY_SLUGS and getStory over a private hostedStories array below legacy's exports (9c48718ec6f8).
 
 ## Log
 

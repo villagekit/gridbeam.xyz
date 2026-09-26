@@ -2,7 +2,7 @@ import { Container, Section, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
 
-import { getAllStories } from '../_lib/stories'
+import { allStories } from '../_lib/stories'
 import { StoriesBrowser } from './StoriesBrowser'
 import { StoriesStatic } from './StoriesStatic'
 
@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 }
 
 export default function StoriesPage() {
-  // The page is a server component; the metadata-only `Story[]` (no MDX
-  // Content references) crosses the RSC boundary into the client browser.
-  const stories = getAllStories().map((story) => ({ metadata: story.metadata }))
+  // Sorted newest first here until the page re-port sorts in the context, as legacy did.
+  const stories = [...allStories]
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
+    .map((metadata) => ({ metadata }))
 
   return (
     <>

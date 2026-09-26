@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 import { getDesignIds } from './_lib/designs'
-import { getAllStories, isExternalStory } from './_lib/stories'
+import { allStories } from './_lib/stories'
 
 const SITE_URL = 'https://gridbeam.xyz'
 
@@ -48,8 +48,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // External stories are linked from the index but not hosted on this site,
   // so they don't get sitemap entries — only the in-repo MDX stories do.
-  const stories = getAllStories().filter((story) => !isExternalStory(story.metadata))
-  const storyEntries: MetadataRoute.Sitemap = stories.map(({ metadata }) => ({
+  const stories = allStories.filter((story) => story.external == null)
+  const storyEntries: MetadataRoute.Sitemap = stories.map((metadata) => ({
     url: `${SITE_URL}/stories/${metadata.slug}`,
     lastModified: new Date(metadata.updatedAt),
     changeFrequency: 'yearly',
