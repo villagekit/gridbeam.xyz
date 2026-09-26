@@ -2,8 +2,9 @@ import YouTube from '@/app/_components/YouTube'
 import { Link, RasterImage } from '@villagekit/ui'
 import { getCloudinaryUrl } from '@/app/_lib/cloudinary'
 import { StoryColumn, StoryImage, StoryImageGrid, StoryRow, StorySection } from '@/app/_components/story'
+import { getStoryPageMetadata, withStoriesLayout } from '@/app/_components/layouts/StoriesLayout'
 
-export const metadata = {
+export const story = {
   title: 'How to Mark and Cut Grid Beams',
   description:
     'Make accurate cut lines on grid beam using our cut alignment tool, then simply cut using a hand saw.',
@@ -19,6 +20,10 @@ export const metadata = {
   publishedAt: new Date('2024/11/29'),
   updatedAt: new Date('2024/11/29'),
 }
+
+export const metadata = getStoryPageMetadata(story)
+
+export default withStoriesLayout(story)
 
 <StorySection index={0}>
 <StoryRow index={0}>

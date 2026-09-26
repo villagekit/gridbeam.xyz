@@ -1,6 +1,6 @@
 ---
 title: Six MDX story pages to one dynamic [slug] route over a catalogue map
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/[slug]/page.tsx:23-25,59-65` `generateStaticParams` over `STORY_SLUGS`, `getStory(slug)`, a `notFound()` guard; `app/_lib/stories.ts:6-21,62-87` imports each MDX default export and metadata into `internalStoriesBySlug`; the MDX lives in `content/stories/`, outside `app/`.
 
 ## Verdict
+
+plan 4331147cc118
 
 ## Log
 

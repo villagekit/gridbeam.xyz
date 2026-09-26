@@ -24,3 +24,5 @@ kind: changed
 - 2026-09-26: Fixed in ../ui by the recipes and provider slice [[45d6f5634a11]], commit 540e9c3: src/components/Link.tsx: LinkProps.isExternal renders target _blank and rel noopener noreferrer; the External story in stories/Link.stories.tsx carries it. Waits in upstream for the bump plan [[99f2fe62c62f]].
 
 - 2026-09-26: Correction from plan [[9e54dca30d48]]: the fix note above says the ui Link renders rel noopener noreferrer; since the recipes slice (../ui 540e9c3) Link.tsx renders isExternal as rel="noopener", Chakra v2's Link output, and ../ui 46eab3c gives LinkButton, LinkIconButton, Footer and Social the same.
+
+- 2026-09-26: The story MDX files moved with the page re-port (plan 4331147cc118): a path content/stories/<slug>.mdx in the text above now reads app/stories/<slug>/page.mdx, the same body at the same lines plus one import line and two export lines after the story object.

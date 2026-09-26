@@ -1,23 +1,12 @@
 // ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/stories.ts
 import type { RasterImagePropsWithOptionalSizes } from '@villagekit/ui'
-import type { ComponentType } from 'react'
 
-import TwentyTwentyOneWinterNewsletter, {
-  metadata as winterNewsletter,
-} from '@/content/stories/2021-winter-newsletter.mdx'
-import TwentyTwentyTwoNewsletter, {
-  metadata as twentyTwentyTwoNewsletter,
-} from '@/content/stories/2022-newsletter.mdx'
-import BuildingWithGridKit, {
-  metadata as buildingWithGridKit,
-} from '@/content/stories/building-with-grid-kit.mdx'
-import HowToCutGridBeams, {
-  metadata as howToCutGridBeams,
-} from '@/content/stories/how-to-cut-grid-beams.mdx'
-import HowToFurnitureBolts, {
-  metadata as howToFurnitureBolts,
-} from '@/content/stories/how-to-furniture-bolts.mdx'
-import WhatsAGridUnit, { metadata as whatsAGridUnit } from '@/content/stories/whats-a-grid-unit.mdx'
+import { story as winterNewsletter } from '@/app/stories/2021-winter-newsletter/page.mdx'
+import { story as twentyTwentyTwoNewsletter } from '@/app/stories/2022-newsletter/page.mdx'
+import { story as buildingWithGridKit } from '@/app/stories/building-with-grid-kit/page.mdx'
+import { story as howToCutGridBeams } from '@/app/stories/how-to-cut-grid-beams/page.mdx'
+import { story as howToFurnitureBolts } from '@/app/stories/how-to-furniture-bolts/page.mdx'
+import { story as whatsAGridUnit } from '@/app/stories/whats-a-grid-unit/page.mdx'
 
 export type StoryCategory =
   // 'article' |
@@ -119,19 +108,3 @@ export const allStories = [
   howToCutGridBeams,
   ...linkedStories,
 ] as Array<StoryMetadata>
-
-// The [slug] route's lookup of a hosted story's MDX Content: difference 9c48718ec6f8, which the story pages record removes with the route.
-const hostedStories = [
-  { metadata: buildingWithGridKit, Content: BuildingWithGridKit },
-  { metadata: winterNewsletter, Content: TwentyTwentyOneWinterNewsletter },
-  { metadata: twentyTwentyTwoNewsletter, Content: TwentyTwentyTwoNewsletter },
-  { metadata: whatsAGridUnit, Content: WhatsAGridUnit },
-  { metadata: howToFurnitureBolts, Content: HowToFurnitureBolts },
-  { metadata: howToCutGridBeams, Content: HowToCutGridBeams },
-] as Array<{ metadata: StoryMetadata; Content: ComponentType }>
-
-export const STORY_SLUGS = hostedStories.map((story) => story.metadata.url.slice(1))
-
-export function getStory(slug: string) {
-  return hostedStories.find((story) => story.metadata.url.slice(1) === slug)
-}

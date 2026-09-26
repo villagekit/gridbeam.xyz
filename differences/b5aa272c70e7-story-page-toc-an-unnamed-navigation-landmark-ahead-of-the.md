@@ -1,6 +1,6 @@
 ---
 title: "Story page TOC: an unnamed navigation landmark ahead of the article, h2 before the h1"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `@villagekit/ui@1.2.0 src/components/layouts/TableOfContents.tsx:39` `<Box as="nav">` with no `aria-label`; `audit/stories__whats-a-grid-unit/dom/current.aria.yaml:22-62` an unnamed `navigation` holding `heading "On this page" [level=2]` and about thirteen links, placed before `main`, so they precede the h1 in reading and tab order.
 
 ## Verdict
+
+plan 4331147cc118
 
 ## Log
 

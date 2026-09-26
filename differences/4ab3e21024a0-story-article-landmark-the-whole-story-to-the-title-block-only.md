@@ -1,6 +1,6 @@
 ---
 title: "Story article landmark: the whole story to the title block only"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/[slug]/page.tsx:83-113` `<Box as="article">` around the Title, the date row and the cover; `<Content />` is a sibling at `:113`; `audit/stories__whats-a-grid-unit/dom/current.aria.yaml:65-70` the article ends after the date, `:71-196` the body sits under `main`.
 
 ## Verdict
+
+plan 4331147cc118
 
 ## Log
 

@@ -18,3 +18,5 @@ The published `@villagekit/ui@1.2.0` exports neither the mdx media components (`
 ## Log
 
 - 2026-09-26: Fixed in ../ui commit 1c3e3e8 (plan [[bc0407533650]]): src/mdx exports Image, Video, MediaContainer and useMediaMaxWidthBreakpoints again ([[d750c0a47839]]) and src/hooks/useSizeWidths.ts names full and container.lg again ([[252edab16c7a]]). Filed by the components slice (plan [[373320c95e55]]), the about's mechanism ([[36dc54eb5955]]) widened from a literal to a module. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] deletes media.tsx, imports from @villagekit/ui/mdx, swaps the literals back to full and container.lg and moves this to fixed.
+
+- 2026-09-26: The story MDX files moved with the page re-port (plan 4331147cc118): a path content/stories/<slug>.mdx in the text above now reads app/stories/<slug>/page.mdx, the same body at the same lines plus one import line and two export lines after the story object.

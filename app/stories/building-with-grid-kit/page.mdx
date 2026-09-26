@@ -4,8 +4,9 @@ import {
   StoryRow,
   StorySection,
 } from '@/app/_components/story'
+import { getStoryPageMetadata, withStoriesLayout } from '@/app/_components/layouts/StoriesLayout'
 
-export const metadata = {
+export const story = {
   title: 'Building with Grid Kit',
   description: 'A handy guide to get started building with Grid Kit.',
   category: 'guide',
@@ -20,6 +21,10 @@ export const metadata = {
   publishedAt: new Date('2021/08/23'),
   updatedAt: new Date('2021/08/23'),
 }
+
+export const metadata = getStoryPageMetadata(story)
+
+export default withStoriesLayout(story)
 
 <StorySection index={0}>
 <StoryRow index={0}>

@@ -9,8 +9,9 @@ import {
   StorySection,
   StoryVideo,
 } from '@/app/_components/story'
+import { getStoryPageMetadata, withStoriesLayout } from '@/app/_components/layouts/StoriesLayout'
 
-export const metadata = {
+export const story = {
   title: '2021 Winter Newsletter',
   description:
     'Hello and welcome to our first newsletter, thanks for tuning in! This update covers some of what we’ve been doing the past 18 months and what we’re working on now. Check out our progress below 🌱',
@@ -27,6 +28,10 @@ export const metadata = {
   publishedAt: new Date('2021/09/15'),
   updatedAt: new Date('2021/09/15'),
 }
+
+export const metadata = getStoryPageMetadata(story)
+
+export default withStoriesLayout(story)
 
 <StorySection index={0}>
   <StoryRow index={0}>

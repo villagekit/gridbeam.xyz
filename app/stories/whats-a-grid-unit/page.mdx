@@ -7,8 +7,9 @@ import {
   StoryRow,
   StorySection,
 } from '@/app/_components/story'
+import { getStoryPageMetadata, withStoriesLayout } from '@/app/_components/layouts/StoriesLayout'
 
-export const metadata = {
+export const story = {
   title: "What's a Grid Unit",
   description: 'Unlock the power of modular units with our 40mm Grid Unit (GU)',
   category: 'guide',
@@ -23,6 +24,10 @@ export const metadata = {
   publishedAt: new Date('2024/10/10'),
   updatedAt: new Date('2024/10/10'),
 }
+
+export const metadata = getStoryPageMetadata(story)
+
+export default withStoriesLayout(story)
 
 <StorySection index={0}>
 <StoryRow index={0}>

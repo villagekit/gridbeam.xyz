@@ -1,6 +1,6 @@
 ---
 title: "Story Open Graph image type: image/jpeg removed"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/stories/[slug]/page.tsx:37` writes `images: [{ url: ogImageUrl, alt: image.alt }]` with no `type`, so the served head of each story route carries `og:image`, `og:image:alt`, `og:image:width` and `og:image:height` and no `og:image:type`. Found by the Parity review of the fields slice (plan [[52adacea5b2f]]) on a route whose template the page re-port [[4331147cc118]] rewrites; its `getStoryPageMetadata` helper is where the line returns.
 
 ## Verdict
+
+plan 4331147cc118
 
 ## Log
 

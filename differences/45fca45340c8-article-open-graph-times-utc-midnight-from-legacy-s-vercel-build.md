@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed from the Parity review of the fields slice (plan [[52adacea5b2f]]), which made the two lines legacy's and so surfaced the build-time dependency legacy's Vercel deploy hid. No rule covers it, so regression by default (decision 2032533f). The site-side code is legacy's line for line; what differs is where the build runs. The candidate closes: pin the build's timezone to UTC where the deploy builds (the release milestone [[a4df2bf79395]], which owns the Cloudflare build), which reproduces legacy's live values, or the operator judges the shift acceptable. Not this slice's call.
+
+- 2026-09-26: The story MDX files moved with the page re-port (plan 4331147cc118): a path content/stories/<slug>.mdx in the text above now reads app/stories/<slug>/page.mdx, the same body at the same lines plus one import line and two export lines after the story object.

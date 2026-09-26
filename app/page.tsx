@@ -1,8 +1,8 @@
 // ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/pages/index.tsx
 import type { Metadata } from 'next'
 
-import { metadata as buildingWithGridKit } from '@/content/stories/building-with-grid-kit.mdx'
-import { metadata as whatsAGridUnit } from '@/content/stories/whats-a-grid-unit.mdx'
+import { story as buildingWithGridKit } from '@/app/stories/building-with-grid-kit/page.mdx'
+import { story as whatsAGridUnit } from '@/app/stories/whats-a-grid-unit/page.mdx'
 import { HomePage } from './HomePage'
 import { getDesignIndex } from './_lib/designs'
 import type { StoryMetadata } from './_lib/stories'

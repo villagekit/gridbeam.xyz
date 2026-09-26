@@ -1,6 +1,6 @@
 ---
 title: "Story page: an On this page table of contents added"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/stories/[slug]/page.tsx:78` `<ContentMainTocLayout>`; `node_modules/@villagekit/ui/src/components/layouts/TableOfContents.tsx:39-57` a nav headed "On this page" listing every h2-h6, with a scroll-spy that bolds and colours the active heading (`:36,48-54`); on the right at 1280 in `audit/stories__whats-a-grid-unit/1280/current.png`, collapsed at 375 and 768.
 
 ## Verdict
+
+plan 4331147cc118
 
 ## Log
 

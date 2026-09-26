@@ -158,8 +158,8 @@ What the language skill (`typescript`) leaves to the project:
 
 ## Structure
 
-- `app/`: the Next.js app router, one directory per route (`about`, `contact`, `designs`, `faq`, `legal`, `stories`, `subscribe`, `suppliers`, `tools`, `tools-and-resources`), the shell (`layout.tsx`, `theme.ts`, `not-found.tsx`, `icon.svg`, `robots.ts`, `sitemap.ts`), the shared components under `app/_components/` and the data and helpers under `app/_lib/` (the designs catalog, the generated designs data, the stories loader, the nav, the site-wide Open Graph fields, the Cloudinary loader, the URL state).
-- `content/`: the story MDX files and the suppliers records.
+- `app/`: the Next.js app router, one directory per route (`about`, `contact`, `designs`, `faq`, `legal`, `stories`, `subscribe`, `suppliers`, `tools`, `tools-and-resources`), the six story pages as `app/stories/<slug>/page.mdx` under `app/_components/layouts/StoriesLayout.tsx`, the shell (`layout.tsx`, `theme.ts`, `not-found.tsx`, `icon.svg`, `robots.ts`, `sitemap.ts`), the shared components under `app/_components/` and the data and helpers under `app/_lib/` (the designs catalog, the generated designs data, the stories catalog, the nav, the site-wide Open Graph fields, the Cloudinary loader, the URL state).
+- `content/`: the suppliers records.
 - `public/`: legacy's favicons, tiles, mask icon, `browserconfig.xml` and `site.webmanifest`, served by path.
 - `products/`: the vendored design catalogue, one directory per product with its PNG, `villagekit.toml` and code-as-CAD `.ts`.
 - `scripts/`: the designs data generator (`prebuild` and `predev`), the parity tooling (`audit-pages.mjs`, `audit-dom.mjs`, `audit-shared.mjs`, `rebuild-audit-index.mjs`, `audit-routes.txt`) and `screenshot.sh`, each with a header comment that is its page.

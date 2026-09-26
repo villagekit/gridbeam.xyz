@@ -22,3 +22,5 @@ rule: upgrade (the pages-router layout HOC and next-seo have no app-router equiv
 - 2026-09-12: Story page template; filed where first met. The twitter block and the dropped OG image `type` are the shell items f46533a8ae54 and 65c21e08b3f1.
 
 - 2026-09-25: Current text is stale after plan ffe8e5d5: the story page's `twitter` block is gone, and its `openGraph` spreads the site-wide fields of `app/_lib/open-graph.ts` before its article fields, as legacy's `NextSeo` merged over `DefaultSeo`.
+
+- 2026-09-26: The Current side is now the per-page static metadata export on each app/stories/<slug>/page.mdx, built by getStoryPageMetadata in app/_components/layouts/StoriesLayout.tsx (plan 4331147cc118): the same title, shortDescription || description and article Open Graph over the site's fields, with legacy's og:image:type image/jpeg restored (6401346644c2). The [slug] route and its generateMetadata are gone.
