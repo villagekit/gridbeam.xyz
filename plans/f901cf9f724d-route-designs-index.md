@@ -32,3 +32,5 @@ Other routes; the shell, except where a difference on this route is closed by a 
 ## Outcome
 
 ## Log
+
+- 2026-09-26: From the stories index record's finish (plan [[ca353de8b645]], its Log's call 9): the page re-port [[278fb531e229]] put legacy's option.tsx at app/_components/Option.tsx as a shared component, since legacy's catalog selector renders it too, and legacy's context/stories.tsx at app/_lib/context/stories.tsx, where context/catalogue.ts is to be ported beside it. The split of this record consumes both rather than porting a second Option; the catalog's url-state consumer (app/_components/catalogue/Catalogue.tsx) is one of the three the re-port left app/_lib/url-state.ts for.
