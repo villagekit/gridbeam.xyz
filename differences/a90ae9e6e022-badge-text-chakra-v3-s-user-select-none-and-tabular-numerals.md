@@ -17,3 +17,5 @@ Chakra v3's badge recipe base writes `userSelect: none` and `fontVariantNumeric:
 ## Verdict
 
 ## Log
+
+- 2026-09-26: At the about record's finish (plan [[40179ab9e779]]), found owned by no slice and no verdicts plan (filed by the recipes slice [[2bd0169a6dda]] after the shell's verdicts plan [[77cf83a1285a]] and the home's finish were written): the fix in ../ui is the slice [[a4f938a27428]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]), two declarations in src/components/Badge.recipe.ts; the slice moves this item to upstream with the sibling commit (decision 28c1a536).
