@@ -1,6 +1,6 @@
 ---
 title: "HoverCardContainer nested selectors: bare class keys flattened by Chakra v3 css, a kebab-case console error on every consumer"
-status: regression
+status: upstream
 route: shell
 axis: code
 kind: changed
@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[8235bd4bea81]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).
 
 - 2026-09-26: Correction at the home record's finish (plan [[fd9a92bd8abd]], the review's finding): the Current text's clause that no current consumer nests a HoverCard in a container is wrong. The catalog's ItemCard does (app/_components/catalogue/ItemCard.tsx:26,29, legacy's components/catalogue/item.tsx:33,48 at fce357d), so on /designs a hovered card's inner .ui-hover-card loses the accentB.100 fill and accentB.300 border today; the slice [[8235bd4bea81]] restores it and its Done when reads it on /designs.
+
+- 2026-09-26: Fixed in ../ui as commit 2e2d68c (plan [[8235bd4bea81]]): HoverCardContainer's two nested keys read '& .ui-hover-card', the form Chakra v3's css reads as a selector. Under the file:../ui override the console on /, /stories and /designs holds no kebab-case line and Next's dev overlay shows no issue badge, the stylesheet carries the hover and focus-within rules for the nested card, and on /designs the first card's inner .ui-hover-card reads rgb(254, 252, 191) on rgb(246, 224, 94) under the pointer and the outlineColor border with focus inside, the live legacy site's readings. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.
