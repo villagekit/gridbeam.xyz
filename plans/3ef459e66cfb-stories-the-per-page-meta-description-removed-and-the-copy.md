@@ -1,6 +1,6 @@
 ---
 title: "Stories: the per-page meta description removed and the copy verdicts applied on the title description and the inspiration alts"
-status: todo
+status: done
 parent: ca353de8b645
 derived_from: ca353de8b645
 blocked_by: ffe8e5d56f8e
@@ -33,5 +33,9 @@ None pure; the proof is the copy diff of the DOM pair and the served HTML.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as scoped. app/stories/page.tsx: metadata is title: 'Stories' with no description, the pageTitle and pageDescription consts removed, the Title's description is legacy's line with Grid Kit to grid beam (rule 1). app/_lib/stories.ts: the four inspiration alts are legacy's stories.ts strings verbatim (Modular system for DIY builds; the Ken Isaacs caption with no closing period; Open source consumer goods; Castles in West Africa). The six items on /stories are fixed with outcome "plan 3ef459e6".
+
+Proof, against a running pnpm dev: the title is Grid Beam: Stories and the meta description is the layout default; pnpm audit:dom shows the description line differing from legacy only by Grid Kit to grid beam, and current.aria.yaml holds the four cover img names as legacy has them; the grep for the old alts printed 0. Dev stopped by pid, then timeout 900 just check exited 0; kipu verify --warnings-as-errors green. No visual gate: the copy diff of the DOM pair covers the change.
 
 ## Log

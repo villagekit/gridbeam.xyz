@@ -109,7 +109,7 @@ const externalStories: ReadonlyArray<Story> = [
       updatedAt: '2017-09-17',
       image: {
         src: 'v1/gridkit.nz/stories/linked-articles/grid-beam-modular-system-builds-anything-furniture-to-bikes_dlfnrf',
-        alt: 'A grid-beam build photographed for Kirsten Dirksen’s short film: modular wooden beams used to assemble furniture and a bicycle.',
+        alt: 'Modular system for DIY builds',
         width: 1280,
         height: 960,
       },
@@ -128,7 +128,7 @@ const externalStories: ReadonlyArray<Story> = [
       updatedAt: '2015-11-16',
       image: {
         src: 'v1/gridkit.nz/stories/linked-articles/enter-the-matrix-an-interview-with-ken-isaacs_kjd89r',
-        alt: 'Ken Isaacs, Beach Matrix, installation view in Westport, Connecticut, c. 1967. Photo courtesy the artist.',
+        alt: 'Ken Isaacs, Beach Matrix, installation view in Westport, Connecticut, c. 1967. Photo courtesy the artist',
         width: 2048,
         height: 1336,
       },
@@ -147,7 +147,7 @@ const externalStories: ReadonlyArray<Story> = [
       updatedAt: '2012-12-15',
       image: {
         src: 'v1/gridkit.nz/stories/linked-articles/how-to-make-everything-ourselves-open-modular-hardware_nfklfe',
-        alt: 'A diagram of open-source consumer goods built from interchangeable modular parts.',
+        alt: 'Open source consumer goods',
         width: 750,
         height: 605,
       },
@@ -166,7 +166,7 @@ const externalStories: ReadonlyArray<Story> = [
       updatedAt: '2003-03-11',
       image: {
         src: 'v1/gridkit.nz/stories/linked-articles/shelter-documenting-a-personal-quest-for-non-toxic-housing_dnkflb',
-        alt: 'Mud-brick castles in West Africa, illustrating Eric Hunting’s essay on shelter.',
+        alt: 'Castles in West Africa',
         width: 384,
         height: 256,
       },

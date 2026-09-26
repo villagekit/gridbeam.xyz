@@ -1,6 +1,6 @@
 ---
 title: "Inspiration card alt: Castles in West Africa rewritten"
-status: regression
+status: fixed
 route: /stories
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/stories.ts:163` "Mud-brick castles in West Africa, illustrating Eric Hunting’s essay on shelter."
 
 ## Verdict
+
+plan 3ef459e6
 
 ## Log
 

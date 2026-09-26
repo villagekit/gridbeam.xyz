@@ -1,6 +1,6 @@
 ---
 title: Stories title description rewritten
-status: regression
+status: fixed
 route: /stories
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/stories/page.tsx:10-11,37` `pageDescription = 'Build logs, field reports, and explainers from people working with grid beam.'`; `audit/stories/dom/current.txt:11`.
 
 ## Verdict
+
+plan 3ef459e6
 
 ## Log
 

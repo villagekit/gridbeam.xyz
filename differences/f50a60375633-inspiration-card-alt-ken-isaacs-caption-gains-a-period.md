@@ -1,6 +1,6 @@
 ---
 title: "Inspiration card alt: Ken Isaacs caption gains a period"
-status: regression
+status: fixed
 route: /stories
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/stories.ts:125` "Ken Isaacs, Beach Matrix, installation view in Westport, Connecticut, c. 1967. Photo courtesy the artist."
 
 ## Verdict
+
+plan 3ef459e6
 
 ## Log
 

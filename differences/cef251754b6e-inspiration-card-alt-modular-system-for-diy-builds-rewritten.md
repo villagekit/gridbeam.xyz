@@ -1,6 +1,6 @@
 ---
 title: "Inspiration card alt: Modular system for DIY builds rewritten"
-status: regression
+status: fixed
 route: /stories
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_lib/stories.ts:106` "A grid-beam build photographed for Kirsten Dirksen’s short film: modular wooden beams used to assemble furniture and a bicycle."; `audit/stories/dom/current.aria.yaml:78`.
 
 ## Verdict
+
+plan 3ef459e6
 
 ## Log
 

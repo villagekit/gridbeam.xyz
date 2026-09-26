@@ -1,6 +1,6 @@
 ---
 title: Stories meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /stories
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/stories/page.tsx:13-25` `description`, `openGraph.description` and `twitter.description` all set to the visible tagline "Build logs, field reports, and explainers from people working with grid beam."; `openGraph.url` `https://gridbeam.xyz/stories`.
 
 ## Verdict
+
+plan 3ef459e6
 
 ## Log
 
