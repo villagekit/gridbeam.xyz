@@ -1,6 +1,6 @@
 ---
 title: "Image grids: an unnamed run of images to a named region"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/story/StoryImageGrid.tsx:25` `<section aria-label={ariaLabel}>`: `region "Carousel of things made with grid beam"` (`audit/stories__whats-a-grid-unit/dom/current.aria.yaml:107-113`), `region "Grid of common grid-beam connections"` (`audit/stories__how-to-furniture-bolts/dom/current.aria.yaml:114-119`), and one region per gallery on the two newsletters.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Legacy image grid phantom sixth cell removed
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: accessibility
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `content/stories/how-to-furniture-bolts.mdx:120-122` `columns={{ base: 2, md: 3 }}`: exactly the five images, `audit/stories__how-to-furniture-bolts/dom/current.aria.yaml:115-119`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

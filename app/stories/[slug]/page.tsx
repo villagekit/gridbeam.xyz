@@ -62,6 +62,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
             {showImageInStory && (
               <Box mt="4" mb="12" maxW="3xl" mx="auto">
                 <StoryImage
+                  type="cloudinary"
                   src={image.src}
                   alt={image.alt}
                   width={image.width}

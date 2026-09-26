@@ -3,7 +3,7 @@ import { Link } from '@villagekit/ui'
 import {
   StoryColumn,
   StoryImage,
-  StoryImageGrid,
+  StoryImageCarousel,
   StoryRow,
   StorySection,
   StoryVideo,
@@ -38,7 +38,7 @@ export const metadata = {
       Our long term goal is for Grid Kit to become a platform that makes modular construction easy, fun and most importantly, affordable.
 
       <Link href="https://youtu.be/PIMESt9iLYg" isExternal>
-        <StoryImage src='gridbeam.xyz/stories/2021-winter-newsletter/grid-beam-video-thumbnail-with-play-button' alt="Grid Beam video" priority aspectRatio="wide" width={1280} height={720} />
+        <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2021-winter-newsletter/grid-beam-video-thumbnail-with-play-button' alt="Grid Beam video" priority aspectRatio="wide" width={1280} height={720} />
       </Link>
     </StoryColumn>
   </StoryRow>
@@ -81,29 +81,34 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Grid beam out in the world"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/dish-rack',
             alt: 'Grid beam dish rack',
             width: 6000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/temporary-kitchen',
             alt: 'Camp kitchen assembled with grid beam',
             width: 3872,
             height: 2160,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/compost-toilet',
             alt: 'Composting toilet within a grid beam structure',
             width: 4000,
             height: 6000,
+            orientation: 'portrait'
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/lazy-tortoise',
             alt: 'Solar punk trailer framed with grid beam',
             width: 6000,
@@ -122,23 +127,26 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 3 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Grid beam furniture designs"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/sun-bed',
             alt: 'Grid beam sun bed',
             width: 6000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/shoe-rack',
             alt: 'Grid beam shoe rack',
             width: 6000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2021-winter-newsletter/dining-table',
             alt: 'Grid beam dining table',
             width: 5250,
@@ -157,7 +165,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2021-winter-newsletter/automated-factory-machine-sketch' alt="Automated factory machine sketch" width={4096} height={2304} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2021-winter-newsletter/automated-factory-machine-sketch' alt="Automated factory machine sketch" width={4096} height={2304} />
     </StoryColumn>
   </StoryRow>
 
@@ -169,7 +177,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryVideo src="gridbeam.xyz/stories/2021-winter-newsletter/creation-parameter-controls" aspectRatio="wide" title="Design parameter controls" isInColumn />
+      <StoryVideo src="gridbeam.xyz/stories/2021-winter-newsletter/creation-parameter-controls" aspectRatio="wide" title="Design parameter controls" />
     </StoryColumn>
   </StoryRow>
 </StorySection>
@@ -199,7 +207,7 @@ export const metadata = {
     <StoryColumn index={0}>
       That’s a wrap, thanks for reading! Follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates ☀️
 
-      <StoryImage src='gridbeam.xyz/stories/2021-winter-newsletter/the-team' alt="The Village Kit team (Rongomai, Mikey, and Jack)" width={3000} height={2000} />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2021-winter-newsletter/the-team' alt="The Village Kit team (Rongomai, Mikey, and Jack)" width={3000} height={2000} />
     </StoryColumn>
   </StoryRow>
 </StorySection>

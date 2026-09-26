@@ -1,6 +1,6 @@
 ---
 title: Image carousels to static grids (ten galleries)
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/2022-newsletter.mdx` ten `<StoryImageGrid>` with every slide and alt kept: `:45-62` columns {1,2}, `:74-133` {2,3}, `:181-198` {1,2}, `:264-281` {1,2}, `:295-324` {2,2}, `:336-353` {1,2}, `:365-400` {2,3}, `:424-459` {2,3}, `:471-500` {2,2}, `:512-529` {1,2}; no controls.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

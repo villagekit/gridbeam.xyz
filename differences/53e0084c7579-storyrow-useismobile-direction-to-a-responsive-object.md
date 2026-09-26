@@ -1,6 +1,6 @@
 ---
 title: "StoryRow: useIsMobile direction to a responsive object"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StoryRow.tsx:1,18-23` `'use client'`, `direction={{ base: 'column', md: isEven ? 'row' : 'row-reverse' }}`, `gap={{ base: 4, md: 12 }}`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

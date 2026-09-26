@@ -1,6 +1,6 @@
 ---
 title: Opening gallery loses its priority hint
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/story/StoryImageGrid.tsx:14-19` has no `priority` prop, so `content/stories/2022-newsletter.mdx:45-62` cannot set one on the opening, above-the-fold gallery.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log

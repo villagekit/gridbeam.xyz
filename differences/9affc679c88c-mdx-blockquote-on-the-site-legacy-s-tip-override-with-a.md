@@ -1,6 +1,6 @@
 ---
 title: "MDX blockquote on the site: legacy's Tip override with a lightbulb icon at maxWidth lg to the package's quote icon at full width"
-status: regression
+status: fixed
 route: /stories/how-to-cut-grid-beams
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `mdx-components.tsx:1-9` spreads `mdxComponents` from `@villagekit/ui/mdx` with no override, so the story blockquote is the package's `MdxBlockquote` (`../ui/src/mdx/blockquote.tsx`, a `BlockSection` with `FaQuoteRight` since the mdx and media slice; a `blockquote` element at 1.2.0) at the column's full width: a 456px box with a quote icon on `pnpm dev` at 1280. The site never had a `Tip` component or the `blockquote` override.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

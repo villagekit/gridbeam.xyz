@@ -1,6 +1,6 @@
 ---
 title: "StorySection width: container.lg to 5xl"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StorySection.tsx:17` `maxW="5xl"` (`node_modules/@chakra-ui/react/dist/esm/theme/tokens/sizes.js:16` 64rem); the same image measures 960px inside the padded container on the dev server.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

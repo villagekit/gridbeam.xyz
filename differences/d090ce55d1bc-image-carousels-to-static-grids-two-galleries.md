@@ -1,6 +1,6 @@
 ---
 title: Image carousels to static grids (two galleries)
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/2021-winter-newsletter.mdx:90-119,131-154` `<StoryImageGrid columns={{ base: 2, md: 2 }} ...>` and `columns={{ base: 1, md: 3 }}`: every slide survives with its alt; the `orientation: 'portrait'` field on the compost-toilet slide is dropped; no controls (`audit/stories__2021-winter-newsletter/dom/current.aria.yaml:75-79,84-87`).
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

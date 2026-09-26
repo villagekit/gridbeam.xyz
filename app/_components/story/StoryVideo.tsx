@@ -1,43 +1,33 @@
-import { Box } from '@villagekit/ui'
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/story/story-video.tsx
+import { Video, type VideoProps } from './media'
 
-import { getCloudinaryVideoUrl } from '../../_lib/cloudinary'
-
-type AspectRatio = 'standard' | 'wide' | 'square'
-
-interface StoryVideoProps {
-  src: string
-  title: string
-  aspectRatio?: AspectRatio
+type StoryVideoProps = VideoProps & {
   isInColumn?: boolean
 }
 
-const aspectRatioMap: Record<AspectRatio, string> = {
-  standard: '4 / 3',
-  wide: '16 / 9',
-  square: '1 / 1',
-}
-
 export function StoryVideo(props: StoryVideoProps) {
-  const { src, title, aspectRatio = 'standard' } = props
+  const { css, isInColumn = false, ...rest } = props
+
+  const extraProps: Record<string, any> = {}
+  if (isInColumn) {
+    // NOTE (mw): if we pass an undefined `sizes`, it will override child components,
+    //   when we'd rather use the child's default value.
+    extraProps.sizes = {
+      base: '100%',
+      md: ['1024px', 2] as ['1024px', number],
+    }
+  }
 
   return (
-    <Box
-      borderRadius="xl"
-      boxShadow="md"
-      overflow="hidden"
-      width="100%"
-      aspectRatio={aspectRatioMap[aspectRatio]}
-    >
-      {/* biome-ignore lint/a11y/useMediaCaption: silent build/process demo videos — no audio to caption */}
-      <video
-        title={title}
-        controls
-        preload="metadata"
-        playsInline
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-      >
-        <source src={getCloudinaryVideoUrl({ src, format: 'mp4' })} type="video/mp4" />
-      </video>
-    </Box>
+    <Video
+      aspectRatio="standard"
+      {...rest}
+      css={{
+        ...css,
+        borderRadius: 'xl',
+        boxShadow: 'md',
+        objectFit: 'cover',
+      }}
+    />
   )
 }

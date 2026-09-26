@@ -31,3 +31,7 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-26: Added by the components slice (plan [[373320c95e55]]): [[94b21887102b]] (open, accessibility, changed, /stories/2021-winter-newsletter, shared with /stories/2022-newsletter): legacy's carousel indicators are in the accessibility tree as img "slide item" (four before each gallery's previous button), while Chakra v3's Icon writes aria-hidden="true" on the same line of the re-ported ImageCarousel, so the current tree holds an empty list; the buttons, clones and clicks are legacy's. The same mechanism as [[89301ca8a1fc]] and [[1ea1f9eda079]], which the shell's and the home's verdicts plans hold. Sanctioned under rule 4 (Chakra v3's Icon default), or the site writes aria-hidden={false} on the indicator (a site-side line the carousel slice would own) and the item moves to regression?
+
+- 2026-09-26: Also from the components slice (plan [[373320c95e55]]), after its Parity review: [[fee183274ff6]] is the 2022 newsletter's twin of [[94b21887102b]] above (open, the same question, one item per route). Two regression items the review found on the restored galleries, [[e5f7c103b8bf]] and [[f2e4bf3755c7]] (visual, the carousel arrows' chevron 20px at a 14px button font where legacy's is 16px at 16px, Chakra v3's button recipe _icon size, which the ui recipes slice 2bd0169a6dda keeps), are not this plan's: the fix is the button recipe's _icon in ../ui, a ui slice for the story pages record's finish to mint beside the shell record, blocking the bump plan.

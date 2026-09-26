@@ -1,6 +1,6 @@
 ---
 title: "Decision tree: RasterImage with sizes and quality to StoryImage"
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:308` `<StoryImage aspectRatio={null} width={1200} height={693} />` (radius xl and shadow md from `app/_components/story/StoryImage.tsx:39-40`, no `sizes` or `quality`). Both sides render the image at its natural ratio once loaded (992px wide on the live site, 960px on the dev server at 1280).
 
 ## Verdict
+
+plan 373320c9
 
 ## Log

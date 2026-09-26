@@ -1,6 +1,6 @@
 ---
 title: "Story videos: a silent autoplaying loop to a paused player with controls"
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/2021-winter-newsletter.mdx:65,78,178` the same three; `app/_components/story/StoryVideo.tsx:32-40` `<video controls preload="metadata" playsInline>`, no autoplay, loop, mute or poster; black frames with a control bar in `audit/stories__2021-winter-newsletter/1280/current.png`. `:178` passes `isInColumn`, which `StoryVideo.tsx:20-21` ignores.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "StoryImageGrid: breakpoint row and column counts over RasterImage to a SimpleGrid of StoryImage with columns and ariaLabel"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StoryImageGrid.tsx:14-40` props `images`, `ariaLabel` (required), `columns = { base: 2, md: 3 }`, `aspectRatio = 'square'`; `<section aria-label>` around the grid. Call: `content/stories/whats-a-grid-unit.mdx:134-137` `columns={{ base: 2, md: 3 }} aspectRatio='square'`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

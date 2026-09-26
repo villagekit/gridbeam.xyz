@@ -1,61 +1,41 @@
-import { Box } from '@villagekit/ui'
-import NextImage from 'next/image'
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/story/story-image.tsx
+'use client'
 
-type AspectRatio = 'standard' | 'wide' | 'square' | null
+import {
+  type ImagePropsWithOptionalSizes,
+  type SystemStyleObject,
+  useIsInColumn,
+} from '@villagekit/ui'
 
-interface StoryImageProps {
-  src: string
-  alt: string
-  width: number
-  height: number
-  aspectRatio?: AspectRatio
-  isInColumn?: boolean
-  priority?: boolean
-}
+import { Image } from './media'
 
-const aspectRatioMap: Record<Exclude<AspectRatio, null>, string> = {
-  standard: '4 / 3',
-  wide: '16 / 9',
-  square: '1 / 1',
-}
+type StoryImageProps = ImagePropsWithOptionalSizes
 
 export function StoryImage(props: StoryImageProps) {
-  const {
-    src,
-    alt,
-    width,
-    height,
-    aspectRatio = 'standard',
-    isInColumn = false,
-    priority = false,
-  } = props
+  const aspectRatio = 'standard'
+  const baseCss: SystemStyleObject = {
+    borderRadius: 'xl',
+    boxShadow: 'md',
+    objectFit: 'cover',
+  }
 
-  const sizes = isInColumn ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 1024px) 1024px, 100vw'
+  const isInColumn = useIsInColumn()
 
-  const aspectRatioValue = aspectRatio == null ? undefined : aspectRatioMap[aspectRatio]
+  if (props.type === 'svg') {
+    const { type, css, ...rest } = props
+    return <Image type={type} aspectRatio={aspectRatio} {...rest} css={[baseCss, css]} />
+  }
+  const { css, ...rest } = props
 
-  return (
-    <Box
-      borderRadius="xl"
-      boxShadow="md"
-      overflow="hidden"
-      position="relative"
-      width="100%"
-      aspectRatio={aspectRatioValue}
-    >
-      <NextImage
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        sizes={sizes}
-        priority={priority}
-        style={{
-          objectFit: 'cover',
-          width: '100%',
-          height: '100%',
-        }}
-      />
-    </Box>
-  )
+  const extraProps: Record<string, any> = {}
+  if (isInColumn) {
+    // NOTE (mw): if we pass an undefined `sizes`, it will override child components,
+    //   when we'd rather use the child's default value.
+    extraProps.sizes = {
+      base: '100%',
+      md: ['1024px', 2] as ['1024px', number],
+    }
+  }
+
+  return <Image aspectRatio={aspectRatio} {...extraProps} {...rest} css={[baseCss, css]} />
 }

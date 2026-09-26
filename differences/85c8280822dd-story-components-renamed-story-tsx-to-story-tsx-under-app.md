@@ -1,6 +1,6 @@
 ---
 title: "Story components renamed: story-*.tsx to Story*.tsx under app/_components/story"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/{index.ts,StoryColumn.tsx,StoryEditorialNote.tsx,StoryImage.tsx,StoryImageGrid.tsx,StoryRow.tsx,StorySection.tsx,StoryVideo.tsx}`, imported as `@/app/_components/story` (`content/stories/whats-a-grid-unit.mdx:3-9`); no `mdx.tsx`, no carousel.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

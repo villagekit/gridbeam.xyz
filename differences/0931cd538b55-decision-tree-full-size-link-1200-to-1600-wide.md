@@ -1,6 +1,6 @@
 ---
 title: "Decision tree full-size link: 1200 to 1600 wide"
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:307` the same link at `width: 1600`. From code: the target opens out of the page.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log

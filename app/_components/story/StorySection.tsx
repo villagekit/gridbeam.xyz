@@ -1,9 +1,10 @@
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/story/story-section.tsx
 import { Section } from '@villagekit/ui'
-import type { ReactNode } from 'react'
+import type React from 'react'
 
-interface StorySectionProps {
+export interface StorySectionProps {
   index: number
-  children: ReactNode
+  children: React.ReactNode | Array<React.ReactNode>
 }
 
 export function StorySection(props: StorySectionProps) {
@@ -14,9 +15,9 @@ export function StorySection(props: StorySectionProps) {
   return (
     <Section
       index={index}
-      maxW="5xl"
+      maxW="breakpoint-lg"
       colorPalette={isEven ? 'gray' : undefined}
-      gap={{ base: 8, md: 12 }}
+      gap={[8, null, 12]}
     >
       {children}
     </Section>

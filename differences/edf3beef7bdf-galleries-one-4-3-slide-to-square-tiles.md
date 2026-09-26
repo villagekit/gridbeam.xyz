@@ -1,6 +1,6 @@
 ---
 title: "Galleries: one 4:3 slide to square tiles"
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/story/StoryImageGrid.tsx:22` `aspectRatio = 'square'` (no call passes one); two to nine square tiles per gallery with a gap, `audit/stories__2022-newsletter/1280/current.png`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log

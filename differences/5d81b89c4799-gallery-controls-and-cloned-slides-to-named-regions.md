@@ -1,6 +1,6 @@
 ---
 title: Gallery controls and cloned slides to named regions
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `audit/stories__2022-newsletter/dom/current.aria.yaml:107-297` one named `region` per gallery ("Team trip to the farm", "GridBot Hex", ...) holding its images once, in source order; no controls (`app/_components/story/StoryImageGrid.tsx:25`).
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

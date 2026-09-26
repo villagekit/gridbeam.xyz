@@ -1,6 +1,6 @@
 ---
 title: "StoryVideo: isInColumn accepted and ignored"
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StoryVideo.tsx:11,20-21` the prop is in the type and never read; `content/stories/2022-newsletter.mdx:143` and `content/stories/2021-winter-newsletter.mdx:178` pass it to no effect.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

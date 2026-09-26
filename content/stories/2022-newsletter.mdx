@@ -1,7 +1,7 @@
 import {
   StoryColumn,
   StoryImage,
-  StoryImageGrid,
+  StoryImageCarousel,
   StoryRow,
   StorySection,
   StoryVideo,
@@ -36,17 +36,20 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
+        priority
         ariaLabel="Team trip to the farm"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/team-lunch',
             alt: 'The team making lunch',
             width: 3072,
             height: 4096,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/farm-ducks',
             alt: 'Ducks at the farm',
             width: 4096,
@@ -65,59 +68,68 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 3 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="GridBot Hex"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-1',
             alt: 'GridBot Hex',
             width: 4864,
             height: 3648,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-2',
             alt: 'GridBot Hex',
             width: 4864,
             height: 3648,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-3',
             alt: 'GridBot Hex',
             width: 3000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-4',
             alt: 'GridBot Hex',
             width: 3000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-5',
             alt: 'GridBot Hex',
             width: 3264,
             height: 2448,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-6',
             alt: 'GridBot Hex',
             width: 3000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-7',
             alt: 'GridBot Hex',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-8',
             alt: 'GridBot Hex',
             width: 3000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/new-gridbot',
             alt: 'GridBot Hex next iteration',
             width: 1113,
@@ -134,7 +146,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryVideo src="gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-test-drilling" aspectRatio="wide" title="GridBot Hex test drilling" isInColumn />
+      <StoryVideo src="gridbeam.xyz/stories/2022-newsletter/updates/gridbot-hex-test-drilling" aspectRatio="wide" title="GridBot Hex test drilling" />
     </StoryColumn>
   </StoryRow>
 
@@ -148,7 +160,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/gridbot-tahi' alt="GridBot Tahi" width={1024} height={520} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/gridbot-tahi' alt="GridBot Tahi" width={1024} height={520} />
     </StoryColumn>
   </StoryRow>
 
@@ -160,7 +172,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/landing-screenshot' alt="Redesigned landing page" aspectRatio="wide" width={3326} height={1884} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/landing-screenshot' alt="Redesigned landing page" aspectRatio="wide" width={3326} height={1884} />
     </StoryColumn>
   </StoryRow>
 
@@ -172,17 +184,19 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Design catalogue updates"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/shoe-rack-screenshot',
             alt: 'Shoe rack design',
             width: 3326,
             height: 1884,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/updates/parts-breakdown-screenshot',
             alt: 'The parts breakdown for designs',
             width: 3326,
@@ -201,7 +215,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/products-screenshot' alt="Product catalogue" width={3326} height={1884} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/products-screenshot' alt="Product catalogue" width={3326} height={1884} />
     </StoryColumn>
   </StoryRow>
 
@@ -213,7 +227,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/stories-screenshot' alt="Stories page" width={3326} height={1884} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/stories-screenshot' alt="Stories page" width={3326} height={1884} />
     </StoryColumn>
   </StoryRow>
 
@@ -225,7 +239,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/discuss-screenshot' alt="Village kit discussion forum" width={3326} height={1884} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/discuss-screenshot' alt="Village kit discussion forum" width={3326} height={1884} />
     </StoryColumn>
   </StoryRow>
 
@@ -237,7 +251,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/updates/phil-jergenson' alt="Phil Jergenson playing with a grid beam creation" width={3072} height={2387} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/updates/phil-jergenson' alt="Phil Jergenson playing with a grid beam creation" width={3072} height={2387} />
     </StoryColumn>
   </StoryRow>
 </StorySection>
@@ -255,17 +269,19 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Kitchen unit"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-unit-1',
             alt: 'Kitchen unit',
             width: 800,
             height: 450,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-unit-2',
             alt: 'Kitchen unit bench',
             width: 4000,
@@ -286,29 +302,33 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Record player shelving unit"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/record-player-1',
             alt: 'Record player shelf',
             width: 2048,
             height: 1536,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/record-player-2',
             alt: 'Record player shelf SketchUp mock-up',
             width: 4128,
             height: 2322,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/record-player-3',
             alt: 'Record player shelf under construction',
             width: 4128,
             height: 2322,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/record-player-4',
             alt: 'Record player shelf under construction',
             width: 2322,
@@ -327,17 +347,19 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Server rack"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/server-rack-1',
             alt: 'Server rack',
             width: 1600,
             height: 1200,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/server-rack-2',
             alt: 'Server rack custom bridge part',
             width: 1200,
@@ -356,35 +378,40 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 3 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Hanging lights"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/hanging-lights-1',
             alt: 'Hanging lights',
             width: 1200,
             height: 1600,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/hanging-lights-2',
             alt: 'Hanging lights side view',
             width: 1200,
             height: 1600,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/hanging-lights-3',
             alt: 'Hanging lights close up',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/hanging-lights-4',
             alt: 'Hanging lights close up',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/hanging-lights-5',
             alt: 'Stainless steel wire light hanger',
             width: 3096,
@@ -403,7 +430,7 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/creations/simple-tool-holder' alt="Simple tool holder" width={1600} height={1200} isInColumn />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/creations/simple-tool-holder' alt="Simple tool holder" width={1600} height={1200} />
     </StoryColumn>
   </StoryRow>
 
@@ -415,35 +442,40 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 3 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Peacock truck"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/peacock-truck-1',
             alt: 'Peacock truck',
             width: 1600,
             height: 1200,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/peacock-truck-2',
             alt: 'Peacock truck bamboo shoots',
             width: 1200,
             height: 1600,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/peacock-truck-3',
             alt: 'Universal joint with two 4040 angle brackets',
             width: 3000,
             height: 4000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/peacock-truck-4',
             alt: 'Peacock truck behind',
             width: 1200,
             height: 1600,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/peacock-truck-5',
             alt: 'Peacock truck close up',
             width: 3000,
@@ -462,29 +494,33 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 2, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="Kitchen island"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-island-1',
             alt: 'Kitchen island prototype',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-island-2',
             alt: 'Kitchen island prototype mock-up',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-island-3',
             alt: 'Kitchen island prototype under construction',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/kitchen-island-4',
             alt: 'Attempt at attaching castor wheel to kitchen island',
             width: 4000,
@@ -503,17 +539,19 @@ export const metadata = {
     </StoryColumn>
 
     <StoryColumn index={1}>
-      <StoryImageGrid
-        columns={{ base: 1, md: 2 }}
+      <StoryImageCarousel
+        isInColumn
         ariaLabel="New components"
-        images={[
+        slides={[
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/insert-nuts',
             alt: 'Grid Kit compatible insert nuts',
             width: 4000,
             height: 3000,
           },
           {
+            type: 'cloudinary',
             src: 'gridbeam.xyz/stories/2022-newsletter/creations/castor-wheels',
             alt: 'Grid Kit compatible castor wheels',
             width: 4000,
@@ -534,7 +572,7 @@ export const metadata = {
 
       Thanks for checking in! Make sure to follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates. Join in on the discussion on our [community forum](https://discuss.villagekit.com) and let us know what you think of [this newsletter](https://discuss.villagekit.com/t/village-kit-2022-newsletter/55) 🌙
 
-      <StoryImage src='gridbeam.xyz/stories/2022-newsletter/team-robot' alt="The team with GridBot Hex" width={4864} height={3648} />
+      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2022-newsletter/team-robot' alt="The team with GridBot Hex" width={4864} height={3648} />
     </StoryColumn>
   </StoryRow>
 </StorySection>

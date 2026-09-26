@@ -1,6 +1,6 @@
 ---
 title: Gallery controls and cloned slides to a named region
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StoryImageGrid.tsx:25` `region "Grid beam out in the world"` with four images (`audit/stories__2021-winter-newsletter/dom/current.aria.yaml:75-79`) and `region "Grid beam furniture designs"` with three (`:84-87`); no controls.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "GridBot Hex test drilling video: a silent autoplaying loop to a paused player with controls"
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `content/stories/2022-newsletter.mdx:143` the same call plus `isInColumn`; `app/_components/story/StoryVideo.tsx:32-40` `<video controls preload="metadata" playsInline>`: a control bar reading 0:00, paused, in `audit/stories__2022-newsletter/1280/current.png`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Story rows: top-aligned columns to stretched rows with vertically centred columns"
-status: regression
+status: fixed
 route: /stories/whats-a-grid-unit
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/story/StoryRow.tsx:18-23` `alignItems="stretch"`; `app/_components/story/StoryColumn.tsx:13` `justifyContent="center"`: the same text is centred against the image, `audit/stories__whats-a-grid-unit/1280/current.png`.
 
 ## Verdict
+
+plan 373320c9
 
 ## Log
 
