@@ -18,3 +18,7 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed open by the design carousel slice (plan [[60cca8519469]]) for the rules: rule 4 if the operator reads the global loader's consequence as upgrade-forced, else a regression whose fix is a loader for local images in ../ui or a loaderFile that passes /_next/static/media/ paths through. Goes on the home's verdicts plan at the record's finish (the record's Log). The unoptimized half of [[1501ee97ed24]] lives here; the two call sites' sizes objects render no attribute while unoptimized stays, so the 100% for full swap of [[152511f71ef4]] has no rendered effect on them.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator (decision 40abdb2f222a); the state stays open until judged there. No verdict written.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]), the Current lines after the page re-port: the DesignCarousel's image is unoptimized at app/_components/DesignCarousel.tsx and the hidden next-design Image at app/HomePage.tsx:442-443 (priority, unoptimized); app/_components/landing/TypingDesignSection.tsx is deleted.

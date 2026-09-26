@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed open by the page re-port (plan [[159c621d8a1a]]) for its own deviation, so not judged by it, as the adapter slice filed [[1eddda919812]]. The rule to test it against is rule 4 of 2032533f (upgrade-forced): the app router allows no other split, and the visitor sees the same page. Goes on the home's verdicts plan at the record's finish (the record's Log, call 8).
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator (decision 40abdb2f222a); the state stays open until judged there. No verdict written.

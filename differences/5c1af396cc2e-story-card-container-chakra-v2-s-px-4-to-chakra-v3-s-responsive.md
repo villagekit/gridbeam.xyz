@@ -20,3 +20,5 @@ kind: changed
 - 2026-09-26: Filed by the story card slice (plan [[e332105c3b52]]), introduced by its re-port onto legacy's bare Container: the card it replaced set no per-card cap (7bb1c0ef2970). The stories ledger cites it.
 
 - 2026-09-26: Refiled from / to shell at the Spec review of plan [[e332105c3b52]]: the fix is a container recipe in the ui theme, which changes every bare Container on the site, so a shell change closes it; the story card is where it was measured.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2bd0169a6dda]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).

@@ -18,3 +18,5 @@ Chakra v2's button theme (`@chakra-ui/theme`, `components/button.ts`: `md` is `h
 ## Log
 
 - 2026-09-26: Found at the page re-port of / (plan [[159c621d8a1a]]), which passes legacy's responsive buttonSize ([[6e96991035bf]] fixed) and meets the recipe's sizes: the M1 ledger has no item on it, the previous page having written size lg fixed. The ui's to fix in ../ui, a size variant set on buttonRecipe as the input recipe carries v2's sizes ([[6b5488415a06]]), closed at the bump.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2bd0169a6dda]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).

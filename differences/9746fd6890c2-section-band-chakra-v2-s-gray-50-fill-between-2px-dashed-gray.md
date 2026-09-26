@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Found at the page re-port of / (plan [[159c621d8a1a]]) in the published 1.2.0 Section the re-port consumes, not in the page: the M1 ledger has no item on it, and the current page used the same component before the re-port. The fill's token value is the palette's ([[72b776cb0d3f]]); the dashed rules are the Section recipe's, restored in ../ui by a ui slice and closed at the bump.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2de775cb197b]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).

@@ -18,3 +18,5 @@ Chakra v3's link recipe sets `display: inline-flex`, `alignItems: center` and `g
 ## Log
 
 - 2026-09-26: Found by the Parity review of the page re-port (plan [[159c621d8a1a]]), in the published 1.2.0 link recipe and not in the page: the previous home page had it too, and no item on / or shell recorded it. Not rule 4: display inline on the ui linkRecipe restores legacy's wrapping. The ui's to fix in ../ui, closed at the bump.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2bd0169a6dda]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).

@@ -18,3 +18,7 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by the story card slice (plan [[e332105c3b52]]); found on the story card, whose badge line is legacy's; the color and shade are 2b12ca93bdd3's, the literals the palette's upstream items.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2bd0169a6dda]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).
+
+- 2026-09-26: Correction at the home record's finish (plan [[fd9a92bd8abd]], the review's finding): the Legacy text's word inline is short. Chakra v2's theme wrote no display rule, but the v2 Badge component's own __css wrote display inline-block, vertical-align middle and white-space nowrap (@chakra-ui/layout@2.3.1, dist/chunk-Z6RXEUPO.mjs:21-25); the flex parent on /stories blockifies it on both sides, so the slice [[2bd0169a6dda]] reads display on the suppliers page's badges.

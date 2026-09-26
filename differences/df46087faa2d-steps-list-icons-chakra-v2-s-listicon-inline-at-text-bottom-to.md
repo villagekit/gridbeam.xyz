@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed open by the page re-port (plan [[159c621d8a1a]]): [[3d21d3543886]] sanctions List.Indicator for ListIcon under rule 4, and whether the v3 recipe's own alignment comes with it is the operator's call; otherwise the fix is verticalAlign="text-bottom" on each indicator, or a list recipe in ../ui. Goes on the home's verdicts plan at the record's finish.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator (decision 40abdb2f222a); the state stays open until judged there. No verdict written.

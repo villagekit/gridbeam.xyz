@@ -24,3 +24,7 @@ kind: changed
 - 2026-09-12: The designs route's own use of the generated module is filed on `/designs` with the same judgement (plan cf52c388).
 
 - 2026-09-26: At the home record's split (plan fd9a92bd8abd): no home slice closes this item. Its fix is the designs lib's (app/_lib/designs.ts: the generated module, the label sort and the nullable image, the mechanism abb539b3555e records on /designs), and the home's use (the image !== null filter, the guard in the typing section) goes with it. At the home record's finish this item goes on the home's verdicts plan (decision 40abdb2f222a) for the operator to judge alongside abb539b3555e.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator, to be judged beside [[abb539b3555e]] on /designs (decision 40abdb2f222a); the state stays regression until judged there.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]), the Current lines after the page re-port: app/page.tsx:15-16 (getDesignIndex and the image !== null filter), app/HomePage.tsx:430 and :438 (the hasImage guard on the current design and the null check on the next), :456-459 (hasImage), and app/_components/DesignCarousel.tsx's getDesignImage pair.

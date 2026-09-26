@@ -18,3 +18,7 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by the story card slice (plan [[e332105c3b52]]); pre-existing on /designs at 1.2.0 and now on / and /stories, where the console error replaces the one the StoryCard selector logged (150c408aba5a). Not the site's to fix: no ../ui edit in that slice.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[8235bd4bea81]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).
+
+- 2026-09-26: Correction at the home record's finish (plan [[fd9a92bd8abd]], the review's finding): the Current text's clause that no current consumer nests a HoverCard in a container is wrong. The catalog's ItemCard does (app/_components/catalogue/ItemCard.tsx:26,29, legacy's components/catalogue/item.tsx:33,48 at fce357d), so on /designs a hovered card's inner .ui-hover-card loses the accentB.100 fill and accentB.300 border today; the slice [[8235bd4bea81]] restores it and its Done when reads it on /designs.

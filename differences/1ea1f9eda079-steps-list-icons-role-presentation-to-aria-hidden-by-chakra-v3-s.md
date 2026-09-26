@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed open by the page re-port (plan [[159c621d8a1a]]), the same mechanism as [[89301ca8a1fc]] on shell: Chakra v3's Icon hides itself by default and the tree is the same. A rule 4 candidate for the operator; the alternative is role="presentation" written on each Icon beside v3's aria-hidden, as ../ui's BlockSection does. Goes on the home's verdicts plan at the record's finish.
+
+- 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator (decision 40abdb2f222a); the state stays open until judged there. No verdict written.
