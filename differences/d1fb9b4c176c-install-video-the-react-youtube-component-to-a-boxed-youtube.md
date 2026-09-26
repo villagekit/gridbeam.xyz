@@ -1,6 +1,6 @@
 ---
 title: "Install video: the react-youtube component to a boxed youtube-nocookie iframe"
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:325-342` `<Box width="100%" maxW="3xl" mx="auto" aspectRatio="16/9" borderRadius="xl" boxShadow="md" overflow="hidden"><iframe src="https://www.youtube-nocookie.com/embed/Xidi8xogSSQ?modestbranding=1&rel=0" title="How to install furniture bolts" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></Box>`.
 
 ## Verdict
+
+plan eeeb3813
 
 ## Log

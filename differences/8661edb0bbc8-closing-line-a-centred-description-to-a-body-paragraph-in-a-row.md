@@ -1,6 +1,6 @@
 ---
 title: "Closing line: a centred Description to a body paragraph in a row"
-status: regression
+status: fixed
 route: /stories/2021-winter-newsletter
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/2021-winter-newsletter.mdx:203-211` the sentence as a plain paragraph inside an added `<StoryRow index={0}><StoryColumn index={0}>`, left-aligned at body size; `audit/stories__2021-winter-newsletter/1280/current.png`.
 
 ## Verdict
+
+plan eeeb3813
 
 ## Log

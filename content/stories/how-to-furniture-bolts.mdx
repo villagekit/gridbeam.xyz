@@ -1,4 +1,5 @@
-import { Box, Link, RasterImage } from '@villagekit/ui'
+import YouTube from '@/app/_components/YouTube'
+import { Link, RasterImage } from '@villagekit/ui'
 
 import { getCloudinaryUrl } from '@/app/_lib/cloudinary'
 import {
@@ -326,24 +327,7 @@ Which panel?
 <StoryRow index={1}>
 <StoryColumn index={0}>
 
-<Box
-  as="div"
-  width="100%"
-  maxW="3xl"
-  mx="auto"
-  aspectRatio="16/9"
-  borderRadius="xl"
-  boxShadow="md"
-  overflow="hidden"
->
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/Xidi8xogSSQ?modestbranding=1&rel=0"
-    title="How to install furniture bolts"
-    style={{ width: '100%', height: '100%', border: 0 }}
-    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  />
-</Box>
+<YouTube video="Xidi8xogSSQ" modestBranding showRelatedVideos={false} width='100%' style={{ aspectRatio: '16/9' }} />
 
 </StoryColumn>
 </StoryRow>

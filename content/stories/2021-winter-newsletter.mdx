@@ -1,5 +1,6 @@
-import { Link } from '@villagekit/ui'
+import { Box, Description, Link } from '@villagekit/ui'
 
+import { ImageCarousel } from '@/app/_components/ImageCarousel'
 import {
   StoryColumn,
   StoryImage,
@@ -203,11 +204,9 @@ export const metadata = {
 </StorySection>
 
 <StorySection index={3}>
-  <StoryRow index={0}>
-    <StoryColumn index={0}>
-      That’s a wrap, thanks for reading! Follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates ☀️
+  <Description textAs='div'>
+    That’s a wrap, thanks for reading! Follow us on [Facebook](https://facebook.com/villagekit), [Instagram](https://instagram.com/village_kit), [Twitter](https://twitter.com/villagekit), and [YouTube](https://www.youtube.com/channel/UCRyyv44mbBfctVnlxzQrrww) for more updates ☀️
+  </Description>
 
-      <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2021-winter-newsletter/the-team' alt="The Village Kit team (Rongomai, Mikey, and Jack)" width={3000} height={2000} />
-    </StoryColumn>
-  </StoryRow>
+  <StoryImage type='cloudinary' src='gridbeam.xyz/stories/2021-winter-newsletter/the-team' alt="The Village Kit team (Rongomai, Mikey, and Jack)" width={3000} height={2000} />
 </StorySection>

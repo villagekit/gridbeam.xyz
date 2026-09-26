@@ -1,6 +1,6 @@
 ---
 title: "Install video: a full-width plain embed to a capped, rounded, shadowed box"
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/how-to-furniture-bolts.mdx:327-334` `maxW="3xl" mx="auto" borderRadius="xl" boxShadow="md"`; a narrower centred box in `audit/stories__how-to-furniture-bolts/1280/current.png`.
 
 ## Verdict
+
+plan eeeb3813
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Creations intro: a centred Description to a body paragraph"
-status: regression
+status: fixed
 route: /stories/2022-newsletter
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `content/stories/2022-newsletter.mdx:254` the same sentence as a plain paragraph. From code.
 
 ## Verdict
+
+plan eeeb3813
 
 ## Log

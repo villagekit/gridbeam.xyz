@@ -1,6 +1,6 @@
 ---
 title: Install video iframe gains a title
-status: regression
+status: fixed
 route: /stories/how-to-furniture-bolts
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `content/stories/how-to-furniture-bolts.mdx:337` `title="How to install furniture bolts"`. From code: the aria snapshots show an unnamed `iframe` on both sides.
 
 ## Verdict
+
+plan eeeb3813
 
 ## Log
 

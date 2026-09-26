@@ -39,6 +39,7 @@
     "@opennextjs/cloudflare": "^1.19.11",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.0.0",
+    "@u-wave/react-youtube": "^0.7.4",
     "@villagekit/parameters": "^0.10.0",
     "@villagekit/part": "^0.10.0",
     "@villagekit/part-fastener": "^0.10.0",

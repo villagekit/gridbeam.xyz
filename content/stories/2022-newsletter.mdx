@@ -1,3 +1,5 @@
+import { Description } from '@villagekit/ui'
+import { ImageCarousel } from '@/app/_components/ImageCarousel'
 import {
   StoryColumn,
   StoryImage,
@@ -259,7 +261,9 @@ export const metadata = {
 <StorySection index={1}>
   ## Our latest creations with Grid Kit
 
-  This year we’ve been busy using Grid Kit to try out new designs. See what we created below! 🔨
+  <Description textAs='div'>
+    This year we’ve been busy using Grid Kit to try out new designs. See what we created below! 🔨
+  </Description>
 
   <StoryRow index={0}>
     <StoryColumn index={0}>
