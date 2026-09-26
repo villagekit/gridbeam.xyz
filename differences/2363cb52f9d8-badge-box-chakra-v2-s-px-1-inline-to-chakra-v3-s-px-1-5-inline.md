@@ -1,6 +1,6 @@
 ---
 title: "Badge box: Chakra v2's px 1 inline to Chakra v3's px 1.5 inline-flex with a 5 minimum height"
-status: regression
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): the fix in ../ui is the slice [[2bd0169a6dda]], minted beside the shell record (decision 40abdb2f222a, worker:fable, blocking the bump plan [[99f2fe62c62f]]); the slice moves this item to upstream with the sibling commit (decision 28c1a536).
 
 - 2026-09-26: Correction at the home record's finish (plan [[fd9a92bd8abd]], the review's finding): the Legacy text's word inline is short. Chakra v2's theme wrote no display rule, but the v2 Badge component's own __css wrote display inline-block, vertical-align middle and white-space nowrap (@chakra-ui/layout@2.3.1, dist/chunk-Z6RXEUPO.mjs:21-25); the flex parent on /stories blockifies it on both sides, so the slice [[2bd0169a6dda]] reads display on the suppliers page's badges.
+
+- 2026-09-26: Fixed in ../ui at commit 6603102 (plan [[2bd0169a6dda]]): the badge recipe carries Chakra v2's base (inline-block at vertical-align middle, fontSize xs, fontWeight bold) under the 0.9.0 radius and text transform, and neutralizes v3's default sm size to v2's box (px 1, no text style, no minimum height); v3's xs, md and lg stay reachable. On pnpm dev under the override, the story card's badge on /stories at 1280 and 375 reads 47 by 21 with 4px horizontal padding on a 21px line, the live legacy site's reading; the /suppliers badges read 4px padding and min-height auto, and display block since their HStack blockifies them as the card's flex parent does, so display inline-block was read by cloning one into a plain div (the scratchpad's badge-block-probe.mjs). v3's user-select none and tabular numerals stay, filed as [[a90ae9e6e022]]. Waits on the publish; the bump plan [[99f2fe62c62f]] moves it to fixed.

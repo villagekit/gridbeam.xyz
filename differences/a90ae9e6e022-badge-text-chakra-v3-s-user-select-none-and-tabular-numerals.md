@@ -1,0 +1,19 @@
+---
+title: "Badge text: Chakra v3's user-select none and tabular numerals kept over v2's selectable text and normal numerals"
+status: regression
+route: shell
+axis: interaction
+kind: added
+---
+
+## Legacy
+
+Chakra v2's badge wrote no `user-select` and no `font-variant-numeric` (`@chakra-ui/theme@3.3.1` `components/badge.js:31-35` and the v2 `Badge` component's own css, `@chakra-ui/layout@2.3.1` `dist/chunk-Z6RXEUPO.mjs:21-25`), so a badge's text is selectable and its digits proportional. Measured on the live legacy site, `/stories` at 1280, the story card's `Guide` badge: `user-select: auto`, `font-variant-numeric: normal` (the scratchpad's `recipes-probe.mjs`, 2026-09-26).
+
+## Current
+
+Chakra v3's badge recipe base writes `userSelect: none` and `fontVariantNumeric: tabular-nums` (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/badge.js:6-15`), which `@villagekit/ui`'s `badgeRecipe` keeps under 1.2.0 and after the recipes slice [[2bd0169a6dda]], whose scope was Chakra v2's box (display, padding, type, no minimum height) with every other v3 declaration kept as it renders. Measured on `pnpm dev`, the same badge: `user-select: none`, `font-variant-numeric: tabular-nums`. Every `Badge` on the site, so filed on `shell`; no badge on the site shows digits today, so the numerals do not show, and the selection difference is the one a visitor can meet. The fix is two lines in the ui recipe base, a ui slice's.
+
+## Verdict
+
+## Log
