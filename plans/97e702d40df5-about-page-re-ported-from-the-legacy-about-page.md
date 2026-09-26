@@ -1,0 +1,47 @@
+---
+title: About page re-ported from the legacy about page
+status: todo
+parent: 40179ab9e779
+derived_from: 40179ab9e779
+blocked_by:
+  - 5ac30176aa70
+  - 5176646603be
+  - 6f90e7e24ca6
+  - a7bf623f885c
+tags:
+  - "worker:fable"
+priority: medium
+---
+The about page is legacy's `pages/about.tsx` again, translated for the app router in one server file: `app/about/page.tsx` holding `metadata` and legacy's tree, a `Title size="2xl"` over a `Container` at the `md` container width holding a `VStack gap="8"` of the six captions and six ui `Image`s at intrinsic size, `AboutText` at the bottom as legacy's `TextProps` helper; the `Section` wrapper, the route-local `AboutPhoto` on `next/image fill` with its radius and shadow, the added line height and the wider gap all go. Copy is as the copy slice left it; this slice changes no visitor-facing text. One value the published package cannot take, legacy's `container.md` size name, is written as the width it resolved to and filed for the bump. A re-port that decides every translation, so Fable. Seven items on `/about`, one filed and moved to `upstream`. Record `40179ab9e779`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
+
+## Work
+
+- Legacy: `../node-modules/apps/gridkit/pages/about.tsx` at `fce357d` (130 lines), `packages/ui-page/src/components/Title.tsx` (the `Title` the ui `1.2.0` exports with `description` and the heading props) and `packages/ui-media/src/image.tsx:162-203` (the `RasterImage` the ui `1.2.0` `Image` reproduces, `dist/components/media/Image.js`). Current: `app/about/page.tsx` as the removals and copy slices leave it.
+- One file, a server component: `app/about/page.tsx` keeps `metadata` (`title: 'About'`, the removals slice's) and exports the page, with the header `// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/pages/about.tsx`. No `'use client'` and no second file: legacy's page calls no hook of its own, every component it renders (`Title`, `Container`, `VStack`, `Text`, `Span`, the ui `Image`) is a client module at `1.2.0` (`head -1 node_modules/@villagekit/ui/dist/components/media/Image.js` and `dist/components/layouts/Title.js` print `"use client"`), and every prop crossing the boundary is a primitive or a plain object, so the two-file shape the home needed (`091a47cb93e7`) is not forced here. If a reason for a client file surfaces in the work, the Outcome says which, and the slice files one code item on `/about` (`changed`, `open`, never sanctioned by the agent) citing [[091a47cb93e7]] as the precedent, the home's two-file page, itself `open` for the operator's verdict; it then goes on the about's verdicts plan at the finish. Legacy's `getLayout` and `MainLayout` are the shell's layout (`1c05b1d0d3db`, `a7bf623f885c`); `NextSeo` is the `metadata` (`65c21e08b3f1`, rule 4).
+- [[bfe876779ed0]], [[5f618057b23d]], [[2b1dce44fd7a]]: the page is `<Title size="2xl">What is grid beam?</Title>` (`about.tsx:14`, the heading's text the sanctioned `1f742640f27f`) then `<Container maxW="breakpoint-md"><VStack gap="8">` of the captions and images in legacy's order (`about.tsx:16-117`), no `Section`, no `alignItems` (legacy's `VStack` centers its children, as Chakra v3's does). Chakra v2's `container.md` token is v3's `sizes.breakpoint-md`, registered from the `md` breakpoint (`node_modules/@chakra-ui/react/dist/esm/styled-system/token-dictionary.js:21-29`, `expandBreakpoints`), 768px, the width v2's token held and the width the current `3xl` (48rem) already renders; the rename is upgrade-forced (rule 4) and named in the Outcome. `spacing="8"` is `gap="8"`.
+- [[878fefa617c4]], [[13bdc7d5ca36]]: each image is the ui `Image` from `@villagekit/ui`: `<Image type="cloudinary" src="gridbeam.xyz/about/grid" alt={...} sizes={{ base: '768px' }} width={1188} height={841} />` and so on for the six, legacy's `width` and `height` pairs (`about.tsx:26-107`), the current public IDs (`3741ad0e8bbf`, sanctioned) and the alts as the copy slice left them; `AboutPhoto`, its `Box` (the radius, the shadow, the aspect ratio) and the `next/image` import deleted. The ui `Image` renders `next/image` at intrinsic size through the ui's Cloudinary loader with the cloud name `SiteProvider`'s `MediaProvider` mounts (`6f90e7e24ca6`, `app/_components/SiteProvider.tsx`), the shape the home's two `LandingImage` photos use (`app/HomePage.tsx:329,365`); the preflight's `max-width: 100%` fits each to the container as it did in legacy.
+- The `sizes` value: legacy's `sizes={{ base: 'container.md' }}` throws at `1.2.0`, whose `useSizeWidths` names `3xs` to `8xl` only (`dist/hooks/useSizeWidths.js:4-19`) and whose `useSizes` throws `Unexpected size value` for a name it does not know (`dist/components/media/hooks.js:52`); the sibling restores the name at ui commit `1c3e3e8` (`252edab16c7a`, `upstream`), `container.md` read from `sizes.breakpoint-md`. So the six call sites write `'768px'`, the width `@villagekit/ui@0.9.0`'s `useSizeWidths` held `container.md` as, which `useImageSizes` renders as the identical attribute on both sides, `sizes="768.00px"` (one `base` entry, no media query; a curl of the live legacy page and of `pnpm dev` says so). File one code item on `/about` (`changed`) for it, the mechanism of `152511f71ef4` on `/`: `regression` at the mint, then `kipu move <id> upstream --from regression` with a note citing ui commit `1c3e3e8`, and note on `99f2fe62c62f` the six lines to swap back to `'container.md'` at the bump with the check `grep -n "base: '768px'" app/about/page.tsx` printing nothing; the same note says `/about` renders no `Section` after this slice, so it leaves the `Section` note's list of pages with a band. If the operator's publish and the bump have landed first (the verify-first grep for `container` in `useSizeWidths.js` prints non-zero), write `'container.md'` directly and file nothing.
+- [[61dedaa19b75]], [[c52a29c7ef8c]]: `function AboutText(props: TextProps) { return <Text fontSize={['xl', null, '2xl']} textAlign="center" {...props} /> }` at the bottom of the file (`about.tsx:128-130`), `TextProps` from `@villagekit/ui`, the `sx` to a style prop, no `lineHeight`.
+- The bold spans stay `Span fontWeight="bold"` (`01ae1e943907`, sanctioned) where legacy wrote `Box as="span" sx`; no visitor-facing string is written or changed.
+- Chakra v3 and app-router translations throughout, each a sanctioned or upgrade-forced shape: `spacing` to `gap`, `sx` to a style prop, `Box as="span"` to `Span`, `container.md` to `breakpoint-md`, `NextSeo` to `metadata`, `getLayout` to the root layout; a translation with more than one fitting form is named in the Outcome with the form chosen.
+- Interfaces: consumes the mounted `MediaProvider` (`6f90e7e24ca6`) and the shell's layout (`a7bf623f885c`); produces nothing another slice consumes.
+- Verify first: `grep -c 'Section\|AboutPhoto\|NextImage' app/about/page.tsx` prints at least 3; `grep -c 'container' node_modules/@villagekit/ui/dist/hooks/useSizeWidths.js` prints 0; `grep -n 'Image\b' node_modules/@villagekit/ui/dist/index.d.ts` prints the media export.
+- Docs: none; CLAUDE.md's Structure already names the route.
+- Not this slice: the container's padding (`5c1af396cc2e`, `shell`, `upstream`, 32px at 1280 until the bump) and the heading recipe's sizes (`0369f14e4df4` and its family, `shell`, `upstream`), both expected on the pairs; the ui `Title`'s inner container, `Container maxW="2xl"` (672px) at `1.2.0` and in the sibling (`dist/components/layouts/Title.js:10`, `../ui/src/components/layouts/Title.tsx:19`) where legacy's `Title` used `container.md` (768px, `packages/ui-page/src/components/Title.tsx:20`): filed at the split as [[318456ddabc6]] (`shell`, code, `regression`), the ui's to fix by a slice beside the shell record; invisible on this page's pairs, since the heading is narrower than 672px, and never fixed here.
+
+## Seams under test
+
+None pure; the proof is the DOM pair's copy diff and aria tree, the screenshot pairs and the eye on `pnpm dev`.
+
+## Done when
+
+- `pnpm audit:dom --routes <a file naming /about>` against a running `pnpm dev`: `diff audit/about/dom/legacy.txt audit/about/dom/current.txt` shows only the heading and caption 1 lines the sanctioned `1f742640f27f` and the fixed `b60740a84adf` name and the shell's lines (the nav, the cookie notice, the footer); `current.aria.yaml` holds one `heading` at `level=1` reading `What is grid beam?`, six `paragraph`s and six `img`s carrying legacy's alts in legacy's order, as `legacy.aria.yaml` does
+- `pnpm audit:pages --routes <the same file>` at 375, 768 and 1280 looked at against legacy: the heading at the `2xl` size, the images flush-cornered with no shadow at most the container's width (the fasteners image at its intrinsic 685px, centered, as in legacy), the captions at `xl` below `md` and `2xl` from it on the default line height, 32px between the stack's children; a residual difference is an `upstream` item on `shell` or is filed
+- `curl -s localhost:3000/about | grep -o 'sizes="768.00px"' | wc -l` prints 6, as the same command against `https://gridkit-landing-villagekit.vercel.app/about` does
+- `grep -c 'Section\|AboutPhoto\|next/image\|lineHeight\|boxShadow\|borderRadius' app/about/page.tsx` prints 0, and `head -1 app/about/page.tsx` prints the `// ported from` line
+- The seven items are `fixed`, the `sizes` item is filed and `upstream` with its note, and the note on `99f2fe62c62f` is written, checked after the moves
+- `timeout 900 just check` is green
+
+## Outcome
+
+## Log
