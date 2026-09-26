@@ -1,6 +1,6 @@
 ---
 title: "FAQ data: an object keyed by category label with lodash map to a typed array with slugs"
-status: regression
+status: fixed
 route: /faq
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:32-43` `interface FaqEntry`, `interface FaqCategory { heading, slug, entries }`, `const categories: Array<FaqCategory>`, iterated with native `.map` (`:294,306`); ids from the slug, `` `faq-${category.slug}` `` (`:298,302`): `faq-system`, `faq-lifespan`, `faq-suppliers`, `faq-other`, every region named.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

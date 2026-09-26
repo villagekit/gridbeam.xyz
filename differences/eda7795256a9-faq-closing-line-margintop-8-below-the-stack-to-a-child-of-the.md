@@ -1,6 +1,6 @@
 ---
 title: "FAQ closing line: marginTop 8 below the stack to a child of the gap 12 stack"
-status: regression
+status: fixed
 route: /faq
 kind: changed
 axis: visual
@@ -14,6 +14,8 @@ axis: visual
 `app/faq/page.tsx:312-327`: the closing `Text` is the last child of `<VStack alignItems="stretch" gap="12">` (`:274`), so the stack's gap, 48px, separates it from the last rule (`audit/faq/1280/current.png`), 16px more than legacy. The line's copy is `eceaf3fc05dd`; this item is its spacing only.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

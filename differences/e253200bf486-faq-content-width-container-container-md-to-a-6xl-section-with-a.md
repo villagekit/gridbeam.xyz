@@ -1,6 +1,6 @@
 ---
 title: "FAQ content width: Container container.md to a 6xl Section with a 3xl Container"
-status: regression
+status: fixed
 route: /faq
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/faq/page.tsx:288,292` `<Section index={0} maxW="6xl">` around `<Container maxW="3xl">`: the Section's padding stacks with the Container's, content about 703 px wide (`audit/faq/1280/current.png`, x 288 to 991).
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log

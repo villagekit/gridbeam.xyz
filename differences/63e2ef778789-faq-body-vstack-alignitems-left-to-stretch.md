@@ -1,6 +1,6 @@
 ---
 title: "FAQ body VStack: alignItems left to stretch"
-status: regression
+status: fixed
 route: /faq
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:293` `alignItems="stretch"`. No visible difference in `audit/faq/1280/{legacy,current}.png`: the children are full-width blocks either way.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

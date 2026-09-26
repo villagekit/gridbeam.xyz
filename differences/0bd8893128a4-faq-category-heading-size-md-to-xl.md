@@ -1,6 +1,6 @@
 ---
 title: "FAQ category heading: size md to xl"
-status: regression
+status: fixed
 route: /faq
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/faq/page.tsx:302` `<Heading as="h2" id={...} size="xl">`: `@villagekit/ui@1.2.0 src/components/Heading.tsx:39-43` `xl` is `3xl`/`4xl` (30/36 px). "The system" reads near title scale in `audit/faq/1280/current.png`.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log

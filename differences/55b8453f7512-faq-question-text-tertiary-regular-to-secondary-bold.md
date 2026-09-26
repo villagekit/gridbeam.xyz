@@ -1,6 +1,6 @@
 ---
 title: "FAQ question text: tertiary regular to secondary bold"
-status: regression
+status: fixed
 route: /faq
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/faq/page.tsx:309-317` `<Text as="span" variant="secondary" fontWeight="bold" textAlign="left" flex="1">`: bold, near-black (`audit/faq/1280/current.png`).
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log

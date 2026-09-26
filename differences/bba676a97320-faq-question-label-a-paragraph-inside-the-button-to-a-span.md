@@ -1,6 +1,6 @@
 ---
 title: "FAQ question label: a paragraph inside the button to a span"
-status: regression
+status: fixed
 route: /faq
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:308-318` `<Accordion.ItemTrigger><Text as="span" ...>{entry.question}</Text>`: `audit/faq/dom/current.aria.yaml` flat button names with no child node.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

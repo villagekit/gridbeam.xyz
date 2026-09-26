@@ -1,6 +1,6 @@
 ---
 title: "FAQ add-ons repository link: the same tab to target _blank"
-status: regression
+status: fixed
 route: /faq
 kind: changed
 axis: interaction
@@ -14,6 +14,8 @@ axis: interaction
 `app/faq/page.tsx:107-114`: the anchor carries `target="_blank" rel="noopener noreferrer"`, so it opens a new tab. `154bcd2abdfb` lists this anchor among the six that write `rel`, but that item's legacy lines are the `isExternal` links (the EPA and forum anchors among the kept ones); this link was not one, and its difference is the tab, not the `rel` value.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

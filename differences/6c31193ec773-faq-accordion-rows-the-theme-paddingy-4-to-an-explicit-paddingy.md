@@ -1,6 +1,6 @@
 ---
 title: "FAQ accordion rows: the theme paddingY 4 to an explicit paddingY 3"
-status: regression
+status: fixed
 route: /faq
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/faq/page.tsx:308,320` `<Accordion.ItemTrigger paddingY="3">` and `<Accordion.ItemContent paddingY="3">`, overriding the recipe's `paddingY: '4'` (`@villagekit/ui@1.2.0 src/components/Accordion.recipe.ts:13-22`).
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "FAQ external links: rel noopener to noopener noreferrer written on the anchors"
-status: regression
+status: upstream
 route: /faq
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: Filed by the Parity review of the ui links slice [[9e54dca30d48]], which closed the same question in the ui components ([[f85e98a67092]]); the M1 ledger for /faq has no item on it. The route's own JSX, for the faq record [[7f0b60d948c5]]: render the ui Link with isExternal, as legacy did.
+
+- 2026-09-26: Moved to upstream by the page re-port (plan [[bba2bb35f208]]): the two anchors legacy wrote with isExternal, app/faq/page.tsx:113-118 (The U.S. EPA estimates, legacy faq.tsx:186-190) and :214 (ask on the community forum, legacy :380), keep target _blank and rel noopener noreferrer written in the JSX, since the published @villagekit/ui 1.2.0 Link takes no isExternal (node_modules/@villagekit/ui/dist/components/Link.d.ts) and the sibling's does again (ui commit 540e9c3, plan [[45d6f5634a11]]). The repository and Australia anchors, which legacy wrote without isExternal, are plain Link href with no target and no rel, as the live legacy site renders them. A curl of pnpm dev on 2026-09-26 reads noopener noreferrer on the EPA and forum anchors where the live legacy site reads noopener. The bump plan [[99f2fe62c62f]] rewrites both as Link with isExternal and moves this to fixed.

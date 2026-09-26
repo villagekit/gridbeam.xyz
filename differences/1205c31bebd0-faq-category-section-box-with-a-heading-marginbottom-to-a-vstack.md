@@ -1,6 +1,6 @@
 ---
 title: "FAQ category section: Box with a Heading marginBottom to a VStack gap"
-status: regression
+status: fixed
 route: /faq
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/faq/page.tsx:294-304` `<VStack as="section" aria-labelledby={...} alignItems="stretch" gap="4">` holding `<Heading as="h2" ...>` then `Accordion.Root`: the 16 px is a gap, not a margin. Same rendered spacing.
 
 ## Verdict
+
+plan bba2bb35
 
 ## Log
