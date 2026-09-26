@@ -1,6 +1,6 @@
 ---
 title: "Start building card: Find parts"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:198-204` title "Find parts", description "A directory of suppliers around the world. We don't sell parts; we link to people who do.", to `/suppliers`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

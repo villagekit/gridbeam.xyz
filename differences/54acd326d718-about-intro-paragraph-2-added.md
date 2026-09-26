@@ -1,6 +1,6 @@
 ---
 title: About intro paragraph 2 added
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No intro: the first block after the heading is the caption "Grid Kit is a modula
 `app/about/page.tsx:57-60` "The same parts can be assembled, taken apart, and reassembled into something else. That's the point. It's a building system, not a furniture catalogue."
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "About: the added intro, the two added sections and the per-page metadata removed"
-status: todo
+status: done
 parent: 40179ab9e779
 derived_from: 40179ab9e779
 blocked_by:
@@ -35,5 +35,11 @@ None pure; the proof is the served HTML and the DOM pair.
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped as scoped. app/about/page.tsx: deleted the intro VStack and its three paragraphs, Section index=1 (Where it came from) and Section index=2 (Start building), the Title description prop, the title and description consts and the imports only they used (Flex, HStack, LinkButton, LinkCard, SimpleGrid, NextLink, FaCubes, FaShoppingBag, FaTools); metadata is title: 'About' with no description, so the layout renders Grid Beam: About and its default description. The twenty-one items on /about are fixed with outcome "plan 5ac30176". The bump plan 99f2fe62c62f has the note: LinkCard's remaining call sites are in legal, subscribe and tools-and-resources, and /about leaves the isExternal and gray band lists. A note on bfe876779ed0 says its Current text is stale on the section count.
+
+Proof, against a running pnpm dev: /about returned 200; the grep for the removed copy printed 0; the title is Grid Beam: About and the meta description is the layout default; pnpm audit:dom shows current.txt between nav and footer as the heading and six captions, the same count as legacy.txt; grep -c LinkCard prints 0. timeout 900 just check green (dev stopped first); kipu verify run before the commit. No visual gate: the removals are covered by the DOM pair, and the layout and image items belong to the re-port.
+
+Reviewed on a fresh Opus sub-agent (Standards, Spec, Parity): no critical or major findings. Minor taken: the bump note wrongly gave one set of line numbers for both earlier notes; now each note has its own. Nit taken: the note on bfe876779ed0. Dropped: stale line numbers cited in other /about items, which the re-port rewrites.
 
 ## Log

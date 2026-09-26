@@ -1,6 +1,6 @@
 ---
 title: "Start building button: Read the FAQ"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:209-211` "Read the FAQ" (to `/faq`).
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

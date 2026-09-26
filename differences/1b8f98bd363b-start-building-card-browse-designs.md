@@ -1,6 +1,6 @@
 ---
 title: "Start building card: Browse designs"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:185-190` title "Browse designs", description "A catalogue of beds, desks, shelves, and more — every part listed, every cut measured.", to `/designs`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

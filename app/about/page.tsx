@@ -1,61 +1,20 @@
-import {
-  Box,
-  Container,
-  Flex,
-  HStack,
-  LinkButton,
-  LinkCard,
-  Section,
-  SimpleGrid,
-  Span,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { Box, Container, Section, Span, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextImage from 'next/image'
-import NextLink from 'next/link'
 import type { ReactNode } from 'react'
-import { FaCubes, FaShoppingBag, FaTools } from 'react-icons/fa'
-
-const title = 'About grid beam'
-const description =
-  'Grid beam is a modular construction system: regularly-drilled beams that bolt together with a hex key. This site catalogues the 40 mm flavour.'
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: 'About',
 }
 
 export default function AboutPage() {
   return (
     <>
       <Section index={0} maxW="6xl">
-        <Title description="A modular construction system anyone can build, modify, or fork.">
-          What is grid beam?
-        </Title>
+        <Title>What is grid beam?</Title>
 
         <Container maxW="3xl">
           <VStack alignItems="stretch" gap={{ base: 8, md: 10 }}>
-            <VStack alignItems="flex-start" gap="5">
-              <Text fontSize="lg">
-                Grid beam is a beam — wood, aluminium, or steel — drilled with regularly-spaced
-                holes along its length. Bolt the beams together with a hex key and you have a
-                reconfigurable structure: shelves, desks, beds, kitchens, market stalls, even
-                bicycles and trailers.
-              </Text>
-              <Text fontSize="lg">
-                The same parts can be assembled, taken apart, and reassembled into something else.
-                That's the point. It's a building system, not a furniture catalogue.
-              </Text>
-              <Text fontSize="lg" variant="secondary">
-                Many sizes have appeared since the original 1½″ grid beam in the 1970s.{' '}
-                <Span fontWeight="bold">This site focuses on the 40&nbsp;mm flavour.</Span> The
-                designs, cutting planner, and listed suppliers are all sized for 40&nbsp;mm beams on
-                a 40&nbsp;mm hole spacing.
-              </Text>
-            </VStack>
-
             <AboutText>
               Grid beam is a <Span fontWeight="bold">modular system on a 40&nbsp;mm grid</Span>.
             </AboutText>
@@ -128,82 +87,6 @@ export default function AboutPage() {
             </AboutText>
           </VStack>
         </Container>
-      </Section>
-
-      <Section index={1} maxW="6xl" colorPalette="gray">
-        <Title
-          as="h2"
-          description="An open construction system from the 1970s that quietly kept improving."
-        >
-          Where it came from
-        </Title>
-        <Container maxW="3xl">
-          <VStack alignItems="flex-start" gap="5">
-            {/* Note(cc): attribution is sourced, not paraphrased — Ken Isaacs, How to Build Your
-                Own Living Structures (1974); Phil Jergenson, Richard Jergenson and Wilma Keppel,
-                How to Build with Grid Beam (New Society, 2008); and the legacy site crediting the
-                brothers as "the original inventors of Grid Beam" (node-modules@917daac
-                apps/gridkit/pages/stories/2022-newsletter.mdx:256). Check a source before editing
-                these names — an earlier draft invented one. */}
-            <Text fontSize="lg">
-              The lineage begins with <Span fontWeight="bold">Ken Isaacs</Span>, whose 1974 manual{' '}
-              <em>How to Build Your Own Living Structures</em> showed how furniture, beds, and whole
-              rooms could be built from a kit of bolted-together timbers.{' '}
-              <Span fontWeight="bold">Phil and Richard Jergenson</Span> took that idea, made the
-              hole pattern regular so that every beam was interchangeable, and named the result grid
-              beam — and kept improving it for decades.
-            </Text>
-            <Text>
-              The system has stayed alive because it's intentionally generic. Anyone can mill a
-              beam. Anyone can drill the holes. The intelligence lives in the geometry, not in a
-              proprietary part.
-            </Text>
-            <Text variant="secondary">
-              gridbeam.xyz is a community site for the 40&nbsp;mm flavour: a catalogue of designs,
-              tools to plan a build, and a directory of suppliers. The site, the components, and the
-              engine that draws the designs are all open-source under EUPL-1.2.
-            </Text>
-          </VStack>
-        </Container>
-      </Section>
-
-      <Section index={2} maxW="6xl">
-        <Title as="h2" description="Three places to go from here.">
-          Start building
-        </Title>
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap="6">
-          <LinkCard
-            linkComponent={NextLink}
-            title="Browse designs"
-            icon={<FaCubes />}
-            description="A catalogue of beds, desks, shelves, and more — every part listed, every cut measured."
-            href="/designs"
-          />
-          <LinkCard
-            linkComponent={NextLink}
-            title="Plan a build"
-            icon={<FaTools />}
-            description="The cutting planner works out how many beams to buy and how to cut them with the least off-cut waste."
-            href="/tools-and-resources"
-          />
-          <LinkCard
-            linkComponent={NextLink}
-            title="Find parts"
-            icon={<FaShoppingBag />}
-            description="A directory of suppliers around the world. We don't sell parts; we link to people who do."
-            href="/suppliers"
-          />
-        </SimpleGrid>
-        <Flex justifyContent="center" pt="2">
-          <HStack gap="3" flexWrap="wrap">
-            <LinkButton as={NextLink} href="/faq" variant="secondary">
-              Read the FAQ
-            </LinkButton>
-            <LinkButton href="https://github.com/villagekit" variant="secondary" isExternal>
-              GitHub
-            </LinkButton>
-          </HStack>
-        </Flex>
       </Section>
     </>
   )

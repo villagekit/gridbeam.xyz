@@ -1,6 +1,6 @@
 ---
 title: Where it came from description
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:146` "An open construction system from the 1970s that quietly kept improving."
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

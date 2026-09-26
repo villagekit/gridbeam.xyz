@@ -1,6 +1,6 @@
 ---
 title: Start building heading
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:181-183` `<Title as="h2" ...>Start building</Title>`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "About title: About to About grid beam"
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/about/page.tsx:23,28,31,35` `title = 'About grid beam'`; rendered `<title>About grid beam — gridbeam.xyz</title>`, `og:title` `About grid beam` (untemplated).
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

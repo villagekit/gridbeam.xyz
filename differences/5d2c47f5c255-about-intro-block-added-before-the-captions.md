@@ -1,6 +1,6 @@
 ---
 title: About intro block added before the captions
-status: regression
+status: fixed
 route: /about
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/about/page.tsx:50-67` a left-aligned `VStack gap="5"` of three `fontSize="lg"` paragraphs above the centered captions; `audit/about/1280/current.png`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

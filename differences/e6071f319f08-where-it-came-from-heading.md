@@ -1,6 +1,6 @@
 ---
 title: Where it came from heading
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such section: the legacy page ends after the tri-joint caption (`apps/gridkit
 `app/about/page.tsx:144-149` `<Title as="h2" ...>Where it came from</Title>`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 

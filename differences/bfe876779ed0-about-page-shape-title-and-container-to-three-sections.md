@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: `getLayout` to the root layout and `Main` per route are the shell items [[1c05b1d0d3db]] and [[a73e9678cd57]].
+
+- 2026-09-26: From the about removals slice (plan [[5ac30176aa70]]): the page now has one Section (index 0), not three; the two later Sections were deleted as added content. The Current text above is stale on the count and the line range; the page re-port closes this item.

@@ -1,6 +1,6 @@
 ---
 title: About description line under the heading added
-status: regression
+status: fixed
 route: /about
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/about/page.tsx:44` `description="A modular construction system anyone can build, modify, or fork."`.
 
 ## Verdict
+
+plan 5ac30176
 
 ## Log
 
