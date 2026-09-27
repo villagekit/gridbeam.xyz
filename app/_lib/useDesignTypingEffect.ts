@@ -2,12 +2,12 @@
 import { shuffle } from 'lodash-es'
 import { useEffect, useState } from 'react'
 
-import type { DesignIndexEntry } from './designs'
+import type { DesignIndex } from './designs'
 
 // Reference: https://github.com/Hermanya/use-typing-effect/blob/master/src/index.tsx
 
 interface DesignTypingEffectOptions {
-  designs: ReadonlyArray<DesignIndexEntry>
+  designs: ReadonlyArray<DesignIndex>
   pause?: boolean
   loop?: boolean
   playbackRate?: number
@@ -15,11 +15,11 @@ interface DesignTypingEffectOptions {
 
 export function useDesignTypingEffect(
   options: DesignTypingEffectOptions,
-): [DesignIndexEntry | null, string, DesignIndexEntry | null] {
+): [DesignIndex | null, string, DesignIndex | null] {
   const { designs: allDesigns, pause = false, loop = false, playbackRate = 1 } = options
 
   // designs must start empty so server render matches client render
-  const [designs, setDesigns] = useState<ReadonlyArray<DesignIndexEntry> | null>(null)
+  const [designs, setDesigns] = useState<ReadonlyArray<DesignIndex> | null>(null)
 
   useEffect(() => {
     setDesigns(shuffle(allDesigns))

@@ -33,7 +33,6 @@ import {
   useSectionIndex,
 } from '@villagekit/ui'
 import { useInView } from 'motion/react'
-import type { StaticImageData } from 'next/image'
 import NextLink from 'next/link'
 import pluralize from 'pluralize-esm'
 import { forwardRef, useRef } from 'react'
@@ -47,12 +46,12 @@ import { DesignCarousel } from './_components/DesignCarousel'
 import { ImageCarousel } from './_components/ImageCarousel'
 import { Testimonial } from './_components/Testimonial'
 import { Item as StoryItem } from './_components/stories/Item'
-import type { DesignIndexEntry } from './_lib/designs'
+import type { DesignIndexes } from './_lib/designs'
 import type { StoryMetadata } from './_lib/stories'
 import { useDesignTypingEffect } from './_lib/useDesignTypingEffect'
 
 interface HomePageProps {
-  designs: ReadonlyArray<DesignIndexEntry>
+  designs: DesignIndexes
   whatsAGridUnit: StoryMetadata
   buildingWithGridKit: StoryMetadata
 }
@@ -377,7 +376,7 @@ export function HomePage(props: HomePageProps) {
 }
 
 interface TypingDesignSectionProps {
-  designs: ReadonlyArray<DesignIndexEntry>
+  designs: DesignIndexes
   index: number
   textSize: TextProps['fontSize']
   buttonSize: ButtonProps['size']
@@ -427,7 +426,7 @@ function TypingDesignSection(props: TypingDesignSectionProps) {
       </LandingColumn>
 
       <Box css={{ flex: 1, overflow: 'hidden' }}>
-        {currentDesign !== null && hasImage(currentDesign) && (
+        {currentDesign !== null && (
           <DesignCarousel
             design={currentDesign}
             sizes={{ base: '100%', md: ['1500px', 2] }}
@@ -435,28 +434,18 @@ function TypingDesignSection(props: TypingDesignSectionProps) {
           />
         )}
       </Box>
-      {nextDesign !== null && nextDesign.image !== null && (
+      {nextDesign !== null && (
         // eagerly load the next design
         <Image
-          type="local"
           priority
           unoptimized
-          src={nextDesign.image}
-          alt={nextDesign.label}
+          {...nextDesign.image}
           sizes={{ base: '100%', md: ['1500px', 2] }}
           css={{ display: 'none' }}
         />
       )}
     </LandingSection>
   )
-}
-
-// The site's design index may lack a picture (272613135119, the designs
-// record's); DesignCarousel takes a design that has one, as legacy's did.
-function hasImage(
-  design: DesignIndexEntry,
-): design is DesignIndexEntry & { image: StaticImageData } {
-  return design.image !== null
 }
 
 interface LandingSectionProps extends SectionProps {}

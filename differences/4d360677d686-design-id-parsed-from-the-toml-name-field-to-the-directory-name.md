@@ -1,6 +1,6 @@
 ---
 title: "Design id: parsed from the TOML name field to the directory name"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `scripts/generate-designs-data.mjs:30-34` the id is the `products/<id>` directory name; `meta.name` is carried but never read.
 
 ## Verdict
+
+plan 79cec2c9c850
 
 ## Log

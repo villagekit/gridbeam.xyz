@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { getDesignIds } from './_lib/designs'
+import { getDesignIndexes } from './_lib/designs'
 import { allStories } from './_lib/stories'
 
 const SITE_URL = 'https://gridbeam.xyz'
@@ -38,8 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  const designIds = await getDesignIds()
-  const designEntries: MetadataRoute.Sitemap = designIds.map((id) => ({
+  const designs = await getDesignIndexes()
+  const designEntries: MetadataRoute.Sitemap = designs.map(({ id }) => ({
     url: `${SITE_URL}/designs/${id}`,
     lastModified: now,
     changeFrequency: 'monthly',

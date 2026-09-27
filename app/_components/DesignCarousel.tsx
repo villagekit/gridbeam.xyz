@@ -2,13 +2,12 @@
 'use client'
 
 import { Box, Image, type LocalImageProps } from '@villagekit/ui'
-import type { StaticImageData } from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import type { DesignIndexEntry } from '../_lib/designs'
+import type { DesignIndex } from '../_lib/designs'
 
 interface DesignCarouselProps {
-  design: DesignIndexEntry & { image: StaticImageData }
+  design: DesignIndex
   sizes: LocalImageProps['sizes']
   shouldMirror?: boolean
 }
@@ -19,7 +18,7 @@ export function DesignCarousel(props: DesignCarouselProps) {
   const fadeBoxRef = useRef<HTMLDivElement>(null)
   const zoomBoxRef = useRef<HTMLDivElement>(null)
 
-  const [image, setImage] = useState(getDesignImage(design))
+  const [image, setImage] = useState(design.image)
 
   useEffect(() => {
     const fadeBox = fadeBoxRef.current
@@ -38,9 +37,9 @@ export function DesignCarousel(props: DesignCarouselProps) {
     )
 
     fadeOut.finished.then(() => {
-      setImage(getDesignImage(design))
+      setImage(design.image)
     })
-  }, [design])
+  }, [design.image])
 
   const handleImageLoaded = useCallback(() => {
     const fadeBox = fadeBoxRef.current
@@ -85,7 +84,6 @@ export function DesignCarousel(props: DesignCarouselProps) {
         }}
       >
         <Image
-          type="local"
           priority
           unoptimized
           {...image}
@@ -102,14 +100,4 @@ export function DesignCarousel(props: DesignCarouselProps) {
       </Box>
     </Box>
   )
-}
-
-// Legacy's design index carried the image as a LocalImageProps object with
-// the design's label as its alt (packages/designs/src/index.ts, getDesignImage);
-// the site's DesignIndexEntry holds the StaticImageData alone, so the pair is
-// built here and held in state together, as legacy held the object.
-function getDesignImage(
-  design: DesignCarouselProps['design'],
-): Pick<LocalImageProps, 'src' | 'alt'> {
-  return { alt: design.label, src: design.image }
 }

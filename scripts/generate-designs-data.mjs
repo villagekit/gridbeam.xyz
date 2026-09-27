@@ -39,12 +39,6 @@ async function main() {
       const tomlContents = await readFile(tomlPath, 'utf8')
       const parsed = parseToml(tomlContents)
       const meta = parsed.product
-      if (meta == null || typeof meta !== 'object') {
-        throw new Error(`Missing [product] table in ${tomlPath}`)
-      }
-      if (typeof meta.exports !== 'string') {
-        throw new Error(`Missing string \`exports\` in ${tomlPath}`)
-      }
       const codePath = join(DESIGNS_DIR, id, meta.exports)
       const code = await readFile(codePath, 'utf8')
       return { id, meta, code }

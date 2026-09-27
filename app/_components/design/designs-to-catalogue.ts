@@ -1,5 +1,7 @@
+import type { StaticImageData } from 'next/image'
+
 import type { CatalogueItemData } from '@/app/_components/catalogue'
-import type { DesignIndexEntry } from '@/app/_lib/designs'
+import type { DesignIndex } from '@/app/_lib/designs'
 
 // `furniture` is on almost every design — too generic to be a useful filter.
 const EXCLUDED_TAGS = new Set(['furniture'])
@@ -25,23 +27,25 @@ const TAG_LABELS: ReadonlyArray<[string, string]> = [
 ]
 
 export function designsToCatalogueItems(
-  designs: ReadonlyArray<DesignIndexEntry>,
+  designs: ReadonlyArray<DesignIndex>,
 ): Array<CatalogueItemData> {
   return designs.map((d) => ({
     id: d.id,
     name: d.label,
     description: d.description,
-    categories: d.tags.filter((t) => !EXCLUDED_TAGS.has(t)),
-    image: d.image,
+    categories: (d.tags ?? []).filter((t) => !EXCLUDED_TAGS.has(t)),
+    // TODO(cc): the catalog re-port spreads the design's image object onto the ui Image and
+    // deletes this mapper; until then the card renders next/image from the static import
+    image: d.image.src as StaticImageData,
   }))
 }
 
 export function buildDesignFilterOptions(
-  designs: ReadonlyArray<DesignIndexEntry>,
+  designs: ReadonlyArray<DesignIndex>,
 ): Record<string, string> {
   const present = new Set<string>()
   for (const d of designs) {
-    for (const t of d.tags) {
+    for (const t of d.tags ?? []) {
       if (!EXCLUDED_TAGS.has(t)) present.add(t)
     }
   }

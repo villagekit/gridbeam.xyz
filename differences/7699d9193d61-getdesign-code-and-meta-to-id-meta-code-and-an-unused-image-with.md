@@ -1,6 +1,6 @@
 ---
 title: "getDesign return shape: code and meta to id, meta, code and an unused image"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_lib/designs.ts:15-20,37-43` returns `{ id, meta, code, image }`; `image` is computed for every request and never read by the page (`app/designs/[id]/page.tsx:51` destructures `meta` and `code`).
 
 ## Verdict
+
+plan 79cec2c9c850
 
 ## Log

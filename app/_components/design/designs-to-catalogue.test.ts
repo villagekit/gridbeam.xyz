@@ -1,11 +1,13 @@
 import { describe, expect, test } from 'vitest'
 
-import type { DesignIndexEntry } from '@/app/_lib/designs'
+import type { DesignIndex } from '@/app/_lib/designs'
 
 import { buildDesignFilterOptions, designsToCatalogueItems } from './designs-to-catalogue'
 
-function design(id: string, tags: Array<string>): DesignIndexEntry {
-  return { id, label: id, description: `A ${id}`, tags, image: null }
+const src = { src: '/desk.png', width: 1600, height: 1200 }
+
+function design(id: string, tags: Array<string>): DesignIndex {
+  return { id, label: id, description: `A ${id}`, tags, image: { alt: id, src, type: 'local' } }
 }
 
 describe('designsToCatalogueItems', () => {
@@ -16,7 +18,7 @@ describe('designsToCatalogueItems', () => {
         name: 'desk',
         description: 'A desk',
         categories: ['office', 'desk'],
-        image: null,
+        image: src,
       },
     ])
   })

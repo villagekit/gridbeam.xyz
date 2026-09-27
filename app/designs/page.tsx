@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import { CatalogueStatic } from '@/app/_components/catalogue'
 import { DesignsBrowser } from '@/app/_components/design/DesignsBrowser'
 import { designsToCatalogueItems } from '@/app/_components/design/designs-to-catalogue'
-import { getDesignIndex } from '@/app/_lib/designs'
+import { getDesignIndexes } from '@/app/_lib/designs'
 
 const title = 'Designs'
 const description =
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 export default async function DesignsPage() {
-  const designs = await getDesignIndex()
+  const designs = await getDesignIndexes()
   const items = designsToCatalogueItems(designs)
 
   return (

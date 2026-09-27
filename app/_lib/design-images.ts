@@ -1,15 +1,4 @@
-// Static image imports for every design in `products/`.
-//
-// Built-time imports (Next.js + Webpack) give us hashed asset URLs and known
-// dimensions per file. We bypass the global Cloudinary loader at the call
-// site (`unoptimized={true}` on `<Image>`) so these locally-imported PNGs are
-// served directly from `_next/static/media/`.
-//
-// When a new product is added under `products/<id>/<id>.png`,
-// add the import + map entry here.
-
-import type { StaticImageData } from 'next/image'
-
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/packages/designs/src/images.ts
 import _51213TriangleDesk from '../../products/5-12-13-triangle-desk/5-12-13-triangle-desk.png'
 import babyChair from '../../products/baby-chair/baby-chair.png'
 import babyLearningTower from '../../products/baby-learning-tower/baby-learning-tower.png'
@@ -48,42 +37,43 @@ import wallShelvesVertical from '../../products/wall-shelves-vertical/wall-shelv
 import wardrobeOrganizer from '../../products/wardrobe-organizer/wardrobe-organizer.png'
 import workTable from '../../products/work-table/work-table.png'
 
-export const designImages: Record<string, StaticImageData> = {
-  '5-12-13-triangle-desk': _51213TriangleDesk,
-  'baby-chair': babyChair,
-  'baby-learning-tower': babyLearningTower,
-  'bed-frame': bedFrame,
-  bench,
-  'bike-rack': bikeRack,
-  'cat-castle': catCastle,
-  'cat-shelves': catShelves,
-  'cat-tree': catTree,
-  chair,
-  'clothes-rack': clothesRack,
-  'coat-rack': coatRack,
-  'coffee-table': coffeeTable,
-  'console-table': consoleTable,
-  'garage-workbench': garageWorkbench,
-  'hanging-shelves': hangingShelves,
-  'kid-fort': kidFort,
-  ladder,
-  'ladder-shelf': ladderShelf,
-  'lumber-rack': lumberRack,
-  'makers-desk': makersDesk,
-  'makers-workbench': makersWorkbench,
-  'shelf-tower': shelfTower,
-  'shelving-unit': shelvingUnit,
-  'shoe-rack': shoeRack,
-  'side-table': sideTable,
-  'sign-board': signBoard,
-  stage,
-  'step-stool': stepStool,
-  stilts,
-  'super-table': superTable,
-  'utility-workbench': utilityWorkbench,
-  'wall-shelf': wallShelf,
-  'wall-shelves-horizontal': wallShelvesHorizontal,
-  'wall-shelves-vertical': wallShelvesVertical,
-  'wardrobe-organizer': wardrobeOrganizer,
-  'work-table': workTable,
+/** The static import of each design's PNG by its id; a product vendored under products/ needs its import and entry added here. */
+export const designImages = {
+  ['5-12-13-triangle-desk']: _51213TriangleDesk,
+  ['baby-chair']: babyChair,
+  ['baby-learning-tower']: babyLearningTower,
+  ['bed-frame']: bedFrame,
+  ['bench']: bench,
+  ['bike-rack']: bikeRack,
+  ['cat-castle']: catCastle,
+  ['cat-shelves']: catShelves,
+  ['cat-tree']: catTree,
+  ['chair']: chair,
+  ['clothes-rack']: clothesRack,
+  ['coat-rack']: coatRack,
+  ['coffee-table']: coffeeTable,
+  ['console-table']: consoleTable,
+  ['garage-workbench']: garageWorkbench,
+  ['hanging-shelves']: hangingShelves,
+  ['kid-fort']: kidFort,
+  ['ladder']: ladder,
+  ['ladder-shelf']: ladderShelf,
+  ['lumber-rack']: lumberRack,
+  ['makers-desk']: makersDesk,
+  ['makers-workbench']: makersWorkbench,
+  ['shelf-tower']: shelfTower,
+  ['shelving-unit']: shelvingUnit,
+  ['shoe-rack']: shoeRack,
+  ['side-table']: sideTable,
+  ['sign-board']: signBoard,
+  ['stage']: stage,
+  ['step-stool']: stepStool,
+  ['stilts']: stilts,
+  ['super-table']: superTable,
+  ['utility-workbench']: utilityWorkbench,
+  ['wall-shelf']: wallShelf,
+  ['wall-shelves-horizontal']: wallShelvesHorizontal,
+  ['wall-shelves-vertical']: wallShelvesVertical,
+  ['wardrobe-organizer']: wardrobeOrganizer,
+  ['work-table']: workTable,
 }

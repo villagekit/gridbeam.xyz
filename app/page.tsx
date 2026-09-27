@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { story as buildingWithGridKit } from '@/app/stories/building-with-grid-kit/page.mdx'
 import { story as whatsAGridUnit } from '@/app/stories/whats-a-grid-unit/page.mdx'
 import { HomePage } from './HomePage'
-import { getDesignIndex } from './_lib/designs'
+import { getDesignIndexes } from './_lib/designs'
 import type { StoryMetadata } from './_lib/stories'
 
 export const metadata: Metadata = {
@@ -12,12 +12,11 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const designs = await getDesignIndex()
-  const designsWithImages = designs.filter((design) => design.image !== null)
+  const designs = await getDesignIndexes()
 
   return (
     <HomePage
-      designs={designsWithImages}
+      designs={designs}
       whatsAGridUnit={whatsAGridUnit as unknown as StoryMetadata}
       buildingWithGridKit={buildingWithGridKit as unknown as StoryMetadata}
     />

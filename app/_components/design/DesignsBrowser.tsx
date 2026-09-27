@@ -3,12 +3,12 @@
 import { useMemo } from 'react'
 
 import { Catalogue } from '@/app/_components/catalogue'
-import type { DesignIndexEntry } from '@/app/_lib/designs'
+import type { DesignIndex } from '@/app/_lib/designs'
 
 import { buildDesignFilterOptions, designsToCatalogueItems } from './designs-to-catalogue'
 
 export interface DesignsBrowserProps {
-  designs: ReadonlyArray<DesignIndexEntry>
+  designs: ReadonlyArray<DesignIndex>
 }
 
 export function DesignsBrowser(props: DesignsBrowserProps) {

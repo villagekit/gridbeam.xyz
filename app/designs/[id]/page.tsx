@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { DesignViewerDynamic } from '@/app/_components/design/DesignViewerDynamic'
-import { getDesign, getDesignIds } from '@/app/_lib/designs'
+import { getDesign, getDesignIndexes } from '@/app/_lib/designs'
 
 interface DesignPageParams {
   id: string
@@ -15,8 +15,8 @@ interface DesignPageProps {
 }
 
 export async function generateStaticParams(): Promise<Array<DesignPageParams>> {
-  const ids = await getDesignIds()
-  return ids.map((id) => ({ id }))
+  const designs = await getDesignIndexes()
+  return designs.map(({ id }) => ({ id }))
 }
 
 export async function generateMetadata({ params }: DesignPageProps): Promise<Metadata> {

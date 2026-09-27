@@ -1,6 +1,6 @@
 ---
 title: Runtime TOML checks and an Unknown design error added
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `scripts/generate-designs-data.mjs:41-47` throws on a missing `[product]` table or a non-string `exports`; `app/_lib/designs.ts:37-41` throws `Unknown design: ${id}`, caught by `app/designs/[id]/page.tsx:45-49` (`notFound()`) and `:24-38` (`Design not found`).
 
 ## Verdict
+
+plan 79cec2c9c850
 
 ## Log
 
