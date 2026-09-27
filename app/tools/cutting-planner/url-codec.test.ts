@@ -1,5 +1,5 @@
-// The share link is the planner's only untrusted input, and the page plans on mount — an
-// unbounded decode was a one-click tab freeze (fixed in dc93b74).
+// The share link is the planner's only untrusted input, and the page plans on mount, so an
+// unbounded decode would freeze the tab in one click.
 // These cases pin the bounds, the split, and the "nothing is dropped silently" rule.
 
 import { describe, expect, test } from 'vitest'

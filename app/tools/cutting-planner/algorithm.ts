@@ -1,9 +1,10 @@
 // Bin-packing for grid-beam cuts: first-fit-decreasing.
 // All sizes are in grid units (gu); 1 gu = 40 mm.
-// Ported from https://github.com/villagekit/node-modules/blob/fce357d/packages/applet-cutting-planner/src/lib.ts, with one
-// edge-case fix: legacy version produced a beam with negative remainder when a
-// required cut exceeded the unlimited-stock length. Now those cuts go to
-// infeasibleBeams.
+// Ported from
+//   https://github.com/villagekit/node-modules/blob/fce357d/packages/applet-cutting-planner/src/algorithms/first-fit-decreasing.ts
+//   https://github.com/villagekit/node-modules/blob/fce357d/packages/applet-cutting-planner/src/shared.ts
+// with one divergence: a required cut longer than the unlimited-stock length goes to infeasibleBeams,
+// where legacy placed it on a fresh beam with a negative remainder.
 
 export type Beam = {
   size: number
@@ -77,10 +78,10 @@ export function beamQuotasToBeams(beamQuotas: Array<BeamQuota>): Array<Beam> {
 }
 
 // Ascending by size, as legacy was: it grouped into a plain object keyed by size, and
-// integer-like keys iterate in ascending numeric order. The port's Map preserved encounter
-// order instead, which reversed the "Infeasible cuts" table (desired beams are packed
-// largest-first). Sorting explicitly also keeps the order defined for non-integer sizes,
-// which legacy's key ordering would have appended in insertion order.
+// integer-like keys iterate in ascending numeric order. A Map keeps encounter order instead,
+// which would reverse the "Infeasible cuts" table (desired beams are packed largest-first).
+// Sorting explicitly also keeps the order defined for non-integer sizes, which legacy's key
+// ordering would have appended in insertion order.
 export function beamsToBeamQuotas(beams: Array<Beam>): Array<BeamQuota> {
   const grouped = new Map<number, BeamQuota>()
   for (const { size } of beams) {

@@ -445,7 +445,7 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
         <Switch.Control>
           <Switch.Thumb />
         </Switch.Control>
-        {/* Legacy named this control explicitly (display-unit-toggle.tsx); the port dropped it.
+        {/* The control carries legacy's explicit name (display-unit-toggle.tsx).
             It goes in Switch.Label rather than an aria-label because Switch.Root unconditionally
             points the input's aria-labelledby here, and a real element beats the dangling idref
             an aria-label-only version would leave behind. */}

@@ -102,9 +102,9 @@ export function decodeQuotas(value: string | null): DecodedQuotas | null {
   let dropped = false
   for (const pair of value.split('~')) {
     // Whole-pair match rather than `parseInt` on each half: `parseInt` reads the leading digits
-    // and discards the rest, so `2-3-4` would quietly decode as 2×3 and `1.9999999-8` — exactly
-    // the float drift that used to reach these links — as size 1. Both are wrong plans that look
-    // right. Anything that isn't two plain integers is rejected and reported.
+    // and discards the rest, so `2-3-4` would quietly decode as 2×3 and `1.9999999-8`, a length
+    // with float drift, as size 1. Both are wrong plans that look right. Anything that isn't two
+    // plain integers is rejected and reported.
     const match = /^(\d+)-(\d+)$/.exec(pair)
     if (match == null) {
       dropped = true

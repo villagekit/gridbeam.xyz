@@ -3,8 +3,8 @@
 //   https://github.com/villagekit/node-modules/blob/fce357d/packages/applet-cutting-planner/src/shared.test.ts
 // Every input and expected value is unchanged; names and assertion style are adapted (the three
 // `shared.test.ts` describes are merged, and legacy's `const expected = …` is inlined). Keeping
-// the values untouched is the point: the port changed the infeasible-cut path, so these pin
-// everything it did *not* change. New behaviour is tested separately below.
+// the values untouched is the point: this code diverges from legacy on the infeasible-cut path,
+// so these pin everything else. The divergence is tested separately below.
 
 import { describe, expect, test } from 'vitest'
 
@@ -133,8 +133,8 @@ describe('shared helpers (ported from legacy)', () => {
 })
 
 describe('cuts too long for the top-up stock', () => {
-  // The port's one deliberate divergence: legacy pushed such a cut onto a fresh beam anyway and
-  // reported a beam with a negative remainder. See the header of `./algorithm.ts`.
+  // The one deliberate divergence from legacy, which pushed such a cut onto a fresh beam anyway
+  // and reported a beam with a negative remainder. See the header of `./algorithm.ts`.
   test('go to infeasibleBeams rather than producing a negative remainder', () => {
     const output = firstFitDecreasing({
       requiredBeams: [{ count: 1, size: 80 }],
