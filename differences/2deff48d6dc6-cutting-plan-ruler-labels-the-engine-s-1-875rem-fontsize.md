@@ -16,3 +16,5 @@ The same drawing through the re-ported `app/tools/cutting-planner/components/Cut
 ## Verdict
 
 ## Log
+
+- 2026-09-28: From the page re-port (plan 3c448a379ad7): the Parts tab's part labels read 16px under the same preflight, filed as [[1a08e6077525]]; one ../gridkit fix in the engine's TextLabel covers both.

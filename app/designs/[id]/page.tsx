@@ -1,9 +1,10 @@
-import { Section } from '@villagekit/ui'
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/pages/designs/[id].tsx
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { DesignViewerDynamic } from '@/app/_components/design/DesignViewerDynamic'
 import { getDesign, getDesignIndexes } from '@/app/_lib/designs'
+
+import { DesignPage } from './DesignPage'
 
 interface DesignPageParams {
   id: string
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: DesignPageProps): Promise<Met
   }
 }
 
-export default async function DesignPage({ params }: DesignPageProps) {
+export default async function Page({ params }: DesignPageProps) {
   const { id } = await params
 
   let design: Awaited<ReturnType<typeof getDesign>>
@@ -42,9 +43,5 @@ export default async function DesignPage({ params }: DesignPageProps) {
 
   const { meta, code } = design
 
-  return (
-    <Section index={0} maxW="6xl">
-      <DesignViewerDynamic meta={meta} code={code} />
-    </Section>
-  )
+  return <DesignPage meta={meta} code={code} />
 }

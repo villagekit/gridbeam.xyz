@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan recompute: lodash debounce 500 ms to useDeferredValue"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignCuttingPlan.tsx:6,34-38` `useDeferredValue(context.parts)` + `useMemo`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

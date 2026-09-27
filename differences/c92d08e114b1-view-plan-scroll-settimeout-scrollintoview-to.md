@@ -1,6 +1,6 @@
 ---
 title: "View plan scroll: setTimeout scrollIntoView to requestAnimationFrame smooth scroll"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:55-67` `requestAnimationFrame(() => tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

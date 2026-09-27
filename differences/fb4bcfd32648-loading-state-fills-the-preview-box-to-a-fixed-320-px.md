@@ -1,6 +1,6 @@
 ---
 title: "Loading state: fills the preview box to a fixed 320 px"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewerDynamic.tsx:8-12` an inline `Flex w="full" h="320px"` with the spinner (read from code; the state is transient).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

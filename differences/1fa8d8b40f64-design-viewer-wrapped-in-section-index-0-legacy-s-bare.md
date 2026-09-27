@@ -1,6 +1,6 @@
 ---
 title: "Design viewer wrapped in Section index 0: legacy's bare CatalogueItem under the layout margins to a Section whose padding stacks on them"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/designs/[id]/page.tsx:49-51` wraps the viewer in `<Section index={0} maxW="6xl">`, and `:53` the suppliers band in a second `Section`, both under the same margin box now that `app/designs/layout.tsx` mounts the ported `CatalogueLayout`: the box reads legacy's margins (64px and 32px at 1280, 32px and 0 at 375), and the `Section`'s own padding stacks on them, the heading at 175px at 1280 (48px below legacy's) and 127px at 375 (32px below); from `md` the gray band (`7e28a0685fba`) is inset 32px each side, at `left` 32px and `width` 1216px at 1280 (`audit/designs__bed-frame/1280/current.png`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

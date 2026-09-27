@@ -1,6 +1,6 @@
 ---
 title: "getRequiredBeamsFromParts: raw lengthInGrids keys in ascending order to required-beams.ts with Math.round and a descending sort"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/required-beams.ts:7-27` exported, `Math.round(spec.lengthInGrids)` (comment `:12-16`), `.sort((a, b) => b.size - a.size)` (comment `:21-23`); tested in `required-beams.test.ts`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

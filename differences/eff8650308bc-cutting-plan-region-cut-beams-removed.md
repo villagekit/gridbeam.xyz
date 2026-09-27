@@ -1,6 +1,6 @@
 ---
 title: Cutting plan region Cut beams removed
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignCuttingPlan.tsx:70-119` the bars sit directly in the tabpanel.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

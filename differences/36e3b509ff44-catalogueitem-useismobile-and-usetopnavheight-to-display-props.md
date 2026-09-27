@@ -1,6 +1,6 @@
 ---
 title: "CatalogueItem: useIsMobile and useTopNavHeight to display props and a static scrollMarginTop"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:73-100,134` two heading slots toggled by `display`, `direction={{ base, lg }}`, `scrollMarginTop="20"`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Controls column: space-between pinning Assembled Dimensions near the button to stacked under the preset row"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewer.tsx:60-65` a fragment inside `CatalogueItem.tsx:113-116` `VStack alignItems="stretch" gap="6"`; the dimensions follow the preset row and the gap moves below them (`audit/designs__bed-frame/1280/current.png`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

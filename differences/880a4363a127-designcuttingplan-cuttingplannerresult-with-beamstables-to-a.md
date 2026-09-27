@@ -1,6 +1,6 @@
 ---
 title: "DesignCuttingPlan: CuttingPlannerResult with BeamsTables to a bespoke render that never shows unused beams and adds a planner deep link"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignCuttingPlan.tsx:15-19,61-124` its own JSX: three branches (empty, all infeasible, normal), `summariseRequired`, placed/waste/stock totals, `CutBeamSvg` per beam, a `plannerHref` `/tools/cutting-planner?r=...&u=...[&d=mm]`; `unusedBeams` is never read; nothing is shared with `app/tools/cutting-planner/CuttingPlanner.tsx` but `algorithm.ts` and `CutBeamSvg`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

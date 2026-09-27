@@ -1,6 +1,6 @@
 ---
 title: "Unit toggle side labels: aria-hidden to exposed text"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/PartsBreakdown.tsx:38-56` `gu` and `mm` are plain `Text` beside the named switch (snapshot: `paragraph: gu`, `checkbox "Show measurements in millimetres"`, `paragraph: mm`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

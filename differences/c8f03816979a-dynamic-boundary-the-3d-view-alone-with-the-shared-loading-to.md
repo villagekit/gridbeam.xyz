@@ -1,6 +1,6 @@
 ---
 title: "Dynamic boundary: the 3D view alone with the shared Loading to the whole DesignViewer with an inline spinner"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewerDynamic.tsx:8-19` `dynamic(() => import('./DesignViewer'), { ssr: false, loading })` around the provider, `CatalogueItem`, the tabs and their content, with a local `DesignViewerLoading`; the `DesignView` wrapper is inlined at `DesignViewer.tsx:48-59`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

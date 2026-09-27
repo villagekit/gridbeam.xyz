@@ -1,6 +1,6 @@
 ---
 title: "Plan tab sentence and footnote: legacy's centered fontSize large/small column at maxWidth md:50% to a full-width, unstyled Text"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -22,6 +22,8 @@ outer `VStack alignItems="stretch"`, full width (measured on `pnpm dev` at
 1280: width 1056).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

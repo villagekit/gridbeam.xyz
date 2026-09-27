@@ -1,6 +1,6 @@
 ---
 title: View plan button icon removed
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignViewer.tsx:66-70` no `icon` on the action (`audit/designs__bed-frame/1280/current.png`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

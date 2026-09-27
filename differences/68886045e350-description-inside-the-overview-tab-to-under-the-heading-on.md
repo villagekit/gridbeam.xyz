@@ -1,6 +1,6 @@
 ---
 title: "Description: inside the Overview tab to under the heading on every tab"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewer.tsx:57-58,90-97` and `app/_components/catalogue/CatalogueItem.tsx:78-82` the description sits under the heading outside the tabs; the Overview panel starts at `Product care` (`current.aria.yaml`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

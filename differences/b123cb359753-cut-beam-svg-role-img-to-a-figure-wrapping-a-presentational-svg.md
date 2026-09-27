@@ -1,6 +1,6 @@
 ---
 title: "Cut beam: svg role img to a figure wrapping a presentational svg whose text leaks"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/cutting-plan/CutBeamSvg.tsx:31-58` `<Box as="figure" aria-label=...>` with two `Text` captions and `<svg role="presentation">`; the svg `<text>` nodes still surface (snapshot: `figure "60 gu stock beam, cuts: 47 gu, 8 gu, remainder 5 gu"` > two paragraphs > `text: 47 gu 8 gu 5 gu`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

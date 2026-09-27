@@ -1,6 +1,6 @@
 ---
 title: "CatalogueItem props: buttonComponent, buttonProps and a tabs record with capitalize to a typed action and a tabs array with labels"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:14-43,118-130,141-155` `CatalogueItemAction { label, navigateToTab, variant?, icon? }`, `tabs: ReadonlyArray<{ key, label, content }>`, `title` and `description` props, no `capitalize`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Viewer and controls row layout: from md to from lg"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:94` `direction={{ base: 'column', lg: 'row' }}`; `audit/designs__bed-frame/768/current.png` is stacked.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

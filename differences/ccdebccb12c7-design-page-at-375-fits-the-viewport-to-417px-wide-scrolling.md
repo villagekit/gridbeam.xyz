@@ -1,6 +1,6 @@
 ---
 title: "Design page at 375: fits the viewport to 417px wide, scrolling sideways"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `/designs/bed-frame` at 375 scrolls sideways: `scrollWidth` reads 417, and `main.vk-main`, the layout box, the first `Section`, its container and the viewer's stack all sit at `left` -42px and `right` 417px, the page's content (the preview, the preset stack and the tabs, `app/designs/[id]/page.tsx:49-60` and `app/_components/catalogue/CatalogueItem.tsx`) wider than the viewport and the shell's `main` growing to its min-content width (`audit/designs__bed-frame/375/current.png`). `/designs` itself reads 375 on both sides, and the Parity review of plan 8417428fd88a read 417 with the `CatalogueLayout` box removed in the browser, so the segment layout does not cause it.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

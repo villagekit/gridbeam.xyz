@@ -20,3 +20,5 @@ rule: upgrade (the page is a server component; the registry must load in the cli
 ## Log
 
 - 2026-09-12: Template.
+
+- 2026-09-28: From the page re-port (plan 3c448a379ad7): the seven side-effect imports are now the top of the client page file, app/designs/[id]/DesignPage.tsx:4-11, legacy's lines, and registerParts.ts is deleted. The sanction stands: page.tsx is a server component, and the registry loads in the client tree with the provider.

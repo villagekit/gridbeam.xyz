@@ -1,6 +1,6 @@
 ---
 title: "Preview frame: dashed gray.50 HoverCard with a pointer cursor to a plain Box"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/catalogue/CatalogueItem.tsx:96-103` a plain `Box`; no border, no background, cursor `auto` (probe).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

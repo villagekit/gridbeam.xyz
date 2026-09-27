@@ -1,6 +1,6 @@
 ---
 title: "Group switch: named by its FormLabel to unnamed"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/PartsBreakdown.tsx:68-88` a plain `<label htmlFor="design-parts-group">` beside `<Switch.Root id="design-parts-group">`; the v3 switch gives its input its own id, so the pairing fails (snapshot: `text: Group same size` then an unnamed `checkbox [checked]`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

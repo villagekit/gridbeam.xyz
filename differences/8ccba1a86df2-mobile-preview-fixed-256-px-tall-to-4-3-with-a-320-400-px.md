@@ -1,6 +1,6 @@
 ---
 title: "Mobile preview: fixed 256 px tall to 4/3 with a 320/400 px minimum"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:97-100` `aspectRatio '4 / 3'` at every width, `minH={{ base: '320px', md: '400px' }}` (`audit/designs__bed-frame/375/current.png`, a taller box).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

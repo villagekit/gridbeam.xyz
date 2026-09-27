@@ -1,6 +1,6 @@
 ---
 title: Cutting plan list and listitem roles removed
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignCuttingPlan.tsx:94-101` a plain `VStack` of `CutBeamSvg` (snapshot: nine `figure` siblings).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

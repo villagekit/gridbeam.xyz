@@ -1,6 +1,6 @@
 ---
 title: "DisplayUnitToggle: the applet component instantiated per tab to a private Chakra v3 toggle with one lifted state"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/PartsBreakdown.tsx:16,35-56` a file-local `DisplayUnitToggle` (`Switch.Root`/`HiddenInput`/`Control`/`Thumb`, `aria-label`, `useState`); `displayUnit` lives in `DesignViewer.tsx:51`; a third implementation is in `app/tools/cutting-planner/CuttingPlanner.tsx:428`.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

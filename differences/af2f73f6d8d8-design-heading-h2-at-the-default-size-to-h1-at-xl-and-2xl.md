@@ -1,6 +1,6 @@
 ---
 title: "Design heading: h2 at the default size to h1 at xl and 2xl"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:75` `<Heading as="h1" size={{ base: 'xl', md: '2xl' }}>` (`current.aria.yaml`: `[level=1]`), visibly larger and bolder.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

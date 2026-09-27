@@ -1,6 +1,6 @@
 ---
 title: "Heading and description: left aligned to centered below lg"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/CatalogueItem.tsx:75,79` `textAlign={{ base: 'center', lg: 'left' }}` (`audit/designs__bed-frame/375/current.png`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

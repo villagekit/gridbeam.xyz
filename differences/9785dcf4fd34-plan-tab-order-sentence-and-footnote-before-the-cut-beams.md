@@ -1,6 +1,6 @@
 ---
 title: "Plan tab order: sentence and footnote before the Cut beams heading and drawings to the heading and sentence first, drawings, footnote last"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -19,6 +19,8 @@ kind: changed
 first, then the sentence, then the drawings, then the footnote.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

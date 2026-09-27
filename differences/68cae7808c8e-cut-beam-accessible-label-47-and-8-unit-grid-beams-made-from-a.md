@@ -1,6 +1,6 @@
 ---
 title: "Cut-beam accessible label: 47 and 8 unit grid beams made from a 60 unit grid beam cut at 47 and 55 grid unit markers. to 60 gu stock beam, cuts: 47 gu, 8 gu, remainder 5 gu"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/cutting-plan/CutBeamSvg.tsx:33,57` figure `aria-label` `60 gu stock beam, cuts: 47 gu, 8 gu, remainder 5 gu`; the svg `<title>` is the fixed `Cutting plan visualisation` on every row.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

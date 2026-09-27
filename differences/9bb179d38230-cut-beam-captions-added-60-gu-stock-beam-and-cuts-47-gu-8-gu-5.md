@@ -1,6 +1,6 @@
 ---
 title: "Cut-beam captions added: 60 gu stock beam and cuts: 47 gu + 8 gu + 5 gu waste"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/cutting-plan/CutBeamSvg.tsx:41-46` `{size} stock beam` and `cuts: {a} + {b}` + ` + {r} waste` above every bar.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

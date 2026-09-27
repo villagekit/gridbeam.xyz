@@ -1,6 +1,6 @@
 ---
 title: Tip prop and component dropped from CatalogueItem
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/catalogue/CatalogueItem.tsx:28-43` no `tip`. Unused by the design page on both sides.
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

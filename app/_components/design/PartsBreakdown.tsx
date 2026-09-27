@@ -1,91 +1,59 @@
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/design/parts-breakdown.tsx
 'use client'
 
+import { useCallback, useState } from 'react'
+
 import { ProductSummary } from '@villagekit/product'
-import { HStack, Switch, Text, VStack } from '@villagekit/ui'
-import { useState } from 'react'
+import { Field, FormLabel, Switch, Text, VStack } from '@villagekit/ui'
 
-import type { DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
+import { DisplayUnitToggle } from '@/app/tools/cutting-planner/components'
 
-interface PartsBreakdownProps {
-  displayUnit: DisplayUnit
-  onDisplayUnitChange: (unit: DisplayUnit) => void
-}
-
-export function PartsBreakdown(props: PartsBreakdownProps) {
-  const { displayUnit, onDisplayUnitChange } = props
+/**
+ * The Parts tab: the engine's parts summary, then the Settings menu with the unit toggle and the
+ * switch that groups same-size parts.
+ */
+export function PartsBreakdown() {
+  const [showInMillimeters, setShowInMillimeters] = useState(false)
   const [groupParts, setGroupParts] = useState(true)
+  const toggleShowInMillimeters = useCallback(() => setShowInMillimeters((current) => !current), [])
+  const toggleGroupParts = useCallback(() => setGroupParts((current) => !current), [])
 
   return (
-    <VStack alignItems="stretch" gap="4">
-      <Text fontWeight="bold">Settings</Text>
-      <HStack gap="6" flexWrap="wrap" justifyContent="flex-end">
-        <DisplayUnitToggle value={displayUnit} onChange={onDisplayUnitChange} />
-        <GroupPartsToggle value={groupParts} onChange={setGroupParts} />
-      </HStack>
+    <>
+      <ProductSummary displayUnit={showInMillimeters ? 'mm' : 'gu'} groupParts={groupParts} />
 
-      <ProductSummary displayUnit={displayUnit} groupParts={groupParts} />
-    </VStack>
-  )
-}
+      <VStack role="menu" aria-labelledby="design-parts-breakdown-settings" alignItems="flex-start">
+        <Text id="design-parts-breakdown-settings" css={{ fontWeight: 'bold' }}>
+          Settings
+        </Text>
 
-interface DisplayUnitToggleProps {
-  value: DisplayUnit
-  onChange: (unit: DisplayUnit) => void
-}
+        <DisplayUnitToggle
+          showInMillimeters={showInMillimeters}
+          onChange={toggleShowInMillimeters}
+        />
 
-function DisplayUnitToggle(props: DisplayUnitToggleProps) {
-  const { value, onChange } = props
-  return (
-    <HStack gap="2">
-      <Text fontSize="sm" variant="secondary">
-        Grid units
-      </Text>
-      <Switch.Root
-        size="sm"
-        checked={value === 'mm'}
-        onCheckedChange={({ checked }) => onChange(checked ? 'mm' : 'gu')}
-        aria-label="Display units as millimeters or grid units"
-      >
-        <Switch.HiddenInput />
-        <Switch.Control>
-          <Switch.Thumb />
-        </Switch.Control>
-      </Switch.Root>
-      <Text fontSize="sm" variant="secondary">
-        Millimeters
-      </Text>
-    </HStack>
-  )
-}
+        <Field.Root css={{ display: 'flex', flexDirection: 'row' }}>
+          <FormLabel htmlFor="design-parts-breakdown-group-parts">
+            <Text fontSize="sm" variant="tertiary">
+              Group same size parts
+            </Text>
+          </FormLabel>
 
-interface GroupToggleProps {
-  value: boolean
-  onChange: (value: boolean) => void
-}
-
-function GroupPartsToggle(props: GroupToggleProps) {
-  const { value, onChange } = props
-  return (
-    <HStack gap="2">
-      {/* Plain <label> for the Switch; Chakra's polymorphic `as`
-          doesn't widen htmlFor onto Box/Text props in v3. */}
-      <label
-        htmlFor="design-parts-group"
-        style={{ fontSize: '0.875rem', color: 'var(--chakra-colors-gray-600)' }}
-      >
-        Group same size parts
-      </label>
-      <Switch.Root
-        id="design-parts-group"
-        size="sm"
-        checked={value}
-        onCheckedChange={({ checked }) => onChange(checked)}
-      >
-        <Switch.HiddenInput />
-        <Switch.Control>
-          <Switch.Thumb />
-        </Switch.Control>
-      </Switch.Root>
-    </HStack>
+          {/* The id goes on the hidden input, where Chakra v2 put it, so the label's htmlFor names it;
+              passing ids replaces Ark's field ids whole, so the switch's aria-labelledby dangles and
+              the name falls to the label, as on the applet's toggle. */}
+          <Switch.Root
+            ids={{ hiddenInput: 'design-parts-breakdown-group-parts' }}
+            checked={groupParts}
+            onCheckedChange={toggleGroupParts}
+          >
+            <Switch.HiddenInput />
+            <Switch.Control>
+              <Switch.Thumb />
+            </Switch.Control>
+          </Switch.Root>
+        </Field.Root>
+      </VStack>
+    </>
   )
 }

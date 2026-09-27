@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan drawing: CutGridBeamSvg planks with rulers to CutBeamSvg colour bars with 16 px labels in a 6-unit viewBox"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/cutting-plan/CutBeamSvg.tsx:49-106` `viewBox="0 0 {size} 6"`, `preserveAspectRatio="none"`, 40 px tall, cyan segments; its `<text fontSize="1.4">` computes to `16px` (a stylesheet rule beats the presentation attribute), so every label draws taller than the bar and the row reads as garbled glyphs (Cutting plan tab capture).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 

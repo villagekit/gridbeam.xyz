@@ -1,6 +1,6 @@
 ---
 title: "Parts settings: role menu Settings with two form groups to a bare HStack"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: accessibility
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/PartsBreakdown.tsx:20-23` `<HStack gap="6">` with no role, label or groups (snapshot: the toggles sit directly in `tabpanel "Parts"`).
 
 ## Verdict
+
+plan 3c448a379ad7
 
 ## Log
 
