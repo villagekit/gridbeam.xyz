@@ -1,6 +1,6 @@
 ---
 title: Contact intro paragraph added
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No paragraph: the page body is one `LinkCard` (`packages/applet-contact/src/page
 `app/contact/page.tsx:41-44` "We'd love to hear from suppliers wanting to be listed, contributors with patches or ideas, and anyone with questions about the system or the catalogue."
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

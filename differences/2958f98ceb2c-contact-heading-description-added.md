@@ -1,6 +1,6 @@
 ---
 title: Contact heading description added
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/contact/page.tsx:39` `description="How to reach the gridbeam.xyz maintainer."`.
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

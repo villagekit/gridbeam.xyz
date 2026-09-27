@@ -1,6 +1,6 @@
 ---
 title: "Contact title: Contact us to Contact"
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/contact/page.tsx:18,22-30` `const title = 'Contact'` as `metadata.title`, `openGraph.title` and `twitter.title`; rendered `<title>Contact — gridbeam.xyz</title>` on `http://localhost:3000/contact`.
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

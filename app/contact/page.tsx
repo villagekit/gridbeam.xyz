@@ -1,46 +1,33 @@
-import { Container, Heading, Icon, Link, Section, Text, Title, VStack } from '@villagekit/ui'
+import { Heading, Icon, Section, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
-import { FaEnvelope, FaGithub } from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
 
 import { ObfuscatedEmail } from '../_components/ObfuscatedEmail'
 
-const title = 'Contact'
-const description =
-  'Email the maintainer or open an issue on GitHub. Suppliers, contributors, and curious folks all welcome.'
+const title = 'Contact us'
 
 export const metadata: Metadata = {
   title,
-  description,
 }
 
 export default function ContactPage() {
   return (
     <>
       <Section index={0} maxW="6xl">
-        <Title description="How to reach the gridbeam.xyz maintainer.">Get in touch</Title>
-        <Container maxW="3xl">
-          <Text fontSize="lg">
-            We'd love to hear from suppliers wanting to be listed, contributors with patches or
-            ideas, and anyone with questions about the system or the catalogue.
-          </Text>
-        </Container>
+        <Title>Contact us</Title>
       </Section>
 
       <Section index={1} maxW="6xl" colorPalette="gray">
-        <Title as="h2" description="Email for private notes. GitHub for anything public.">
-          Two channels
-        </Title>
         <VStack alignItems="stretch" gap="6" maxW="3xl" mx="auto" w="full">
           <VStack alignItems="center" gap="4" p="8" bg="white" borderRadius="xl" boxShadow="sm">
             <Icon w="8" h="8" color="primary.600">
               <FaEnvelope />
             </Icon>
             <Heading as="h3" size="md">
-              Email
+              Email us
             </Heading>
             <Text variant="secondary" textAlign="center">
-              Best for private questions, supplier listings, or anything you'd rather not say in
-              public.
+              Send us a message and we will get back to you as soon as we can.
             </Text>
             <ObfuscatedEmail
               user="hello+gridbeam"
@@ -60,27 +47,6 @@ export default function ContactPage() {
                 },
               }}
             />
-          </VStack>
-
-          <VStack alignItems="flex-start" gap="3" p="6" bg="white" borderRadius="xl" boxShadow="sm">
-            <Icon w="8" h="8" color="primary.600">
-              <FaGithub />
-            </Icon>
-            <Heading as="h3" size="md">
-              GitHub Issues
-            </Heading>
-            <Text>
-              Public, traceable, and great for bugs in the site or the catalogue, missing designs,
-              or feature requests.
-            </Text>
-            <Link
-              variant="paragraph"
-              href="https://github.com/villagekit/gridbeam.xyz/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/villagekit/gridbeam.xyz/issues
-            </Link>
           </VStack>
         </VStack>
       </Section>

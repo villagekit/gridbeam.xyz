@@ -1,6 +1,6 @@
 ---
 title: Contact meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/contact/page.tsx:19-20,24,27,30` `description = 'Email the maintainer or open an issue on GitHub. Suppliers, contributors, and curious folks all welcome.'` as `metadata.description`, `openGraph.description` and `twitter.description`.
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

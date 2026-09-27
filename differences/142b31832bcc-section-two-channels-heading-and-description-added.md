@@ -1,6 +1,6 @@
 ---
 title: Section Two channels heading and description added
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No second heading on the route (`packages/applet-contact/src/pages/contact.tsx:1
 `app/contact/page.tsx:49-51` `<Title as="h2" description="Email for private notes. GitHub for anything public.">Two channels</Title>`.
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

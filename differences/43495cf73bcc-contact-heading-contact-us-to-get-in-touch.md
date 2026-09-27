@@ -1,6 +1,6 @@
 ---
 title: "Contact heading: Contact us to Get in touch"
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/contact/page.tsx:39` `<Title description="How to reach the gridbeam.xyz maintainer.">Get in touch</Title>`; `audit/contact/dom/current.aria.yaml:23` `heading "Get in touch" [level=1]`.
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 

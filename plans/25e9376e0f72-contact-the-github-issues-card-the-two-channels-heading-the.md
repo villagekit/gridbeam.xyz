@@ -1,6 +1,6 @@
 ---
 title: "Contact: the GitHub Issues card, the Two channels heading, the intro paragraph, the heading and meta descriptions removed, the title, heading and email card copy as legacy's"
-status: todo
+status: done
 parent: 1a3ab91a9640
 derived_from: 1a3ab91a9640
 worker: sonnet
@@ -33,5 +33,15 @@ None pure. The route is proven by the DOM extraction and a look at `pnpm dev`.
 - The dev server stopped by its pid (`ss -ltnp | grep :3000`); `timeout 900 just check` is green
 
 ## Outcome
+
+All removals landed on app/contact/page.tsx as the Work section names them: the description constant and metadata field gone (route inherits the shell default); the title constant and the Title's heading text read Contact us; the Title's description prop gone; the intro Container/Text gone; the second section's h2 Title Two channels gone; the GitHub Issues card gone whole, its Link and the overflow it showed at 375 gone with it; the email card's heading reads Email us and its sentence reads Send us a message and we will get back to you as soon as we can., legacy's verbatim; the unused imports (Container, Link from @villagekit/ui, FaGithub from react-icons/fa) gone. The two Section wrappers, the outer VStack, the card's VStack, Icon, Heading as="h3", Text variant="secondary" and ObfuscatedEmail with its css stayed, as the page shape for the re-port.
+
+Verify-first and Done-when greps all ran and matched: VStack count 2, Heading count 1, the forbidden-terms grep printed nothing, Email us count 1 (the -w flag), and the verbatim sentence count 1.
+
+Proofs: pnpm dev, then pnpm audit:pages and pnpm audit:dom --routes <a file naming /contact alone>. diff audit/contact/dom/legacy.txt audit/contact/dom/current.txt shows only the shell's known differences (wordmark, nav, cookie banner, footer columns) and one route line, the address hello+gridbeam@mikey.nz; between the h1 Contact us and the footer the current side reads Email us, Send us a message and we will get back to you as soon as we can. and the address, and nothing else. audit/contact/dom/current.aria.yaml's main holds heading "Contact us" [level=1] and one card heading, heading "Email us" [level=3] (the shell's bd05a2d3642d, upstream), and no other heading. The screenshot pairs at 375, 768 and 1280 show only shell and upstream differences plus the page-shape items left for the re-port. curl against the running route printed the title Grid Beam: Contact us and the site-default meta description, / renders the same string. Dev server stopped by its pid before the gate; timeout 900 just check ran green (lint, typecheck, 39 tests, build, no generated-file drift). kipu verify --warnings-as-errors is green.
+
+The eleven items are fixed, kipu fix <id> --outcome "plan 25e9376e0f72" (06fb4cb44b25's outcome naming [[bd05a2d3642d]] for the card heading's level).
+
+Reviewed on three fresh Opus sub-agents before the commit: Standards, Spec and Parity, per the code-review and parity skills. No critical or major findings on any axis. Standards found the file's diff matches the plan's Work section exactly, no unrequested changes, no comments narrating the change, all removed imports gone and none left unused; its one nit (the eleven items not yet fixed) was a process step completed after its run. Spec independently ran every Work and Done-when grep against the file and the DOM audit and found all of them passing, with the same nit on the pending kipu fix step. Parity found no unrecorded difference introduced, no legacy behavior dropped, and every residual on the screenshot and DOM pairs already tracked as a page-shape, card-style or shell item left for the re-port slice 73062532dff7; it also flagged, out of scope, that app/faq/page.tsx contains the string "Get in touch" for the FAQ record's own ledger to consider, not this slice's concern.
 
 ## Log

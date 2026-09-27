@@ -1,6 +1,6 @@
 ---
 title: "Email card copy: Email us and Send us a message to Email and Best for private questions"
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/contact/page.tsx:57-63` `<Heading as="h3" size="md">Email</Heading>` and "Best for private questions, supplier listings, or anything you'd rather not say in public."
 
 ## Verdict
+
+plan 25e9376e0f72
 
 ## Log
 
