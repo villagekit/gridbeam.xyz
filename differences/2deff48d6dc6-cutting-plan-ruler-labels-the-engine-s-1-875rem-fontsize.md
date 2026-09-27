@@ -1,0 +1,18 @@
+---
+title: "Cutting plan ruler labels: the engine's 1.875rem fontSize attribute to 16px under Chakra v3's font: inherit preflight"
+status: open
+route: /designs/bed-frame
+axis: visual
+kind: changed
+---
+## Legacy
+
+The engine's ruler labels at the version legacy pinned (`packages/applet-cutting-planner/package.json` `@villagekit/part-gridbeam ^0.9.0`; `../gridkit` at tag `v0.9.0`, `core/part/src/base/grid/svg/label.tsx:57,64`, `const { fontSizes } = useTheme()` and `fontSize={fontSizes['3xl']}`) write `1.875rem` as an SVG presentation attribute on each `text`, as the current source does through `system.token('fontSizes.3xl')` (`../gridkit core/part/src/base/grid/svg/label.tsx:60-63`); under Chakra v2's reset, which writes no `font` on `*`, the live Plan tab of `/designs/bed-frame` renders the cut markers and totals at 30px (the Parity review of plan 55d567074c71, `scratchpad/review/55d5/legacy-cut-1280.png`, glyphs 15px tall).
+
+## Current
+
+The same drawing through the re-ported `app/tools/cutting-planner/components/CuttingPlan.tsx:49-54` (the published `@villagekit/part-gridbeam@0.10.0`, `node_modules/@villagekit/part/dist/base/grid/svg/label.js:25-26,31-38`) renders the labels at 16px: Chakra v3's preflight writes `font: inherit` on `*` (`node_modules/@chakra-ui/react/dist/esm/styled-system/preflight.js:15-18`), a stylesheet rule that beats a presentation attribute, so the `fontSize` attribute loses to the body's 16px (`scratchpad/review/55d5/current-cut-1280.png`, glyphs 9px tall). Read on the slice's throwaway route; it reaches the route when the page re-port `3c448a379ad7` renders `CuttingPlannerResult`. The fix is the engine's, in `../gridkit`: the size written as a style or a `css` prop the preflight does not beat, for a `../gridkit` slice the design pages record's finish hands it to (the split's call 10).
+
+## Verdict
+
+## Log
