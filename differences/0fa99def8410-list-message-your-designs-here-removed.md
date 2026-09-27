@@ -1,6 +1,6 @@
 ---
 title: List message Your designs here… ✨ removed
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignsBrowser.tsx:17-27` passes no `listMessage`; `app/_components/catalogue/Catalogue.tsx:261-273` renders the slot only when given, so nothing follows the grid (`audit/designs/dom/current.txt`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

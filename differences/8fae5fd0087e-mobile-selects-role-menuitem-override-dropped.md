@@ -1,6 +1,6 @@
 ---
 title: "Mobile selects: role menuitem override dropped"
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: removed
@@ -15,8 +15,12 @@ kind: removed
 
 ## Verdict
 
+plan 8417428fd88a
+
 ## Log
 
 - 2026-09-12: The legacy role is invalid on a native select; a regression by the rule's absence, the operator may sanction under rule 5.
 
 - 2026-09-27: At the designs index record's split (plan f901cf9f724d): no verdict having landed, the catalog re-port [[8417428fd88a]] ships legacy's role on the mobile selects and closes this item by default with a note; the operator may overturn it by a note and a new state (the stories index split's call 4). Not on the verdicts plan.
+
+- 2026-09-27: Fixed by default by the catalog re-port (plan 8417428fd88a): app/_components/catalogue/Selector.tsx:49-51 puts legacy's role=menuitem and aria-labelledby on the ui Select's Field, the native select Chakra v3's NativeSelect renders (the probe at 375: both selects carry role menuitem and the label id). No verdict had landed; the operator may overturn this by a note and a new state.

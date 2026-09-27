@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Box,
   Heading,
@@ -10,16 +12,18 @@ import {
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
-import type { CatalogueItemData } from './types'
+import { type CatalogueItem, useCatalogueContext } from '@/app/_lib/context/catalogue'
 
 export interface ItemCardProps {
-  item: CatalogueItemData
+  item: CatalogueItem<string>
   basePath: string
 }
 
+// the card until the card re-port (e22f84fa6e1a) writes legacy's Item on the ui Image
 export function ItemCard(props: ItemCardProps) {
   const { item, basePath } = props
-  const { id, name, image, active = true, inactiveMessage } = item
+  const { id, name, image, active } = item
+  const { inactiveItemMessage: inactiveMessage } = useCatalogueContext()
   const opacity = active ? 1 : 0.4
 
   return (
@@ -29,7 +33,7 @@ export function ItemCard(props: ItemCardProps) {
           <HoverCard position="relative" aspectRatio="4 / 3">
             {image != null ? (
               <NextImage
-                src={image}
+                src={image.src}
                 alt={name}
                 fill
                 unoptimized

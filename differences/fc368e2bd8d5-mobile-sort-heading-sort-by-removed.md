@@ -1,6 +1,6 @@
 ---
 title: Mobile sort heading Sort by removed
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/catalogue/Catalogue.tsx:486-493` the below-`lg` sort `Select` has no heading, only `aria-label="Sort designs"` (`audit/designs/375/current.png`); the desktop `Sort by` heading at `Catalogue.tsx:276-283` is unchanged.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

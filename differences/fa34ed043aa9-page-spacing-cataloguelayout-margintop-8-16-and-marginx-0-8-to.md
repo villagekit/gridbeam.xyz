@@ -1,6 +1,6 @@
 ---
 title: "Page spacing: CatalogueLayout marginTop 8/16 and marginX 0/8 to Section padding 8/12 top and bottom"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/designs/page.tsx:33` `<Section index={0} maxW="8xl">`, whose `Container` at `node_modules/@villagekit/ui/src/components/layouts/Section.tsx:99` has `py={[8, null, 12]}` and no extra horizontal margin (`audit/designs/1280/current.png`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Results count on mobile: centered full width to unaligned nowrap"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:427` no alignment, `whiteSpace="nowrap"`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

@@ -18,3 +18,5 @@ Today `app/designs/page.tsx` (a server component exporting `metadata` and readin
 ## Log
 
 - 2026-09-27: Filed open at the designs index record's split (plan f901cf9f724d) for rule 4 of 2032533f, put to the operator on the verdicts plan [[549ec777422c]]; the catalog re-port [[8417428fd88a]] meets it and ships the two-file shape unless a verdict names another.
+
+- 2026-09-27: From the catalog re-port (plan 8417428fd88a): the two files shipped are app/designs/page.tsx (the server file: metadata and getDesignIndexes, rendering DesignsPage) and app/designs/DesignsPage.tsx (the client file: legacy's filter table, useMemo and the Catalogue call, under the ported-from header). The item stays open for the operator on the verdicts plan 549ec777422c.

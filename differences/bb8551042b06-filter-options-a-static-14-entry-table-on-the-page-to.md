@@ -1,6 +1,6 @@
 ---
 title: "Filter options: a static 14-entry table on the page to buildDesignFilterOptions from the tags with furniture excluded"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/designs-to-catalogue.ts:5,10-25,42-70` `TAG_LABELS` order, unknown tags appended alphabetically with `capitalize`, `EXCLUDED_TAGS = ['furniture']`; tested at `designs-to-catalogue.test.ts:31-64`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

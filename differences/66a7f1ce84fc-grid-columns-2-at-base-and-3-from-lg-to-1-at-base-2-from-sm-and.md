@@ -1,6 +1,6 @@
 ---
 title: "Grid columns: 2 at base and 3 from lg to 1 at base, 2 from sm and 3 from xl"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:242` `columns={{ base: 1, sm: 2, xl: 3 }}` (`audit/designs/375/current.png`: one card per row, page 12867 px tall; two columns through `lg`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

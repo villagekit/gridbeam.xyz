@@ -1,6 +1,6 @@
 ---
 title: Selector split into OptionGroup, CategorySelect and SortSelect; Filters, Sorting, SearchBar, ResultsCount and List folded into Catalogue.tsx
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:298-319,440-468,476-503` three private components toggled by `display` props; `SearchBar` (`:384-417`), `ResultsCount` (`:424-431`), `EmptyState` (`:510-531`) and the grid (`:239-259`) live in the same file; only `ItemCard.tsx` stays separate.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

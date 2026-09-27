@@ -1,6 +1,6 @@
 ---
 title: "Empty state layout: paddingTop 0/16 and a full-width button to py 16 and a maxW sm button"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:518,525-528` `<VStack gap="4" py="16" textAlign="center">` and `<Button variant="secondary" maxW="sm">` with the icon as a child and no `width`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

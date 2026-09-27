@@ -1,6 +1,6 @@
 ---
 title: "CatalogueLayout removed: MainLayout with responsive margins to Main, SkipNavContent and Section"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/designs/page.tsx:30-38` and `app/designs/[id]/page.tsx:54-69` compose `<Main><SkipNavContent /><Section ...>` directly.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

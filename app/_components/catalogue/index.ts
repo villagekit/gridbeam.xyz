@@ -1,4 +1,6 @@
-export { Catalogue, type CatalogueProps } from './Catalogue'
+// ported from https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/catalogue/index.ts
+export * from './Catalogue'
+// the design page's component, until the design pages record (0bc88eaf5493) moves it
 export {
   CatalogueItem,
   type CatalogueItemAction,
@@ -6,6 +8,5 @@ export {
   type CatalogueItemProps,
   type CatalogueItemTab,
 } from './CatalogueItem'
-export { CatalogueStatic, type CatalogueStaticProps } from './CatalogueStatic'
+// the card until the card re-port (e22f84fa6e1a) writes legacy's Item
 export { ItemCard, type ItemCardProps } from './ItemCard'
-export { type CatalogueItemData, SORT_OPTIONS, type SortOption } from './types'

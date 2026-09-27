@@ -18,3 +18,5 @@ kind: changed
 rule: upgrade (framer-motion to motion, the successor package, as [[83b6c8ceb5d0]])
 
 ## Log
+
+- 2026-09-27: From the catalog re-port (plan 8417428fd88a): the Current is now app/_components/catalogue/List.tsx:25 const MotionBox = motion.create(Box) from motion/react, the stories List.tsx form, around legacy's itemVariants and AnimatePresence lines. The state stays sanctioned. One behavior the library change brings is filed apart, as [[105cb9410b89]]: the list message's remount on a filter change, which framer-motion swallowed on the live site and motion 12 plays.

@@ -1,6 +1,6 @@
 ---
 title: "Filter and sort controls: native selects below md to below lg"
-status: regression
+status: fixed
 route: /designs
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:182,227` `display={{ base: 'none', lg: 'flex' }}` for the sidebar and `{ base: 'block', lg: 'none' }` for the selects; `audit/designs/768/current.png` (1018 px wide, shell overflow) still shows two selects.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

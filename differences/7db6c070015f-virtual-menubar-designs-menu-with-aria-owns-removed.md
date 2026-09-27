@@ -1,6 +1,6 @@
 ---
 title: Virtual menubar Designs menu with aria-owns removed
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/catalogue/Catalogue.tsx:177-283` has no `menubar` and no `aria-owns`; `audit/designs/dom/current.aria.yaml` shows `complementary`, `searchbox`, the cards and the `Sort by` group as flat siblings of `main`, in DOM order.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Search input accessible name: Search to Search designs"
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:394` `aria-label={`Search ${itemLabel}`}` on the input, rendered `Search designs` (`audit/designs/dom/current.aria.yaml`: `searchbox "Search designs"`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Filter and sort options: role option in a group to role radio in a radiogroup with aria-checked"
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: changed
@@ -15,8 +15,12 @@ kind: changed
 
 ## Verdict
 
+plan 8417428fd88a
+
 ## Log
 
 - 2026-09-12: An `option` with no listbox ancestor is invalid ARIA and the legacy exposes no selected state; the current pairing is valid. No rule covers the change, so it is a regression by the rule's absence; the operator may sanction it under rule 5.
 
 - 2026-09-27: At the designs index record's split (plan f901cf9f724d): no verdict having landed, the catalog re-port [[8417428fd88a]] ships legacy's markup and closes this item by default with a note; the operator may overturn it by a note and a new state (the stories index split's call 4). Not on the verdicts plan.
+
+- 2026-09-27: Fixed by default by the catalog re-port (plan 8417428fd88a): app/_components/catalogue/Selector.tsx:35-37 renders legacy's Box role=group and app/_components/Option.tsx:35-36 the Badge role=option with tabIndex 0 and no aria-selected (audit/designs/dom/current.aria.yaml: group "Categories" > heading > option, no radiogroup, no [checked]). No verdict had landed; the operator may overturn this by a note and a new state.

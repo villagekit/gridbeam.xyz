@@ -1,6 +1,6 @@
 ---
 title: Mobile category heading Category removed
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/catalogue/Catalogue.tsx:449-457` the below-`lg` category `Select` has no heading, only `aria-label="Filter designs by category"` (`audit/designs/375/current.png`: the `All designs` dropdown has no heading).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

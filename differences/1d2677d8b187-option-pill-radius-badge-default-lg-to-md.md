@@ -1,6 +1,6 @@
 ---
 title: "Option pill radius: Badge default lg to md"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:327-379` `borderRadius="md"`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

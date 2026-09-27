@@ -1,6 +1,6 @@
 ---
 title: "Results count placement: moves between the sidebar and the search row by width to always beside the search bar"
-status: regression
+status: fixed
 route: /designs
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:212-223` the count is always in the search row, so on mobile it is the second control, before the selects (`audit/designs/375/current.png`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

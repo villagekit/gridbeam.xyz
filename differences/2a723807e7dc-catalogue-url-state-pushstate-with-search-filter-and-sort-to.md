@@ -1,6 +1,6 @@
 ---
 title: "Catalogue URL state: pushState with search, filter and sort to replaceState with q, f and s"
-status: regression
+status: fixed
 route: /designs
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:37-39` `q`, `f`, `s`, sort values `name-asc`/`name-desc` (`app/_components/catalogue/types.ts:14-17`), written by `replaceUrl` (`app/_lib/url-state.ts:18`, `replaceState`); Back leaves `/designs` (probe: `history.length` unchanged).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

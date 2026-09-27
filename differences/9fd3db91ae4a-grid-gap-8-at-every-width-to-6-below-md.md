@@ -1,6 +1,6 @@
 ---
 title: "Grid gap: 8 at every width to 6 below md"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:242` `gap={{ base: 6, md: 8 }}`; `CatalogueStatic.tsx:23` the same.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

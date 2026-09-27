@@ -1,6 +1,6 @@
 ---
 title: "Option panel width: 8rem to 9rem"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:183,277` `w="9rem"`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

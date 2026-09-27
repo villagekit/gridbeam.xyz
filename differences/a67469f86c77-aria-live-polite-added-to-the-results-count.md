@@ -1,6 +1,6 @@
 ---
 title: aria-live polite added to the results count
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/catalogue/Catalogue.tsx:427` `<Text ... aria-live="polite" whiteSpace="nowrap">`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

@@ -18,3 +18,5 @@ The pages router has no server/client split: `apps/gridkit/pages/designs/index.t
 rule: upgrade (the app router requires the directive where hooks run)
 
 ## Log
+
+- 2026-09-27: From the catalog re-port (plan 8417428fd88a): the Current is now app/designs/DesignsPage.tsx (the page's useMemo under 'use client', rendered by the server file app/designs/page.tsx) and the seven component files under app/_components/catalogue/, each under 'use client' since each calls a hook or renders a client Badge, plus app/_components/layouts/CatalogueLayout.tsx for its useBreakpointValue calls. The state stays sanctioned.

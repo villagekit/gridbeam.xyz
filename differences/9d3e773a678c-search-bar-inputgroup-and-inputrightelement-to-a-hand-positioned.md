@@ -1,6 +1,6 @@
 ---
 title: "Search bar: InputGroup and InputRightElement to a hand-positioned Flex"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:384-417` a `Box position="relative"` with an absolutely positioned `Flex`; `@villagekit/ui@1.2.0` exports neither `InputGroup` nor `InputRightElement` (`node_modules/@villagekit/ui/src/index.ts`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

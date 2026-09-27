@@ -1,6 +1,6 @@
 ---
 title: designsToCatalogueItems and DesignsBrowser added
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/design/designs-to-catalogue.ts:27-37` a tested pure mapper that also drops `furniture` and sets a `description` no card reads (`ItemCard.tsx:22`); `app/_components/design/DesignsBrowser.tsx:1-29` a `'use client'` wrapper that derives options and items and renders `<Catalogue>`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

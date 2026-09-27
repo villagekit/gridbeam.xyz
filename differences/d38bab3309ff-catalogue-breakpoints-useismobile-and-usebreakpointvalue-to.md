@@ -1,6 +1,6 @@
 ---
 title: "Catalogue breakpoints: useIsMobile and useBreakpointValue to responsive style props"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:182,242` and `ItemCard.tsx` use `display`/`columns` objects only; both hooks are still exported by `@villagekit/ui@1.2.0` (`node_modules/@villagekit/ui/src/index.ts:106,126`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

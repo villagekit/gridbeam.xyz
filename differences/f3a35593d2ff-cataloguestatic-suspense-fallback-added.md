@@ -1,6 +1,6 @@
 ---
 title: CatalogueStatic Suspense fallback added
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: added
@@ -14,6 +14,8 @@ No fallback and no server/client split: `apps/gridkit/pages/designs/index.tsx:67
 `app/_components/catalogue/CatalogueStatic.tsx:1-30` a server-rendered, pre-sorted card grid used as `<Suspense fallback>` in `app/designs/page.tsx:34-36` because `useSearchParams()` forces dynamic rendering.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

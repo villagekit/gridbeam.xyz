@@ -1,6 +1,6 @@
 ---
 title: "Category filters added: Entryway, Event, Laundry, Retail, Shelving"
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/design/designs-to-catalogue.ts:42-67` `buildDesignFilterOptions` derives the options from every tag present, so `Entryway`, `Event`, `Laundry`, `Retail` and `Shelving` are appended after the 14 (`audit/designs/dom/current.txt`, 19 options).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

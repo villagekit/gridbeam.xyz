@@ -1,6 +1,6 @@
 ---
 title: "Search debounce: 1000 ms lodash debounce to 250 ms setTimeout"
-status: regression
+status: fixed
 route: /designs
 axis: interaction
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:40,102-124` `SEARCH_DEBOUNCE_MS = 250` with a `useRef` timer and `setTimeout`/`clearTimeout`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 

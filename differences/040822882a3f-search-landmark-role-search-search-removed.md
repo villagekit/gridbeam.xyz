@@ -1,6 +1,6 @@
 ---
 title: Search landmark role search Search removed
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/catalogue/Catalogue.tsx:384-396` a `Box position="relative"` with a bare `<Input type="search">`; no element carries `role="search"` (`audit/designs/dom/current.aria.yaml`: `searchbox "Search designs"` directly under `main`).
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

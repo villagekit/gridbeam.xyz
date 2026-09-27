@@ -1,6 +1,6 @@
 ---
 title: "Filter and sort options: Enter-only to Enter and Space activation"
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:336-341` acts on `'Enter'` and `' '` with `preventDefault()`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log

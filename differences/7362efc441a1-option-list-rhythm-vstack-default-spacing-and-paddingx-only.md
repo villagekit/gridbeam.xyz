@@ -1,6 +1,6 @@
 ---
 title: "Option list rhythm: VStack default spacing and paddingX-only badges to gap 1 and py 0.5"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:307` `gap="1"` and `:357-358` `px="2"`, `py="0.5"`: a 28 px row pitch in `audit/designs/1280/current.png`.
 
 ## Verdict
+
+plan 8417428fd88a
 
 ## Log
 
