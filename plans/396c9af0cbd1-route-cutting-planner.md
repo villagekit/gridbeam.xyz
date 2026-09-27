@@ -32,3 +32,5 @@ Other routes; the shell, except where a difference on this route is closed by a 
 ## Outcome
 
 ## Log
+
+- 2026-09-27: From the ui Select slice [[ad2f5e52f9d8]]: the live legacy site renders a select on /tools/cutting-planner, id unlimited-beams, 40px tall and white, from packages/applet-cutting-planner/src/components/cutting-planner.tsx:133-147 at fce357d (a FormLabel and a Select inside the applet the page file imports at :1), where this record's earlier notes and the designs finish read the page file alone and said legacy renders none. The current planner's select (app/tools/cutting-planner/CuttingPlanner.tsx:158-170) writes bg white as its own prop, id unlimited-stock and size sm (32px under the sibling, 36px on the published 1.2.0): the re-port takes the applet's lines, and the prop goes, since the ui native select's outline field is white by the recipe from ui commit 6e4f482. The route's select also carries the five shell readings the ui slice [[6bc0d3ba08dc]] fixes (hover border, transition, 1px bottom padding, the chevron's glyph and aria-hidden); the route's own [[c6792d6e6ec8]] closes with that fix at the bump.

@@ -36,6 +36,7 @@ blocked_by:
   - d0d7111d6b45
   - target: ad2f5e52f9d8
     note: a sibling fix the publish must carry
+  - 6bc0d3ba08dc
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -135,3 +136,5 @@ None.
 - 2026-09-27: From the card re-port (plan e22f84fa6e1a): after the publish that carries ../ui 1c3e3e8, swap app/_components/catalogue/Item.tsx:56 and :73, the two `base: ['100%', 2]` lines of the card sizes object, back to legacy's `base: ['full', 2]` (item.tsx:51-54,66-69 at fce357d), drop the one-line comment above the first, and move [[fd48a49f469f]] to fixed; the check is grep -rn "base: ['100%'" app/_components/catalogue printing nothing. No attribute changes while the card image is unoptimized ([[2a0840f8087b]], the operator's verdict), so the rendered check stays the grep.
 
 - 2026-09-27: From the designs index record's finish (plan [[f901cf9f724d]]): the ui Select slice [[ad2f5e52f9d8]] blocks this plan (the edge written at its mint). The bump makes no site edit for it: app/_components/catalogue/Selector.tsx:47-60 is legacy's selector line for line. The bump repeats the slice's probe on the published package, on /designs at 375: both role="menuitem" selects at background-color rgb(255, 255, 255), the live legacy site's reading (audit/designs/probe.txt:26); the cutting planner's select white by its own prop, unmoved; then kipu fix on [[42cd11c9585f]].
+
+- 2026-09-27: The ui Select slice [[ad2f5e52f9d8]] shipped in ../ui at 6e4f482 (src/components/Select.tsx, CHANGELOG.md): no site edit, as the mint note above says. What the repeat probe on the published package reads (the scratchpad's select-probe.mjs shape: every select's computed background-color, width, height, border, radius, font size and color at rest, then focused): on /designs at 375 both role menuitem selects at rgb(255, 255, 255) at rest and focused, 343px by 40px, bordered rgb(226, 232, 240) at 6px in 16px type, the focused border the outlineColor at half alpha with a 1px shadow (the palette, sizes and focus fixes published with it); on /tools/cutting-planner at 375 and 1280 the one select white as before by its own prop; then kipu fix [[42cd11c9585f]]. One more blocker joins this plan from that slice's Parity review: [[6bc0d3ba08dc]] (worker:fable), the select field's hover border, transition and bottom padding and the indicator's filled chevron with aria-hidden, five shell items; its own note names what the bump reads for them.
