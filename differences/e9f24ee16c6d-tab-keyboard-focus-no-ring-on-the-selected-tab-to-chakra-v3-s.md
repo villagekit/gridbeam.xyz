@@ -1,6 +1,6 @@
 ---
 title: "Tab keyboard focus: no ring on the selected tab to Chakra v3's 2px gray.400 outline"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: interaction
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's base trigger writes `_focusVisible: { zIndex: 1, outline: 2px solid,
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 47c6ffb (plan 402430831b29, the ui switch, slider and tabs recipes, Chakra v2 theme again), not pushed; seen on pnpm dev under the ui override, legacy and current readings saved in the plan scratchpad probe. Waits on the operator publish and the bump plan 99f2fe62c62f (decision 28c1a536).

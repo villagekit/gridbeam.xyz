@@ -1,6 +1,6 @@
 ---
 title: "Slider thumb keyboard focus: Chakra v2's 2px outline shadow to Chakra v3's 3px gray.400 ring"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: accessibility
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's slider thumb writes `_focusVisible: { ring: 3px, ringColor: colorPal
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 47c6ffb (plan 402430831b29, the ui switch, slider and tabs recipes, Chakra v2 theme again), not pushed; seen on pnpm dev under the ui override, legacy and current readings saved in the plan scratchpad probe. Waits on the operator publish and the bump plan 99f2fe62c62f (decision 28c1a536).

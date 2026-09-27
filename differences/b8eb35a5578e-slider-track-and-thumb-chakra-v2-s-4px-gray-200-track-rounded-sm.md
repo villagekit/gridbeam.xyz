@@ -1,6 +1,6 @@
 ---
 title: "Slider track and thumb: Chakra v2's 4px gray.200 track, rounded sm, under a white thumb with the base shadow to Chakra v3's 8px translucent track, rounded full, under a thumb with a 2px dark border"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's slider recipe at `md`: `--slider-track-size: sizes.2` (8px), the tra
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 47c6ffb (plan 402430831b29, the ui switch, slider and tabs recipes, Chakra v2 theme again), not pushed; seen on pnpm dev under the ui override, legacy and current readings saved in the plan scratchpad probe. Waits on the operator publish and the bump plan 99f2fe62c62f (decision 28c1a536).

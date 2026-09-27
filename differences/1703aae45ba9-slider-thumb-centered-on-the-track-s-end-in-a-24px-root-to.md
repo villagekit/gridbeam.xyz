@@ -1,6 +1,6 @@
 ---
 title: "Slider thumb: centered on the track's end in a 24px root to contained inside it in a 20px root"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ zag's slider defaults `thumbAlignment` to `contain` (`node_modules/.pnpm/@zag-js
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 47c6ffb (plan 402430831b29, the ui switch, slider and tabs recipes, Chakra v2 theme again), not pushed; seen on pnpm dev under the ui override, legacy and current readings saved in the plan scratchpad probe. Waits on the operator publish and the bump plan 99f2fe62c62f (decision 28c1a536).
