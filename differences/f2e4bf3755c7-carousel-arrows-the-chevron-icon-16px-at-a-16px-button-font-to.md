@@ -1,6 +1,6 @@
 ---
 title: "Carousel arrows: the chevron icon 16px at a 16px button font to 20px at 14px, Chakra v3's button recipe icon size"
-status: regression
+status: upstream
 route: /stories/2022-newsletter
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-27: Handed to the ui slice [[179862cdff12]], minted beside the shell record at the story pages record's finish (plan [[56e6eb197e6c]], decision 40abdb2f222a), with its 2021 twin [[e5f7c103b8bf]]: one slice for both, the button recipe's _icon at 1em per size and the IconButton wrapper's fontSize, blocking the bump plan [[99f2fe62c62f]]. The state stays regression until the slice moves it to upstream with the sibling commit.
+
+- 2026-09-27: Fixed in ../ui at commit 7922dd3 by the ui slice [[179862cdff12]]: buttonSize writes _icon width and height 1em in each of the four sizes over Chakra v3's per-size widths, and the ui IconButton passes _icon fontSize 1em over v3's 1.2em. Under the file:../ui override every carousel arrow on this route reads 40px tall at font-size 16px with its svg 16 by 16 before the scale(1.5) and 24 by 24 after, at 1280, 768 and 375, the live legacy site's readings. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] repeats the probe on the published package and moves it to fixed.
