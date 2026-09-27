@@ -1,6 +1,6 @@
 ---
 title: "Number input root background: the 0.9.0 wrapper's transparent root under the flushed variant to the ui wrapper's white at every variant"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ The ui `NumberInput.Root` passes `bg="white"` at every variant (`../ui/src/compo
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Fixed in ../ui by commit 486ef24 (plan 1b4708347ae9), read on pnpm dev under the file:../ui override against the live legacy site (audit/_probe1b47/probe.mjs, legacy.json and after.json; the number input roots on a throwaway route, roots.mjs). Waits on the operator's publish; the bump plan 99f2fe62c62f moves it to fixed.

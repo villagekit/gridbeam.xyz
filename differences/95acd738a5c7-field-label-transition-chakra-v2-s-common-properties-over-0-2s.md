@@ -1,6 +1,6 @@
 ---
 title: "Field label transition: Chakra v2's common properties over 0.2s removed"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: removed
@@ -16,3 +16,5 @@ Chakra v3's field recipe writes no transition on the label (`node_modules/@chakr
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Fixed in ../ui by commit 486ef24 (plan 1b4708347ae9), read on pnpm dev under the file:../ui override against the live legacy site (audit/_probe1b47/probe.mjs, legacy.json and after.json; the number input roots on a throwaway route, roots.mjs). Waits on the operator's publish; the bump plan 99f2fe62c62f moves it to fixed.

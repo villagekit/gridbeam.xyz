@@ -1,0 +1,18 @@
+---
+title: "Field label box: Chakra v2's block label across its column to Chakra v3's flex label shrunk to its text"
+status: open
+route: shell
+axis: interaction
+kind: changed
+---
+## Legacy
+
+Chakra v2's `FormLabel` is a block label inside a block `FormControl`, so it spans its column: on the live `/designs/bed-frame` at 1280 the `Preset` label is 296px wide (239px at 375) and the engine's label rows 400px, so a click in the empty strip beside the word reaches the control the label names (the ui NumberInput and field label slice's Parity and Spec reviews, `audit/_probe1b47/legacy.json`, `audit/_review1b47/fields-legacy.json`).
+
+## Current
+
+Chakra v3's field root is a flex column with `alignItems: flex-start` and its label `display: flex` (`node_modules/@chakra-ui/react/dist/esm/theme/recipes/field.js`), so the label shrinks to its text: on `pnpm dev` under the `file:../ui` override the `Preset` label reads 48px wide at 1280 and 375 and the engine's label rows 100px to 152px (`audit/_probe1b47/after.json`, `audit/_review1b47/fields-current.json`). No pixel moves; the label's click target is the text alone. The ui field recipe's, for a `../ui` slice beside the shell record.
+
+## Verdict
+
+## Log

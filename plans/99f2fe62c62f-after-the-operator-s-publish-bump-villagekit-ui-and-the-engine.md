@@ -57,6 +57,7 @@ blocked_by:
   - target: b574a94092bf
     note: a sibling fix the publish must carry
   - 1b4708347ae9
+  - 42f6738b9658
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 

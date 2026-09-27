@@ -1,6 +1,6 @@
 ---
 title: "Field label spacing: Chakra v2's 8px bottom and 12px end margins on a block label to Chakra v3's 6px field gap, the design page's controls two pixels tighter"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ Chakra v3's field recipe writes no margin on the label and lays the field root o
 ## Log
 
 - 2026-09-28: From the ui form recipes slice's Parity review (plan 59fa9072c63f): the same mechanism moves the Parts tab's Group same size parts switch on /designs/bed-frame, a row field (app/_components/design/PartsBreakdown.tsx:35-36): legacy's label carries margin 0 12px 8px 0 and the switch sits at x=260 at 1280 and x=196 at 375; current's field root gap of 6px puts it at x=254 and x=190 (the reviewer's audit/_probe59fa/parts.mjs, audit/_review59fa/{legacy,current}-parts-{1280,375}.png). One item for both readings, the field recipe's; the slice 1b4708347ae9 reads the row field too.
+
+- 2026-09-28: Fixed in ../ui by commit 486ef24 (plan 1b4708347ae9), read on pnpm dev under the file:../ui override against the live legacy site (audit/_probe1b47/probe.mjs, legacy.json and after.json; the number input roots on a throwaway route, roots.mjs). Waits on the operator's publish; the bump plan 99f2fe62c62f moves it to fixed.
