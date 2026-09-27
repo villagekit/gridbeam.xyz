@@ -1,6 +1,6 @@
 ---
 title: "Select field hover: Chakra v2's gray.300 border under the pointer removed"
-status: open
+status: upstream
 route: shell
 axis: interaction
 kind: removed
@@ -18,3 +18,5 @@ Chakra v3's native select `outline` field (`node_modules/@chakra-ui/react/dist/e
 ## Log
 
 - 2026-09-27: Filed by the Parity review of the ui Select slice [[ad2f5e52f9d8]], which found it beside the background it fixed; not from that change (the readings hold before and after it). Not judged. The mechanism is the package's select recipe, so a fix is a ui slice beside the shell record; handed to [[6bc0d3ba08dc]].
+
+- 2026-09-27: Fixed in ../ui at commit e3acb25 (plan [[6bc0d3ba08dc]]): the native select recipe's outline variant writes _hover borderColor gray.300; on /designs at 375 under the file:../ui override both menuitem selects read rgb(203, 213, 224) under the pointer and rgb(226, 232, 240) at rest, legacy's readings (scratchpad chevron-after.json, chevron-legacy.json). Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.

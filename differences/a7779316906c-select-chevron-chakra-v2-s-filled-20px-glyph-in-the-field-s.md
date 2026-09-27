@@ -1,6 +1,6 @@
 ---
 title: "Select chevron: Chakra v2's filled 20px glyph in the field's color to v3's stroked 18px glyph in fg.muted"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ Chakra v3's `NativeSelect.Indicator` (`node_modules/@chakra-ui/react/dist/esm/co
 ## Log
 
 - 2026-09-27: Filed by the Parity review of the ui Select slice [[ad2f5e52f9d8]], which found it beside the background it fixed; not from that change (the readings hold before and after it). Not judged. The accordion's twin is [[2cc5b00fb582]], fixed in ../ui by a wrapped ItemIndicator with the filled path as its default child (the accordion slice [[aff1c5f9a5f2]]); the same shape fits the select's Indicator. Handed to [[6bc0d3ba08dc]].
+
+- 2026-09-27: Fixed in ../ui at commit e3acb25 (plan [[6bc0d3ba08dc]]): Select.Indicator renders v2's filled chevron (the path ported from chakra-ui at 4e2df65, the select 2.1.2 tag) as its default child, and the recipe's indicator slot is v2's wrapper (width 6, currentColor, fontSize xl, insetEnd 2 and 1 at xs, v3's per-size text style blanked); on /designs at 375 under the file:../ui override both chevrons read 20px by 20px, filled, stroke none, rgb(26, 32, 44), in a 24px wrapper 10px from the field's edge, legacy's readings. Waits on the operator's publish; the bump plan [[99f2fe62c62f]] moves it to fixed.
