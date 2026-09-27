@@ -19,6 +19,8 @@ blocked_by:
   - 549ec777422c
   - target: 8512c5e9cc98
     note: the operator's verdicts on the design pages come before the review of the site
+  - target: 0c6face80696
+    note: the operator's verdicts on the contact route come before the review of the site
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.

@@ -1,0 +1,37 @@
+---
+title: "Contact: the GitHub Issues card, the Two channels heading, the intro paragraph, the heading and meta descriptions removed, the title, heading and email card copy as legacy's"
+status: todo
+parent: 1a3ab91a9640
+derived_from: 1a3ab91a9640
+worker: sonnet
+priority: medium
+---
+The contact page carries none of the surface the port added over legacy's one-card page: the GitHub Issues card with its raw-URL link, the Two channels heading with its description, the intro paragraph, the heading's description line and the per-page meta description go; the title and h1 read `Contact us` and the email card's heading and sentence are legacy's verbatim, each a `regression` the contact grilling judged against legacy (record `1a3ab91a9640`, decisions `ee86d68a`, `2032533f`; copy verbatim from the legacy source, `ca677697`). Closes [[8436f8230891]], [[43495cf73bcc]], [[2958f98ceb2c]], [[f663b57930f8]] (K1), [[6196bf22128a]] (K2), [[ab0338f1ca50]], [[142b31832bcc]], [[fc861bd50946]] (K3), two items whose Current the GitHub card's deletion empties, [[cad0c6d661ec]] and [[90f294279f16]] (K3, moot by their own notes), and the heading outline [[06fb4cb44b25]], which the deletions leave as legacy's h1 then one card heading. The removals land on the current file first, as the tools and resources' `42e7c1e5fd38` did, so the page re-port that follows carries settled text and the deletion is reviewed on its own. Every verdict is the operator's from the contact grilling (K1 to K3, in the items' notes) and the deletions are named line by line below, so Sonnet.
+
+## Work
+
+- Legacy: `../node-modules/packages/applet-contact/src/pages/contact.tsx` at `fce357d` (one `LinkCard`, `title="Email us"`, `description="Send us a message and we will get back to you as soon as we can."`, under `<CardsLayout title="Contact us">`, no body copy, no second heading, no `NextSeo` description). Current: `app/contact/page.tsx` (89 lines; the line numbers below are its).
+- `metadata`: the `description` constant (`:8-9`) and the `description` field (`:13`) go ([[f663b57930f8]], K1: the route inherits the shell's default, `Anyone can be a maker with Grid Beam: life-size building blocks. Eco-friendly, adaptable, and fun for the whole family.`, `app/layout.tsx`, the verdict of [[1906af99b588]]); the `title` constant (`:7`) reads `'Contact us'` and the `Title`'s text (`:20`) `Contact us` in place of `Get in touch` ([[8436f8230891]], [[43495cf73bcc]], K1); the `Title`'s `description` prop (`:20`) goes ([[2958f98ceb2c]], K1).
+- The intro: the `Container maxW="3xl"` with its `Text` (`:21-26`) goes ([[ab0338f1ca50]], K3).
+- The second section's `<Title as="h2" description=...>Two channels</Title>` (`:30-32`) goes ([[142b31832bcc]], K3). The GitHub Issues card, the second inner `VStack` (`:65-84`), goes whole ([[fc861bd50946]], K3), and with it its `Link` named by its URL ([[cad0c6d661ec]]) and the overflow that link showed at 375 ([[90f294279f16]]), both moot by their own notes.
+- The email card's copy: the `Heading`'s text `Email` (`:39`) reads `Email us` and the `Text`'s sentence (`:42-43`) reads `Send us a message and we will get back to you as soon as we can.` ([[6196bf22128a]], K2, verbatim from `contact.tsx:17,19`).
+- The outline closes because the deletions empty its Current: with the h2 `Title` and the GitHub card's h3 gone the tree is h1 `Contact us` then the one card heading, legacy's outline; the card heading's level (h3, the hand-built `Heading as="h3"` at `:38` mirroring the published 1.2.0 `LinkCard`'s h3, where legacy's card rendered h2) is the shell's [[bd05a2d3642d]] (`upstream`, h2 at ui `a4ef8ed`), named in the item's fix outcome, the same way the tools and resources' `f4d7916f2a76` closed; the re-port hands the heading to the ui `LinkCard`.
+- The unused imports go: `Container` and `Link` from `@villagekit/ui` (`:1`) and `FaGithub` from `react-icons/fa` (`:3`). Everything else stays for the re-port: the `Section index={0} maxW="6xl"` around the `Title`, the gray `Section index={1} maxW="6xl"` with its outer `VStack` now holding the one card, and the card's `VStack`, `Icon`, `Heading as="h3"`, `Text variant="secondary"` and `ObfuscatedEmail` with its `css`; they are the page shape ([[fdfb21259558]]), the card ([[9d4d543e8403]], [[b53e3b7989b6]]), the address ([[3b00b0149b6b]], [[9d383a08ab20]], [[fafcd22d5ebb]]) and the list ([[e005d2df8c8a]]), all the re-port's. No formatting pass beyond what Biome asks on the touched lines.
+- Verify first: `grep -n "const description\|^  description,$" app/contact/page.tsx` prints lines 8 and 13; `grep -n "Get in touch" app/contact/page.tsx` prints line 20; `grep -c "<VStack" app/contact/page.tsx` prints 3; `grep -n "FaGithub" app/contact/page.tsx` prints lines 3 and 67; `grep -c 'as="h3"' app/contact/page.tsx` prints 2.
+- Docs: none (no README or script header names the route's copy).
+- Not this slice: the page shape, the card, the address and the list (the re-port, `Contact page re-ported from legacy's applet-contact page: the ui CardsLayout holding one email LinkCard with a plain mailto href`); the factory's translation, the operator's ([[0c7f344ccb34]] on the contact verdicts plan).
+
+## Seams under test
+
+None pure. The route is proven by the DOM extraction and a look at `pnpm dev`.
+
+## Done when
+
+- `grep -c "<VStack" app/contact/page.tsx` prints 2 and `grep -c "<Heading" app/contact/page.tsx` prints 1; `grep -n "GitHub\|FaGithub\|github.com\|Two channels\|Get in touch\|How to reach\|We'd love\|Best for private\|const description\|description=\"\|as=\"h2\"\|Container\|<Link" app/contact/page.tsx` prints nothing; `grep -cw "Email us" app/contact/page.tsx` prints 1 (the `-w` keeps `ObfuscatedEmail user=` from matching) and `grep -c "Send us a message and we will get back to you as soon as we can." app/contact/page.tsx` prints 1
+- On `pnpm dev`, `pnpm audit:dom --routes <a routes file naming /contact, in scripts/audit-routes.txt's format>`: `diff audit/contact/dom/legacy.txt audit/contact/dom/current.txt` prints the shell's lines (the wordmark, the nav, the cookie banner, the footer columns, the shell record's and the sanctioned ones) and one line of the route's, the address `hello+gridbeam@mikey.nz` that `ObfuscatedEmail` still shows as text (the re-port's [[3b00b0149b6b]]), and nothing else; between the heading `Contact us` and the footer the current side reads `Email us`, `Send us a message and we will get back to you as soon as we can.` and the address, and nothing else; `audit/contact/dom/current.aria.yaml` under `main` holds `heading "Contact us" [level=1]` and one card heading, `heading "Email us" [level=3]`, and no other heading; `curl -s localhost:3000/contact | grep -o '<title>[^<]*</title>'` prints `<title>Grid Beam: Contact us</title>` and `curl -s localhost:3000/contact | grep -o '<meta name="description" content="[^"]*"'` prints `content="Anyone can be a maker with Grid Beam: life-size building blocks. Eco-friendly, adaptable, and fun for the whole family."`, the string `/` renders
+- The eleven items are `fixed` (`kipu fix <id> --outcome "plan <prefix>"`, [[06fb4cb44b25]]'s outcome naming [[bd05a2d3642d]] for the card heading's level); checked before the commit
+- The dev server stopped by its pid (`ss -ltnp | grep :3000`); `timeout 900 just check` is green
+
+## Outcome
+
+## Log
