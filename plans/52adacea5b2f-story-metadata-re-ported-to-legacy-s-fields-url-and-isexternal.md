@@ -10,8 +10,7 @@ blocked_by:
   - target: eeeb3813939b
     strength: soft
     note: "the same MDX files: the inline JSX first"
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The story metadata is legacy's shape again on all ten stories: `url` (the path under `/stories`, or the external address) and `isExternal` in place of `slug` and `external`, `image.type: 'cloudinary'` on every cover, and `publishedAt` and `updatedAt` as `Date` values built with legacy's slash form (`new Date('2024/10/10')`, parsed as local time, so a card's date reads the same day in every timezone and the hydration text mismatch west of UTC goes). `StoryMetadata` in `app/_lib/stories.ts` takes legacy's fields, the four linked stories legacy's `url` and `isExternal: true`, and every reader takes legacy's lines: the card's href, icon and date, the stories context's sort, the sitemap, and the story page's metadata and static params until the page re-port replaces them. One item, [[82762f6b27de]], whose notes extend it to the linked stories; a shape decision at a module three routes and the sitemap read, whose `Date` values cross a server boundary, so Fable. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`.
 

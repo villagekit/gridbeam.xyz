@@ -4,9 +4,8 @@ status: done
 parent: 40179ab9e779
 derived_from: 40179ab9e779
 blocked_by: 5ac30176aa70
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The about page's copy is what the copy grilling settled: eleven verdicts applied verbatim on the page as the removals slice leaves it, before the page is re-ported, so the re-port carries settled text and its review is structure only. Every string comes from the item's Log line or the legacy line it names, and from nowhere else (`ca677697`); the diff is stated line by line below, so the work is Sonnet's. Record `40179ab9e779`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

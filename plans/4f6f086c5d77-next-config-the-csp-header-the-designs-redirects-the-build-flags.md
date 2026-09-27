@@ -4,9 +4,8 @@ status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by: f8c93eaf4922
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `next.config.ts` carries what legacy's `next.config.mjs` and `createNextConfig` carried and the migration does not forbid: the Content-Security-Policy header, the `/creations` and `/ideas` redirects, the two build flags with the legacy author's comment, and a stated account of each `createNextConfig` piece. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f` (rule 4 covers only what the migration forces), `91cbeac8`.
 

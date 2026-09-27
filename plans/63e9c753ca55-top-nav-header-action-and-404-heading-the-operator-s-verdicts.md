@@ -3,9 +3,8 @@ title: "Top nav, header action and 404 heading: the operator's verdicts"
 status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The shell's nav data and header action ship what the copy grilling decided: the top nav is `Designs`, `Tools`, `About`, `Stories`, so Contact and Suppliers leave it, the header button becomes "Find a supplier", and the 404 heading loses its em dash. Record `a78b167170b8`; decisions `c21b7e35f0c7`, `dc1a7a98373f`, `ca677697`, `2032533f`.
 

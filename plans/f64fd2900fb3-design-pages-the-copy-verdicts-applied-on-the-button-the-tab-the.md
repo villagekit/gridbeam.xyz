@@ -4,8 +4,7 @@ status: todo
 parent: 0bc88eaf5493
 derived_from: 0bc88eaf5493
 blocked_by: 1f1f9e07cefb
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The design pages' copy is what the design page grilling settled: ten verdicts applied verbatim on the current design components as the removals slice leaves them, before the page is re-ported, so the re-port carries settled text and its review is structure only. Every string comes from the item's last Log line or the legacy line it names, and from nowhere else (`ca677697`); the diff is stated line by line below, so the work is Sonnet's. Record `0bc88eaf5493`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

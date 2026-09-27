@@ -7,8 +7,7 @@ blocked_by:
   - target: 3c448a379ad7
     strength: soft
     note: "route order: the pairs and the console are read on the re-ported page"
-tags:
-  - "worker:fable"
+worker: fable
 ---
 A design's TypeScript is compiled to JavaScript at build with `@swc/wasm`, legacy's compile with its options verbatim, so every design page receives JavaScript and the browser never loads `@swc/wasm-web` to compile it on each visit; the `0 x 0 x 0mm` placeholder state shortens toward legacy's, and the triangle desk's intermediate pose, which the M1 run tied to the same timing, is probed after. Two items, one on `/designs/bed-frame` and one on `/designs/5-12-13-triangle-desk`. Legacy compiled inside `getDesign` at build; here the build-time place is the designs generator, since this site's `getDesign` runs on the Worker per request under OpenNext's default cache, where a Node wasm binding cannot go, and the function's home is the generated module's question, the operator's on the designs index verdicts plan (`abb539b3555e` on `549ec777422c`), so the slice notes it there and files nothing new. Fable, since the placement is decided against the runtime. Record `0bc88eaf5493`; decisions `ee86d68a`, `2032533f`, `91cbeac8`.
 

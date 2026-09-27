@@ -8,8 +8,7 @@ blocked_by:
   - edf6cccdfbf6
   - c92c235205f5
   - 6f90e7e24ca6
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The story components are legacy's `components/story/` again, translated for Chakra v3 and the published `@villagekit/ui@1.2.0`: `StorySection` at legacy's `container.lg` width, `StoryRow` on `useIsMobile`, `StoryColumn` with no vertical centering, `StoryImage` wrapping the mdx `Image` with the column sizes from `useIsInColumn` and the `svg` branch, `StoryImageGrid` as nested stacks of bare `RasterImage`s over `numRows` and `numColumns`, `StoryImageCarousel` over the site's re-ported `ImageCarousel` with one 4:3 slide, the arrows, the dots and the loop, `StoryVideo` on the ui `Video` (a silent autoplaying loop, no controls), and legacy's two MDX overrides: the story `h2` centered, and the blockquote rendered as the `Tip` (a lightbulb `BlockSection` at `maxWidth: lg`), wired through `mdx-components.tsx` as legacy's `MDXProvider` was. Every story call site in the six MDX files takes the components' legacy props back (`type='cloudinary'`, `aspectRatio={null}` and `isInColumn` where legacy wrote them, the grids' `sizes`, the newsletters' twelve carousels, the decision tree's `RasterImage`). What the published package lacks until the operator's publish (the mdx `Image`, `Video` and `MediaContainer`, and the `full` and `container.lg` size names, all in the sibling at 1c3e3e8) is stood in by a site-local media module and pixel literals, filed as one item moved to `upstream` with a bump note, the about's mechanism widened from a literal to a module. Twenty-one items on five story routes, and three of the operator's on the verdicts plan ([[0e4002cba0a5]], [[e834d73bbbd5]], [[5d81b89c4799]]) whose legacy form ships by default unless judged by then. A re-port that decides every translation, so Fable. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

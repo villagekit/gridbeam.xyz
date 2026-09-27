@@ -1,10 +1,9 @@
 ---
 title: "ui Spinner and InfoTooltip: the Loading... label and the tooltip trigger's name, Chakra v2's again, for the design pages"
 status: done
-tags:
-  - "worker:fable"
 parent: 337e35d86920
 derived_from: a78b167170b8
+worker: fable
 ---
 The ui `Spinner` carries Chakra v2's visually hidden `Loading...` label again, and the ui `InfoTooltip`'s icon is the named trigger it was, `img "Tooltip"` in the accessibility tree, where `@villagekit/ui@1.2.0` and the sibling render Chakra v3's bare spinner span and an icon v3 hides with `aria-hidden` ahead of the wrapper's `aria-label`. Closes [[44f3be6c7c33]] (accessibility) and [[2166f4f318af]] (accessibility), both `regression` on `/designs/bed-frame`, each a gap in `@villagekit/ui` that CLAUDE.md's Principles say is fought by a change in `../ui`, never a workaround here; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), minted at the split of the design pages record `0bc88eaf5493`. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` (CLAUDE.md's ui row), both reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). Two wrappers whose v3 form is read against v2's, so Fable.
 

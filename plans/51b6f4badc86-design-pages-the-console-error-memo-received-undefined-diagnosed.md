@@ -8,8 +8,7 @@ blocked_by:
   - target: 4f55a829c726
     strength: soft
     note: the gridkit commit and CLAUDE.md's override sentence, written once
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The design pages log `memo: The first argument must be a component. Instead received: %s undefined` on load, intermittently on `pnpm dev`, where the live legacy page logs nothing; the cause was never traced, and the scene still lights and shadows. This slice runs `/diagnosing-bugs` on the re-ported page: reproduce, find the `memo()` call that receives `undefined` and why, fix it where it lives, or record what could not be reproduced. Where the fix lands in `../gridkit` it follows decision `28c1a536` (committed there by pathspec, seen here through an uncommitted override reverted before the commit, the item parked `upstream` with the sibling commit, the bump plan `99f2fe62c62f` `blocked_by` this slice by an edge this slice writes); where it is the site's, it is fixed here. One item, [[505a856301b8]]. A diagnosis decides its shape, so Fable. Record `0bc88eaf5493`; decisions `ee86d68a`, `28c1a536`.
 

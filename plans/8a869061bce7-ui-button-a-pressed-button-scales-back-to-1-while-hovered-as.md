@@ -3,9 +3,8 @@ title: "ui Button: a pressed button scales back to 1 while hovered, as under Cha
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 Every ui button drops back to its size while pressed, as on the legacy site: the recipe base's `_active` transform `scale(1)` wins over the `_hover` transform `scale(1.08)` while the pointer is down and over the button. Closes [[d2f1007d7d37]] on `shell` for the shell record `a78b167170b8`, finished before the item was found (decision `40abdb2f222a`, a slice beside the record). A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit), reverted by path before the commit; the item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

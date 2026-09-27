@@ -34,10 +34,10 @@ it); `blocked_by` for every plan whose deliverable this one consumes, hard
 unless `--soft` with a `--note` for an ordering preference; `priority` only
 on a slice, `medium` unless it is pulled ahead (`urgent`, `high`) or pushed
 back (`low`); `tags` for the process tags this store uses, `gate`, `epic` and
-`attended`, and for the worker tag `worker:<model>` (`worker:fable`,
-`worker:opus`, `worker:sonnet`) naming the model a slice runs on under
-`/orchestrate`, written at the mint by the rule in CLAUDE.md, Sub-agents
-(decision `8eed053a`); a slice with no worker tag runs on Fable. Sequence
+`attended`; `worker`, the field naming the model a slice runs on under
+`/orchestrate` (`fable`, `opus` or `sonnet`, declared in the collection),
+written at the mint by the grading test in CLAUDE.md, Sub-agents (decision
+`66f7afafd684`); a slice with no `worker` runs on Fable. Sequence
 lives in edges and nowhere else: priority is the weight
 that breaks ties among ready items, and a record carries none. kipu writes
 edge targets as full ids; prose and commit subjects cite by prefix.

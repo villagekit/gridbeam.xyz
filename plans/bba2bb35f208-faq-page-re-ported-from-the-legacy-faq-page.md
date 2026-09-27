@@ -6,9 +6,8 @@ derived_from: 7f0b60d948c5
 blocked_by:
   - 241b65da8226
   - a7bf623f885c
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The FAQ page is legacy's `pages/faq.tsx` again, translated for the app router in one server file: `app/faq/page.tsx` holding `metadata` and legacy's tree, a `Title` over a `Container` at the `md` container width holding a `VStack` of category sections, each a `Box as="section"` with a `Heading size="md"` and an accordion, and the closing line after the stack; legacy's `FaqEntries` object keyed by category label and iterated with lodash-es `map`; the trigger's label a `Text variant="tertiary"`; no `Section`, no slugs, no `paddingY`, no `variant` on the links. Copy is as the copy slice left it; this slice changes no visitor-facing text. Twelve items on `/faq`: eleven closed, one moved to `upstream` because the published package's `Link` takes no `isExternal`. A re-port that decides every translation, so Fable. Record `7f0b60d948c5`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

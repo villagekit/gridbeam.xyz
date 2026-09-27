@@ -3,9 +3,8 @@ title: "ui framework boundary: no next/* import in the package, the pathname and
 status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `@villagekit/ui` stops importing `next/link`, `next/navigation` and `next/image`: the app supplies its pathname hook, link component and image component, the way legacy's `NavContextProvider` took `usePathname`, so the package's optional `next` peer is true and the Next-bound composition lives in the site. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `28c1a536`.
 

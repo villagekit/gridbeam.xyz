@@ -4,8 +4,7 @@ status: done
 parent: ca353de8b645
 derived_from: ca353de8b645
 blocked_by: ffe8e5d56f8e
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The stories index loses the per-page meta description the legacy page never had, and carries the copy the stories grilling settled: the title's description as legacy wrote it with the rule 1 swap, and the four inspiration cards' cover alts as legacy wrote them. Six items on `/stories`, every verdict the operator's from the stories grilling (I1 and I2), each a stated string or a two-line metadata edit, so the diff is given and the work is Sonnet's. Applied on the current page and the current catalog module before either is re-ported, so the re-ports carry settled text and their reviews are structure only. Record `ca353de8b645`; decisions `ee86d68a`, `2032533f`, `ca677697`, `6fce53c0`.
 

@@ -3,8 +3,7 @@ title: "Design pages: the suppliers section, the Plan tab's added text and butto
 status: done
 parent: 0bc88eaf5493
 derived_from: 0bc88eaf5493
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The design pages lose what the legacy page never had: the gray suppliers band below the tabs with its paragraph and its button, the Plan tab's empty state, its all-infeasible message, its summary line and its planner button, and the per-design meta description; the title stays `meta.label`, templated by the shell to `Grid Beam: Bed Frame` as legacy's `NextSeo title={meta.label}` was templated to `Grid Kit: Bed Frame` (rule 1, `1c8b7461acb1`). Eight items on `/designs/bed-frame`, the template for every design page, every verdict the operator's from the design page grilling (T1, T3, T4), each a stated deletion or a one-line metadata edit, so the diff is given and the work is Sonnet's. Record `0bc88eaf5493`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

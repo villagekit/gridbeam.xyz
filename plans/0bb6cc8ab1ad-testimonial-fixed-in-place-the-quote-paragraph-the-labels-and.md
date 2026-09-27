@@ -3,9 +3,8 @@ title: "Testimonial fixed in place: the quote paragraph, the labels and the brea
 status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
-tags:
-  - "worker:opus"
 priority: medium
+worker: opus
 ---
 `Testimonial` is legacy's `components/testimonial.tsx` again, fixed in place: the quote renders a paragraph, the section is named `Testimonial` and the quote and name carry their `aria-label`s, and the font size comes from `useBreakpointValue` at the `xl` breakpoint, as the legacy component did; the file moves out of the `landing` module, which the page re-port deletes, to `app/_components/Testimonial.tsx`, the module location legacy's `@/components` gave it. The shape is legacy's file line for line, the edges (Chakra v3 props, the client boundary) are the work, so Opus. Four items on `/`. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`.
 

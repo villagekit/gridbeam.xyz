@@ -3,9 +3,8 @@ title: "ui recipes: the link inline again, Chakra v2's badge base, container and
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 Four recipes in `@villagekit/ui` render what Chakra v2's did under `@villagekit/ui@0.9.0`, so every inline link, badge, bare `Container` and sized button on the site matches the legacy site again: a link is `display: inline` and breaks across lines with its sentence; a badge is Chakra v2's `inline-block` box at `px: 1` with no minimum height; a `Container` pads `4` at every width, caps at `prose` and is not positioned; a button's `md` and `lg` sizes are 40px at 16px and 48px at 18px. Closes [[12a2882546e6]], [[2363cb52f9d8]], [[5c1af396cc2e]] and [[ebdb3183c0dd]] on `shell` for the shell record `a78b167170b8`, finished before the home's slices found them (decision `40abdb2f222a`, a slice beside the record). A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

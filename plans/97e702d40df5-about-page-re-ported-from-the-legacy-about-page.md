@@ -8,9 +8,8 @@ blocked_by:
   - 5176646603be
   - 6f90e7e24ca6
   - a7bf623f885c
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The about page is legacy's `pages/about.tsx` again, translated for the app router in one server file: `app/about/page.tsx` holding `metadata` and legacy's tree, a `Title size="2xl"` over a `Container` at the `md` container width holding a `VStack gap="8"` of the six captions and six ui `Image`s at intrinsic size, `AboutText` at the bottom as legacy's `TextProps` helper; the `Section` wrapper, the route-local `AboutPhoto` on `next/image fill` with its radius and shadow, the added line height and the wider gap all go. Copy is as the copy slice left it; this slice changes no visitor-facing text. One value the published package cannot take, legacy's `container.md` size name, is written as the width it resolved to and filed for the bump. A re-port that decides every translation, so Fable. Seven items on `/about`, one filed and moved to `upstream`. Record `40179ab9e779`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

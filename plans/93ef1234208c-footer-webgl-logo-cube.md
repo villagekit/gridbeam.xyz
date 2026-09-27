@@ -8,9 +8,8 @@ blocked_by:
     strength: soft
   - target: f8c93eaf4922
     strength: soft
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The footer shows legacy's rotating WebGL cube again between the social row and the credit block: `logo/gl.tsx` re-ported onto `@react-three/fiber` 9 and `three` 0.165, loaded on the client only. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `ad5363e4`.
 

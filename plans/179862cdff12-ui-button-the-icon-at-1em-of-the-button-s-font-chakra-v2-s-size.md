@@ -3,9 +3,8 @@ title: "ui Button: the icon at 1em of the button's font, Chakra v2's size, so th
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui button sizes its icon by the button's font again: an `svg` inside a `Button` or an `IconButton` is `1em` wide and tall at the button's own font size, as Chakra v2's `Icon` (`w: 1em, h: 1em`) inside a v2 button was, where `@villagekit/ui@1.2.0` and the sibling keep Chakra v3's per-size `_icon` widths (`5`, 20px, at `md`) and v3's `IconButton` raises the icon's font size to `1.2em`. Closes [[e5f7c103b8bf]] and [[f2e4bf3755c7]], the carousel arrows' chevron on the two newsletters, filed by the Parity review of the story components slice `373320c95e55` on the routes it read them on, though the mechanism is the shell's button recipe, so the slice sits beside the shell record `a78b167170b8` as its other `../ui` slices do (decision `40abdb2f222a`, a slice beside the record, minted at the story pages record's finish `56e6eb197e6c`); one slice for both because each is the one recipe's `_icon` per size and the one wrapper's prop. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; each item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

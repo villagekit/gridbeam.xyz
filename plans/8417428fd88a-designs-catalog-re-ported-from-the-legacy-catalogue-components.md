@@ -10,8 +10,7 @@ blocked_by:
   - 531b810f2dbd
   - a7bf623f885c
   - 278fb531e229
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The designs index is legacy's `pages/designs/index.tsx` again with the modules it composed: the `constate` context over `use-query-params` (`context/catalogue.ts`), the `Catalogue` frame with its virtual `menubar`, the `Filters`, `Sorting` and generic `Selector` (a native select on mobile, a list of `Option` badges otherwise), the `SearchBar` on an input group with a `role="search"` landmark, the plain `ResultsCount`, the animated `List` with its empty state and delayed list message, and the `CatalogueLayout` margins, each translated for the app router, Chakra v3 and `motion`. The page is the static 14-entry filter table and the inline `useMemo` mapping over `getDesignIndexes()`, calling `<Catalogue>` directly; the state is `search`, `filter` and `sort` in the URL, each change a history entry, the search debounced 1000 ms; the controls switch from selects to badge lists at `md` and the count and sort move between the sidebar and the search row by width; the accessibility markup is legacy's, the `menubar` owning the search landmark and the two `group`s of `option` badges in the accessible order. The page's layout margins return through `app/designs/layout.tsx`, the app router's form of the `getLayout` legacy attached to both designs pages. `DesignsBrowser`, the mapper, `CatalogueStatic`, the Suspense boundary and the hand-written `Catalogue` go; the card stays the current `ItemCard` until the card re-port. Copy is as the copy slice left it; this slice changes no visitor-facing text. Thirty-three items on `/designs`, two more accessibility items closed by default in legacy's form, and one two-file translation the split filed for the operator. A re-port that decides every translation, so Fable. Record `f901cf9f724d`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

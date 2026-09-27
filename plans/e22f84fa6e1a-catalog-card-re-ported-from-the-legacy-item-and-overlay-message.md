@@ -7,8 +7,7 @@ blocked_by:
   - 8417428fd88a
   - 79cec2c9c850
   - 6f90e7e24ca6
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The catalog card is legacy's `components/catalogue/item.tsx` again, with the `OverlayMessage` it wrapped its picture in: a `HoverCardContainer` section named by its heading, a `LinkBox` holding a `VStack` whose focus-within rule outlines the `full`-mode image, the `OverlayMessage` around the picture (the inactive message centered over it when `active` is false), the two `itemImageMode` branches (`hover-card`: the ui `Image` in a `HoverCard` at `4 / 3`, `objectFit: contain`, `paddingY: 2`; `full`: rounded, shadowed, `objectFit: cover`, the `.catalogue-item-image` class), the capitalized centered heading, and the empty `LinkOverlay` to `/${listPath}/${id}` as the heading's sibling, named by it. The picture is the design's `{ alt, src, type: 'local' }` object spread onto the ui `Image` with legacy's `sizes` object; no `No preview` fallback, every image being present. Six items on `/designs`; `unoptimized` stays on the image for the operator's twin item, and `full` in the `sizes` object is stood in by `'100%'` until the ui publish, the about's mechanism. A re-port of the card's picture mechanics, so Fable. Record `f901cf9f724d`; decisions `ee86d68a`, `2032533f`, `28c1a536`.
 

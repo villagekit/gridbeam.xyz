@@ -8,8 +8,7 @@ blocked_by:
   - eeeb3813939b
   - 52adacea5b2f
   - a7bf623f885c
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The six stories are pages again, as legacy's `pages/stories/*.mdx` were: each at `app/stories/<slug>/page.mdx`, its body legacy's under `export default withStoriesLayout(story)`, the layout legacy's `components/layouts/stories.tsx` translated: one `article` around the `Title` (with the description and the anchor), the cover when `showImageInStory` in a `Center` with a bottom margin of 16, and the MDX body. The root layout's `ContentMainLayout` is legacy's `MainLayout` wrapper, so no `ContentMainTocLayout`: no table of contents, no second `main`, no doubled bottom margin, no `3xl` container with top padding over the header. The `[slug]` route with its dead `notFound` guard and stale comment, `STORY_SLUGS`, `getStory`, `hostedStories` and `content/stories/` go; the catalog imports each page's `story` export as legacy's `stories.ts` imported `metadata`. One name is forced by the app router and is the operator's: a page module's `metadata` export is what Next reads as the page's metadata (`node_modules/next/dist/lib/metadata/resolve-metadata.js:294-303`) and cannot stand beside `generateMetadata`, so the story's data export is `story`, and each page exports a `metadata` built from it by a helper carrying the sanctioned `NextSeo` translation ([[fcdf83c992a1]]: the title, `shortDescription || description`, the article Open Graph over the site's fields); the rename is filed as [[0e005a229aee]] (`open`, on the verdicts plan `Story pages: the operator's verdicts`), and this slice ships it as the shape the port rule gives (`ee86d68a`, in doubt re-port) unless the operator's verdict names another by the time it runs. Nine items on three story routes. A re-port that decides the route's shape, so Fable. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

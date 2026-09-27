@@ -3,8 +3,7 @@ title: "Story pages: the editorial notes, the originally-on byline, the publish 
 status: done
 parent: 56e6eb197e6c
 derived_from: 56e6eb197e6c
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The three historical posts (Building with Grid Kit, the 2021 winter newsletter, the 2022 newsletter) lose the editorial note the first port added, and every story page loses the byline under its title: the publish date and the `originally on gridkit.nz` clause. `StoryEditorialNote` and the `originallyPublishedOn` field go with them. Nine items on four story routes, every verdict the operator's from the stories grilling (P2 and P3) under decision `dcd8df79`: the text is the record, as legacy published it. Each is a deletion the item names, so the diff is given and the work is Sonnet's. Applied on the current MDX, component set and page before the components and the page are re-ported, so the re-ports carry settled text. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`, `ca677697`, `dcd8df79`.
 

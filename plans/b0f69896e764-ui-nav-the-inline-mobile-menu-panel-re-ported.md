@@ -4,9 +4,8 @@ status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by: 1c74a465996d
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The mobile menu is legacy's again: a panel that slides in under the sticky header with no backdrop and one toggle, the toggle named `Toggle menu` and wired to the panel by `aria-controls` and `aria-expanded`, the list padded 4, focus held inside and Escape closing it. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f` (rule 4 covers the loss of v2's `Slide` and no more), `28c1a536`.
 

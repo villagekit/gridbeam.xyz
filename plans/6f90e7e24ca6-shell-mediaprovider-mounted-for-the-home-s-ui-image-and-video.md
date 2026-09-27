@@ -6,9 +6,8 @@ derived_from: fd9a92bd8abd
 blocked_by:
   - bc0407533650
   - 531b810f2dbd
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The site mounts `@villagekit/ui`'s `MediaProvider` once, in `SiteProvider` inside `ChakraProvider`, so the home's re-ports can render the ui `Image` and `Video` (legacy's `@villagekit-private/ui-media` components, `../node-modules/packages/ui-media/src/` at `fce357d`) against the published `1.2.0`, whose media context throws without a cloud name (`node_modules/@villagekit/ui/dist/components/media/context.js`, `assertCloudinaryName`). A shell change, so the difference it makes is filed on `shell`; the site-side edit the bump needs is a note on the bump plan. A prefactor for the story card, carousel, design carousel and page slices, which consume it. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `28c1a536`.
 

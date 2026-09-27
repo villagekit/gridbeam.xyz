@@ -3,9 +3,8 @@ title: "ui HoverCardContainer: the nested hover-card selectors in Chakra v3's fo
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `HoverCardContainer` styles a nested `HoverCard` on hover and focus-within again, and the browser console is clean on every route that renders one, as under `@villagekit/ui@0.9.0`: the two bare class keys under `_focusWithin` and `_hover` are written in the form Chakra v3's `css` reads as a nested selector. Closes [[7877c267268c]] on `shell` for the shell record `a78b167170b8`, finished before the item was found (decision `40abdb2f222a`, a slice beside the record). A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; the item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

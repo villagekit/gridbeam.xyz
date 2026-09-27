@@ -4,9 +4,8 @@ status: done
 parent: 7f0b60d948c5
 derived_from: 7f0b60d948c5
 blocked_by: b52b62e260f3
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The FAQ page's copy is what the FAQ grilling settled: legacy's surviving categories in legacy's order (`Product`, `Sustainability`, and `Support` for what survives of `Returns & Support` and `Other`), fifteen questions in legacy's order with their verdict text, and the closing line, applied on the page as the removals slice leaves it, before the page is re-ported, so the re-port carries settled text and its review is structure only. Three answers are several paragraphs again, so legacy's array branch for an answer returns with them. Every string comes from the item's last Log line or the legacy line it names, and from nowhere else (`ca677697`); the diff is stated line by line below, so the work is Sonnet's. Nineteen items on `/faq`. Record `7f0b60d948c5`; decisions `ee86d68a`, `2032533f`, `ca677697`, `edad0df8`.
 

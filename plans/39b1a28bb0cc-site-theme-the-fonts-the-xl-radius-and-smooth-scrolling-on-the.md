@@ -6,9 +6,8 @@ derived_from: a78b167170b8
 blocked_by:
   - target: ffe8e5d56f8e
     strength: soft
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The site extends the ui's theme the way legacy's `theme.ts` extended it: the two `next/font` families written into the font tokens, `radii.xl` at `1rem`, and `html { scroll-behavior: smooth }` as a global style, composed with the ui's config into the system the provider mounts. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`.
 

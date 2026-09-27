@@ -3,8 +3,7 @@ title: "QueryParamProvider: an app-router adapter that keeps every route's stati
 status: done
 parent: a78b167170b8
 priority: medium
-tags:
-  - "worker:fable"
+worker: fable
 ---
 Legacy's `_app.tsx` wraps every page in `QueryParamProvider` from `use-query-params` with `next-query-params`'s adapter (difference `43c1babc2051`, regression on `shell`). The layout slice `a7bf623f885c` verified that the port's obvious translation does not hold: `next-query-params/app` (5.1.0) calls `useSearchParams()` in its adapter, so mounted in the root layout it fails `next build` on every static route (`useSearchParams() should be wrapped in a suspense boundary`), and wrapped in `Suspense` at the root it bails every route out to client-side rendering, the static HTML holding only `<template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING">` and no `<main>`. This slice closes that open unknown by Phase 0 (CLAUDE.md, Plans vs. reality): research and an adversarial review on Opus, the simplest design that survives, then the provider mounted once in the shell. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`.
 

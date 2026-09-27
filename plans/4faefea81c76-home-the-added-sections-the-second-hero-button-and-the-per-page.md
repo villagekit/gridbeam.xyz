@@ -4,9 +4,8 @@ status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
 blocked_by: ffe8e5d56f8e
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The home page loses what the legacy page never had: the `For makers` and `Open and free to remix` sections, the second hero button and the per-page description; its title is the bare brand, `Grid Beam`, as legacy's was `Grid Kit` (rule 1). Sixteen items on `/`, every verdict the operator's from the copy grilling, each a stated deletion or a two-line metadata edit, so the diff is given and the work is Sonnet's. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

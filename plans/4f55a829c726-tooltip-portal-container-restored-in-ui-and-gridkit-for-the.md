@@ -1,8 +1,6 @@
 ---
 title: Tooltip portal container restored in ../ui and ../gridkit, for the engine's tooltips in the sandbox's fullscreen mode
 status: done
-tags:
-  - "worker:fable"
 parent: 337e35d86920
 blocked_by:
   - 65ee8339cb1d
@@ -10,6 +8,7 @@ blocked_by:
     strength: soft
     note: the same sibling working tree in ../gridkit
 derived_from: a78b167170b8
+worker: fable
 ---
 The engine's tooltips render inside the sandbox's fullscreen element again: `@villagekit/ui@1.2.0`'s `Tooltip` portals to the body with no way to name a container, and engine 0.10.0's `HelperTooltip`, slider tooltip, `ProductKitInfo` and the sandbox's own controls tooltip stopped passing the container the sandbox hands them, where `@villagekit/ui@0.9.0` took `portalProps` and gridkit 0.9.0 passed `portalProps={{ containerRef }}` through, so on the live legacy page a design's parameter tooltips show in fullscreen mode and on this site they portal to a body that fullscreen hides. Closes [[0779d04c037d]] (code, `regression` on `/designs/bed-frame`), whose Log called the plumbing inert because the page passes no `containerRef`, which is true and beside the point: the sandbox passes its own (`node_modules/@villagekit/sandbox/src/controls/index.tsx:193,208`), and the fullscreen button sits in every design page's toolbar. A gap in `@villagekit/ui` and the engine that CLAUDE.md's Principles say is fought by a change in `../ui` and `../gridkit`, never a workaround here; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), minted at the split of the design pages record `0bc88eaf5493`. Fixes in both siblings, so decision `28c1a536` twice: each committed in its sibling by pathspec, never pushed from here; seen on this site through uncommitted overrides reverted by path before the commit; the item moved to `upstream` with a note citing both sibling commits; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). A prop's v3 form and its plumbing across four engine files, so Fable.
 

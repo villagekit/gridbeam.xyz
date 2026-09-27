@@ -7,8 +7,7 @@ blocked_by:
   - target: 9f174b0d4c72
     strength: soft
     note: "the same MDX files: the removals first"
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The three guides carry the copy the stories grilling settled (P4 and P5): the Grid Panels sentence with the rule 1 swap, the hero alt with the Title Case wordmark, the hex key sentence and the grid label with no hyphen, the two closing links to the Village Kit discussion board at legacy's link extent, the cutting tip with the dead store link removed, and the three connection headings back at h4. Seven items on four story routes, every verdict the operator's, each a stated string, so the diff is given and the work is Sonnet's. Applied on the current MDX before the components and the page are re-ported, so the re-ports carry settled text and their reviews are structure only. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`, `ca677697`, `6fce53c0`.
 

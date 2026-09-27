@@ -4,8 +4,7 @@ status: done
 parent: 56e6eb197e6c
 derived_from: 56e6eb197e6c
 blocked_by: 373320c95e55
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The lines legacy wrote in the story MDX with components outside the story set are legacy's again: the furniture bolts guide embeds its install video through `@u-wave/react-youtube`, legacy's dependency, full width with no box, cap, radius, shadow or title, in place of the boxed `youtube-nocookie` iframe; the 2022 newsletter's creations intro and the 2021 newsletter's closing line are a `Description` from `@villagekit/ui` (centered, `md` and `lg` from the `md` breakpoint, legacy's `ui-page` `Description`) in place of a body paragraph; and the unused imports and the two commented-out links legacy carried return where they resolve, the default for an item the operator has not judged. Five items on three story routes, plus the operator's [[8a6daf7fad72]] by default. The library is a class component the server layer cannot load, so the slice decides its one client boundary; Fable. Record `56e6eb197e6c`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

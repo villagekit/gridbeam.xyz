@@ -3,9 +3,8 @@ title: "ui Spinner: Chakra v2's sizes and 0.45s turn, the 0.9.0 spinner's box an
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui `Spinner` is Chakra v2's spinner again on its box and its turn: `xl` is 48px (`sizes.12`) and `md` 24px (`sizes.6`), and one turn takes `0.45s`, where `@villagekit/ui@1.2.0` and the sibling take Chakra v3's recipe, `xl` at 40px (`sizes.10`), `md` at 20px (`sizes.5`) and one turn at the `slowest` token, 500ms. Closes [[81a8aa31124a]] (visual) and [[d05d47f6048a]] (visual), both `open` on `/designs/bed-frame`, filed by the Parity review of the ui Spinner and InfoTooltip slice [[65ee8339cb1d]], which read them from the two themes beside the label it fixed; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), taken without a verdict because each item's mechanism is the package's spinner and CLAUDE.md's Principles say a gap in `@villagekit/ui` is fought by a change in `../ui`; the operator may still overturn either by a note and a new state. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` (CLAUDE.md's ui row), both reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). A change in `../ui` that decides a shape (a recipe over the wrapper's props), so Fable.
 

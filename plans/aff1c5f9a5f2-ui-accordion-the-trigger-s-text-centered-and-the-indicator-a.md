@@ -3,9 +3,8 @@ title: "ui Accordion: the trigger's text centered and the indicator a 20px fille
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui accordion's trigger centers its text and its indicator is the 0.9.0 glyph again: a wrapped question reads centered as the browser's `<button>` default gave it under Chakra v2, and the chevron at the row's end is a 20px filled chevron in the trigger's own color, where `@villagekit/ui@1.2.0` and the sibling leave Chakra v3's `textAlign: start` on the trigger and its `fg.subtle` 2px stroke chevron at 1.2em on the indicator. Closes [[c7ffae735176]] and [[2cc5b00fb582]] on `shell` for the shell record `a78b167170b8`, both filed by the Parity review of the faq page re-port `bba2bb35f208` after the shell's verdicts plan was written and owned by no slice until the faq's finish (decision `40abdb2f222a`, a slice beside the record); one slice for both because each is a line in the one slot recipe, `../ui/src/components/Accordion.recipe.ts`. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; each item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

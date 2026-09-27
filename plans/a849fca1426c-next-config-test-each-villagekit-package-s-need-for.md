@@ -3,9 +3,8 @@ title: "next.config: test each @villagekit package's need for transpilePackages,
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `next.config.ts`'s `transpilePackages` list and the comment above it say the published `@villagekit/*` packages ship TypeScript sources at their top-level `exports`, and that the build dies without the list. Every package at the versions `pnpm-lock.yaml` pins resolves `.` to `dist/index.js` (`node_modules/@villagekit/ui/package.json`, `exports["."]`, 1.2.0; the shell record `a78b167170b8`'s Log and the next.config slice `4f6f086c5d77`'s Outcome flagged it, and CLAUDE.md's ui row was corrected at the record's finish, decision `40abdb2f222a`). This slice finds out, package by package, whether the list is still needed, and leaves the list and the comment saying what is true. Minted beside the shell record; a site-side change, no publish involved.
 

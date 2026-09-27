@@ -6,9 +6,8 @@ derived_from: 40179ab9e779
 blocked_by:
   - ffe8e5d56f8e
   - 4faefea81c76
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The about page loses what the legacy page never had: the three-paragraph intro above the captions, the `Where it came from` and `Start building` sections, the description line under the heading and the per-page meta description; its title is `About`, templated by the shell to `Grid Beam: About` as legacy's `NextSeo title="About"` was templated to `Grid Kit: About` (rule 1, `1c8b7461acb1`). Twenty-one items on `/about`, every verdict the operator's from the copy grilling, each a stated deletion or a two-line metadata edit, so the diff is given and the work is Sonnet's. Record `40179ab9e779`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

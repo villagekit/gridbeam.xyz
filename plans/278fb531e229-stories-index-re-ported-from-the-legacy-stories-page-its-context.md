@@ -8,8 +8,7 @@ blocked_by:
   - 531b810f2dbd
   - a7bf623f885c
   - e332105c3b52
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The stories index is legacy's `pages/stories.tsx` again, with the four modules it composed: the `constate` context over `use-query-params` (`context/stories.tsx`), the filter row (`components/stories/filters.tsx`), the generic `Option` chip on a `Badge` (`components/option.tsx`) and the animated list (`components/stories/list.tsx`), each translated for the app router, Chakra v3 and `motion`. The page is a `Title` with its description over one `Container maxW="8xl"`, the manual `menubar` box, and a `VStack` at the breakpoint hook's spacing holding `Filters` and `List`; the filter is the `filter` query parameter, each click a history entry; the chips are `Badge`s with `role="option"`, Enter-only keys, legacy's shades, sizes and focus ring, in legacy's order and palettes, left-aligned; the cards fade and scale in and out on a filter change in a two-column grid at gap 12. `StoriesBrowser`, `StoriesStatic` and the Suspense boundary go. Copy is as the copy slice left it; this slice changes no visitor-facing text. Eighteen items on `/stories`; one two-file translation the split filed for the operator. A re-port that decides every translation, so Fable. Record `ca353de8b645`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

@@ -7,9 +7,8 @@ blocked_by:
   - 6f90e7e24ca6
   - c92c235205f5
   - 2de4b709bb36
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The typing section's picture is legacy's `components/carousel.tsx` again, `DesignCarousel` on the Web Animations API: the old image fades out over 100 ms, and when the new one loads it fades in over 1500 ms while scaling from 0.8 over 2000 ms, mirrored by `shouldMirror`, the ui media `Image` inside; the hook is legacy's `hooks/useDesignTypingEffect.tsx` again (lodash `shuffle`, the timer effect on `[designs, pause]`, the three-tuple), and the section reads all three elements so the next design's image is loaded hidden before the swap. No `motion`, no reduced-motion branch. The modules move to `app/_components/DesignCarousel.tsx` and `app/_lib/useDesignTypingEffect.ts` (CLAUDE.md, Structure: helpers under `app/_lib/`). A re-port, so Fable. Five items on `/` and the second `sizes` call site. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `83b6c8ceb5d0`.
 

@@ -6,9 +6,8 @@ derived_from: a78b167170b8
 blocked_by:
   - target: 39b1a28bb0cc
     strength: soft
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The root layout composes what legacy's `MainLayout` and `_app.tsx` composed: every route renders inside the ui's `ContentMainLayout` (one `<main>`, centred, with the bottom margin) and `QueryParamProvider` wraps the tree for the routes' URL state; the routes drop the `Main` and `SkipNavContent` wrappers they grew. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `9c1d2ab08b15` (the skip link).
 

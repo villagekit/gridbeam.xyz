@@ -9,8 +9,7 @@ blocked_by:
   - 55d567074c71
   - 8417428fd88a
   - 373320c95e55
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The design page is legacy's `pages/designs/[id].tsx` again, translated for the app router in two files: the server `app/designs/[id]/page.tsx` holding `generateStaticParams`, `generateMetadata` (the title alone) and the render of the client `app/designs/[id]/DesignPage.tsx`, which holds legacy's page body line for line: the seven part registrations, `DesignPage` with `ProductProvider` and its `onLocationUpdate`, `Content` with `useReloadQueryParams` on back and forward and the `CatalogueItem` carrying legacy's controls column, the `View plan` button with its list icon and the three tabs, `Overview` with the description inside it, `DesignCuttingPlan` with lodash's debounce, the one sentence and the footnote the copy slice settled and the applet's `CuttingPlannerResult`, and `getRequiredBeamsFromParts`. Around it, legacy's components re-ported: `CatalogueItem` (`components/catalogue-item/`) with `useIsMobile`, `useTopNavHeight`, the `HoverCard` frame, the `Tip`, the capitalized tabs and the instant scroll; `PartsBreakdown` (`components/design/`) with the applet's `DisplayUnitToggle` and the `Settings` menu; `DesignViewDynamic` and `DesignView` around the 3D view alone; and `Loading`. The current `DesignViewer`, `DesignViewerDynamic`, `DesignCuttingPlan`, `required-beams` and its test, the catalogue barrel's `CatalogueItem` and the page's `Section` wrapper go. Copy is as the copy slice left it; this slice writes no visitor-facing text. A re-port that decides every translation, so Fable. Thirty-two items on `/designs/bed-frame`, the template for every design page; one code item filed `open` at the split for the operator. Record `0bc88eaf5493`; decisions `ee86d68a`, `2032533f`, `ca677697`, `28c1a536`.
 

@@ -4,9 +4,8 @@ status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
 blocked_by: 6f90e7e24ca6
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The story card is legacy's `components/stories/item.tsx` again, re-ported as `app/_components/stories/Item.tsx` exporting `Item`: a `HoverCardContainer` section named by the title, a `LinkBox` and a `Container maxW="md"`, the cover rendered by the ui media `Image` inline (the verdict of [[656dc6d730d7]]), a `Heading` beside an empty named `LinkOverlay`, the category badge on the palette's `100` shade with `capitalize`, a `showDate` prop, and the focus-within image shadow on a selector Chakra v3 accepts. Its three call sites (`app/page.tsx`, `app/stories/StoriesBrowser.tsx`, `app/stories/StoriesStatic.tsx`) render `Item`; the home passes `showDate={false}` as legacy's `index.tsx:302-303` did. A re-port that decides Chakra v3 shapes, so Fable. Nine items on `/`, filed there where first met and cited by the stories ledger. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

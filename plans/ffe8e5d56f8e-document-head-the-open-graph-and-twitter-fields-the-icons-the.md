@@ -3,9 +3,8 @@ title: "Document head: the Open Graph and twitter fields, the icons, the title a
 status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
-tags:
-  - "worker:opus"
 priority: medium
+worker: opus
 ---
 `app/layout.tsx` carries what legacy's `DefaultSeo` and `<Head>` carried, translated to the Metadata export: the record-shelf Open Graph image with its legacy alt text, the coffee-table video, `en_NZ`, `@villagekit`, the white theme colour, the Cloudinary preconnect, the manifest and favicon set, and the title template and description the grilling settled; the route pages stop overriding the layout's Open Graph and twitter objects. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `ca677697`, `6b7a97f83ce7`.
 

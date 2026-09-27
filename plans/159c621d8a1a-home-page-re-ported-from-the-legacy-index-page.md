@@ -12,9 +12,8 @@ blocked_by:
   - c92c235205f5
   - 60cca8519469
   - a7bf623f885c
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The home page is legacy's `pages/index.tsx` again, translated for the app router: a server `app/page.tsx` holding the metadata and the design index, and a client `app/HomePage.tsx` holding legacy's page body and its private helpers at the bottom (`TypingDesignSection`, `LandingSection` with `forwardRef`, `LandingRow` on `useSectionIndex`, `LandingColumn` on the ui `Column`, `landingMediaSx`, `LandingImage` and `LandingVideo` on the ui media components), the breakpoint hooks driving `buttonSize`, `textSize`, directions and gaps, the seven sections' markup line for line, the list inline with `List.Indicator`, the two fixed story cards from their MDX metadata, and the `app/_components/landing` module deleted. Copy is as the copy slice left it; this slice changes no visitor-facing text. The one shape the app router forces, the server and client files, is filed as a difference for the rules. A re-port that decides every translation, so Fable. Thirty-three items on `/`, one moved to `upstream`, the landing video's site half of a shell item. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `ca677697`, `5dfd824923c9`, `28c1a536`.
 

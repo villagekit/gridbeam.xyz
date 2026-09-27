@@ -1,10 +1,9 @@
 ---
 title: "sandbox: the toolbar's hover and focus-within selector written as Chakra v3's condition in ../gridkit, for the design pages"
 status: done
-tags:
-  - "worker:fable"
 parent: 337e35d86920
 derived_from: a78b167170b8
+worker: fable
 ---
 The sandbox's toolbar appears on hover and on focus within the 3D view again: `@villagekit/sandbox@0.10.0` writes the selector `':hover, :focus-within'` under Chakra v3's `css`, which rejects the key (the console's `Using kebab-case for css properties in objects is not supported` line) and emits nothing, so the zoom, auto-rotate, grid, reset and fullscreen buttons never become visible on any design page, where the live legacy page raises them from opacity 0 to 1 under the pointer. Closes [[941bd045b043]] (interaction, `regression` on `/designs/bed-frame`), a gap in the `@villagekit/*` engine that CLAUDE.md's Principles say is fought by a change in `../gridkit`, never a workaround here (note `526d5330ef4e` carried it forward as the sandbox's); a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), minted at the split of the design pages record `0bc88eaf5493`. A fix in `../gridkit`, so it follows decision `28c1a536`: committed in the sibling by pathspec on top of the operator's own commits there (`e58d700`, three ahead of origin), never pushed from here; seen on this site through an uncommitted override of `@villagekit/sandbox` to the sibling package, reverted by path before the commit; the item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). The first engine fix of M2 and the form of its override are a shape, so Fable.
 

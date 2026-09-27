@@ -3,9 +3,8 @@ title: "ui palette literals: Chakra v2's pink, cyan, yellow and gray"
 status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `@villagekit/ui`'s colour tokens carry Chakra v2's literal palettes for the roles the site reads (`primary` pink, `accentA` cyan, `accentB` yellow, and `gray`), so text and accents render the legacy values, with the v3 semantic slots kept on top. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f` (rule 4 covers the `colorPalette` mechanism, not the literals), `28c1a536`.
 

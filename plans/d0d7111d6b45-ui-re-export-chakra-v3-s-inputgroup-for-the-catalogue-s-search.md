@@ -1,10 +1,9 @@
 ---
 title: "ui: re-export Chakra v3's InputGroup for the catalogue's search bar"
 status: done
-tags:
-  - "worker:fable"
 parent: 337e35d86920
 derived_from: a78b167170b8
+worker: fable
 ---
 The ui package re-exports Chakra's `InputGroup` again: the 0.9.0 ui re-exported Chakra v2's `InputGroup`, `InputLeftElement` and `InputRightElement` (`../ui` at `a5cbe36`, the sibling's first commit and the 0.9.0 source, `src/index.ts:161-176`), which legacy's catalog search bar composed (`apps/gridkit/components/catalogue/search-bar.tsx:23-46` at `fce357d`), and 1.2.0 re-exports neither (`node_modules/@villagekit/ui/dist/index.d.ts:3`), so the site's search bar was hand-positioned instead ([[9d3e773a678c]] on `/designs`). Chakra v3 folds the three into one `InputGroup` with `startElement` and `endElement` props (`node_modules/@chakra-ui/react/dist/esm/components/input-group/input-group.js`), the rule 4 form of legacy's markup; this slice adds it to the package's Chakra re-export block and closes the shell item filed at the designs index split, `InputGroup: re-exported by ui 0.9.0 from Chakra v2, absent from 1.2.0's re-exports`. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; the item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). The site's search bar re-port stands the import in from `@chakra-ui/react` until the publish and files its own item. Beside the shell record `a78b167170b8` (decision `40abdb2f222a`); minted at the designs index record's split (`f901cf9f724d`). A change in `../ui`, so Fable.
 

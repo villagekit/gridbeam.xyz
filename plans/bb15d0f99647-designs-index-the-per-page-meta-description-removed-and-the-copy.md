@@ -3,8 +3,7 @@ title: "Designs index: the per-page meta description removed and the copy verdic
 status: done
 parent: f901cf9f724d
 derived_from: f901cf9f724d
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The designs index carries the operator's copy verdicts from the designs grilling (D1 and D2, every one `regression` with its verdict in the item's Log) on the current files, so the catalog re-port that follows carries settled text and its review is structure only: no per-page meta description (the route inherits the site default, `1906af99b588`, as legacy's `<NextSeo title="Designs" />` did), the search placeholder `Search...` (three periods), the results count as `{n} results found` and `1 result found` on legacy's `> 1` test, and the empty state's three strings verbatim: `We couldn't find any designs that match your search criteria` (straight apostrophe, no period), `Try again using a different keyword or hit reset`, `Reset search`. Six items on `/designs`, each a string swap on a line the item cites; no structure changes, so Sonnet. Record `f901cf9f724d`; decisions `2032533f`, `ca677697`, `ee86d68a`.
 

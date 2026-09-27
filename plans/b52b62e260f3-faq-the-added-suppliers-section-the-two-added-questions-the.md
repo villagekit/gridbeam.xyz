@@ -4,9 +4,8 @@ status: done
 parent: 7f0b60d948c5
 derived_from: 7f0b60d948c5
 blocked_by: ffe8e5d56f8e
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The FAQ page loses what the legacy page never had: the `Suppliers` category with its four questions, the two questions added under `Other`, the description line under the heading and the per-page meta description; its title stays `FAQ`, templated by the shell to `Grid Beam: FAQ` as legacy's `NextSeo title="Faq"` was templated to `Grid Kit: Faq` (the sanctioned `63130f446c8d`, `1c8b7461acb1`). Nine items on `/faq`, every verdict the operator's from the FAQ grilling (F1 and F6), each a stated deletion or a two-line metadata edit, so the diff is given and the work is Sonnet's. Record `7f0b60d948c5`; decisions `ee86d68a`, `2032533f`, `ca677697`.
 

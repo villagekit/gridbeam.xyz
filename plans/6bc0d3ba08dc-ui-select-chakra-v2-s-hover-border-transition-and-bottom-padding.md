@@ -3,9 +3,8 @@ title: "ui Select: Chakra v2's hover border, transition and bottom padding on th
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui native select is Chakra v2's select again on the four readings its background fix left standing: the field's border darkens to `gray.300` under the pointer, its colors and shadow fade over v2's `common` transition at `normal` duration, its text sits on v2's one-pixel bottom padding, and its indicator is v2's filled chevron at 20px in the field's own color with `aria-hidden="true"` and `focusable="false"`, where `@villagekit/ui@1.2.0` and the sibling export Chakra v3's `NativeSelect` bare over a recipe that writes the sizes, the focus and the white field alone. Closes [[fc09ead545ab]] (interaction), [[e7661dae0c4b]] (visual), [[3dae1b1f6437]] (visual), [[a7779316906c]] (visual) and [[908deff18dff]] (accessibility), all on `shell`, all `open`, filed by the Parity review of the ui Select slice [[ad2f5e52f9d8]], which found them beside the background it fixed and verified each on both sides (its `verify-probe.mjs`); a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), taken without a verdict because each item's mechanism is the package's select and CLAUDE.md's Principles say a gap in `@villagekit/ui` is fought by a change in `../ui`; the operator may still overturn any by a note and a new state. A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). A change in `../ui` that decides a shape (the wrapped indicator), so Fable.
 

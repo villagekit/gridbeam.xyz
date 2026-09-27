@@ -1,6 +1,6 @@
 ---
 title: "Agent roles and who commits: the worker's model is the plan's tag"
-status: accepted
+status: superseded
 date: 2026-09-25
 supersedes: 077cef20699b
 ---

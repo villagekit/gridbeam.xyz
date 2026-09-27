@@ -1,11 +1,10 @@
 ---
 title: Group the @villagekit/* imports as their own block
 status: todo
-tags:
-  - "worker:sonnet"
 blocked_by:
   - target: 337e35d86920
     note: the re-ports rewrite most of these files; the bulk pass covers what stays
+worker: sonnet
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found the internal import group merged with the external one across the site.
 

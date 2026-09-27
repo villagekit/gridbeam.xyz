@@ -4,9 +4,8 @@ status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
 blocked_by: c09248be3862
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui `Tooltip` sits where Chakra v2's sat, its box 8px from the trigger with the arrow reaching 4px out of it, opens as Chakra v2's opened, a 0.85 scale with an overshoot over 0.2s and a 0.2s fade, and the `InfoTooltip`'s icon sits where Chakra v2's did, at the baseline, level with the text beside it, where `@villagekit/ui@1.2.0` on Chakra v3 leaves zag's offset (the 8px gutter plus half the arrow, 13px with the arrow 5px out), Chakra v3's `scale-fade-in` (0.95 and a fade over 150ms) and Chakra v3's `Icon` recipe's `vertical-align: middle` (the icon about 3px lower, its trigger box 24px tall against 27px). Closes [[9f61cf130d58]] and [[b4473fac17df]] (visual) and [[1597ab15cc5e]] (interaction), all `open` on `/designs/bed-frame`, read by the implementing agent and the Parity review of the tooltip style slice [[c09248be3862]] beside the arrow size it restored; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), taken without a verdict because each item's mechanism is the package's tooltip or icon and CLAUDE.md's Principles say a gap in `@villagekit/ui` is fought by a change in `../ui`; the operator may still overturn either by a note and a new state. A fix in `../ui` alone, so decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted ui override (CLAUDE.md's ui row), reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). After the tooltip style slice in the same ui files. A change that decides a shape (zag's `gutter` against the arrow's offset variable, the icon's alignment on the `InfoTooltip` or on the package's `Icon`), so Fable.
 

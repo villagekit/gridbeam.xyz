@@ -4,9 +4,8 @@ status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by: 1c74a465996d
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `LinkCard` is 0.9.0's again: a `3xs` by `64` box padded 4 by 8 with its content spread by `space-around`, an inherited-colour icon passed as a component type and exposed as legacy's tree exposes it, an `h2` heading, and the wrapper's `aria-label`; `CardsLayout`'s container is legacy's `container.md` width. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `28c1a536`, `bfa9a416`.
 

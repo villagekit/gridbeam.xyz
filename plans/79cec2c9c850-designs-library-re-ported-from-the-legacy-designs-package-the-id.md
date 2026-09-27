@@ -3,8 +3,7 @@ title: "Designs library re-ported from the legacy designs package: the id from t
 status: done
 parent: f901cf9f724d
 derived_from: f901cf9f724d
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The designs library is legacy's `packages/designs/src/index.ts` again in shape: `app/_lib/designs.ts` exports `getDesignIndexes()`, `getDesign(designId)` and `getDesignImage(designId, designLabel)` with legacy's types (`DesignImage`, `DesignIndex`, `DesignIndexes`), a design's `id` parsed from the product's `name` (`@villagekit/bed-frame`), `getDesign` returning `{ code, meta }` after legacy's bare `as ProductMeta` cast with no `Unknown design` throw, the index in the module's order with no label sort, and every design's `image` a never-null `{ alt, src, type: 'local' }` object with the design's label as its alt, as `getDesignImage` built it. The generated module stays as the store the functions read (the mechanism of [[abb539b3555e]], the operator's on the verdicts plan `Designs index: the operator's verdicts`), and the generator drops the runtime checks it added over legacy's read. Three items on `/designs`; the home's [[272613135119]] loses its sort and its nullable image by the same change. A shape decision at a module four routes and the sitemap read, so Fable. Record `f901cf9f724d`; decisions `ee86d68a`, `2032533f`, `91cbeac8a3fd`.
 

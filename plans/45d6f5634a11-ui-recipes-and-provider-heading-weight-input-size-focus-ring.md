@@ -3,9 +3,8 @@ title: "ui recipes and provider: heading weight, input size, focus ring, field f
 status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 Eight small fixes to `@villagekit/ui`'s recipes and wrappers restore what its 0.9.0 theme did under Chakra v2: the normal heading weight, the 48 px `lg` input, one cyan focus ring with no gray outline over it, the focus border colour on `Select` and `NumberInput`, the accordion's hover fill and uniform dashed separators, `Link`'s `isExternal`, and the toast regions mounted by the provider. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `28c1a536`.
 

@@ -1,8 +1,7 @@
 ---
 title: Pin the package manager hash and the GitHub Actions to commits
 status: todo
-tags:
-  - "worker:sonnet"
+worker: sonnet
 ---
 The audit at the adoption of the shared agentic set (plan `0448bc2d`) found two floating pins.
 

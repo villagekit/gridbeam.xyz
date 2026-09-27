@@ -1,12 +1,11 @@
 ---
 title: "ui recipes: the switch's and slider's boxes, focus rings, cursor and press, and the tabs' lg size, hover transition and focus ring, Chakra v2's theme again, for the design pages"
 status: done
-tags:
-  - "worker:fable"
 priority: medium
 parent: 337e35d86920
 derived_from: a78b167170b8
 blocked_by: eba62a497d77
+worker: fable
 ---
 The ui's switch, slider and tabs are Chakra v2's theme on the readings the recipes slice `eba62a497d77` left, where `@villagekit/ui@1.2.0` and the sibling leave Chakra v3's: the switch's box (v2's 30 by 16 `md` track with a 2px inset in `gray.300` unchecked, a flat white thumb, the `common` fade) and its keyboard focus ring (v2's 2px `outline` shadow), the slider's track and thumb (v2's 4px `gray.200` track rounded `sm`, the white thumb with the `base` shadow, centered on the track's end in a root the thumb's height, `cursor: pointer`, the 1.15 press scale over 0.2s, the 2px `outline` focus shadow), and the tabs' `lg` size (18px type on 12px by 16px padding with no fixed height, minimum width or gap, the panel padded 16px), the trigger's `common` transition over 0.2s and its keyboard focus (no ring on the selected tab, v2's `outline` shadow blanked by the theme's `_selected`). Closes [[e027cab46c34]], [[b8eb35a5578e]], [[1703aae45ba9]] (visual), [[9d1354fb1778]], [[b54894953f54]], [[871dd55bbd60]] (interaction), [[bb360bd3dbde]], [[5572706698a3]], [[e9f24ee16c6d]] (accessibility), all `open` on `/designs/bed-frame`, and [[574e14ae3f81]] (visual, `open` on `shell`), read by the implementing agent and the Parity review of the recipes slice; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), taken without a verdict because each item's mechanism is the package's recipe and CLAUDE.md's Principles say a gap in `@villagekit/ui` is fought by a change in `../ui`; the operator may still overturn any by a note and a new state. A fix in `../ui` alone, so decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted ui override (CLAUDE.md's ui row), reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). After the recipes slice in the same ui files. Three recipes read against v2's theme, the thumb's alignment a zag option rather than a style, so Fable.
 

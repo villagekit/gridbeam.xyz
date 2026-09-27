@@ -3,9 +3,8 @@ title: "ui Title: the heading's container at breakpoint-md, legacy's container.m
 status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The ui `Title` wraps its heading at legacy's width again: its `Container` is `maxW="breakpoint-md"` (768px, Chakra v3's size token for the `md` breakpoint), where `@villagekit/ui@1.2.0` and the sibling write `2xl` (672px) and legacy's `ui-page` `Title` wrote `container.md`. Closes [[318456ddabc6]] on `shell` for the shell record `a78b167170b8`, filed at the about split after the record was finished, its Log naming this slice for the about's finish (decision `40abdb2f222a`, a slice beside the record). A fix in `../ui`, so it follows decision `28c1a536`: committed in the sibling by pathspec, never pushed from here; seen on this site through the uncommitted `pnpm.overrides["@villagekit/ui"] = "file:../ui"` (`pnpm install` after each sibling edit) beside the uncommitted `transpilePackages: ['@villagekit/ui']` in `next.config.ts` that the `src/` copy needs (CLAUDE.md's ui row), both reverted by path before the commit; the item moved to `upstream` with a note citing the sibling commit; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint).
 

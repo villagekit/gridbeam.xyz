@@ -4,9 +4,8 @@ status: done
 parent: fd9a92bd8abd
 derived_from: fd9a92bd8abd
 blocked_by: 4faefea81c76
-tags:
-  - "worker:sonnet"
 priority: medium
+worker: sonnet
 ---
 The home page's copy is what the copy grilling settled: thirty verdicts applied verbatim on the page and the typing section as they stand today, before the page is re-ported, so the re-port carries settled text and its review is structure only. Every string comes from the item's Verdict or Log, or the legacy line it names, and from nowhere else (`ca677697`, `6fce53c0a18e` for the American spellings, `edad0df805f0` for the one legacy em dash); the diff is stated line by line below, so the work is Sonnet's. The two paragraphs written plain also close the bold-span item. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `ca677697`, `5dfd824923c9`.
 

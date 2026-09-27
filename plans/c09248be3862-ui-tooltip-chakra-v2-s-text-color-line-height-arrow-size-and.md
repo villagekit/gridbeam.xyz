@@ -2,11 +2,10 @@
 title: "ui Tooltip: Chakra v2's text color, line height, arrow size and arrow padding, and the InfoTooltip's style with the engine's dimensions tooltip line, for the design pages"
 status: done
 parent: 337e35d86920
-tags:
-  - "worker:fable"
 derived_from: a78b167170b8
 blocked_by: 4f55a829c726
 priority: medium
+worker: fable
 ---
 The ui `Tooltip` is Chakra v2's tooltip again on its text and its arrow, and the engine's dimensions tooltip carries its 0.9.0 style: the text `whiteAlpha.900` on the body's line height, the arrow 10px with 8px of padding from the corners, and the `Assembled Dimensions` tooltip at `sm` font size and `4` padding, where `@villagekit/ui@1.2.0` writes `color="white"` and `fontSize="md"` over Chakra v3's recipe (`textStyle: 'xs'`, a 1rem line height, an 8px arrow, zag's 4px arrow padding) and `InfoTooltip` takes no style for the engine to pass. Closes [[0c510c0f5f43]], [[f5501f74966e]], [[470ff140ad66]] and [[7b3ab8ca5e52]] (visual, the ui wrapper's) and [[d25c25b8bbb3]] (visual, the `InfoTooltip`'s props and the engine's `products/kit/src/info.tsx` line), all `open` on `/designs/bed-frame`, filed by the Parity review of the tooltip portal slice [[4f55a829c726]], which read them beside the portal container it restored; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), taken without a verdict because each item's mechanism is the package's tooltip or the engine's line and CLAUDE.md's Principles say a gap in `@villagekit/ui` or the engine is fought by a change in `../ui` or `../gridkit`; the operator may still overturn any by a note and a new state. The portal wrapper reading [[9e2f5f220c5b]] (code, no visible effect) is not this slice's: it is the operator's on the verdicts plan `8512c5e9cc98`. Fixes in both siblings, so decision `28c1a536` twice: each committed in its sibling by pathspec, never pushed from here; seen on this site through the uncommitted overrides (CLAUDE.md's ui and gridkit rows), reverted by path before the commit; the items moved to `upstream` with a note citing the sibling commits; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). After the portal slice in the same ui files. A change that decides a shape (a recipe or wrapper props in `../ui`, a style prop's v3 form on `InfoTooltip`), so Fable.
 

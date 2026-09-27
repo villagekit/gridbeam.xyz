@@ -6,9 +6,8 @@ derived_from: a78b167170b8
 blocked_by:
   - target: 63e9c753ca55
     strength: soft
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `SiteFooter` renders the social row and the credit block the way legacy's `ui-brand` `Social` and `FooterSlogan` did, the sections are the four decision `9f344fbfde9a` names, and the envelope goes back to the newsletter; the fold of `ui-brand` into `@villagekit/ui` is the ui brand footer slice, which replaces this file's markup at the bump. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `9f344fbfde9a`, `ad5363e4`, `ca677697`.
 

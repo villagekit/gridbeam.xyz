@@ -10,9 +10,8 @@ blocked_by:
   - f8c93eaf4922
   - target: 93ef1234208c
     strength: soft
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 `@villagekit/ui`'s `Footer` takes `socialLinks` and renders legacy `ui-brand`'s `Social` row and `Created with ♥ by Village Kit` slogan around `ui-page`'s columns, which are centred with no gap from `md` as legacy's were, and its sections type is the fixed-arity tuple; the site's `SiteFooter` becomes legacy's thin `footer.tsx` at the bump. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `ad5363e4`, `9f344fbfde9a`, `28c1a536`.
 

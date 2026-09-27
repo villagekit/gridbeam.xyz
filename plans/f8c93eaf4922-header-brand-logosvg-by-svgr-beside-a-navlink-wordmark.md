@@ -4,9 +4,8 @@ status: done
 parent: a78b167170b8
 derived_from: a78b167170b8
 blocked_by: ffe8e5d56f8e
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The header brand is legacy's again: `icon.svg` imported as a React component through svgr, a named image beside a `NavLink size="xl"` wordmark with legacy's gap, replacing the hand-authored `CubeLogo`. Record `a78b167170b8`; decisions `ee86d68a`, `2032533f`, `ad5363e4` (the header lock).
 

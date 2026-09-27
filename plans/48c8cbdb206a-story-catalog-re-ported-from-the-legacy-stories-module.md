@@ -6,8 +6,7 @@ derived_from: ca353de8b645
 blocked_by:
   - 3ef459e66cfb
   - e332105c3b52
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The story catalog is legacy's `stories.ts` again: `app/_lib/stories.ts` exports the `StoryCategory` and `StoryMetadata` types, `StoryCategoryColors`, and `allStories`, one array of every story's metadata in legacy's order, the four linked stories written inline as legacy's `linkedStories` and the six hosted ones imported from their MDX files; no `Story` wrapper, no slug-keyed record, no `getAllStories`, no `isExternalStory`, and no sort in the module (legacy sorted in the context, the page re-port's). What stays beside legacy's exports is the story pages' own mechanism, which is not this record's to judge: the field names and types on `StoryMetadata` (`slug` for legacy's `url`, `external` for `isExternal`, the ISO date strings, the dropped `image.type`) are `82762f6b27de` on the story page template, extended by a note at the split to the four linked stories the module writes; `originallyPublishedOn` is `c983ec56248e`; and the `[slug]` route's lookup of a story's MDX `Content` is `9c48718ec6f8`, all three the story pages record's (`56e6eb197e6c`). One item on `/stories`, a shape decision at a module three routes and the sitemap read, so Fable. Record `ca353de8b645`; decisions `ee86d68a`, `2032533f`.
 

@@ -6,9 +6,8 @@ derived_from: fd9a92bd8abd
 blocked_by:
   - 6f90e7e24ca6
   - 2de4b709bb36
-tags:
-  - "worker:fable"
 priority: medium
+worker: fable
 ---
 The hero carousel is legacy's `components/image-carousel.tsx` again: `react-responsive-carousel`'s `Carousel` with its stylesheet, `infiniteLoop`, a 4000 ms `autoPlay`, the library's translate slide transition, `RasterImage` slides from the ui media package, and the arrows and indicators that only an interactive carousel (no autoplay, more than one slide) renders, in place of the hand-written `motion` carousel whose interactive half nothing calls. The hero then exposes what legacy's tree exposes (a list of slides with the loop's clones, no region, no live text), keeps one height across slides, has no backdrop, and animates whatever the visitor's motion preference. The file moves to `app/_components/ImageCarousel.tsx`, legacy's module location. A re-port on a library under React 19, so Fable. Seven items on `/`, plus the carousel half of the reduced-motion item and the first of the three `sizes` call sites. Record `fd9a92bd8abd`; decisions `ee86d68a`, `2032533f`, `28c1a536`.
 
