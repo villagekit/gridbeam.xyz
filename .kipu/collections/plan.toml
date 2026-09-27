@@ -38,3 +38,10 @@ requires_outcome = true
 [fields.priority]
 type   = "string"
 values = ["urgent", "high", "medium", "low"]
+
+# The model a plan's worker runs on under `/orchestrate`, written at the
+# mint by the grading test in CLAUDE.md, Sub-agents; absent reads as the
+# strongest. No default: an ungraded plan stays visibly ungraded.
+[fields.worker]
+type   = "string"
+values = ["fable", "opus", "sonnet"]
