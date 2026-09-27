@@ -1,6 +1,6 @@
 ---
 title: "Beam table column headers: Chakra v2's xs bold heading font with wider letter spacing to v3's sm medium body font"
-status: open
+status: upstream
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ Chakra v3's table recipe writes the `columnHeader` at `fontWeight: medium` in th
 ## Log
 
 - 2026-09-28: The recipe half is taken by the ui slice [[59fa9072c63f]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]]): the ui tableRecipe writes v2's column header font (the heading family, bold, wider letter spacing, the 0.9.0 textTransform none) in ../ui, which reaches the planner's monolith table on the live route, so the slice reads it there under the override and moves this to upstream with the sibling commit if the header reads v2's font; the planner record [[396c9af0cbd1]] re-ports the page on top of it.
+
+- 2026-09-28: Moved to upstream by the ui form recipes slice [[59fa9072c63f]] (decision 28c1a536): fixed in ../ui at commit ae6e4ae on its main (the fieldRecipe, inputRecipe, numberInputRecipe, tableRecipe and Section), read on pnpm dev under the file:../ui override against the live legacy site (the slice's Outcome, its probe's legacy.json and after.json); waits on the operator's publish, which the bump plan [[99f2fe62c62f]] consumes and moves this to fixed.
