@@ -34,3 +34,5 @@ timeout 900 just check ran green: lint, typecheck, 89 tests passed, and next bui
 Pushed to main; CI run to be confirmed after the commit.
 
 ## Log
+
+- 2026-09-28: CI on the push (run 36321632210, commit dc86d9c) failed at the pnpm build step; every step through checkout, pnpm/action-setup and setup-node at their new pinned SHAs, install, lint, typecheck and test succeeded. This is pre-existing flakiness, not caused by this change: the pnpm build step failed the same way on the prior run for the commit already on main before this push (run 36321320452, commit 2af687f, still on the floating v4 tags) and on an earlier run for 4a03a980 before a retry of the same commit went green. No log detail beyond the step name is readable: gh auth token in this environment is invalid (gh auth status reports bad credentials in keyring) and the GitHub API's job-logs endpoint returns 403 Must have admin rights to Repository even unauthenticated, so the failure is recorded here by step and by this cross-run pattern rather than by log excerpt. Not re-run or forced; the operator can rerun the job or fix gh auth to read the log.
