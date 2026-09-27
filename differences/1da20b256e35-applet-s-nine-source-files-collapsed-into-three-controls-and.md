@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-28: The algorithm half of legacy's shape is in place since plan 40179a428ba3: shared.ts, algorithms/first-fit-decreasing.ts, algorithms/index.ts and the module barrel index.ts under app/tools/cutting-planner/, each legacy's file verbatim under its ported-from line, and algorithm.ts is gone with its stale citation. The components half (CuttingPlanner and CuttingPlannerControls beside CuttingPlannerResult, the monolith retired) is the page re-port's, plan 9c6e9dd981bd, which closes this item.

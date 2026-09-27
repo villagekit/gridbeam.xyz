@@ -16,7 +16,7 @@ import {
   VisuallyHidden,
 } from '@villagekit/ui'
 
-import type { BeamQuota } from '../algorithm'
+import type { BeamQuota } from '../'
 import { BeamRow } from './BeamRow'
 
 interface BeamsTableProps {

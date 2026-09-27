@@ -22,12 +22,8 @@ import { useCallback, useState } from 'react'
 
 import { CutBeamSvg, type DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
 
-import {
-  type BeamQuota,
-  type CuttingPlannerOutput,
-  type UnlimitedStock,
-  firstFitDecreasing,
-} from './algorithm'
+import { firstFitDecreasing } from './algorithms'
+import type { BeamQuota, CuttingPlannerOutput } from './shared'
 
 export function CuttingPlanner() {
   const [requiredBeams, setRequiredBeams] = useState<Array<BeamQuota>>([
@@ -35,7 +31,7 @@ export function CuttingPlanner() {
     { count: 4, size: 15 },
   ])
   const [stockBeams, setStockBeams] = useState<Array<BeamQuota>>([])
-  const [hasUnlimitedStock, setHasUnlimitedStock] = useState<UnlimitedStock>(60)
+  const [hasUnlimitedStock, setHasUnlimitedStock] = useState<false | 30 | 60>(60)
   const [displayUnit, setDisplayUnit] = useState<DisplayUnit>('gu')
   const [result, setResult] = useState<CuttingPlannerOutput | null>(null)
 
@@ -360,7 +356,7 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
   )
 }
 
-function tryParseUnlimited(value: string | null): UnlimitedStock | null {
+function tryParseUnlimited(value: string | null): false | 30 | 60 | null {
   if (value === '30') return 30
   if (value === '60') return 60
   if (value === 'false') return false
@@ -370,7 +366,7 @@ function tryParseUnlimited(value: string | null): UnlimitedStock | null {
 // Trusted input: the Select's option values are literals in the component, so anything else is a
 // bug in this codebase rather than user data. Legacy threw here too
 // (../node-modules/apps/gridkit/pages/tools/cutting-planner.tsx:86-95 at fce357d).
-function parseUnlimited(value: string): UnlimitedStock {
+function parseUnlimited(value: string): false | 30 | 60 {
   const parsed = tryParseUnlimited(value)
   if (parsed == null) throw new Error(`Unexpected unlimited-stock value: ${value}`)
   return parsed

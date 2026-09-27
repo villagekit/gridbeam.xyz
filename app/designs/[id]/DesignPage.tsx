@@ -23,8 +23,11 @@ import { Button, Icon, Link, Text, VStack } from '@villagekit/ui'
 
 import { CatalogueItem, type CatalogueItemRef } from '@/app/_components/catalogue-item'
 import { DesignViewDynamic, PartsBreakdown } from '@/app/_components/design'
-import { type BeamQuota, firstFitDecreasing } from '@/app/tools/cutting-planner/algorithm'
-import { CuttingPlannerResult } from '@/app/tools/cutting-planner/components'
+import {
+  type BeamQuota,
+  CuttingPlannerResult,
+  firstFitDecreasing,
+} from '@/app/tools/cutting-planner'
 
 interface DesignProps {
   meta: ProductMeta

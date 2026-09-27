@@ -6,7 +6,7 @@ import { useCallback, useState } from 'react'
 import { ProductSummary } from '@villagekit/product'
 import { Field, FormLabel, Switch, Text, VStack } from '@villagekit/ui'
 
-import { DisplayUnitToggle } from '@/app/tools/cutting-planner/components'
+import { DisplayUnitToggle } from '@/app/tools/cutting-planner'
 
 /**
  * The Parts tab: the engine's parts summary, then the Settings menu with the unit toggle and the

@@ -133,7 +133,7 @@ What the language skill (`typescript`) leaves to the project:
 `/tdd`'s bindings:
 
 - TDD applies in full to pure, deterministic code; the DOM, the network and the 3D canvas are exempt, kept thin, and their stand-ins are the screenshot pairs and the DOM extraction of the parity tooling, and the operator's eyes on `pnpm dev`.
-- Highest-value targets: the cutting planner (`app/tools/cutting-planner/algorithm.ts`, ported from the legacy Jest suites), the designs catalog logic, the parts and beam calculations, and the DOM extraction's shaping. Layout and styling components need no unit tests: the screenshot pairs and the Parity review cover them.
+- Highest-value targets: the cutting planner (`app/tools/cutting-planner/algorithms/first-fit-decreasing.ts` and `shared.ts`, ported from the legacy Jest suites), the designs catalog logic, the parts and beam calculations, and the DOM extraction's shaping. Layout and styling components need no unit tests: the screenshot pairs and the Parity review cover them.
 - The harness to reach for first: Vitest (`vitest.config.ts`) for pure code, `*.test.ts` beside it, no jsdom, no testing-library; the screenshot pairs and the DOM extraction for a route; a look at `pnpm dev` for the 3D viewer.
 - A test name is a sentence about behavior: `returns the expected output beams when provided stockBeams beams`.
 - Never change a test just to make it pass; a failing test may be catching a real bug. Tests cover edge cases, not a count. Don't assume the current code is correct; remove redundant tests.

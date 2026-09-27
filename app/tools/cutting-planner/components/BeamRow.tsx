@@ -6,7 +6,7 @@ import { FaRegMinusSquare } from 'react-icons/fa'
 
 import { Icon, IconButton, NumberInput, type NumberInputProps, Table } from '@villagekit/ui'
 
-import type { BeamQuota } from '../algorithm'
+import type { BeamQuota } from '../'
 
 interface BeamRowProps {
   index: number

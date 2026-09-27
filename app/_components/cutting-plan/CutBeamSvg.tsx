@@ -1,6 +1,6 @@
 import { Box, HStack, Text } from '@villagekit/ui'
 
-import type { OutputBeam } from '@/app/tools/cutting-planner/algorithm'
+import type { OutputBeam } from '@/app/tools/cutting-planner/shared'
 
 export type DisplayUnit = 'gu' | 'mm'
 

@@ -6,7 +6,7 @@ import { useCallback, useState } from 'react'
 import { CutGridBeamSvg } from '@villagekit/part-gridbeam'
 import { Box, Heading, VStack } from '@villagekit/ui'
 
-import type { CuttingPlannerOutput } from '../algorithm'
+import type { CuttingPlannerOutput } from '../'
 import { DisplayUnitToggle } from './DisplayUnitToggle'
 
 interface CuttingPlanProps {

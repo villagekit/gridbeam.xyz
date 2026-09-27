@@ -18,3 +18,5 @@ Vitest (`vitest.config.ts`, `environment: 'node'`): `app/tools/cutting-planner/a
 rule: operator (CLAUDE.md tech stack: Vitest; the legacy suites are ported verbatim, the additions cover the added code)
 
 ## Log
+
+- 2026-09-28: The Current above is stale since plan 40179a428ba3: url-codec.test.ts went with the share-link URL state (plan c273dfed7e26), and algorithm.test.ts is now legacy's two files, app/tools/cutting-planner/shared.test.ts (legacy's three describes verbatim) and app/tools/cutting-planner/algorithms/first-fit-decreasing.test.ts (legacy's four cases verbatim, then the extensions in their own describes below: the negative remainder legacy's algorithm produces on a cut longer than the top-up beam, the hand-supplied long stock, the 30 gu top-up and the degenerate inputs). The three cases that asserted the removed guard went with it.

@@ -3,7 +3,7 @@
 
 import { Section, Stack, useIsMobile } from '@villagekit/ui'
 
-import type { CuttingPlannerOutput } from '../algorithm'
+import type { CuttingPlannerOutput } from '../shared'
 import { BeamsTable, CuttingPlan } from './'
 
 // Note(cc): legacy's cutting-planner.tsx also holds CuttingPlanner and CuttingPlannerControls;
