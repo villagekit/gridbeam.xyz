@@ -1,6 +1,6 @@
 ---
 title: "Results count: results found to designs found"
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:428` `{count} {count === 1 ? itemLabel.replace(/s$/, '') : itemLabel} found`, rendered `37 designs found` (`audit/designs/dom/current.txt`).
 
 ## Verdict
+
+plan bb15d0f99647
 
 ## Log
 

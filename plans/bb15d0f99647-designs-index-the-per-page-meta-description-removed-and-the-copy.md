@@ -1,6 +1,6 @@
 ---
 title: "Designs index: the per-page meta description removed and the copy verdicts applied on the search placeholder, the results count and the empty state"
-status: todo
+status: done
 parent: f901cf9f724d
 derived_from: f901cf9f724d
 tags:
@@ -35,5 +35,11 @@ None pure: six strings; the proof is the DOM pair's copy diff and a probe of the
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped the six string swaps, exactly as the Work section states. `app/designs/page.tsx` exports `metadata = { title: 'Designs' }` alone, so the served head carries the site default `description` (checked with curl; the removed text prints 0 times). The placeholder is `Search...` in `DesignsBrowser.tsx` and the `Catalogue` default. `ResultsCount` renders legacy's `{count} {count > 1 ? 'results' : 'result'} found`. `EmptyState` carries legacy's three strings verbatim (`&apos;`, no period, `Reset search`). The six items `ee46802b453c`, `5a9773d48b54`, `d65d1957932c`, `8881ebddcf54`, `867dbd39345d` and `a817a0fd8667` are `fixed`.
+
+Proof: `pnpm audit:dom` on `/designs` gave `37 results found` on both sides and no diff line for the count or the placeholder; a Playwright probe with `zzz` typed showed the three legacy empty-state lines and `0 result found` (legacy's `> 1` test). The greps in Done when print 0. `timeout 900 just check` exited 0. Standards, Spec and Parity reviews on fresh Opus agents found nothing blocking.
+
+Deviation: none. A Parity note: `og:description` is probably not emitted, since `app/_lib/open-graph.ts` sets no description; this change does not cause it and only `<meta name="description">` was checked. It is left for the shell's ledger. `ResultsCountProps.itemLabel` stays until the catalog re-port.
 
 ## Log

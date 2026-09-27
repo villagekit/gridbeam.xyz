@@ -1,6 +1,6 @@
 ---
 title: "Search placeholder: Search... to Search designs…"
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignsBrowser.tsx:26` `searchPlaceholder="Search designs…"` (an ellipsis), consumed by `app/_components/catalogue/Catalogue.tsx:220`.
 
 ## Verdict
+
+plan bb15d0f99647
 
 ## Log
 

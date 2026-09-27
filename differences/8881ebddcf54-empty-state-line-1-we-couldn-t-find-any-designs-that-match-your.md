@@ -1,6 +1,6 @@
 ---
 title: "Empty state line 1: We couldn't find any designs that match your search criteria to We couldn’t find any designs that match your search."
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:519` `We couldn’t find any {itemLabel} that match your search.` (curly apostrophe, period).
 
 ## Verdict
+
+plan bb15d0f99647
 
 ## Log
 

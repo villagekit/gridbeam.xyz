@@ -23,7 +23,7 @@ export function DesignsBrowser(props: DesignsBrowserProps) {
       filterOptions={filterOptions}
       itemLabel="designs"
       basePath="designs"
-      searchPlaceholder="Search designs…"
+      searchPlaceholder="Search..."
     />
   )
 }

@@ -72,7 +72,7 @@ export function Catalogue<Tag extends string>(props: CatalogueProps<Tag>) {
     itemLabel,
     basePath,
     listMessage,
-    searchPlaceholder = 'Search…',
+    searchPlaceholder = 'Search...',
   } = props
 
   const searchParams = useSearchParams()
@@ -422,10 +422,10 @@ interface ResultsCountProps {
 }
 
 function ResultsCount(props: ResultsCountProps) {
-  const { count, itemLabel } = props
+  const { count } = props
   return (
     <Text variant="tertiary" fontSize="md" aria-live="polite" whiteSpace="nowrap">
-      {count} {count === 1 ? itemLabel.replace(/s$/, '') : itemLabel} found
+      {count} {count > 1 ? 'results' : 'result'} found
     </Text>
   )
 }
@@ -516,14 +516,14 @@ function EmptyState(props: EmptyStateProps) {
     >
       <VStack gap="4" py="16" textAlign="center">
         <Text fontSize={{ base: 'lg', md: 'xl' }}>
-          We couldn’t find any {itemLabel} that match your search.
+          We couldn&apos;t find any {itemLabel} that match your search criteria
         </Text>
         <Text variant="tertiary" fontSize={{ base: 'md', md: 'lg' }}>
-          Try a different keyword or category, or hit reset.
+          Try again using a different keyword or hit reset
         </Text>
         <Button variant="secondary" onClick={onReset} maxW="sm">
           <Icon as={FaTimes} boxSize="5" />
-          Reset
+          Reset search
         </Button>
       </VStack>
     </motion.div>

@@ -1,6 +1,6 @@
 ---
 title: Designs meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/designs/page.tsx:11-12` `A catalogue of grid-beam designs — beds, desks, shelves, and more. Each design has a 3D preview and a parts list.`, used for `description`, `openGraph.description` and `twitter.description` (`page.tsx:14-23`).
 
 ## Verdict
+
+plan bb15d0f99647
 
 ## Log
 

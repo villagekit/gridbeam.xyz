@@ -7,13 +7,8 @@ import { DesignsBrowser } from '@/app/_components/design/DesignsBrowser'
 import { designsToCatalogueItems } from '@/app/_components/design/designs-to-catalogue'
 import { getDesignIndexes } from '@/app/_lib/designs'
 
-const title = 'Designs'
-const description =
-  'A catalogue of grid-beam designs — beds, desks, shelves, and more. Each design has a 3D preview and a parts list.'
-
 export const metadata: Metadata = {
-  title,
-  description,
+  title: 'Designs',
 }
 
 export default async function DesignsPage() {

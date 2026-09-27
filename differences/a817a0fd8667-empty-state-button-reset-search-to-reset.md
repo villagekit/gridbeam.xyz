@@ -1,6 +1,6 @@
 ---
 title: "Empty state button: Reset search to Reset"
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/catalogue/Catalogue.tsx:526` `Reset`.
 
 ## Verdict
+
+plan bb15d0f99647
 
 ## Log
 
