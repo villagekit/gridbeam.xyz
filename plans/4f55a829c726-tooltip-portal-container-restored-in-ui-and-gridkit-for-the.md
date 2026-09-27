@@ -1,0 +1,39 @@
+---
+title: Tooltip portal container restored in ../ui and ../gridkit, for the engine's tooltips in the sandbox's fullscreen mode
+status: todo
+tags:
+  - "worker:fable"
+parent: 337e35d86920
+blocked_by:
+  - 65ee8339cb1d
+  - target: 1e2fbba70884
+    strength: soft
+    note: the same sibling working tree in ../gridkit
+derived_from: a78b167170b8
+---
+The engine's tooltips render inside the sandbox's fullscreen element again: `@villagekit/ui@1.2.0`'s `Tooltip` portals to the body with no way to name a container, and engine 0.10.0's `HelperTooltip`, slider tooltip, `ProductKitInfo` and the sandbox's own controls tooltip stopped passing the container the sandbox hands them, where `@villagekit/ui@0.9.0` took `portalProps` and gridkit 0.9.0 passed `portalProps={{ containerRef }}` through, so on the live legacy page a design's parameter tooltips show in fullscreen mode and on this site they portal to a body that fullscreen hides. Closes [[0779d04c037d]] (code, `regression` on `/designs/bed-frame`), whose Log called the plumbing inert because the page passes no `containerRef`, which is true and beside the point: the sandbox passes its own (`node_modules/@villagekit/sandbox/src/controls/index.tsx:193,208`), and the fullscreen button sits in every design page's toolbar. A gap in `@villagekit/ui` and the engine that CLAUDE.md's Principles say is fought by a change in `../ui` and `../gridkit`, never a workaround here; a slice beside the shell record `a78b167170b8` (decision `40abdb2f222a`), minted at the split of the design pages record `0bc88eaf5493`. Fixes in both siblings, so decision `28c1a536` twice: each committed in its sibling by pathspec, never pushed from here; seen on this site through uncommitted overrides reverted by path before the commit; the item moved to `upstream` with a note citing both sibling commits; the bump plan `99f2fe62c62f` is `blocked_by` this slice (the edge written at the mint). A prop's v3 form and its plumbing across four engine files, so Fable.
+
+## Work
+
+- Legacy: `../ui` at `a5cbe36` (0.9.0), `src/components/Tooltip.tsx`: `TooltipProps` picks `portalProps` from Chakra v2's `TooltipProps` and spreads it onto v2's `Tooltip`, which portals into `portalProps.containerRef`; `InfoTooltip.tsx` extends `Partial<TooltipProps>` and spreads the rest through. `../gridkit` at `v0.9.0`: `core/parameters/src/components/helper-tooltip.tsx:2,10-12` reads `containerRef` from `useParamControlsInternalContext()` and passes `portalProps={{ containerRef }}`; `core/parameters/src/values/number.tsx:33,49-53` the same on the slider's tooltip; `products/kit/src/info.tsx:9-11,52-63` takes `containerRef` as a prop and passes it; `core/sandbox/src/controls/index.tsx:193,208,216` passes the sandbox's `containerRef` to `InfoComponent`, to `ParamControls` and to its own rotate-the-screen tooltip. Current: `../ui/src/components/Tooltip.tsx:18-39` at `e3acb25` renders `<Portal>` with no container; `InfoTooltip.tsx:14-35` takes `label` and `pointerTimeout` alone; `../gridkit` at `e58d700`: `helper-tooltip.tsx` renders `<InfoTooltip label={label} />`, `number.tsx:56` `<Tooltip label open>`, `info.tsx:12` ignores `_props`, `controls/index.tsx:208` still passes the ref to `ParamControls`, whose `ParamControlsInternalContextProvider` still carries it (`@villagekit/parameters` `dist/index.js:13-16`), and `:216` renders `Tooltip` with no portal prop; `@villagekit/parameters@0.10.0` declares `@villagekit/ui ^1.1.1`.
+- In `../ui`: `TooltipProps` takes the portal's container again, as `portalProps?: { containerRef?: React.RefObject<HTMLElement | null> }` (legacy's name and shape, so the engine's lines port verbatim) rendered onto Chakra v3's `Portal` `container` prop (`node_modules/@chakra-ui/react/dist/types/components/portal/index.d.ts`, read for the prop's type); `InfoTooltipProps` takes the same and passes it through. The sibling's `ui/Tooltip` and `ui/InfoTooltip` stories read; `CHANGELOG.md` Unreleased.
+- In `../gridkit`: `helper-tooltip.tsx`, `number.tsx`, `info.tsx` and `controls/index.tsx` back to legacy's lines, each passing `portalProps={{ containerRef }}` where 0.9.0 did; the sibling's packages type-check against the ui with the prop, which its `node_modules` lacks until the publish, so an uncommitted `pnpm.overrides` of `@villagekit/ui` to `file:../ui` in `../gridkit`'s `package.json` (reverted by path there too, and recorded in the Outcome) or the form the sibling's workspace takes for a local ui; the sibling's lint, types and the four packages' builds green; the commit by pathspec on the sibling's `main` (`core/parameters/src/components/helper-tooltip.tsx`, `core/parameters/src/values/number.tsx`, `products/kit/src/info.tsx`, `core/sandbox/src/controls/index.tsx`, a changelog if kept), on top of the sibling's HEAD, which the sandbox slice (`sandbox: the toolbar's hover and focus-within selector written as Chakra v3's condition in ../gridkit, for the design pages`) may have moved; where the sibling's paths hold changes that are not yours, stop and ask.
+- Seen here: the ui override (`pnpm.overrides["@villagekit/ui"] = "file:../ui"` beside `transpilePackages: ['@villagekit/ui']`, CLAUDE.md's ui row) and the engine overrides for `@villagekit/parameters`, `@villagekit/product-kit` and `@villagekit/sandbox` to their built sibling packages (the form the sandbox slice records in CLAUDE.md's gridkit row), all reverted by path (`git restore -- package.json pnpm-lock.yaml next.config.ts`, `pnpm install --frozen-lockfile`) before the commit.
+- Verify first: `grep -n "portalProps\|container" ../ui/src/components/Tooltip.tsx ../ui/src/components/InfoTooltip.tsx` prints nothing; `grep -n "containerRef" ../gridkit/core/parameters/src/components/helper-tooltip.tsx ../gridkit/products/kit/src/info.tsx` prints the unread prop alone; on `pnpm dev` at 1280, `/designs/bed-frame` in fullscreen (the toolbar's fullscreen button, under a Playwright `page.click` and `document.fullscreenElement` read) with the pointer on the `Assembled Dimensions` info icon shows no tooltip, where the live legacy page shows `Width x Depth x Height`.
+- Docs: `../ui/CHANGELOG.md`; the engine's changelog if kept; CLAUDE.md's gridkit row only if the sandbox slice has not written the override sentence yet.
+- Not this slice: the InfoTooltip icon's name ([[2166f4f318af]], `ui Spinner and InfoTooltip: the Loading... label and the tooltip trigger's name, Chakra v2's again, for the design pages`, which lands first in the same ui files); the drei bridge (`55c931eca5f5`, the operator's); the `memo` console line (the design pages record's diagnosis slice).
+
+## Seams under test
+
+None pure; the proof is a Playwright probe of the tooltip's DOM parent in and out of fullscreen on `pnpm dev` under the overrides, against the live legacy page.
+
+## Done when
+
+- A Playwright probe on `pnpm dev` under the overrides, `/designs/bed-frame` at 1280: out of fullscreen, the `Assembled Dimensions` tooltip and a Custom-preset slider's tooltip on the desk render under `body` as on the live legacy page; in fullscreen (`document.fullscreenElement` the sandbox container), each renders inside that container and is visible in a screenshot, as on the live legacy page; the rotate-the-screen tooltip read the same on a 375 by 667 viewport in fullscreen
+- In `../ui` and `../gridkit`: the siblings' lint, types, builds and the ui's Storybook green; each change committed by pathspec on its `main`, not pushed
+- [[0779d04c037d]] is `upstream` with a note citing both sibling commits and correcting its Log's `inert` reading with `controls/index.tsx:193,208,216`; `99f2fe62c62f` is `blocked_by` this slice (checked at the finish) and carries a note naming the four engine packages the publish must carry and what the bump's repeat probe reads
+- Every override reverted by path in both repos; `timeout 900 just check` is green
+
+## Outcome
+
+## Log

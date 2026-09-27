@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-12: Template. Inert on this route: neither side passes a `containerRef` (`[id].tsx:97`, `DesignViewer.tsx:56`).
+
+- 2026-09-27: From the design pages record's split (plan 0bc88eaf5493): the inert reading above is wrong on both sides. The page passes no containerRef, but the sandbox passes its own to InfoComponent, to ParamControls and to its rotate-the-screen tooltip (gridkit v0.9.0 core/sandbox/src/controls/index.tsx:193,208,216; node_modules/@villagekit/sandbox/src/controls/index.tsx:193,208 still passes it and 0.10.0's consumers ignore it), and the fullscreen button sits in every design page's toolbar, so in fullscreen legacy's parameter and dimension tooltips render inside the fullscreen element and this site's portal to a body fullscreen hides. Owned by the sibling slice [[4f55a829c726]] beside the shell record, which restores portalProps on the ui Tooltip and InfoTooltip and the engine's four call sites under decision 28c1a536 and parks this item upstream.
