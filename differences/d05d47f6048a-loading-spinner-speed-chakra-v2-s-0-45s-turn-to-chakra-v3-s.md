@@ -1,6 +1,6 @@
 ---
 title: "Loading spinner speed: Chakra v2's 0.45s turn to Chakra v3's 500ms"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui at 476a1df (plan 7e0fc992af9c): the spinner recipe's base writes animationDuration 0.45s, Chakra v2's default speed, as a literal since Chakra v3's durations tokens hold no 450ms value. On pnpm dev under the file:../ui override the .chakra-spinner on /designs/bed-frame during the viewer's loading state reads animation-duration 0.45s, linear, infinite, the live legacy page's readings; the built Storybook's ui/Spinner story reads 0.45s too. Waits on the operator's publish, which the bump plan 99f2fe62c62f consumes.

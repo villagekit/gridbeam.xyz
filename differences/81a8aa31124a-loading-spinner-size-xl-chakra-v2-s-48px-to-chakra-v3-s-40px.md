@@ -1,6 +1,6 @@
 ---
 title: "Loading spinner size xl: Chakra v2's 48px to Chakra v3's 40px"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui at 476a1df (plan 7e0fc992af9c): a spinner recipe in src/components/Spinner.tsx, registered in src/theme/index.ts, writes xl at sizes.12 and md at sizes.6 over Chakra v3's. On pnpm dev under the file:../ui override the .chakra-spinner on /designs/bed-frame during the viewer's loading state reads 48px by 48px with a 2px border, the live legacy page's readings; the built Storybook's ui/Spinner story reads 24px at md. Waits on the operator's publish, which the bump plan 99f2fe62c62f consumes.
