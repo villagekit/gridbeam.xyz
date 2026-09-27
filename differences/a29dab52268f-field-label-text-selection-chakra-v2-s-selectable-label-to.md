@@ -16,3 +16,7 @@ Chakra v3's field recipe writes `userSelect: none` on the label (`node_modules/@
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Fixed in `../ui` as commit 60e63a2 on its `main` over 3f59037 (not pushed; the push goes with the operator's publish, decision `28c1a536`): `fieldRecipe`'s label base writes `userSelect: 'auto'`, the initial value, over Chakra v3's `none`. Read by the `b8c6df9b44e8` probe on `/designs/bed-frame` under the `file:../ui` override: the `Preset` and `Controls` labels at 1280 read `user-select: auto`, matching the live legacy reading, and a drag across the `Preset` label's text selects it (`audit/_probeb8c6d/after.json`, `drag3.mjs`).
+
+- 2026-09-28: Superseding the note above: reverted. `../ui` commit 60e63a2 was reset before push (`git -C ../ui reset --mixed 3f59037` then `git restore`), so it no longer exists and this item is not fixed. The revert followed the escalation rule (CLAUDE.md, Sub-agents): the Parity review of plan `b8c6df9b44e8` found the sibling change caused a new regression on `01f445a34cc9`'s row (below), a choice the plan did not settle, so the fix was pulled back before commit. This item's own reading (`userSelect: auto`) was itself correct and reproduced on the probe; it is reopened only because it shipped in the same sibling commit as the regressing change and that commit was undone whole. Back to `open`, `b8c6df9b44e8` reopened at `worker: opus` to resolve the interaction with the switch recipe.
