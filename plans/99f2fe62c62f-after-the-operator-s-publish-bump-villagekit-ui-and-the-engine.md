@@ -59,6 +59,7 @@ blocked_by:
   - 1b4708347ae9
   - 42f6738b9658
   - b8c6df9b44e8
+  - ea455fbe31c4
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -194,3 +195,5 @@ None.
 - 2026-09-28: The ui field root and label box slice [[42f6738b9658]] (../ui 3f59037) parks three more items in upstream: [[d185151e1fb8]], [[3ac091f72e48]] and [[dac653ff8e33]]. The repeat probe on the published package reads, on /designs/bed-frame at 1280 and 375 with Controls on, the field roots block and every root at legacy's height (the height field 63px, each boolean field 59px, its switch 11px under its label row, the Preset field 72px with a 296px label at 1280) and a disabled field's label at opacity 0.4; audit/_probe42f6/probe.mjs is the script, legacy.json the readings. No site edit is needed.
 
 - 2026-09-28: The engine SVG labels slice [[98a6d91413ef]] (../gridkit 188536d) parks [[1a08e6077525]] and [[2deff48d6dc6]] in upstream: the publish must carry @villagekit/part, which part-gridbeam, part-gridpanel, part-fastener, product-kit and plugin-smart-fasteners all resolve. The repeat probe on the published package reads, on /designs/bed-frame at 1280 and 375 and /designs/shelf-tower at 1280, every `svg text` of the Parts and Plan tabs (clicked, they mount lazily) at a computed 30px with a `font-size: 1.875rem` inline style; audit/_probe98a6/label-probe.mjs is the script, legacy-*.json the live readings. No site edit is needed.
+
+- 2026-09-28: Plan b574a94092bf: the publish must carry @villagekit/sandbox with the off toolbar toggles' --toolbar-color fix (../gridkit bf58a1f over 188536d). The repeat probe: on /designs/bed-frame at 1280 and 375, after a click that turns auto-rotate or the grid off, the toggle reads rgb(213, 63, 140) under the pointer and while pressed, matching legacy (this fix's own concern, closed); at rest away from the pointer it reads rgb(160, 174, 192) only once the button loses the focus a real click leaves on it in Chromium, and rgb(45, 55, 72) while still focused, a regression this fix introduces (the toolbar variant's own _focus color in ../ui's Button.tsx never reads --toolbar-color), filed and left unfixed as [[014c146699e5]] and handed to [[ea455fbe31c4]] (blocking this plan too), a candidate ../ui change to the recipe's own _focus color. Until ea455fbe31c4 ships, the repeat probe should NOT read gray.400 at rest while focused, and that is expected, not a bump regression.

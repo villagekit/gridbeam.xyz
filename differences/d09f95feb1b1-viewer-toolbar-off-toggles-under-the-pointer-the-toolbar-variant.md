@@ -1,6 +1,6 @@
 ---
 title: "Viewer toolbar off toggles under the pointer: the toolbar variant's hover pink to gray.400, the css color beats the recipe in Chakra v3"
-status: regression
+status: upstream
 route: /designs/bed-frame
 axis: interaction
 kind: changed
@@ -20,3 +20,7 @@ kind: changed
 - 2026-09-27: Filed by the sandbox slice (plan [[1e2fbba70884]]) from its Parity review; pre-existing at 0.10.0 and made visible by the toolbar fix. Regression by default (decision 2032533f), not sanctioned by the agent. A residual in an engine component: the design pages record [[0bc88eaf5493]] carries a note handing it to a ../gridkit slice at its finish, after the ui publish that carries the toolbar variable.
 
 - 2026-09-28: Handed to the ../gridkit slice [[b574a94092bf]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a, the split's call 10): the two toggles set the toolbar variant's --toolbar-color variable through css in place of color, the NavHeader's form at ../ui d736bfe, seen under the sandbox tarball and the file:../ui overrides together, blocking the bump plan [[99f2fe62c62f]]. The state stays regression until the slice moves it to upstream with the sibling commit.
+
+- 2026-09-28: Shipped in ../gridkit as commit bf58a1f on its main over 188536d (eight ahead of origin, not pushed), by pathspec: core/sandbox/src/controls/index.tsx alone. The two toggles set --toolbar-color through css in place of color, the NavHeader's form at ../ui d736bfe; _focus: {} kept as legacy's line, since it stays unless the worker reads that it does nothing under Chakra v3 and says so, which the worker did, filing [[014c146699e5]] for the residual (the recipe's own _focus color winning while a click leaves the button natively focused) rather than changing the shape. Verified on pnpm dev under the sandbox tarball and file:../ui overrides: /designs/bed-frame at 1280 and 375, the off toggle reads rgb(213, 63, 140) under the pointer and while pressed, matching legacy, this item's own concern, closed; at rest away from the pointer it reads rgb(160, 174, 192) only once the button loses the focus a real click leaves on it (rgb(45, 55, 72) while still focused, the gap [[014c146699e5]] records); the on toggles and the other four buttons unaffected; screenshot pairs under audit/_probeb574/ looked at, nothing else moved. 99f2fe62c62f is blocked_by this slice and carries a note naming the packages and the repeat probe.
+
+- 2026-09-28: The Parity review of plan b574a94092bf found the rest-while-focused gap ([[014c146699e5]]) is introduced by this fix, not merely revealed: the sibling's pre-image (188536d) already read gray.400 there, matching legacy, since the unconditional literal color it replaces was unlayered and beat the recipe's _focus state too, not only its _hover and _active states. [[ea455fbe31c4]] is minted, beside this route's shell record, for the ../ui change this needs; it blocks the bump plan alongside this slice.
