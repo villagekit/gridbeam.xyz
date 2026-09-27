@@ -31,3 +31,5 @@ None.
 ## Log
 
 - 2026-09-27: From the split of the design pages record (plan 0bc88eaf5493): the two-file page item the body names by description is [[8aacd71da174]] (open, code, changed, /designs/bed-frame), filed at the split.
+
+- 2026-09-27: From the ui Spinner and InfoTooltip slice (plan 65ee8339cb1d): its Parity review read one more code-axis reading on the design page's loading spinner, [[a6f5528f74e3]] (open, not judged): Chakra v2's Spinner rendered a div where Chakra v3's is a span, the ui wrapper forwarding a span ref. Whether rule 4 (upgrade-forced) covers the element is the operator's, beside this plan's other items; the size and speed readings from the same review are a ui slice's.
