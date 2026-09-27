@@ -1,6 +1,6 @@
 ---
 title: Community forum card added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such card: the legacy route has one card, Cutting planner (`apps/gridkit/page
 `app/tools-and-resources/page.tsx:101-108` `title: 'Community forum'`, `description: 'Questions, build logs, and design discussion at discuss.villagekit.com.'`, `href: 'https://discuss.villagekit.com'`, `isExternal: true` (a new tab).
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

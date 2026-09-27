@@ -1,6 +1,6 @@
 ---
 title: Suppliers directory and Source on GitHub card descriptions clip inside the fixed 224 by 256 card
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 With LinkCard re-ported to that box (ui LinkCard.tsx after plan 1cc03cfabcf2, seen through the sibling override), the Suppliers directory card's content is 286px and the Source on GitHub card's 310px tall in a 252px inner height, so their descriptions stop at the card's bottom edge (`audit/tools-and-resources/1280/current.png`, `audit/tools-and-resources/375/current.png`). The copy is this route's: the added-card items d0f2155130dc and 530a31cd8099. Measured by a Playwright probe on 2026-09-26.
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

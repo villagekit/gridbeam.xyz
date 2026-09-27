@@ -1,6 +1,6 @@
 ---
 title: Suppliers directory card added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such card: the legacy route has one card, Cutting planner (`apps/gridkit/page
 `app/tools-and-resources/page.tsx:62-68` `title: 'Suppliers directory'`, `description: 'Manufacturers and resellers around the world that make 40 mm grid beam and compatible parts. We don't sell parts; we link to people who do.'`, `href: '/suppliers'`.
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

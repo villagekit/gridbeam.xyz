@@ -1,6 +1,6 @@
 ---
 title: Source on GitHub card added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such card: the legacy route has one card, Cutting planner (`apps/gridkit/page
 `app/tools-and-resources/page.tsx:93-100` `title: 'Source on GitHub'`, `description: 'The site, the @villagekit/ui component library, the engine that draws the designs, and the catalogue itself — all open-source under EUPL-1.2.'`, `href: 'https://github.com/villagekit'`, `isExternal: true` (a new tab).
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

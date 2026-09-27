@@ -1,6 +1,6 @@
 ---
 title: "Tools and resources title and heading: Tools and resources to Tools & resources"
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools-and-resources/page.tsx:25,30-37,117` `const title = 'Tools & resources'` in `metadata` and `<Title ...>Tools &amp; resources</Title>`; rendered `<title>Tools &amp; resources — gridbeam.xyz</title>` and `heading "Tools & resources" [level=1]` (`current.aria.yaml:23`).
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Tools and resources heading description added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/tools-and-resources/page.tsx:116` `description="Tools to plan a build, plus references for going deeper into the system."` (not the same string as the meta description).
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

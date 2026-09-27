@@ -1,6 +1,6 @@
 ---
 title: Tools and resources intro paragraph added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No body copy on the route (`apps/gridkit/pages/tools-and-resources.tsx:9-19`).
 `app/tools-and-resources/page.tsx:120-123` "Everything below is open and free. The tools live on this site; the resources point at the wider grid-beam community."
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

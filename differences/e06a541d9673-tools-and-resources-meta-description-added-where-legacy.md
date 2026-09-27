@@ -1,6 +1,6 @@
 ---
 title: Tools and resources meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No `description` in the chain (`CardsLayout.tsx:19` `<NextSeo title={title} />`)
 `app/tools-and-resources/page.tsx:26-27,31,34,37` `description = 'Tools to plan a grid-beam build, and references for going deeper into the system.'`.
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

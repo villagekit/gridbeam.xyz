@@ -1,6 +1,6 @@
 ---
 title: Designs catalogue card added
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No such card: the legacy route has one card, Cutting planner (`apps/gridkit/page
 `app/tools-and-resources/page.tsx:55-61` `title: 'Designs catalogue'`, `description: 'Beds, desks, shelves, market stalls — every design with parts list and a 3D preview you can rotate.'`, `href: '/designs'`.
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

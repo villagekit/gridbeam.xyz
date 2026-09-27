@@ -1,6 +1,6 @@
 ---
 title: Cutting planner card description changed
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools-and-resources/page.tsx:49-54` same title, href and icon; `description: 'Work out how many beams to buy and how to cut them with the least off-cut waste.'`.
 
 ## Verdict
+
+plan 42e7c1e5fd38
 
 ## Log
 

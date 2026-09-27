@@ -1,6 +1,6 @@
 ---
 title: "Tools and resources heading outline: h1, h2 to h1, h2, three h3, h2, five h3"
-status: regression
+status: fixed
 route: /tools-and-resources
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `audit/tools-and-resources/dom/current.aria.yaml:23,26,40` `heading "Tools & resources" [level=1]`, `heading "Tools" [level=2]` with three `[level=3]` cards, `heading "Resources" [level=2]` with five `[level=3]` cards (`app/tools-and-resources/page.tsx:116,128,147`; the card level is the shell LinkCard heading item).
 
 ## Verdict
+
+plan 42e7c1e5fd38, the card heading's level is [[bd05a2d3642d]] (upstream)
 
 ## Log
