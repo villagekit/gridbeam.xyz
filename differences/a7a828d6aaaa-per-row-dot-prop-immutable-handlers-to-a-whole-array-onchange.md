@@ -1,6 +1,6 @@
 ---
 title: Per-row dot-prop-immutable handlers to a whole-array onChange
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:253` one `onChange?: (beams: Array<BeamQuota>) => void` per table, with `handleAdd`, `handleChange`, `handleDelete` closures inside `BeamsTable` (`:260-270`) using `map`, `filter` and spread. No `dot-prop-immutable` dependency.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

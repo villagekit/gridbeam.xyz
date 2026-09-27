@@ -1,6 +1,6 @@
 ---
 title: "Add button: Add beam to Add row"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:339-346` `<Button ... variant="secondary" size="sm"><PlusIcon /> Add row</Button>`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

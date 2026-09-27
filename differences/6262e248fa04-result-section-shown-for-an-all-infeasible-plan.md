@@ -1,6 +1,6 @@
 ---
 title: Result section shown for an all-infeasible plan
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:187` `{result != null && (` gates the section, `:202` gates only the drawings, so a plan whose every cut is infeasible still shows the "Cutting plan" heading, "0 stock beams used — 0 gu." and the Print button above the infeasible table.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

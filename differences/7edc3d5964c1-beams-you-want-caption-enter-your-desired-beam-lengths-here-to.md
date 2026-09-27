@@ -1,6 +1,6 @@
 ---
 title: "Beams you want caption: Enter your desired beam lengths here. to The cuts you need."
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:128` `caption="The cuts you need."`. Carried forward from note [[526d5330ef4e]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

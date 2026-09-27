@@ -1,6 +1,6 @@
 ---
 title: "Beam table: variant unstyled to line, column widths 40/40/20 to 45/35/20"
-status: regression
+status: upstream
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -26,3 +26,5 @@ kind: changed
 - 2026-09-28: The recipe half is taken by the ui slice [[59fa9072c63f]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]]): the ui tableRecipe gains an unstyled variant and v2's sm paddings in ../ui, verified on a throwaway route rendering the applet's BeamsTable. The state stays regression: the Current above is the monolith's own variant and widths, which the planner record [[396c9af0cbd1]]'s re-port closes by rendering the applet's BeamsTable, which may then take variant unstyled back.
 
 - 2026-09-28: From the ui form recipes slice (plan 59fa9072c63f, ../ui ae6e4ae): the recipe half is done, the ui tableRecipe carrying an unstyled variant and v2's sm paddings and font sizes, read on a throwaway route's Table.Root size=sm variant=unstyled against the live planner's Beams you want table (no rule, transparent row, headers padded 4px 16px, cells 8px 16px, both on 16px lines); Table.Root widens its variant prop to name the variant. The state stays regression: the Current is the monolith's own line variant and widths, which the planner record [[396c9af0cbd1]]'s re-port closes by rendering the applet's BeamsTable, which may then take variant unstyled back once the published package carries the recipe (the bump plan [[99f2fe62c62f]]).
+
+- 2026-09-28: The site half is done by plan 9c6e9dd981bd: the route renders the applet's BeamsTable (app/tools/cutting-planner/components/BeamsTable.tsx) with legacy's 40%, 40%, 20% widths, the monolith's Current gone. variant=line stays on BeamsTable.tsx:58 because the published 1.2.0 closes Table.Root's variant to line | outline (node_modules/@villagekit/ui/dist/components/Table.d.ts re-exports Chakra's TableRootProps); the ui half, the tableRecipe's unstyled variant and sm paddings with Table.Root's widened variant, is committed at ../ui ae6e4ae, so the item parks upstream (decision 28c1a536). The bump plan 99f2fe62c62f makes the one site edit on this route, variant=line to variant=unstyled on that line, then fixes this item. Read on the pairs at 1280: the row rules and white row background remain until then.

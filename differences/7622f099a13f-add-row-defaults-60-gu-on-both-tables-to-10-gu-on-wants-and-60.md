@@ -1,6 +1,6 @@
 ---
 title: "Add row defaults: 60 gu on both tables to 10 gu on wants and 60 gu on stock"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:131,138` `defaultSize={10}` on "Beams you want", `defaultSize={60}` on "Beams you have" (`:260-262`): live, 10 and 1 on the first, 60 and 1 on the second. Carried forward from note [[526d5330ef4e]] ("its default rows and stock").
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

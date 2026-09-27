@@ -1,6 +1,6 @@
 ---
 title: "Infeasible table: Infeasible beams and its caption to Infeasible cuts"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:225-226` `title="Infeasible cuts"`, `caption="These cuts couldn't be made — typically a single cut longer than any available beam."`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

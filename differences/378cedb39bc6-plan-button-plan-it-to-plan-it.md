@@ -1,6 +1,6 @@
 ---
 title: "Plan button: Plan it! to Plan it"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:175-182` `<Button ... variant="primary">Plan it</Button>`. Carried forward from note [[526d5330ef4e]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

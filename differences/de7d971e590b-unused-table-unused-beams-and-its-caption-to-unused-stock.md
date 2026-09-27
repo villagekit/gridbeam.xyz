@@ -1,6 +1,6 @@
 ---
 title: "Unused table: Unused beams and its caption to Unused stock"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:235-236` `title="Unused stock"`, `caption="These stock beams weren't needed for the plan."`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

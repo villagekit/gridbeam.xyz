@@ -1,6 +1,6 @@
 ---
 title: "Cutting planner description: Use this tool to plan how to cut your beams to Tell it the cuts you need"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/page.tsx:28` `<Title description="Tell it the cuts you need; it tells you how many beams to buy and how to cut them.">`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

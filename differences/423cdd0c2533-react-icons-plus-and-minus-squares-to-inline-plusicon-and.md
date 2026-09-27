@@ -1,6 +1,6 @@
 ---
 title: react-icons plus and minus squares to inline PlusIcon and MinusIcon
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:497-514` hand-written `MinusIcon` and `PlusIcon` SVGs (a bar and a cross, not the outlined squares), used at `:326` and `:345`. `react-icons` is still a dependency (`package.json`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: Result section tinted gray where legacy's was white
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:114` and `:193` both the controls and the result `Section`s carry `colorPalette="gray"`, one continuous gray band through the plan and the Print button.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

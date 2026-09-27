@@ -1,6 +1,6 @@
 ---
 title: "Unit toggle side labels: clickable labels to inert spans"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:436-438,456-458` two `Text ... aria-hidden` spans with no `htmlFor`: not clickable, the switch's 2em control is the whole target. The code's own comment at `:432-435` names this for the ledger. The wording is [[c4a82d72201c]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

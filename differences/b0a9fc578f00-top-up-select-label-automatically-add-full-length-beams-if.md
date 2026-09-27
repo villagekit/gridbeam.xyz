@@ -1,6 +1,6 @@
 ---
 title: "Top-up select label: Automatically add full length beams if needed to Top up with full-length beams"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:153-157` `<chakra.label htmlFor="unlimited-stock"><Text as="span" fontSize="sm" variant="tertiary">Top up with full-length beams</Text></chakra.label>`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

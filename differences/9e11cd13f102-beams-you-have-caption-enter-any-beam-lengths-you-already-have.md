@@ -1,6 +1,6 @@
 ---
 title: "Beams you have caption: Enter any beam lengths you already have here. to Stock you already own."
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:135` `caption="Stock you already own. Leave empty to use only fresh beams."`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

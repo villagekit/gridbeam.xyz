@@ -1,6 +1,6 @@
 ---
 title: "Top-up select: the default md size to sm"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:158` `<Select.Root size="sm" maxW="36">`. Measured on `pnpm dev` at 1280 with the recipes slice's input sizes: 32px tall, font size 14px, border radius 2px (on `@villagekit/ui@1.2.0`'s Chakra v3 sizes, 36px, 14px and 4px).
 
 ## Verdict
+
+plan 9c6e9dd981bd: the select carries no size and reads 40px tall at 1280 on the published 1.2.0 (the slice's probe, legacy's height); its 14px text, 4px radius and transparent field on 1.2.0's md are the shell's 25d76ce2b2ff, f40107b60034 and 42cd11c9585f
 
 ## Log
 

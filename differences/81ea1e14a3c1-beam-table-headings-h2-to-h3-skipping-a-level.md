@@ -1,6 +1,6 @@
 ---
 title: "Beam table headings: h2 to h3, skipping a level"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:283` `<Heading as="h3" size="md">`: `current.aria.yaml` `heading "Beams you want" [level=3]` with no h2 before it, so the outline skips from h1 to h3 until "Cutting plan" (h2, `:197`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

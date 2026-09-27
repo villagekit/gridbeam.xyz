@@ -1,6 +1,6 @@
 ---
 title: "Unit toggle labels: Grid units and Millimeters to gu and mm"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:436-438,456-458` two `Text fontSize="sm" variant="secondary" aria-hidden`: "gu", "mm". The switch's accessible name "Display units as millimeters or grid units" is identical on both sides.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

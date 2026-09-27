@@ -1,6 +1,6 @@
 ---
 title: "Delete button name: Delete to Remove row N"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:321` `title={`Remove row ${index + 1}`}` (`current.aria.yaml`: `button "Remove row 1"`, `button "Remove row 2"`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Read-only tables: greyed steppers to no steppers"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:380-385,412-417` `{!disabled && <NumberInput.Control>...}`: no stepper buttons at all in the read-only tables. From the code; the exercised default plan produced no infeasible or unused rows on either side.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

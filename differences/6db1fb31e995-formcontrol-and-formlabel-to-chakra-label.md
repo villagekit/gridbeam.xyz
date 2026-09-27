@@ -1,6 +1,6 @@
 ---
 title: FormControl and FormLabel to chakra.label
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: changed
@@ -16,6 +16,8 @@ kind: changed
 ## Verdict
 
 rule: upgrade (Chakra v3 has no FormControl/FormLabel; the label element with htmlFor keeps the legacy association)
+
+plan 9c6e9dd981bd
 
 ## Log
 

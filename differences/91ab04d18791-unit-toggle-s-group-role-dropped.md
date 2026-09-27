@@ -1,6 +1,6 @@
 ---
 title: Unit toggle's group role dropped
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:431` a plain `HStack gap="2"`: no group around the switch. The top-up control's is [[623947dd6b3c]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

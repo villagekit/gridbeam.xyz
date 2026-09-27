@@ -1,6 +1,6 @@
 ---
 title: "Add-row cell colSpan: 4 to 3"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:334` `<Table.Cell colSpan={3}>`, matching the three headers (`:293-297`). A legacy defect corrected; no rule covers the correction, the operator may sanction it under rule 5.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

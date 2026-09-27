@@ -1,6 +1,6 @@
 ---
 title: Beam tables wrapped in white cards
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:273-282` `<VStack as="section" aria-label={title} gap="3" flex="1" p="4" bg="white" borderRadius="xl" boxShadow="sm">` (`audit/tools__cutting-planner/1280/current.png`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

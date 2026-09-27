@@ -1,6 +1,6 @@
 ---
 title: "Add and delete glyphs: outlined squares to a bare cross and bar"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:497-514` `MinusIcon` (a 10x2 bar) and `PlusIcon` (a cross), no outline (`audit/tools__cutting-planner/1280/current.png`). The code is [[423cdd0c2533]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

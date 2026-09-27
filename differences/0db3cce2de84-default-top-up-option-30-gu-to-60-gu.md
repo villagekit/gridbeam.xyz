@@ -1,6 +1,6 @@
 ---
 title: "Default top-up option: 30 gu to 60 gu"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/url-codec.ts:41` `const DEFAULT_UNLIMITED: UnlimitedStock = 60`; live, "2400 mm (60 gu)" is selected on load (`current.aria.yaml`), so the same default rows plan onto 2400 mm beams. Carried forward from note [[526d5330ef4e]] ("its default rows and stock": the rows are identical, the top-up is not).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

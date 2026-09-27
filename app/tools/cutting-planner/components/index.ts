@@ -2,4 +2,4 @@
 export * from './BeamsTable'
 export * from './CuttingPlan'
 export * from './DisplayUnitToggle'
-export * from './CuttingPlannerResult'
+export * from './CuttingPlanner'

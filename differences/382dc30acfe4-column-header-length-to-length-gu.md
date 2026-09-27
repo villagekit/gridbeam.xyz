@@ -1,6 +1,6 @@
 ---
 title: "Column header: Length to Length (gu)"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:293` `<Table.ColumnHeader w="45%">Length (gu)</Table.ColumnHeader>`. "Quantity" and the hidden "Delete" header are identical on both sides.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

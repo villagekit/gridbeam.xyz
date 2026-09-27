@@ -1,6 +1,6 @@
 ---
 title: BeamRow split into BeamSizeInput and BeamCountInput
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:363` `function BeamSizeInput` and `:397` `function BeamCountInput`, one per cell, each rounding `valueAsNumber` (`:376-378`, `:408-410`); the row is inlined in `BeamsTable` (`:301-331`). No blur reset.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

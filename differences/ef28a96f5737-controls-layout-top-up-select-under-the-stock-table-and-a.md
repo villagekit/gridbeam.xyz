@@ -1,6 +1,6 @@
 ---
 title: "Controls layout: top-up select under the stock table and a centered Plan it row to one shared bottom row"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:125` `Stack ... gap="6"` of the two tables alone; `:142-183` one wrapping `Stack` row with the select, the unit toggle and the Plan button (`audit/tools__cutting-planner/1280/current.png`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

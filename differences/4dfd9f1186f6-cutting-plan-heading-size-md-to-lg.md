@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan heading: size md to lg"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:196-200` `<Center><Heading as="h2" size="lg">Cutting plan</Heading></Center>`.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

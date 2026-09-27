@@ -1,6 +1,6 @@
 ---
 title: "Length bounds: 2 to 60 clamped on blur, to 1 with no ceiling"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/url-codec.ts:27-29` `MIN_SIZE = 1`, `MIN_COUNT = 1`, `MAX_COUNT = 50`, no size ceiling (`CuttingPlanner.tsx:369` `min={MIN_SIZE}` only): live, 80 stays 80, 0 becomes 1. The comment at `url-codec.ts:16-26` gives the author's reasons (`sign-board` wants an 80 gu cut, `utility-workbench` emits 1 gu); the operator has not judged them.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

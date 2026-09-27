@@ -1,6 +1,6 @@
 ---
 title: "Table captions: base size to sm"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:286-288` `<Text variant="tertiary" fontSize="sm" textAlign="center">{caption}</Text>` (`audit/tools__cutting-planner/1280/current.png`). The wording is [[7edc3d5964c1]] and [[9e11cd13f102]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

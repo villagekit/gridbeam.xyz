@@ -1,6 +1,6 @@
 ---
 title: "Cleared length field on blur: reset to 30 to keep the last value"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:376-378,408-410` `onValueChange` ignores a non-finite value, so the state keeps the last valid number: live, clearing and blurring shows the previous value.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

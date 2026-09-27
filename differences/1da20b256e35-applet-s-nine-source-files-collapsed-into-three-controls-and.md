@@ -1,6 +1,6 @@
 ---
 title: Applet's nine source files collapsed into three, Controls and Result inlined
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx` (518 lines) holds `CuttingPlanner` `:68`, `BeamsTable` `:257`, `BeamSizeInput` `:363`, `BeamCountInput` `:397`, `DisplayUnitToggle` `:428`, `ResultSummary` `:468`, `MinusIcon` `:497`, `PlusIcon` `:506` and `plural` `:516`; the controls and the result are inlined in `CuttingPlanner` (`:105-247`) with no `CuttingPlannerControls`, `CuttingPlannerResult` or `CuttingPlan` component. `algorithm.ts` holds the types (`:8-36`) and the algorithm together. Its header (`algorithm.ts:3`) cites `packages/applet-cutting-planner/src/lib.ts`, a path that does not exist at fce357d (the sources are `shared.ts` and `algorithms/first-fit-decreasing.ts`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

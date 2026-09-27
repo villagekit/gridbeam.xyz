@@ -1,6 +1,6 @@
 ---
 title: Unit toggle moved from the result to the controls, visible before any plan
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:173` `<DisplayUnitToggle value={displayUnit} onChange={setDisplayUnit} />` in the controls row beside the top-up select and the Plan button, shown on load (`audit/tools__cutting-planner/1280/current.png`); `:76` the state lives in `CuttingPlanner` and is encoded in the share link (`?d=`).
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log

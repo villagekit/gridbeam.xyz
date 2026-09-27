@@ -1,6 +1,6 @@
 ---
 title: "Cut beam drawing text: header lines, segment labels and aria-label"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ The engine's `CutGridBeamSvg` (`@villagekit/part-gridbeam`, sibling `../gridkit`
 `app/_components/cutting-plan/CutBeamSvg.tsx:41-47` a header "{size} stock beam" and "cuts: {cuts joined ' + '}{ + remainder waste}" (live: "60 gu stock beam", "cuts: 15 gu + 15 gu + 15 gu + 15 gu"); `:91-100` each segment labelled with its own length and unit ("15 gu", "40 gu"); `:33` `aria-label` "{size} {unit} stock beam, cuts: {cuts joined ', '}, remainder {remainder}" (live: "60 gu stock beam, cuts: 15 gu, 15 gu, 15 gu, 15 gu, remainder 0 gu"); `:57` a static `<title>Cutting plan visualisation</title>` on a `role="presentation"` svg. All of it goes with the drawing swap [[7f2556a9ec9d]].
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

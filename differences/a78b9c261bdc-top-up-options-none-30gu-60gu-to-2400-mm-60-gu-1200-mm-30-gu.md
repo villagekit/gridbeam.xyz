@@ -1,6 +1,6 @@
 ---
 title: "Top-up options: None, 30gu, 60gu to 2400 mm (60 gu), 1200 mm (30 gu), None — use only stock"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:165-167` `<option value="60">2400 mm (60 gu)</option>`, `<option value="30">1200 mm (30 gu)</option>`, `<option value="false">None — use only stock</option>`, reversed. Which option is selected by default is an interaction item.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
 

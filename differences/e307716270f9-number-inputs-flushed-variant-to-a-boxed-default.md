@@ -1,6 +1,6 @@
 ---
 title: "Number inputs: flushed variant to a boxed default"
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/tools/cutting-planner/CuttingPlanner.tsx:366-368,400-402` `<NumberInput.Root size="sm" ...>` with no `variant`, the wrapper's white background (`@villagekit/ui@1.2.0 src/components/NumberInput.tsx:13`): a bordered box around every value (`audit/tools__cutting-planner/1280/current.png`). Chakra v3's `NumberInput` still has a `flushed` variant, so the change is not upgrade-forced.
 
 ## Verdict
+
+plan 9c6e9dd981bd
 
 ## Log
