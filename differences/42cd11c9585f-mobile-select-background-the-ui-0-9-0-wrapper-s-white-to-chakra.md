@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-27: Filed by the catalog re-port (plan 8417428fd88a) from its probe at 375; not judged. A gap in @villagekit/ui, so a fix is a slice in ../ui beside the shell record (the Select wrapper's white background, or the native select recipe's), parked upstream until the publish; the same field on /tools/cutting-planner.
+
+- 2026-09-27: Handed to the ui slice [[ad2f5e52f9d8]], minted beside the shell record at the designs index record's finish (plan [[f901cf9f724d]], decision 40abdb2f222a): the native select recipe's outline field bg white in ../ui, the 0.9.0 wrapper's background, blocking the bump plan [[99f2fe62c62f]]. The state stays open until the slice moves it to upstream with the sibling commit. One correction to the Current, read at the finish: the cutting planner's select (app/tools/cutting-planner/CuttingPlanner.tsx:158-170) writes bg="white" itself as a prop on its Select.Field, current code with no legacy counterpart (legacy's pages/tools/cutting-planner.tsx renders no Select), so it reads white today and only the catalog's two mobile selects are transparent.

@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-27: Filed by the catalog re-port (plan 8417428fd88a) from its probe at 1280; not judged. The code is legacy's line for line and the library change is the sanctioned 1504573f72ba, so rule 4 (upgrade-forced) may cover it; whether legacy's live behavior (no blink) or its source's intent (the replayed fade) is the baseline is the operator's call.
+
+- 2026-09-27: On the designs index verdicts plan [[549ec777422c]] by the designs index record's finish (plan [[f901cf9f724d]], decision 40abdb2f222a): the operator's call, sanctioned under rule 4 with legacy's source as the baseline or regression with a slice that keeps the message mounted. The state stays open until the operator judges it.

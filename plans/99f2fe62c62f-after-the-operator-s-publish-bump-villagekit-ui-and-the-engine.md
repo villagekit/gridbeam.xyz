@@ -34,6 +34,8 @@ blocked_by:
   - target: 179862cdff12
     note: a sibling fix the publish must carry
   - d0d7111d6b45
+  - target: ad2f5e52f9d8
+    note: a sibling fix the publish must carry
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -131,3 +133,5 @@ None.
 - 2026-09-27: From the catalog re-port (plan 8417428fd88a): after the publish that carries ../ui 7ee04a9, swap the one direct Chakra import, app/_components/catalogue/SearchBar.tsx:4 `import { InputGroup } from '@chakra-ui/react'`, for `InputGroup` in the `@villagekit/ui` import on the line below it, and move [[983c471842e1]] to fixed; the search bar's Done-when readings (the end slot 48px at padding 0, the clear button 4px from the edge, the icon 18px, the input's padding-end 16px) should hold unchanged, the symbol being the same module.
 
 - 2026-09-27: From the card re-port (plan e22f84fa6e1a): after the publish that carries ../ui 1c3e3e8, swap app/_components/catalogue/Item.tsx:56 and :73, the two `base: ['100%', 2]` lines of the card sizes object, back to legacy's `base: ['full', 2]` (item.tsx:51-54,66-69 at fce357d), drop the one-line comment above the first, and move [[fd48a49f469f]] to fixed; the check is grep -rn "base: ['100%'" app/_components/catalogue printing nothing. No attribute changes while the card image is unoptimized ([[2a0840f8087b]], the operator's verdict), so the rendered check stays the grep.
+
+- 2026-09-27: From the designs index record's finish (plan [[f901cf9f724d]]): the ui Select slice [[ad2f5e52f9d8]] blocks this plan (the edge written at its mint). The bump makes no site edit for it: app/_components/catalogue/Selector.tsx:47-60 is legacy's selector line for line. The bump repeats the slice's probe on the published package, on /designs at 375: both role="menuitem" selects at background-color rgb(255, 255, 255), the live legacy site's reading (audit/designs/probe.txt:26); the cutting planner's select white by its own prop, unmoved; then kipu fix on [[42cd11c9585f]].
