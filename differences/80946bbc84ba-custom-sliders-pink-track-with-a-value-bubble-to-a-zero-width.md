@@ -1,6 +1,6 @@
 ---
 title: "Custom sliders: pink track with a value bubble to a zero-width root with a bare thumb"
-status: regression
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Template: every design with number parameters. Evidence taken on `/designs/5-12-13-triangle-desk`.
+
+- 2026-09-27: Fixed in ../ui 986ae02 (plan eba62a497d77): sliderRecipe writes root width 100% under variants.orientation.horizontal and height 100% under vertical, Chakra v2's container, and the range's primary.300 under variants.variant.outline, since v3's outline variant covered the base pink with colorPalette.solid (the range read rgb(23, 25, 35) before, a second cause the item's title had not named). On the desk under Custom each root fills its 408px field with the pink range and the value in the thumb; the field's 8px over legacy's 400 is the columns' gap, 942af416b2c7. Waits on the publish; the bump plan 99f2fe62c62f moves it to fixed.
