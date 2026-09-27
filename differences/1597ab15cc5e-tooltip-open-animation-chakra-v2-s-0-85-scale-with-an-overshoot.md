@@ -1,6 +1,6 @@
 ---
 title: "Tooltip open animation: Chakra v2's 0.85 scale with an overshoot over 0.2s to Chakra v3's 0.95 scale and fade over 150ms"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: interaction
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's tooltip recipe animates the content with `animationStyle: scale-fade
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 994a9e4 (plan 9180507a8eea): the content's open and closed states carry the package's tooltip-scale-in and tooltip-scale-out keyframes (0.85 to 1 and back, registered in the package config) over 0.2s, the enter scale on cubic-bezier(0.175, 0.885, 0.4, 1.1) and the exit on ease-in-out, with Chakra v3's fade-in over 0.2s and fade-out over 0.15s, both linear, and the transform origin at the edge of the box facing the trigger, Chakra v2's popper map, where zag's names the arrow tip. Two readings correct this item's Legacy paragraph, which describes v2's variants as written: the legacy site runs framer-motion 7.10.3 (../node-modules/pnpm-lock.yaml, apps/gridkit/package.json), whose animation/index.mjs sets no default ease and reads only the ease key, not the easings key the variants write, and accelerates opacity alone, so the fades ran on the Web Animations default, linear, and the exit scale on the keyframe animator's easeInOut (legacy-popmotion/keyframes.mjs); the live legacy page confirms it (the scratchpad's anim-legacy.json: getAnimations() reads one WAAPI opacity animation of 200ms, easing linear, on open and one of 150ms, linear, on close, the sampled opacity climbing in even steps). The fix follows the live behavior, not the item's ease-out and ease-in-out. And zag's presence hides the content when its first animation ends (@zag-js/presence@1.40.0 dist/presence.machine.js:165-168), the 150ms fade, where framer-motion's AnimatePresence kept the element through the scale's last 50ms: those 50ms are at opacity 0 on both sides (legacy's element gone at 248ms, current's hidden at 187ms), so nothing visible differs and no item is filed. Read on pnpm dev under the ui override with the scratchpad's anim-probe.mjs on /designs/bed-frame at 1280 (anim-current.json against anim-legacy.json): the scale 0.85 rising through 0.963, 0.99, 1.0006, 1.003 to none by 255ms with the opacity 0, 0.25, 0.417, 0.583, 0.75, 0.916, 1, the settled origin the box's bottom center on both sides; on close the scale 0.992, 0.965, 0.925 with the opacity 0.78, 0.556, 0.334. Waits on the operator's publish through the bump plan 99f2fe62c62f.

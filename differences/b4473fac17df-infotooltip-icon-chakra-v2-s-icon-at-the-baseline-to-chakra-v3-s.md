@@ -1,6 +1,6 @@
 ---
 title: "InfoTooltip icon: Chakra v2's Icon at the baseline to Chakra v3's Icon at vertical-align middle, 3px lower against the dimensions text"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's `Icon` recipe writes `verticalAlign: "middle"` (`node_modules/@chakr
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 994a9e4 (plan 9180507a8eea): the InfoTooltip passes verticalAlign baseline on the Icon, a style prop resolving after Chakra v3's icon recipe (the as form would not help, v3's Icon applying its recipe either way). Read on pnpm dev under the ui override with the scratchpad's icon-pos-probe.mjs on /designs/bed-frame at 1280: the svg at y 393, its Box at 393 and 16 by 27, the Assembled Dimensions text at 393, vertical-align baseline, legacy's readings; the ui/InfoTooltip story reads the same 27px Box. Waits on the operator's publish through the bump plan 99f2fe62c62f.

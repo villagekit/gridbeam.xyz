@@ -1,6 +1,6 @@
 ---
 title: "Tooltip distance from its trigger: Chakra v2's gutter 8 to zag's gutter plus half the arrow, 13"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ zag's popper offsets the tooltip by `gutter` plus half the arrow's height (`node
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui 994a9e4 (plan 9180507a8eea): the wrapper passes zag a gutter of 3 when the arrow shows (8 without one, zag adding half the arrow element only when there is one) and writes --arrow-offset one pixel further in, inline as zag writes it. Read on pnpm dev under the ui override with the scratchpad's gap-probe.mjs on /designs/bed-frame at 1280: gapBoxToContent 8, the arrow bottom -4px, its 10px box 4px out of the content and the rotated tip 6.07px out, legacy's readings; the Parity review's own slider probe on /designs/makers-desk read the thumb's tooltip 8px out with the arrow 4px out on both sides. Waits on the operator's publish through the bump plan 99f2fe62c62f.
