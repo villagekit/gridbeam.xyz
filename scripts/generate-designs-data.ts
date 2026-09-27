@@ -3,19 +3,32 @@
 //
 // Reads every product under `./products/<id>/` and emits a single TypeScript
 // module (`app/_lib/designs-data.generated.ts`) with the parsed TOML meta + the
-// raw text of each design's exported `.ts` file inlined.
+// design's exported code, compiled from TypeScript to JavaScript, inlined.
 //
 // We do this because the runtime target (Cloudflare Workers via OpenNext) does
 // not bundle arbitrary repo files alongside the worker — only JS that the
 // worker imports gets included. Reading `./products/` with `node:fs` at request
 // time blows up with `no such file or directory, readdir '/bundle/products'`.
 // Generating a JS module that imports the data inline sidesteps that entirely.
+//
+// The compile block is ported from
+// https://github.com/villagekit/node-modules/blob/fce357d/packages/designs/src/index.ts
+// (inside legacy's `getDesign`): `@swc/wasm`'s `transform` with the same options, so the page
+// receives JavaScript with an inline source map and an `exports` ending `.js`,
+// and the engine's renderer never loads `@swc/wasm-web` in the browser to
+// compile the TypeScript on each visit. It runs here and not in `getDesign`
+// because that function renders on the Worker per request under OpenNext's
+// default `dummy` incremental cache, where a Node binding that loads a 20 MB
+// wasm file from disk cannot go; this script is the build step that already
+// writes the module. The output is deterministic for the pinned `@swc/wasm`
+// version, which the drift check (`just generated`) relies on.
 
 import { existsSync } from 'node:fs'
 import { readFile, readdir, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { transform } from '@swc/wasm'
 import type { ProductMeta } from '@villagekit/product'
 import { parse as parseToml } from 'smol-toml'
 
@@ -41,7 +54,29 @@ async function main(): Promise<void> {
       const parsed = parseToml(tomlContents)
       const meta = parsed.product as ProductMeta
       const codePath = join(DESIGNS_DIR, id, meta.exports)
-      const code = await readFile(codePath, 'utf8')
+      let code = await readFile(codePath, 'utf8')
+
+      // if TypeScript code, compile to JavaScript
+      if (meta.exports.endsWith('.ts')) {
+        meta.exports = `${meta.exports.substring(0, meta.exports.length - 3)}.js`
+        code = (
+          await transform(code, {
+            filename: meta.exports,
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+              },
+            },
+            module: {
+              noInterop: true,
+              strict: true,
+              type: 'es6',
+            },
+            sourceMaps: 'inline',
+          })
+        ).code
+      }
+
       return { id, meta, code }
     }),
   )

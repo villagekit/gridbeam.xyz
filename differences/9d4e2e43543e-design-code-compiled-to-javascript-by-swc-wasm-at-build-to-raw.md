@@ -1,6 +1,6 @@
 ---
 title: "Design code: compiled to JavaScript by @swc/wasm at build to raw TypeScript compiled in the browser"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `scripts/generate-designs-data.mjs:48-56` embeds the `.ts` text verbatim (`designs-data.generated.ts`, `exports: './bed-frame.ts'` unchanged); compilation happens on every visit in `@villagekit/product-kit@0.10.0 src/renders/typescript.tsx:24-70` (`@swc/wasm-web`, byte-identical to v0.9.0), a path the legacy page never took.
 
 ## Verdict
+
+plan 9d1770a4cd9e. The design's TypeScript is compiled to JavaScript at build by `@swc/wasm`'s `transform` with legacy's options verbatim, in `scripts/generate-designs-data.ts` and not in `getDesign` as legacy's, since this site's `getDesign` runs on the Worker per request under OpenNext's default `dummy` incremental cache (the placement is noted on abb539b3555e, the operator's). The generated module carries `exports` ending `.js` and the compiled code with legacy's inline source map for all 37 designs; on `pnpm dev` the three sampled routes load with no request for `@swc/wasm-web`'s wasm and no compile error, and the `0 x 0 x 0mm` placeholder on `/designs/bed-frame` now ends about 1.0 s after commit (three fresh loads on a warm dev server: 0.97 s, 0.99 s, 0.86 s) where the M1 probe read 8.8 s and legacy 1.7 s.
 
 ## Log
 

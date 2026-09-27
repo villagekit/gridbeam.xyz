@@ -42,13 +42,29 @@ describe('getDesignIndexes', () => {
   })
 })
 
+describe('the generated module', () => {
+  test('names every design export as a .js file, the compiled code and not its TypeScript source', () => {
+    for (const [key, entry] of Object.entries(designsData)) {
+      expect(entry.meta.exports, key).toMatch(/\.js$/)
+    }
+  })
+
+  test('ends every design code with the inline source map line the swc compile writes', () => {
+    for (const [key, entry] of Object.entries(designsData)) {
+      expect(entry.code, key).toMatch(
+        /\n\/\/# sourceMappingURL=data:application\/json;base64,[A-Za-z0-9+/=]+$/,
+      )
+    }
+  })
+})
+
 describe('getDesign', () => {
   test('returns the code and the meta of a design and nothing else', async () => {
     const design = await getDesign('bed-frame')
 
     expect(Object.keys(design).sort()).toEqual(['code', 'meta'])
     expect(design.meta.label).toBe('Bed Frame')
-    expect(design.code).toContain('export const parts')
+    expect(design.code).toContain('export var parts')
   })
 
   test('throws on an unknown id', async () => {

@@ -36,7 +36,8 @@ export async function getDesign(designId: string): Promise<Design> {
   const designMeta = design.meta as ProductMeta
   const designCode = design.code
 
-  // the compile of TypeScript code to JavaScript is the design pages record's (9d4e2e43543e)
+  // legacy compiled the TypeScript code to JavaScript here; this site compiles it
+  // in scripts/generate-designs-data.ts, since this function runs on the Worker
 
   return { code: designCode, meta: designMeta }
 }
