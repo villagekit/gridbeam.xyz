@@ -1,6 +1,6 @@
 ---
 title: "Card image padding: paddingY 2 to 0.5rem on all sides"
-status: regression
+status: fixed
 route: /designs
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/ItemCard.tsx:34-37` `style={{ objectFit: 'contain', opacity, padding: '0.5rem' }}`.
 
 ## Verdict
+
+plan e22f84fa6e1a
 
 ## Log

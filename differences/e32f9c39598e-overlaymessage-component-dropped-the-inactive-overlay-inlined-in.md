@@ -1,6 +1,6 @@
 ---
 title: OverlayMessage component dropped, the inactive overlay inlined in ItemCard
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/catalogue/ItemCard.tsx:52-67` a plain `Box` keyed on the per-item `active`/`inactiveMessage` (`types.ts:10-11`). Dead on this route on both sides: every design is active.
 
 ## Verdict
+
+plan e22f84fa6e1a
 
 ## Log

@@ -8,7 +8,7 @@ import { FaTimes } from 'react-icons/fa'
 
 import { useCatalogueContext } from '@/app/_lib/context/catalogue'
 
-import { ItemCard } from './ItemCard'
+import { Item } from './Item'
 
 const itemVariants: Variants = {
   hidden: {
@@ -27,7 +27,7 @@ const MotionBox = motion.create(Box)
 
 /** The grid of cards for the context's items, the empty state when there are none, and the list message after them. */
 export function List() {
-  const { items, itemLabel, listMessage, listPath, onReset } = useCatalogueContext()
+  const { items, itemLabel, listMessage, onReset } = useCatalogueContext()
 
   const [hideComingSoon, setHideComingSoon] = useState(false)
 
@@ -80,8 +80,7 @@ export function List() {
                 animate="visible"
                 exit="hidden"
               >
-                {/* the card until the card re-port (e22f84fa6e1a) writes legacy's Item */}
-                <ItemCard item={item} basePath={listPath} />
+                <Item item={item} />
               </MotionBox>
             )
           })}

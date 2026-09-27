@@ -1,6 +1,6 @@
 ---
 title: Card fallback No preview added
-status: regression
+status: fixed
 route: /designs
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/_components/catalogue/ItemCard.tsx:39-50` `No preview` in a gray box when `image` is null; unreachable today, every design has an image in `app/_lib/design-images.ts`.
 
 ## Verdict
+
+plan e22f84fa6e1a
 
 ## Log
 

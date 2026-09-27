@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-27: Filed open at the designs index record's split (plan f901cf9f724d), the twin of [[a704be5b8765]] on /, put to the operator on the verdicts plan [[549ec777422c]] to be judged with it; the card re-port [[e22f84fa6e1a]] ships unoptimized by default and notes the line.
+
+- 2026-09-27: The card re-port (plan e22f84fa6e1a) ships unoptimized by default on both Image branches of legacy item.tsx, app/_components/catalogue/Item.tsx:52 and :70, the first under a one-line comment naming this item; the served img carries src /_next/static/media/<design>.<hash>.png, no srcset and no sizes (audit/designs/card-probe.txt, 37 of 37 answering 200). The state stays open for the operator. If the verdict is a regression, the fix removes the two lines and the loader question is the ui or the loaderFile, as the Current says.

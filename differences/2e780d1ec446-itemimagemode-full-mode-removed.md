@@ -1,6 +1,6 @@
 ---
 title: itemImageMode full mode removed
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 `app/_components/catalogue/ItemCard.tsx:29-68` always the hover-card branch; no prop, no `full` styling.
 
 ## Verdict
+
+plan e22f84fa6e1a
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Card image: ui-media Image with a sizes object to next/image unoptimized with a static sizes string"
-status: regression
+status: fixed
 route: /designs
 axis: code
 kind: changed
@@ -15,6 +15,10 @@ kind: changed
 
 ## Verdict
 
+plan e22f84fa6e1a
+
 ## Log
 
 - 2026-09-12: The home carousel's instance of the same swap is [[1501ee97ed24]].
+
+- 2026-09-27: Closed by the card re-port (plan e22f84fa6e1a): the ui Image of 1.2.0 again with the design image object spread and legacy's sizes object (base 100% for full, [[fd48a49f469f]]) at app/_components/catalogue/Item.tsx:50-66 and :69-86. Its unoptimized half lives on [[2a0840f8087b]], the operator's item on the verdicts plan [[549ec777422c]]: the prop stays on both Image branches by default, so Next writes no srcset and no sizes attribute until that verdict.

@@ -1,6 +1,6 @@
 ---
 title: "Item card: heading and overlay link as siblings to the link nested inside the heading"
-status: regression
+status: fixed
 route: /designs
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/_components/catalogue/ItemCard.tsx:70-85` `<Heading id=...><LinkOverlay ... aria-labelledby=...>{name}</LinkOverlay></Heading>` (`audit/designs/dom/current.aria.yaml`: `heading "Bed Frame" [level=2]:` > `link "Bed Frame"`).
 
 ## Verdict
+
+plan e22f84fa6e1a
 
 ## Log
