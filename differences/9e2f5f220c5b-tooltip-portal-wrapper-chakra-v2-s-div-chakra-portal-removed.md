@@ -16,3 +16,5 @@ Chakra v3's `Portal` is Ark's, which `createPortal`s each child straight into th
 ## Verdict
 
 ## Log
+
+- 2026-09-28: For the operator, on the design pages' verdicts plan [[8512c5e9cc98]], where the sibling slice that filed this item put it by note; confirmed at the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a). Not judged; the state stays open.

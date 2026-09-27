@@ -17,3 +17,5 @@ supersedes: 0efe45924dbe
 ## Verdict
 
 ## Log
+
+- 2026-09-28: For the operator, on the shell's verdicts plan [[77cf83a1285a]], which names this item by note; recorded on the item at the design pages record's finish (plan [[0bc88eaf5493]]), the item having carried no note naming where it went. Not judged; the state is unchanged.

@@ -16,3 +16,5 @@ On `pnpm dev` at 1280 with the Parts tab open, the same `text` elements carry th
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Handed to the ../gridkit slice [[98a6d91413ef]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a, the split's call 10): @villagekit/part's TextLabelX and TextLabelY write the 3xl size as a declaration the preflight does not beat, one fix for the Parts tab's summaries and the Plan tab's rulers, blocking the bump plan [[99f2fe62c62f]]. The state stays open until the slice moves it to upstream with the sibling commit; no verdict is written.

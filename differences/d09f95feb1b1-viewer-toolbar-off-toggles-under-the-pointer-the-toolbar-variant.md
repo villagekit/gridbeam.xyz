@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-27: Filed by the sandbox slice (plan [[1e2fbba70884]]) from its Parity review; pre-existing at 0.10.0 and made visible by the toolbar fix. Regression by default (decision 2032533f), not sanctioned by the agent. A residual in an engine component: the design pages record [[0bc88eaf5493]] carries a note handing it to a ../gridkit slice at its finish, after the ui publish that carries the toolbar variable.
+
+- 2026-09-28: Handed to the ../gridkit slice [[b574a94092bf]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a, the split's call 10): the two toggles set the toolbar variant's --toolbar-color variable through css in place of color, the NavHeader's form at ../ui d736bfe, seen under the sandbox tarball and the file:../ui overrides together, blocking the bump plan [[99f2fe62c62f]]. The state stays regression until the slice moves it to upstream with the sibling commit.

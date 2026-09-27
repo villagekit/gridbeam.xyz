@@ -1,6 +1,6 @@
 ---
 title: "Development console on the Plan tab: React's missing-key warning from the engine's CutGridBeamSvg"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: code
 kind: added
@@ -16,3 +16,5 @@ On `pnpm dev` at 1280, opening the Plan tab logs `Each child in a list should ha
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Moved to upstream at the design pages record's finish (plan [[0bc88eaf5493]], decision 28c1a536): the fix is in ../gridkit already, the operator's own commit 915085f (parts/gridbeam/src/svg/cut-grid-beam-svg.tsx, the mapped BeamSvg given key={index}, the position in the beam being its identity), which predates M2 and is unpublished; the published @villagekit/part-gridbeam@0.10.0 maps the cuts without a key, the warning's one source. The bump plan [[99f2fe62c62f]] carries the applet components slice's check: after the engine bump the development console on /designs/bed-frame with the Plan tab open prints no missing-key line from CutGridBeamSvg; then it moves this to fixed. The publish must carry @villagekit/part-gridbeam.

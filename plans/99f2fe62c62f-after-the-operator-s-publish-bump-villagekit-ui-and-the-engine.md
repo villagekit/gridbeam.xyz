@@ -50,6 +50,12 @@ blocked_by:
   - target: 9180507a8eea
     note: a sibling fix the publish must carry
   - 402430831b29
+  - target: 59fa9072c63f
+    note: a sibling fix the publish must carry
+  - target: 98a6d91413ef
+    note: a sibling fix the publish must carry
+  - target: b574a94092bf
+    note: a sibling fix the publish must carry
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -175,3 +181,7 @@ None.
 - 2026-09-28: From the applet components slice (plan 55d567074c71): after the engine bump, read the development console on /designs/bed-frame with the Plan tab open and on /tools/cutting-planner with a plan computed for React's missing-key warning from CutGridBeamSvg (Each child in a list should have a unique key prop, in the render of svg); the sibling's 915085f keys the segments, so the bumped package prints none. The same bump lets the planner's re-port take the ./svg subpath (d4b3e7e) if it wants it; the site imports the root export, which 0.10.0 already has.
 
 - 2026-09-28: The copy slice f64fd2900fb3 shipped: app/_components/design/DesignCuttingPlan.tsx:53 writes `target="_blank" rel="noopener"` by hand on the grid unit anchor, since the published @villagekit/ui@1.2.0 Link has no isExternal. Once the bump resolves ui commit 6603102 (2bd0169a6dda), swap that line back to `isExternal` and drop the two hand-written attributes.
+
+- 2026-09-28: From the design pages record's finish (plan [[0bc88eaf5493]]): this plan is blocked_by three more sibling slices, [[59fa9072c63f]] (@villagekit/ui: the field, input, number input and table recipes, the NumberInput wrapper's triangle steppers, the Section's default width), [[98a6d91413ef]] (@villagekit/part in ../gridkit: the SVG labels' size) and [[b574a94092bf]] (@villagekit/sandbox in ../gridkit: the off toggles' --toolbar-color), so @villagekit/part joins the engine packages the publish carries; each writes its own note here when it ships. Three items moved to upstream at the finish on fixes already committed in the siblings, for this plan to read on the published packages: [[25d76ce2b2ff]] (ui 540e9c3: the preset select on /designs/bed-frame and the catalog's mobile selects on /designs at font-size 16px, the live site's reading); [[c2054c78d346]] (gridkit 915085f, the operator's own commit, so the publish must carry @villagekit/part-gridbeam: the development console on /designs/bed-frame with the Plan tab open prints no missing-key line from CutGridBeamSvg, the applet slice's check above); [[92bb22f5456f]] (gridkit 15dc73a and ui 2e2d68c: the development console on /designs/bed-frame and /designs/5-12-13-triangle-desk holds no kebab-case line, the sandbox and HoverCardContainer slices' checks above extended to the design pages). Then kipu fix on each.
+
+- 2026-09-28: From the design pages record's finish (plan [[0bc88eaf5493]]): the copy slice's note above names app/_components/design/DesignCuttingPlan.tsx:53 for the swap back to isExternal; the page re-port (31df92d) deleted that file, and the hand-written `target="_blank" rel="noopener"` on the grid unit anchor is now app/designs/[id]/DesignPage.tsx:175.

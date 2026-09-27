@@ -16,3 +16,5 @@ zag's tabs machine removes the panel's `tabindex` whenever the selected panel ho
 ## Verdict
 
 ## Log
+
+- 2026-09-28: For the operator, on the design pages' verdicts plan [[8512c5e9cc98]] by the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a): whether zag's tabs machine dropping a panel with a focusable from the Tab sequence is an upgrade-forced deviation under rule 4 of 2032533f (WAI-ARIA's own pattern for a tab panel with focusable content), or a regression for a ../ui slice that writes tabIndex 0 on Tabs.Content as Chakra v2's useTabPanel did. Not judged here; the state stays open. The accessibility pass after M2 (note eeba2a65cee4) is where legacy's markup is bettered.

@@ -16,3 +16,5 @@ The same probe after the page re-port, the frame restored by `app/_components/ca
 ## Verdict
 
 ## Log
+
+- 2026-09-28: For the operator, on the design pages' verdicts plan [[8512c5e9cc98]] by the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a): the live behavior is Popper's reading of the frame as the thumb's clipping ancestor, and the current one is floating-ui's through zag reading the floating element's ancestors, the same library change the operator judges on the designs index's list message ([[105cb9410b89]] on [[549ec777422c]]); the live site being ground truth for interaction (bfa9a416), the question is whether rule 4 of 2032533f covers the positioning library's change, or a ../gridkit or ../ui slice sets the tooltip's positioning boundary to the frame so it flips as Popper did. Not judged here; the state stays open.

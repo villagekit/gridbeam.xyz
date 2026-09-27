@@ -16,3 +16,5 @@ Chakra v3's table recipe writes the `columnHeader` at `fontWeight: medium` in th
 ## Verdict
 
 ## Log
+
+- 2026-09-28: The recipe half is taken by the ui slice [[59fa9072c63f]], minted beside the shell record at the design pages record's finish (plan [[0bc88eaf5493]]): the ui tableRecipe writes v2's column header font (the heading family, bold, wider letter spacing, the 0.9.0 textTransform none) in ../ui, which reaches the planner's monolith table on the live route, so the slice reads it there under the override and moves this to upstream with the sibling commit if the header reads v2's font; the planner record [[396c9af0cbd1]] re-ports the page on top of it.

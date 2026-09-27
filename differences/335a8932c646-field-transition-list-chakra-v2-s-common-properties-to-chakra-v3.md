@@ -18,3 +18,5 @@ Chakra v3's `common` token is `background-color, border-color, color, fill, stro
 ## Log
 
 - 2026-09-27: Filed by the Parity review of the ui Select slice [[6bc0d3ba08dc]], which wrote v3's token over a literal copy of v2's list, the choice the link recipe made before it (the recipes slice [[45d6f5634a11]]). Not judged.
+
+- 2026-09-28: For the operator, on the shell's verdicts plan [[77cf83a1285a]] by the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a), which found it named by no plan: a code reading with no visible effect, v3's common token carrying translate; whether rule 4 of 2032533f covers it, or a ../ui slice writes v2's eight-property list as a literal where the recipes write the token (the native select's field, the link, and the input's field once the ui slice [[59fa9072c63f]] writes the transition). Not judged here; the state stays open.

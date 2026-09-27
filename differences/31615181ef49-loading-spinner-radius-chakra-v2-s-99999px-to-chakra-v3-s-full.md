@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-28: For the operator, on the design pages' verdicts plan [[8512c5e9cc98]] by the design pages record's finish (plan [[0bc88eaf5493]], decision 40abdb2f222a): a code reading with no visible effect, the twin of the spinner's div to span ([[a6f5528f74e3]]) on the same plan; whether rule 4 of 2032533f covers the full token, or a ../ui slice writes v2's literal on the spinner recipe. Not judged here; the state stays open.

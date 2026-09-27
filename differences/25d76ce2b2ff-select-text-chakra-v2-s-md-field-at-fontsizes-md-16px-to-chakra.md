@@ -1,6 +1,6 @@
 ---
 title: "Select text: Chakra v2's md field at fontSizes.md, 16px, to Chakra v3's native select md field at textStyle sm, 14px"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's native select recipe gives the md field `textStyle: "sm"` (`node_mod
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Moved to upstream at the design pages record's finish (plan [[0bc88eaf5493]], decision 28c1a536): the fix is in ../ui already, at commit 540e9c3 (the recipes and provider slice [[45d6f5634a11]]), whose nativeSelectRecipe writes the md size's field through inputSize with fontSize md and textStyle none (../ui/src/components/Select.tsx at 47c6ffb, selectSize and the md variant), replacing v3's textStyle sm key for key through the theme merge; the recipe is the site's theme system's, so every NativeSelect.Field under the Provider takes it, the engine's preset select included. Read under the file:../ui override by the ui Select slice [[6bc0d3ba08dc]]: on /designs at 375 both menuitem selects in 16px type, the live legacy site's reading (its Outcome and the note on [[42cd11c9585f]]); the preset select on /designs/bed-frame was not measured under the override, so the ui slice [[59fa9072c63f]] reads it at 16px in its probe and moves this to regression with a note if it reads otherwise. The bump plan [[99f2fe62c62f]] repeats the reading on the published package and moves this to fixed.
