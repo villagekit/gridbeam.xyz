@@ -1,6 +1,6 @@
 ---
 title: "Tools and resources page re-ported from legacy's tools-and-resources.tsx: the ui CardsLayout holding one LinkCard as a list item"
-status: todo
+status: done
 parent: a0b4d829f7a9
 derived_from: a0b4d829f7a9
 blocked_by:
@@ -35,3 +35,13 @@ None pure. The proof is the DOM extraction and the screenshot pairs against the 
 - `pnpm audit:pages --routes <the same file>` at 375, 768 and 1280, looked at: the centered title over one centered card, nothing else on the page; every remaining difference ledgered (the list above) and none unrecorded
 - [[26646ac53e88]] `fixed` and [[f502886a0c08]] `upstream` with its note, the notes on [[3f0cb2c1395a]] and [[8a3babf21c3c]] written, the bump plan's note written and its `blocked_by` edge to this slice in its frontmatter (from the mint); `kipu list --collection difference --filter route=/tools-and-resources --status regression` prints [[3f0cb2c1395a]] alone; checked before the commit
 - The dev server stopped by its pid (`ss -ltnp | grep :3000`); `timeout 900 just check` is green
+
+## Outcome
+
+Shipped as the plan wrote it: app/tools-and-resources/page.tsx is legacy's pages/tools-and-resources.tsx again on the published @villagekit/ui 1.2.0, the ported-from line first, then CardsLayout title=Tools and resources around one LinkCard as=li with legacy's props in legacy's order, linkComponent=NextLink; metadata carries the title alone. The three Sections, the two SimpleGrids, the CardEntry interface, the array, the .map and the conditional linkComponent are gone; the file is 24 lines. The four translations are the plan's, each with its sanction: getLayout to the root layout (1c05b1d0d3db), NextSeo to metadata (65c21e08b3f1), the Page type and the named export dropped for the app router's page.tsx, and icon={<FaCut />} for 1.2.0's icon?: ReactNode, the one residual of f502886a0c08, parked upstream for ../ui a4ef8ed with the bump's edit named in the note on 99f2fe62c62f (page.tsx:17 to icon={FaCut}, the import at :5 from the client module the bump files). The two-file shape was not taken, as the record's Log says. No deviation.
+
+Items: 26646ac53e88 fixed; f502886a0c08 upstream with its note; notes on 3f0cb2c1395a (stays regression for the ui slice 4a780ccf1f6a) and 8a3babf21c3c (the route consumes CardsLayout now, the first of three); the bump plan's note and its blocked_by edge from the mint; the record's Log line with the pairs' residuals. The route's regression left is 3f0cb2c1395a alone.
+
+Proofs: the verify-first greps all matched (CardsLayout exported at dist/index.d.ts:30, icon?: ReactNode at LinkCard.d.ts:9, no CardsLayout consumer in app, Chakra's Wrap one chakra.div, one LinkCard after the removals); every Done-when grep matched; on pnpm dev the DOM pair's text diff is the shell's lines alone and the current aria tree under main is the h1, one listitem holding the h3, the paragraph and the link to /tools/cutting-planner, no list, no img; the served title is Grid Beam: Tools and resources; the screenshot pairs at 375, 768 and 1280 (audit/tools-and-resources) looked at: the centered title over one centered card and nothing else, the residuals all ledgered on shell as upstream or the operator's; kipu verify --warnings-as-errors green; timeout 900 just check green with the dev server stopped.
+
+Reviews, one round each on fresh Opus sub-agents: Standards no hard violation, two judgment calls left as they are (upstream used for a residual that needs a site edit at the bump, the planner's precedent; the Log style is the store's); Spec no critical or major, two minor wording corrections taken in the notes on 8a3babf21c3c (the grep prints three lines) and 99f2fe62c62f (the call site spans :14-21, the icon prop is :17); Parity no finding on any of the four questions, a Playwright probe reading the card's rest, hover and focus states level with legacy's source apart from the palette and Heading items 72b776cb0d3f and 77cd1426ac65 (shell, upstream), added to the record's Log line on its suggestion. Findings dropped: none. This was the last open child of the record a0b4d829f7a9; finishing it is the next iteration's, after the ui slice 4a780ccf1f6a beside the shell record.
