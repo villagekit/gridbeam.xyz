@@ -1,6 +1,6 @@
 ---
 title: "Assembled Dimensions tooltip style: the sm font and 4 padding dropped with the InfoTooltip's Tooltip props"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: removed
@@ -16,3 +16,5 @@ kind: removed
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui as commit 394d47f (InfoTooltip and Tooltip take css, a caller's styles merged over the wrapper's own) and in ../gridkit as commit 50ee129 (products/kit/src/info.tsx passes css with fontSize sm and padding 4, v0.9.0's line) on their main branches (plan [[c09248be3862]]); not pushed, waiting on the operator's publish of @villagekit/ui and @villagekit/product-kit (decision 28c1a536), which the bump plan 99f2fe62c62f consumes. Read on the probe under the file:../ui and product-kit tarball overrides: the Width x Depth x Height tooltip at font-size 14px, line-height 21px, padding 16px, 320px by 124px, legacy's values.

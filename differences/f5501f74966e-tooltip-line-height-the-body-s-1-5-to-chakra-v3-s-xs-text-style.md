@@ -1,6 +1,6 @@
 ---
 title: "Tooltip line height: the body's 1.5 to Chakra v3's xs text style, 1rem"
-status: open
+status: upstream
 route: /designs/bed-frame
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's tooltip recipe sets `textStyle: 'xs'` (`node_modules/@chakra-ui/reac
 ## Verdict
 
 ## Log
+
+- 2026-09-27: Fixed in ../ui as commit 394d47f on its main (plan [[c09248be3862]]): the wrapper's content styles as one css array on Tooltip.Content with color whiteAlpha.900 and lineHeight inherit, the arrow at --arrow-size 10px, positioning.arrowPadding 8; not pushed, waiting on the operator's publish of @villagekit/ui (decision 28c1a536), which the bump plan 99f2fe62c62f consumes. Read on the probe under the file:../ui override: the desk's slider tooltip and the bed frame's dimensions tooltip at rgba(255, 255, 255, 0.92), 24px lines at 16px and 21px at 14px, a 10px arrow, legacy's values.
