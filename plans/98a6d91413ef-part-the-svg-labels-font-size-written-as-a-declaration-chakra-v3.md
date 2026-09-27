@@ -1,6 +1,6 @@
 ---
 title: "part: the SVG labels' font size written as a declaration Chakra v3's preflight does not beat in ../gridkit, for the design pages' Parts and Plan tabs"
-status: todo
+status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
 worker: fable
@@ -31,5 +31,31 @@ None pure; the proof is a Playwright probe of the `text` elements' computed `fon
 - The override reverted by path; `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped in `../gridkit` as commit 188536d on its `main` over `50ee129` (seven ahead of origin, not pushed; the push goes with the operator's publish, decision `28c1a536`), by pathspec: `core/part/src/base/grid/svg/label.tsx` alone, the sibling keeping no changelog in `core/part`. The package version stays 0.10.0. This repo's commit carries kipu writes only: no site code changes.
+
+What shipped, the form taken: `style={{ fontSize }}` on the `text` element of `TextLabelX` and `TextLabelY`, in place of the `fontSize` presentation attribute, the token read as before (`system.token('fontSizes.3xl')`, `1.875rem`). This is the plan's first form and the smaller change. It is also the sibling's own pattern: its SVG components already write inline `style` on SVG elements (`parts/fastener/src/svg.tsx:77`, `parts/gridbeam/src/svg/beam-svg.tsx:48,58`, `parts/gridbeam/src/svg/cut-marker.tsx:31`, `parts/gridpanel/src/svg/panel-svg.tsx:40,53`). The `chakra.text` with `css` form would add an Emotion class to every label and gain nothing. One comment above `TextLabelX`'s `return` names the constraint (`* { font: inherit }` beats a presentation attribute). `fill` and `textAnchor` stay attributes, since the preflight resets only font properties. Every consumer takes it: the fastener's caption through `TextLabelX` (`parts/fastener/src/svg.tsx:111`), the gridbeam and gridpanel summaries and cut drawings through `LabelX` and `LabelY`.
+
+Overrides. The CLAUDE.md gridkit row's tarball form, with nothing that differs from it: `pnpm --filter @villagekit/part build:pkg`, then `pnpm pack --pack-destination` this repo's root from `../gridkit/core/part` (`villagekit-part-0.10.0.tgz`, its `@villagekit/math` specifier rewritten to `0.10.0`), then `pnpm.overrides["@villagekit/part"] = "file:./villagekit-part-0.10.0.tgz"` and `pnpm install`, with no `transpilePackages`. Checked before probing: the linked copies of `@villagekit/part`, `part-gridbeam`, `part-gridpanel`, `part-fastener`, `product-kit` and `plugin-smart-fasteners` each resolve `@villagekit/part` to `@villagekit+part@file+villagekit-part-0.10.0.tgz...`, whose `dist/base/grid/svg/label.js` holds `style: { fontSize }`. The Spec review re-checked this. The unlinked peer-variant directories under `node_modules/.pnpm` that still hold the published copy are left over from earlier installs, and nothing links to them. Reverted by `git restore -- package.json pnpm-lock.yaml`, the tarball deleted and `pnpm install --frozen-lockfile`, after stopping the dev server by its pid.
+
+Verified. The probe is `audit/_probe98a6/label-probe.mjs`: Playwright clicks the Parts and Plan tabs and reads every `svg text` in the visible panel (computed font size, attribute, style, box, `getScreenCTM` scale, aria-labels, panel text). Its readings are saved beside it. The live legacy site needs `waitUntil: 'load'` and a settle wait, because it never reaches networkidle. Readings:
+- Before, published 0.10.0 on `pnpm dev`: `/designs/bed-frame` at 1280, 7 Parts texts and 54 Plan texts at 16px, attribute `1.875rem`, an 8px box.
+- Legacy: 7 and 54 at 30px (bed-frame, at 1280 and 375), 6 and 20 (shelf-tower, 1280).
+- After, under the override: the same counts, every text at 30px on both routes and both widths, `style="font-size: 1.875rem;"`. The panel text, the text strings and the aria-labels are the same as before on both tabs.
+- The glyph boxes: the Parts labels 14px (legacy 14 or 15), the rulers 14px (legacy 15), 4px on both sides at 375. The cause is scale, not size. The drawings are narrower here: Parts 955 against 992px, Plan 992 against 1056px, because Chakra v3's container pads 32px where v2's padded 16. That is the shell's [[5c1af396cc2e]] (`upstream` in `../ui`). On the Plan tab it applies twice, through the page's Container and the Section's Container inside it (the Spec review's reading).
+- The glyph widths in drawing units differ too (`5` 16.2 on legacy against 14.8 here, `47` 37.0 against 39.4). This is hinting at the two render scales, not the font. With `text-rendering: geometricPrecision` set on both sides, every width is identical (`47` 32.2, `55` 32.0, `60` 36.8), and a 30px HTML span of the same digits measures 279.0 on both (scratchpad `metrics.mjs`). No item.
+- The fills are Chakra v3's `yellow.500` and `gray.500` (`#eab308`, `#71717a`) against v2's (`#D69E2E`, `#718096`). That is the shell's palette item [[72b776cb0d3f]] (`upstream` in `../ui`), which the engine reads through the ui tokens.
+- The tab panels are the same size before and after, since the SVG viewBox is fixed. The larger labels move nothing else.
+
+The screenshot pairs for `/designs/bed-frame` and `/designs/shelf-tower` at 375, 768 and 1280 under the override (12 of 12 captures), looked at, with the probe's tab captures at 1280 and 375 (`audit/_probe98a6/*-parts.png`, `*-plan.png`). The labels are at legacy's size and placement. Nothing else moved. At rest the pages show no labels, and every remaining difference on the pairs is ledgered: the shell's `upstream` items, the 768 width, the rebrand, the Plan tab's copy on the verdicts plan `8512c5e9cc98`, the sanctioned Starter Kit branch `9033e178e57c` and legacy's cookie banner. In `../gridkit`: `build:pkg` (tsup with dts, the package's type check) and `publint` green, and `biome check` on the changed file clean. `pnpm --filter @villagekit/part lint` fails at `50ee129` and at origin, on `src/summary.tsx:91,137` only: the sibling's Biome 1.8.0 cannot parse the suppression category `lint/a11y/useSemanticElements`. That is unrelated to this change and not touched here. `timeout 900 just check` green (exit 0) against the published packages, with no dev server running.
+
+Reviews on three fresh Opus sub-agents (Standards, Spec, Parity) before the sibling commit, none critical or major.
+- Standards: nothing is lost by dropping the attribute (no `renderToString`, serializer or reader of the attribute in the sibling or the site; the DXF path has no text). Taken: the minor (the comment moved from the token lookup to above the `return`) and both nits (`TextLabelY`'s back-reference comment dropped, the preflight rule named as written). Comment-only, so the probe readings stand; `build:pkg` and publint re-run green.
+- Spec: every claim verified, and no simpler form found. Its two minors are taken above: the Plan tab's scale through two Containers, and the glyph widths, verified as hinting. Its nit is the Parity item below.
+- Parity: both items close on its own probes of three designs (bed-frame and shelf-tower at 1280 and 375, the triangle desk at 1280). The text count, order, `x` and `y`, and `text-anchor` are the same on both sides. Nothing legacy did is lost. Its one minor is taken: the attribute to inline style swap is a code difference no item recorded. It is filed as [[89c223294189]] (`/designs/bed-frame`, code, changed, `open`), since an agent never sanctions its own deviation, and noted on the verdicts plan `8512c5e9cc98` for the operator. Its nit (the 14 against 15px mix, the scale) needs no item.
+
+Findings dropped: none.
+
+Items: [[1a08e6077525]] and [[2deff48d6dc6]] moved to `upstream`, with the sibling commit in their notes. `99f2fe62c62f` is `blocked_by` this slice (the edge from the mint, checked in its frontmatter) and carries a note: the publish must carry `@villagekit/part`, and the repeat probe reads 30px on every label of both tabs. No visitor-facing copy in the change. Beyond the ask: [[89c223294189]] filed and noted on the verdicts plan.
 
 ## Log
