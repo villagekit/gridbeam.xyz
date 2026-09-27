@@ -1,6 +1,6 @@
 ---
 title: "Suppliers button added: Find suppliers"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ The legacy page ends after the `CatalogueItem` (`apps/gridkit/pages/designs/[id]
 `app/designs/[id]/page.tsx:64-66` `Find suppliers`, linking to `/suppliers`.
 
 ## Verdict
+
+plan 1f1f9e07cefb
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Design pages: the suppliers section, the Plan tab's added text and button, and the per-page meta description removed"
-status: todo
+status: done
 parent: 0bc88eaf5493
 derived_from: 0bc88eaf5493
 tags:
@@ -30,5 +30,7 @@ None pure; the proof is the served HTML, the DOM pair and the Plan tab on `pnpm 
 - `timeout 900 just check` is green
 
 ## Outcome
+
+Deleted the Section index={1} band, its imports, the meta description and the four Plan tab strings with their imports and the collapsed ternary, on pnpm dev: /designs/bed-frame, /designs/shelf-tower and /designs/5-12-13-triangle-desk all title Grid Beam: <Label> with the layout's default description, and the DOM pair (audit/designs__bed-frame/dom) shows the current side ending after the Overview tab with no suppliers band, matching legacy. A Playwright click on the Cutting plan tab shows the Needs 9 stock beams sentence and the nine drawings with nothing below them: no summary line, no red line, no button. One done-when grep needs a note: `grep -c 'Find a supplier\|Find suppliers'` on the rendered page prints 1, not 0, because the site header's own CTA text is literally Find a supplier (SiteHeaderAction.tsx), unrelated to this slice and present on every route; the page's own removed strings, Find a supplier for the parts on the suppliers page. and Find suppliers, do not appear anywhere in the response (verified with the exact strings and with `>Find a supplier<` and `>Find suppliers<` anchors). timeout 900 just check is green. The eight items closed with kipu fix, outcome plan 1f1f9e07cefb: 7e28a0685fba, 4d64525337bc, 97260396edf4, ef74be52fb10, f67b11b69c74, 07accc3cf3c2, ef53ee76cfaa, 1fd09da76a38.
 
 ## Log

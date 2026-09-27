@@ -1,6 +1,6 @@
 ---
 title: Design meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/designs/[id]/page.tsx:28,31,34` `description: meta.description` on `metadata`, `openGraph` and `twitter`: `A sturdy bed frame. Configurable to suit a number of standard mattress sizes.`
 
 ## Verdict
+
+plan 1f1f9e07cefb
 
 ## Log
 

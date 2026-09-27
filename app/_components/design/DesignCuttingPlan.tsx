@@ -1,8 +1,7 @@
 'use client'
 
 import { ProductKitContext } from '@villagekit/product-kit'
-import { HStack, Link, LinkButton, Text, VStack } from '@villagekit/ui'
-import NextLink from 'next/link'
+import { Text, VStack } from '@villagekit/ui'
 import { useContext, useDeferredValue, useMemo } from 'react'
 
 import {
@@ -10,13 +9,7 @@ import {
   type DisplayUnit,
   formatLength,
 } from '@/app/_components/cutting-plan/CutBeamSvg'
-import {
-  type BeamQuota,
-  firstFitDecreasing,
-  totalCutLength,
-  totalPlacedLength,
-  totalRemainderLength,
-} from '@/app/tools/cutting-planner/algorithm'
+import { type BeamQuota, firstFitDecreasing } from '@/app/tools/cutting-planner/algorithm'
 
 import { getRequiredBeamsFromParts } from './required-beams'
 
@@ -52,69 +45,19 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
     [requiredBeams, stockSize],
   )
 
-  // Placed, not required: cuts too long for the stock never enter a beam, so the required
-  // total wouldn't reconcile against the stock used. `placed + waste === stock used` always.
-  const totalPlaced = totalPlacedLength(planResult.cutBeams)
-  const totalCut = totalCutLength(planResult.cutBeams)
-  const totalWaste = totalRemainderLength(planResult.cutBeams)
-
-  const plannerHref = useMemo(() => {
-    if (requiredBeams.length === 0) return '/tools/cutting-planner'
-    const params = new URLSearchParams()
-    params.set('r', requiredBeams.map((b) => `${b.size}-${b.count}`).join('~'))
-    params.set('u', String(stockSize))
-    if (displayUnit === 'mm') params.set('d', 'mm')
-    return `/tools/cutting-planner?${params.toString()}`
-  }, [requiredBeams, stockSize, displayUnit])
-
   return (
     <VStack alignItems="stretch" gap="4">
-      {requiredBeams.length === 0 ? (
-        <Text variant="secondary">This design has no grid-beam parts to cut.</Text>
-      ) : planResult.infeasibleBeams.length > 0 && planResult.cutBeams.length === 0 ? (
-        <Text>
-          All required cuts are longer than the {stockSize} gu stock length — needs custom-length
-          stock. Try the{' '}
-          <Link as={NextLink} href={plannerHref}>
-            cutting planner
-          </Link>{' '}
-          for full control.
-        </Text>
-      ) : (
-        <>
-          <Text>
-            Needs {planResult.cutBeams.length} {plural('stock beam', planResult.cutBeams.length)} (
-            {formatLength(stockSize, displayUnit)} each), cut into{' '}
-            {summariseRequired(requiredBeams)}.
-          </Text>
-          <Text variant="secondary" fontSize="sm">
-            Cuts placed total {formatLength(totalPlaced, displayUnit)}; off-cut waste{' '}
-            {formatLength(totalWaste, displayUnit)} from {formatLength(totalCut, displayUnit)} of
-            stock.
-          </Text>
+      <Text>
+        Needs {planResult.cutBeams.length} {plural('stock beam', planResult.cutBeams.length)} (
+        {formatLength(stockSize, displayUnit)} each), cut into {summariseRequired(requiredBeams)}.
+      </Text>
 
-          <VStack alignItems="stretch" gap="3">
-            {planResult.cutBeams.map((beam, i) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: stable order from algorithm output
-              <CutBeamSvg key={i} beam={beam} displayUnit={displayUnit} />
-            ))}
-          </VStack>
-
-          {planResult.infeasibleBeams.length > 0 && (
-            <Text color="red.700" fontSize="sm">
-              Some cuts are too long for the {stockSize} gu stock —{' '}
-              {summariseRequired(planResult.infeasibleBeams)}. Open the cutting planner to use
-              longer stock.
-            </Text>
-          )}
-        </>
-      )}
-
-      <HStack justifyContent="flex-end">
-        <LinkButton as={NextLink} href={plannerHref} variant="secondary" size="sm">
-          Open in cutting planner
-        </LinkButton>
-      </HStack>
+      <VStack alignItems="stretch" gap="3">
+        {planResult.cutBeams.map((beam, i) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: stable order from algorithm output
+          <CutBeamSvg key={i} beam={beam} displayUnit={displayUnit} />
+        ))}
+      </VStack>
     </VStack>
   )
 }

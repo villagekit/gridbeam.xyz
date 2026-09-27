@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan empty state added: This design has no grid-beam parts to cut."
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Nothing like it in the legacy plan tab: `apps/gridkit/pages/designs/[id].tsx:181
 `app/_components/design/DesignCuttingPlan.tsx:73` `This design has no grid-beam parts to cut.` (not rendered on this route).
 
 ## Verdict
+
+plan 1f1f9e07cefb
 
 ## Log
 

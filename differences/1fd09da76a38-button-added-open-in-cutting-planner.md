@@ -1,6 +1,6 @@
 ---
 title: "Button added: Open in cutting planner"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Nothing like it in the legacy plan tab: `apps/gridkit/pages/designs/[id].tsx:181
 `app/_components/design/DesignCuttingPlan.tsx:114-116` `Open in cutting planner`, linking to `/tools/cutting-planner?r=47-6~23-6~8-6&u=60`.
 
 ## Verdict
+
+plan 1f1f9e07cefb
 
 ## Log
 

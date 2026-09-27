@@ -1,6 +1,6 @@
 ---
 title: "Suppliers paragraph added: Find a supplier for the parts on the suppliers page."
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No section follows the tabs: the legacy page ends after the `CatalogueItem` (`ap
 `app/designs/[id]/page.tsx:63` `Find a supplier for the parts on the suppliers page.`
 
 ## Verdict
+
+plan 1f1f9e07cefb
 
 ## Log
 
