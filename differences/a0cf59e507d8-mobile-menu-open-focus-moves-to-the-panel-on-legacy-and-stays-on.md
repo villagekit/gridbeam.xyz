@@ -1,6 +1,6 @@
 ---
 title: "Mobile menu open: focus moves to the panel on legacy and stays on the toggle here, which shows the toolbar variant's focus color gray.700 in place of gray.900 while the menu is open"
-status: regression
+status: upstream
 route: shell
 axis: interaction
 kind: changed
@@ -20,3 +20,7 @@ kind: changed
 - 2026-09-28: Filed by the implementing agent of plan ea455fbe31c4 from its focus probe over the toolbar-variant consumers, outside that slice's scope (the sandbox's off toggles). Regression by default (decision 2032533f), not sanctioned by the agent; not judged. A fix belongs in ../ui, the nav's focus activation; handed to a slice beside the shell record.
 
 - 2026-09-28: Handed to the ../ui slice [[2c98d95396bf]], minted beside the shell record at plan ea455fbe31c4's finish (decision 40abdb2f222a): the nav header's mobile menu activation focuses the panel again, blocking the bump plan 99f2fe62c62f. The state stays regression until the slice moves it to upstream with the sibling commit.
+
+- 2026-09-28: Fixed in ../ui by commit 6b18227 on its main over 748aeb5 (plan 2c98d95396bf): NavHeader passes react-focus-on a returnFocus predicate that refuses the return while the lock is enabled. Diagnosis: the activation did fire and did focus the panel (audit/_probe2c98/focus-trace.mjs, trace-current-dev-prefix.txt: handleActivation focuses the panel at 76.5 ms, then react-focus-lock's returnFocus focuses the toggle at 80.4 ms from a microtask with no caller frame). That return runs only when the trap leaves the trap list, and React StrictMode's development-only simulated unmount and remount of a newly mounted component (react-dom 19.2.6, react-dom-client.development.js:16559-16579, absent from the production build) unmounts and remounts the trap once right after it activates; the app router turns StrictMode on by default (next 15.5.18, dist/build/define-env.js:126-127), where legacy's pages router did not. The Current section above is therefore a development reading: the production build of the pre-fix sibling already read the panel active at 400 and 1500 ms and the toggle active after Escape, the live legacy site's readings (escape-current-prod-prefix.txt beside escape-legacy.txt). After the fix, pnpm dev under the override and the production build both read the panel at 400 and 1500 ms, the toggle rgb(23, 25, 35) with the menu open and the pointer away, and the toggle focused after Escape (escape-current-dev-postfix.txt, escape-current-prod-postfix.txt). Waits on the publish; the bump plan 99f2fe62c62f moves it to fixed.
+
+- 2026-09-28: A correction to the note above, from the Standards and Spec reviews of plan 2c98d95396bf: the cited lines 16559-16579 are in Next's vendored React, next@15.5.18 dist/compiled/react-dom/cjs/react-dom-client.development.js (React 19.2.0-canary-0bdb9206-20250818, the copy the app router runs), not in react-dom@19.2.6, where the same functions sit at cjs/react-dom-client.development.js:18697-18717; the production file beside each has neither.
