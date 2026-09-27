@@ -1,6 +1,6 @@
 ---
 title: "ui field label text and row alignment: user-select reset to auto and the vertical root's align-items back to normal, Chakra v2's FormLabel and FormControl, for every field"
-status: todo
+status: done
 parent: 337e35d86920
 derived_from: a78b167170b8
 blocked_by: 42f6738b9658
@@ -31,6 +31,14 @@ None pure; the proof is a Playwright probe of the label's computed `user-select`
 - The override and the `transpilePackages` entry reverted by path, `pnpm install --frozen-lockfile`; `timeout 900 just check` is green
 
 ## Outcome
+
+Shipped in `../ui` as commit 1c6a07b on its `main` over 3f59037, not pushed (decision `28c1a536`): `fieldRecipe`'s label base writes `userSelect: 'auto'` and its `orientation.vertical` root `alignItems: 'normal'`, each the initial value over Chakra v3's (`FormLabel.recipe.ts`), with the `CHANGELOG.md` entry under Unreleased Fixed; [[a29dab52268f]] and [[01f445a34cc9]] are `upstream` with notes citing it, and `99f2fe62c62f` stays `blocked_by` this slice with a note naming the repeat probe.
+
+Deviation from the Work, in scope by the orchestrator's brief for this second dispatch: a third path, `../ui/src/components/Switch.recipe.ts`, writes `alignSelf: 'flex-start'` on the `solid` variant's control. The first dispatch's stretch alone made the `Group same size parts` switch root 34 by 29 and Chakra v3's `inline-flex` root, which centers its items, dropped the track 4px below the row's top; v2's `inline-block` root at `line-height: 0` kept it flush. Of the shapes read, the control's own `alignSelf` is the smallest: `alignItems: flex-start` on the root would also move a label shorter than the track (3px up in the `ui/Switch` story), and v2's inline-block root would change every switch's display and label gap. It sits in the `solid` variant beside v2's other track rules, so the `raised` variant keeps v3's centering. The code shape against legacy's is filed `open` as [[b031e31ab69a]].
+
+Proof: a Playwright probe (`audit/_probeb8c6e/probe.mjs`) on `pnpm dev` under the `file:../ui` override and `transpilePackages`, read before the change (`before.json`, ui at 3f59037), after (`after.json`) and on live legacy (`legacy.json`), on `/designs/bed-frame` (Overview, Controls on, Parts tab) and `/tools/cutting-planner` at 1280 and 375. Every field label reads `user-select: auto` as on legacy (`none` before) and a drag across `Preset` selects its text on both sides. The `Group same size parts` field reads `align-items: normal`, its switch root 34 by 29 as on legacy (34 by 20 before), and its track 34 by 20 flush with the row's top, where it sat before and where legacy's sits. Every other switch reads its before box: the Controls switch, the engine's three boolean switches, the Grid units toggle, the planner's `sm` switch with its hidden `Switch.Label`, and the `ui/Switch` story on the built Storybook (`sb-after.json` against `audit/_probe42f6/sb.json`). `pnpm audit:pages` over `/designs/bed-frame` and `/tools/cutting-planner` at 375, 768 and 1280 under the override, looked at, nothing moved beyond the readings above. In `../ui`: `pnpm lint`, `pnpm types`, `pnpm build:pkg` and `pnpm build:storybook` green. The override and `transpilePackages` reverted by path, `pnpm install --frozen-lockfile`, `timeout 900 just check` green.
+
+Reviews on fresh Opus sub-agents before either commit: Standards, Spec and Parity found nothing critical. Applied: the switch comment and the CHANGELOG line now say the track stays at the top of any root taller than it (a stretched row or a taller label), not only a stretched one (Standards). Dropped: the CHANGELOG placement as a separate bullet after the field label entry rather than inside it (Standards, Spec); the latent top-aligned track beside a visible `Switch.Label` taller than it, which no consumer renders and v2 did not center either (Spec, Parity), recorded on [[b031e31ab69a]]. Pre-existing and not this change, read by the Parity review: the Grid units field 1px higher than legacy's, the doubled footer credit and the dev badge under the override, the planner's broader drift.
 
 ## Log
 
