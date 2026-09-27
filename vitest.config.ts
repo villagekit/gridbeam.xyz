@@ -3,9 +3,8 @@ import { fileURLToPath } from 'node:url'
 
 import { defineConfig } from 'vitest/config'
 
-// The test targets are pure TypeScript — bin packing, the share-link codec, catalogue
-// derivation. No jsdom, no testing-library: add them when a component actually needs
-// rendering, not before.
+// The test targets are pure TypeScript: bin packing, catalogue derivation. No jsdom, no
+// testing-library: add them when a component actually needs rendering, not before.
 export default defineConfig({
   resolve: {
     // Mirrors the `@/*` path mapping in tsconfig.json.

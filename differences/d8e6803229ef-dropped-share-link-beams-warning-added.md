@@ -1,6 +1,6 @@
 ---
 title: Dropped share-link beams warning added
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No share links, so no such text.
 `app/tools/cutting-planner/CuttingPlanner.tsx:119-123` `<Text variant="tertiary" color="red.700" textAlign="center">Some beams in that link were out of range and have been left out.</Text>` when `initial.dropped`. The feature is [[c94f539612d6]].
 
 ## Verdict
+
+plan c273dfed7e26
 
 ## Log
 

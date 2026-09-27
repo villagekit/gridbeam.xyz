@@ -1,6 +1,6 @@
 ---
 title: ResultSummary with total-length helpers and plural added
-status: regression
+status: fixed
 route: /tools/cutting-planner
 axis: code
 kind: added
@@ -14,6 +14,8 @@ No summary: `packages/applet-cutting-planner/src/components/cutting-planner.tsx:
 `app/tools/cutting-planner/CuttingPlanner.tsx:468-495` `ResultSummary` ("{n} stock beam(s) used — {total}.", "Cuts placed total {placed}; off-cut waste {waste}.", "Some cuts are infeasible — see below."), fed by `totalCutLength`, `totalPlacedLength`, `totalRemainderLength` (`algorithm.ts:98-110`) and `plural` (`CuttingPlanner.tsx:516-518`). Its text is a copy item.
 
 ## Verdict
+
+plan c273dfed7e26
 
 ## Log
 

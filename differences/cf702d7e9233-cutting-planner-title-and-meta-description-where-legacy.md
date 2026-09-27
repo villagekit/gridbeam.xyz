@@ -18,3 +18,5 @@ No page-level `NextSeo` on `apps/gridkit/pages/tools/cutting-planner.tsx`, so th
 rule: operator (5) for the title only. Legacy set no page title and rendered the site default, an oversight; ships as "Cutting planner", templated by the shell ([[1c8b7461acb1]]). The meta description is not kept: the route inherits the site default ([[1906af99b588]]). Cutting planner grilling C1.
 
 ## Log
+
+- 2026-09-28: The verdict is applied: the meta description on /tools/cutting-planner is gone, the route inherits the shell default (plan c273dfed7e26). The title stays "Cutting planner" per the sanctioned rule. The Current section's lines describing the removed description are stale; the code no longer has them.

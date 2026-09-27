@@ -18,110 +18,35 @@ import {
   VisuallyHidden,
   chakra,
 } from '@villagekit/ui'
-import { useSearchParams } from 'next/navigation'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 
-import {
-  CutBeamSvg,
-  type DisplayUnit,
-  formatLength,
-} from '@/app/_components/cutting-plan/CutBeamSvg'
-import { replaceUrl } from '@/app/_lib/url-state'
+import { CutBeamSvg, type DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
 
 import {
   type BeamQuota,
   type CuttingPlannerOutput,
   type UnlimitedStock,
   firstFitDecreasing,
-  totalCutLength,
-  totalPlacedLength,
-  totalRemainderLength,
 } from './algorithm'
-import {
-  MAX_COUNT,
-  MAX_ROWS,
-  MIN_COUNT,
-  MIN_SIZE,
-  decodeUrlState,
-  encodeUrlState,
-  parseUnlimited,
-} from './url-codec'
-
-const PRINT_STYLES = `
-@media print {
-  body { background: white; }
-  .vk-cutting-controls, .vk-cutting-unused, header, footer, [data-skip-nav-link] {
-    display: none !important;
-  }
-  .vk-cutting-result, .vk-cutting-infeasible {
-    border: none !important;
-    padding: 0 !important;
-    background: white !important;
-  }
-  .vk-cutting-result figure {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-}
-`
 
 export function CuttingPlanner() {
-  const searchParams = useSearchParams()
-
-  const initial = useMemo(() => decodeUrlState(searchParams), [searchParams])
-
-  const [requiredBeams, setRequiredBeams] = useState<Array<BeamQuota>>(initial.required)
-  const [stockBeams, setStockBeams] = useState<Array<BeamQuota>>(initial.stock)
-  const [hasUnlimitedStock, setHasUnlimitedStock] = useState<UnlimitedStock>(initial.unlimited)
-  const [displayUnit, setDisplayUnit] = useState<DisplayUnit>(initial.display)
-  // Plan straight away when the URL carried state, so a shared link lands on its result.
-  // A lazy initialiser rather than a mount effect: it is the same run-once semantics without
-  // the ref guard, and it avoids rendering the empty state for a frame first.
-  const [result, setResult] = useState<CuttingPlannerOutput | null>(() =>
-    initial.hasState && initial.required.length > 0
-      ? firstFitDecreasing({
-          requiredBeams: initial.required,
-          stockBeams: initial.stock,
-          hasUnlimitedStock: initial.unlimited,
-        })
-      : null,
-  )
+  const [requiredBeams, setRequiredBeams] = useState<Array<BeamQuota>>([
+    { count: 8, size: 10 },
+    { count: 4, size: 15 },
+  ])
+  const [stockBeams, setStockBeams] = useState<Array<BeamQuota>>([])
+  const [hasUnlimitedStock, setHasUnlimitedStock] = useState<UnlimitedStock>(60)
+  const [displayUnit, setDisplayUnit] = useState<DisplayUnit>('gu')
+  const [result, setResult] = useState<CuttingPlannerOutput | null>(null)
 
   const handlePlan = useCallback(() => {
     setResult(firstFitDecreasing({ requiredBeams, stockBeams, hasUnlimitedStock }))
-    const query = encodeUrlState({
-      required: requiredBeams,
-      stock: stockBeams,
-      unlimited: hasUnlimitedStock,
-      display: displayUnit,
-    })
-    replaceUrl(query ? `/tools/cutting-planner?${query}` : '/tools/cutting-planner')
-  }, [requiredBeams, stockBeams, hasUnlimitedStock, displayUnit])
-
-  const handlePrint = useCallback(() => {
-    window.print()
-  }, [])
+  }, [requiredBeams, stockBeams, hasUnlimitedStock])
 
   return (
     <>
-      <style>{PRINT_STYLES}</style>
-
-      <Section
-        index={1}
-        aria-label="Controls"
-        maxW="6xl"
-        className="vk-cutting-controls"
-        colorPalette="gray"
-      >
+      <Section index={1} aria-label="Controls" maxW="6xl" colorPalette="gray">
         <VStack alignItems="stretch" gap="6">
-          {/* A dropped entry leaves a table that looks like the whole plan. Say so, or the
-              planner is as misleading as the truncation this avoids. */}
-          {initial.dropped && (
-            <Text variant="tertiary" color="red.700" textAlign="center">
-              Some beams in that link were out of range and have been left out.
-            </Text>
-          )}
-
           <Stack direction={{ base: 'column', md: 'row' }} gap="6" alignItems="stretch">
             <BeamsTable
               title="Beams you want"
@@ -185,20 +110,13 @@ export function CuttingPlanner() {
       </Section>
 
       {result != null && (
-        <Section
-          index={2}
-          aria-label="Cut beams"
-          maxW="6xl"
-          className="vk-cutting-result"
-          colorPalette="gray"
-        >
+        <Section index={2} aria-label="Cut beams" maxW="6xl" colorPalette="gray">
           <VStack alignItems="stretch" gap="6">
             <Center>
               <Heading as="h2" size="lg">
                 Cutting plan
               </Heading>
             </Center>
-            <ResultSummary result={result} displayUnit={displayUnit} />
             {result.cutBeams.length > 0 && (
               <VStack alignItems="stretch" gap="3">
                 {result.cutBeams.map((beam, i) => (
@@ -207,11 +125,6 @@ export function CuttingPlanner() {
                 ))}
               </VStack>
             )}
-            <Center>
-              <Button onClick={handlePrint} variant="secondary" size="sm">
-                Print plan
-              </Button>
-            </Center>
           </VStack>
         </Section>
       )}
@@ -220,7 +133,7 @@ export function CuttingPlanner() {
         <Section index={3} aria-label="Uncut beams" maxW="6xl">
           <Stack direction={{ base: 'column', md: 'row' }} gap="6" alignItems="stretch">
             {result.infeasibleBeams.length > 0 && (
-              <Box flex="1" className="vk-cutting-infeasible">
+              <Box flex="1">
                 <BeamsTable
                   title="Infeasible cuts"
                   caption="These cuts couldn't be made — typically a single cut longer than any available beam."
@@ -230,7 +143,7 @@ export function CuttingPlanner() {
               </Box>
             )}
             {result.unusedBeams.length > 0 && (
-              <Box flex="1" className="vk-cutting-unused">
+              <Box flex="1">
                 <BeamsTable
                   title="Unused stock"
                   caption="These stock beams weren't needed for the plan."
@@ -333,15 +246,7 @@ function BeamsTable(props: BeamsTableProps) {
             <Table.Row>
               <Table.Cell colSpan={3}>
                 <Center>
-                  {/* Capped at MAX_ROWS so the table can't build a plan its own share link
-                      would truncate on the way back in. No tooltip explaining the cap: a
-                      `disabled` button fires no mouse events, so `title` would never show. */}
-                  <Button
-                    onClick={handleAdd}
-                    disabled={beams.length >= MAX_ROWS}
-                    variant="secondary"
-                    size="sm"
-                  >
+                  <Button onClick={handleAdd} variant="secondary" size="sm">
                     <PlusIcon /> Add row
                   </Button>
                 </Center>
@@ -366,13 +271,9 @@ function BeamSizeInput(props: BeamSizeInputProps) {
     <NumberInput.Root
       size="sm"
       value={Number.isFinite(value) ? String(value) : ''}
-      min={MIN_SIZE}
+      min={1}
       step={1}
       disabled={disabled}
-      // Rounded because the share link only carries integers: `?r=10.5-2` is rejected by the
-      // decode, so a fractional value here would make the planner refuse a link it had just
-      // written. Nothing in zag guarantees one — `step` doesn't snap the value, and
-      // `clampValueOnBlur` only clamps to `min`/`max` — so this round is what makes it true.
       onValueChange={({ valueAsNumber }) => {
         if (Number.isFinite(valueAsNumber)) onChange(Math.round(valueAsNumber))
       }}
@@ -400,11 +301,10 @@ function BeamCountInput(props: BeamCountInputProps) {
     <NumberInput.Root
       size="sm"
       value={Number.isFinite(value) ? String(value) : ''}
-      min={MIN_COUNT}
-      max={MAX_COUNT}
+      min={1}
+      max={50}
       step={1}
       disabled={disabled}
-      // Rounded for the same reason as the size input above.
       onValueChange={({ valueAsNumber }) => {
         if (Number.isFinite(valueAsNumber)) onChange(Math.round(valueAsNumber))
       }}
@@ -460,38 +360,20 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
   )
 }
 
-interface ResultSummaryProps {
-  result: CuttingPlannerOutput
-  displayUnit: DisplayUnit
+function tryParseUnlimited(value: string | null): UnlimitedStock | null {
+  if (value === '30') return 30
+  if (value === '60') return 60
+  if (value === 'false') return false
+  return null
 }
 
-function ResultSummary(props: ResultSummaryProps) {
-  const { result, displayUnit } = props
-  // Placed, not required: with infeasible cuts in play the required total doesn't reconcile
-  // against the stock used. These three always satisfy `placed + waste === stock used`.
-  const totalPlaced = totalPlacedLength(result.cutBeams)
-  const totalCut = totalCutLength(result.cutBeams)
-  const totalWaste = totalRemainderLength(result.cutBeams)
-
-  return (
-    <Center>
-      <VStack alignItems="center" gap="1" textAlign="center">
-        <Text>
-          {result.cutBeams.length} {plural('stock beam', result.cutBeams.length)} used —{' '}
-          {formatLength(totalCut, displayUnit)}.
-        </Text>
-        <Text variant="secondary">
-          Cuts placed total {formatLength(totalPlaced, displayUnit)}; off-cut waste{' '}
-          {formatLength(totalWaste, displayUnit)}.
-        </Text>
-        {result.infeasibleBeams.length > 0 && (
-          <Text variant="tertiary" color="red.700">
-            Some cuts are infeasible — see below.
-          </Text>
-        )}
-      </VStack>
-    </Center>
-  )
+// Trusted input: the Select's option values are literals in the component, so anything else is a
+// bug in this codebase rather than user data. Legacy threw here too
+// (../node-modules/apps/gridkit/pages/tools/cutting-planner.tsx:86-95 at fce357d).
+function parseUnlimited(value: string): UnlimitedStock {
+  const parsed = tryParseUnlimited(value)
+  if (parsed == null) throw new Error(`Unexpected unlimited-stock value: ${value}`)
+  return parsed
 }
 
 function MinusIcon() {
@@ -511,8 +393,4 @@ function PlusIcon() {
       <rect x="7" y="3" width="2" height="10" rx="1" />
     </svg>
   )
-}
-
-function plural(noun: string, n: number): string {
-  return n === 1 ? noun : `${noun}s`
 }

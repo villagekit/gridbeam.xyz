@@ -1,6 +1,6 @@
 ---
 title: "Cutting planner: the intro paragraphs, the meta description, the result summary, the print button and stylesheet and the share-link URL state removed"
-status: todo
+status: done
 priority: medium
 parent: 396c9af0cbd1
 derived_from: 396c9af0cbd1
@@ -31,5 +31,13 @@ None new: `algorithm.test.ts` keeps every case but the `summary totals` describe
 - `timeout 900 just check` is green
 
 ## Outcome
+
+All nine regressions closed (kipu fix, this plan) and cf702d7e9233 noted with its verdict applied. The removals match the Work section: page.tsx's intro-paragraph block, description constant and field, and Suspense boundary gone; CuttingPlanner.tsx's PRINT_STYLES, handlePrint and Print plan button, the four vk-cutting-* classNames, ResultSummary with plural, the URL-state wiring (useSearchParams, useMemo, the lazy initializer, encodeUrlState, replaceUrl) and the dropped-beams warning, and the MAX_ROWS cap on Add row, all gone; algorithm.ts's three total-length helpers and algorithm.test.ts's summary totals describe gone; url-codec.ts, url-codec.test.ts and app/_lib/url-state.ts deleted. parseUnlimited and tryParseUnlimited moved into the monolith unchanged from url-codec.ts:142-155, the four states start from the literals the plan names, and the bounds are the literals min={1} and min={1} max={50}.
+
+One deviation from the plan's letter: the plan says the two moved functions sit "above CuttingPlanner", but CLAUDE.md's Conventions puts public exports near the top and private helpers further down. Since the two are functions (hoisted) with no behavior tied to position, they were placed below the component instead, beside the other private helpers (MinusIcon, PlusIcon), to follow the general convention rather than override it silently. Flagged by the Standards review; resolved this way rather than left as a conflict, since it does not touch what the plan is actually protecting (the functions unchanged, still module-private).
+
+Proofs: `timeout 900 just check` green (lint, typecheck, 41 tests across 4 files, build with no generated-file drift). `pnpm audit:dom --routes <cutting-planner-only file>` against a fresh `pnpm dev`: `diff audit/tools__cutting-planner/dom/legacy.txt audit/tools__cutting-planner/dom/current.txt` shows no line between the title's description and "Beams you want" on the current side. `curl -s localhost:3000/tools/cutting-planner | grep -o '<meta name="description" content="[^"]*"'` returns the same string `/` renders. A Playwright probe loaded the route, clicked Plan it, and found the URL unchanged (`/tools/cutting-planner`, no query), no "Print plan" button and no summary text.
+
+Reviewed on three fresh Opus sub-agents before the commit: Standards found one hard violation (an em dash reintroduced in the rewritten vitest.config.ts:6 comment, fixed) and two judgment calls (the function-placement conflict above, resolved; the legacy citation in the moved comment widened to the full sibling path since it now sits in a same-named file). Spec found the code matched the plan's Work section exactly, with the ledger bookkeeping still outstanding at review time (closed after). Parity found no unrecorded difference and every claimed closure gone from the live route at 375 and 1280 (768 captured, not reviewed) and the DOM pair.
 
 ## Log

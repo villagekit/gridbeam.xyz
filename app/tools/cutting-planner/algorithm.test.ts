@@ -13,9 +13,6 @@ import {
   beamsToBeamQuotas,
   firstFitDecreasing,
   lengthRemaining,
-  totalCutLength,
-  totalPlacedLength,
-  totalRemainderLength,
 } from './algorithm'
 
 describe('first fit decreasing (ported from legacy)', () => {
@@ -243,35 +240,5 @@ describe('degenerate input', () => {
   test('a quota of zero or fewer expands to no beams', () => {
     expect(beamQuotasToBeams([{ count: 0, size: 10 }])).toEqual([])
     expect(beamQuotasToBeams([{ count: -3, size: 10 }])).toEqual([])
-  })
-})
-
-describe('summary totals', () => {
-  // The invariant the summary line rests on. `totalRequiredLength` (deleted) summed the *input*,
-  // so this failed for exactly this case: a plan with infeasible cuts in it.
-  test('placed + waste === stock used, with infeasible cuts present', () => {
-    const output = firstFitDecreasing({
-      requiredBeams: [
-        { count: 1, size: 80 },
-        { count: 2, size: 20 },
-      ],
-      stockBeams: [],
-      hasUnlimitedStock: 60,
-    })
-
-    expect(output.infeasibleBeams).toEqual([{ count: 1, size: 80 }])
-    expect(totalPlacedLength(output.cutBeams)).toBe(40)
-    expect(totalRemainderLength(output.cutBeams)).toBe(20)
-    expect(totalCutLength(output.cutBeams)).toBe(60)
-    expect(totalPlacedLength(output.cutBeams) + totalRemainderLength(output.cutBeams)).toBe(
-      totalCutLength(output.cutBeams),
-    )
-  })
-
-  test('all three totals are zero when nothing was cut', () => {
-    const empty: Array<never> = []
-    expect(totalPlacedLength(empty)).toBe(0)
-    expect(totalRemainderLength(empty)).toBe(0)
-    expect(totalCutLength(empty)).toBe(0)
   })
 })
