@@ -20,3 +20,5 @@ plan 79cec2c9c850
 ## Log
 
 - 2026-09-25: Regression (designs grilling D4). Back to legacy's shape in the designs loader; the not-found path for an unknown id stays under the sanctioned app-router data item [[f97cae6ea3c8]].
+
+- 2026-09-28: The generator this item cites as `scripts/generate-designs-data.mjs` is now `scripts/generate-designs-data.ts`, ported to TypeScript (plan d04ec0d664be); the throw the Current section describes stays gone, since the port reads `parsed.product` by the legacy cast.

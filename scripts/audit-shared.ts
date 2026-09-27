@@ -1,6 +1,6 @@
-// scripts/audit-shared.mjs
+// scripts/audit-shared.ts
 //
-// What `pnpm audit:pages` (scripts/audit-pages.mjs) and `pnpm audit:dom` (scripts/audit-dom.mjs)
+// What `pnpm audit:pages` (scripts/audit-pages.ts) and `pnpm audit:dom` (scripts/audit-dom.ts)
 // share: the argument parsing, the routes-file reader, the route slugging and the wait
 // strategy for loading a page on either side. Neither script duplicates the other; the
 // parity ledger's two halves point at the same routes file and the same `audit/<slug>/`
@@ -15,11 +15,34 @@ import { readFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import type { Page, Response } from 'playwright'
+
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
-export const SIDES = ['legacy', 'current']
+export type Side = 'legacy' | 'current'
 
-export const DEFAULTS = {
+export const SIDES: readonly Side[] = ['legacy', 'current']
+
+/** The parsed command line, the defaults filled in. */
+export interface AuditArgs {
+  legacyBase: string
+  currentBase: string
+  widths: number[]
+  routesFile: string
+  outDir: string
+  headed: boolean
+}
+
+/** One line of the routes file: the path and the sides it is declared on. */
+export interface RouteEntry {
+  route: string
+  sides: Side[]
+}
+
+/** How a page load ended: settled with its HTTP status, or failed with no response. */
+export type LoadResult = { ok: true; status: number } | { ok: false; status: 0; error: string }
+
+export const DEFAULTS: AuditArgs = {
   legacyBase: 'https://gridkit-landing-villagekit.vercel.app',
   currentBase: 'http://localhost:3000',
   widths: [375, 768, 1280],
@@ -30,11 +53,14 @@ export const DEFAULTS = {
 
 // `command` names the script in the usage text; `widths` says whether `--widths` is one of
 // its flags (the screenshots take viewport widths, the DOM extraction does not).
-export function parseArgs(argv, { command, widths: acceptsWidths }) {
-  const args = { ...DEFAULTS }
+export function parseArgs(
+  argv: string[],
+  { command, widths: acceptsWidths }: { command: string; widths: boolean },
+): AuditArgs {
+  const args: AuditArgs = { ...DEFAULTS }
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]
-    const next = () => {
+    const next = (): string => {
       const v = argv[++i]
       if (v === undefined) {
         console.error(`Missing value for ${arg}`)
@@ -76,32 +102,38 @@ export function parseArgs(argv, { command, widths: acceptsWidths }) {
 // unmarked route and one of them for a route marked `legacy-only` or `current-only` after
 // the path (scripts/audit-routes.txt documents the markers in its header). Anything else
 // after the path is an error, so a typo can't silently pass as "both sides".
-export async function loadRoutes(routesFile) {
+export async function loadRoutes(routesFile: string): Promise<RouteEntry[]> {
   const text = await readFile(resolve(REPO_ROOT, routesFile), 'utf8')
-  const routes = []
+  const routes: RouteEntry[] = []
   for (const [index, raw] of text.split('\n').entries()) {
     const line = raw.replace(/#.*$/, '').trim()
     if (!line) continue
-    const [route, marker, ...rest] = line.split(/\s+/)
-    if (rest.length > 0 || (marker !== undefined && !SIDE_MARKERS.has(marker))) {
+    const [route = '', marker, ...rest] = line.split(/\s+/)
+    const markedSide = marker === undefined ? undefined : SIDE_MARKERS.get(marker)
+    if (rest.length > 0 || (marker !== undefined && markedSide === undefined)) {
       console.error(
         `${routesFile}:${index + 1}: expected "<route>" or "<route> legacy-only|current-only", got "${line}"`,
       )
       process.exit(1)
     }
-    routes.push({ route, sides: marker ? [SIDE_MARKERS.get(marker)] : [...SIDES] })
+    routes.push({ route, sides: markedSide ? [markedSide] : [...SIDES] })
   }
   return routes
 }
 
-const SIDE_MARKERS = new Map([
+const SIDE_MARKERS = new Map<string, Side>([
   ['legacy-only', 'legacy'],
   ['current-only', 'current'],
 ])
 
-export function routeToSlug(route) {
+export function routeToSlug(route: string): string {
   if (route === '/') return '_root'
   return route.replace(/^\/+|\/+$/g, '').replace(/\//g, '__')
+}
+
+/** The message of a caught value, which JavaScript does not promise is an `Error`. */
+export function errorMessage(err: unknown): string {
+  return err instanceof Error ? err.message : String(err)
 }
 
 // Loads `url` in `page` per the wait strategy above. Resolves to `{ ok: true, status }` once
@@ -111,7 +143,7 @@ export function routeToSlug(route) {
 // fallback can start while the timed-out `networkidle` navigation is still in flight, and
 // Chromium then reports the fallback as "interrupted by another navigation". A page that is
 // really down fails twice; a collision or a network blip clears.
-export async function gotoSettled(page, url) {
+export async function gotoSettled(page: Page, url: string): Promise<LoadResult> {
   const first = await gotoOnce(page, url)
   if (first.ok) return first
   console.warn({ url, error: first.error }, 'capture failed, retrying once')
@@ -119,8 +151,8 @@ export async function gotoSettled(page, url) {
   return gotoOnce(page, url)
 }
 
-async function gotoOnce(page, url) {
-  let response
+async function gotoOnce(page: Page, url: string): Promise<LoadResult> {
+  let response: Response | null
   try {
     response = await page.goto(url, { waitUntil: 'networkidle', timeout: 15_000 })
   } catch {
@@ -129,7 +161,7 @@ async function gotoOnce(page, url) {
       // Pages that don't reach networkidle usually have heavy late-paint work; give them more.
       await page.waitForTimeout(2_500)
     } catch (err) {
-      return { ok: false, status: 0, error: err.message }
+      return { ok: false, status: 0, error: errorMessage(err) }
     }
   }
   await page.waitForTimeout(800)

@@ -6,13 +6,13 @@
   "license": "EUPL-1.2",
   "packageManager": "pnpm@9.9.0",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.18"
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "predev": "node scripts/generate-designs-data.mjs",
+    "predev": "node scripts/generate-designs-data.ts",
     "build": "next build --turbopack",
-    "prebuild": "node scripts/generate-designs-data.mjs",
+    "prebuild": "node scripts/generate-designs-data.ts",
     "start": "next start",
     "lint": "biome check .",
     "format": "biome check --apply .",
@@ -20,9 +20,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "generate:designs": "node scripts/generate-designs-data.mjs",
-    "audit:pages": "node scripts/audit-pages.mjs",
-    "audit:dom": "node scripts/audit-dom.mjs",
+    "generate:designs": "node scripts/generate-designs-data.ts",
+    "audit:pages": "node scripts/audit-pages.ts",
+    "audit:dom": "node scripts/audit-dom.ts",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",

@@ -18,3 +18,5 @@ kind: changed
 plan 79cec2c9c850
 
 ## Log
+
+- 2026-09-28: The generator this item cites as `scripts/generate-designs-data.mjs` is now `scripts/generate-designs-data.ts`, ported to TypeScript with the same behavior (plan d04ec0d664be); read its line numbers against the new file.

@@ -93,7 +93,7 @@ Reviews, research and design alternatives run on the review model, Opus, never t
 | `just typecheck`, `just fmt-check`, `just fmt`, `just build`, `just generated` | The gate's parts: `tsc --noEmit`; `biome check .`; `biome check --apply .` (`pnpm format`); `next build`; the drift check that the committed `app/_lib/designs-data.generated.ts` matches what the build regenerated |
 | `pnpm dev` | The dev server on `http://localhost:3000` (regenerates the designs data first) |
 | `pnpm audit:pages --routes <file>` | The visual gate: screenshot pairs, legacy beside current, at 375, 768 and 1280, under `audit/<slug>/<width>/`, looked at, not asserted (needs `pnpm dev` running and `pnpm exec playwright install chromium` once per machine) |
-| `pnpm audit:dom --routes <file>` | DOM extraction pairs under `audit/<slug>/dom/`: `{legacy,current}.txt` (visible text in document order, `diff` them for the copy diff), `{legacy,current}.aria.yaml` (the accessibility tree) and `manifest.json` (each side's status). Same flags as `audit:pages` minus `--widths`; skips the missing side of a route marked `legacy-only` / `current-only`; exits non-zero if a declared side failed. Needs `pnpm dev` running and Node 22.18+ |
+| `pnpm audit:dom --routes <file>` | DOM extraction pairs under `audit/<slug>/dom/`: `{legacy,current}.txt` (visible text in document order, `diff` them for the copy diff), `{legacy,current}.aria.yaml` (the accessibility tree) and `manifest.json` (each side's status). Same flags as `audit:pages` minus `--widths`; skips the missing side of a route marked `legacy-only` / `current-only`; exits non-zero if a declared side failed. Needs `pnpm dev` running |
 | `pnpm preview` / `pnpm deploy` | The Cloudflare build, locally / for real (deploy is the operator's) |
 | `kipu ready --collection plan` | The order of work |
 | `kipu verify --warnings-as-errors` | The store's gate, green before every commit touching an item |
@@ -162,7 +162,7 @@ What the language skill (`typescript`) leaves to the project:
 - `content/`: the suppliers records.
 - `public/`: legacy's favicons, tiles, mask icon, `browserconfig.xml` and `site.webmanifest`, served by path.
 - `products/`: the vendored design catalogue, one directory per product with its PNG, `villagekit.toml` and code-as-CAD `.ts`.
-- `scripts/`: the designs data generator (`prebuild` and `predev`), the parity tooling (`audit-pages.mjs`, `audit-dom.mjs`, `audit-shared.mjs`, `rebuild-audit-index.mjs`, `audit-routes.txt`) and `screenshot.sh`, each with a header comment that is its page.
+- `scripts/`: the designs data generator (`generate-designs-data.ts`, run by `prebuild` and `predev`), the parity tooling (`audit-pages.ts`, `audit-dom.ts` with its normalizer under `audit-dom/`, `audit-shared.ts`, `rebuild-audit-index.ts`, `audit-routes.txt`) and `screenshot.sh`, each with a header comment that is its page. The scripts are TypeScript under the root `tsconfig.json`, so `pnpm typecheck` reads them, and Node runs them by type stripping (22.18 or later): no enums, no parameter properties, `import type` for a type, the `.ts` extension on a relative import.
 - `decisions/`, `plans/`, `differences/`, `notes/`: the kipu collections; `.kipu/` declares them.
 - `audit/`: the screenshot and DOM pairs, generated, gitignored.
 

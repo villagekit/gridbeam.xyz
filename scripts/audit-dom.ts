@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// scripts/audit-dom.mjs
+// scripts/audit-dom.ts
 //
 // The text half of the parity ledger's tooling; `pnpm audit:pages` is the screenshot half.
 // For each route in scripts/audit-routes.txt × each side the route is declared on, loads the
@@ -37,7 +37,6 @@
 //   - `pnpm install` (adds the playwright dep)
 //   - `pnpm exec playwright install chromium`
 //   - `pnpm dev` running in another terminal (for current-side captures)
-//   - Node 22.18 or later (the normalizer is a `.ts` import; `.nvmrc` is the version CI uses)
 //
 // Usage:
 //   pnpm audit:dom
@@ -46,27 +45,42 @@
 //   pnpm audit:dom --help
 //
 // The argument parsing, the routes-file reader, the slugging and the wait strategy live in
-// scripts/audit-shared.mjs, shared with `pnpm audit:pages`.
+// scripts/audit-shared.ts, shared with `pnpm audit:pages`.
 
 import { mkdir, rm, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 
-import { chromium } from 'playwright'
+import { type Page, chromium } from 'playwright'
 
 import { normalize } from './audit-dom/normalize.ts'
 import {
   REPO_ROOT,
   SIDES,
+  type Side,
+  errorMessage,
   gotoSettled,
   loadRoutes,
   parseArgs,
   routeToSlug,
-} from './audit-shared.mjs'
+} from './audit-shared.ts'
 
 const VIEWPORT = { width: 1280, height: 900 }
 
-async function captureSide({ page, url, outDir, side }) {
-  const files = [join(outDir, `${side}.txt`), join(outDir, `${side}.aria.yaml`)]
+// One side's line in manifest.json: a capture's outcome, or the side a one-sided route skips.
+type Capture =
+  | { ok: true; status: number; url: string }
+  | { ok: false; status: number; error: string; url: string }
+type SideRecord = Capture | { skipped: true; reason: string }
+
+async function captureSide({
+  page,
+  url,
+  outDir,
+  side,
+}: { page: Page; url: string; outDir: string; side: Side }): Promise<Capture> {
+  const textFile = join(outDir, `${side}.txt`)
+  const ariaFile = join(outDir, `${side}.aria.yaml`)
+  const files = [textFile, ariaFile]
   // A side that never loaded leaves no files behind: a stale extraction from an earlier run
   // beside a manifest that says the side failed would diff as if it were fresh.
   await Promise.all(files.map((file) => rm(file, { force: true })))
@@ -78,13 +92,12 @@ async function captureSide({ page, url, outDir, side }) {
       page.ariaSnapshot(),
     ])
     await mkdir(outDir, { recursive: true })
-    const [textFile, ariaFile] = files
     await Promise.all([
       writeFile(textFile, normalize(innerText), 'utf8'),
       writeFile(ariaFile, aria.endsWith('\n') ? aria : `${aria}\n`, 'utf8'),
     ])
   } catch (err) {
-    return { ok: false, status: loaded.status, error: err.message, url }
+    return { ok: false, status: loaded.status, error: errorMessage(err), url }
   }
   if (loaded.status >= 400) {
     return { ok: false, status: loaded.status, error: `HTTP ${loaded.status}`, url }
@@ -115,7 +128,7 @@ async function main() {
 
   const bases = { legacy: args.legacyBase, current: args.currentBase }
   const browser = await chromium.launch({ headless: !args.headed })
-  const failures = []
+  const failures: { route: string; side: Side; error: string }[] = []
 
   try {
     for (const { route, sides } of routes) {
@@ -124,7 +137,11 @@ async function main() {
       const routeDir = join(outDir, slug, 'dom')
       const context = await browser.newContext({ viewport: VIEWPORT, deviceScaleFactor: 1 })
       const page = await context.newPage()
-      const manifest = { route, slug, capturedAt: new Date().toISOString() }
+      const manifest: {
+        route: string
+        slug: string
+        capturedAt: string
+      } & Partial<Record<Side, SideRecord>> = { route, slug, capturedAt: new Date().toISOString() }
       for (const side of SIDES) {
         if (!sides.includes(side)) {
           manifest[side] = { skipped: true, reason: `${sides[0]}-only` }
@@ -157,7 +174,7 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   console.error(err)
   process.exit(1)
 })

@@ -34,3 +34,5 @@ The routes-file grammar, `routeToSlug` and `slugToRoute`, and the index ordering
 ## Outcome
 
 ## Log
+
+- 2026-09-28: The scripts this plan cites as `scripts/*.mjs` are now `scripts/*.ts` (plan d04ec0d664be), each renamed with the same behavior and typed under strict; read the paths and line numbers against the `.ts` files.

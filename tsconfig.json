@@ -17,6 +17,8 @@
     "useDefineForClassFields": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "allowJs": true,

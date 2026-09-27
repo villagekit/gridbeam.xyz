@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// scripts/rebuild-audit-index.mjs
+// scripts/rebuild-audit-index.ts
 //
 // Rebuilds audit/index.html by scanning audit/<slug>/<width>/{legacy,current}.png.
 // Useful when you've done a partial re-run (e.g. only design routes) — the audit script
@@ -33,17 +33,17 @@ const KNOWN_ORDER = [
   '/designs',
 ]
 
-function slugToRoute(slug) {
+function slugToRoute(slug: string): string {
   if (slug === '_root') return '/'
   return `/${slug.replace(/__/g, '/')}`
 }
 
-async function discoverRoutes() {
+async function discoverRoutes(): Promise<string[]> {
   const entries = await readdir(AUDIT_DIR, { withFileTypes: true })
   const slugs = entries.filter((e) => e.isDirectory()).map((e) => e.name)
   const routes = slugs.map(slugToRoute)
 
-  const knownIndex = (route) => {
+  const knownIndex = (route: string): number => {
     const idx = KNOWN_ORDER.indexOf(route)
     if (idx !== -1) return idx
     // Group children with their parent prefix.
@@ -60,17 +60,17 @@ async function discoverRoutes() {
   })
 }
 
-function routeToSlug(route) {
+function routeToSlug(route: string): string {
   if (route === '/') return '_root'
   return route.replace(/^\/+|\/+$/g, '').replace(/\//g, '__')
 }
 
-function renderIndexHtml(routes) {
+function renderIndexHtml(routes: string[]): string {
   const sections = routes
     .map((route) => {
       const slug = routeToSlug(route)
       const widthBlocks = WIDTHS.map((w) => {
-        const cell = (side) => {
+        const cell = (side: 'legacy' | 'current') => {
           const file = `${slug}/${w}/${side}.png`
           if (!existsSync(join(AUDIT_DIR, file))) {
             return `<div class="missing">no capture</div>`

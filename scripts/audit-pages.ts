@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// scripts/audit-pages.mjs
+// scripts/audit-pages.ts
 //
 // Side-by-side parity screenshots of the legacy gridkit.nz vs the current gridbeam.xyz.
 // For each route in scripts/audit-routes.txt × each viewport width, captures a full-page
@@ -21,23 +21,33 @@
 //   pnpm audit:pages --help
 //
 // The argument parsing, the routes-file reader, the slugging and the wait strategy live in
-// scripts/audit-shared.mjs, shared with `pnpm audit:dom`.
+// scripts/audit-shared.ts, shared with `pnpm audit:dom`.
 
 import { mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 
-import { chromium } from 'playwright'
+import { type Page, chromium } from 'playwright'
 
 import {
+  type LoadResult,
   REPO_ROOT,
   SIDES,
+  type Side,
+  errorMessage,
   gotoSettled,
   loadRoutes,
   parseArgs,
   routeToSlug,
-} from './audit-shared.mjs'
+} from './audit-shared.ts'
 
-async function captureSide({ page, url, outFile }) {
+// One capture's outcome, as the index renders it.
+type CaptureResult = LoadResult & { route: string; width: number; side: Side }
+
+async function captureSide({
+  page,
+  url,
+  outFile,
+}: { page: Page; url: string; outFile: string }): Promise<LoadResult> {
   const loaded = await gotoSettled(page, url)
   if (!loaded.ok) return loaded
   try {
@@ -45,18 +55,21 @@ async function captureSide({ page, url, outFile }) {
     await page.screenshot({ path: outFile, fullPage: true })
     return { ok: true, status: loaded.status }
   } catch (err) {
-    return { ok: false, status: 0, error: err.message }
+    return { ok: false, status: 0, error: errorMessage(err) }
   }
 }
 
-function renderIndexHtml({ results, widths }) {
+function renderIndexHtml({
+  results,
+  widths,
+}: { results: CaptureResult[]; widths: number[] }): string {
   const routes = [...new Set(results.map((r) => r.route))]
   const sections = routes
     .map((route) => {
       const slug = routeToSlug(route)
       const widthBlocks = widths
         .map((w) => {
-          const cell = (side) => {
+          const cell = (side: Side) => {
             const file = `${slug}/${w}/${side}.png`
             const result = results.find(
               (r) => r.route === route && r.width === w && r.side === side,
@@ -143,7 +156,7 @@ async function main() {
   await mkdir(outDir, { recursive: true })
 
   const browser = await chromium.launch({ headless: !args.headed })
-  const results = []
+  const results: CaptureResult[] = []
 
   const bases = { legacy: args.legacyBase, current: args.currentBase }
 
@@ -192,7 +205,7 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   console.error(err)
   process.exit(1)
 })
