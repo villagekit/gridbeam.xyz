@@ -61,6 +61,8 @@ blocked_by:
   - b8c6df9b44e8
   - ea455fbe31c4
   - 2c98d95396bf
+  - target: 9c6e9dd981bd
+    note: the site edit the bump makes on this route
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
