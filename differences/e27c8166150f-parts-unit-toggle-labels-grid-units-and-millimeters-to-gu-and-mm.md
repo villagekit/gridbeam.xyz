@@ -1,6 +1,6 @@
 ---
 title: "Parts unit toggle labels: Grid units and Millimeters to gu and mm"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/PartsBreakdown.tsx:40,54` `gu` / `mm`.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

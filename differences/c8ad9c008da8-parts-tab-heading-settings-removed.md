@@ -1,6 +1,6 @@
 ---
 title: Parts tab heading Settings removed
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/PartsBreakdown.tsx:20-23` no heading above the toggles.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Parts unit toggle name: Display units as millimeters or grid units to Show measurements in millimetres"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/PartsBreakdown.tsx:46` `aria-label="Show measurements in millimetres"`.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

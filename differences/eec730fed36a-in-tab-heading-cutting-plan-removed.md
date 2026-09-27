@@ -1,6 +1,6 @@
 ---
 title: In-tab heading Cutting plan removed
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignCuttingPlan.tsx:70-119` no heading; the panel starts with the summary text.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

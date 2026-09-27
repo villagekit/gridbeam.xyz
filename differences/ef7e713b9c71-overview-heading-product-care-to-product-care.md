@@ -1,6 +1,6 @@
 ---
 title: "Overview heading: Product Care to Product care"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewer.tsx:93` `Product care`.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

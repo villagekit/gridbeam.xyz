@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan footnote removed: Panels and fasteners not included in estimate. Please contact us for any help."
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/_components/design/DesignCuttingPlan.tsx` no footnote.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

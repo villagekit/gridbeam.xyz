@@ -17,6 +17,7 @@ export function PartsBreakdown(props: PartsBreakdownProps) {
 
   return (
     <VStack alignItems="stretch" gap="4">
+      <Text fontWeight="bold">Settings</Text>
       <HStack gap="6" flexWrap="wrap" justifyContent="flex-end">
         <DisplayUnitToggle value={displayUnit} onChange={onDisplayUnitChange} />
         <GroupPartsToggle value={groupParts} onChange={setGroupParts} />
@@ -37,13 +38,13 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
   return (
     <HStack gap="2">
       <Text fontSize="sm" variant="secondary">
-        gu
+        Grid units
       </Text>
       <Switch.Root
         size="sm"
         checked={value === 'mm'}
         onCheckedChange={({ checked }) => onChange(checked ? 'mm' : 'gu')}
-        aria-label="Show measurements in millimetres"
+        aria-label="Display units as millimeters or grid units"
       >
         <Switch.HiddenInput />
         <Switch.Control>
@@ -51,7 +52,7 @@ function DisplayUnitToggle(props: DisplayUnitToggleProps) {
         </Switch.Control>
       </Switch.Root>
       <Text fontSize="sm" variant="secondary">
-        mm
+        Millimeters
       </Text>
     </HStack>
   )
@@ -72,7 +73,7 @@ function GroupPartsToggle(props: GroupToggleProps) {
         htmlFor="design-parts-group"
         style={{ fontSize: '0.875rem', color: 'var(--chakra-colors-gray-600)' }}
       >
-        Group same size
+        Group same size parts
       </label>
       <Switch.Root
         id="design-parts-group"

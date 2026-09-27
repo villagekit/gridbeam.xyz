@@ -1,6 +1,6 @@
 ---
 title: "Cutting plan headline added: Needs N stock beams (S gu each), cut into …"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Nothing like it in the legacy plan tab: its headline is the Starter Kit sentence
 `app/_components/design/DesignCuttingPlan.tsx:85-89` rendered `Needs 9 stock beams (60 gu each), cut into 6× 47 gu, 6× 23 gu, 6× 8 gu.` (on `/designs/shelf-tower`: `Needs 6 stock beams (30 gu each), cut into 4× 30 gu, 6× 10 gu.`).
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

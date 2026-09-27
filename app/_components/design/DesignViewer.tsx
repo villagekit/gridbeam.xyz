@@ -64,7 +64,7 @@ function DesignViewerContent(props: DesignViewerContentProps) {
         </>
       }
       action={{
-        label: 'View cutting plan',
+        label: 'View plan',
         navigateToTab: 'plan',
         variant: 'secondary',
       }}
@@ -79,7 +79,7 @@ function DesignViewerContent(props: DesignViewerContentProps) {
         },
         {
           key: 'plan',
-          label: 'Cutting plan',
+          label: 'Plan',
           content: <DesignCuttingPlan displayUnit={displayUnit} />,
         },
       ]}
@@ -90,7 +90,7 @@ function DesignViewerContent(props: DesignViewerContentProps) {
 function Overview() {
   return (
     <VStack alignItems="flex-start" gap="3">
-      <Text fontWeight="bold">Product care</Text>
+      <Text fontWeight="bold">Product Care</Text>
       <Text>Beams and panels can be safely wiped clean.</Text>
     </VStack>
   )

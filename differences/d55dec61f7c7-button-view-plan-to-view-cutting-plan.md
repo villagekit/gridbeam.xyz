@@ -1,6 +1,6 @@
 ---
 title: "Button: View plan to View cutting plan"
-status: regression
+status: fixed
 route: /designs/bed-frame
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/design/DesignViewer.tsx:67` `label: 'View cutting plan'`.
 
 ## Verdict
+
+plan f64fd2900fb3
 
 ## Log
 

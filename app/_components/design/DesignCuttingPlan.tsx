@@ -1,15 +1,12 @@
 'use client'
 
 import { ProductKitContext } from '@villagekit/product-kit'
-import { Text, VStack } from '@villagekit/ui'
+import { Heading, Link, Text, VStack } from '@villagekit/ui'
+import NextLink from 'next/link'
 import { useContext, useDeferredValue, useMemo } from 'react'
 
-import {
-  CutBeamSvg,
-  type DisplayUnit,
-  formatLength,
-} from '@/app/_components/cutting-plan/CutBeamSvg'
-import { type BeamQuota, firstFitDecreasing } from '@/app/tools/cutting-planner/algorithm'
+import { CutBeamSvg, type DisplayUnit } from '@/app/_components/cutting-plan/CutBeamSvg'
+import { firstFitDecreasing } from '@/app/tools/cutting-planner/algorithm'
 
 import { getRequiredBeamsFromParts } from './required-beams'
 
@@ -47,9 +44,16 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
 
   return (
     <VStack alignItems="stretch" gap="4">
+      <Heading size="md" textAlign="center">
+        Cutting plan
+      </Heading>
+
       <Text>
-        Needs {planResult.cutBeams.length} {plural('stock beam', planResult.cutBeams.length)} (
-        {formatLength(stockSize, displayUnit)} each), cut into {summariseRequired(requiredBeams)}.
+        Requires {planResult.cutBeams.length}x {stockSize}gu (
+        <Link as={NextLink} href="/stories/whats-a-grid-unit" target="_blank" rel="noopener">
+          grid unit
+        </Link>
+        ) beams.
       </Text>
 
       <VStack alignItems="stretch" gap="3">
@@ -58,14 +62,14 @@ export function DesignCuttingPlan(props: DesignCuttingPlanProps) {
           <CutBeamSvg key={i} beam={beam} displayUnit={displayUnit} />
         ))}
       </VStack>
+
+      <Text fontSize="small">
+        Panels and fasteners not included in estimate. Please{' '}
+        <Link as={NextLink} href="/contact">
+          contact us
+        </Link>{' '}
+        for any help.
+      </Text>
     </VStack>
   )
-}
-
-function summariseRequired(beams: Array<BeamQuota>): string {
-  return beams.map((b) => `${b.count}× ${b.size} gu`).join(', ')
-}
-
-function plural(noun: string, n: number): string {
-  return n === 1 ? noun : `${noun}s`
 }
