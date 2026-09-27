@@ -44,8 +44,9 @@
 //   pnpm audit:dom --current-base http://localhost:3001
 //   pnpm audit:dom --help
 //
-// The argument parsing, the routes-file reader, the slugging and the wait strategy live in
-// scripts/audit-shared.ts, shared with `pnpm audit:pages`.
+// The argument parsing, the routes-file reader and the wait strategy live in
+// scripts/audit-shared.ts, shared with `pnpm audit:pages`; the routes-file grammar and the
+// slugging live in scripts/audit-routes.ts.
 
 import { mkdir, rm, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
@@ -53,16 +54,8 @@ import { join, resolve } from 'node:path'
 import { type Page, chromium } from 'playwright'
 
 import { normalize } from './audit-dom/normalize.ts'
-import {
-  REPO_ROOT,
-  SIDES,
-  type Side,
-  errorMessage,
-  gotoSettled,
-  loadRoutes,
-  parseArgs,
-  routeToSlug,
-} from './audit-shared.ts'
+import { SIDES, type Side, routeToSlug } from './audit-routes.ts'
+import { REPO_ROOT, errorMessage, gotoSettled, loadRoutes, parseArgs } from './audit-shared.ts'
 
 const VIEWPORT = { width: 1280, height: 900 }
 
@@ -168,8 +161,10 @@ async function main() {
 
   console.log(`\nDone. ${captureCount - failures.length}/${captureCount} captures succeeded.`)
   if (failures.length > 0) {
-    console.error(`${failures.length} capture(s) failed:`)
-    for (const f of failures) console.error(`  ${f.route} ${f.side}: ${f.error}`)
+    console.error({ failed: failures.length }, 'captures failed')
+    for (const { route, side, error } of failures) {
+      console.error({ route, side, error }, 'capture failed')
+    }
     process.exit(1)
   }
 }

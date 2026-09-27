@@ -162,7 +162,7 @@ What the language skill (`typescript`) leaves to the project:
 - `content/`: the suppliers records.
 - `public/`: legacy's favicons, tiles, mask icon, `browserconfig.xml` and `site.webmanifest`, served by path.
 - `products/`: the vendored design catalogue, one directory per product with its PNG, `villagekit.toml` and code-as-CAD `.ts`.
-- `scripts/`: the designs data generator (`generate-designs-data.ts`, run by `prebuild` and `predev`), the parity tooling (`audit-pages.ts`, `audit-dom.ts` with its normalizer under `audit-dom/`, `audit-shared.ts`, `rebuild-audit-index.ts`, `audit-routes.txt`) and `screenshot.sh`, each with a header comment that is its page. The scripts are TypeScript under the root `tsconfig.json`, so `pnpm typecheck` reads them, and Node runs them by type stripping (22.18 or later): no enums, no parameter properties, `import type` for a type, the `.ts` extension on a relative import.
+- `scripts/`: the designs data generator (`generate-designs-data.ts`, run by `prebuild` and `predev`), the parity tooling (`audit-pages.ts`, `audit-dom.ts` with its normalizer under `audit-dom/`, `audit-shared.ts`, the pure route helpers `audit-routes.ts` with their test, `rebuild-audit-index.ts`, `audit-routes.txt`) and `screenshot.sh`, each with a header comment that is its page. The scripts are TypeScript under the root `tsconfig.json`, so `pnpm typecheck` reads them, and Node runs them by type stripping (22.18 or later): no enums, no parameter properties, `import type` for a type, the `.ts` extension on a relative import.
 - `decisions/`, `plans/`, `differences/`, `notes/`: the kipu collections; `.kipu/` declares them.
 - `audit/`: the screenshot and DOM pairs, generated, gitignored.
 

@@ -68,7 +68,10 @@ ${body}
 `
 
   await writeFile(OUT_PATH, output, 'utf8')
-  console.info(`Wrote ${designs.length} designs to ${OUT_PATH.replace(`${REPO_ROOT}/`, '')}`)
+  console.info(
+    { designs: designs.length, path: OUT_PATH.replace(`${REPO_ROOT}/`, '') },
+    'designs data written',
+  )
 }
 
 main().catch((err: unknown) => {

@@ -1,10 +1,11 @@
 // scripts/audit-shared.ts
 //
 // What `pnpm audit:pages` (scripts/audit-pages.ts) and `pnpm audit:dom` (scripts/audit-dom.ts)
-// share: the argument parsing, the routes-file reader, the route slugging and the wait
-// strategy for loading a page on either side. Neither script duplicates the other; the
-// parity ledger's two halves point at the same routes file and the same `audit/<slug>/`
-// layout.
+// share: the argument parsing, the routes-file reader and the wait strategy for loading a
+// page on either side; and what `pnpm audit:pages` shares with scripts/rebuild-audit-index.ts:
+// the audit/index.html renderer. The routes file's grammar and the route slugging are pure
+// and live in scripts/audit-routes.ts. Neither script duplicates the other; the parity
+// ledger's two halves point at the same routes file and the same `audit/<slug>/` layout.
 //
 // Wait strategy: each capture tries `networkidle` first (best for static pages); on the
 // 15 s timeout it falls back to `load` + 2.5 s settle. This handles 3D-viewer pages
@@ -17,11 +18,9 @@ import { fileURLToPath } from 'node:url'
 
 import type { Page, Response } from 'playwright'
 
+import { type RouteEntry, type Side, parseRoutes, routeToSlug } from './audit-routes.ts'
+
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-
-export type Side = 'legacy' | 'current'
-
-export const SIDES: readonly Side[] = ['legacy', 'current']
 
 /** The parsed command line, the defaults filled in. */
 export interface AuditArgs {
@@ -31,12 +30,6 @@ export interface AuditArgs {
   routesFile: string
   outDir: string
   headed: boolean
-}
-
-/** One line of the routes file: the path and the sides it is declared on. */
-export interface RouteEntry {
-  route: string
-  sides: Side[]
 }
 
 /** How a page load ended: settled with its HTTP status, or failed with no response. */
@@ -63,7 +56,7 @@ export function parseArgs(
     const next = (): string => {
       const v = argv[++i]
       if (v === undefined) {
-        console.error(`Missing value for ${arg}`)
+        console.error({ argument: arg }, 'missing value for argument')
         process.exit(1)
       }
       return v
@@ -91,49 +84,117 @@ export function parseArgs(
   --help, -h           Show this help`)
       process.exit(0)
     } else {
-      console.error(`Unknown argument: ${arg}\nRun with --help for usage.`)
+      console.error({ argument: arg }, 'unknown argument, run with --help for usage')
       process.exit(1)
     }
   }
   return args
 }
 
-// One entry per route line: `{ route, sides }`, where `sides` is both of SIDES for an
-// unmarked route and one of them for a route marked `legacy-only` or `current-only` after
-// the path (scripts/audit-routes.txt documents the markers in its header). Anything else
-// after the path is an error, so a typo can't silently pass as "both sides".
+/**
+ * Reads the routes file, relative to the repo root, into one entry per route line, per
+ * parseRoutes in scripts/audit-routes.ts (scripts/audit-routes.txt documents the markers in its
+ * header). A line that breaks the grammar stops the run.
+ */
 export async function loadRoutes(routesFile: string): Promise<RouteEntry[]> {
   const text = await readFile(resolve(REPO_ROOT, routesFile), 'utf8')
-  const routes: RouteEntry[] = []
-  for (const [index, raw] of text.split('\n').entries()) {
-    const line = raw.replace(/#.*$/, '').trim()
-    if (!line) continue
-    const [route = '', marker, ...rest] = line.split(/\s+/)
-    const markedSide = marker === undefined ? undefined : SIDE_MARKERS.get(marker)
-    if (rest.length > 0 || (marker !== undefined && markedSide === undefined)) {
-      console.error(
-        `${routesFile}:${index + 1}: expected "<route>" or "<route> legacy-only|current-only", got "${line}"`,
-      )
-      process.exit(1)
-    }
-    routes.push({ route, sides: markedSide ? [markedSide] : [...SIDES] })
+  const parsed = parseRoutes(text)
+  if (!parsed.ok) {
+    console.error(
+      { routesFile, line: parsed.line, text: parsed.text },
+      'expected "<route>" or "<route> legacy-only|current-only"',
+    )
+    process.exit(1)
   }
-  return routes
-}
-
-const SIDE_MARKERS = new Map<string, Side>([
-  ['legacy-only', 'legacy'],
-  ['current-only', 'current'],
-])
-
-export function routeToSlug(route: string): string {
-  if (route === '/') return '_root'
-  return route.replace(/^\/+|\/+$/g, '').replace(/\//g, '__')
+  return parsed.routes
 }
 
 /** The message of a caught value, which JavaScript does not promise is an `Error`. */
 export function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err)
+}
+
+/** One screenshot cell of the index: a capture, with its HTTP status when known, or why there is none. */
+export type IndexCell = { ok: true; status?: number } | { ok: false; reason: string }
+
+/**
+ * Renders audit/index.html: a section per route, in the order given, with the legacy and the
+ * current screenshot side by side at each width. `cell` says what each screenshot is; a status
+ * of 400 or more is tagged on the image.
+ */
+export function renderIndexHtml({
+  routes,
+  widths,
+  cell,
+}: {
+  routes: readonly string[]
+  widths: readonly number[]
+  cell: (route: string, width: number, side: Side) => IndexCell
+}): string {
+  const sections = routes
+    .map((route) => {
+      const slug = routeToSlug(route)
+      const widthBlocks = widths
+        .map((w) => {
+          const figure = (side: Side) => {
+            const file = `${slug}/${w}/${side}.png`
+            const shown = cell(route, w, side)
+            if (!shown.ok) return `<div class="missing">${shown.reason}</div>`
+            const tag =
+              shown.status !== undefined && shown.status >= 400
+                ? `<span class="status">HTTP ${shown.status}</span>`
+                : ''
+            return `<a href="${file}" target="_blank">${tag}<img src="${file}" alt="${side} ${route} ${w}px" loading="lazy"></a>`
+          }
+          return `      <section class="width">
+        <h3>${w}px</h3>
+        <div class="pair">
+          <figure><figcaption>legacy</figcaption>${figure('legacy')}</figure>
+          <figure><figcaption>current</figcaption>${figure('current')}</figure>
+        </div>
+      </section>`
+        })
+        .join('\n')
+      return `    <article id="${slug}">
+      <header><h2><code>${route}</code></h2></header>
+${widthBlocks}
+    </article>`
+    })
+    .join('\n')
+
+  const nav = routes.map((r) => `<a href="#${routeToSlug(r)}"><code>${r}</code></a>`).join(' ')
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parity audit</title>
+<style>
+  :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+  body { margin: 0; padding: 1.5rem; max-width: 1800px; margin-inline: auto; }
+  h1 { margin-top: 0; }
+  nav { position: sticky; top: 0; z-index: 1; background: Canvas; padding: 0.5rem 0; border-bottom: 1px solid color-mix(in srgb, CanvasText 25%, transparent); margin-bottom: 1rem; line-height: 2; }
+  nav a { margin-right: 0.5rem; }
+  article { margin-block: 2rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, CanvasText 25%, transparent); }
+  article > header h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+  .width { margin-block: 1rem; }
+  .width h3 { font-size: 0.9rem; margin: 0.25rem 0; opacity: 0.7; font-weight: normal; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  figure { margin: 0; position: relative; }
+  figcaption { font-size: 0.75rem; opacity: 0.6; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  img { width: 100%; height: auto; display: block; border: 1px solid color-mix(in srgb, CanvasText 25%, transparent); }
+  .missing { padding: 2rem; text-align: center; opacity: 0.6; border: 1px dashed currentColor; font-size: 0.85rem; }
+  .status { position: absolute; top: 0.4rem; left: 0.4rem; background: color-mix(in srgb, CanvasText 80%, transparent); color: Canvas; padding: 0.1em 0.4em; font-size: 0.75rem; border-radius: 3px; z-index: 1; }
+  code { background: color-mix(in srgb, CanvasText 10%, transparent); padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Parity audit</h1>
+<nav>${nav}</nav>
+${sections}
+</body>
+</html>
+`
 }
 
 // Loads `url` in `page` per the wait strategy above. Resolves to `{ ok: true, status }` once
