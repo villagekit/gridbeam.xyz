@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: Same judgement as the home's use of it, [[272613135119]]: the app-router move is rule 4, the generated module and the sort are not forced (a build-time read from disk in `generateStaticParams` would do). The hosting decision [[91cbeac8a3fd]] may lead the operator to sanction under rule 5.
+
+- 2026-09-27: At the designs index record's split (plan f901cf9f724d): named on the verdicts plan [[549ec777422c]] for the operator (decision 40abdb2f222a), the fix being a hosting change: OpenNext's default incremental cache is dummy (node_modules/@opennextjs/cloudflare/dist/api/config.js:45) and open-next.config.ts configures none, so a prerendered page renders again on the Worker per request and a build-time readdir there fails; the disk read needs staticAssetsIncrementalCache in open-next.config.ts, under 91cbeac8a3fd. The library slice [[79cec2c9c850]] gives the module legacy's shape and leaves the module. The state stays regression until judged there.

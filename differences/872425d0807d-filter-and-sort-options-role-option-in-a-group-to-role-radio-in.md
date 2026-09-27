@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-12: An `option` with no listbox ancestor is invalid ARIA and the legacy exposes no selected state; the current pairing is valid. No rule covers the change, so it is a regression by the rule's absence; the operator may sanction it under rule 5.
+
+- 2026-09-27: At the designs index record's split (plan f901cf9f724d): no verdict having landed, the catalog re-port [[8417428fd88a]] ships legacy's markup and closes this item by default with a note; the operator may overturn it by a note and a new state (the stories index split's call 4). Not on the verdicts plan.

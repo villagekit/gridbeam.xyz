@@ -33,6 +33,7 @@ blocked_by:
     note: a sibling fix the publish must carry
   - target: 179862cdff12
     note: a sibling fix the publish must carry
+  - d0d7111d6b45
 ---
 Every difference fixed in `../ui` or `../gridkit` during M2 waits here in `upstream`, since the publishes are deferred to the end of the milestone (decision `28c1a536`). This plan is the operator's until the packages are on npm; then it bumps the site and turns every `upstream` item into `fixed`, or back into `regression` where the publish did not carry the fix.
 
@@ -122,3 +123,5 @@ None.
 - 2026-09-27: From the story pages record's finish (plan [[56e6eb197e6c]]): the ui button icon slice [[179862cdff12]] blocks this plan (the edge written at its mint). The bump makes no site edit for it: app/_components/ImageCarousel.tsx:144-146 is legacy's arrow line for line. The bump repeats the slice's probe on the published package, on /stories/2021-winter-newsletter and /stories/2022-newsletter at 1280 and 375: every carousel arrow button 40px tall at font-size 16px (the recipes slice's size, [[ebdb3183c0dd]]) with its svg 16 by 16 before the scale(1.5) transform and 24 by 24 after, the live legacy site's readings; the nav toggle's icon and the footer's social icons unmoved; then kipu fix on [[e5f7c103b8bf]] and [[f2e4bf3755c7]].
 
 - 2026-09-27: The ui button icon slice [[179862cdff12]] shipped in ../ui at 7922dd3 (Button.tsx, IconButton.tsx, CHANGELOG.md). What the repeat probe on the published package reads, beyond the arrows the mint note names: the planner's Remove row buttons and the Add row button's PlusIcon on /tools/cutting-planner at 32px and 14px with the svg 14 by 14 (legacy's Delete and Add beam readings; 16 by 16 on 1.2.0), the catalogue's Clear search icon on /designs at 20 by 20 by its boxSize, the faq's accordion indicators at 20 by 20 (the accordion recipe, not the button's), the nav toggle's icon at 24 by 24; the Storybook IconButton Sizes story at 12, 14, 16 and 18px icons. Chakra's re-exported CloseButton keeps v3's 1.2em; no route renders it.
+
+- 2026-09-27: From the designs index record's split (plan f901cf9f724d): blocked_by [[d0d7111d6b45]] (Chakra v3's InputGroup re-exported, [[ea243f9d2f9e]]); the site edit at the bump, the catalog search bar's import line from @chakra-ui/react to @villagekit/ui, is written here by the catalog re-port [[8417428fd88a]] when it files its stand-in item.

@@ -20,3 +20,5 @@ kind: removed
 - 2026-09-12: Applies to `/designs/bed-frame` and every design page too; filed once here. The `Main`/`SkipNavContent` wrapping is the shell item [[a73e9678cd57]].
 
 - 2026-09-26: Current moved by plan [[a7bf623f885c]]: the two designs routes no longer render Main or SkipNavContent (the root layout does); app/designs/page.tsx and app/designs/[id]/page.tsx now compose a fragment around Section. The missing CatalogueLayout margins are unchanged.
+
+- 2026-09-27: At the designs index record's split (plan f901cf9f724d): closed for both routes by the catalog re-port [[8417428fd88a]] through app/designs/layout.tsx; the design page's leftovers are noted on [[0bc88eaf5493]].

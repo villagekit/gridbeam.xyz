@@ -28,3 +28,5 @@ kind: changed
 - 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]): named on the home's verdicts plan [[8bb4a4380264]] for the operator, to be judged beside [[abb539b3555e]] on /designs (decision 40abdb2f222a); the state stays regression until judged there.
 
 - 2026-09-26: At the home record's finish (plan [[fd9a92bd8abd]]), the Current lines after the page re-port: app/page.tsx:15-16 (getDesignIndex and the image !== null filter), app/HomePage.tsx:430 and :438 (the hasImage guard on the current design and the null check on the next), :456-459 (hasImage), and app/_components/DesignCarousel.tsx's getDesignImage pair.
+
+- 2026-09-27: At the designs index record's split (plan f901cf9f724d): the library slice [[79cec2c9c850]] removes the label sort and the nullable image (the home's filter and guard and the carousel's pair go with it); the generated-module part is [[abb539b3555e]]'s, on the designs index verdicts plan [[549ec777422c]]. The state stays regression for the operator.

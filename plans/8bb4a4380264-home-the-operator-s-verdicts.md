@@ -33,3 +33,5 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-27: From the designs index record's split (plan f901cf9f724d): [[272613135119]]'s sort and nullable image are closed by the library slice [[79cec2c9c850]]; its module part is judged with [[abb539b3555e]] on the designs index verdicts plan [[549ec777422c]].

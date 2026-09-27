@@ -32,3 +32,5 @@ Other routes; the shell, except where a difference on this route is closed by a 
 ## Outcome
 
 ## Log
+
+- 2026-09-27: From the designs index record's split (plan f901cf9f724d): the catalog re-port [[8417428fd88a]] mounts legacy's CatalogueLayout in app/designs/layout.tsx, the getLayout legacy attached to both designs pages ([[f323b5834590]], filed once for both), so the design page carries legacy's margins from then on, stacking on Section index 0's padding (app/designs/[id]/page.tsx:49) and insetting the gray suppliers band from md (:53, [[7e28a0685fba]]) until this record re-ports it; that slice files an item on /designs/bed-frame for the Section wrapper if none records it. The library slice [[79cec2c9c850]] makes getDesign return legacy's { code, meta } and generateStaticParams read getDesignIndexes(); the swc compile ([[9d4e2e43543e]]) lands in that function. CatalogueItem.tsx stays in app/_components/catalogue/ with its barrel export until this record moves it; DesignViewer.tsx keeps app/_lib/url-state.ts.

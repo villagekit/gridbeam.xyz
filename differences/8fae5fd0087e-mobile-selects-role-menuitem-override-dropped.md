@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-12: The legacy role is invalid on a native select; a regression by the rule's absence, the operator may sanction under rule 5.
+
+- 2026-09-27: At the designs index record's split (plan f901cf9f724d): no verdict having landed, the catalog re-port [[8417428fd88a]] ships legacy's role on the mobile selects and closes this item by default with a note; the operator may overturn it by a note and a new state (the stories index split's call 4). Not on the verdicts plan.
