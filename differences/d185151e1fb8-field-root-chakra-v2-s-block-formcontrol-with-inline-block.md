@@ -1,6 +1,6 @@
 ---
 title: "Field root: Chakra v2's block FormControl with inline-block switch and slider roots to Chakra v3's flex column, the design page's parameter fields 4 to 7px shorter"
-status: open
+status: upstream
 route: shell
 axis: visual
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's field root is a flex column (`node_modules/@chakra-ui/react/dist/esm
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Fixed in ../ui commit 3f59037 (plan [[42f6738b9658]]): the field root is display block under the vertical orientation variant, Chakra v2's FormControl, and the slider root an inline-block on the field's baseline with a block-level flex control and a zero-height ::before item pinning the baseline to its bottom edge; on pnpm dev under the file:../ui override the height field reads 63px, each boolean field 59px with its switch 11px under its label row, Underside at legacy's y at 1280 and 375 (audit/_probe42f6/after.json against legacy.json). Waits on the operator's publish for the bump plan [[99f2fe62c62f]] to move it to fixed (decision 28c1a536).

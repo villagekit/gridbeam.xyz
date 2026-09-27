@@ -1,6 +1,6 @@
 ---
 title: "Field label box: Chakra v2's block label across its column to Chakra v3's flex label shrunk to its text"
-status: open
+status: upstream
 route: shell
 axis: interaction
 kind: changed
@@ -16,3 +16,5 @@ Chakra v3's field root is a flex column with `alignItems: flex-start` and its la
 ## Verdict
 
 ## Log
+
+- 2026-09-28: Fixed in ../ui commit 3f59037 (plan [[42f6738b9658]]): the label is display block in a block root, Chakra v2's FormLabel; on pnpm dev under the file:../ui override the Preset label reads 296px wide at 1280 and 239px at 375 and the engine's label rows 400px and 343px (audit/_probe42f6/after.json against legacy.json). Waits on the operator's publish for the bump plan [[99f2fe62c62f]] to move it to fixed (decision 28c1a536).
