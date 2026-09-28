@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`.
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q7). Section naming follows legacy's markup for now and waits for the accessibility pass after M2 ([[eeba2a65cee4]]).
+
+- 2026-09-28: Stale after plan `3ba33b316c3c`: the How to be listed section, the one region this item names, is gone (removed whole). Two bare Sections remain, neither a landmark, so the item's substance (two of three Sections unnamed) still holds in reduced form; the page slice `f1e016a563d6` measures against the interim shape. Not a new difference, and not this slice's to fix.

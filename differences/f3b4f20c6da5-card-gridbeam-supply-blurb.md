@@ -1,6 +1,6 @@
 ---
 title: "Card: Gridbeam Supply blurb"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `content/suppliers.ts:42-43` "The OG grid-beam supplier. Sells tan-oak gridbeam box sets in 2'–8' lengths, furniture bolts, button shelves, and “How to Build with Grid Beam” by Phil Jergenson, Richard Jergenson, and Wilma Keppel." (an en dash in `2'–8'`, curly double quotes around the book title); rendered at `app/suppliers/page.tsx:184`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Card: Gridbeam Supply name and country"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `content/suppliers.ts:35` `name: 'Gridbeam Supply'` (`app/suppliers/page.tsx:176`); `:37` `country: 'United States'` (`page.tsx:181`). `:36` `region: 'US'` is not rendered.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

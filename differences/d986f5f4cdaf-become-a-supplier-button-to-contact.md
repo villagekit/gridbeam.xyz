@@ -1,6 +1,6 @@
 ---
 title: Become a supplier button to /contact
-status: regression
+status: fixed
 route: /suppliers
 axis: interaction
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:157-160` `Flex justifyContent="center"` > `LinkButton as={NextLink} href="/contact"` in the default `primary` variant (`@villagekit/ui@1.2.0 src/components/Button.tsx:66-67`: white on `primary.400`, `primary.500` and `scale(1.08)` on hover).
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

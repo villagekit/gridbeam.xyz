@@ -1,6 +1,6 @@
 ---
 title: Visit website link label
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:200-202` `<LinkButton href={supplier.website} variant="secondary" size="sm" isExternal>Visit website</LinkButton>`, the same label on every card (`https://gridkit.nz`, `https://gridbeamsupply.com` from `content/suppliers.ts:26,38`).
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

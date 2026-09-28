@@ -1,6 +1,6 @@
 ---
 title: "How to be listed paragraph: What we ask"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:146-149` "What we ask. Just that the parts genuinely fit. We don't charge listing fees, take commissions, or require exclusivity." "What we ask." is a bold `Span` (`:147`).
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

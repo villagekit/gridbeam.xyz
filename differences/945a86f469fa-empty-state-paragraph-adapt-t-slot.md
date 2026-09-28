@@ -1,6 +1,6 @@
 ---
 title: "Empty state paragraph: Adapt t-slot"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:110-114` "Adapt t-slot. 80/20-style aluminium extrusion isn't directly grid-beam-compatible (different profile, different fastener system) but it's the closest off-the-shelf alternative if you don't want to mill your own." "Adapt t-slot." is a bold `Span` (`:111`). Unrendered today.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

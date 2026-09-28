@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit name and country"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `content/suppliers.ts:23` `name: 'Grid Kit'` (the card's `h3`, `app/suppliers/page.tsx:176`); `:25` `country: 'Aotearoa New Zealand'` (`page.tsx:181`). `:24` `region: 'NZ'` is not rendered.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

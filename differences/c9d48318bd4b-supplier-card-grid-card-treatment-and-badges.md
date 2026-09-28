@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`. The decision says "supplier cards below" and not
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q3). The cards carry what legacy's producer item carried (name, location) plus the name as the link out and a one-word metric/imperial label ([[a6f8bb6c6738]]). No badges, blurb or button.
+
+- 2026-09-28: Stale after plan `3ba33b316c3c`: the blurb, the offering and Paused badges, the notes and the Visit website button are gone from the card; it now holds only the name (as a link), the location and the Metric/Imperial label, per `179b26589e79`'s Q3 verdict. The `SimpleGrid` and the `Box` treatment (`app/suppliers/page.tsx:36`) are unchanged and still this item's to judge, left to the page slice `f1e016a563d6`. Not a new difference, and not this slice's to fix.

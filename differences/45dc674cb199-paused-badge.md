@@ -1,6 +1,6 @@
 ---
 title: Paused badge
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:178` `{supplier.status === 'paused' && <Badge colorPalette="orange">Paused</Badge>}`. Unrendered today: no supplier in `content/suppliers.ts` is `paused`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

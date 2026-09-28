@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit compatibility"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `content/suppliers.ts:28` "40 mm grid — matches this site's catalogue." after the bold lead-in "Compatibility:" at `app/suppliers/page.tsx:192-194`. No `notes` field on this supplier, so `page.tsx:195-199` renders nothing.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

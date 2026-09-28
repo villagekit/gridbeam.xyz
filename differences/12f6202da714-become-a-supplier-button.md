@@ -1,6 +1,6 @@
 ---
 title: Become a supplier button
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:158-160` `<LinkButton as={NextLink} href="/contact">Become a supplier</LinkButton>`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

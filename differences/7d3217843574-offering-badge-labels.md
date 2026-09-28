@@ -1,6 +1,6 @@
 ---
 title: Offering badge labels
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:39-46` `offeringLabels`: `beams` "Beams", `panels` "Panels", `fasteners` "Fasteners", `kits` "Kits", `custom` "Custom", `design-build` "Design + build"; each rendered as a `Badge colorPalette="accentA"` per supplier offering (`:186-190`). "Panels", "Custom" and "Design + build" are unused by the two suppliers in `content/suppliers.ts` today.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

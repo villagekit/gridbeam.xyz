@@ -1,6 +1,6 @@
 ---
 title: How to be listed heading and description
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:128-134` `<Title as="h2" id="how-to-be-listed-heading" description="If you produce or resell grid-beam-compatible hardware, you can be listed for free.">How to be listed</Title>`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Empty state intro paragraph
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:94-100` "If you make or stock grid-beam-compatible hardware, get in touch — we'll add you. Until then, two paths:" "get in touch" links to `/contact` (`:96-97`). Unrendered today (see the empty state heading item).
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

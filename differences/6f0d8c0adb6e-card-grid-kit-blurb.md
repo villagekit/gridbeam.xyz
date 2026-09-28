@@ -1,6 +1,6 @@
 ---
 title: "Card: Grid Kit blurb"
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `content/suppliers.ts:29-30` "Aotearoa New Zealand–based supplier of 40 mm grid-beam hardware. Operates independently of the gridbeam.xyz project." (an en dash in "New Zealand–based"); rendered at `app/suppliers/page.tsx:184`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: Suppliers title and description
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:57-58` `<Title description="Places that sell grid-beam hardware: beams, panels, fasteners, and sometimes full kits.">Suppliers</Title>`.
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

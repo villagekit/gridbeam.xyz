@@ -1,6 +1,6 @@
 ---
 title: Listings heading and description
-status: regression
+status: fixed
 route: /suppliers
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`.
 `app/suppliers/page.tsx:75-77` `<Title as="h2" description="Each card links out to the supplier's site.">Listings</Title>`. Rendered while `hasSuppliers` is true (`:52-53`).
 
 ## Verdict
+
+plan 3ba33b316c3c
 
 ## Log
 

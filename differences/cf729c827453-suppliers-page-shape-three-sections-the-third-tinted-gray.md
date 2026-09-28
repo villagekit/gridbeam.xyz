@@ -18,3 +18,5 @@ Absent: no legacy `/suppliers`. Decision [[8b5e51fcaf61]] names a map at the top
 ## Log
 
 - 2026-09-25: Regression (suppliers grilling Q3). Ships as the decision's shape: the title, the map with its Locations list, the cards below. No third section.
+
+- 2026-09-28: Stale after plan `3ba33b316c3c`: the third Section (the gray How to be listed band) is gone, and the interim page holds two Sections, not three, matching the decision's shape more closely (title, cards) with the map still absent. A note for the page and map slices to measure against; not a new difference, and not this slice's to fix.
