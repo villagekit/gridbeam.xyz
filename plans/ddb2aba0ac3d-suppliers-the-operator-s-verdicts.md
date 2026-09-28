@@ -30,3 +30,5 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-28: From the finish of the suppliers record 872ab70e2ff9: both slices that build the surfaces above are done (the map slice 3b06e662692a for the popup and the tile style, the page slice f1e016a563d6 for the rows), so a regression verdict on any item now mints a slice beside the record (--parent 337e35d86920, derived_from 872ab70e2ff9), never the slice's Work. No slice's review filed a further item for the operator, so the list above stands. The third question has two more calls the page slice made and wrote on db86cf2ecdda's note of 2026-09-28, not in the body above: the row's hover, cursor and click from producer-item.tsx:31-35 are not carried (the map panel's fly-to affordance, the link carrying it here), and the rows are left-aligned inside the centered 768px box as the map panel aligned them where the order page's text blocks were centered; the verdict on db86cf2ecdda can settle both with the box.

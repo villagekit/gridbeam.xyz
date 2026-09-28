@@ -4,7 +4,7 @@
 // Copies MapLibre GL's worker module and the shared chunk it imports from
 // `node_modules/maplibre-gl/dist/` to `public/maplibre/`, where the site serves
 // them as static files for the suppliers map (`app/_components/map/Map.tsx`
-// points `setWorkerUrl` at the copy).
+// names the copy in the map element's `workerUrl` prop).
 //
 // We do this because MapLibre GL 6 ships as ES modules only and loads its tile
 // worker from a real URL beside its own bundle, resolved from `import.meta.url`,

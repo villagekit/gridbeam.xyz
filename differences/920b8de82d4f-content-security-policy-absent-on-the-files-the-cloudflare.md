@@ -18,3 +18,5 @@ kind: removed
 ## Log
 
 - 2026-09-26: Handed to the operator on the attended verdicts plan [[77cf83a1285a]] at the finish of the shell record [[a78b167170b8]] (decision 40abdb2f222a); the state stays until the operator judges it.
+
+- 2026-09-28: From the finish of the suppliers record 872ab70e2ff9: the same header's default-src * lists no data: scheme, so MapLibre GL's zoom buttons and attribution toggle on /suppliers, drawn as data: SVG, are blank, with three CSP errors in the browser console; the 2023 deploy's Mapbox buttons are blank under the same header (audit/suppliers/1280/legacy-order.png, top-left), so no item is filed for it and the CSP is untouched. Glyphs on those controls would take data: in an img-src directive, a shell change for the operator to want; the same call as this item's, whichever way the ASSETS header goes.
