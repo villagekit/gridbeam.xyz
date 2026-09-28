@@ -1,6 +1,6 @@
 ---
 title: "Subscribe heading: Subscribe to Grid Kit to Newsletter"
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/subscribe/page.tsx:37-39` `<Title description="A low-volume newsletter is on the way. No signup form yet.">Newsletter</Title>`: `heading "Newsletter" [level=1]`.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

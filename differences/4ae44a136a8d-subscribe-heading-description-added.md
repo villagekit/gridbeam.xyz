@@ -1,6 +1,6 @@
 ---
 title: Subscribe heading description added
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/subscribe/page.tsx:37` `description="A low-volume newsletter is on the way. No signup form yet."`.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

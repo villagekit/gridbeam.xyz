@@ -1,6 +1,6 @@
 ---
 title: Subscribe paragraph 1 added
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ None on the route.
 `app/subscribe/page.tsx:42-45` `<Text fontSize="lg">` "gridbeam.xyz will publish an occasional newsletter — new designs, supplier news, and stories from the community — when there's enough material to make it worth reading."
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

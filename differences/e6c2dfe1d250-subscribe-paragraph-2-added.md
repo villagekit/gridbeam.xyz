@@ -1,6 +1,6 @@
 ---
 title: Subscribe paragraph 2 added
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ None on the route.
 `app/subscribe/page.tsx:46-50` "The plan is to use <em>Buttondown</em> as the email provider: independent, privacy-friendly, no tracking pixels. No signup form is wired up yet, and there's no audience pressure to rush one."
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

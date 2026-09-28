@@ -1,6 +1,6 @@
 ---
 title: Subscribe intro sentence removed
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 No equivalent sentence in `app/subscribe/page.tsx`; the three paragraphs that replace it are their own items.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

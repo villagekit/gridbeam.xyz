@@ -1,6 +1,6 @@
 ---
 title: "Subscribe body copy: one centered sentence to three left-aligned paragraphs in three type tiers"
-status: regression
+status: fixed
 route: /subscribe
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/subscribe/page.tsx:41-54` `<VStack alignItems="flex-start" gap="5">` of a `fontSize="lg"` lead, a paragraph with an italic `<em>Buttondown</em>`, and a `variant="secondary"` closer, left-ragged (`audit/subscribe/1280/current.png`).
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log

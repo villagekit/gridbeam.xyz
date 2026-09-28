@@ -1,6 +1,6 @@
 ---
 title: "Subscribe heading outline: a single h1 to h1, h2, h3, h3"
-status: regression
+status: fixed
 route: /subscribe
 axis: accessibility
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `audit/subscribe/dom/current.aria.yaml:23,31,33,37` `heading "Newsletter" [level=1]`, `heading "Find out when it launches" [level=2]`, `heading "Email the maintainer" [level=3]`, `heading "Watch the repository" [level=3]` (`app/subscribe/page.tsx:37,60,64,71`; the card level is the shell LinkCard heading item).
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log

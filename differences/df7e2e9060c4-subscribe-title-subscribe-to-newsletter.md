@@ -1,6 +1,6 @@
 ---
 title: "Subscribe title: Subscribe to Newsletter"
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/subscribe/page.tsx:16,21` `const title = 'Newsletter'`; rendered `<title>Newsletter — gridbeam.xyz</title>`.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

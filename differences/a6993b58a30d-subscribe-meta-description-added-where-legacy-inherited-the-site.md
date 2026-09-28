@@ -1,6 +1,6 @@
 ---
 title: Subscribe meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No `description` on the `NextSeo` (`packages/applet-subscribe/src/page.tsx:30`);
 `app/subscribe/page.tsx:17-18,22,28` `description = 'A low-volume newsletter about new designs, suppliers, and stories. Not active yet — here is the plan.'`.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 

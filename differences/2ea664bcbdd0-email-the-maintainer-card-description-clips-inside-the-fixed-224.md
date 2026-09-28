@@ -1,6 +1,6 @@
 ---
 title: Email the maintainer card description clips inside the fixed 224 by 256 card
-status: regression
+status: fixed
 route: /subscribe
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 With LinkCard re-ported to that box (ui LinkCard.tsx after plan 1cc03cfabcf2, seen through the sibling override), the Email the maintainer card's content is 262px tall in a 252px inner height, so its last line is cut (`audit/subscribe/1280/current.png`). The copy is this route's: the added-card items ed87346231b4 and dcd23fd2dd08. Measured by a Playwright probe on 2026-09-26.
 
 ## Verdict
+
+plan eb43bbfbe5f2
 
 ## Log
 
