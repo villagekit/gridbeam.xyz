@@ -1,6 +1,6 @@
 ---
 title: "Contact page shape: one centered LinkCard in CardsLayout to two Sections, the second tinted gray"
-status: regression
+status: fixed
 route: /contact
 axis: visual
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/contact/page.tsx:38-105` `<Section index={0} maxW="6xl">` (Title, intro paragraph in a `3xl` Container) then `<Section index={1} maxW="6xl" colorPalette="gray">` (an h2 Title and a `VStack maxW="3xl"` of two full-width cards) on a gray band from about y=450 to 1213 in `audit/contact/1280/current.png`.
 
 ## Verdict
+
+plan 73062532dff7
 
 ## Log

@@ -1,6 +1,6 @@
 ---
 title: "Email link: whole-card LinkOverlay click and hover to a text-only link"
-status: regression
+status: fixed
 route: /contact
 axis: interaction
 kind: changed
@@ -14,5 +14,7 @@ kind: changed
 `app/contact/page.tsx:53-82` a plain `VStack` with no `LinkBox`, `LinkOverlay` or `HoverCard`: only the underlined address (`ObfuscatedEmail`'s `<a>`) is clickable, and only it has a hover rule (`:77-79` `'& a:hover': { color: 'primary.700' }`). The icon, heading and paragraph do nothing on click.
 
 ## Verdict
+
+plan 73062532dff7
 
 ## Log

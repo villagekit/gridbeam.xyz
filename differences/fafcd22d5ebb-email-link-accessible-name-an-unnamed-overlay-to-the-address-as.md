@@ -1,6 +1,6 @@
 ---
 title: "Email link accessible name: an unnamed overlay to the address as link text"
-status: regression
+status: fixed
 route: /contact
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/_components/ObfuscatedEmail.tsx:16` `<a href="mailto:${addr}">${addr}</a>`: `audit/contact/dom/current.aria.yaml:30-31` `link "hello+gridbeam@mikey.nz"`.
 
 ## Verdict
+
+plan 73062532dff7
 
 ## Log
 

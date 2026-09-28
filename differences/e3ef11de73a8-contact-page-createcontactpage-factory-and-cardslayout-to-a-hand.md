@@ -1,6 +1,6 @@
 ---
 title: "Contact page: createContactPage factory and CardsLayout to a hand-written page"
-status: regression
+status: upstream
 route: /contact
 axis: code
 kind: changed
@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-28: From the contact record split (plan 1a3ab91a9640): the factory half of this item, createContactPage in the private applet package folded into the page, is its own item now, 0c7f344ccb34, open for the operator on the contact verdicts plan minted at the split, since no rule covers it and the planner sanction fede2033572a is that route alone. This item keeps the CardsLayout and LinkCard half: the re-port slice consumes the ui CardsLayout and one LinkCard with legacy props, and its one residual, the icon prop element form the published 1.2.0 forces (fixed at ui a4ef8ed), parks it upstream for the bump plan 99f2fe62c62f, the tools and resources f502886a0c08 the precedent.
+
+- 2026-09-28: From the contact re-port (plan 73062532dff7): the CardsLayout and LinkCard half is written here, app/contact/page.tsx being legacy's packages/applet-contact/src/pages/contact.tsx again on the published @villagekit/ui 1.2.0 (the ported-from line first, CardsLayout title Contact us around one LinkCard with legacy's props in legacy's order, no as and no linkComponent, the metadata title alone). Its one residual is the icon prop's element form, page.tsx:17 icon={<FaEnvelope />}, which 1.2.0's icon?: ReactNode (dist/components/LinkCard.d.ts:9) forces and the sibling at ui a4ef8ed undoes (icon: ComponentType); the bump plan 99f2fe62c62f makes that edit and its kipu fix closes this item, the tools and resources' f502886a0c08 the precedent, decision 28c1a536 the state. The factory half, createContactPage folded into the page's own body with contactEmail a module constant, is 0c7f344ccb34, open for the operator on the contact verdicts plan 0c6face80696, and stays there.

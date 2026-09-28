@@ -1,6 +1,6 @@
 ---
 title: "Contact email: hello@madewithgridkit.com in the href only to hello+gridbeam@mikey.nz shown as text"
-status: regression
+status: fixed
 route: /contact
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/contact/page.tsx:64-66` `<ObfuscatedEmail user="hello+gridbeam" domain="mikey.nz" />` renders `<a href="mailto:hello+gridbeam@mikey.nz">hello+gridbeam@mikey.nz</a>` (`app/_components/ObfuscatedEmail.tsx:10-17`); `audit/contact/dom/current.aria.yaml:30-31` `link "hello+gridbeam@mikey.nz"`. The same address appears on `/legal` and `/legal/privacy-policy`.
 
 ## Verdict
+
+plan 73062532dff7
 
 ## Log
 
