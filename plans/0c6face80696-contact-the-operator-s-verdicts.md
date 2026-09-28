@@ -28,3 +28,5 @@ None.
 ## Outcome
 
 ## Log
+
+- 2026-09-28: From the legal record split (plan e710087c8961): the /legal factory item the body names by 7a2ff790e460 is f77473dea927 now, on the legal verdicts plan d2beea2f9659; the same call answers both.

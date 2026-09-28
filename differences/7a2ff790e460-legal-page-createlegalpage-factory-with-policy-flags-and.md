@@ -16,3 +16,5 @@ kind: changed
 ## Verdict
 
 ## Log
+
+- 2026-09-28: From the legal record split (plan e710087c8961): the factory half of this item, createLegalPage with its policy flags in the private applet package folded into the page, is its own item now, f77473dea927, open for the operator on the legal verdicts plan d2beea2f9659. This item keeps the CardsLayout and LinkCard half, and that half is the operator's too: the kept Policies heading (f18294790df5, sanctioned, Ships as a Title as h2) has no place in the ui CardsLayout, which renders its title and then the wrap of cards, so the re-port slice 70e5734d5b7a composes legacy's CardsLayout body in the route around the heading by default and leaves this item regression, the verdicts plan offering the operator three calls (the composition sanctioned, a slot in the ui CardsLayout, or the heading superseded and the page on CardsLayout as the two sibling routes are). The Current section above describes the page before the removals slice 28f8cfbe92ea; the re-port's note will name the composed layout's lines.

@@ -22,3 +22,5 @@ kind: changed
 - 2026-09-28: The contact verdicts plan is 0c6face80696.
 
 - 2026-09-28: From the contact re-port (plan 73062532dff7): the page is legacy's applet-contact page now, and the inline body this item's Current describes is at app/contact/page.tsx:12, export default function ContactPage(), with contactEmail the module constant at page.tsx:6 and the mailto href at page.tsx:19; the CardsLayout and LinkCard half is written and e3ef11de73a8 is upstream for its icon residual. This item stays open for the operator on the verdicts plan 0c6face80696; a regression verdict now is applied by a slice beside the record, as the split said.
+
+- 2026-09-28: From the legal record split (plan e710087c8961): the /legal question this item and the contact verdicts plan name as 7a2ff790e460 is its own item now, f77473dea927 (the factory half of 7a2ff790e460), open on the legal verdicts plan d2beea2f9659; one call still settles both, and /subscribe's f60ba42d1e34 when its record is sliced.
