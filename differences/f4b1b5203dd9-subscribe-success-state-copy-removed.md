@@ -1,6 +1,6 @@
 ---
 title: Subscribe success state copy removed
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 No success state: `app/subscribe/page.tsx` is static. The state itself is the interaction item on this route.
 
 ## Verdict
+
+plan 244b962caae9
 
 ## Log
 

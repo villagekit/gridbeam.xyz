@@ -1,6 +1,6 @@
 ---
 title: "Subscribe: the applet-subscribe package to a static page"
-status: regression
+status: fixed
 route: /subscribe
 axis: code
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/subscribe/page.tsx:1-82`: one server component with a `metadata` export, `Main`, two `Section`s, `Title`, `Container`, `VStack`, `Text`, `SimpleGrid`, `LinkCard`; no form, schema, types, API route or story. `package.json` has no `react-hook-form`, `@hookform/resolvers`, `zod`, `ky` or `got`.
 
 ## Verdict
+
+plan 244b962caae9: the applet's five modules are in the route directory again, `app/subscribe/SubscribePage.tsx`, `SubscribeForm.tsx`, `schema.ts`, `types.ts`, and the handler at `app/api/subscribe/route.ts`, each ported from its source at `fce357d`. Not ported: `index.ts`, a barrel for a package this repo does not have (the module layout [[fede2033572a]] covers), and `stories.tsx`, a Storybook story for a Storybook this repo does not run (its own item, [[cf055fb61c41]]). The factory half is [[e4f16d198da9]], the operator's.
 
 ## Log
 

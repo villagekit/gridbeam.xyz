@@ -1,6 +1,6 @@
 ---
 title: Subscribe form removed
-status: regression
+status: fixed
 route: /subscribe
 axis: interaction
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 `app/subscribe/page.tsx:1-82`: no `<form>`, input, button, state or API route (no `app/api/`); `.env.example:3` still names `BUTTONDOWN_API_KEY`. CLAUDE.md, "Key decisions": the `/subscribe` page is a real Buttondown form, the API key the operator's.
 
 ## Verdict
+
+plan 244b962caae9
 
 ## Log
 

@@ -1,6 +1,6 @@
 ---
 title: "Subscribe form copy removed: labels, placeholders, helper text, button and toasts"
-status: regression
+status: fixed
 route: /subscribe
 axis: copy
 kind: removed
@@ -14,6 +14,8 @@ kind: removed
 No form, labels, button or toasts on `app/subscribe/page.tsx`. The form's removal is the interaction item on this route; its copy is here so the operator can judge the strings when it returns.
 
 ## Verdict
+
+plan 244b962caae9
 
 ## Log
 

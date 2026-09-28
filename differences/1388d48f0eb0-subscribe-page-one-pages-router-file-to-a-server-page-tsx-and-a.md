@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-28: Filed open at the subscribe record split (plan fbb7c2c27eb5) for rule 4 of 2032533f, put to the operator on the verdicts plan 91b42a34a79f in the words of the home's 091a47cb93e7 (on 8bb4a4380264), the designs index's 30847e0e3701 (on 549ec777422c), the design pages' 8aacd71da174 and the stories index's e3a2d4d66691; the re-port 244b962caae9 meets it and ships the two-file shape unless a verdict names another. Unlike the contact and legal pages, the subscribe page cannot avoid the split: its success state is React state.
+
+- 2026-09-28: The re-port (plan 244b962caae9) shipped the two files: app/subscribe/page.tsx, the server file with the `metadata` and the one-line default export rendering `<SubscribePage />`, and app/subscribe/SubscribePage.tsx, the client file with legacy's page body, its state and its callback. Open for the operator as filed.

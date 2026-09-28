@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-28: Filed at the subscribe record split (plan fbb7c2c27eb5) as the factory half of f60ba42d1e34, which the re-port slice 244b962caae9 fixes for the modules' return. Open for the operator: no rule of 2032533f covers a factory folded into its one caller (the Layout option alone is rule 4). The same question is open on /contact (0c7f344ccb34, on the contact verdicts plan 0c6face80696) and /legal (f77473dea927, on the legal verdicts plan d2beea2f9659), so one call settles all three; the planner's fede2033572a is that route's sanction alone. The re-port builds the inline shape as the default; a verdict before it runs shapes it. On the subscribe verdicts plan 91b42a34a79f.
+
+- 2026-09-28: The re-port (plan 244b962caae9) built the inline shape: the page's body is the default export of app/subscribe/SubscribePage.tsx:16, the factory's options its module constants at :11-13; the handler's body is the `POST` of app/api/subscribe/route.ts:16. Open for the operator as filed; a verdict for functions kept in the route directory reshapes both files.

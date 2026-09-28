@@ -27,3 +27,11 @@ None.
 - Every item above, and every item a later note here adds, is `sanctioned`, `dismissed` or `regression` with a slice minted for its fix or the open slice's Work covering it; `kipu list --collection difference --filter route=/subscribe --status open` prints nothing (checked when this plan is finished)
 - A note on [[ac6579ec16d2]] records the operator's place, shape and strings for the footer box, and the slices that build them are minted with their edges (checked when this plan is finished)
 - `kipu verify --warnings-as-errors` is green
+
+## Log
+
+- 2026-09-28: From the re-port (plan 244b962caae9), seven more items on /subscribe for the operator, each with the alternative in its Current: the handler's HTTP client [[46e5039189fa]] (got to ky), the Buttondown field [[8b3d32f478cf]] (email to email_address), the host [[0731c09e1478]] (api.buttondown.email to api.buttondown.com) and the missing key [[8a16c09fe27b]] (a module-scope throw to a per-request 500), the key slice cc17a04d9cd7 reading the live API's answers on the field and the host first; the unported Storybook story [[cf055fb61c41]]; the SubscriptionTag enum as a const object [[a36129c3f2ad]] (tsconfig's erasableSyntaxOnly); the form's useForm types [[e1b253e226b0]] (@hookform/resolvers 5) and its dropped .json() read of the 204 [[7d457c7ec33a]] (ky 2). The factory item [[e4f16d198da9]] and the two-file item [[1388d48f0eb0]] carry notes naming where the inline bodies and the two files are.
+
+- 2026-09-28: From the re-port's review round (plan 244b962caae9), one more open item on /subscribe: the form's error body read, err.response.json() to err.data, which ky 2 forced.
+
+- 2026-09-28: From the Parity review of the subscribe re-port (plan 244b962caae9), two more open items on /subscribe for the handler: the 400 for a body that is not JSON [[c74339674d8f]] (Next pages' plain-text 400 to the form's error shape) and the failure log [[57e07093ac6a]] (the whole error to structured fields).

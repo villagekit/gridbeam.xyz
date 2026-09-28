@@ -8,13 +8,15 @@ import { CLOUDINARY_NAME } from '@/app/_lib/cloudinary'
 import system from '@/app/theme'
 
 import { NextQueryParamAdapter } from './NextQueryParamAdapter'
+import { Toaster } from './Toaster'
 
 /**
  * Mounts Chakra with the site's system and the query-param provider inside it, the way legacy's
  * `_app.tsx` nested them, and the ui media context between them, which the ui `Image` and `Video`
  * read for the Cloudinary cloud name (legacy's `ui-media` hard-coded it, so `_app.tsx` mounted no
- * such provider). A client component because the system holds functions and cannot cross the
- * server boundary as a prop.
+ * such provider). The toast region follows the children, as the sibling ui's `Provider` mounts it,
+ * until the bump swaps this for that `Provider`. A client component because the system holds
+ * functions and cannot cross the server boundary as a prop.
  */
 export function SiteProvider({ children }: { children: ReactNode }) {
   return (
@@ -22,6 +24,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
       <MediaProvider cloudinaryName={CLOUDINARY_NAME}>
         <QueryParamProvider adapter={NextQueryParamAdapter}>{children}</QueryParamProvider>
       </MediaProvider>
+      <Toaster />
     </ChakraProvider>
   )
 }

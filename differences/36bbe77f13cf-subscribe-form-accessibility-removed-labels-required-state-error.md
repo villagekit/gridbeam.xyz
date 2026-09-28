@@ -1,6 +1,6 @@
 ---
 title: "Subscribe form accessibility removed: labels, required state, error association, focus and announcements"
-status: regression
+status: fixed
 route: /subscribe
 axis: accessibility
 kind: removed
@@ -14,5 +14,7 @@ kind: removed
 No form controls, toasts or `role="img"` spans under `main` in `audit/subscribe/dom/current.aria.yaml:22-40`.
 
 ## Verdict
+
+plan 244b962caae9
 
 ## Log
