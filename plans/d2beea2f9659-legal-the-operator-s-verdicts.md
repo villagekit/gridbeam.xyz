@@ -25,3 +25,7 @@ None.
 
 - Every item above is `sanctioned`, `dismissed` or `regression` with the re-port slice's Work covering its fix or a slice minted for it; `kipu list --collection difference --filter route=/legal --status open` prints nothing and `kipu list --collection difference --filter route=/legal --status regression` prints nothing or only items a minted slice names (checked when this plan is finished)
 - `kipu verify --warnings-as-errors` is green
+
+## Log
+
+- 2026-09-28: From the subscribe record split (plan fbb7c2c27eb5): the /subscribe question the item above names as f60ba42d1e34 is its own item now, e4f16d198da9 (both of the applet's factories, createSubscribePage and createApiHandler), open on the subscribe verdicts plan 91b42a34a79f, in the same words; f60ba42d1e34 is fixed by the subscribe re-port 244b962caae9 for the modules' return. The one call that settles all three is read across 0c7f344ccb34, f77473dea927 and e4f16d198da9.

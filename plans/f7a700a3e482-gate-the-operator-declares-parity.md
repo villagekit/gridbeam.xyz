@@ -25,6 +25,7 @@ blocked_by:
     note: the operator's verdicts on the legal route come before the review of the site
   - target: ddb2aba0ac3d
     note: the operator's verdicts on the suppliers route come before the review of the site
+  - 91b42a34a79f
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.
@@ -46,3 +47,5 @@ None.
 ## Log
 
 - 2026-09-27: From the design pages record's split (plan 0bc88eaf5493): blocked_by the design pages' verdicts plan [[8512c5e9cc98]], written at the split so the operator's verdicts come before the review.
+
+- 2026-09-28: From the subscribe record's split (plan fbb7c2c27eb5): blocked_by the subscribe verdicts plan 91b42a34a79f, written at the split so the operator's verdicts come before the review.

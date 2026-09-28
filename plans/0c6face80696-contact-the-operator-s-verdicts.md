@@ -30,3 +30,5 @@ None.
 ## Log
 
 - 2026-09-28: From the legal record split (plan e710087c8961): the /legal factory item the body names by 7a2ff790e460 is f77473dea927 now, on the legal verdicts plan d2beea2f9659; the same call answers both.
+
+- 2026-09-28: From the subscribe record split (plan fbb7c2c27eb5): the /subscribe question the item above names as f60ba42d1e34 is its own item now, e4f16d198da9 (both of the applet's factories, createSubscribePage and createApiHandler), open on the subscribe verdicts plan 91b42a34a79f, in the same words; f60ba42d1e34 is fixed by the subscribe re-port 244b962caae9 for the modules' return. The one call that settles all three is read across 0c7f344ccb34, f77473dea927 and e4f16d198da9.
