@@ -23,6 +23,8 @@ blocked_by:
     note: the operator's verdicts on the contact route come before the review of the site
   - target: d2beea2f9659
     note: the operator's verdicts on the legal route come before the review of the site
+  - target: ddb2aba0ac3d
+    note: the operator's verdicts on the suppliers route come before the review of the site
 ---
 
 The operator has reviewed every route and declares the site at parity with the legacy gridkit.nz site. Only a human can say when parity is reached. This gate is the operator's: an orchestrator stops here.
