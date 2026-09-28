@@ -1,4 +1,5 @@
-import { Box, Heading, Link, Section, SimpleGrid, Text, Title, VStack } from '@villagekit/ui'
+// ported from https://github.com/villagekit/node-modules/blob/8311c3fa/apps/gridkit/pages/order.tsx
+import { Box, Link, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 
 // biome-ignore lint/suspicious/noShadowRestrictedNames:
@@ -6,10 +7,8 @@ import { Map } from '@/app/_components/map'
 
 import { type Supplier, suppliers } from '../../content/suppliers'
 
-const title = 'Suppliers'
-
 export const metadata: Metadata = {
-  title,
+  title: 'Suppliers',
 }
 
 const systemLabels: Record<Supplier['system'], string> = {
@@ -20,39 +19,40 @@ const systemLabels: Record<Supplier['system'], string> = {
 export default function SuppliersPage() {
   return (
     <>
-      <Section index={0} maxW="6xl">
-        <Title>Suppliers</Title>
-      </Section>
+      <Title>Suppliers</Title>
 
-      <Section index={1} maxW="6xl">
+      <VStack gap={[8, null, 12]}>
         <Map />
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
+        <Box maxW="breakpoint-md" width="100%">
           {suppliers.map((supplier) => (
             <SupplierCard key={supplier.id} supplier={supplier} />
           ))}
-        </SimpleGrid>
-      </Section>
+        </Box>
+      </VStack>
     </>
   )
 }
 
+// The row is legacy's map panel item, with the name as the link out and the system label under
+// the location; ported from
+// https://github.com/villagekit/node-modules/blob/fce357d/apps/gridkit/components/map/producer-item.tsx
 function SupplierCard({ supplier }: { supplier: Supplier }) {
   return (
-    <Box p="6" bg="white" borderRadius="xl" boxShadow="sm">
-      <VStack alignItems="flex-start" gap="1">
-        <Heading as="h3" size="md">
-          <Link href={supplier.website} target="_blank" rel="noopener noreferrer">
-            {supplier.title}
-          </Link>
-        </Heading>
-        <Text fontSize="sm" variant="secondary">
-          {supplier.location}
-        </Text>
-        <Text fontSize="sm" variant="secondary">
-          {systemLabels[supplier.system]}
-        </Text>
-      </VStack>
+    <Box paddingX="4" paddingY="2" width="100%">
+      <Text>
+        <Link href={supplier.website} target="_blank" rel="noopener noreferrer">
+          {supplier.title}
+        </Link>
+      </Text>
+
+      <Text fontSize="sm" variant="secondary">
+        {supplier.location}
+      </Text>
+
+      <Text fontSize="sm" variant="secondary">
+        {systemLabels[supplier.system]}
+      </Text>
     </Box>
   )
 }

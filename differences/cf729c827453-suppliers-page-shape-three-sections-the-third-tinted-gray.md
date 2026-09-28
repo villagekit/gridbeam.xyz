@@ -1,6 +1,6 @@
 ---
 title: "Suppliers page shape: three Sections, the third tinted gray"
-status: regression
+status: fixed
 route: /suppliers
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ Absent: no legacy `/suppliers`. Decision [[8b5e51fcaf61]] names a map at the top
 `app/suppliers/page.tsx:56` `Section index={0}` (title, a centered `Container maxW="3xl"` paragraph), `:74-119` `Section index={1}` (the Listings grid, or the empty state), `:121-125` `Section index={2} colorPalette="gray" id="how-to-be-listed"` (a gray band, `audit/suppliers/1280/current.png`). Its text is filed as copy.
 
 ## Verdict
+
+plan f1e016a563d6
 
 ## Log
 

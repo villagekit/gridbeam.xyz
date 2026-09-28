@@ -18,3 +18,5 @@ No legacy counterpart to `/suppliers` exists ([[df7c8f7b0a80]], sanctioned under
 ## Log
 
 - 2026-09-28: Filed and moved to upstream: fixed in `../ui` (commit `540e9c3`, `../ui/src/components/Link.tsx:8-25`), the sibling's `Link` takes `isExternal` again. Waiting on the operator's publish; the bump plan `99f2fe62c62f` rewrites `app/suppliers/page.tsx:40` as `Link isExternal` and moves this to fixed.
+
+- 2026-09-28: The page slice f1e016a563d6 re-wrote app/suppliers/page.tsx as the 2023 order page's frame; the name link with target and rel now sits inside the row's Text at app/suppliers/page.tsx:44, the line the bump plan's edit to Link isExternal rewrites. The Current section's :40 is superseded by this note.
