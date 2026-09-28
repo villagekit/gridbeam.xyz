@@ -47,6 +47,9 @@ cloudflare-env.d.ts
 # Vercel
 .vercel
 
+# MapLibre GL's worker and shared chunk, copied from node_modules by scripts/copy-maplibre-worker.ts
+/public/maplibre/
+
 # Parity audit artifacts (generated screenshots, DOM extractions, index)
 /audit/
 

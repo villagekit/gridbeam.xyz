@@ -1,6 +1,6 @@
 ---
 title: Map component tree, context, coordinates and map dependency not ported
-status: regression
+status: fixed
 route: /suppliers
 axis: code
 kind: removed
@@ -14,5 +14,7 @@ Decision [[8b5e51fcaf61]] names the port: the legacy `apps/gridkit/components/ma
 `app/suppliers/` holds one file, `page.tsx`, with `SupplierCard` inline (`:167-205`); no map, list, item or marker component, no context, no `latitude`/`longitude` on `Supplier` (`content/suppliers.ts:7-17`), and no `maplibre-gl`, `react-map-gl` or `constate` in `package.json`. No `// ported from` citation of `components/map/`. The visitor-facing absence is [[f7ea0bf1394d]].
 
 ## Verdict
+
+plan 3b06e662692a
 
 ## Log

@@ -16,3 +16,5 @@ No map yet: the suppliers record [[872ab70e2ff9]] ports it by its map slice. Dec
 ## Verdict
 
 ## Log
+
+- 2026-09-28: The map slice [[3b06e662692a]] shipped OpenFreeMap's positron, the default: mapStyle="https://tiles.openfreemap.org/styles/positron" at app/_components/map/Map.tsx, the ReactMapGL element's mapStyle prop. Beside the 2023 deploy at 1280: positron draws pale land with labels in gray and water in a gray-blue, where legacy's Studio style drew white land on a mid gray sea and globe with sparser labels; the pink dots and the white border read the same on both. The item stays open for the verdict; another served style changes that one URL, and a style JSON of the site's own points the same prop at a file under public/.

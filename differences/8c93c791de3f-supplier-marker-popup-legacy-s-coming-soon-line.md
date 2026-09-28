@@ -16,3 +16,5 @@ No map yet: the suppliers record [[872ab70e2ff9]] ports it by its map slice. Tha
 ## Verdict
 
 ## Log
+
+- 2026-09-28: The map slice [[3b06e662692a]] shipped the popup without the line, rule 2's default: app/_components/map/SupplierMarker.tsx renders the title Heading in the primary.400 header and the location Text in the white body, legacy's third Text (producer-marker.tsx:79-81 at fce357d) omitted. The item stays open for the verdict; a verdict for the line adds one Text fontSize sm variant tertiary after the location in that VStack.

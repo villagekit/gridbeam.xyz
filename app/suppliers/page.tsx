@@ -1,6 +1,9 @@
 import { Box, Heading, Link, Section, SimpleGrid, Text, Title, VStack } from '@villagekit/ui'
 import type { Metadata } from 'next'
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames:
+import { Map } from '@/app/_components/map'
+
 import { type Supplier, suppliers } from '../../content/suppliers'
 
 const title = 'Suppliers'
@@ -22,6 +25,8 @@ export default function SuppliersPage() {
       </Section>
 
       <Section index={1} maxW="6xl">
+        <Map />
+
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
           {suppliers.map((supplier) => (
             <SupplierCard key={supplier.id} supplier={supplier} />

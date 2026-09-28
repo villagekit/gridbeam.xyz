@@ -1,6 +1,6 @@
 ---
 title: Suppliers map absent
-status: regression
+status: fixed
 route: /suppliers
 axis: interaction
 kind: removed
@@ -14,5 +14,7 @@ Decision [[8b5e51fcaf61]]: a map at the top of the page with the supplier cards 
 No map on the page: `app/suppliers/page.tsx` renders the title section, the card grid (`:75-84`) and the "How to be listed" section (`:121-165`); `audit/suppliers/1280/current.png`. No coordinates on the `Supplier` data (`content/suppliers.ts:7-17`), no map dependency in `package.json`.
 
 ## Verdict
+
+plan 3b06e662692a
 
 ## Log
