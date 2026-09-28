@@ -1,83 +1,32 @@
-import {
-  Container,
-  Heading,
-  Link,
-  LinkCard,
-  Section,
-  SimpleGrid,
-  Text,
-  Title,
-  VStack,
-} from '@villagekit/ui'
+import { LinkCard, Section, SimpleGrid, Title } from '@villagekit/ui'
 import type { Metadata } from 'next'
 import NextLink from 'next/link'
-import { FaCode, FaUserShield } from 'react-icons/fa'
+import { FaLock } from 'react-icons/fa'
 
-import { ObfuscatedEmailLink } from '../_components/ObfuscatedEmail'
-
-const title = 'Legal'
-const description = 'Privacy policy and licensing information for gridbeam.xyz.'
+const title = 'Our legal information'
 
 export const metadata: Metadata = {
   title,
-  description,
 }
 
 export default function LegalPage() {
   return (
     <>
       <Section index={0} maxW="6xl">
-        <Title description="The legal small-print, kept as small as possible.">Legal</Title>
-        <Container maxW="3xl">
-          <Text textAlign="center">
-            gridbeam.xyz is a non-commercial educational site. We don't sell, advertise, or track.
-          </Text>
-        </Container>
+        <Title>Our legal information</Title>
       </Section>
 
       <Section index={1} maxW="6xl">
-        <Title as="h2" description="Two policies and a licence — that's the whole legal stack.">
-          Policies
-        </Title>
+        <Title as="h2">Policies</Title>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="6">
           <LinkCard
             linkComponent={NextLink}
             title="Privacy policy"
-            icon={<FaUserShield />}
-            description="What we collect, what we don't, and what we do with anything you send us. Short — we collect almost nothing."
+            icon={<FaLock />}
+            description="How we collect, use, store, and share personal information."
             href="/legal/privacy-policy"
           />
-          <LinkCard
-            title="Site licence"
-            icon={<FaCode />}
-            description="The site, the design catalogue, the engine, and the @villagekit/ui component library are all open source under the European Union Public Licence (EUPL-1.2)."
-            href="https://github.com/villagekit"
-            isExternal
-          />
         </SimpleGrid>
-      </Section>
-
-      <Section index={2} maxW="6xl" colorPalette="gray">
-        <Container maxW="3xl">
-          <VStack alignItems="flex-start" gap="4">
-            <Heading as="h2" size="lg">
-              Questions
-            </Heading>
-            <Text>
-              Anything unclear? Email{' '}
-              <ObfuscatedEmailLink user="hello+gridbeam" domain="mikey.nz" /> or open an issue at{' '}
-              <Link
-                variant="paragraph"
-                href="https://github.com/villagekit/gridbeam.xyz/issues"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/villagekit/gridbeam.xyz/issues
-              </Link>
-              .
-            </Text>
-          </VStack>
-        </Container>
       </Section>
     </>
   )

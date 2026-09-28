@@ -1,6 +1,6 @@
 ---
 title: Legal meta description added where legacy inherited the site default
-status: regression
+status: fixed
 route: /legal
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No `description` anywhere in the chain (`packages/applet-legal/src/pages/legal.t
 `app/legal/page.tsx:21,25` `description = 'Privacy policy and licensing information for gridbeam.xyz.'`, also as `openGraph.description` and `twitter.description`.
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

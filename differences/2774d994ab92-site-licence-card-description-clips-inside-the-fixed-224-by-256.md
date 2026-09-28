@@ -1,6 +1,6 @@
 ---
 title: Site licence card description clips inside the fixed 224 by 256 card
-status: regression
+status: fixed
 route: /legal
 axis: visual
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 With LinkCard re-ported to that box (ui LinkCard.tsx after plan 1cc03cfabcf2, seen through the sibling override), the Site licence card's content is 286px tall in a 252px inner height, so its description stops mid-line at `the European Union` (`audit/legal/1280/current.png`; the same at 375 and 768). The copy is this route's: item 699fd2e0b625 (the card added) and, for the Privacy policy card, c99d9cf3728c. Measured by a Playwright probe on 2026-09-26.
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

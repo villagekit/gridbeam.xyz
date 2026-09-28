@@ -1,6 +1,6 @@
 ---
 title: Legal heading description added
-status: regression
+status: fixed
 route: /legal
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ kind: added
 `app/legal/page.tsx:40` `description="The legal small-print, kept as small as possible."` (`audit/legal/dom/current.txt:11`).
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

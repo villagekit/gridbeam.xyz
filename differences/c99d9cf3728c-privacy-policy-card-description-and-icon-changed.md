@@ -1,6 +1,6 @@
 ---
 title: "Privacy policy card: description and icon changed"
-status: regression
+status: fixed
 route: /legal
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/legal/page.tsx:53-59` same title and href, `icon={<FaUserShield />}`, `description="What we collect, what we don't, and what we do with anything you send us. Short — we collect almost nothing."`.
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

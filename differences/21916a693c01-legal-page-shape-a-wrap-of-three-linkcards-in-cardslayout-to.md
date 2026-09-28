@@ -18,3 +18,5 @@ kind: changed
 ## Log
 
 - 2026-09-26: From the ui LinkCard slice [[1cc03cfabcf2]]: the Current section above describes the cards as `@villagekit/ui@1.2.0` rendered them, fluid and filling their grid cells. The sibling's LinkCard is legacy's fixed 224 by 256 box again (item 852324855146, upstream), so once the bump plan [[99f2fe62c62f]] lands it each card sits at that size at the left of its SimpleGrid cell (at 1280 on /legal, x=96 and x=652 in cells about 530px wide) where legacy centered it in a Wrap; the page shape this item records is unchanged and still the route's to re-port.
+
+- 2026-09-28: From the Parity review of plan 28f8cfbe92ea: with the Site licence card gone, the Current section's two-card description is stale. On 1280 the one Privacy policy card now sits alone in the SimpleGrid's left cell (audit/legal/1280/current.png, x about 96 to 628), the right cell empty, where legacy centers its remaining cards in the Wrap; at 768 the same card sits at x about 24 to 372 (audit/legal/768/current.png). The page shape this item records, and its re-port, are unchanged and still 70e5734d5b7a's job.

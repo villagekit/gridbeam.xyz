@@ -1,6 +1,6 @@
 ---
 title: "Legal heading outline: h1 and three h2 cards to h1, h2, h3, h3, h2"
-status: regression
+status: fixed
 route: /legal
 axis: accessibility
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `audit/legal/dom/current.aria.yaml:23,26,28,32,36` `heading "Legal" [level=1]`, `heading "Policies" [level=2]`, `heading "Privacy policy" [level=3]`, `heading "Site licence" [level=3]`, `heading "Questions" [level=2]` (`app/legal/page.tsx:40,49,73`; the card level is the shell LinkCard heading item).
 
 ## Verdict
+
+plan 28f8cfbe92ea, the h1 followed by h2 Policies ([[f18294790df5]], sanctioned) and one card heading, h3 Privacy policy ([[bd05a2d3642d]], upstream)
 
 ## Log
 

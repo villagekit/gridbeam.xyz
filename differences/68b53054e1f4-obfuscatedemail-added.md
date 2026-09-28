@@ -20,3 +20,5 @@ rule: operator (5).
 ## Log
 
 - 2026-09-28: From the contact re-port (plan 73062532dff7): this item's Current names three consumers; /contact renders legacy's LinkCard with a plain mailto href now (9d383a08ab20 fixed, its note says why the helper's sanction does not reach it), so the helper's consumers are two, app/legal/page.tsx and app/legal/privacy-policy/page.tsx. Nothing in app/_components/ObfuscatedEmail.tsx changes; this verdict, the helper's existence, stands.
+
+- 2026-09-28: From plan 28f8cfbe92ea: the legal removals drop the Questions section, the route's only ObfuscatedEmailLink call. app/legal/page.tsx no longer imports or uses the helper, so its Current's three consumers are one, app/legal/privacy-policy/page.tsx. Nothing in app/_components/ObfuscatedEmail.tsx changes; this verdict, the helper's existence, stands.

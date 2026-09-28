@@ -1,6 +1,6 @@
 ---
 title: Legal intro paragraph added
-status: regression
+status: fixed
 route: /legal
 axis: copy
 kind: added
@@ -14,6 +14,8 @@ No paragraph: the page is `Title` plus three `LinkCard`s (`packages/applet-legal
 `app/legal/page.tsx:42-44` "gridbeam.xyz is a non-commercial educational site. We don't sell, advertise, or track."
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

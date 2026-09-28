@@ -1,6 +1,6 @@
 ---
 title: GitHub Issues URL overflows the text column at 375
-status: regression
+status: fixed
 route: /legal
 axis: visual
 kind: added
@@ -14,6 +14,8 @@ No such link on legacy `/legal` (three `LinkCard`s, `packages/applet-legal/src/p
 `app/legal/page.tsx:79-86` the `Link` "github.com/villagekit/gridbeam.xyz/issues" has no `wordBreak`: in `audit/legal/375/current.png` (rows about 1448 to 1459) its ink reaches x=353 where the text column ends at x=342 and prose stops by x=314, and the closing "." wraps alone to the next line.
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 

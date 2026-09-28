@@ -1,6 +1,6 @@
 ---
 title: "Legal title and heading: Our legal information to Legal"
-status: regression
+status: fixed
 route: /legal
 axis: copy
 kind: changed
@@ -14,6 +14,8 @@ kind: changed
 `app/legal/page.tsx:20,23-32,40` `const title = 'Legal'` in `metadata` and `<Title description="...">Legal</Title>`; rendered `<title>Legal — gridbeam.xyz</title>` and `heading "Legal" [level=1]` (`audit/legal/dom/current.aria.yaml:23`).
 
 ## Verdict
+
+plan 28f8cfbe92ea
 
 ## Log
 
