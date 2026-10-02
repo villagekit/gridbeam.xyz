@@ -3,8 +3,7 @@ title: "Cutting planner applet: the result components re-ported from the legacy 
 status: done
 parent: 0bc88eaf5493
 derived_from: 0bc88eaf5493
-tags:
-  - "worker:fable"
+worker: fable
 ---
 The legacy cutting planner applet's result components are the site's again, in legacy's files under the in-app module the planner's sanctioned `fede2033572a` names: `DisplayUnitToggle`, `CuttingPlan` (the `Cutting plan` heading, a `role="list"` of the engine's `CutGridBeamSvg` drawings and its own unit toggle), `BeamRow`, `BeamsTable` and `CuttingPlannerResult` (the `Cut beams` region and the uncut tables), translated to Chakra v3 under the planner's sanctions. Two callers make the seam (CLAUDE.md, Library first): the design pages' Plan tab, which this record's page re-port consumes, and the planner page, whose record `396c9af0cbd1` consumes them at its own re-port and adds `CuttingPlanner` and `CuttingPlannerControls` beside them. The slice ships the module and its proof; it closes no item on the design routes (the Plan tab's items close when the page re-port renders it) and none on the planner (its page still renders the monolith), and says so. A re-port that decides every translation, so Fable. Record `0bc88eaf5493`; decisions `ee86d68a`, `2032533f`.
 
