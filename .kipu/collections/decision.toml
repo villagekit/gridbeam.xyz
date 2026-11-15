@@ -1,6 +1,8 @@
 version = 1
 root    = "decisions"
 
+log_heading = "## Log"
+
 requires_fields = ["date"]
 
 [[state]]

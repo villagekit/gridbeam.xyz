@@ -33,11 +33,12 @@ category         = "canceled"
 verb             = "decline"
 requires_outcome = true
 
-# The weight that breaks ties among ready items; unset sorts last. Order
-# lives in edges, never here.
+# The weight that breaks ties among ready items: `medium` unless pulled
+# ahead or pushed back. Order lives in edges, never here.
 [fields.priority]
 type   = "string"
 values = ["urgent", "high", "medium", "low"]
+default = "medium"
 
 # The model a plan's worker runs on under `/orchestrate`, written at the
 # mint by the grading test in CLAUDE.md, Sub-agents; absent reads as the
