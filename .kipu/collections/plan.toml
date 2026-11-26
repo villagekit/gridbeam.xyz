@@ -41,7 +41,7 @@ values = ["urgent", "high", "medium", "low"]
 default = "medium"
 
 # The model a plan's worker runs on under `/orchestrate`, written at the
-# mint by the grading test in CLAUDE.md, Sub-agents; absent reads as the
+# mint, graded by what the plan leaves open; absent reads as the
 # strongest. No default: an ungraded plan stays visibly ungraded.
 [fields.worker]
 type   = "string"

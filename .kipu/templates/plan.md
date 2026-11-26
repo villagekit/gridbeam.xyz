@@ -1,11 +1,11 @@
-<!-- Delete each comment as you fill its section in. -->
+<!-- Delete each comment as you fill its section in. Aim for under 2,000 words above `## Outcome`; a longer plan says why. This is advice and no check holds it. The Outcome and the Log are the record and are not counted. -->
 
 <!-- One paragraph: what this slice delivers, end to end, from the
 operator's perspective. Cite the record and the decisions by prefix. -->
 
 ## Work
 
-<!-- What to build, in CLAUDE.md's vocabulary. Then, one line each, only
+<!-- What to build, in the vocabulary of README.md. Then, one line each, only
 where they apply:
 Interfaces: what this consumes from shipped slices and produces for later
   ones, as exact type and function names.

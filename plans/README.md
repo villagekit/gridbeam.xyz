@@ -36,11 +36,12 @@ on a slice, `medium` unless it is pulled ahead (`urgent`, `high`) or pushed
 back (`low`); `tags` for the process tags this store uses, `gate`, `epic` and
 `attended`; `worker`, the field naming the model a slice runs on under
 `/orchestrate` (`fable`, `opus` or `sonnet`, declared in the collection),
-written at the mint by the grading test in CLAUDE.md, Sub-agents (decision
-`66f7afafd684`); a slice with no `worker` runs on Fable. Sequence
+written at the mint, graded by what the plan leaves open, as the `to-plan`
+skill says (decision `66f7afafd684`); a slice with no `worker` runs on Fable. Sequence
 lives in edges and nowhere else: priority is the weight
 that breaks ties among ready items, and a record carries none. kipu writes
-edge targets as full ids; prose and commit subjects cite by prefix.
+edge targets as full ids; prose cites by prefix, and a commit names its
+plan in a `Kipu:` trailer.
 
 Minting is `kipu new plan --title <text>` (a slice or a record) or
 `kipu split <record> --title <text>...` (the slices of a record, with their
