@@ -46,3 +46,88 @@ default = "medium"
 [fields.worker]
 type   = "string"
 values = ["fable", "opus", "sonnet"]
+
+# The instant a plan was claimed, RFC 3339 in UTC, written by the claiming
+# move (`kipu move <id> doing --from todo --set claimed_at=...`), so two
+# claims of one plan conflict on merge where two bare moves would merge
+# clean (at one-second resolution: two claims in the same second write one
+# line). The run that closes an epic makes no claim, so the `finish-epic`
+# skill's finish writes the instant the epic was closed
+# (`kipu finish <epic> --set claimed_at=...`), in place of any claim it
+# carried as a slice, and the leftovers check holds an epic's Outcome as
+# it holds a claimed plan's. No other step of the shared skills writes
+# it. No default: a plan neither claimed nor closed as an epic carries
+# none.
+[fields.claimed_at]
+type = "string"
+
+# Where a plan was claimed: the machine's name and the bay's path,
+# `<hostname>:<path>`, written by the claiming move beside `claimed_at`,
+# so two claims of one plan conflict on merge even in one second, and a
+# dead worker's work is found where it sits. The `finish-epic` skill's
+# finish writes it beside `claimed_at` too: the bay the epic was closed
+# in. No other step of the shared skills writes it. No default: a plan
+# neither claimed nor closed as an epic carries none.
+[fields.claimed_by]
+type = "string"
+
+# The tests a plan is about, one test key each: the test's binary id and
+# its name as nextest prints them, one space between, such as
+# `forms judged::a_passes`, the form `judge-run.sh` prints and the
+# reader's tally holds. The key is the binary and the name, never an
+# assertion. A plan minted for a red of a test carries the key, and a
+# plan about no test carries none. After a done plan on a key, the one
+# plan that may follow is tagged `redesign`, which
+# `scripts/check-flake-keys.sh` holds in a gate that runs it. No default.
+[fields.test]
+type = "list"
+
+# What a plan waits on a person for, the operator most often. Written
+# only on a plan whose next step is that person's own; absent means
+# unattended, a plan a worker may take. The four kinds:
+# - `decision`: a ruling the operator gives in a word: a yes or a no, a
+#   choice among options, a step confirmed first, a pause the operator
+#   set. Where a word would let an agent finish the work the kind is
+#   `decision`, even when the work then runs on a desk.
+# - `hands`: a person acts or is present: at a desk or a device, in a
+#   provider's console or an account, with a credential, a payment, a
+#   signature, a publish or a release only they make, or for a look by
+#   hand.
+# - `session`: a grilling or a design session with the operator.
+# - `triage`: a red the backstop found, for the operator to look at and
+#   rule on.
+# A plan whose first part is a worker's is minted as two: the worker's
+# with no field, and the person's step with its kind, `blocked_by` the
+# worker's. The field says nothing of the desk a step is done at, which
+# stays in the plan's Wants line. No default: an unattended plan carries
+# none.
+[fields.attended]
+type   = "string"
+values = ["decision", "hands", "session", "triage"]
+
+# The platforms a plan's work is about: `linux`, `mac` (macOS) and
+# `windows`. They are what a family's apps and tools ship for, and
+# what its desks and runners run. A plan carries each one its work
+# adds, changes, fixes or proves something for:
+# - code built for it alone, its packaging, a fault seen only there, a
+#   port to it;
+# - the setup of a desk or a runner of it. A repo's part of that
+#   counts: the plan that adds the check job or workflow on a
+#   platform's label, or its run workflow, such as `run-macos.toml`
+#   for `mac`, carries that platform, and each one it does this for.
+# A plan carries none where:
+# - the work is one change every platform takes alike, or it names a
+#   platform only in passing or to leave it out;
+# - its work only runs on a platform's desk, was proven on one or asks
+#   for one. The desk a plan must run on stays in its Wants line;
+# - it adds a workflow of its own for a fuzz, a publish or a nightly
+#   run on a runner the repo already reaches, whose label names the
+#   desk it runs on, unless that run is itself for one platform;
+# - the work is a server's own Linux layer: its image, its units, its
+#   firewall. Every server is Linux, so the field would tell nothing
+#   apart there.
+# Absent means the work is about no one platform. In doubt, none.
+# No default.
+[fields.platform]
+type   = "list"
+values = ["linux", "mac", "windows"]

@@ -5,3 +5,27 @@ derived_from = { inverse = "derives", derivation = true }
 supersedes   = { inverse = "superseded_by" }
 duplicates   = { inverse = "duplicated_by" }
 relates      = { self_inverse = true }
+
+# A survey feeds the decisions and plans it informed (the `research`
+# skill); the record's "fed by" is the inverse, read with
+# `kipu show --related`.
+[relation.feeds]
+inverse = "fed_by"
+
+# A slice's leftover, an item of its Done when its worker could not
+# prove alone, goes to the plan that took it (the `implement` skill's
+# record step, the agentic repo's decision 97c195d2d9d8): one edge per
+# leftover from the finished slice to its home, beside the `Leftovers:`
+# list in its Outcome, which the two agree on under
+# `scripts/check-leftovers.sh`. Graph data, never a gate: the slice is
+# done. The home's "takes leftover" is the inverse, read with
+# `kipu show --related`.
+[relation.leftover_to]
+inverse = "takes_leftover"
+
+# A plan advances the milestone it moves toward (the `to-plan` skill).
+# Graph data, never a gate: a plan with no milestone is as welcome as
+# one with, and nothing orders work by it. The milestone's "advanced
+# by" is the inverse, read with `kipu show --related`.
+[relation.advances]
+inverse = "advanced_by"

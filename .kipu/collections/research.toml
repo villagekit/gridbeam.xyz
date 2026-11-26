@@ -1,0 +1,16 @@
+# The research collection: one survey per item, a dated record cited to
+# primary sources, minted by the `research` skill. Copy this file whole
+# into `.kipu/collections/` and `research.md` into `.kipu/templates/`,
+# and append `relations.feeds.snippet` to `.kipu/relations.toml`, so a
+# survey carries a `feeds` edge to each decision and plan it informed.
+# Cited as `[[<id>]]` in its store and as `<family name>'s research
+# <prefix>` from another repo. No states: a survey is a record, never
+# work.
+version = 1
+root    = "research"
+
+log_heading     = "## Log"
+requires_fields = ["date"]
+
+[fields.date]
+type = "string"   # YYYY-MM-DD
